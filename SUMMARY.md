@@ -1,1 +1,1 @@
-+   [技术指标和覆盖物](docs/tech-ind-ovly/README.md)
++   [技术指标和振荡器](docs/tech-ind-ovly/README.md)
