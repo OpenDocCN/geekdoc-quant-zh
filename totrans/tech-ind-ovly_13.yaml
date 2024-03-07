@@ -1,102 +1,143 @@
 - en: Volume Weighted Average Price (VWAP) [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 成交量加权平均价格（VWAP）[ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Volume Weighted Average Price (VWAP)](#volume_weighted_average_price_vwap)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[成交量加权平均价格（VWAP）](#volume_weighted_average_price_vwap)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[Tick versus Minute](#tick_versus_minute)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[Tick与Minute](#tick_versus_minute)'
 - en: '[Calculation](#calculation)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算](#calculation)'
 - en: '[Characteristics](#characteristics)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[特点](#characteristics)'
 - en: '[Uses for VWAP](#uses_for_vwap)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[VWAP的用途](#uses_for_vwap)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与SharpCharts一起使用](#using_with_sharpcharts)'
 - en: Introduction
+  id: totrans-10
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: 'Volume-Weighted Average Price (VWAP) is exactly what it sounds like: **the
     average price weighted by volume.** VWAP equals the dollar value of all trading
     periods divided by the total trading volume for the current day. The calculation
     starts when trading opens and ends when trading closes. Because it is good for
     the current trading day only, intraday periods and data are used in the calculation.'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 成交量加权平均价格（VWAP）就是字面意思：**按成交量加权的平均价格**。VWAP等于所有交易周期的美元价值除以当天的总交易量。计算从交易开盘开始，到交易收盘结束。因为它仅适用于当天的交易，所以计算中使用了日内周期和数据。
 - en: Tick versus Minute
+  id: totrans-12
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: Tick与Minute
 - en: Traditional VWAP is based on tick data. As one can imagine, there are many ticks
     (trades) during each minute of the day. Active securities during active time periods
     can have 20-30 ticks in one minute alone. With 390 minutes in a typical stock
     exchange trading day, many stocks end up with well over 5000 ticks per day. There
     are over 5000 stocks traded every day and these ticks start adding up exponentially.
     Needless to say, tick-data is very resource intensive.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 传统VWAP基于tick数据。可以想象，在一天的每一分钟内都会有许多tick（交易）。在活跃时间段内活跃的证券每分钟可以有20-30个tick。在典型股票交易日的390分钟内，许多股票每天的tick数量远远超过5000。每天有超过5000只股票交易，这些tick开始呈指数增长。不用说，tick数据非常耗费资源。
 - en: '![VWAP - Chart 1](../Images/8d71258545bff6d5b4176905acff1c43.jpg "VWAP - Chart
     1")'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![VWAP - 图表 1](../Images/8d71258545bff6d5b4176905acff1c43.jpg "VWAP - 图表 1")'
 - en: Instead of VWAP based on tick data, StockCharts.com offers intraday VWAP based
     on intraday periods (1, 5, 10, 15, 30 or 60 minute). Note that VWAP is not defined
     for daily, weekly or monthly periods due to the nature of the calculation (see
     below).
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 与基于tick数据的VWAP不同，StockCharts.com提供基于日内周期（1、5、10、15、30或60分钟）的日内VWAP。请注意，由于计算的性质（见下文），VWAP在日常、周常或月常周期中没有定义。
 - en: Calculation
+  id: totrans-16
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算
 - en: 'There are five steps involved in the VWAP calculation. First, compute the typical
     price for the intraday period. This is the average of the high, low, and close:
     {(H+L+C)/3)}. Second, multiply the typical price by the period''s volume. Third,
     create a running total of these values. This is also known as a cumulative total.
     Fourth, create a running total of volume (cumulative volume). Fifth, divide the
     running total of price-volume by the running total of volume.'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: VWAP计算涉及五个步骤。首先，计算日内周期的典型价格。这是高、低和收盘价的平均值：{(H+L+C)/3)}。其次，将典型价格乘以周期的成交量。第三，创建这些值的累积总和。这也被称为累积总和。第四，创建成交量的累积总和（累积成交量）。第五，将价格-成交量的累积总和除以成交量的累积总和。
 - en: '[PRE0]'
+  id: totrans-18
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: '![VWAP - Spreadsheet 1](../Images/b95b66afabcb769e415104b71652cec0.jpg "VWAP
     - Spreadsheet 1")'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![VWAP - 电子表格 1](../Images/b95b66afabcb769e415104b71652cec0.jpg "VWAP - 电子表格
+    1")'
 - en: The example above shows 1-minute VWAP for the first 30 minutes of trading in
     IBM. Dividing cumulative price-volume by cumulative volume produces a price level
     that is adjusted (weighted) by volume. The first VWAP value is always the typical
@@ -105,16 +146,22 @@
     VWAP for IBM. Prices ranged from 127.36 on the high to 126.67 on the low for the
     first 30 minutes of trading. It was actually a pretty volatile first 30 minutes.
     VWAP ranged from 127.21 to 127.09 and spent its time in the middle of this range.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 上面的示例显示了IBM交易的前30分钟的1分钟VWAP。通过将累积价格-成交量除以累积成交量，产生一个根据成交量调整（加权）的价格水平。第一个VWAP值始终是典型价格，因为分子和分母中的成交量相等。它们在第一次计算中互相抵消。下图显示了IBM的1分钟K线图和VWAP。在交易的前30分钟内，价格从最高的127.36到最低的126.67。实际上，前30分钟非常波动。VWAP的范围从127.21到127.09，并且大部分时间处于这个范围的中间。
 - en: '![VWAP - Chart 2](../Images/566c94be67f7a73087710b66c5aa0f68.jpg "VWAP - Chart
     2")'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![VWAP - 图表 2](../Images/566c94be67f7a73087710b66c5aa0f68.jpg "VWAP - 图表 2")'
 - en: Characteristics
+  id: totrans-22
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 特点
 - en: Like moving averages, VWAP lags price because it is an average based on past
     data. The more data there is, the greater the lag. A stock has been trading for
     some 331 minutes by 3:00 PM. As a cumulative “average”, this indicator is akin
@@ -127,50 +174,69 @@
     not. Remember, VWAP calculations start fresh at the open and end at the close.
     150 minutes of trading have elapsed by 12:00 PM. Therefore, VWAP at 12:00 PM would
     need to be compared with a 150-minute moving average.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 像移动平均一样，VWAP滞后于价格，因为它是基于过去数据的平均值。数据越多，滞后越大。到下午3:00，一只股票已经交易了约331分钟。作为一个累积“平均”，这个指标类似于一个330周期的移动平均。这是很多过去的数据。一天结束时的1分钟VWAP值通常与390分钟移动平均的结束值非常接近。这两个移动平均都是基于当天的1分钟柱状图。在收盘时，两者都是基于390分钟的数据（一整天）。然而，在白天无法将390分钟移动平均与VWAP进行比较。中午12:00的390分钟移动平均将包含前一天的数据。而VWAP不会。请记住，VWAP的计算从开盘开始，到收盘结束。到中午12:00已经过去了150分钟的交易时间。因此，中午12:00的VWAP需要与150分钟移动平均进行比较。
 - en: '![VWAP - Chart 3](../Images/69a39c486c78865e7695c942ad5b22de.jpg "VWAP - Chart
     3")'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![VWAP - 图表 3](../Images/69a39c486c78865e7695c942ad5b22de.jpg "VWAP - 图表 3")'
 - en: Despite this lag, chartists can compare VWAP with the current price to determine
     the general direction of intraday prices. It works similar to a moving average.
     In general, intraday prices are falling when below VWAP and intraday prices are
     rising when above VWAP. VWAP will fall somewhere between the day's high-low range
     when prices are range bound for the day. The next three charts show examples of
     rising, falling and flat VWAP.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管存在滞后，图表分析师可以将VWAP与当前价格进行比较，以确定日内价格的大致方向。它类似于移动平均。一般来说，当价格低于VWAP时，日内价格下跌，当价格高于VWAP时，日内价格上涨。当价格在一天内处于区间时，VWAP将落在当天的高低范围之间。接下来的三个图表展示了VWAP上升、下降和持平的示例。
 - en: '![VWAP - Chart 4](../Images/afaa7cbbbb3bea3913f335a1c9776f61.jpg "VWAP - Chart
     4") ![VWAP - Chart 5](../Images/5897839258c78dd92ec788bfba18f522.jpg "VWAP - Chart
     5") ![VWAP - Chart 6](../Images/64cc72c64fb470c1bc7144604770fded.jpg "VWAP - Chart
     6")'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![VWAP - 图表 4](../Images/afaa7cbbbb3bea3913f335a1c9776f61.jpg "VWAP - 图表 4")
+    ![VWAP - 图表 5](../Images/5897839258c78dd92ec788bfba18f522.jpg "VWAP - 图表 5") ![VWAP
+    - 图表 6](../Images/64cc72c64fb470c1bc7144604770fded.jpg "VWAP - 图表 6")'
 - en: Uses for VWAP
+  id: totrans-27
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: VWAP的用途
 - en: VWAP is used to identify liquidity points. As a volume-weighted price measure,
     VWAP reflects price levels weighted by volume. This can help institutions with
     large orders. The idea is not to disrupt the market when entering large buy or
     sell orders. VWAP helps these institutions determine the [liquid](/school/doku.php?id=chart_school:glossary_l#liquidity
     "chart_school:glossary_l") and illiquid price points for a specific security over
     a very short time period.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: VWAP用于识别流动性点。作为一个以成交量加权的价格衡量标准，VWAP反映了以成交量加权的价格水平。这可以帮助有大额订单的机构。其理念是在输入大额买入或卖出订单时不要扰乱市场。VWAP帮助这些机构在非常短的时间内确定特定证券的[流动](/school/doku.php?id=chart_school:glossary_l#liquidity
+    "chart_school:glossary_l")和非流动价格点。
 - en: VWAP can also be used to measure trading efficiency. After buying or selling
     a security, institutions or individuals can compare their price to VWAP values.
     A buy order executed below the VWAP value would be considered a good fill because
     the security was bought at a below average price. Conversely, a sell order executed
     above the VWAP would be deemed a good fill because it was sold at an above average
     price.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: VWAP也可以用于衡量交易效率。在买入或卖出证券后，机构或个人可以将其价格与VWAP值进行比较。在VWAP值以下执行的买入订单将被视为良好的成交，因为证券是以低于平均价格购买的。相反，在VWAP以上执行的卖出订单将被视为良好的成交，因为它是以高于平均价格出售的。
 - en: Conclusions
+  id: totrans-30
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: VWAP serves as a reference point for prices for one day. As such, it is best
     suited for **intraday analysis.** Chartists can compare current prices with the
     VWAP values to determine the intraday trend. VWAP can also be used to determine
@@ -182,12 +248,16 @@
     1:00 PM and 390 data points by the close. The number dramatically increases as
     the day extends. This is why VWAP lags price and this lag increases as the day
     extends.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: VWAP作为一天价格的参考点。因此，它最适合**盘中分析**。图表分析师可以将当前价格与VWAP值进行比较，以确定盘中趋势。VWAP还可以用于确定相对价值。低于VWAP值的价格在当天或特定时间相对较低。高于VWAP值的价格在当天或特定时间相对较高。**请记住，VWAP是一个累积指标，这意味着数据点数量在一天内逐渐增加。**在1分钟图表上，IBM在上午11:00将有90个数据点（分钟），下午1:00将有210个数据点，收盘时将有390个数据点。随着一天的延长，数据点数量急剧增加。这就是为什么VWAP滞后于价格，而这种滞后随着一天的延长而增加。
 - en: Using with SharpCharts
+  id: totrans-32
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用SharpCharts
 - en: Volume-Weighted Average Price (VWAP) can be plotted as an “overlay” indicator
     on Sharpcharts. After entering the security symbol, choose an “intraday” period
     and a “range.” This can be for 1 day or “fill the chart.” Chartists looking for
@@ -199,14 +269,23 @@
     45.8 to 47\. Chartists sometimes need to extend the range to a full day to see
     VWAP on the chart. The VWAP value is always displayed at the top left of the chart.
     Click the chart below to see a live example.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 成交量加权平均价格（VWAP）可以作为Sharpcharts上的“叠加”指标绘制。输入证券代码后，选择“盘中”时段和“范围”。这可以是1天或“填充图表”。寻找更多细节的图表分析师可以选择“填充图表”。寻找一般水平的图表分析师可以选择1天。VWAP可以绘制超过一天，但随着新的计算周期开始，指标将从其先前的收盘价跳至下一个开盘价的典型价格。此外，请注意VWAP值有时可能会脱离价格图表。价格范围从45.8到47的图表上将显示45.5的VWAP。图表分析师有时需要将范围扩展到整天才能在图表上看到VWAP。VWAP值始终显示在图表的左上角。点击下面的图表查看实时示例。
 - en: '[![VWAP - Chart 7](../Images/05cf52019c09547855bb5e9d5716994b.jpg "VWAP - Chart
     7")](http://stockcharts.com/h-sc/ui?s=INTC&p=1&b=5&g=0&id=p44523558053&listNum=30&a=208264972
     "http://stockcharts.com/h-sc/ui?s=INTC&p=1&b=5&g=0&id=p44523558053&listNum=30&a=208264972")'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: '[![VWAP - Chart 7](../Images/05cf52019c09547855bb5e9d5716994b.jpg "VWAP - Chart
+    7")](http://stockcharts.com/h-sc/ui?s=INTC&p=1&b=5&g=0&id=p44523558053&listNum=30&a=208264972
+    "http://stockcharts.com/h-sc/ui?s=INTC&p=1&b=5&g=0&id=p44523558053&listNum=30&a=208264972")'
 - en: '![VWAP - SharpCharts](../Images/670c45bf78990297dfb991e0f9d3e289.jpg "VWAP
     - SharpCharts")'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![VWAP - SharpCharts](../Images/670c45bf78990297dfb991e0f9d3e289.jpg "VWAP
+    - SharpCharts")'

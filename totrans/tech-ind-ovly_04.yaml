@@ -1,97 +1,135 @@
 - en: Ichimoku Clouds [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 一目均衡云 [图表学校]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Ichimoku Clouds](#ichimoku_clouds)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[一目均衡云](#ichimoku_clouds)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[Calculation](#calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算](#calculation)'
 - en: '[Analyzing the Cloud](#analyzing_the_cloud)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[分析云图](#analyzing_the_cloud)'
 - en: '[Trend and Signals](#trend_and_signals)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[趋势和信号](#trend_and_signals)'
 - en: '[Conversion-Base Line Signals](#conversion-base_line_signals)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[转换-基准线信号](#conversion-base_line_signals)'
 - en: '[Price-Base Line Signals](#price-base_line_signals)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[价格-基准线信号](#price-base_line_signals)'
 - en: '[Signal Summary](#signal_summary)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[信号摘要](#signal_summary)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与SharpCharts一起使用](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议扫描](#suggested_scans)'
 - en: '[Ichimoku Uptrend with Close above Base Line](#ichimoku_uptrend_with_close_above_base_line)'
+  id: totrans-13
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[一目均衡云上涨趋势，收盘价高于基准线](#ichimoku_uptrend_with_close_above_base_line)'
 - en: '[Ichimoku Downtrend with Close below Base Line](#ichimoku_downtrend_with_close_below_base_line)'
+  id: totrans-14
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[一目均衡云下跌趋势，收盘价低于基准线](#ichimoku_downtrend_with_close_below_base_line)'
 - en: '[Further Study](#further_study)'
+  id: totrans-15
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[进一步研究](#further_study)'
 - en: '[Additional Resources](#additional_resources)'
+  id: totrans-16
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[额外资源](#additional_resources)'
 - en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  id: totrans-17
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[股票与商品杂志文章](#stocks_commodities_magazine_articles)'
 - en: Introduction
+  id: totrans-18
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: The Ichimoku Cloud, also known as Ichimoku Kinko Hyo, is a versatile indicator
     that defines support and resistance, identifies trend direction, gauges momentum
     and provides trading signals. Ichimoku Kinko Hyo translates into “one look equilibrium
@@ -101,12 +139,16 @@
     when viewed on the price chart, it is really a straightforward indicator that
     is very usable. It was, after all, created by a journalist, not a rocket scientist!
     Moreover, the concepts are easy to understand and the signals are well-defined.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 一目均衡云，也被称为一目均衡表，是一种多功能指标，定义支撑和阻力，确定趋势方向，衡量动量并提供交易信号。一目均衡表翻译为“一目平衡图”。通过一目之览，图表分析师可以确定趋势并寻找该趋势内的潜在信号。该指标由记者星野豪一开发，并于1969年出版在他的著作中。尽管一目均衡云在价格图上看起来复杂，但实际上是一个非常易用的直观指标。毕竟，它是由一位记者而不是火箭科学家创造的！此外，概念易于理解，信号明确。
 - en: Calculation
+  id: totrans-20
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算
 - en: 'Four of the five plots within the Ichimoku Cloud are based on the average of
     the high and low over a given period of time. For example, the first plot is simply
     an average of the 9-day high and 9-day low. Before computers were widely available,
@@ -114,23 +156,36 @@
     [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
     "chart_school:technical_indicators:moving_averages"). The Ichimoku Cloud consists
     of five plots:'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 一目均衡云中的五个图表中的四个是基于一定时间内的高低平均值。例如，第一个图表只是9天高点和9天低点的平均值。在计算机普及之前，计算这种高低平均值可能比计算9天[移动平均线](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages")更容易。一目均衡云由五个图表组成：
 - en: '[PRE0]'
+  id: totrans-22
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: '[PRE1]'
+  id: totrans-23
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: '[PRE2]'
+  id: totrans-24
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: '[PRE3]'
+  id: totrans-25
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: '[PRE4]'
+  id: totrans-26
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: This tutorial will use the English equivalents when explaining the various plots.
     The chart below shows the Dow Industrials with the Ichimoku Cloud plots. The Conversion
     Line (blue) is the fastest and most sensitive line. Notice that it follows price
@@ -141,16 +196,23 @@
     plot. The 26-day is slower and lags behind the 9-day. Incidentally, notice that
     9 and 26 are the same periods used to calculate [MACD](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd
     "chart_school:technical_indicators:moving_average_convergence_divergence_macd").
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 本教程在解释各种图表时将使用英文等效词。下表显示了道琼斯工业指数与一目均衡云图的情况。转换线（蓝色）是最快、最敏感的线。请注意，它最接近价格走势。基准线（红色）落后于更快的转换线，但在很大程度上跟随价格走势。转换线和基准线之间的关系类似于9日移动平均线和26日移动平均线之间的关系。9日线更快，更紧密地跟随价格走势。26日线较慢，落后于9日线。顺便提一下，注意到9和26是用来计算[MACD](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd
+    "chart_school:technical_indicators:moving_average_convergence_divergence_macd")的相同周期。
 - en: '![Chart 1 - Ichimoku Cloud](../Images/bdd79746a4c3180489cb85237f053f56.jpg
     "Chart 1 - Ichimoku Cloud")'
+  id: totrans-28
   prefs: []
   type: TYPE_IMG
+  zh: '![图表1 - 一目云图](../Images/bdd79746a4c3180489cb85237f053f56.jpg "图表1 - 一目云图")'
 - en: Analyzing the Cloud
+  id: totrans-29
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 分析云端
 - en: The Cloud (Kumo) is the most prominent feature of the Ichimoku Cloud plots.
     The Leading Span A (green) and Leading Span B (red) form the Cloud. The Leading
     Span A is the average of the Conversion Line and the Base Line. Because the Conversion
@@ -158,8 +220,10 @@
     Cloud boundary moves faster than the red Cloud boundary, which is the average
     of the 52-day high and the 52-day low. It is the same principle with moving averages.
     Shorter moving averages are more sensitive and faster than longer moving averages.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 云端（云）是一目了然的一种特征，出现在一目云图中。主导跨度A（绿色）和主导跨度B（红色）形成云端。主导跨度A是转换线和基准线的平均值。由于转换线和基准线分别计算了9和26个周期，绿色云端边界比红色云端边界移动更快，后者是52天高点和52天低点的平均值。这与移动平均线的原理相同。较短的移动平均线比较长的移动平均线更敏感且更快。
 - en: There are two ways to identify the overall trend using the Cloud. **First, the
     trend is up when prices are above the Cloud, down when prices are below the Cloud
     and flat when prices are in the Cloud.** Second, the uptrend is strengthened when
@@ -169,8 +233,10 @@
     the Leading Span B (red cloud line). This situation produces a ***red Cloud***.
     Because the Cloud is shifted forward 26 days, it also provides a glimpse of future
     support or resistance.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 有两种方法可以使用云端来识别整体趋势。**首先，当价格在云端之上时，趋势为上升，当价格在云端之下时，趋势为下降，当价格在云端内时，趋势为平稳。** 其次，当主导跨度A（绿色云线）上升并在主导跨度B（红色云线）之上时，上升趋势得到加强。这种情况产生了一个***绿色云端***。相反，当主导跨度A（绿色云线）下降并在主导跨度B（红色云线）之下时，下降趋势得到加强。这种情况产生了一个***红色云端***。由于云端向前偏移26天，它还提供了未来支撑或阻力的预览。
 - en: Chart 2 shows IBM with a focus on the uptrend and the Cloud. First, notice that
     IBM was in an uptrend from June to January as it traded above the Cloud. Second,
     notice how the Cloud offered support in July, early October, and early November.
@@ -178,28 +244,39 @@
     "chart_school:chart_analysis:support_and_resistance"). **Remember, the entire
     Cloud is shifted forward 26 days.** This means it is plotted 26 days ahead of
     the last price point to indicate future support or resistance.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表2显示了IBM关注上升趋势和云端。首先，请注意IBM从6月到1月处于上升趋势，因为它交易在云端之上。其次，请注意云端在7月、10月初和11月初提供支撑。第三，请注意云端如何提供未来[阻力](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
+    "chart_school:chart_analysis:support_and_resistance")的预览。**记住，整个云端向前偏移26天。** 这意味着它比最后一个价格点提前26天绘制，以指示未来的支撑或阻力。
 - en: '![Chart 2 - Ichimoku Cloud](../Images/fac386b1c584418089980bfb7544819e.jpg
     "Chart 2 - Ichimoku Cloud")'
+  id: totrans-33
   prefs: []
   type: TYPE_IMG
+  zh: '![图表2 - 一目云图](../Images/fac386b1c584418089980bfb7544819e.jpg "图表2 - 一目云图")'
 - en: Chart 3 shows Boeing (BA) with a focus on the downtrend and the cloud. The trend
     changed when Boeing broke below Cloud support in June. The Cloud changed from
     green to red when the Leading Span A (green) moved below the Leading Span B (red)
     in July. The cloud break represented the first trend change signal, while the
     color change represented the second trend change signal. Notice how the Cloud
     then acted as resistance in August and January.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表3显示了波音（BA）关注下降趋势和云端。当波音在6月突破云端支撑时，趋势发生了变化。当主导跨度A（绿色）在7月移动到主导跨度B（红色）之下时，云端从绿色变为红色。云端突破代表了第一个趋势变化信号，而颜色变化代表了第二个趋势变化信号。请注意云端随后如何在8月和1月充当阻力。
 - en: '![Chart 3 - Ichimoku Cloud](../Images/61304952cefc74e631c48cc9a11e20e6.jpg
     "Chart 3 - Ichimoku Cloud")'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![图表3 - 一目云图](../Images/61304952cefc74e631c48cc9a11e20e6.jpg "图表3 - 一目云图")'
 - en: Trend and Signals
+  id: totrans-36
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 趋势和信号
 - en: Price, the Conversion Line and the Base Line are used to identify faster, and
     more frequent, signals. It is important to remember that bullish signals are reinforced
     when prices are above the cloud and the cloud is green. Bearish signals are reinforced
@@ -210,12 +287,16 @@
     trend. Signals that are counter to the existing trend are deemed weaker. Short-term
     bullish signals within a long-term downtrend and short-term bearish signals within
     a long-term uptrend are less robust.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 价格、转换线和基准线用于识别更快、更频繁的信号。重要的是要记住，当价格在云层上方且云层为绿色时，看涨信号得到加强。当价格在云层下方且云层为红色时，看跌信号得到加强。换句话说，当更大的趋势向上时（价格在绿色云层上方），更倾向于看涨信号，而当更大的趋势向下时（价格在红色云层下方），更倾向于看跌信号。这就是沿着更大趋势方向交易的本质。与现有趋势相反的信号被认为较弱。在长期下降趋势中的短期看涨信号和在长期上升趋势中的短期看跌信号较不稳健。
 - en: Conversion-Base Line Signals
+  id: totrans-38
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 转换线-基准线信号
 - en: Chart 4 shows Kimberly Clark (KMB) producing two bullish signals within an uptrend.
     First, the trend was up because the stock was trading above the Cloud and the
     Cloud was green. The Conversion Line dipped below the Base Line for a few days
@@ -229,53 +310,75 @@
     levels on the price chart. For reference, these numbers are displayed in the upper
     left-hand corner of each Sharpchart. As of the January 8 close, the Conversion
     Line was 62.62 (blue) and the Base Line was 63.71 (red).
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表 4 显示金伯利-克拉克（KMB）在上升趋势中产生了两个看涨信号。首先，趋势向上，因为股票交易在云层上方，而云层是绿色的。转换线在6月底的几天内下跌到基准线以下，以启动设置。当转换线在7月份再次移回基准线上方时，触发了一个看涨交叉信号。第二个信号发生在股票朝着云层[支撑](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
+    "chart_school:chart_analysis:support_and_resistance")移动时。转换线在9月份下移到基准线以下，以启动设置。当转换线在10月份再次移回基准线上方时，触发了另一个看涨交叉信号。有时很难在价格图表上确定确切的转换线和基准线水平。作为参考，这些数字显示在每个
+    Sharpchart 的左上角。截至1月8日收盘，转换线为62.62（蓝色），基准线为63.71（红色）。
 - en: '![Chart 6 - Ichimoku Cloud](../Images/75f23a7f8c1b45d9596fa3f4a320d207.jpg
     "Chart 6 - Ichimoku Cloud")'
+  id: totrans-40
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 6 - 一目云](../Images/75f23a7f8c1b45d9596fa3f4a320d207.jpg "图表 6 - 一目云")'
 - en: Chart 5 shows AT&T (T) producing a bearish signal within a downtrend. First,
     the trend was down as the stock was trading below the Cloud and the Cloud was
     red. After a sideways bounce in August, the Conversion Line moved above the Base
     Line to enable the setup. This did not last long as the Conversion Line moved
     back below the Base Line to trigger a bearish signal on September 15th.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表 5 显示 AT&T（T）在下降趋势中产生了一个看跌信号。首先，趋势向下，因为股票交易在云层下方，而云层是红色的。在8月份的横盘之后，转换线移动到基准线上方以启动设置。这并没有持续很久，因为转换线在9月15日再次移回基准线以下，触发了一个看跌信号。
 - en: '![Chart 5 - Ichimoku Cloud](../Images/08e655546f0193f13ff133d21245f342.jpg
     "Chart 5 - Ichimoku Cloud")'
+  id: totrans-42
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 5 - 一目云](../Images/08e655546f0193f13ff133d21245f342.jpg "图表 5 - 一目云")'
 - en: Price-Base Line Signals
+  id: totrans-43
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 价格-基准线信号
 - en: Chart 6 shows Disney producing two bullish signals within an uptrend. With the
     stock trading above the green cloud, prices moved below the Base Line (red) to
     enable the setup. This move represented a short-term oversold situation within
     a bigger uptrend. The pullback ended when prices moved back above the Base Line
     to trigger the bullish signal.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表 6 显示迪士尼在上升趋势中产生了两个看涨信号。随着股票交易在绿色云层上方，价格下跌到基准线（红色）以下以启动设置。这一举动代表了更大上升趋势中的短期超卖情况。当价格再次上涨到基准线以上时，结束了回调并触发了看涨信号。
 - en: '![Chart 6 - Ichimoku Cloud](../Images/52ddebaf763774112fe5e84ddb3c40a3.jpg
     "Chart 6 - Ichimoku Cloud")'
+  id: totrans-45
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 6 - 一目云](../Images/52ddebaf763774112fe5e84ddb3c40a3.jpg "图表 6 - 一目云")'
 - en: Chart 7 shows DR Horton (DHI) producing two bearish signals within a downtrend.
     With the stock trading below the red cloud, prices bounced above the Base Line
     (red) to enable the setup. This move created a short-term overbought situation
     within a bigger downtrend. The bounce ended when prices moved back below the Base
     Line to trigger the bearish signal.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表 7 显示了DR Horton（DHI）在下降趋势中产生了两个看跌信号。随着股价交易在红色云层以下，价格反弹至基准线（红色）以上以启动设置。这一举动在更大的下降趋势中创造了一个短期超买情况。当价格再次下跌至基准线以下时，反弹结束，触发了看跌信号。
 - en: '![Chart 7 - Ichimoku Cloud](../Images/51d20fcb698fb1c4bffd0f451487fcec.jpg
     "Chart 7 - Ichimoku Cloud")'
+  id: totrans-47
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 7 - 一目云](../Images/51d20fcb698fb1c4bffd0f451487fcec.jpg "图表 7 - 一目云")'
 - en: Signal Summary
+  id: totrans-48
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 信号总结
 - en: This article features four bullish and four bearish signals derived from the
     Ichimoku Cloud plots. The trend-following signals focus on the Cloud, while the
     momentum signals focus on the Turning and Base Lines. In general, movements above
@@ -283,50 +386,74 @@
     color as the trend ebbs and flows. Once the trend is identified, the Conversion
     Line and Base Line act similar to MACD for signal generation. And finally, simple
     price movements above or below the Base Line can be used to generate signals.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 本文介绍了从一目云图中得出的四个看涨信号和四个看跌信号。趋势跟踪信号关注云层，而动量信号关注转换线和基准线。一般来说，云层之上或之下的运动定义了整体趋势。在这个趋势中，随着趋势的起伏，云层的颜色也会发生变化。一旦趋势被确认，转换线和基准线的作用类似于MACD用于信号生成。最后，简单的价格运动在基准线之上或之下可以用于生成信号。
 - en: '**Bullish Signals:**'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: '**看涨信号：**'
 - en: Price moves above Cloud (trend)
+  id: totrans-51
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 价格上涨至云层以上（趋势）
 - en: Cloud turns from red to green (ebb-flow within trend)
+  id: totrans-52
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 云从红色变为绿色（趋势中的潮汐）
 - en: Price Moves above the Base Line (momentum)
+  id: totrans-53
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 价格上涨至基准线以上（动量）
 - en: Conversion Line moves above Base Line (momentum)
+  id: totrans-54
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 转换线上穿基准线（动量）
 - en: '**Bearish Signals:**'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: '**看跌信号：**'
 - en: Price moves below Cloud (trend)
+  id: totrans-56
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 价格下跌至云层以下（趋势）
 - en: Cloud turns from green to red (ebb-flow within trend)
+  id: totrans-57
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 云从绿色变为红色（趋势中的潮汐）
 - en: Price Moves below Base Line (momentum)
+  id: totrans-58
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 价格下跌至基准线以下（动量）
 - en: Conversion Line moves below Base Line (momentum)
+  id: totrans-59
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 转换线下穿基准线（动量）
 - en: Conclusions
+  id: totrans-60
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: The Ichimoku Cloud is a comprehensive indicator designed to produce clear signals.
     Chartists can first determine the trend by using the Cloud. Once the trend is
     established, appropriate signals can be determined using the price plot, Conversion
@@ -334,26 +461,36 @@
     cross the Base Line. While this signal can be effective, it can also be rare in
     a strong trend. More signals can be found by looking for price to cross the Base
     Line (or even the Conversion Line).
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 一目云是一个设计用于产生清晰信号的综合指标。图表分析师可以首先通过使用云来确定趋势。一旦趋势确立，可以使用价格图、转换线和基准线确定适当的信号。经典信号是寻找转换线穿过基准线。虽然这个信号可能有效，但在强势趋势中可能很少见。通过寻找价格穿过基准线（甚至是转换线）可以找到更多信号。
 - en: It is important to look for signals in the direction of the bigger trend. With
     the Cloud offering support in an uptrend, traders should also be on alert for
     bullish signals when prices approach the Cloud on a pullback or consolidation.
     Conversely, in a bigger downtrend, traders should be on alert for bearish signals
     when prices approach the Cloud on an oversold bounce or consolidation.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 在寻找信号时，重要的是要朝着更大趋势的方向寻找。在上升趋势中，云提供支撑，交易者在价格接近云层时应当警惕看涨信号，无论是在回调还是整理时。相反，在更大的下降趋势中，交易者应当在价格接近云层时警惕看跌信号，无论是在超卖反弹还是整理时。
 - en: The Ichimoku Cloud can also be used in conjunction with other indicators. Traders
     can identify the trend using the Cloud and then use classic momentum oscillators
     to identify overbought or oversold conditions. [Click here](http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371
     "http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371")
     for a live example using the Ichimoku Cloud.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 一目云也可以与其他指标结合使用。交易者可以使用云来确定趋势，然后使用经典的动量振荡器来识别超买或超卖条件。[点击这里](http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371
+    "http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371")
+    查看使用一目云的实时示例。
 - en: Using with SharpCharts
+  id: totrans-64
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用SharpCharts
 - en: The Ichimoku Cloud indicator is available on SharpCharts by selecting it as
     an indicator in the “Overlay” drop-down box. Default settings are 9 for the Conversion
     Line, 26 for the Base Line and 52 for the Leading Span B. The Leading Span A is
@@ -362,91 +499,144 @@
     to suit individual trading and investing styles. Sometimes it is necessary to
     add extra bars to the chart when increasing the Base Line, which also increases
     the forward movement of the Cloud.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过在“叠加”下拉框中选择它作为指标，SharpCharts 上提供了一种名为一目云的指标。默认设置为转换线为9，基准线为26，领先跨度 B 为52。领先跨度
+    A 基于转换线和基准线。基准线的数字（26）也用于将云向前移动（26 天）。这些数字可以根据个人的交易和投资风格进行调整。有时在增加基准线时需要向图表添加额外的条形，这也会增加云的前进运动。
 - en: '![](../Images/9bd54a62eb5c151943fa68cc71c22b01.jpg)'
+  id: totrans-66
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/9bd54a62eb5c151943fa68cc71c22b01.jpg)'
 - en: '[![Chart 8 - Ichimoku Cloud](../Images/8ddae703d19f58f7adbd98a42e637b2e.jpg
     "Chart 8 - Ichimoku Cloud")](http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371
     "http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371")'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: '[![图表 8 - 一目云](../Images/8ddae703d19f58f7adbd98a42e637b2e.jpg "图表 8 - 一目云")](http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371
+    "http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371")'
 - en: Suggested Scans
+  id: totrans-68
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议的扫描
 - en: Ichimoku Uptrend with Close above Base Line
+  id: totrans-69
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 一目云上升趋势，收盘价高于基准线
 - en: This scan starts with a base of stocks that are averaging at least $10 in price
     and 100,000 daily volume over the last 60 days. Stocks are classified in an uptrend
     as long as Span A is above Span B and the Close is above Span B. A breakout within
     this uptrend occurs when price moves above the Base Line.
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描从至少在过去60天内平均价格为$10且每日交易量为100,000的股票基础开始。只要 Span A 高于 Span B 且收盘价高于 Span B，股票就被归类为上升趋势。在此上升趋势中，当价格上涨到基准线以上时，就会出现突破。
 - en: '[PRE5]'
+  id: totrans-71
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: Ichimoku Downtrend with Close below Base Line
+  id: totrans-72
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 一目云下降趋势，收盘价低于基准线
 - en: This scan starts with a base of stocks that are averaging at least $10 in price
     and 100,000 daily volume over the last 60 days. Stocks are classified in a downtrend
     as long as Span A is below Span B and the Close is below Span A. A continuation
     of this downtrend could be starting when price crosses below the Base Line.
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描从至少在过去60天内平均价格为$10且每日交易量为100,000的股票基础开始。只要 Span A 低于 Span B 且收盘价低于 Span A，股票就被归类为下降趋势。当价格跌破基准线时，这种下降趋势可能开始延续。
 - en: '[PRE6]'
+  id: totrans-74
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: For more details on the syntax to use for Ichimoku Cloud scans, please see our
     [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#ichimoku_cloud
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#ichimoku_cloud") in
     the Support Center.
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关用于一目云扫描的语法详细信息，请参阅我们支持中心的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#ichimoku_cloud
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#ichimoku_cloud")。
 - en: Further Study
+  id: totrans-76
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 进一步研究
 - en: '| **Ichimoku Charts** Nicole Elliott |'
+  id: totrans-77
   prefs: []
   type: TYPE_TB
+  zh: '| **一目图** 尼科尔·埃利奥特 |'
 - en: '| [![](../Images/0f3b7b6868a2ab78a4d698e4336b0a65.jpg)](http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds
     "http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds")
     |'
+  id: totrans-78
   prefs: []
   type: TYPE_TB
+  zh: '| [![](../Images/0f3b7b6868a2ab78a4d698e4336b0a65.jpg)](http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds
+    "http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds")
+    |'
 - en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds
     "http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds")
     |'
+  id: totrans-79
   prefs: []
   type: TYPE_TB
+  zh: '| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds
+    "http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds")
+    |'
 - en: '* * *'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: '* * *'
 - en: Additional Resources
+  id: totrans-81
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 其他资源
 - en: Stocks & Commodities Magazine Articles
+  id: totrans-82
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 股票与商品杂志文章
 - en: '**[Ichimoku Charts by Ken Muranaka](http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C10\088ICH.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C10\088ICH.pdf")**'
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[一目图 由村中健](http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C10\088ICH.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C10\088ICH.pdf")**'
 - en: Sep 2000 - Stocks & Commodities V. 18:10 (22-30)
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 2000年9月 - 股票与商品 V. 18:10 (22-30)
 - en: '**[Ichimoku Kinko Hyo Charts by Nicole Elliott](http://stockcharts.com/h-mem/tascredirect.html?artid=\V25\C09\172ELLT.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V25\C09\172ELLT.pdf")**'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[Nicole Elliott的一目均衡图表](http://stockcharts.com/h-mem/tascredirect.html?artid=\V25\C09\172ELLT.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V25\C09\172ELLT.pdf")**'
 - en: Aug 2007 - Stocks & Commodities V. 25:9 (34-36)
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 2007年8月 - 《股票与商品》V. 25:9 (34-36)

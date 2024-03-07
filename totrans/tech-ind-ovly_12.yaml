@@ -1,69 +1,97 @@
 - en: Volume-by-Price [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 成交量价格 [ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Volume-by-Price](#volume-by-price)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[成交量价格](#volume-by-price)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[Calculation](#calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算](#calculation)'
 - en: '[Interpretation](#interpretation)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[解释](#interpretation)'
 - en: '[Nuances](#nuances)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[细微差别](#nuances)'
 - en: '[Identifying Support](#identifying_support)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[识别支撑](#identifying_support)'
 - en: '[Identifying Resistance](#identifying_resistance)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[识别阻力](#identifying_resistance)'
 - en: '[Support Breaks](#support_breaks)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[支撑突破](#support_breaks)'
 - en: '[Resistance Breaks](#resistance_breaks)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[阻力突破](#resistance_breaks)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与SharpCharts一起使用](#using_with_sharpcharts)'
 - en: Introduction
+  id: totrans-13
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: Volume-by-Price is an indicator that shows the amount of volume for a particular
     price range, which is based on closing prices. The Volume-by-Price bars are horizontal
     and shown on the left side of the chart to correspond with these price ranges.
@@ -72,12 +100,16 @@
     can be used to identify high-volume price ranges to mark support or resistance.
     StockCharts shows twelve Volume-by-Price bars by default, but users can increase
     or decrease this number to suit their preferences.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 成交量价格是一个指标，显示了特定价格范围的成交量，这是基于收盘价格的。成交量价格条是水平的，并显示在图表的左侧，以对应这些价格范围。图表分析师可以将这些条形图视为单一颜色或两种颜色，以区分上涨成交量和下跌成交量。通过结合成交量和收盘价格，这个指标可以用于识别高成交量价格范围，以标记支撑或阻力。StockCharts默认显示十二个成交量价格条，但用户可以增加或减少这个数字以适应他们的偏好。
 - en: Calculation
+  id: totrans-15
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算
 - en: Volume-by-Price calculations are based on the entire period displayed on the
     chart. Volume-by-Price on a five-month daily chart would be based on **ALL** five
     months of daily closing data. Volume-by-Price on a two-week 30-minute chart would
@@ -85,51 +117,74 @@
     weekly chart would be based on three years of weekly closing data. You get the
     idea. Volume-by-Price calculations do not extend beyond the historical data shown
     on the chart.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 成交量价格计算基于图表上显示的整个时期。五个月日线图上的成交量价格是基于**所有**五个月的每日收盘数据。两周30分钟图上的成交量价格是基于两周的30分钟收盘数据。三年周线图上的成交量价格是基于三年的每周收盘数据。你明白了吧。成交量价格计算不会超出图表显示的历史数据范围。
 - en: '[PRE0]'
+  id: totrans-17
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: Note that volume is negative when the closing price moves down from one period
     to the next. Volume is positive when the closing price moves up from one period
     to the next.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，当收盘价格从一个周期下跌到下一个周期时，成交量为负。当收盘价格从一个周期上涨到下一个周期时，成交量为正。
 - en: '![VBYP - Spreadsheet](../Images/a7b7e6498413cfa5ac62ef3cf22c8e9e.jpg "VBYP
     - Spreadsheet")'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![VBYP - 电子表格](../Images/a7b7e6498413cfa5ac62ef3cf22c8e9e.jpg "VBYP - 电子表格")'
 - en: The example above shows a Volume-by-Price calculation taken for the Nasdaq 100
     ETF from April 12th until September 15th, 2010\. Closing prices ranged from 40.32
     to 47.87 during this period (47.87 – 40.32 = 7.55). The one hundred and ten closing
     prices (one for each trading day) were sorted from low to high and then divided
     into 12 even price zones (7.55/12 = .6292).
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 上面的示例显示了从2010年4月12日到9月15日对纳斯达克100ETF进行的成交量价格计算。在此期间，收盘价格范围从40.32到47.87（47.87
+    - 40.32 = 7.55）。一百一十个收盘价格（每个交易日一个）从低到高排序，然后分成12个均匀的价格区间（7.55/12 = .6292）。
 - en: '![VBYP - QQQ Example](../Images/377febb1d6cc50e6a95df01b33bd4d52.jpg "VBYP
     - QQQ Example")'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![VBYP - QQQ 示例](../Images/377febb1d6cc50e6a95df01b33bd4d52.jpg "VBYP - QQQ
+    示例")'
 - en: The chart above highlights the first three price zones (40.32 to 40.95, 40.96
     to 41.58 and 41.59 to 42.21). Starting from the low (40.32), we can add the zone
     size (.6292) to create the price zones leading to the high. Only prices that fall
     within these zones are used for that particular Volume-by-Price calculation.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 上图突出显示了前三个价格区间（40.32至40.95，40.96至41.58和41.59至42.21）。从低点（40.32）开始，我们可以添加区间大小（.6292）以创建导致高点的价格区间。只有落在这些区间内的价格才用于特定的成交量价格计算。
 - en: '![VBYP - QQQ Example](../Images/c7364dd882253a58fa6f0a00c05e73e8.jpg "VBYP
     - QQQ Example")'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![VBYP - QQQ 示例](../Images/c7364dd882253a58fa6f0a00c05e73e8.jpg "VBYP - QQQ
+    示例")'
 - en: The Volume-by-Price bars represent the total volume for each price zone. Volume
     can then be separated into positive and negative volume. Notice that the Volume-by-Price
     bars on the chart above are red and green to separate positive volume from negative
     volume.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 成交量价格条代表每个价格区间的总成交量。成交量可以分为正成交量和负成交量。请注意上图中的成交量价格条是红色和绿色的，以区分正成交量和负成交量。
 - en: Interpretation
+  id: totrans-25
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 解释
 - en: Volume-by-Price can be used to identify current [support and resistance](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
     "chart_school:chart_analysis:support_and_resistance") levels as well as estimate
     future support and resistance levels. Price zones with heavy volume reflect elevated
@@ -137,18 +192,25 @@
     or support). Long Volume-by-Price bars underneath prices should be watched as
     potential support during a pullback. Similarly, long Volume-by-Price bars above
     prices should be watched as potential resistance on a bounce.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 体积价格法（Volume-by-Price）可用于确定当前的[支撑和阻力](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
+    "chart_school:chart_analysis:support_and_resistance")水平，以及估计未来的支撑和阻力水平。具有大量交易量的价格区域反映了高水平的兴趣，这可能影响未来的供应或需求（即阻力或支撑）。价格下方的长体积价格条应被视为回调期间的潜在支撑。同样，价格上方的长体积价格条应被视为反弹时的潜在阻力。
 - en: Price breaks above or below long Volume-by-Price bars can also be used as signals.
     A break above a long bar shows strength because demand was strong enough to overcome
     a supply overhang. Similarly, a break below a long bar shows weakness because
     supply was ample enough to overwhelm demand.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 价格突破长体积价格条上方或下方也可用作信号。突破长条上方显示出力量，因为需求足够强大，能够克服供应过剩。同样，突破长条下方显示出弱势，因为供应充足到足以压倒需求。
 - en: Nuances
+  id: totrans-28
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 细微差别
 - en: Before looking at some examples, it is important to understand how Volume-by-Price
     works. Volume-by-Price can be used to identify current support or resistance.
     Current bars **should not be used to validate past support or resistance levels**
@@ -156,20 +218,28 @@
     This means six months of data for a chart that extends from January to June. Bars
     may appear to identify support in March, but keep in mind that the indicator data
     extends well beyond March because the chart ends in June.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 在看一些示例之前，了解体积价格法的工作原理是很重要的。体积价格法可用于确定当前的支撑或阻力。当前的条形图**不应用于验证过去的支撑或阻力水平**，因为该指标基于图表上显示的所有价格-交易量数据。这意味着对于从一月到六月的图表，有六个月的数据。条形图可能看起来在三月识别出支撑，但请记住，指标数据远远超出三月，因为图表在六月结束。
 - en: Chartists should also understand that big gaps can produce bars that equal zero.
     This makes sense because Volume-by-Price equals zero when there are no closing
     prices within a specific price zone.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表分析师还应了解，大的间隙可能会产生等于零的条。这是有道理的，因为当特定价格区域内没有收盘价格时，体积价格等于零。
 - en: '![VBYP - Gaps](../Images/c531035e7eb831f21a94b463c6f2c9d1.jpg "VBYP - Gaps")'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![VBYP - Gaps](../Images/c531035e7eb831f21a94b463c6f2c9d1.jpg "VBYP - Gaps")'
 - en: Identifying Support
+  id: totrans-32
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 识别支撑
 - en: The chart for Netflix (NFLX) shows Volume-by-Price identifying support around
     95-100 at the end of June. Notice that this is the longest bar. Also, notice that
     NFLX is beginning a pullback so we can use Volume-by-Price to estimate support
@@ -177,18 +247,26 @@
     support from the first chart. Support was expected in the 95-100 area and the
     stock reversed here in late July. Notice that volume surged in August to validate
     the reversal off of support.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: Netflix（NFLX）的图表显示体积价格法在六月底识别出95-100附近的支撑。请注意，这是最长的条。此外，请注意NFLX正在开始回调，因此我们可以使用体积价格法来估计近期的支撑。第二张图显示了NFLX的图表，黄色区域标记了第一张图中的体积价格支撑。预计95-100区域会有支撑，并且股票在七月底在此处扭转。请注意，八月份的交易量激增，以验证从支撑处的扭转。
 - en: '![VBYP - NFLX](../Images/fa5175005500d7135a902946a49a371f.jpg "VBYP - NFLX")'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![VBYP - NFLX](../Images/fa5175005500d7135a902946a49a371f.jpg "VBYP - NFLX")'
 - en: '![VBYP - NFLX](../Images/ba10c8cec010ab1cc2f11134f8bfff93.jpg "VBYP - NFLX")'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![VBYP - NFLX](../Images/ba10c8cec010ab1cc2f11134f8bfff93.jpg "VBYP - NFLX")'
 - en: Identifying Resistance
+  id: totrans-36
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 识别阻力
 - en: The chart for TE Connectivity (TEL) shows Volume-by-Price identifying resistance
     around 26-26.5 in early August. Remember, the April break above this bar is not
     really a breakout because the current Volume-by-Price calculation extends from
@@ -196,48 +274,68 @@
     26-26.5 area. TEL is at its make-or-break point with prices near resistance. The
     second chart shows Volume-by-Price resistance from the first and the ultimate
     failure at resistance.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: TE Connectivity（TEL）的图表显示体积价格法在八月初识别出26-26.5附近的阻力。请记住，四月份突破此条并不真正是突破，因为当前的体积价格计算从一月延伸到八月初。第二长的条标记了26-26.5区域的当前阻力。TEL正处于决定性时刻，价格接近阻力。第二张图显示了第一张图中的体积价格阻力以及在阻力处的最终失败。
 - en: '![VBYP - TEL](../Images/2130d976f90ec68d8324add71f53f0ad.jpg "VBYP - TEL")'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![VBYP - TEL](../Images/2130d976f90ec68d8324add71f53f0ad.jpg "VBYP - TEL")'
 - en: '![VBYP - TEL](../Images/5804c32f6906a46a15cd49e41a9b71a6.jpg "VBYP - TEL")'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![VBYP - TEL](../Images/5804c32f6906a46a15cd49e41a9b71a6.jpg "VBYP - TEL")'
 - en: Support Breaks
+  id: totrans-40
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 支撑突破
 - en: A break below a long Volume-by-Price bar signals increasing supply or selling
     pressure that can foreshadow lower prices. Long bars below prices show elevated
     interest areas and potential support. A break below this support zone signals
     a significant increase in selling pressure and lower prices are then expected.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 突破长期成交量价格条下方表明供应增加或卖压增加，可能预示着价格下跌。价格下方的长条显示了感兴趣区域和潜在支撑。突破这一支撑区域表明卖压显著增加，随后预计价格将下跌。
 - en: The SanDisk (SNDK) chart shows a long Volume-by-Price bar marking support in
     the 39-43 area in mid-August. Also, notice that the stock forged at least three
     reaction lows around 42 from early July to mid-August. This support (demand) zone
     is clearly marked. The second chart shows SNDK breaking below the previously identified
     Volume-by-Price support zone with high volume. Demand crumbled, supply won the
     day and prices moved sharply lower.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 三星（SNDK）图表显示了一个长的成交量价格条，标志着8月中旬39-43区域的支撑。此外，请注意，股票至少在7月初至8月中旬之间围绕42形成了至少三个反应低点。这个支撑（需求）区域清晰可见。第二张图显示SNDK突破了先前确定的成交量价格支撑区域，并伴有高成交量。需求崩溃，供应占据上风，价格急剧下跌。
 - en: '![VBYP - SNDK](../Images/0aa91b9fa93ceea22c83fa7f0e2d6ab7.jpg "VBYP - SNDK")'
+  id: totrans-43
   prefs: []
   type: TYPE_IMG
+  zh: '![VBYP - SNDK](../Images/0aa91b9fa93ceea22c83fa7f0e2d6ab7.jpg "VBYP - SNDK")'
 - en: '![VBYP - SNDK](../Images/b3a4b2475a55417c450e62180edbd46f.jpg "VBYP - SNDK")'
+  id: totrans-44
   prefs: []
   type: TYPE_IMG
+  zh: '![VBYP - SNDK](../Images/b3a4b2475a55417c450e62180edbd46f.jpg "VBYP - SNDK")'
 - en: Resistance Breaks
+  id: totrans-45
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 突破阻力
 - en: A break above a long Volume-by-Price bar signals an increase in demand that
     can foreshadow higher prices. Long bars above prices mark supply overhangs that
     demand has not been able to overcome. A break above this resistance zone signals
     strengthening demand and higher prices are expected.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 突破长期成交量价格条的暂停表明需求增加，可能预示着价格上涨。价格上方的长条标志着供应过剩，需求无法克服。突破这一阻力区域表明需求增强，预计价格将上涨。
 - en: Sometimes chartists need to combine price action and Volume-by-Price to identify
     support zones and resistance zones. The McDonalds (MCD) chart shows a long bar
     marking overhead supply between 60 and 61\. The stock also met resistance between
@@ -248,18 +346,27 @@
     could be forming on the price chart as MCD tries to hold above the late May low.
     The second chart shows MCD breaking resistance in July and surging to new highs
     in August.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时，图表分析师需要结合价格行为和成交量价格来确定支撑区域和阻力区域。麦当劳（MCD）图表显示了一个长条，标志着60至61之间的头顶供应。股票还在61至62之间遇到阻力，4月底和6月中旬的反应高点。至于支撑，第二和第三长的条形图标记了57.5-58.5区域的潜在需求，股票接近5月底的低点。总体而言，随着MCD试图保持在5月底的低点之上，价格图表上可能正在形成一个大型[对称三角形](/school/doku.php?id=chart_school:chart_analysis:chart_patterns:symmetrical_triangle_continuation
+    "chart_school:chart_analysis:chart_patterns:symmetrical_triangle_continuation")。第二张图显示MCD在7月突破阻力，并在8月大幅上涨至新高。
 - en: '![VBYP - MCD](../Images/4c6e42ead8ec8db11e73229b3aff2287.jpg "VBYP - MCD")'
+  id: totrans-48
   prefs: []
   type: TYPE_IMG
+  zh: '![VBYP - MCD](../Images/4c6e42ead8ec8db11e73229b3aff2287.jpg "VBYP - MCD")'
 - en: '![VBYP - MCD](../Images/babbaae97e239a671d01306a6b7a2c42.jpg "VBYP - MCD")'
+  id: totrans-49
   prefs: []
   type: TYPE_IMG
+  zh: '![VBYP - MCD](../Images/babbaae97e239a671d01306a6b7a2c42.jpg "VBYP - MCD")'
 - en: Conclusions
+  id: totrans-50
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: Volume-by-Price is best suited for identifying present or future support and
     resistance. The indicator marks potential support when prices are above a long
     bar and potential resistance when prices are below a long bar. Chartists can enhance
@@ -272,12 +379,19 @@
     and [chart patterns](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
     "chart_school:chart_analysis:chart_patterns") are good complements to this volume
     based indicator.
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: Volume-by-Price最适合用于识别当前或未来的支撑和阻力。当价格高于长柱时，指标标记潜在支撑，当价格低于长柱时，标记潜在阻力。图表分析师可以通过查看Volume-by-Price柱内的正（绿色）和负（红色）成交量来增强其分析。长绿色部分反映了更多需求，可以进一步验证支撑。长红色部分反映了更多供应，可以进一步验证阻力。重要的是要用其他指标和分析技术确认Volume-by-Price的发现。[动量振荡器](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")
+    和 [图表形态](/school/doku.php?id=chart_school:chart_analysis:chart_patterns "chart_school:chart_analysis:chart_patterns")
+    是这种基于成交量的指标的良好补充。
 - en: Using with SharpCharts
+  id: totrans-52
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用SharpCharts
 - en: Volume-by-Price can be found in SharpCharts in the “overlays” section. The parameter
     box is empty and this means the default is used (12 periods). Chartists can increase
     or decrease the default setting depending on the amount of detail desired. Keep
@@ -290,9 +404,17 @@
     here](http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=6&dy=0&id=p03412996346&listNum=30&a=209159944
     "http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=6&dy=0&id=p03412996346&listNum=30&a=209159944")
     for a live example.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: Volume-by-Price可以在SharpCharts的“overlays”部分找到。参数框为空，这意味着使用默认值（12个周期）。图表分析师可以根据所需的详细程度增加或减少默认设置。请记住，Volume-by-Price是基于收盘价的，这意味着高点和低点不包括在内。这就是为什么图表分析师有时可能会看到一个没有Volume-by-Price柱的高点或低点。当“color
+    volume”框未被选中时，Volume-by-Price是单色的，当选中此框时是双色的。图表分析师还可以使用高级指标设置来设置不透明度。下面的示例显示了苹果公司的20根Volume-by-Price柱，彩色成交量和0.3的不透明度。[点击这里](http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=6&dy=0&id=p03412996346&listNum=30&a=209159944
+    "http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=6&dy=0&id=p03412996346&listNum=30&a=209159944")
+    查看实时示例。
 - en: '![VBYP - SharpCharts](../Images/47682eb7a9aa175a9e0b0e21b3d943cf.jpg "VBYP
     - SharpCharts")'
+  id: totrans-54
   prefs: []
   type: TYPE_IMG
+  zh: '![VBYP - SharpCharts](../Images/47682eb7a9aa175a9e0b0e21b3d943cf.jpg "VBYP
+    - SharpCharts")'

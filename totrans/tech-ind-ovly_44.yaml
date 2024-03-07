@@ -1,110 +1,152 @@
 - en: Relative Strength Index (RSI) [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 相对强度指数（RSI）[图表学校]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Relative Strength Index (RSI)](#relative_strength_index_rsi)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[相对强度指数（RSI）](#relative_strength_index_rsi)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[Calculation](#calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算](#calculation)'
 - en: '[Parameters](#parameters)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[参数](#parameters)'
 - en: '[Overbought-Oversold](#overbought-oversold)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[超买-超卖](#overbought-oversold)'
 - en: '[Divergences](#divergences)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[背离](#divergences)'
 - en: '[Failure Swings](#failure_swings)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[失败摆动](#failure_swings)'
 - en: '[Trend ID](#trend_id)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[趋势识别](#trend_id)'
 - en: '[Positive-Negative Reversals](#positive-negative_reversals)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[正负反转](#positive-negative_reversals)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与SharpCharts一起使用](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-13
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议扫描](#suggested_scans)'
 - en: '[RSI Oversold in Uptrend](#rsi_oversold_in_uptrend)'
+  id: totrans-14
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[RSI超卖在上升趋势中](#rsi_oversold_in_uptrend)'
 - en: '[RSI Overbought in Downtrend](#rsi_overbought_in_downtrend)'
+  id: totrans-15
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[RSI超买在下跌趋势中](#rsi_overbought_in_downtrend)'
 - en: '[Further Study](#further_study)'
+  id: totrans-16
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[进一步研究](#further_study)'
 - en: '[Additional Resources](#additional_resources)'
+  id: totrans-17
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[额外资源](#additional_resources)'
 - en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  id: totrans-18
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[股票与商品杂志文章](#stocks_commodities_magazine_articles)'
 - en: Introduction
+  id: totrans-19
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: Developed by J. Welles Wilder, the Relative Strength Index (RSI) is a momentum
     oscillator that measures the speed and change of price movements. RSI oscillates
     between zero and 100\. Traditionally, and according to Wilder, RSI is considered
     overbought when above 70 and oversold when below 30\. Signals can also be generated
     by looking for divergences, failure swings, and centerline crossovers. RSI can
     also be used to identify the general trend.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 由J. Welles Wilder开发，相对强度指数（RSI）是一个衡量价格运动速度和变化的动量振荡器。RSI在零和100之间波动。传统上，根据Wilder的说法，当RSI超过70时被认为是超买的，当低于30时被认为是超卖的。信号也可以通过寻找背离、失败摆动和中线交叉来生成。RSI也可以用来识别一般趋势。
 - en: RSI is an extremely popular [momentum indicator](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
     "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")
     that has been featured in a number of articles, interviews, and books over the
@@ -113,59 +155,85 @@
     Andrew Cardwell, Brown's RSI mentor, introduced positive and negative reversals
     for RSI. In addition, Cardwell turned the notion of divergence, literally and
     figuratively, on its head.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: RSI是一个极其流行的[动量指标](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")，多年来在许多文章、采访和书籍中都有涉及。特别是，康斯坦斯·布朗的书《专业交易技术分析》介绍了RSI的牛市和熊市范围的概念。布朗的RSI导师安德鲁·卡德威尔为RSI引入了正负反转。此外，卡德威尔颠覆了背离的概念，字面上和比喻上都是如此。
 - en: Wilder features RSI in his 1978 book, *New Concepts in Technical Trading Systems*.
     This book also includes the Parabolic SAR, Average True Range and the Directional
     Movement Concept (ADX). Despite being developed before the computer age, Wilder's
     indicators have stood the test of time and remain extremely popular.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: Wilder在他的1978年的书中介绍了RSI，*技术交易系统中的新概念*。这本书还包括了抛物线SAR、真实波幅和方向运动概念（ADX）。尽管在计算机时代之前开发，Wilder的指标经受住了时间的考验，仍然非常受欢迎。
 - en: Calculation
+  id: totrans-23
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算
 - en: '[PRE0]'
+  id: totrans-24
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: 'To simplify the calculation explanation, RSI has been broken down into its
     basic components: **RS**, **Average Gain** and **Average Loss**. This RSI calculation
     is based on 14 periods, which is the default suggested by Wilder in his book.
     Losses are expressed as positive values, not negative values.'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了简化计算说明，RSI已经被分解为其基本组成部分：**RS**，**平均增益**和**平均损失**。这个RSI计算基于14个周期，这是Wilder在他的书中建议的默认值。损失被表示为正值，而不是负值。
 - en: The very first calculations for average gain and average loss are simple 14-period
     averages.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一次的平均增益和平均损失计算是简单的14个周期平均值。
 - en: First Average Gain = Sum of Gains over the past 14 periods / 14\.
+  id: totrans-27
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 第一次平均增益 = 过去14个周期的增益总和 / 14。
 - en: First Average Loss = Sum of Losses over the past 14 periods / 14
+  id: totrans-28
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 第一次平均损失 = 过去14个周期的损失总和 / 14
 - en: 'The second, and subsequent, calculations are based on the prior averages and
     the current gain loss:'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二次以及后续的计算基于先前的平均值和当前的盈亏：
 - en: Average Gain = [(previous Average Gain) x 13 + current Gain] / 14\.
+  id: totrans-30
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 平均增益 = [(前一次平均增益) x 13 + 当前增益] / 14。
 - en: Average Loss = [(previous Average Loss) x 13 + current Loss] / 14\.
+  id: totrans-31
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 平均损失 = [(前一个平均损失) x 13 + 当前损失] / 14。
 - en: Taking the prior value plus the current value is a smoothing technique similar
     to that used in calculating an exponential moving average. This also means that
     RSI values become more accurate as the calculation period extends. SharpCharts
     uses at least 250 data points prior to the starting date of any chart (assuming
     that much data exists) when calculating its RSI values. To exactly replicate our
     RSI numbers, a formula will need at least 250 data points.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 将先前值加上当前值是一种平滑技术，类似于计算指数移动平均值时使用的技术。这也意味着随着计算周期的延长，RSI 值会变得更准确。SharpCharts 在计算其
+    RSI 值时，会使用至少 250 个数据点作为起始日期之前的数据点（假设存在这么多数据）。要精确复制我们的 RSI 数值，公式将需要至少 250 个数据点。
 - en: Wilder's formula normalizes RS and turns it into an oscillator that fluctuates
     between zero and 100\. In fact, a plot of RS looks exactly the same as a plot
     of RSI. The normalization step makes it easier to identify extremes because RSI
@@ -173,21 +241,35 @@
     RSI, a zero RSI value means prices moved lower all 14 periods. There were no gains
     to measure. RSI is 100 when the Average Loss equals zero. This means prices moved
     higher all 14 periods. There were no losses to measure.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: Wilder 的公式对 RS 进行归一化，并将其转化为在零和 100 之间波动的振荡器。实际上，RS 的图与 RSI 的图完全相同。归一化步骤使得更容易识别极端值，因为
+    RSI 是区间限制的。当平均收益等于零时，RSI 为 0。假设为 14 期的 RSI，零的 RSI 值意味着价格在所有 14 期内下跌。没有增益可测量。当平均损失等于零时，RSI
+    为 100。这意味着价格在所有 14 期内上涨。没有损失可测量。
 - en: '![Chart 1 - RSI RS Plots](../Images/61b11aed88f6f370b37f3f52e7b07289.jpg "Chart
     1 - RSI RS Plots")'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 1 - RSI RS 图](../Images/61b11aed88f6f370b37f3f52e7b07289.jpg "图表 1 - RSI
+    RS 图")'
 - en: '![Chart 2 - RSI Spreadsheet](../Images/7eb6a69718d9d50b9ad18099cdb29f2c.jpg
     "Chart 2 - RSI Spreadsheet")'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 2 - RSI 电子表格](../Images/7eb6a69718d9d50b9ad18099cdb29f2c.jpg "图表 2 - RSI
+    电子表格")'
 - en: Here's [an Excel Spreadsheet](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:relative_strength_in:cs-rsi.xls
     "chart_school:technical_indicators_and_overlays:relative_strength_in:cs-rsi.xls
     (27.5 KB)") that shows the start of an RSI calculation in action.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有一个展示 RSI 计算开始过程的 [Excel 电子表格](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:relative_strength_in:cs-rsi.xls
+    "chart_school:technical_indicators_and_overlays:relative_strength_in:cs-rsi.xls
+    (27.5 KB)")。
 - en: 'Note: The smoothing process affects RSI values. RS values are smoothed after
     the first calculation. Average Loss equals the sum of the losses divided by 14
     for the first calculation. Subsequent calculations multiply the prior value by
@@ -198,31 +280,46 @@
     Stockcharts.com goes back 250 days when possible. If Average Loss equals zero,
     a “divide by zero” situation occurs for RS and RSI is set to 100 by definition.
     Similarly, RSI equals 0 when Average Gain equals zero.'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：平滑过程会影响 RSI 值。RS 值在第一次计算后会被平滑处理。平均损失等于前 14 次损失之和除以 14 进行第一次计算。后续计算会将先前值乘以
+    13，加上最新值，然后总和除以 14。这样就产生了平滑效果。平均收益也是如此。由于这种平滑处理，RSI 值可能会根据总计算周期而有所不同。250 个周期将比
+    30 个周期具有更多的平滑效果，这会稍微影响 RSI 值。Stockcharts.com 在可能的情况下回溯 250 天。如果平均损失等于零，则 RS 会出现“除以零”的情况，根据定义
+    RSI 被设定为 100。同样，当平均收益等于零时，RSI 等于 0。
 - en: Parameters
+  id: totrans-38
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 参数
 - en: The default look-back period for RSI is 14, but this can be lowered to increase
     sensitivity or raised to decrease sensitivity. 10-day RSI is more likely to reach
     overbought or oversold levels than 20-day RSI. The look-back parameters also depend
     on a security's volatility. 14-day RSI for internet retailer Amazon (AMZN) is
     more likely to become overbought or oversold than 14-day RSI for Duke Energy (DUK),
     a utility.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: RSI 的默认回溯期为 14，但可以降低以增加灵敏度或提高以减少灵敏度。10 天的 RSI 更有可能达到超买或超卖水平，而不是 20 天的 RSI。回溯参数还取决于证券的波动性。互联网零售商亚马逊（AMZN）的
+    14 天 RSI 更有可能变得超买或超卖，而公用事业公司杜克能源（DUK）的 14 天 RSI 则不太可能。
 - en: RSI is considered overbought when above 70 and oversold when below 30\. These
     traditional levels can also be adjusted to better fit the security or analytical
     requirements. Raising overbought to 80 or lowering oversold to 20 will reduce
     the number of overbought/oversold readings. Short-term traders sometimes use 2-period
     RSI to look for overbought readings above 80 and oversold readings below 20\.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 当 RSI 大于 70 时被认为是超买，小于 30 时被认为是超卖。这些传统水平也可以调整以更好地适应证券或分析要求。将超买调高到 80 或将超卖调低到
+    20 将减少超买/超卖读数的数量。短期交易者有时使用 2 周期 RSI 寻找超买读数高于 80 和超卖读数低于 20。
 - en: Overbought-Oversold
+  id: totrans-41
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 超买-超卖
 - en: Wilder considered RSI [overbought](/school/doku.php?id=chart_school:glossary_o#overbought
     "chart_school:glossary_o") above 70 and [oversold](/school/doku.php?id=chart_school:glossary_o#oversold
     "chart_school:glossary_o") below 30\. Chart 3 shows McDonalds with 14-day RSI.
@@ -240,26 +337,42 @@
     peak. RSI then moved from overbought to oversold in January. The final bottom
     did not coincide with the initial oversold reading as the stock ultimately bottomed
     a few weeks later around 46 (3).
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: Wilder 认为 RSI 在 70 以上为超买，在 30 以下为超卖。图表 3 显示了麦当劳的 14 天 RSI。这张图表以灰色显示每日柱状图，粉色显示
+    1 天的简单移动平均线，以突出收盘价，因为 RSI 是基于收盘价计算的。从左到右，股票在七月底变得超卖，并在 44 左右找到支撑（1）。请注意，底部在超卖读数之后才逐渐形成。股票并没有在超卖读数出现后立即触底。触底可能是一个过程。从超卖水平，RSI
+    在九月中旬上升到 70 以上成为超买。尽管出现这种超买读数，股票并没有下跌。相反，股票在停滞了几周后继续上涨。在股票最终在十二月达到顶峰之前，还发生了三次超买读数（2）。动量振荡器在强劲的上升（下降）趋势中可能会变得超买（超卖）并保持在这种状态。前三次超买读数预示着整理。第四次与一个重要的高点相吻合。随后，RSI
+    从超买转为超卖。最终的底部并不与最初的超卖读数相吻合，因为股票最终在 46 左右几周后触底（3）。
 - en: '![Chart 3 - RSI Overbought Oversold](../Images/8b15124a83ee2c2e9142f4879270991a.jpg
     "Chart 3 - RSI Overbought Oversold")'
+  id: totrans-43
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 3 - RSI 超买超卖](../Images/8b15124a83ee2c2e9142f4879270991a.jpg "图表 3 - RSI
+    超买超卖")'
 - en: Like many momentum oscillators, overbought and oversold readings for RSI work
     best when prices move sideways within a range. Chart 4 shows MEMC Electronics
     (WFR) trading between 13.5 and 21 from April to September 2009\. The stock peaked
     soon after RSI reached 70 and bottomed soon after the stock reached 30\.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 与许多动量振荡器一样，RSI 的超买和超卖读数在价格在范围内横向移动时效果最佳。图表 4 显示了 MEMC Electronics (WFR) 在 2009
+    年 4 月至 9 月间在 13.5 和 21 之间交易。股票在 RSI 达到 70 后很快达到顶峰，并在股票达到 30 后很快触底。
 - en: '![Chart 4 - RSI Overbought Oversold](../Images/b672b9533477c26b5cf2653b2ec33b56.jpg
     "Chart 4 - RSI Overbought Oversold")'
+  id: totrans-45
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 4 - RSI 超买超卖](../Images/b672b9533477c26b5cf2653b2ec33b56.jpg "图表 4 - RSI
+    超买超卖")'
 - en: Divergences
+  id: totrans-46
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 背离
 - en: According to Wilder, divergences signal a potential reversal point because directional
     momentum does not confirm price. A bullish divergence occurs when the underlying
     security makes a lower low and RSI forms a higher low. RSI does not confirm the
@@ -269,19 +382,29 @@
     a bearish divergence in August-October. The stock moved to new highs in September-October,
     but RSI formed lower highs for the bearish divergence. The subsequent breakdown
     in mid October confirmed weakening momentum.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据怀尔德的说法，背离信号可能预示着潜在的反转点，因为方向动量不确认价格。当基础证券创造一个较低的低点而 RSI 形成一个较高的低点时，就会出现看涨的背离。RSI
+    不确认较低的低点，这显示了动量的增强。当证券记录一个较高的高点而 RSI 形成一个较低的高点时，就会形成看跌的背离。RSI 不确认新高点，这显示了动量的减弱。图表
+    5 展示了 Ebay（EBAY）在 8 月至 10 月出现的一个看跌的背离。股票在 9 月至 10 月创新高，但 RSI 形成了较低的高点，显示了动量的减弱。随后在
+    10 月中旬的突破确认了动量的减弱。
 - en: '![Chart 5 - RSI Divergences](../Images/d404627511e3623b89d2b524a7634fba.jpg
     "Chart 5 - RSI Divergences")'
+  id: totrans-48
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 5 - RSI 背离](../Images/d404627511e3623b89d2b524a7634fba.jpg "图表 5 - RSI
+    背离")'
 - en: A bullish divergence formed in January-March. The bullish divergence formed
     with eBay moving to new lows in March and RSI holding above its prior low. RSI
     reflected less downside momentum during the February-March decline. The mid-March
     breakout confirmed improving momentum. Divergences tend to be more robust when
     they form after an overbought or oversold reading.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 一次看涨的背离形成于一月至三月。这次看涨的背离是在 eBay 在三月创新低时形成的，而 RSI 保持在先前低点之上。在二月至三月的下跌中，RSI 反映出较少的下行动量。三月中旬的突破确认了动量的改善。当背离形成在超买或超卖读数之后时，背离往往更加稳健。
 - en: Before getting too excited about divergences as great trading signals, it must
     be noted that divergences are misleading in a strong trend. A strong uptrend can
     show numerous bearish divergences before a top actually materializes. Conversely,
@@ -289,16 +412,24 @@
     Chart 6 shows the S&P 500 ETF (SPY) with three bearish divergences and a continuing
     uptrend. These bearish divergences may have warned of a short-term pullback, but
     there was clearly no major trend reversal.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 在对背离作为出色交易信号感到兴奋之前，必须注意到，在强劲趋势中，背离是具有误导性的。在顶部实际出现之前，强劲的上升趋势可能显示出许多看跌的背离。相反，在强劲的下降趋势中可能出现看涨的背离
+    - 然而下降趋势仍在继续。图表 6 展示了标普 500 ETF（SPY）出现了三次看跌的背离，但趋势仍在持续上升。这些看跌的背离可能已经警告了短期回调，但显然没有主要的趋势逆转。
 - en: '![Chart 6 - RSI Divergences](../Images/ba10da814675364563daf3e16882982e.jpg
     "Chart 6 - RSI Divergences")'
+  id: totrans-51
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 6 - RSI 背离](../Images/ba10da814675364563daf3e16882982e.jpg "图表 6 - RSI
+    背离")'
 - en: Failure Swings
+  id: totrans-52
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 失败摆动
 - en: Wilder also considered failure swings as strong indications of an impending
     reversal. Failure swings are independent of price action. In other words, failure
     swings focus solely on RSI for signals and ignore the concept of divergences.
@@ -306,26 +437,41 @@
     30, pulls back, holds above 30 and then breaks its prior high. It is basically
     a move to oversold levels and then a higher low above oversold levels. Chart 7
     shows Research in Motion (RIMM) with 10-day RSI forming a bullish failure swing.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 怀尔德还将失败摆动视为即将发生反转的强烈迹象。失败摆动独立于价格行动。换句话说，失败摆动仅关注 RSI 信号，忽略了背离的概念。当 RSI 下降至 30
+    以下（超卖），反弹至 30 以上，回落，保持在 30 以上，然后突破先前的高点时，就形成了一个看涨的失败摆动。基本上是一个移动到超卖水平然后在超卖水平以上形成一个较高的低点。图表
+    7 展示了研究中的运动（RIMM）形成了一个 10 天 RSI 的看涨失败摆动。
 - en: '![Chart 7 - RSI Failure Swing](../Images/c48d02342426484d3694723a688703bc.jpg
     "Chart 7 - RSI Failure Swing")'
+  id: totrans-54
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 7 - RSI 失败摆动](../Images/c48d02342426484d3694723a688703bc.jpg "图表 7 - RSI
+    失败摆动")'
 - en: A bearish failure swing forms when RSI moves above 70, pulls back, bounces,
     fails to exceed 70 and then breaks its prior low. It is basically a move to overbought
     levels and then a lower high below overbought levels. Chart 8 shows Texas Instruments
     (TXN) with a bearish failure swing in May-June 2008\.
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 当 RSI 上升至 70 以上，回落，反弹，未能超过 70，然后突破先前的低点时，形成了一个看跌的失败摆动。基本上是一个移动到超买水平然后在超买水平以下形成一个较低的高点。图表
+    8 展示了 2008 年 5 月至 6 月德州仪器（TXN）的一个看跌的失败摆动。
 - en: '![Chart 8 - RSI Failure Swing](../Images/5b448ef4251935e410308e94a36946ea.jpg
     "Chart 8 - RSI Failure Swing")'
+  id: totrans-56
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 8 - RSI 失败摆动](../Images/5b448ef4251935e410308e94a36946ea.jpg "图表 8 - RSI
+    失败摆动")'
 - en: Trend ID
+  id: totrans-57
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 趋势识别
 - en: In Technical Analysis for the Trading Professional, Constance Brown suggests
     that oscillators do not travel between 0 and 100\. This also happens to be the
     name of the first chapter. Brown identifies a bull market range and a bear market
@@ -337,27 +483,43 @@
     overshoot below 40 in July 2004, but RSI held the 40-50 zone at least five times
     from January 2005 until October 2007 (green arrows). In fact, notice that pullbacks
     to this zone provided low risk entry points to participate in the uptrend.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 在《专业交易技术分析》中，康斯坦斯·布朗建议振荡器不会在 0 和 100 之间波动。这也恰好是第一章的名字。布朗确定了 RSI 的牛市范围和熊市范围。在牛市（上升趋势）中，RSI
+    倾向于在 40 和 90 之间波动，40-50 区域充当支撑。这些范围可能会根据 RSI 参数、趋势强度和基础证券的波动性而变化。图表 9 显示了 2003
+    年至 2007 年间 SPY 的 14 周 RSI 在牛市中的情况。RSI 在 2003 年底上升到 70 以上，然后进入了牛市范围（40-90）。2004
+    年 7 月有一次低于 40 的超卖，但 RSI 至少在 2005 年 1 月至 2007 年 10 月之间五次保持在 40-50 区域（绿色箭头）。事实上，注意到回调到这个区域提供了参与上升趋势的低风险入场点。
 - en: '![Chart 9 - RSI Trend ID](../Images/7edeaa507a66377f687fdcb327ce056a.jpg "Chart
     9 - RSI Trend ID")'
+  id: totrans-59
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 9 - RSI 趋势识别](../Images/7edeaa507a66377f687fdcb327ce056a.jpg "图表 9 - RSI
+    趋势识别")'
 - en: On the flip side, RSI tends to fluctuate between 10 and 60 in a bear market
     (downtrend) with the 50-60 zone acting as resistance. Chart 10 shows 14-day RSI
     for the US Dollar Index ($USD) during its 2009 downtrend. RSI moved to 30 in March
     to signal the start of a bear range. The 40-50 zone subsequently marked resistance
     until a breakout in December.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一方面，在熊市（下降趋势）中，RSI 倾向于在 10 和 60 之间波动，50-60 区域充当阻力。图表 10 显示了美元指数（$USD）在 2009
+    年下跌趋势中的 14 天 RSI。RSI 在 3 月上升到 30，标志着熊市的开始。随后的 40-50 区域标志着阻力，直到 12 月突破。
 - en: '![Chart 10 - RSI Trend ID](../Images/560366ecbcc73ffd4ad6448e2edb9411.jpg "Chart
     10 - RSI Trend ID")'
+  id: totrans-61
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 10 - RSI 趋势识别](../Images/560366ecbcc73ffd4ad6448e2edb9411.jpg "图表 10 -
+    RSI 趋势识别")'
 - en: Positive-Negative Reversals
+  id: totrans-62
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 正负向反转
 - en: Andrew Cardwell developed positive and negative reversals for RSI, which are
     the opposite of bearish and bullish divergences. Cardwell's books are out of print,
     but he does offer seminars detailing these methods. Constance Brown credits Andrew
@@ -366,20 +528,30 @@
     Wilder. Cardwell considered bearish divergences as bull market phenomenon. In
     other words, bearish divergences are more likely to form in uptrends. Similarly,
     bullish divergences are considered bear market phenomenon indicative of a downtrend.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 安德鲁·卡德威尔为 RSI 开发了正向和负向反转，这与熊市和牛市背离相反。卡德威尔的书已经绝版，但他提供了详细介绍这些方法的研讨会。康斯坦斯·布朗将她的
+    RSI 领悟归功于安德鲁·卡德威尔。在讨论反转技术之前，应该注意卡德威尔对背离的解释与怀尔德的不同。卡德威尔认为熊市背离是牛市现象。换句话说，熊市背离更有可能在上升趋势中形成。同样，牛市背离被认为是熊市现象，表明了下降趋势。
 - en: A positive reversal forms when RSI forges a lower low and the security forms
     a higher low. This lower low is not at oversold levels, but usually somewhere
     between 30 and 50\. Chart 11 shows MMM with a positive reversal forming in June
     2009\. MMM broke resistance a few weeks later and RSI moved above 70\. Despite
     weaker momentum with a lower low in RSI, MMM held above its prior low and showed
     underlying strength. In essence, price action overruled momentum.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 当 RSI 形成一个较低的低点，而证券形成一个较高的低点时，就形成了一个正向反转。这个较低的低点并不处于超卖水平，而通常在 30 和 50 之间。图表
+    11 显示了 2009 年 6 月 MMM 中形成的一个正向反转。几周后，MMM 突破了阻力，RSI 上升到 70 以上。尽管 RSI 低点较低，动量较弱，但
+    MMM 仍然保持在先前的低点之上，显示出潜在的强势。实质上，价格行动胜过了动量。
 - en: '![Chart 11 - RSI Reversals](../Images/4b7e09558f3a383550a0715c7cdc782d.jpg
     "Chart 11 - RSI Reversals")'
+  id: totrans-65
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 11 - RSI 反转](../Images/4b7e09558f3a383550a0715c7cdc782d.jpg "图表 11 - RSI
+    反转")'
 - en: A negative reversal is the opposite of a positive reversal. RSI forms a higher
     high, but the security forms a lower high. Again, the higher high is usually just
     below overbought levels in the 50-70 area. Chart 12 shows Starbucks (SBUX) forming
@@ -387,16 +559,22 @@
     momentum was strong, the price action failed to confirm as lower high formed.
     This negative reversal foreshadowed the big support break in late June and sharp
     decline.
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 负反转是正反转的相反。RSI形成了一个更高的高点，但证券形成了一个更低的高点。同样，更高的高点通常位于50-70区域的超买水平以下。图表12显示了星巴克（SBUX）形成了一个更低的高点，而RSI形成了一个更高的高点。尽管RSI形成了一个新高点且动量强劲，但价格走势未能确认，形成了更低的高点。这种负反转预示了6月底的重要支撑位突破和急剧下跌。
 - en: '![Chart 12 - RSI Reversals](../Images/d7e1911adbb64175b757651d2d66ce32.jpg
     "Chart 12 - RSI Reversals")'
+  id: totrans-67
   prefs: []
   type: TYPE_IMG
+  zh: '![图表12 - RSI反转](../Images/d7e1911adbb64175b757651d2d66ce32.jpg "图表12 - RSI反转")'
 - en: Conclusions
+  id: totrans-68
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: RSI is a versatile momentum oscillator that has stood the test of time. Despite
     changes in [volatility](/school/doku.php?id=chart_school:technical_indicators:standard_deviation_volatility
     "chart_school:technical_indicators:standard_deviation_volatility") and the markets
@@ -415,107 +593,168 @@
     place the indicator first and price action second. By putting more emphasis on
     price action, the concept of positive and negative reversals challenges our thinking
     towards momentum oscillators.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: RSI是一个经受时间考验的多功能动量振荡器。尽管多年来市场和[波动性](/school/doku.php?id=chart_school:technical_indicators:standard_deviation_volatility
+    "chart_school:technical_indicators:standard_deviation_volatility")发生了变化，但RSI仍然像Wilder时代一样重要。尽管Wilder的原始解释对于理解指标很有用，但Brown和Cardwell的工作将RSI的解释提升到了一个新的水平。适应这个水平需要传统学校派图表分析师重新思考。Wilder认为超买条件是反转的良机，但超买也可能是强势的迹象。虽然熊市背离仍然产生一些良好的卖出信号，但在强势趋势中，当熊市背离实际上是正常的时候，图表分析师必须小心。尽管正负反转的概念似乎削弱了Wilder的解释，但逻辑是合理的，Wilder几乎不会否认更加强调价格走势的价值。正负反转将基础证券的价格走势放在首位，指标放在次要位置，这才是正确的方式。熊市和牛市背离将指标放在首位，价格走势放在次要位置。通过更加强调价格走势，正负反转的概念挑战了我们对动量振荡器的思考方式。
 - en: Using with SharpCharts
+  id: totrans-70
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 与SharpCharts一起使用
 - en: RSI is available as an indicator for SharpCharts. Once selected, users can place
     the indicator above, below or behind the underlying price plot. Placing RSI directly
     on top of the price plot accentuates the movements relative to price action of
     the underlying security. Users can apply “advanced options” to smooth the indicator
     with a moving average or add a horizontal line to mark overbought or oversold
     levels.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: RSI可作为SharpCharts的指标。一旦选择，用户可以将指标放置在基础价格图表的上方、下方或后方。将RSI直接放在价格图表的顶部，突出显示了相对于基础证券价格走势的波动。用户可以应用“高级选项”来通过移动平均线平滑指标，或者添加水平线来标记超买或超卖水平。
 - en: '![Chart 13 - RSI SharpCharts](../Images/4942be02b895aa5fb43b0b72a842f274.jpg
     "Chart 13 - RSI SharpCharts")'
+  id: totrans-72
   prefs: []
   type: TYPE_IMG
+  zh: '![图表13 - RSI SharpCharts](../Images/4942be02b895aa5fb43b0b72a842f274.jpg "图表13
+    - RSI SharpCharts")'
 - en: '![Chart 14 - RSI SharpCharts](../Images/ed24d6e03985fe73dad70255b8baf192.jpg
     "Chart 14 - RSI SharpCharts")'
+  id: totrans-73
   prefs: []
   type: TYPE_IMG
+  zh: '![图表14 - RSI SharpCharts](../Images/ed24d6e03985fe73dad70255b8baf192.jpg "图表14
+    - RSI SharpCharts")'
 - en: Suggested Scans
+  id: totrans-74
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议的扫描
 - en: RSI Oversold in Uptrend
+  id: totrans-75
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 上升趋势中的RSI超卖
 - en: This scan reveals stocks that are in an uptrend with oversold RSI. First, stocks
     must be above their 200-day moving average to be in an overall uptrend. Second,
     RSI must cross below 30 to become oversold.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个扫描显示了处于上升趋势且RSI超卖的股票。首先，股票必须在它们的200日移动平均线之上，才能处于总体上升趋势中。其次，RSI必须跌破30才能变为超卖状态。
 - en: '[PRE1]'
+  id: totrans-77
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: RSI Overbought in Downtrend
+  id: totrans-78
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 下跌趋势中的RSI超买
 - en: This scan reveals stocks that are in a downtrend with overbought RSI turning
     down. First, stocks must be below their 200-day moving average to be in an overall
     downtrend. Second, RSI must cross above 70 to become overbought.
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描显示处于下降趋势并且超买的 RSI 转向下的股票。首先，股票必须低于它们的 200 天移动平均线才能处于总体下降趋势。其次，RSI 必须上穿 70
+    才能变为超买状态。
 - en: '[PRE2]'
+  id: totrans-80
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: For more details on the syntax to use for RSI scans, please see our [Scanning
     Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#relative_strength_index_rsi
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#relative_strength_index_rsi")
     in the Support Center.
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关用于 RSI 扫描的语法的更多详细信息，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#relative_strength_index_rsi
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#relative_strength_index_rsi")在支持中心。
 - en: Further Study
+  id: totrans-82
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 进一步研究
 - en: Constance Brown's book takes RSI to a new level with bull market and bear market
     ranges, positive and negative reversals, and projections based on RSI. Some methods
     of Andrew Cardwell, her RSI mentor, are also explained and refined in the book.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 康斯坦斯·布朗的书将 RSI 提升到一个新水平，包括牛市和熊市范围，正面和负面反转，以及基于 RSI 的预测。书中还解释和完善了她的 RSI 导师安德鲁·卡德威尔的一些方法。
 - en: '| **Technical Analysis for the Trading Professional** Constance Brown |'
+  id: totrans-84
   prefs: []
   type: TYPE_TB
+  zh: '| **专业交易技术分析** Constance Brown |'
 - en: '| [![](../Images/68e1d0b6e06443cb595baa528172bcd0.jpg)](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional
     "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional")
     |'
+  id: totrans-85
   prefs: []
   type: TYPE_TB
+  zh: '| [![](../Images/68e1d0b6e06443cb595baa528172bcd0.jpg)](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional
+    "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional")
+    |'
 - en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional
     "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional")
     |'
+  id: totrans-86
   prefs: []
   type: TYPE_TB
+  zh: '| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional
+    "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional")
+    |'
 - en: '* * *'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: '* * *'
 - en: Additional Resources
+  id: totrans-88
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 其他资源
 - en: Stocks & Commodities Magazine Articles
+  id: totrans-89
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 股票与商品杂志文章
 - en: '**[The Relative Strength Index by Bruce Faber](http://stockcharts.com/h-mem/tascredirect.html?artid=\V12\C09\FABER.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V12\C09\FABER.pdf")**'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[布鲁斯·法伯的相对强弱指数](http://stockcharts.com/h-mem/tascredirect.html?artid=\V12\C09\FABER.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V12\C09\FABER.pdf")**'
 - en: Aug 1994 - Stocks & Commodities V. 12:9 (381-384)
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 1994 年 8 月 - 股票与商品 V. 12:9 (381-384)
 - en: '**[Improving the Win-Loss Ratio with the Relative Strength Index by Thomas
     Bulkowski](http://stockcharts.com/h-mem/tascredirect.html?artid=\V16\C03\017WIN.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V16\C03\017WIN.pdf")**'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[通过相对强弱指数提高胜负比例的方法，作者托马斯·布尔科斯基](http://stockcharts.com/h-mem/tascredirect.html?artid=\V16\C03\017WIN.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V16\C03\017WIN.pdf")**'
 - en: Feb 1998 - Stocks & Commodities V. 16:3 (111-121)
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 1998 年 2 月 - 股票与商品 V. 16:3 (111-121)

@@ -1,71 +1,99 @@
 - en: Negative Volume Index (NVI) [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 负量指数 (NVI) [图表学校]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Negative Volume Index (NVI)](#negative_volume_index_nvi)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[负量指数 (NVI)](#negative_volume_index_nvi)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[简介](#introduction)'
 - en: '[SharpCharts Calculation](#sharpcharts_calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[SharpCharts 计算](#sharpcharts_calculation)'
 - en: '[Signal](#signal)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[信号](#signal)'
 - en: '[Fine Tuning](#fine_tuning)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[微调](#fine_tuning)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与 SharpCharts 一起使用](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议的扫描](#suggested_scans)'
 - en: '[Bullish NVI Signal Line Cross](#bullish_nvi_signal_line_cross)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[看涨 NVI 信号线交叉](#bullish_nvi_signal_line_cross)'
 - en: '[Bearish NVI Signal Line Cross](#bearish_nvi_signal_line_cross)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[看跌 NVI 信号线交叉](#bearish_nvi_signal_line_cross)'
 - en: '[Further Study](#further_study)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[进一步研究](#further_study)'
 - en: Introduction
+  id: totrans-13
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 简介
 - en: The Negative Volume Index (NVI) is a cumulative indicator that uses the change
     in volume to decide when the smart money is active. Paul Dysart first developed
     this indicator in the 1930s. In fact, the Market Technicians Association selected
@@ -73,12 +101,17 @@
     analysis. Dysart's Negative Volume Index works under the assumption that the smart
     money is active on days when volume decreases and the not-so-smart money is active
     on days when volume increases.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 负量指数 (NVI) 是一个累积指标，利用成交量的变化来判断聪明的资金何时活跃。保罗·戴萨特在上世纪 30 年代首次开发了这个指标。事实上，市场技术协会于
+    1990 年选中戴萨特，以表彰他对技术分析的贡献。戴萨特的负量指数工作基于这样一个假设：聪明的资金在成交量减少的日子活跃，而不那么聪明的资金在成交量增加的日子活跃。
 - en: SharpCharts Calculation
+  id: totrans-15
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: SharpCharts 计算
 - en: There are two versions of the Negative Volume Index. In the original version,
     Dysart formed a cumulative line by adding Net Advances when volume decreased from
     one period to the other. Net Advances equal advancing issues less declining issues.
@@ -86,45 +119,68 @@
     the other. In other words, nothing was done. Norman Fosback, of Stock Market Logic,
     adjusted the indicator by substituting the percentage price change for Net Advances.
     The SharpCharts formula uses this Fosback version.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 负量指数有两个版本。在原始版本中，戴萨特通过在一个周期到另一个周期成交量减少时添加净进步来形成一个累积线。净进步等于上涨股票数减去下跌股票数。当成交量从一个周期增加到另一个周期时，累积
+    NVI 线保持不变。换句话说，什么也没做。股市逻辑的诺曼·福斯巴克通过用百分比价格变化替代净进步来调整了该指标。SharpCharts 公式使用了这个福斯巴克版本。
 - en: '[PRE0]'
+  id: totrans-17
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: '![Chart 1](../Images/238223476ef072cf5e4e92a71a9a0e2f.jpg "Chart 1")'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 1](../Images/238223476ef072cf5e4e92a71a9a0e2f.jpg "图表 1")'
 - en: The spreadsheet example shows the calculation in detail. The Price %Change was
     multiplied by 100 to reduce the number of decimal places needed. First, notice
     the Volume %Change column. When this value is negative, the percentage change
     for the S&P 500 is entered into the NVI Value column. When this value is positive,
     nothing appears for the NVI Value. Starting at 1000, the NVI Values are applied
     each period to create a cumulative indicator that only changes when volume decreases.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 电子表格示例详细展示了计算过程。价格 % 变化乘以 100，以减少所需的小数位数。首先注意成交量 % 变化列。当这个值为负时，标普 500 的百分比变化被输入到
+    NVI 值列中。当这个值为正时，NVI 值列中不会出现任何内容。从 1000 开始，每个周期应用 NVI 值，以创建一个仅在成交量减少时变化的累积指标。
 - en: '![Spreadsheet](../Images/acc79417edd2413ca3c1c8ace0799444.jpg "Spreadsheet")'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![电子表格](../Images/acc79417edd2413ca3c1c8ace0799444.jpg "电子表格")'
 - en: '[Click here to download this spreadsheet example.](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:negative_volume_inde:cs-negvolindex.xls
     "chart_school:technical_indicators_and_overlays:negative_volume_inde:cs-negvolindex.xls
     (69 KB)")'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: '[点击此处下载此电子表格示例。](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:negative_volume_inde:cs-negvolindex.xls
+    "chart_school:technical_indicators_and_overlays:negative_volume_inde:cs-negvolindex.xls
+    (69 KB)")'
 - en: Signal
+  id: totrans-22
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 信号
 - en: The traditional use of the Negative Volume Index is quite simple. According
     to Fosback, the odds favor a bull market when NVI is above its 255-day EMA and
     the odds favor a bear market when NVI is below. However, Fosback notes that these
     odds are not symmetrical. There is a 96% chance of a bull market when NVI is above
     its 255-day EMA, but only a 53% chance of a bear market when NVI is below its
     255-day EMA.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 负量指数的传统用法非常简单。根据福斯巴克的说法，当 NVI 高于其 255 天 EMA 时，牛市的可能性较大；当 NVI 低于其 255 天 EMA 时，熊市的可能性较大。然而，福斯巴克指出这些可能性并不对称。当
+    NVI 高于其 255 天 EMA 时，牛市的可能性为 96%，但当 NVI 低于其 255 天 EMA 时，熊市的可能性仅为 53%。
 - en: '![Chart 2](../Images/4833a4998bab69992af8c63237523aaa.jpg "Chart 2")'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![图表2](../Images/4833a4998bab69992af8c63237523aaa.jpg "图表2")'
 - en: The chart above shows the Dow Industrials with NVI in the lower window. Even
     with a long-term moving average, there are plenty of whipsaws (bad signals). Notice
     how the indicator crossed the 255-day EMA several times in 1998-1998 as it zigzagged
@@ -132,21 +188,30 @@
     turned volatile. The signals from late 2002 were less prone to whipsaw as stronger
     trends emerged. Chartists can expect some lag because moving averages lag and
     a 255-day EMA is being used to generate signals.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 上图显示了道琼工业指数及其下方的NVI。 即使有一个长期移动平均线，也有很多鞭策（错误信号）。 请注意，随着指标在1998-1998年间多次穿越255日EMA而上升，它如何来回摆动。
+    在2001-2002年间，随着道琼工业指数的交易变得波动，也有几次交叉。 从2002年底开始的信号不太容易出现鞭策，因为更强劲的趋势出现了。 图表分析师可以预期一些滞后，因为移动平均线滞后，并且使用255日EMA来生成信号。
 - en: Fine Tuning
+  id: totrans-26
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 微调
 - en: Even though NVI was designed with a major stock index in mind, chartists can
     use NVI with ETFs, stocks or anything that has volume. Keep in mind that the rationale
     behind the indicator is a bit unconventional because price moves on increasing
     volume are basically ignored.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管NVI的设计初衷是针对主要股票指数，但图表分析师可以将NVI与ETF、股票或任何具有交易量的东西一起使用。 请记住，该指标背后的理念有点不同寻常，因为在交易量增加时的价格变动基本上被忽略。
 - en: '![Chart 3](../Images/85171c4dfffa56717a0f923f7534ff52.jpg "Chart 3")'
+  id: totrans-28
   prefs: []
   type: TYPE_IMG
+  zh: '![图表3](../Images/85171c4dfffa56717a0f923f7534ff52.jpg "图表3")'
 - en: The example above shows the Consumer Discretionary SPDR (XLY) with NVI and two
     exponential moving averages. The general trend is up when NVI is above its 255-day
     EMA (red). A move below the 100-day EMA shows a correction within this uptrend.
@@ -155,12 +220,18 @@
     (blue lines). A break above these trend lines signaled the end of a corrective
     period and a resumption of the uptrend, for NVI that is. These breakout signals
     also foreshadowed significant price moves in the underlying (XLY).
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 上面的示例显示了消费者自由裁量SPDR（XLY）及其NVI和两个指数移动平均线。 当NVI高于其255日EMA（红色）时，总体趋势是向上的。 下跌到100日EMA以下显示了这一上升趋势中的修正。
+    图表分析师还可以通过绘制趋势线将基本技术分析应用于该指标。 从2010年1月到2012年7月有三个修正期（蓝线）。 突破这些趋势线标志着修正期的结束和上升趋势的恢复，对于NVI而言是如此。
+    这些突破信号还预示着基础资产（XLY）的重大价格波动。
 - en: Conclusions
+  id: totrans-30
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: The Negative Volume Index (NVI) is a hybrid indicator that combines inputs from
     Paul Dysart and Norman Fosback. NVI counts price changes when volume decreases
     and discounts price changes when volume increases. The assumption is that the
@@ -171,12 +242,18 @@
     divergence signals with some stocks, but look totally out of sync with other stocks.
     As with all indicators, NVI should not be used on its own. Instead, chartists
     should use it in conjunction with other analysis techniques.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 负量指数（NVI）是一种混合指标，结合了Paul Dysart和Norman Fosback的输入。 NVI在交易量减少时计算价格变化，并在交易量增加时折扣价格变化。
+    假设是当交易量减少时聪明（知情）的资金在运作，而当交易量增加时不那么聪明（不知情）的资金在运作。 请记住，该指标是为广泛的市场指数和交易量设计的。 它可以用于股票和ETF，但NVI并不总是按预期运作。
+    NVI将与某些股票产生一些很好的看涨/看跌背离信号，但与其他股票完全不同步。 与所有指标一样，NVI不应单独使用。 相反，图表分析师应将其与其他分析技术结合使用。
 - en: Using with SharpCharts
+  id: totrans-32
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用SharpCharts
 - en: The Negative Volume Index (NVI) can be found in the Indicators section below
     the chart. NVI is set as a cumulative indicator and cannot be adjusted. Chartists
     can adjust the exponential moving average by changing the number in the Parameters
@@ -189,70 +266,115 @@
     in the indicator window. [Click here](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=8&dy=0&id=p79189698479&a=276034932
     "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=8&dy=0&id=p79189698479&a=276034932")
     for a live example of NVI in action.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 负量指标（NVI）可以在图表下方的指标部分找到。 NVI 被设置为累积指标，无法调整。 图表师可以通过更改参数框中的数字来调整指数移动平均线。 将参数设置为“1”将基本上删除移动平均线。
+    然后，可以将指标放置在主图表窗口后面、上面或下面。 在将其放置在主图表窗口的价格图之后时，有助于更改颜色。 图表师可以使用“高级”指标选项将另一个移动平均线或指标应用于
+    NVI。 下面的示例显示了应用于指标窗口中的 NVI 的变化率振荡器。 [点击这里](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=8&dy=0&id=p79189698479&a=276034932
+    "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=8&dy=0&id=p79189698479&a=276034932")
+    查看 NVI 实际操作的实时示例。
 - en: '![Chart 4](../Images/326a01cc2a8fe6ea2a16c7072c4c23fc.jpg "Chart 4")'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 4](../Images/326a01cc2a8fe6ea2a16c7072c4c23fc.jpg "图表 4")'
 - en: '![Chart 5](../Images/c49327ad7e2fe1489c514c9108f956f8.jpg "Chart 5")'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 5](../Images/c49327ad7e2fe1489c514c9108f956f8.jpg "图表 5")'
 - en: Suggested Scans
+  id: totrans-36
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议的扫描
 - en: Bullish NVI Signal Line Cross
+  id: totrans-37
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 看涨 NVI 信号线穿越
 - en: This scan reveals stocks where NVI has crossed above its signal line, triggering
     a bullish signal.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个扫描显示了 NVI 已经穿过其信号线的股票，触发了一个看涨信号。
 - en: '[PRE1]'
+  id: totrans-39
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: Bearish NVI Signal Line Cross
+  id: totrans-40
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 看跌 NVI 信号线穿越
 - en: This scan reveals stocks where NVI has crossed below its signal line, triggering
     a bearish signal.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个扫描显示了 NVI 已经穿过其信号线的股票，触发了一个看跌信号。
 - en: '[PRE2]'
+  id: totrans-42
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: For more details on the syntax to use for NVI scans, please see our [Scanning
     Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#negative_volume_index
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#negative_volume_index")
     in the Support Center.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关用于 NVI 扫描的语法的更多详细信息，请参阅我们支持中心的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#negative_volume_index
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#negative_volume_index")。
 - en: Further Study
+  id: totrans-44
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 进一步研究
 - en: Technical Analysis of the Financial Markets has a chapter devoted to volume
     and a chapter covering breadth indicators in detail. Pring's book has a chapter
     devoted to making volume a part of your analysis process.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 《金融市场技术分析》有一章专门讨论了交易量，另一章详细介绍了广度指标。 普林的书中有一章专门讨论如何将交易量纳入分析过程中。
 - en: '| **Technical Analysis of the Financial Markets** John J. Murphy | **Technical
     Analysis Explained** Martin Pring |'
+  id: totrans-46
   prefs: []
   type: TYPE_TB
+  zh: '| **金融市场技术分析** 约翰·J·墨菲 | **技术分析解密** 马丁·普林 |'
 - en: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
     "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
     | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
     "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
     |'
+  id: totrans-47
   prefs: []
   type: TYPE_TB
+  zh: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
 - en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
     "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
     | [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
     "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
     |'
+  id: totrans-48
   prefs: []
   type: TYPE_TB
+  zh: '| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'

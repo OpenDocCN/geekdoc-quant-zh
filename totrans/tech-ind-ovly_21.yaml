@@ -1,112 +1,161 @@
 - en: '%B Indicator [ChartSchool]'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '%B 指标 [图表学校]'
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[%B Indicator](#b_indicator)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '%B 指标](#b_indicator)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[简介](#introduction)'
 - en: '[Calculation](#calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算方法](#calculation)'
 - en: '[Signals: Overbought/Oversold](#signalsoverbought_oversold)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[信号：超买/超卖](#signalsoverbought_oversold)'
 - en: '[Signals: Trend Identification](#signalstrend_identification)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[信号：趋势识别](#signalstrend_identification)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与SharpCharts一起使用](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议扫描](#suggested_scans)'
 - en: '[%B Uptrend Scan](#b_uptrend_scan)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[%B 上升趋势扫描](#b_uptrend_scan)'
 - en: '[%B Downtrend Scan](#b_downtrend_scan)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[%B 下降趋势扫描](#b_downtrend_scan)'
 - en: Introduction
+  id: totrans-12
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 简介
 - en: '%B quantifies a security''s price relative to the upper and lower Bollinger
     Band. There are six basic relationship levels:'
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: '%B 量化了一个证券的价格相对于上下布林带的关系。有六个基本的关系水平：'
 - en: '%B equals 1 when price is at the upper band'
+  id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 当价格位于上轨时，%B 等于1
 - en: '%B equals 0 when price is at the lower band'
+  id: totrans-15
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 当价格位于下轨时，%B 等于0
 - en: '%B is above 1 when price is above the upper band'
+  id: totrans-16
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 当价格高于上轨时，%B 大于1
 - en: '%B is below 0 when price is below the lower band'
+  id: totrans-17
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 当价格低于下轨时，%B 低于0
 - en: '%B is above .50 when price is above the middle band (20-day SMA)'
+  id: totrans-18
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 当价格高于中轨（20日简单移动平均线）时，%B 大于0.50
 - en: '%B is below .50 when price is below the middle band (20-day SMA)'
+  id: totrans-19
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 当价格低于中轨（20日简单移动平均线）时，%B 低于0.50
 - en: Calculation
+  id: totrans-20
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算
 - en: '[PRE0]'
+  id: totrans-21
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: The default setting for %B is based on the default setting for Bollinger Bands
     (20,2). The bands are set 2 standard deviations above and below the 20-day simple
     [moving average](/school/doku.php?id=chart_school:glossary_m#moving_average_ma
     "chart_school:glossary_m"), which is also the middle band. Security price is the
     close or the last trade.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: '%B 的默认设置基于布林带（20,2）的默认设置。这些带子设置在20日简单[移动平均线](/school/doku.php?id=chart_school:glossary_m#moving_average_ma
+    "chart_school:glossary_m")的上下2个标准差处，这也是中轨。证券价格是收盘价或最后交易价。'
 - en: 'Signals: Overbought/Oversold'
+  id: totrans-23
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 信号：超买/超卖
 - en: '%B can be used to identify [overbought](/school/doku.php?id=chart_school:glossary_o#overbought
     "chart_school:glossary_o") and [oversold](/school/doku.php?id=chart_school:glossary_o#oversold
     "chart_school:glossary_o") situations. However, it is important to know when to
@@ -116,8 +165,11 @@
     trend is down. In other words, look for opportunities in the direction of the
     bigger trend, such as a pullback within a bigger uptrend. Define the bigger trend
     before looking for overbought or oversold readings.'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: '%B 可用于识别[超买](/school/doku.php?id=chart_school:glossary_o#overbought "chart_school:glossary_o")和[超卖](/school/doku.php?id=chart_school:glossary_o#oversold
+    "chart_school:glossary_o")情况。然而，重要的是要知道何时寻找超买读数和何时寻找超卖读数。与大多数动量振荡器一样，最好在中期趋势向上时寻找短期超卖情况，在中期趋势向下时寻找短期超买情况。换句话说，在寻找超买或超卖读数之前，要先定义更大的趋势。'
 - en: Chart 1 shows Apple (AAPL) within a strong uptrend. Notice how %B moved above
     1 several times, but did not even come close to 0\. Even though %B moved above
     1 numerous times, these “overbought” readings did not produce good sell signals.
@@ -126,11 +178,15 @@
     In a strong uptrend, prices can walk up the upper band and rarely touch the lower
     band. Conversely, prices can walk down the lower band and rarely touch the upper
     band in a strong downtrend.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表1显示了苹果（AAPL）处于强劲上升趋势中。请注意，%B 多次上升到1以上，但甚至没有接近0。即使%B 多次上升到1以上，这些“超买”读数也没有产生良好的卖出信号。随着苹果在下轨上方迅速反转并恢复其上升趋势，回调幅度较小。约翰·布林格在强劲趋势中提到“走在带子上”。在强劲上升趋势中，价格可以沿着上轨上涨，很少触及下轨。相反，在强劲下跌趋势中，价格可以沿着下轨下跌，很少触及上轨。
 - en: '![Chart 1](../Images/c4fa534a5d5084d8eec51018e540dc06.jpg "Chart 1")'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![图表1](../Images/c4fa534a5d5084d8eec51018e540dc06.jpg "图表1")'
 - en: After identifying a bigger uptrend, %B can be considered oversold when it moves
     to zero or below. Remember, %B moves to zero when price hits the lower band and
     below zero when price moves below the lower band. This represents a move that
@@ -138,22 +194,31 @@
     100 ETF (QQQQ) within an uptrend that began in March 2009\. %B moved below zero
     three times during this uptrend. The oversold readings in early July and early
     November provided good entry points to partake in the bigger uptrend (green arrows).
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 在确认了更大的上升趋势后，当%B移动到零或以下时，可以认为%B被超卖了。记住，当价格触及下轨时，%B会移动到零，当价格低于下轨时，%B会低于零。这代表了一个比20日移动平均线低2个标准差的移动。图表2显示了纳斯达克100
+    ETF（QQQQ）在2009年3月开始的上升趋势中。在这一上升趋势中，%B在零以下移动了三次。7月初和11月初的超卖读数为参与更大上升趋势提供了良好的入场点（绿色箭头）。
 - en: '![Chart 2](../Images/52356e78881d017a2e0ca7130dd14ba3.jpg "Chart 2")'
+  id: totrans-28
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 2](../Images/52356e78881d017a2e0ca7130dd14ba3.jpg "图表 2")'
 - en: 'Signals: Trend Identification'
+  id: totrans-29
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 信号：趋势识别
 - en: John Bollinger described a trend-following system using %B with the Money Flow
     Index (MFI). An uptrend begins when %B is above .80 and MFI(10) is above 80\.
     MFI is bound between zero and one hundred. A move above 80 places MFI(10) in the
     upper 20% of its range, which is a strong reading. Downtrends are identified when
     %B is below .20 and MFI(10) is below 20\.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 约翰·波林格描述了一个使用%B和资金流指数（MFI）的趋势跟踪系统。当%B高于0.80且MFI(10)高于80时，开始了一段上升趋势。MFI的取值范围在0到100之间。当MFI(10)超过80时，处于其范围的上20%，这是一个强劲的读数。当%B低于0.20且MFI(10)低于20时，可以识别出下降趋势。
 - en: Chart 3 shows FedEx (FDX) with %B and MFI(10). An uptrend started in late July
     when %B was above .80 and MFI was above 80\. This uptrend was subsequently affirmed
     with two more signals in early September and mid-November. While these signals
@@ -162,15 +227,21 @@
     to push %B above .80 and MFI(10) above 80 at the same time. Traders might consider
     using this method to identify the trend and then look for appropriate overbought
     or oversold levels for better entry points.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表 3 显示了联邦快递（FDX）的%B和MFI(10)。自7月底%B高于0.80且MFI高于80时开始了一段上升趋势。这一上升趋势随后在9月初和11月中旬得到了另外两个信号的确认。虽然这些信号对于趋势识别是有益的，但交易者在经历如此大的波动后可能会遇到风险回报比的问题。要让%B高于0.80且MFI(10)高于80同时发生，需要有大幅价格上涨。交易者可以考虑使用这种方法来识别趋势，然后寻找适当的超买或超卖水平以获得更好的入场点。
 - en: '![Chart 3](../Images/399aab008a29a4f5157274f8fd11b0d7.jpg "Chart 3")'
+  id: totrans-32
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 3](../Images/399aab008a29a4f5157274f8fd11b0d7.jpg "图表 3")'
 - en: Conclusions
+  id: totrans-33
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: '%B quantifies the relationship between price and Bollinger Bands. Readings
     above .80 indicate that price is near the upper band. Readings below .20 indicate
     that price is near the lower band. Surges towards the upper band show strength,
@@ -180,12 +251,18 @@
     when used in conjunction with other indicators or price analysis. [Click here](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p62195116429&listNum=61&a=259167452
     "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p62195116429&listNum=61&a=259167452")
     for a live chart.'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: '%B量化了价格与波林格带之间的关系。高于0.80的读数表明价格接近上轨。低于0.20的读数表明价格接近下轨。朝向上轨的激增显示出力量，但有时可能被解释为超买。朝向下轨的暴跌显示出弱势，但有时可能被解释为超卖。很多情况取决于基础趋势和其他指标。虽然%B本身可能具有一定价值，但最好与其他指标或价格分析一起使用。[点击这里](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p62195116429&listNum=61&a=259167452
+    "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p62195116429&listNum=61&a=259167452")
+    查看实时图表。'
 - en: Using with SharpCharts
+  id: totrans-35
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用 SharpCharts
 - en: '%B can be found in the indicator list on SharpCharts. The default parameters
     (20,2) are based on the default parameters for Bollinger Bands. These can be changed
     accordingly. 20 represents the simple moving average. 2 represents the number
@@ -193,42 +270,67 @@
     below or behind the price plot. [Click here](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p62195116429&listNum=61&a=259167452
     "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p62195116429&listNum=61&a=259167452")
     to see a live example of %B.'
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: '%B 可在 SharpCharts 的指标列表中找到。默认参数（20,2）基于布林带的默认参数。这些可以相应地进行更改。20 代表简单移动平均。2 代表上下轨的标准偏差数量。%B
+    可以位于价格图表的上方、下方或后方。[点击这里](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p62195116429&listNum=61&a=259167452
+    "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p62195116429&listNum=61&a=259167452")
+    查看 %B 的实时示例。'
 - en: '![Chart 4](../Images/425ebea37a0c8a5ab7614f2e902ca3c7.jpg "Chart 4")'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 4](../Images/425ebea37a0c8a5ab7614f2e902ca3c7.jpg "图表 4")'
 - en: Suggested Scans
+  id: totrans-38
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议的扫描
 - en: '%B Uptrend Scan'
+  id: totrans-39
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: '%B 上升趋势扫描'
 - en: This scan filters out stocks where %B is above .80 and MFI just crossed above
     80\. According to Bollinger, these stocks could be starting new up swings. This
     scan is just a starting point. Further refinement and analysis are required.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描筛选出 %B 大于 0.80 且 MFI 刚刚突破 80 的股票。根据布林格尔的说法，这些股票可能开始新的上涨。这个扫描只是一个起点。需要进一步的细化和分析。
 - en: '[PRE1]'
+  id: totrans-41
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: '%B Downtrend Scan'
+  id: totrans-42
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: '%B 下降趋势扫描'
 - en: This scan filters out stocks where %B is below .20 and MFI just crossed below
     20\. According to Bollinger, these stocks could be starting new down swings. This
     scan is just a starting point. Further refinement and analysis are required.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描筛选出 %B 低于 0.20 且 MFI 刚刚跌破 20 的股票。根据布林格尔的说法，这些股票可能开始新的下跌。这个扫描只是一个起点。需要进一步的细化和分析。
 - en: '[PRE2]'
+  id: totrans-44
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: For more details on the syntax to use for %B scans, please see our [Scanning
     Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_s_b_indicator
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_s_b_indicator")
     in the Support Center.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关用于 %B 扫描的语法详细信息，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_s_b_indicator
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_s_b_indicator")
+    在支持中心。

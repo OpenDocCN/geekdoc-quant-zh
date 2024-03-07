@@ -1,76 +1,106 @@
 - en: Money Flow Index (MFI) [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 资金流指数（MFI）[ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Money Flow Index (MFI)](#money_flow_index_mfi)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[资金流指数（MFI）](#money_flow_index_mfi)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[Calculation](#calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算](#calculation)'
 - en: '[Interpretation](#interpretation)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[解释](#interpretation)'
 - en: '[Overbought/Oversold](#overbought_oversold)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[超买/超卖](#overbought_oversold)'
 - en: '[Divergences and Failures](#divergences_and_failures)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[背离和失败](#divergences_and_failures)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[使用SharpCharts](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议扫描](#suggested_scans)'
 - en: '[MFI Oversold](#mfi_oversold)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[MFI 超卖](#mfi_oversold)'
 - en: '[MFI Overbought](#mfi_overbought)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[MFI 超买](#mfi_overbought)'
 - en: '[Further Study](#further_study)'
+  id: totrans-13
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[进一步研究](#further_study)'
 - en: Introduction
+  id: totrans-14
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: The Money Flow Index (MFI) is an oscillator that uses both price and volume
     to measure buying and selling pressure. Created by Gene Quong and Avrum Soudack,
     MFI is also known as volume-weighted [RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi
@@ -81,20 +111,29 @@
     RSI formula to create an oscillator that moves between zero and one hundred. As
     a momentum oscillator tied to volume, the Money Flow Index (MFI) is best suited
     to identify reversals and price extremes with a variety of signals.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 资金流指数（MFI）是一种使用价格和交易量来衡量买卖压力的振荡器。由Gene Quong和Avrum Soudack创建，MFI也被称为成交量加权[RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi
+    "chart_school:technical_indicators:relative_strength_index_rsi")。MFI从每个周期的典型价格开始。当典型价格上涨时（买入压力），资金流是正的，当典型价格下跌时（卖出压力）是负的。然后将正负资金流的比率插入RSI公式中，以创建一个在零和一百之间移动的振荡器。作为与交易量相关的动量振荡器，资金流指数（MFI）最适合识别各种信号的反转和价格极端情况。
 - en: Calculation
+  id: totrans-16
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算
 - en: There are several steps involved in the Money Flow Index calculation. The example
     below is based on a 14-period Money Flow Index, which is the default setting in
     SharpCharts and the setting recommended by the creators.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 资金流指数计算涉及几个步骤。下面的示例基于14周期的资金流指数，这是SharpCharts的默认设置和创建者推荐的设置。
 - en: '[PRE0]'
+  id: totrans-18
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: First, notice that Raw Money Flow is essentially dollar volume because the formula
     is volume multiplied by the typical price. Raw Money Flow is positive when the
     typical price advances from one period to the next and negative when the typical
@@ -104,44 +143,62 @@
     (14) and the Positive Money Flow sum is divided by the Negative Money Flow sum
     to create the ratio. The RSI formula is then applied to create a volume-weighted
     indicator. The table below shows a calculation example taken from an excel spreadsheet.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，注意原始资金流是基本上是美元交易量，因为公式是交易量乘以典型价格。当典型价格从一个周期到下一个周期上涨时，原始资金流是正的，当典型价格下跌时是负的。当典型价格不变时，不使用原始资金流值。第3步中的资金流比率形成了资金流指数（MFI）的基础。正负资金流在回顾期（14）内求和，正资金流总和除以负资金流总和得到比率。然后应用RSI公式创建一个成交量加权指标。下表显示了从Excel电子表格中提取的计算示例。
 - en: '![Money Flow Index - Spreadsheet](../Images/10f9697b4bf60877d8b1d8c0a63739e1.jpg
     "Money Flow Index - Spreadsheet")'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![资金流指数 - 电子表格](../Images/10f9697b4bf60877d8b1d8c0a63739e1.jpg "资金流指数 - 电子表格")'
 - en: '[Click here](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:mfi:cs-mfi.xls
     "chart_school:technical_indicators_and_overlays:mfi:cs-mfi.xls (60.5 KB)") for
     an MFI calculation in an Excel Spreadsheet.'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击[这里](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:mfi:cs-mfi.xls
+    "chart_school:technical_indicators_and_overlays:mfi:cs-mfi.xls (60.5 KB)")查看Excel电子表格中的MFI计算。
 - en: '![Money Flow Index  -  Chart 1](../Images/17b556cfdce83ec9616407b09365e409.jpg
     "Money Flow Index  -  Chart 1")'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![资金流指数  -  图表 1](../Images/17b556cfdce83ec9616407b09365e409.jpg "资金流指数  -  图表
+    1")'
 - en: Interpretation
+  id: totrans-23
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 解释
 - en: As a volume-weighted version of RSI, the Money Flow Index (MFI) can be interpreted
     similarly to RSI. The big difference is, of course, volume. Because volume is
     added to the mix, the Money Flow Index will act a little differently than RSI.
     Theories suggest that volume leads prices. RSI is a momentum oscillator that already
     leads prices. Incorporating volume can increase this lead time.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为RSI的成交量加权版本，资金流动指数（MFI）可以类似于RSI进行解释。最大的区别当然是成交量。由于成交量被加入到计算中，资金流动指数的表现会与RSI有些许不同。理论表明，成交量领先价格。RSI是一个动量振荡器，已经领先价格。结合成交量可以增加这种领先时间。
 - en: Quong and Soudack identified three basic signals using the Money Flow Index.
     First, chartists can look for overbought or oversold levels to warn of unsustainable
     price extremes. Second, bullish and bearish divergence can be used to anticipate
     trend reversals. Third, failure swings at 80 or 20 can also be used to identify
     potential price reversals. For this article, the divergences and failure swings
     are be combined to create one signal group and increase robustness.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: Quong和Soudack使用资金流动指数确定了三种基本信号。首先，图表分析师可以寻找超买或超卖水平，以警示不可持续的价格极端。其次，可以利用看涨和看跌背离来预测趋势反转。第三，80或20处的失败摆动也可用于识别潜在的价格反转。对于本文，背离和失败摆动被结合在一起形成一个信号组，增加鲁棒性。
 - en: Overbought/Oversold
+  id: totrans-26
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 超买/超卖
 - en: '[Overbought](/school/doku.php?id=chart_school:glossary_o#overbought "chart_school:glossary_o")
     and oversold levels can be used to identify unsustainable price extremes. Typically,
     MFI above 80 is considered overbought and MFI below 20 is considered oversold.
@@ -155,12 +212,17 @@
     stocks will trade for a long time without reaching the 90/10 extremes. However,
     chartists can use the StockCharts.com scan engine to find those that do. Links
     to such scans are provided at the end of this article.'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: '[超买](/school/doku.php?id=chart_school:glossary_o#overbought "chart_school:glossary_o")和超卖水平可用于识别不可持续的价格极端。通常，MFI超过80被视为超买，MFI低于20被视为超卖。强势趋势可能对这些经典的超买和超卖水平构成问题。当上涨趋势强劲时，MFI可能变得超买（>80），价格可能继续上涨。相反，当下跌趋势强劲时，MFI可能变得超卖（<20），价格可能继续下跌。Quong和Soudack建议扩大这些极端以进一步确认信号。超过90的上涨是真正的超买，低于10的下跌是真正的超卖。超过90和低于10的走势是罕见的事件，表明价格走势不可持续。诚然，许多股票会长时间交易而不会达到90/10的极端。然而，图表分析师可以使用StockCharts.com的扫描引擎找到那些达到这些极端的股票。本文末尾提供了这些扫描的链接。'
 - en: '![Money Flow Index  -  Chart 2](../Images/0d6ae905c4754cc3f7d96e259cf1498b.jpg
     "Money Flow Index  -  Chart 2")'
+  id: totrans-28
   prefs: []
   type: TYPE_IMG
+  zh: '![资金流动指数 - 图表 2](../Images/0d6ae905c4754cc3f7d96e259cf1498b.jpg "资金流动指数 - 图表
+    2")'
 - en: JB Hunt (JBHT) became oversold when the Money Flow Index moved below 10 in late
     October 2009 and early February 2010\. The preceding declines were sharp enough
     to produce these readings, but the oversold extremes suggested that these declines
@@ -169,12 +231,17 @@
     a corner. JBHT confirmed the first oversold reading with a gap and trend line
     break on good volume. The stock confirmed the second oversold reading with a resistance
     breakout on good volume.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: JB Hunt（JBHT）在2009年10月底和2010年2月初，当资金流动指数下跌至10以下时，变得超卖。前面的下跌足够尖锐，以产生这些读数，但超卖极端表明这些下跌是不可持续的。仅仅超卖水平还不足以转为看涨。需要某种形式的逆转或上升来确认价格确实已经转向。JBHT通过大幅跳空和趋势线突破以及良好的成交量确认了第一个超卖读数。该股票通过良好成交量的阻力突破确认了第二个超卖读数。
 - en: '![Money Flow Index  -  Chart 3](../Images/198a223ddb8dbb2969155ec4d424c816.jpg
     "Money Flow Index  -  Chart 3")'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![资金流动指数 - 图表 3](../Images/198a223ddb8dbb2969155ec4d424c816.jpg "资金流动指数 - 图表
+    3")'
 - en: Aeropostale (ARO) became overbought when the Money Flow Index moved above 90
     in late September and late December 2009\. Extremes in MFI suggested that these
     advances were unsustainable and a pullback was imminent. The first overbought
@@ -185,49 +252,72 @@
     break, but these did not hold. Price action was stronger than the overbought reading.
     ARO ultimately broke resistance at 24 and surged back above 28\. The second signal
     did not work.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: Aeropostale (ARO) 在 2009 年 9 月底和 12 月底，当资金流动指数上涨到 90 以上时，就变得超买。MFI 的极端值表明这些上涨是不可持续的，回调即将到来。第一个超买信号导致了一个相当大的下跌，但第二个没有。注意到
+    ARO 在第一个超买信号时达到顶峰，并在 10 月份形成了较低的高点。10 月底的支撑线突破标志着明显的趋势逆转。在 12 月的超买信号之后，ARO 上涨到
+    23 以上并保持稳定。出现了两个下跌间隙和一个支撑线突破，但这些都没有持续。价格走势比超买信号更强劲。ARO 最终突破了 24 的阻力位，并再次上涨至 28
+    以上。第二个信号没有起作用。
 - en: Divergences and Failures
+  id: totrans-32
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 背离和失败摆动
 - en: Failure swings and divergences can be combined to create more robust signals.
     A bullish failure swing occurs when MFI becomes oversold below 20, surges above
     20, holds above 20 on a pullback and then breaks above its prior reaction high.
     A bullish divergence forms when prices move to a lower low, but the indicator
     forms a higher low to show improving money flow or momentum.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 失败摆动和背离可以结合起来产生更加稳健的信号。当 MFI 在 20 以下超卖，突破 20，回调时保持在 20 以上，然后突破先前的反应高点时，就会出现一个看涨的失败摆动。当价格下跌到一个更低的低点，但指标形成一个更高的低点，显示资金流动或动量改善时，就形成了一个看涨的背离。
 - en: On the Aetna (AET) chart below, a bullish divergence and failure swing formed
     in January-February 2010\. First, notice how the stock formed a lower low in February
     and MFI held well above its January low for a bullish divergence. Second, notice
     how MFI dipped below 20 in January, held above 20 in February and broke its prior
     high in late February. This signal combination foreshadowed a strong advance in
     March.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下面的 Aetna (AET) 图表中，于 2010 年 1 月至 2 月形成了一个看涨的背离和失败摆动。首先，注意股票在 2 月创下一个更低的低点，而
+    MFI 在 1 月的低点远高于其 1 月低点，形成了一个看涨的背离。其次，注意 MFI 在 1 月下跌到 20 以下，2 月保持在 20 以上，并在 2 月底突破了先前的高点。这个信号组合预示了
+    3 月的强劲上涨。
 - en: '![Money Flow Index  -  Chart 4](../Images/6fa36a1c891904fffa48f95b380e943e.jpg
     "Money Flow Index  -  Chart 4")'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![资金流动指数 - 图表 4](../Images/6fa36a1c891904fffa48f95b380e943e.jpg "资金流动指数 - 图表
+    4")'
 - en: A bearish failure swing occurs when MFI becomes overbought above 80, plunges
     below 80, fails to exceed 80 on a bounce and then breaks below the prior reaction
     low. A bearish divergence forms when the stock forges a higher high and the indicator
     forms a lower high, which indicates deteriorating money flow or momentum.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 当 MFI 在 80 以上超买，跌破 80，未能在反弹时超过 80，然后跌破先前的反应低点时，就会出现一个看跌的失败摆动。当股票创下一个更高的高点，而指标形成一个更低的高点时，就形成了一个看跌的背离，表明资金流动或动量恶化。
 - en: On the Aetna chart above, a [bearish divergence](/school/doku.php?id=chart_school:glossary_b#bearish_divergence
     "chart_school:glossary_b") and failure swing formed in August-September. The stock
     moved to a new high in September, but MFI formed a significantly lower high. A
     bearish failure swing occurred as MFI became overbought above 80 in late August,
     failed to reach 80 with the September bounce and broke the prior lows with a decline
     in late September.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上面的 Aetna 图表中，于 8 月至 9 月形成了一个看跌的背离和失败摆动。股票在 9 月创下新高，但 MFI 形成了一个明显较低的高点。当 MFI
+    在 8 月底超买到 80 以上时，形成了一个看跌的失败摆动，未能在 9 月反弹时达到 80，并在 9 月底的下跌中突破了先前的低点。
 - en: Conclusions
+  id: totrans-38
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: The Money Flow Index is a rather unique indicator that combines momentum and
     volume with an RSI formula. RSI momentum generally favors the bulls when the indicator
     is above 50 and the bears when below 50\. Even though MFI is considered a volume-weighted
@@ -239,12 +329,18 @@
     such as RSI, or [pattern analysis](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
     "chart_school:chart_analysis:chart_patterns") can be combined with MFI to increase
     signal robustness.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 资金流动指数是一种相当独特的指标，它将动量和成交量与RSI公式结合在一起。当指标高于50时，RSI动量通常偏向多头，低于50时偏向空头。尽管MFI被认为是一个成交量加权的RSI，但使用中线来确定多头或空头偏向效果不佳。相反，MFI更适合识别潜在的超买/超卖水平、多头/空头背离以及多头/空头失败摆动。与所有指标一样，MFI不应单独使用。可以将纯[动量振荡器](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")（如RSI）或[图表分析](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
+    "chart_school:chart_analysis:chart_patterns")与MFI结合以增加信号的稳健性。
 - en: Using with SharpCharts
+  id: totrans-40
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用SharpCharts
 - en: 'The Money Flow Index is available as a SharpCharts indicator that can be placed
     above, below or behind the price plot of the underlying security. Placing MFI
     directly behind the price makes it easy to compare indicator swings with price
@@ -253,65 +349,102 @@
     timeframe makes it less sensitive. Users can click the green arrow next to “Advanced
     Options” to add horizontal lines for custom overbought and oversold levels. Two
     lines can be added by separating the numbers with a comma: (10,90).'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 资金流动指数可作为SharpCharts指标使用，可以放置在基础证券的价格图表的上方、下方或后方。将MFI直接放在价格后面可以方便地将指标摆动与价格变动进行比较。默认设置为14周期，但可以根据分析需求进行调整。较短的时间框架使指标更敏感。较长的时间框架使其不太敏感。用户可以点击“高级选项”旁边的绿色箭头添加水平线以自定义超买和超卖水平。通过用逗号分隔数字添加两条线：（10,90）。
 - en: '[![Money Flow Index  -  Chart 5](../Images/21733d489d6b7177b9346398c45f5ecf.jpg
     "Money Flow Index  -  Chart 5")](http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p62268879970&listNum=30&a=221699049
     "http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p62268879970&listNum=30&a=221699049")'
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: '[![资金流动指数  -  图表5](../Images/21733d489d6b7177b9346398c45f5ecf.jpg "资金流动指数  -  图表5")](http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p62268879970&listNum=30&a=221699049
+    "http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p62268879970&listNum=30&a=221699049")'
 - en: '![CCI - SharpCharts](../Images/42900cb4d85953c860dc6e6b17a3cdab.jpg "CCI -
     SharpCharts")'
+  id: totrans-43
   prefs: []
   type: TYPE_IMG
+  zh: '![CCI - SharpCharts](../Images/42900cb4d85953c860dc6e6b17a3cdab.jpg "CCI -
+    SharpCharts")'
 - en: Suggested Scans
+  id: totrans-44
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议扫描
 - en: MFI Oversold
+  id: totrans-45
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: MFI超卖
 - en: This scan searches for stocks that are above $20 per share, trade over 100,000
     shares per day and have oversold Money Flow Index (<10). Consider this a starting
     point for further analysis and due diligence.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描搜索股价高于每股$20，每日交易量超过100,000股，并且资金流动指数超卖（<10）的股票。将其视为进一步分析和尽职调查的起点。
 - en: '[PRE1]'
+  id: totrans-47
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: MFI Overbought
+  id: totrans-48
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: MFI超买
 - en: This scan searches for stocks that are above $20 per share, trade over 100,000
     shares per day and have overbought Money Flow Index (>90). Consider this a starting
     point for further analysis and due diligence.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描搜索股价高于每股$20，每日交易量超过100,000股，并且资金流动指数超买（>90）的股票。将其视为进一步分析和尽职调查的起点。
 - en: '[PRE2]'
+  id: totrans-50
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: For more details on the syntax to use for Money Flow Index scans, please see
     our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#money_flow_index_mfi
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#money_flow_index_mfi")
     in the Support Center.
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关用于资金流动指数扫描的语法详细信息，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#money_flow_index_mfi
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#money_flow_index_mfi")在支持中心。
 - en: Further Study
+  id: totrans-52
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 进一步研究
 - en: '| **Technical Analysis for the Trading Professional** Constance Brown |'
+  id: totrans-53
   prefs: []
   type: TYPE_TB
+  zh: '| **专业交易员的技术分析** 康斯坦斯·布朗 |'
 - en: '| [![](../Images/68e1d0b6e06443cb595baa528172bcd0.jpg)](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional
     "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional")
     |'
+  id: totrans-54
   prefs: []
   type: TYPE_TB
+  zh: '| [![](../Images/68e1d0b6e06443cb595baa528172bcd0.jpg)](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional
+    "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional")
+    |'
 - en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional
     "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional")
     |'
+  id: totrans-55
   prefs: []
   type: TYPE_TB
+  zh: '| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional
+    "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional")
+    |'

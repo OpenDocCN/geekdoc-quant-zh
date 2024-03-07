@@ -1,49 +1,69 @@
 - en: Correlation Coefficient [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 相关系数 [ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Correlation Coefficient](#correlation_coefficient)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[相关系数](#correlation_coefficient)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[Calculation](#calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算](#calculation)'
 - en: '[Interpretation](#interpretation)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[解释](#interpretation)'
 - en: '[Diversification](#diversification)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[多样化](#diversification)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与SharpCharts一起使用](#using_with_sharpcharts)'
 - en: Introduction
+  id: totrans-9
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: The Correlation Coefficient is a statistical measure that reflects the correlation
     between two securities. In other words, this statistic tells us how closely one
     security is related to the other. The Correlation Coefficient is positive when
@@ -53,63 +73,89 @@
     sector/stock relationships, and sector/market relationships. This indicator can
     also help investors diversify by identifying securities with a low or negative
     correlation to the stock market.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 相关系数是反映两个证券之间相关性的统计量。换句话说，这个统计量告诉我们一个证券与另一个证券之间的关系有多密切。当两个证券向同一方向移动时，相关系数为正，无论是上涨还是下跌。当两个证券朝相反方向移动时，相关系数为负。确定两个证券之间的关系对于分析市场间关系、部门/股票关系和部门/市场关系非常有用。这个指标还可以帮助投资者通过识别与股市相关性低或负相关的证券来实现多样化。
 - en: Calculation
+  id: totrans-11
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算
 - en: The calculation for the Correlation Coefficient is rather complicated so feel
     free to skip this section. We will simply look at the basics to see some of the
     method behind the madness. This indicator is right at the heart of classical statistics.
     The first step is to select two securities. In this example, we will be using
     Intel (INTC) and the Nasdaq 100 ETF (QQQ). Namely, we want to see the degree of
     correlation between Intel and QQQ. The excel table below lays out the groundwork.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 相关系数的计算相当复杂，所以可以跳过这一部分。我们只会简单看一些基本内容，以了解其中的方法。这个指标正是经典统计学的核心。第一步是选择两个证券。在这个例子中，我们将使用英特尔（INTC）和纳斯达克100ETF（QQQ）。换句话说，我们想要看到英特尔和QQQ之间的相关程度。下面的Excel表格展示了基础工作。
 - en: '![Correlation Coefficient  -  Excel Example](../Images/77af7d6083199f02f34a7774a33c9762.jpg
     "Correlation Coefficient  -  Excel Example")'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![相关系数 - Excel示例](../Images/77af7d6083199f02f34a7774a33c9762.jpg "相关系数 - Excel示例")'
 - en: The INTC column shows Intel prices over a 20 day period with an average at the
     bottom.
+  id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: INTC列显示了英特尔在20天内的价格，底部显示了平均值。
 - en: The QQQ column shows the same for QQQ.
+  id: totrans-15
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: QQQ列显示了QQQ的情况。
 - en: The next two columns show each period's price squared with the average at the
     bottom.
+  id: totrans-16
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 接下来的两列显示了每个期间的价格平方，底部显示了平均值。
 - en: The last columns show INTC multiplied by QQQ for each period with an average
     at the bottom.
+  id: totrans-17
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最后几列显示了每个期间的INTC乘以QQQ，底部显示了平均值。
 - en: Using the bottom row, we can now compute the Variance, Covariance and Correlation
     Coefficient. The Excel formula is shown alongside the long formula. As the results
     show, over the 20 day period from June 22nd to July 20th, Intel showed a strong
     positive correlation (+.95) with the Nasdaq 100 ETF.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 利用底部行，我们现在可以计算方差、协方差和相关系数。Excel公式显示在长公式旁边。结果显示，在6月22日至7月20日的20天期间，英特尔与纳斯达克100ETF表现出强烈的正相关性（+.95）。
 - en: '![Correlation Coefficient - Intel](../Images/5d49358a0e02c4ac44fcaf0d4cdc14b8.jpg
     "Correlation Coefficient - Intel")'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![相关系数 - 英特尔](../Images/5d49358a0e02c4ac44fcaf0d4cdc14b8.jpg "相关系数 - 英特尔")'
 - en: Here's [an Excel Spreadsheet](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:correlation_coeffici:cs-corrcoef.xls
     "chart_school:technical_indicators_and_overlays:correlation_coeffici:cs-corrcoef.xls
     (25 KB)") that shows the Correlation Coefficient in action. Some numbers may differ
     slightly due to rounding issues.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有一个展示相关系数的[Excel电子表格](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:correlation_coeffici:cs-corrcoef.xls
+    "chart_school:technical_indicators_and_overlays:correlation_coeffici:cs-corrcoef.xls
+    (25 KB)")。由于四舍五入问题，一些数字可能略有不同。
 - en: Interpretation
+  id: totrans-21
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 解释
 - en: The Correlation Coefficient oscillates between -1 and +1\. It is not a momentum
     oscillator though. Instead, it moves from periods of positive correlation to periods
     negative correlation. +1 is considered perfect positive correlation, which is
@@ -120,12 +166,16 @@
     Correlation Coefficient remains largely positive with regular forays above +.75\.
     There is clearly a positive relationship between these two securities. In general,
     anything above .50 shows a strong positive correlation.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 相关系数在-1和+1之间波动。尽管它不是动量振荡器，但它会从正相关的时期转向负相关的时期。+1被认为是完美的正相关，这是罕见的。0到+1之间的任何值表示两个证券朝着相同的方向移动。正相关的程度随时间可能会有所变化。石油股票和石油大部分时间都呈正相关。下面的例子显示了能源SPDR（XLE）与现货轻质原油（$WTIC）之间的关系。毫不奇怪，20天的相关系数大部分时间保持正值，经常超过+0.75。这两个证券之间显然存在着积极的关系。一般来说，任何大于0.50的值都显示出强烈的正相关。
 - en: '![Correlation Coefficient  -  Oil and Oil Stocks](../Images/b689c4126d59a296b4105f90068e9f98.jpg
     "Correlation Coefficient  -  Oil and Oil Stocks")'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![相关系数 - 石油和石油股票](../Images/b689c4126d59a296b4105f90068e9f98.jpg "相关系数 - 石油和石油股票")'
 - en: At the other end of the spectrum, -1 is considered perfect negative correlation,
     which is rare. Anything between 0 and -1 indicates that two securities move in
     opposite directions. The degree of negative correlation is likely to vary over
@@ -134,16 +184,22 @@
     Dollar Index ($USD). Although the Correlation Coefficient spends a fair amount
     of time in positive territory, it is negative the majority of the time. In general,
     anything below -.50 shows a strong negative correlation.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 在另一端，-1被认为是完美的负相关，这也是罕见的。0到-1之间的任何值表示两个证券朝着相反的方向移动。负相关的程度随时间可能会有所变化。黄金和美元是我想到的第一对负相关的证券。下面的图表显示了现货黄金（$GOLD）与美元指数（$USD）之间的关系。尽管相关系数在正值区域停留了一段时间，但大部分时间都是负值。一般来说，任何小于-0.50的值都显示出强烈的负相关。
 - en: '![Correlation Coefficient  -  Gold and Dollar](../Images/30b24667d3b93e41ffc9e418660a064f.jpg
     "Correlation Coefficient  -  Gold and Dollar")'
+  id: totrans-25
   prefs: []
   type: TYPE_IMG
+  zh: '![相关系数 - 黄金和美元](../Images/30b24667d3b93e41ffc9e418660a064f.jpg "相关系数 - 黄金和美元")'
 - en: Diversification
+  id: totrans-26
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 多样化
 - en: The Correlation Coefficient can be used to identify non-correlated securities,
     which is important in developing a diversified portfolio. Unsurprisingly, the
     nine S&P sectors are mostly positively correlated with the S&P 500\. However,
@@ -157,12 +213,16 @@
     Correlation Coefficient for the utilities sector even dipped below zero twice.
     This indicator shows us that the consumer staples and utilities sectors are less
     correlated to the S&P 500 than the consumer discretionary and technology sectors.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 相关系数可用于识别不相关的证券，这在构建多样化投资组合中非常重要。毫不奇怪，标普九大部门与标普500指数大多呈正相关。然而，有些部门的正相关性比其他部门更强。例如，在过去三年中，科技ETF（XLK）和消费者自由支出SPDR（XLY）与标普500指数有着强烈的正相关性。以下相关系数基于50天。消费者自由支出部门在过去三年中只有一次低于0.50。科技部门从未低于0.50，因为科技仍然与市场强相关。相比之下，消费品部门的相关系数在过去几次低于0.50，而公用事业部门的相关系数甚至两次低于零。这一指标表明，消费品和公用事业部门与标普500指数的相关性低于消费者自由支出和科技部门。
 - en: '![Correlation Coefficient - Sectors](../Images/05549c34a02e0df590bd58513dfa665b.jpg
     "Correlation Coefficient - Sectors")'
+  id: totrans-28
   prefs: []
   type: TYPE_IMG
+  zh: '![相关系数 - 部门](../Images/05549c34a02e0df590bd58513dfa665b.jpg "相关系数 - 部门")'
 - en: In order to truly diversify from stocks, it is often necessary to look outside
     of the stock market. The chart below shows four ETFs that have many periods of
     negative correlation with the stock market (SPY). Notice how the Correlation Coefficients
@@ -173,28 +233,38 @@
     than negative the last three years. The Yen Trust (green) appears split its time
     between periods of positive and negative correlation. Surprisingly, the US Dollar
     Fund (UUP) shows a propensity to be negatively correlated with the stock market.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了真正实现股票的多样化，通常需要看向股票市场之外。下图显示了四个ETF与股票市场（SPY）有许多负相关期的情况。请注意相关系数多次低于零。在此示例中，我还使用了50天相关系数。20+年期债券ETF（TLT）代表债券，大部分时间与股票呈负相关。黄金（红色）在正负相关期间变动。总体而言，过去三年来，它更多地呈正相关而不是负相关。日元信托（绿色）似乎在正负相关期间分别占据时间。令人惊讶的是，美元基金（UUP）显示出与股票市场负相关的倾向。
 - en: '![Correlation Coefficient  -  Other Assets](../Images/6b1d5a2cfae43db56646757cf0a11988.jpg
     "Correlation Coefficient  -  Other Assets")'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![相关系数 - 其他资产](../Images/6b1d5a2cfae43db56646757cf0a11988.jpg "相关系数 - 其他资产")'
 - en: Conclusions
+  id: totrans-31
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: The Correlation Coefficient tells us the relationship between two securities.
     Over a given time period, the two securities move together when the Correlation
     Coefficient is positive. Conversely, the two securities move in opposite directions
     when the Correlation Coefficient is negative. The examples above show 20-day and
     50-day Correlation Coefficients. Longer-term investors may use 150 or even 250
     days (one year) for smoother lines that reflect longer-term relationships.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 相关系数告诉我们两个证券之间的关系。在给定的时间段内，当相关系数为正时，两个证券一起移动。相反，当相关系数为负时，两个证券移动方向相反。上面的示例显示了20天和50天的相关系数。长期投资者可能使用150甚至250天（一年）以获得反映长期关系的更平滑线条。
 - en: Using with SharpCharts
+  id: totrans-33
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用SharpCharts
 - en: The Correlation Coefficient is available in SharpCharts under “indicators”.
     First, create a chart with the base security entered in the symbol box at the
     top of the chart (INTC). Second, select Correlation Coefficient as an indicator
@@ -206,13 +276,23 @@
     plot for comparison. [Click here](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p61512839073&listNum=30&a=239762181
     "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p61512839073&listNum=30&a=239762181")
     for a live chart with the Correlation Coefficient.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 相关系数在SharpCharts中的“指标”下可见。首先，在图表顶部的符号框中输入基础证券创建图表（INTC）。其次，在下拉菜单中选择相关系数作为指标。第三，输入另一证券的符号和时间范围在参数框中（$SPX,20）。这两者用逗号分隔。下面的示例显示了英特尔在主窗口中，带有10天相关系数的指标窗口。这显示了英特尔与标普500的相关性。另外，请注意标普500价格图（红色虚线）放在英特尔价格图后面以进行比较。[点击这里](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p61512839073&listNum=30&a=239762181
+    "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p61512839073&listNum=30&a=239762181")
+    查看带有相关系数的实时图表。
 - en: '![Correlation Coefficient  -  Intel SharpCharts](../Images/51c5ab73134bcf509d6ee450828be753.jpg
     "Correlation Coefficient  -  Intel SharpCharts")'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![相关系数 - 英特尔SharpCharts](../Images/51c5ab73134bcf509d6ee450828be753.jpg "相关系数
+    - 英特尔SharpCharts")'
 - en: '![Correlation Coefficient  -  SharpCharts](../Images/77da97cb5e6fe5079347dda736b8f9e4.jpg
     "Correlation Coefficient  -  SharpCharts")'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![相关系数 - SharpCharts](../Images/77da97cb5e6fe5079347dda736b8f9e4.jpg "相关系数
+    - SharpCharts")'

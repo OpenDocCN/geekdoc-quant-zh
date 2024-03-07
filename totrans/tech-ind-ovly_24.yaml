@@ -1,223 +1,328 @@
 - en: Chande Trend Meter (CTM) [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 查德趋势仪表盘（CTM）[ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Chande Trend Meter (CTM)](#chande_trend_meter_ctm)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[查德趋势仪表盘（CTM）](#chande_trend_meter_ctm)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[Calculation](#calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算](#calculation)'
 - en: '[Interpretation](#interpretation)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[解释](#interpretation)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与SharpCharts一起使用](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议的扫描](#suggested_scans)'
 - en: '[CTM Crosses Above 60 on Heavy Volume](#ctm_crosses_above_60_on_heavy_volume)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[CTM在大量交易量下突破60](#ctm_crosses_above_60_on_heavy_volume)'
 - en: '[Stocks with Consistently High CTM](#stocks_with_consistently_high_ctm)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[持续高CTM的股票](#stocks_with_consistently_high_ctm)'
 - en: Introduction
+  id: totrans-11
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: The Chande Trend Meter (CTM), developed by Tushar Chande, assigns a numerical
     score to a stock or other security, based on several different technical indicators
     covering six different timeframes. Distilling all this technical information down
     into a single number provides an easy way to identify the strength of the trend
     for a given security.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 查德趋势仪表盘（CTM），由图沙尔·查德（Tushar Chande）开发，根据涵盖六个不同时间框架的几种不同技术指标为股票或其他证券分配一个数值分数。将所有这些技术信息压缩成一个数字，提供了一种简单的方法来识别给定证券的趋势强度。
 - en: Calculation
+  id: totrans-13
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算
 - en: 'The calculation of the Chande Trend Meter is based on the following technical
     indicators:'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 查德趋势仪表盘的计算基于以下技术指标：
 - en: The position of the high, low, and close, relative to the [Bollinger bands](/school/doku.php?id=chart_school:technical_indicators:bollinger_bands
     "chart_school:technical_indicators:bollinger_bands") in four different timeframes
     (20-day, 50-day, 75-day, and 100-day)
+  id: totrans-15
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 高、低和收盘价相对于四个不同时间框架（20天、50天、75天和100天）的[布林带](/school/doku.php?id=chart_school:technical_indicators:bollinger_bands
+    "chart_school:technical_indicators:bollinger_bands")的位置
 - en: The price change relative to the [standard deviation](/school/doku.php?id=chart_school:technical_indicators:standard_deviation_volatility
     "chart_school:technical_indicators:standard_deviation_volatility") over the past
     100 days
+  id: totrans-16
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 过去100天相对于[标准偏差](/school/doku.php?id=chart_school:technical_indicators:standard_deviation_volatility
+    "chart_school:technical_indicators:standard_deviation_volatility")的价格变化
 - en: The 14-day [RSI value](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi
     "chart_school:technical_indicators:relative_strength_index_rsi")
+  id: totrans-17
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 14天的[RSI值](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi
+    "chart_school:technical_indicators:relative_strength_index_rsi")
 - en: The existence of any short-term (2-day) [price channel breakouts](/school/doku.php?id=chart_school:technical_indicators:price_channels
     "chart_school:technical_indicators:price_channels")
+  id: totrans-18
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 任何短期（2天）[价格通道突破](/school/doku.php?id=chart_school:technical_indicators:price_channels
+    "chart_school:technical_indicators:price_channels")的存在
 - en: The resulting score is converted to a 0-100 scale for ease of comparison.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 最终得分转换为0-100的尺度以便比较。
 - en: Interpretation
+  id: totrans-20
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 解释
 - en: On the Chande Trend Meter scale of 0 to 100, stocks with a CTM score of 100
     are in very strong uptrends. Conversely, stocks with a score of 0 are in very
     strong downtrends.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 在0到100的查德趋势仪表盘尺度上，分数为100的股票处于非常强劲的上升趋势中。相反，分数为0的股票处于非常强劲的下跌趋势中。
 - en: 'This scale can be divided into 5 different levels:'
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个尺度可以分为5个不同的级别：
 - en: Stocks with a score of 90-100 are in very strong uptrends
+  id: totrans-23
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分数为90-100的股票处于非常强劲的上升趋势中
 - en: Stocks with a score of 80-90 are in strong uptrends
+  id: totrans-24
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分数为80-90的股票处于强劲上升趋势中
 - en: Stocks with a score of 60-80 are in weak uptrends
+  id: totrans-25
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分数为60-80的股票处于弱势上升趋势中
 - en: Stocks with a score of 20-60 are either flat or in weak downtrends
+  id: totrans-26
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分数为20-60的股票要么是平稳的，要么是弱势下跌趋势中
 - en: Stocks with a score of 0-20 are in very strong downtrends
+  id: totrans-27
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分数为0-20的股票处于非常强劲的下跌趋势中
 - en: Momentum traders should look for stocks with a Chande Trend Meter score of 80
     or higher. This indicates a strong uptrend. The stronger the uptrend, the more
     likely it is to continue that trend.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 动量交易者应寻找查德趋势仪表盘分数为80或更高的股票。这表示强劲的上升趋势。趋势越强劲，延续该趋势的可能性就越大。
 - en: The Chande Trend Meter can also be used with indexes and ETFs, to get an idea
     of the relative trend for specific sectors and industries, or even entire markets.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 查德趋势仪表盘也可以与指数和交易所交易基金（ETF）一起使用，以了解特定行业和行业甚至整个市场的相对趋势。
 - en: One advantage of the Chande Trend Meter is that the value is set on an absolute
     scale, not relative to other stocks in a group. So, when you compare CTM scores
     of several different types of securities, you are comparing apples-to-apples across
     all securities.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 查德趋势仪表盘的一个优点是其数值是在绝对尺度上设置的，而不是相对于同一组股票。因此，当您比较几种不同类型证券的CTM分数时，您正在跨所有证券进行苹果对苹果的比较。
 - en: Conclusions
+  id: totrans-31
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: The Chande Trend Meter provides a simple way to determine whether a stock is
     in an uptrend or a downtrend, and makes it easy to gauge the strength of that
     trend. By combining several different proven technical trend indicators and boiling
     them down into one number, the CTM gives chartists a wealth of trend information
     at a quick glance.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: Chande趋势仪提供了一种简单的方法来确定股票是处于上升趋势还是下降趋势，并且便于评估该趋势的强度。通过将几种不同的经过验证的技术趋势指标结合在一起，并将它们简化为一个数字，CTM使图表分析师能够在快速浏览时获得丰富的趋势信息。
 - en: Using with SharpCharts
+  id: totrans-33
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用SharpCharts
 - en: The Chande Trend Meter can be found in the Indicators section under the chart.
     The CTM indicator can be positioned above, below, or behind the main price plot.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: Chande趋势仪可以在图表下方的指标部分找到。CTM指标可以放置在主价格图的上方、下方或后面。
 - en: 'When placing above or below the main price plot, the background is color coded
     to indicate the different trend strength levels:'
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 当放置在主价格图之上或之下时，背景颜色编码以指示不同的趋势强度水平：
 - en: '**Dark Green**: 90-100 (very strong uptrend)'
+  id: totrans-36
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**深绿色**: 90-100（非常强劲上升趋势）'
 - en: '**Medium Green**: 80-90 (strong uptrend)'
+  id: totrans-37
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**中绿色**: 80-90（强劲上升趋势）'
 - en: '**Light Green**: 60-80 (weak uptrend)'
+  id: totrans-38
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**浅绿色**: 60-80（弱上升趋势）'
 - en: '**Yellow**: 20-60 (flat or weak downtrend)'
+  id: totrans-39
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**黄色**: 20-60（平稳或弱下跌趋势）'
 - en: '**Pink**: 0-20 (strong downtrend)'
+  id: totrans-40
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**粉色**: 0-20（强劲下跌趋势）'
 - en: '![](../Images/6c5b52684e5b20214e5ea35d2ff227cb.jpg)'
+  id: totrans-41
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/6c5b52684e5b20214e5ea35d2ff227cb.jpg)'
 - en: Suggested Scans
+  id: totrans-42
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议扫描
 - en: CTM Crosses Above 60 on Heavy Volume
+  id: totrans-43
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: CTM在大量交易量下突破60
 - en: This scan reveals stocks where the Chande Trend Meter has crossed above 60 with
     heavier than normal volume.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描显示了Chande趋势仪已经在较重的交易量下突破60的股票。
 - en: '[PRE0]'
+  id: totrans-45
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: Stocks with Consistently High CTM
+  id: totrans-46
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 持续高CTM的股票
 - en: This scan reveals stocks where the Chande Trend Meter for a US stock is consistently
     high, averaging 80 or more over the last 50 trading days.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描显示了美国股票的Chande趋势仪持续高，过去50个交易日平均为80或更高。
 - en: '[PRE1]'
+  id: totrans-48
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: For more details on the syntax to use for Chande Trend Meter scans, please see
     our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#chande_trend_meter
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#chande_trend_meter")
     in the Support Center.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关Chande趋势仪扫描的语法详细信息，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#chande_trend_meter
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#chande_trend_meter")在支持中心中。

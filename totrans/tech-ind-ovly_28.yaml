@@ -1,81 +1,113 @@
 - en: DecisionPoint Price Momentum Oscillator (PMO) [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: DecisionPoint价格动量振荡器（PMO）[ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[DecisionPoint Price Momentum Oscillator (PMO)](#decisionpoint_price_momentum_oscillator_pmo)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[DecisionPoint价格动量振荡器（PMO）](#decisionpoint_price_momentum_oscillator_pmo)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[Calculation](#calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算](#calculation)'
 - en: '[Interpretation](#interpretation)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[解释](#interpretation)'
 - en: '[Overbought/Oversold Indicator](#overbought_oversold_indicator)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[超买/超卖指标](#overbought_oversold_indicator)'
 - en: '[Momentum Indicator](#momentum_indicator)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[动量指标](#momentum_indicator)'
 - en: '[Signal Generator](#signal_generator)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[信号生成器](#signal_generator)'
 - en: '[PMO Configurations](#pmo_configurations)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[PMO配置](#pmo_configurations)'
 - en: '[Conclusion](#conclusion)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusion)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与SharpCharts一起使用](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议的扫描](#suggested_scans)'
 - en: '[PMO Rising But Not Yet Crossed Over Signal Line](#pmo_rising_but_not_yet_crossed_over_signal_line)'
+  id: totrans-13
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[PMO上涨但尚未跨越信号线](#pmo_rising_but_not_yet_crossed_over_signal_line)'
 - en: '[PMO Falling But Not Yet Crossed Below Signal Line](#pmo_falling_but_not_yet_crossed_below_signal_line)'
+  id: totrans-14
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[PMO下跌但尚未跌破信号线](#pmo_falling_but_not_yet_crossed_below_signal_line)'
 - en: Introduction
+  id: totrans-15
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: The DecisionPoint Price Momentum Oscillator (PMO) is an oscillator based on
     a [Rate of Change (ROC)](/school/doku.php?id=chart_school:technical_indicators:rate_of_change_roc_and_momentum
     "chart_school:technical_indicators:rate_of_change_roc_and_momentum") calculation
@@ -83,40 +115,61 @@
     process. Because the PMO is normalized, it can also be used as a relative strength
     tool. Stocks can thus be ranked by their PMO value as an expression of relative
     strength.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: DecisionPoint价格动量振荡器（PMO）是基于[变化率（ROC）](/school/doku.php?id=chart_school:technical_indicators:rate_of_change_roc_and_momentum
+    "chart_school:technical_indicators:rate_of_change_roc_and_momentum")计算的振荡器，该计算通过使用自定义平滑过程两次平滑指数移动平均线。由于PMO是标准化的，因此它也可以用作相对强度工具。因此，股票可以根据其PMO值排名，作为相对强度的表达。
 - en: Calculation
+  id: totrans-17
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算
 - en: The DecisionPoint Price Momentum Oscillator is derived by taking a one period
     rate of change and smoothing it with two custom smoothing functions. The custom
     smoothing functions are very similar to Exponential Moving Averages but instead
     of adding one to the time period setting to create the smoothing multiplier (as
     in a true EMA), the smoothing functions just use the period by itself.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: DecisionPoint价格动量振荡器是通过采用一个周期变化率并使用两个自定义平滑函数对其进行平滑而导出的。这些自定义平滑函数与指数移动平均线非常相似，但是与真正的EMA不同，它们不是将时间周期设置加一来创建平滑乘数（如真正的EMA中那样），而是只使用周期本身。
 - en: '[PRE0]'
+  id: totrans-19
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: '![](../Images/fcf273d3319262ef16792bc1bc61ab3d.jpg)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/fcf273d3319262ef16792bc1bc61ab3d.jpg)'
 - en: 'The table below shows the calculation for Amazon''s PMO:'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 下表显示了亚马逊的PMO计算：
 - en: '![](../Images/848e8a353e052ece6f3bcd60d6a8d12d.jpg)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/848e8a353e052ece6f3bcd60d6a8d12d.jpg)'
 - en: To download an Excel spreadsheet with these calculations, [click here](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:dp_price_momentum_osc:cs-dp-pmo.xls
     "chart_school:technical_indicators_and_overlays:dp_price_momentum_osc:cs-dp-pmo.xls
     (387 KB)").
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 要下载包含这些计算的Excel电子表格，请[点击这里](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:dp_price_momentum_osc:cs-dp-pmo.xls
+    "chart_school:technical_indicators_and_overlays:dp_price_momentum_osc:cs-dp-pmo.xls
+    (387 KB)")。
 - en: Interpretation
+  id: totrans-24
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 解释
 - en: The PMO oscillates in relation to a zero line. Normally, the PMO direction indicates
     if strength is increasing or decreasing, and the steepness of the trend angle
     demonstrates the power behind the move. Since this is an internal ratio calculation
@@ -126,8 +179,11 @@
     can rank a list of securities or indexes in relative strength order simply by
     using their PMO values. The list does not have to be homogeneous ­ the PMO can
     be used to rank market indexes, stocks and mutual funds in the same list.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: PMO在与零线相关的振荡。通常，PMO方向指示强度是增加还是减少，趋势角度的陡峭程度显示了动力的强度。由于这是一个内部比率计算（与外部相比，如标准相对强度计算，它将一个价格除以另一个价格指数），它返回一个经过标准化的结果，并且可以与任何其他证券或指数的PMO结果进行比较。因此，图表分析师可以通过使用它们的PMO值简单地对证券或指数列表进行相对强度排序。列表不必是同质的
+    - PMO可以用来对市场指数、股票和共同基金进行排名。
 - en: An indicator that looks very similar to the PMO is the MACD ([Moving Average
     Convergence-Divergence](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd
     "chart_school:technical_indicators:moving_average_convergence_divergence_macd"))
@@ -136,27 +192,39 @@
     and one MACD reading bears no relationship whatsoever to another; whereas the
     PMO, as explained above, is an internal ratio. The chart below shows the PMO and
     MACD together.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个与PMO非常相似的指标是由杰拉尔德·阿普尔（Gerald Appel）发明的MACD（移动平均线收敛-发散）指标。PMO和MACD之间的主要区别是每个指标的绝对值。MACD基于移动平均计算，一个MACD读数与另一个毫无关系；而正如上面所解释的，PMO是一个内部比率。下面的图表显示了PMO和MACD在一起。
 - en: '![](../Images/457845a6ea2559fed652cafacd582514.jpg)'
+  id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/457845a6ea2559fed652cafacd582514.jpg)'
 - en: While the PMO and MACD have similar shapes on shorter-term charts, the advantage
     of the ratio-type calculation for the PMO is evident on longer-term charts because
     the PMO is fairly constant, unlike the MACD. See the weekly and monthly charts
     below.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管在短期图表上，PMO和MACD的形状相似，但是在长期图表上，PMO的比率型计算的优势是显而易见的，因为PMO相对稳定，不像MACD。请参见下面的周度和月度图表。
 - en: '![](../Images/a08bcced80290d35246987d59e81dc54.jpg)'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/a08bcced80290d35246987d59e81dc54.jpg)'
 - en: '![](../Images/20c4ca5aa0b58aeca3a430277fa2a5e4.jpg)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/20c4ca5aa0b58aeca3a430277fa2a5e4.jpg)'
 - en: Overbought/Oversold Indicator
+  id: totrans-31
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 超买/超卖指标
 - en: As demonstrated below, the PMO can help determine if a price index is overbought
     or oversold. Below is a five-year chart of the S&P 500 Index showing a wide range
     of extreme market conditions. The normal PMO range for this index is from about
@@ -164,33 +232,47 @@
     those limits, it often signals a price reversal. When the PMO changes direction
     at or beyond the extremes of its normal range, it is a fairly reliable indication
     that an intermediate-term change in price direction is taking place.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 如下所示，PMO可以帮助确定价格指数是否超买或超卖。下面是标普500指数的五年图表，显示了各种极端市场条件。该指数的正常PMO范围约为+2.5（超买）至-2.5（超卖），当PMO接近或突破这些限制时，通常会发出价格反转的信号。当PMO在或超出其正常范围的极端位置改变方向时，这往往是价格方向发生中期变化的相当可靠的指示。
 - en: '![](../Images/b239a0f4276f4700c25ce232f3e93497.jpg)'
+  id: totrans-33
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/b239a0f4276f4700c25ce232f3e93497.jpg)'
 - en: While the +2.5 to -2.5 is the usual range for broad stock market indexes, each
     price index will have its own “signature” range. For example, the chart of Microsoft
     (MSFT) below shows a range of +5.0 to -5.0\. Always check a longer-term chart
     to verify the normal range for the index you are analyzing.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然+2.5至-2.5是广泛股市指数的通常范围，但每个价格指数都将有其自己的“特征”范围。例如，下面的微软（MSFT）图表显示了+5.0至-5.0的范围。始终检查长期图表以验证您正在分析的指数的正常范围。
 - en: '![](../Images/5d9d22230c2bc2b87a50c7f89a529be1.jpg)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/5d9d22230c2bc2b87a50c7f89a529be1.jpg)'
 - en: Also, remember that technical indicators are calculated based on a specific
     number of time periods within the timeframe being addressed, so a monthly PMO
     looks completely different from a daily PMO. See the monthly based chart below
     which uses the same seven-year period as the daily MSFT chart above.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，请记住，技术指标是根据在所讨论的时间范围内的特定时间段计算的，因此月度PMO看起来完全不同于日常PMO。请参见下面基于相同七年期间的月度图表，该图表与上面的日常MSFT图表相同。
 - en: '![](../Images/10dfebd3a39e9bfd5a8df9dd956a17e4.jpg)'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/10dfebd3a39e9bfd5a8df9dd956a17e4.jpg)'
 - en: Momentum Indicator
+  id: totrans-38
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 动量指标
 - en: As a momentum indicator, the PMO expresses the direction and velocity of price
     movement. In this regard, it is like other momentum indicators. On the chart of
     the Gold ETF (GLD) below, the strongest moves in either direction are characterized
@@ -198,26 +280,36 @@
     by frequent PMO direction changes. PMO bottoms and tops suggest that price momentum
     has shifted direction, so they can provide early flags to price tops and bottoms.
     They are usually more reliable when the PMO is in overbought or oversold territory.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为动量指标，PMO表达价格运动的方向和速度。在这方面，它类似于其他动量指标。在下面的黄金ETF（GLD）图表中，任一方向上最强烈的移动都以直线、陡峭、平滑的PMO运动为特征。更为停滞的趋势通常伴随着频繁的PMO方向变化。PMO的底部和顶部表明价格动量已经转向，因此它们可以提供价格顶部和底部的早期信号。当PMO处于超买或超卖区域时，它们通常更可靠。
 - en: '![](../Images/1d6878b0e6c3cd294add5976d7cb3b69.jpg)'
+  id: totrans-40
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/1d6878b0e6c3cd294add5976d7cb3b69.jpg)'
 - en: Finally, like other oscillators, the PMO gives hints of important direction
     changes by forming divergences against the price index. Three separate divergences
     have been highlighted below. The two negative divergences (red lines) warn of
     important tops as the price index makes a higher high, and the PMO makes a lower
     high. The Positive divergence (green lines) signal an important bottom with price
     making a lower low while the PMO makes a higher low.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，与其他振荡器一样，PMO通过形成与价格指数的背离来提示重要方向变化的迹象。下面突出显示了三个独立的背离。两个负面背离（红线）警告着重要的顶部，因为价格指数创造了一个更高的高点，而PMO创造了一个更低的高点。正面背离（绿线）信号着重要的底部，价格创造了一个更低的低点，而PMO创造了一个更高的低点。
 - en: '![](../Images/89a082a88c19e71ee85e527a1a1b4b27.jpg)'
+  id: totrans-42
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/89a082a88c19e71ee85e527a1a1b4b27.jpg)'
 - en: Signal Generator
+  id: totrans-43
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 信号生成器
 - en: The PMO generates a crossover signal when it crosses through its 10 period EMA.
     These signals tend to be short-term in duration, but they can last for several
     weeks. Do not take them at face value because they can whipsaw quite a bit. They
@@ -229,25 +321,37 @@
     "chart_school:trading_strategies:decisionpoint_trend_model") using 20/50/200-EMA
     crossovers which determine long-term, intermediate-term and short-term bull or
     bear bias.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 当PMO穿过其10周期EMA时，PMO会产生交叉信号。这些信号往往持续时间较短，但可能持续几周。不要直接接受它们，因为它们可能会频繁震荡。它们应该用于提醒您可能的交易机会，而不是作为机械交易模型使用。始终检查图表以验证价格模式和PMO的配置。当价格看起来过度，接近支撑或阻力，并且PMO非常超买或超卖时，信号效果最佳。这些信号也可以与DecisionPoint
+    [趋势分析](/school/doku.php?id=chart_school:trading_strategies:decisionpoint_trend_model
+    "chart_school:trading_strategies:decisionpoint_trend_model")一起使用，使用20/50/200-EMA交叉确定长期、中期和短期的牛市或熊市偏好。
 - en: 'The most reliable signals are generated when the PMO is near the extremes of
     its normal range, or when a direction change and crossover occurs following a
     strong, clean, straight PMO move. Quite a bit of “noise” can be generated around
     the zero line and while the PMO is moving in a relatively flat pattern. Crossover
     signals have been highlighted on the chart below:'
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 当PMO接近其正常范围的极端位置时，或者在一个强烈、清晰、直线的PMO移动之后发生方向变化和交叉时，最可靠的信号会被产生。在零线周围和PMO在相对平坦模式中移动时，会产生相当多的“噪音”。下图突出显示了交叉信号：
 - en: '![](../Images/952d8b706d469bae41b4c1a63a297b3b.jpg)'
+  id: totrans-46
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/952d8b706d469bae41b4c1a63a297b3b.jpg)'
 - en: PMO Configurations
+  id: totrans-47
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: PMO配置
 - en: '**SIDEWAYS WIGGLE**'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: '**横向摆动**'
 - en: The following chart illustrates a common PMO formation that emphasizes why all
     PMO crossover signals cannot be taken literally. The area circled in red is typical
     of PMO movement during a steady rising price trend. There is little volatility
@@ -257,66 +361,92 @@
     many unprofitable crossover bull signals. This chart also shows how sideways wiggle
     ultimately will end and how it can offer subtle clues that the end of the trend
     is near.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下图表展示了一个常见的PMO形态，强调了为什么所有PMO交叉信号不能被字面接受。红色圈出的区域是在价格稳步上涨趋势中典型的PMO运动。价格波动很小，所以PMO横向移动。PMO保持在零线以上的事实证明了价格走势的强劲；然而，价格波动中的小波动导致PMO在其10-EMA上下震荡，产生许多无利润的交叉牛市信号。这张图还展示了横向摆动最终会结束以及如何提供微妙线索表明趋势即将结束。
 - en: '![](../Images/a267835c9e58dc8c96412576062c795f.jpg)'
+  id: totrans-50
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/a267835c9e58dc8c96412576062c795f.jpg)'
 - en: '**BEAR KISS**'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: '**熊市之吻**'
 - en: The “bear kiss” is the final part of three distinct topping actions often displayed
     by the PMO. When we see this classic formation, it offers additional reassurance
     that a tradable top is in place. We start looking for this formation when the
     PMO has become relatively overbought and the price index has experienced a substantial
     move up. This formation doesn't always occur at tops, but, when it does, it helps
     build our confidence in the reliability of the signal.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: “熊市之吻”是PMO经常显示的三个明显顶部动作中的最后一部分。当我们看到这种经典形态时，它提供了额外的保证，表明可交易的顶部已经形成。当PMO相对超买且价格指数经历了大幅上涨时，我们开始寻找这种形态。这种形态并不总是出现在顶部，但是当出现时，它有助于增强我们对信号可靠性的信心。
 - en: The first action is a false PMO top. Major tops are always accompanied by an
     overbought PMO top, but all PMO tops do not signal major price tops. The false
     top alerts us that a price top is probably just a few weeks away.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一个动作是一个虚假的PMO顶部。主要顶部总是伴随着一个超买的PMO顶部，但并非所有PMO顶部都预示着主要价格顶部。虚假顶部提醒我们，价格顶部可能只有几周的时间。
 - en: Next we'll see a slightly higher PMO top followed by a crossover sell signal,
     which is generated when the PMO (blue line) crosses down through its 10-EMA (green
     line). When these signals occur at very overbought levels, they may tentatively
     be taken at face value, but, when they have been preceded by very strong price
     action, it is possible for prices to make yet another new high, which causes the
     PMO to begin rising again.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来我们会看到一个略高的PMO顶部，随后是一个交叉卖出信号，当PMO（蓝线）穿过其10-EMA（绿线）向下交叉时生成。当这些信号发生在非常超买的水平时，它们可能暂时被视为准确，但是，当它们之前有非常强劲的价格行动时，价格可能再次创造新高，这会导致PMO再次开始上升。
 - en: Finally, as prices roll over from the final top, the PMO turns up again, this
     time topping after just barely “kissing” the underside of the 10-EMA. Some refer
     to this as the “kiss of death,” but this seems a tad dramatic, so a bear kiss
     seems more appropriate. Besides, there is a reciprocal formation at important
     bottoms, and the term “bull kiss” seems more apt than “kiss of life.”
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，随着价格从最终顶部开始回落，PMO再次上涨，这次仅在勉强“吻”到10-EMA的下侧后达到顶峰。有些人称之为“死亡之吻”，但这似乎有点夸张，因此熊市之吻似乎更合适。此外，在重要底部还有一个相反的形态，术语“公牛之吻”似乎比“生命之吻”更贴切。
 - en: Note that an important aspect of this analysis is that the price index has broken
     a rising trend line in conjunction with the bear kiss.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，这一分析的一个重要方面是，价格指数已经突破了一个上升趋势线，并伴随着熊市之吻。
 - en: '![](../Images/4a5c4d6de8e91a0cca696d0531374246.jpg)'
+  id: totrans-57
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/4a5c4d6de8e91a0cca696d0531374246.jpg)'
 - en: '**BULL KISS**'
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: '**公牛之吻**'
 - en: The “bull kiss” occurs shortly after a PMO crossover buy signal, and is the
     result of a price pullback after the initial up thrust that generates the crossover
     signal. While the bull kiss and bear kiss are essentially equal but opposite formations,
     price behavior between the two is different. Normally, the bear kiss is a non-confirmation
     which coincides with the final price high in a rally; whereas, the bull kiss normally
     coincides with a higher price low in a new rally.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: “公牛之吻”发生在PMO交叉买入信号之后不久，是在产生交叉信号后的初始向上推力后价格回撤的结果。虽然公牛之吻和熊市之吻本质上是相等但相反的形态，但两者之间的价格行为是不同的。通常情况下，熊市之吻是一个不确认信号，与一次上涨中的最终价格高点相一致；而公牛之吻通常与新一轮上涨中的更高价格低点相一致。
 - en: '![](../Images/f366d38c3af656f556528191e87cdcb8.jpg)'
+  id: totrans-60
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/f366d38c3af656f556528191e87cdcb8.jpg)'
 - en: '**CLEAN SIGNALS**'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '**清晰信号**'
 - en: While the bull and bear kiss formations are quite common, it is also possible
     to have very clean PMO reversals and crossovers without any of the gyrations associated
     with blow-offs and retests because the change in price trend is relatively smooth.
@@ -324,71 +454,102 @@
     A study of the charts will lead to a better understanding of the kind of price
     action that begets a certain type of PMO behavior. The PMO behavior also gives
     clues as to what kind of price behavior to expect.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然公牛和熊市之吻形态相当常见，但也有可能出现非常清晰的PMO反转和交叉，而没有与爆发和重新测试相关的摆动，因为价格趋势的变化相对平稳。关键是，反转和交叉行为可以涵盖各种配置。对图表的研究将有助于更好地理解导致某种类型PMO行为的价格行为。PMO行为还提供了关于可以预期的价格行为类型的线索。
 - en: '![](../Images/3b9d93e56c554d2b93239a87ad899bde.jpg)'
+  id: totrans-63
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/3b9d93e56c554d2b93239a87ad899bde.jpg)'
 - en: Conclusion
+  id: totrans-64
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: The DecisionPoint Price Momentum Oscillator (PMO) can be used as both a measure
     of relative strength, momentum, and overbought/oversold conditions. It can also
     be used to determine price reversals using bull and bear crossovers.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 决策点价格动量振荡器（PMO）可用作相对强度、动量和超买/超卖条件的衡量标准。它还可以用于通过牛市和熊市交叉确定价格反转。
 - en: Using with SharpCharts
+  id: totrans-66
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用 SharpCharts
 - en: The DecisionPoint PMO is available as an indicator for SharpCharts. The default
     settings use a 35 period and 20 period EMA with a 10 period EMA signal line, but
     users can opt for a shorter timeframe to produce a more sensitive oscillator or
     a longer timeframe to produce a less sensitive oscillator. Once selected, the
     indicator can be placed above, below or behind the underlying price plot.
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 决策点 PMO 可作为 SharpCharts 的指标使用。默认设置使用35期和20期EMA，带有10期EMA信号线，但用户可以选择更短的时间框架以产生更敏感的振荡器，或选择更长的时间框架以产生更不敏感的振荡器。一旦选择，指标可以放置在基础价格图表的上方、下方或后方。
 - en: '![](../Images/9fbde43fe23bd887d872262f67faf3c8.jpg)'
+  id: totrans-68
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/9fbde43fe23bd887d872262f67faf3c8.jpg)'
 - en: Suggested Scans
+  id: totrans-69
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议的扫描
 - en: PMO Rising But Not Yet Crossed Over Signal Line
+  id: totrans-70
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: PMO 上升但尚未穿越信号线
 - en: This scan starts with a base of stocks that are averaging at least $10 in price
     and 100,000 in daily volume over the last 60 days. The stock's PMO must have been
     rising for the last three days, but has not yet crossed over its signal line.
     In addition, the 20-day EMA is above the 50-day EMA, which is above the 200-day
     EMA, indicating the stock is in an intermediate-term or long-term bull market.
     This scan is meant as a starting point for further analysis and due diligence.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个扫描从过去60天至少平均价格为$10和每日交易量为100,000的股票基础开始。股票的 PMO 必须在过去三天内上升，但尚未穿过其信号线。此外，20日EMA高于50日EMA，50日EMA高于200日EMA，表明股票处于中期或长期牛市。这个扫描旨在作为进一步分析和尽职调查的起点。
 - en: '[PRE1]'
+  id: totrans-72
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: PMO Falling But Not Yet Crossed Below Signal Line
+  id: totrans-73
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: PMO 下降但尚未跌破信号线
 - en: This scan starts with a base of stocks that are averaging at least $10 in price
     and 100,000 in daily volume over the last 60 days. The stock's PMO must have been
     in decline for the last three days, but has not yet crossed below its signal line.
     In addition, the 20-day EMA is below the 50-day EMA, which is below the 200-day
     EMA, indicating the stock is in an intermediate-term or long-term bear market.
     This scan is meant as a starting point for further analysis and due diligence.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个扫描从过去60天至少平均价格为$10和每日交易量为100,000的股票基础开始。股票的 PMO 必须在过去三天内下降，但尚未跌破其信号线。此外，20日EMA低于50日EMA，50日EMA低于200日EMA，表明股票处于中期或长期熊市。这个扫描旨在作为进一步分析和尽职调查的起点。
 - en: '[PRE2]'
+  id: totrans-75
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: For more details on the syntax to use for PMO scans, please see our [Scanning
     Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#decisionpoint_price_momentum_oscillator_pmo
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#decisionpoint_price_momentum_oscillator_pmo")
     in the Support Center.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关 PMO 扫描的语法详细信息，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#decisionpoint_price_momentum_oscillator_pmo
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#decisionpoint_price_momentum_oscillator_pmo")在支持中心。

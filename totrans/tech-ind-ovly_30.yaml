@@ -1,71 +1,99 @@
 - en: Ease of Movement [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 价格运动便利性 [ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Ease of Movement](#ease_of_movement)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[价格运动便利性](#ease_of_movement)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[SharpCharts Calculation](#sharpcharts_calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[SharpCharts 计算](#sharpcharts_calculation)'
 - en: '[Interpretation](#interpretation)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[解释](#interpretation)'
 - en: '[Confirming Other Signals](#confirming_other_signals)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[确认其他信号](#confirming_other_signals)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与 SharpCharts 一起使用](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议扫描](#suggested_scans)'
 - en: '[EMV Crosses above Zero](#emv_crosses_above_zero)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[EMV 上穿零线](#emv_crosses_above_zero)'
 - en: '[EMV Crosses below Zero](#emv_crosses_below_zero)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[EMV 下穿零线](#emv_crosses_below_zero)'
 - en: '[Further Study](#further_study)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[进一步研究](#further_study)'
 - en: Introduction
+  id: totrans-13
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: Developed by Richard Arms, Ease of Movement (EMV) is a volume-based oscillator
     that fluctuates above and below the zero line. As its name implies, it is designed
     to measure the “ease” of price movement. Arms created [Equivolume](/school/doku.php?id=chart_school:chart_analysis:equivolume
@@ -75,65 +103,96 @@
     prices are advancing with relative ease when the oscillator is in positive territory.
     Conversely, prices are declining with relative ease when the oscillator is in
     negative territory.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 由理查德·阿姆斯开发，Ease of Movement（EMV）是一个基于成交量的振荡器，波动在零线上下。顾名思义，它旨在衡量价格运动的“便利性”。阿姆斯创建了
+    [等量图](/school/doku.php?id=chart_school:chart_analysis:equivolume "chart_school:chart_analysis:equivolume")
+    来直观显示价格范围和成交量。 Ease of Movement 将等量图提升到下一个水平，通过量化价格/成交量关系，并将结果显示为振荡器。一般来说，当振荡器处于正区域时，价格相对容易上涨。相反，当振荡器处于负区域时，价格相对容易下跌。
 - en: SharpCharts Calculation
+  id: totrans-15
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: SharpCharts 计算
 - en: 'There are three parts to the EMV formula: distance moved, volume and the high-low
     range. First, the distance moved is calculated by comparing the current period''s
     midpoint with the prior period''s midpoint, which is the high plus the low divided
     by two. Distance moved is positive when the current midpoint is above the prior
     midpoint and negative when the current midpoint is below the prior midpoint. Distance
     moved is shown as the numerator in the formula below.'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: EMV 公式有三部分：移动距离、成交量和高低范围。首先，移动距离是通过比较当前周期的中点与前一周期的中点（即高加低除以二）来计算的。当当前中点高于前一中点时，移动距离为正，当当前中点低于前一中点时，移动距离为负。移动距离在下面的公式中显示为分子。
 - en: '[PRE0]'
+  id: totrans-17
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: The other two parts form the Box ratio, which uses volume and the high-low range.
     Equivolume charts are based on volume and the high-low range as well. The Box
     ratio is the denominator of EMV. Note that volume is divided by 100,000,000 to
     keep it relevant with the other numbers.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 另外两部分构成了盒子比率，它使用了成交量和高低范围。等量图表也是基于成交量和高低范围。盒子比率是 EMV 的分母。请注意，成交量除以 100,000,000
+    以保持与其他数字的相关性。
 - en: Relatively low volume and a relatively large high-low range will produce a smaller
     denominator (Box ratio), which means the EMV value will be larger because of division
     by a smaller number. The Box ratio would be .50 if V/10000000 equals 2 and the
     high-low range equals 4\. A wide range on low volume implies relatively easy price
     movement. In other words, it did not take much volume to move prices.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 相对较低的成交量和相对较大的高低范围将产生较小的分母（盒子比率），这意味着由于除以较小的数字，EMV 值将更大。如果 V/10000000 等于 2，高低范围等于
+    4，则盒子比率将为 0.50。低成交量的广泛范围意味着价格变动相对容易。换句话说，价格变动不需要太多成交量。
 - en: A relatively small high-low range on high volume would produce a larger denominator,
     which means the EMV value will be smaller. The denominator would be 2 if V/10000000
     equals 4 and the high-low range equals 2\. This implies that price movement was
     difficult because there was a relatively small high-low range on big volume.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 相对较小的高低范围和高成交量将产生较大的分母，这意味着 EMV 值将较小。如果 V/10000000 等于 4，高低范围等于 2，则分母为 2。这意味着价格变动困难，因为在大成交量下高低范围相对较小。
 - en: '![Spreadsheet](../Images/923efc16fee7603d95555cb8cbc4b00b.jpg "Spreadsheet")'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![电子表格](../Images/923efc16fee7603d95555cb8cbc4b00b.jpg "电子表格")'
 - en: '[Click here to download this spreadsheet example.](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:ease_of_movement:cs-easeofmovement.xls
     "chart_school:technical_indicators_and_overlays:ease_of_movement:cs-easeofmovement.xls
     (33.5 KB)")'
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: '[点击这里下载这个电子表格示例。](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:ease_of_movement:cs-easeofmovement.xls
+    "chart_school:technical_indicators_and_overlays:ease_of_movement:cs-easeofmovement.xls
+    (33.5 KB)")'
 - en: Interpretation
+  id: totrans-23
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 解释
 - en: The example below shows the Nasdaq 100 ETF (QQQ) with the 1-period EMV in the
     lower indicator window. I am using Equivolume bars because these show only the
     high-low range for the given period. The blue arrows show two small EMV values.
     One is slightly positive and the other is slightly negative. Volume on both days
     was above average, but the high-low range was modest or even small. This means
     prices had difficulty moving even though volume was relatively high.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面的示例显示了纳斯达克100 ETF（QQQ）的 1 期 EMV 在下方指标窗口中。我使用等量柱，因为这些只显示给定期间的高低范围。蓝色箭头显示了两个小的
+    EMV 值。一个略微为正，另一个略微为负。这两天的成交量都高于平均水平，但高低范围适中甚至较小。这意味着尽管成交量相对较高，但价格难以上涨。
 - en: '![Chart 1](../Images/5504f8ecce8aece6a1f68f5216fdaa78.jpg "Chart 1")'
+  id: totrans-25
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 1](../Images/5504f8ecce8aece6a1f68f5216fdaa78.jpg "图表 1")'
 - en: The red arrow shows an EMV value near -3, which is very negative. This is because
     volume was low and the high-low range was large. This implies that prices declined
     with relative ease and there was little buying or no buying pressure. The green
@@ -142,15 +201,23 @@
     or no selling pressure. The chart below shows Jabil Circuit (JBL) with the 14-period
     Ease of Movement indicator. This is just a 14-period simple [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
     "chart_school:technical_indicators:moving_averages") of each period's EMV value.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 红色箭头显示了一个接近-3的EMV值，这是非常负面的。这是因为成交量低，而高低范围很大。这意味着价格相对轻松下跌，几乎没有买盘或没有买盘压力。绿色箭头显示了一个接近+3的EMV值。同样，成交量低，而高低范围很大。这意味着价格相对轻松上涨，几乎没有卖盘或没有卖盘压力。下面的图表显示了贾比尔电路（JBL）的14期
+    Ease of Movement 指标。这只是每个周期 EMV 值的 14 期简单[移动平均线](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages")。
 - en: '![Chart 2](../Images/7a2d59780336200ed696974ccc2745a5.jpg "Chart 2")'
+  id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 2](../Images/7a2d59780336200ed696974ccc2745a5.jpg "图表 2")'
 - en: Confirming Other Signals
+  id: totrans-28
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 确认其他信号
 - en: Ease of Movement is best used to confirm other indicators or chart analysis.
     In other words, it is not a standalone indicator. Keep in mind that the “Distance
     Moved” portion of the formula is the positive/negative driver. EMV is generally
@@ -160,11 +227,15 @@
     to confirm a breakout on the price chart or a bullish indicator signal. Conversely,
     a move into negative territory can be used to confirm a breakdown on the price
     chart or a bearish indicator signal.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: Ease of Movement 最适合用来确认其他指标或图表分析。换句话说，它不是一个独立的指标。请记住，公式中的“移动距离”部分是正面/负面的驱动因素。当中点上升时，EMV通常为正值，当中点下降时，EMV通常为负值。这意味着EMV通常会随着基础证券价格的上涨和下跌而上升和下降。这种上升或下降的幅度取决于箱体比率。图表技术分析师可以使用EMV来确认价格图表上的突破或看涨指标信号。相反，进入负值区域可以用来确认价格图表上的突破或看跌指标信号。
 - en: '![Chart 3](../Images/b7b50efa36b9b54b59a83de21d87a27d.jpg "Chart 3")'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 3](../Images/b7b50efa36b9b54b59a83de21d87a27d.jpg "图表 3")'
 - en: The example above shows Mosaic (MOS) with a bearish breakdown in early April
     and a bullish breakout in mid-June. Prior to the bearish breakdown, EMV deteriorated
     for two months and dipped into negative territory in March. With the stock rising
@@ -174,11 +245,15 @@
     April and May, EMV improved from late May to early June with a move into positive
     territory. The stock also formed a small inverse head-and-shoulders and broke
     resistance at 50\.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 上面的示例显示了Mosaic（MOS）在四月初出现熊市突破和六月中旬的牛市突破。在熊市突破之前，EMV在两个月内恶化，并在三月份跌入负值区域。随着股票在一月至二月上涨，而EMV下降，上涨变得更加困难。MOS在四月初下跌并且EMV再次跌入负值区域时，突破支撑位。在四月和五月大部分时间为负值后，EMV从五月底到六月初改善，并进入正值区域。股票还形成了一个小的反向头肩形态，并突破了50的阻力位。
 - en: '![Chart 4](../Images/dabe39fe926887604c539a45dfd84164.jpg "Chart 4")'
+  id: totrans-32
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 4](../Images/dabe39fe926887604c539a45dfd84164.jpg "图表 4")'
 - en: The second example shows Valero Energy (VLO) with EMV signals confirmed by RSI
     and the price chart. After advancing from January to mid-March, VLO reversed course
     and broke support at the end of March. Notice that EMV broke its late February
@@ -188,86 +263,131 @@
     and was firmly positive at the time of the breakout. [RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi
     "chart_school:technical_indicators:relative_strength_index_rsi") also confirmed
     with a break above its April high and a move above 55\.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二个示例展示了Valero Energy（VLO）的EMV信号，由RSI和价格图表确认。从一月到三月中旬，VLO上涨，然后在三月底扭转并突破支撑位。请注意，EMV在二月底突破了其低点，并在三月底深入负值区域。另外，请注意，RSI跌至自一月初以来的最低水平。第二次逆转发生在VLO于七月中旬突破阻力位时。EMV在此突破前开始改善，并在突破时处于坚定的正值状态。[RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi
+    "chart_school:technical_indicators:relative_strength_index_rsi")也通过突破其四月高点和超过55的移动来确认。
 - en: Conclusions
+  id: totrans-34
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: Ease of Movement (EMV) combines price direction with volume to create a volume-based
     momentum oscillator. Because it is closely tied with price changes, EMV tends
     to track the price of the underlying security quite closely. For the most part,
     EMV is used to confirm signals derived from the price chart or other indicators.
     Chartists looking for a smoother EMV line can lengthen the look-back period.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: Ease of Movement（EMV）将价格方向与成交量结合起来，创建了一个基于成交量的动量振荡器。由于它与价格变动密切相关，EMV往往会紧密跟踪基础证券的价格。在大多数情况下，EMV用于确认从价格图表或其他指标得出的信号。寻找更平滑的EMV线的图表分析师可以延长回溯期。
 - en: Using with SharpCharts
+  id: totrans-36
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用SharpCharts
 - en: Ease of Movement (EMV) can be found in the “indicators” section under the chart.
     Users can adjust the settings by changing the numbers in the “parameters” box.
     The indicator can then be positioned “behind price”, “above” the main window or
     “below” the main window. It helps to change the color when placing it behind the
     price. Chartists can also add a moving average using the “advanced” indicator
     options.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: Ease of Movement（EMV）可以在图表下的“指标”部分找到。用户可以通过更改“参数”框中的数字来调整设置。指标可以放置在“价格后面”、“主窗口上方”或“主窗口下方”。在将其放置在价格后面时，更改颜色会有所帮助。图表分析师还可以使用“高级”指标选项添加移动平均线。
 - en: '![Chart 5](../Images/99d464f621f03e9596d5d50e8d129b95.jpg "Chart 5")'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 5](../Images/99d464f621f03e9596d5d50e8d129b95.jpg "图表 5")'
 - en: '![Chart 6](../Images/5b2d14bb19d8a5dc2951b4bd42bd601e.jpg "Chart 6")'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 6](../Images/5b2d14bb19d8a5dc2951b4bd42bd601e.jpg "图表 6")'
 - en: Suggested Scans
+  id: totrans-40
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议的扫描
 - en: EMV Crosses above Zero
+  id: totrans-41
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: EMV突破零线
 - en: This simple scan searches for stocks where the EMV crossed from negative territory
     to positive territory.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个简单的扫描搜索股票，其中EMV从负值区域突破到正值区域。
 - en: '[PRE1]'
+  id: totrans-43
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: EMV Crosses below Zero
+  id: totrans-44
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: EMV跌破零线
 - en: This simple scan searches for stocks where the EMV crossed from positive territory
     to negative territory.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个简单的扫描搜索股票，其中EMV从正值区域突破到负值区域。
 - en: '[PRE2]'
+  id: totrans-46
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: For more details on the syntax to use for Ease of Movement scans, please see
     our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#ease_of_movement_emv
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#ease_of_movement_emv")
     in the Support Center.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 欲了解有关轻松移动扫描的语法详情，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#ease_of_movement_emv
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#ease_of_movement_emv")。
 - en: Further Study
+  id: totrans-48
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 进一步研究
 - en: '| **Profits in Volume** Richard W. Arms Jr. |'
+  id: totrans-49
   prefs: []
   type: TYPE_TB
+  zh: '| **成交量利润** 理查德·W·阿姆斯 小学教授 |'
 - en: '| [![](../Images/f6246cfcfa94391e7a495c6298a5b9fa.jpg)](http://store.stockcharts.com/products/profits-in-volume
     "http://store.stockcharts.com/products/profits-in-volume") |'
+  id: totrans-50
   prefs: []
   type: TYPE_TB
+  zh: '| [![](../Images/f6246cfcfa94391e7a495c6298a5b9fa.jpg)](http://store.stockcharts.com/products/profits-in-volume
+    "http://store.stockcharts.com/products/profits-in-volume") |'
 - en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/profits-in-volume
     "http://store.stockcharts.com/products/profits-in-volume") |'
+  id: totrans-51
   prefs: []
   type: TYPE_TB
+  zh: '| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/profits-in-volume
+    "http://store.stockcharts.com/products/profits-in-volume") |'
 - en: 'Website: Richard W. Arms Jr. has a website with more information on EquiVolume,
     including a downloadable ebook: [Trading with EquiVolume](http://www.armsinsider.com/pdf/index.asp
     "http://www.armsinsider.com/pdf/index.asp").'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 网站：理查德·W·阿姆斯 小学教授拥有一个网站，提供更多关于EquiVolume的信息，包括可下载的电子书：[与EquiVolume交易](http://www.armsinsider.com/pdf/index.asp
+    "http://www.armsinsider.com/pdf/index.asp")。

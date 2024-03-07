@@ -1,54 +1,76 @@
 - en: ZigZag [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: ZigZag [ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[ZigZag](#zigzag)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[ZigZag](#zigzag)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[简介](#introduction)'
 - en: '[Calculation](#calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算](#calculation)'
 - en: '[Elliott Wave Counts](#elliott_wave_counts)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[艾略特波动计数](#elliott_wave_counts)'
 - en: '[Retracements and Projections](#retracements_and_projections)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[回撤和投影](#retracements_and_projections)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与SharpCharts一起使用](#using_with_sharpcharts)'
 - en: '[Further Study](#further_study)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[进一步研究](#further_study)'
 - en: Introduction
+  id: totrans-10
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 简介
 - en: The ZigZag feature on SharpCharts is not an indicator per se, but rather a means
     to filter out smaller price movements. A ZigZag set at 10% would ignore all price
     movements less than 10%. Only price movements greater than 10% would be shown.
@@ -58,20 +80,26 @@
     will come from applications such as Elliott Wave, price pattern analysis or indicators.
     Chartists can also use the ZigZag with retracements feature to identify Fibonacci
     retracements and projections.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: SharpCharts上的ZigZag功能本身不是指标，而是一种过滤较小价格波动的手段。设置为10%的ZigZag将忽略所有小于10%的价格波动。只有大于10%的价格波动才会显示出来。过滤掉较小的波动使图表分析者能够看到整体情况而不仅仅是细节。重要的是要记住，ZigZag功能没有预测能力，因为它是基于事后的绘制线条。任何预测能力都将来自应用程序，如艾略特波动、价格模式分析或指标。图表分析者还可以使用ZigZag与回撤功能来识别斐波那契回撤和投影。
 - en: Calculation
+  id: totrans-12
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算
 - en: The ZigZag is based on the chart “type.” Line and dot charts, which are based
     on the close, will show the ZigZag based on closing prices. High-Low-Close bars
     (HLC), Open-High-Low-Close (OHLC) bars and candlesticks, which show the period's
     high-low range, will show the ZigZag based on this high-low range. A ZigZag based
     on the high-low range is more likely to change course than a ZigZag based on the
     close because the high-low range will be much larger and produce bigger swings.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: ZigZag基于图表的“类型”。基于收盘价的线状和点状图表将显示基于收盘价的ZigZag。高低收盘价柱状图（HLC）、开盘-最高-最低-收盘价柱状图（OHLC）和蜡烛图显示了周期的高低范围，将显示基于这一高低范围的ZigZag。基于高低范围的ZigZag更有可能改变方向，因为高低范围会更大，产生更大的波动。
 - en: The parameters box allows chartists to set the sensitivity of the ZigZag feature.
     A ZigZag with 5 in the parameter box will filter out all movements less than 5%.
     A ZigZag(10) will filter out movements less than 10%. If a stock traded from a
@@ -84,12 +112,17 @@
     The chart below shows a QQQQ line chart with a 7% ZigZag. The early June bounce
     was ignored because it was less than 7% (black arrow). The two pullbacks in July
     were ignored because they were much less than 7% (red arrows).
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 参数框允许图表分析者设置ZigZag功能的灵敏度。参数框中设置为5的ZigZag将过滤掉所有小于5%的波动。设置为10的ZigZag将过滤掉小于10%的波动。如果一支股票从100的反弹低点到109的高点（+9%），则不会有线条，因为波动小于10%。如果股票从100的低点上涨到110的高点（+10%），则会有一条线从100到110。如果股票继续上涨到112，这条线将延伸到112（从100到112）。直到股票从高点下跌10%或更多，ZigZag才会反转。从112的高点开始，股票必须下跌11.2点（或至100.8的低点）才能再次出现线条。下面的图表显示了一个带有7%
+    ZigZag的QQQQ线状图。6月初的反弹被忽略，因为小于7%（黑色箭头）。7月的两次回调也被忽略，因为它们远低于7%（红色箭头）。
 - en: '![ZigZag - Chart 1](../Images/0a062c468971ec2a37068fd17aa8ce58.jpg "ZigZag
     - Chart 1")'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![ZigZag - 图表1](../Images/0a062c468971ec2a37068fd17aa8ce58.jpg "ZigZag - 图表1")'
 - en: Be careful with the last ZigZag line. Astute chartists will notice that the
     last ZigZag line is up even though QQQQ advanced just 4.13% (43.36 to 45.15).
     This is just a temporary line because QQQQ has yet to reach the 7% change threshold.
@@ -97,16 +130,23 @@
     ZigZag line. Should QQQQ fail to reach the 7% threshold on this bounce and then
     decline below 43, this temporary line would disappear and the prior ZigZag line
     would continue from the early August high.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意最后一个ZigZag线。敏锐的图表分析师会注意到，尽管QQQQ仅上涨了4.13%（43.36至45.15），但最后一个ZigZag线是向上的。这只是一个临时线，因为QQQQ尚未达到7%的变化阈值。需要到46.40才能获得7%的增长，然后才会有一个永久的ZigZag线。如果QQQQ在此反弹中未能达到7%的阈值，然后下跌至43以下，这条临时线将消失，之前的ZigZag线将从8月初的高点继续。
 - en: '![ZigZag - Chart 2](../Images/e3d7fefaf2cec25331994401bd084724.jpg "ZigZag
     - Chart 2")'
+  id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![ZigZag - Chart 2](../Images/e3d7fefaf2cec25331994401bd084724.jpg "ZigZag
+    - Chart 2")'
 - en: Elliott Wave Counts
+  id: totrans-18
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: Elliott Wave Counts
 - en: The ZigZag feature can be used to filter out small moves and make [Elliott Wave](/school/doku.php?id=chart_school:market_analysis:introduction_to_elliott_wave_theory
     "chart_school:market_analysis:introduction_to_elliott_wave_theory") counts more
     straightforward. The chart below shows the S&P 500 ETF with a 6% ZigZag to filter
@@ -116,16 +156,26 @@
     The threshold and the wave count are subjective and dependent on individual preferences.
     Based on the 6% ZigZag, a complete cycle was identified from March 2009 until
     July 2010\. A complete cycle consists of 8 waves, 5 up and 3 down.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: ZigZag功能可用于过滤小幅波动，并使[Elliott Wave](/school/doku.php?id=chart_school:market_analysis:introduction_to_elliott_wave_theory
+    "chart_school:market_analysis:introduction_to_elliott_wave_theory")计数更加直观。下图显示了标普500ETF的6%
+    ZigZag，以过滤小于6%的波动。经过一些试验，6%被认为是重要的阈值。大于6%的上涨或下跌被认为足够重要，需要为Elliott计数做出波浪。请记住，这只是一个例子。阈值和波浪计数是主观的，取决于个人偏好。基于6%
+    ZigZag，从2009年3月到2010年7月识别出了一个完整的周期。一个完整的周期包括8个波动，5个上涨和3个下跌。
 - en: '![ZigZag - Chart 4](../Images/c7bc2129d97eae138657f14d227f97e9.jpg "ZigZag
     - Chart 4")'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![ZigZag - Chart 4](../Images/c7bc2129d97eae138657f14d227f97e9.jpg "ZigZag
+    - Chart 4")'
 - en: Retracements and Projections
+  id: totrans-21
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: Retracements and Projections
 - en: Sharpcharts users can choose between the normal “ZigZag” and “ZigZag (Retrace.).”
     As shown in the examples above, the normal ZigZag shows lines that move at least
     a specific percentage. The ZigZag (Retrace.) connects the reaction highs and lows
@@ -138,12 +188,19 @@
     is shorter than the prior line. The dotted line connecting the high of Line 2
     with the high of Line 3 shows a box with 1.646\. This means Line 3 is 1.646 (164.6%)
     of Line 2\. A number above 1 means the line is longer than the prior line.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: Sharpcharts用户可以在正常的“ZigZag”和“ZigZag (Retrace.)”之间选择。如上面的示例所示，正常的ZigZag显示至少移动特定百分比的线条。ZigZag
+    (Retrace.)连接反应高点和低点，并标记测量先前移动的标签。虚线上的数字反映了当前Zigzag线与之前的ZigZag线之间的差异。例如，下图显示了Altera
+    (ALTR)的15% ZigZag (Retrace.)功能。已标记了三条ZigZag线（1、2和3）。连接线1的低点和线2的低点的虚线显示了一个框，其中包含0.638。这意味着线2是线1的0.638（63.8%）。小于1的数字表示该线比先前的线短。连接线2的高点和线3的高点的虚线显示了一个框，其中包含1.646。这意味着线3是线2的1.646（164.6%）。大于1的数字表示该线比先前的线长。
 - en: '![ZigZag - Chart 3](../Images/a82588f71d48ba3b7a944f177603537b.jpg "ZigZag
     - Chart 3")'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![ZigZag - Chart 3](../Images/a82588f71d48ba3b7a944f177603537b.jpg "ZigZag
+    - Chart 3")'
 - en: As you may have guessed, seeing these lines as a percentage of the prior lines
     makes it possible to assess Fibonacci projections. The August decline (Line 2)
     retraced around 61.8% of the June-July advance (Line 1). This is a classic Fibonacci
@@ -153,12 +210,17 @@
     is the Golden Ratio used in many projection estimates. See our ChartSchool article
     for more on [Fibonacci retracements.](/school/doku.php?id=chart_school:chart_analysis:fibonacci_retracemen
     "chart_school:chart_analysis:fibonacci_retracemen")
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能已经猜到，将这些线看作前一线的百分比，可以评估斐波那契投影。8月下跌（线2）回撤了6月至7月上涨（线1）的大约61.8%。这是经典的斐波那契回撤。从9月初到11月初的上涨是8月下跌的1.646倍。在这种意义上，ZigZag（Retrace.）可以用来预测上涨的长度。再次，1.646接近斐波那契1.618，这是许多投影估计中使用的黄金比例。查看我们的ChartSchool文章，了解更多关于[斐波那契回撤](/school/doku.php?id=chart_school:chart_analysis:fibonacci_retracemen
+    "chart_school:chart_analysis:fibonacci_retracemen")的信息。
 - en: Conclusions
+  id: totrans-25
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: The ZigZag and ZigZag (Retrace.) filter price action and do not have any predictive
     power. The ZigZag lines simply react when prices move a certain percentage. Chartists
     can apply an array of [technical analysis tools](/school/doku.php?id=chart_school:chart_analysis
@@ -171,12 +233,17 @@
     is temporary if the current price change is less than the ZigZag parameter. The
     last line is permanent when the price change is greater than or equal to the ZigZag
     parameter.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: ZigZag和ZigZag（Retrace.）过滤价格走势，并没有任何预测能力。当价格移动一定百分比时，ZigZag线会做出反应。图表分析师可以将各种[技术分析工具](/school/doku.php?id=chart_school:chart_analysis
+    "chart_school:chart_analysis")应用于ZigZag。通过比较反应高点和低点，图表分析师可以进行基本趋势分析。图表分析师还可以叠加ZigZag功能，以寻找在普通柱状图或折线图上可能不太明显的价格模式。ZigZag有一种突出重要走势并忽略噪音的方式。使用ZigZag功能时，不要忘记测量最后一条线，以确定它是暂时的还是永久的。如果当前价格变动小于ZigZag参数，则最后一条ZigZag线是暂时的。当价格变动大于或等于ZigZag参数时，最后一条线是永久的。
 - en: Using with SharpCharts
+  id: totrans-27
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用SharpCharts
 - en: The ZigZag and ZigZag (Retrace.) can be found in SharpCharts as a price overlay
     in the Chart Attributes section or as an addition to an indicator. Upon selecting
     the Zigzag feature from the dropdown box, the parameters window will appear empty.
@@ -190,34 +257,58 @@
     [Click here](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=8&dy=0&id=p52942080253&listNum=30&a=213475204
     "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=8&dy=0&id=p52942080253&listNum=30&a=213475204")
     for a live chart with the Zigzag (Retrace.) feature.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: ZigZag和ZigZag（Retrace.）可以在SharpCharts中作为图表属性部分的价格叠加或作为指标的附加项找到。在从下拉框中选择Zigzag功能后，参数窗口将为空白。默认参数为5%，但这取决于证券的价格特征。一些证券在5%时产生的Zigzag线太少，因此默认设置较低（例如3.75%）。一些证券在5%时产生太多的Zigzag线，因此默认设置较高（例如6.25%）。Zigzag参数可以在图表的左上角看到。应用Zigzag功能后，图表分析师可以调整参数以满足其图表需求。较低的数字会使功能更敏感，而较高的数字会使其不太敏感。[点击这里](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=8&dy=0&id=p52942080253&listNum=30&a=213475204
+    "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=8&dy=0&id=p52942080253&listNum=30&a=213475204")查看带有Zigzag（Retrace.）功能的实时图表。
 - en: '![ZigZag - SharpCharts](../Images/0647435763830c7f4686202a27f2e98b.jpg "ZigZag
     - SharpCharts")'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![ZigZag - SharpCharts](../Images/0647435763830c7f4686202a27f2e98b.jpg "ZigZag
+    - SharpCharts")'
 - en: '![ZigZag - SharpCharts](../Images/a30c4b8e935ac023c8ac3870d0a2efc8.jpg "ZigZag
     - SharpCharts")'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![ZigZag - SharpCharts](../Images/a30c4b8e935ac023c8ac3870d0a2efc8.jpg "ZigZag
+    - SharpCharts")'
 - en: '![ZigZag - SharpCharts](../Images/950acc8018316dd367477e78e1aa0913.jpg "ZigZag
     - SharpCharts")'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![ZigZag - SharpCharts](../Images/950acc8018316dd367477e78e1aa0913.jpg "ZigZag
+    - SharpCharts")'
 - en: Further Study
+  id: totrans-32
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 进一步学习
 - en: '| **Elliott Wave Principle** Robert Prechter |'
+  id: totrans-33
   prefs: []
   type: TYPE_TB
+  zh: '| **艾略特波浪理论** 罗伯特·普雷克特 |'
 - en: '| [![](../Images/74272f03b0af5bf3b0ba902aa0a7b2bf.jpg)](http://store.stockcharts.com/products/elliott-wave-principle-key-to-market-behavior
     "http://store.stockcharts.com/products/elliott-wave-principle-key-to-market-behavior")
     |'
+  id: totrans-34
   prefs: []
   type: TYPE_TB
+  zh: '| [![](../Images/74272f03b0af5bf3b0ba902aa0a7b2bf.jpg)](http://store.stockcharts.com/products/elliott-wave-principle-key-to-market-behavior
+    "http://store.stockcharts.com/products/elliott-wave-principle-key-to-market-behavior")
+    |'
 - en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/elliott-wave-principle-key-to-market-behavior
     "http://store.stockcharts.com/products/elliott-wave-principle-key-to-market-behavior")
     |'
+  id: totrans-35
   prefs: []
   type: TYPE_TB
+  zh: '| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/elliott-wave-principle-key-to-market-behavior
+    "http://store.stockcharts.com/products/elliott-wave-principle-key-to-market-behavior")
+    |'

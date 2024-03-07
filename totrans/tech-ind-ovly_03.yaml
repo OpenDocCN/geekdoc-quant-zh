@@ -1,160 +1,220 @@
 - en: Chandelier Exit [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 吊灯退出 [ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Chandelier Exit](#chandelier_exit)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[吊灯退出](#chandelier_exit)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[Calculation](#calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算](#calculation)'
 - en: '[Interpretation](#interpretation)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[解释](#interpretation)'
 - en: '[Chandelier Uptrend](#chandelier_uptrend)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[吊灯上升趋势](#chandelier_uptrend)'
 - en: '[Chandelier Downtrend](#chandelier_downtrend)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[吊灯下降趋势](#chandelier_downtrend)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[使用SharpCharts](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议的扫描](#suggested_scans)'
 - en: '[Price Crosses above Chandelier Exit](#price_crosses_above_chandelier_exit)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[价格穿过吊灯退出上方](#price_crosses_above_chandelier_exit)'
 - en: '[Price Crosses below Chandelier Exit](#price_crosses_below_chandelier_exit)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[价格穿过吊灯退出下方](#price_crosses_below_chandelier_exit)'
 - en: Introduction
+  id: totrans-13
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: Developed by Charles Le Beau and featured in Alexander Elder's books, the Chandelier
     Exit sets a trailing stop-loss based on the Average True Range (ATR). The indicator
     is designed to keep traders in a trend and prevent an early exit as long as the
     trend extends. Typically, the Chandelier Exit will be above prices during a downtrend
     and below prices during an uptrend.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 由查尔斯·勒博（Charles Le Beau）开发，并在亚历山大·埃尔德（Alexander Elder）的书中展示，吊灯退出基于平均真实范围（ATR）设置了一个跟踪止损。该指标旨在使交易者保持在趋势中，并在趋势延伸时防止过早退出。通常，在下降趋势中，吊灯退出将位于价格之上，在上升趋势中则位于价格之下。
 - en: Calculation
+  id: totrans-15
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算
 - en: 'The Chandelier Exit formula consists of three parts: a period high or period
     low, the Average True Range (ATR) and a multiplier. Using the default setting
     of 22-periods on a daily chart, the Chandelier Exit will look for the highest
     high or lowest low of the last 22 days. Note that there are 22 trading days in
     a month. This parameter (22) will also be used to calculate the Average True Range.'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 吊灯退出公式由三部分组成：周期高点或周期低点、平均真实范围（ATR）和一个乘数。在日线图上使用默认设置的22周期，吊灯退出将寻找过去22天的最高点或最低点。请注意，一个月有22个交易日。这个参数（22）也将用于计算平均真实范围。
 - en: '[PRE0]'
+  id: totrans-17
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: As shown in the formulas above, there is a Chandelier exit for long positions
     and one for short positions. The Chandelier Exit (long) hangs three ATR values
     below the 22-period high. This means it rises and falls as the period high and
     the ATR value changes. The Chandelier Exit for short positions is placed three
     ATR values above the 22-period low. The spreadsheet examples show sample calculations
     for both.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 如上述公式所示，长仓和短仓都有一个吊灯退出。吊灯退出（长仓）悬挂在22周期高点的三个ATR值以下。这意味着随着周期高点和ATR值的变化，它会上升和下降。短仓的吊灯退出放置在22周期低点的三个ATR值以上。电子表格示例展示了两者的样本计算。
 - en: '![Chandelier - Chart 1](../Images/a4b196c93ae4d87aafb7745af704556a.jpg "Chandelier
     - Chart 1")'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![吊灯 - 图表 1](../Images/a4b196c93ae4d87aafb7745af704556a.jpg "吊灯 - 图表 1")'
 - en: Interpretation
+  id: totrans-20
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 解释
 - en: The Chandelier Exit is basically a volatility-based system that identifies outsized
     price movements. Le Beau defined volatility by using the Average True Range, which
     was developed by Welles Wilder, creator of RSI and the Average Directional Index.
     ATR uses the prior close, current high and current low to determine the “True
     Range” for a given period. After some smoothing, the daily True Range values evolve
     into the Average True Range for a given period of time.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 吊灯退出基本上是一个基于波动性的系统，用于识别异常的价格波动。勒博通过使用由RSI和平均趋向指数的创造者Welles Wilder开发的平均真实范围来定义波动性。ATR使用前一收盘价、当前最高价和当前最低价来确定给定周期的“真实范围”。经过一些平滑处理，每日真实范围值演变为给定时间段的平均真实范围。
 - en: '![Chandelier - Chart 2](../Images/f0c59d68fd54302c52d5cd785496a558.jpg "Chandelier
     - Chart 2")'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![吊灯 - 图表 2](../Images/f0c59d68fd54302c52d5cd785496a558.jpg "吊灯 - 图表 2")'
 - en: '![Chandelier - Chart 3](../Images/96d39fa3e34bdb5e2a2f84b2618e4b3a.jpg "Chandelier
     - Chart 3")'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![吊灯 - 图表 3](../Images/96d39fa3e34bdb5e2a2f84b2618e4b3a.jpg "吊灯 - 图表 3")'
 - en: By setting the Chandelier Exit for longs three ATR values BELOW the period high,
     the indicator provides a buffer that is three times the volatility. A decline
     strong enough to break this level warrants a reevaluation of long positions. The
     opposite applies to short positions. The Chandelier Exit for shorts is set three
     ATR values ABOVE the period low, which provides a volatility-based buffer. An
     advance strong enough to exceed this level warrants a reevaluation of short positions.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过将长仓的吊灯退出设置为周期高点的三个ATR值以下，该指标提供了一个三倍波动性的缓冲。足以突破此水平的下降将需要重新评估长仓。相反，对于短仓也适用相同原则。短仓的吊灯退出设置为周期低点的三个ATR值以上，提供了一个基于波动性的缓冲。足以超过此水平的上涨将需要重新评估短仓。
 - en: Chandelier Uptrend
+  id: totrans-25
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 吊灯上升趋势
 - en: Sometimes chartists will see a strong uptrend, but not know where to jump on
     and when to exit. The Chandelier Exit can be used to define the trend and set
     a trailing stop-loss. The example below shows Eaton Corp (ETN) breaking out in
     early November and starting an extended uptrend. The Chandelier Exit defined this
     uptrend quite well as it followed price action steadily higher. This trailing
     stop-loss could have been used to control risk for new long positions.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时图表分析师会看到强劲的上升趋势，但不知道何时入场和何时退出。吊灯退出可用于定义趋势并设置移动止损。下面的例子显示伊顿公司（ETN）在11月初突破并开始了持续的上升趋势。吊灯退出很好地定义了这一上升趋势，随着价格行动稳步上涨。这种移动止损可以用于控制新的多头头寸的风险。
 - en: '![Chandelier - Chart 3](../Images/1dc7b0c15c514bad946f8da487c7ae9c.jpg "Chandelier
     - Chart 3")'
+  id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![吊灯 - 图表 3](../Images/1dc7b0c15c514bad946f8da487c7ae9c.jpg "吊灯 - 图表 3")'
 - en: With the Chandelier Exit providing the stop-loss, traders would then need to
     find an indicator to trigger buy signals within this trend. A sensitive momentum
     oscillator can be used to capture short-term oversold conditions. The indicator
     window shows StochRSI, which is the Stochastic Oscillator applied to RSI. Dips
     below .20 reflect short-term oversold conditions. A subsequent move back above
     .20 suggests that the uptrend is continuing.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用吊灯退出提供止损后，交易者需要找到一个指标来触发这一趋势内的买入信号。敏感的动量振荡器可用于捕捉短期超卖条件。指标窗口显示了StochRSI，这是应用于RSI的随机振荡器。跌破0.20反映了短期超卖条件。随后再次上涨到0.20以上表明上升趋势正在继续。
 - en: Chandelier Downtrend
+  id: totrans-29
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 吊灯下降趋势
 - en: Some stocks are more volatile than others and require a bigger buffer, which
     means the multiplier should be increased. The Hewlett-Packard (HPQ) example shows
     the stock in a clear downtrend for most of 2012\. A normal Chandelier Exit (22,3.0,short)
@@ -164,23 +224,31 @@
     this example, the red Chandelier line allows for more volatility by using 5 as
     the multiplier. HPQ held this Chandelier setting until the breakout in mid-December,
     which signaled the start of an uptrend.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些股票比其他股票更具波动性，需要更大的缓冲区，这意味着应增加乘数。惠普（HPQ）的例子显示，2012年大部分时间股票处于明显的下降趋势中。一个正常的吊灯退出（22,3.0,short）会在下降趋势继续之前触发一些止损。请注意，在这一下降趋势中，HPQ多次上涨到虚线灰线以上。图表分析师应该为更具波动性的股票（如科技股）增加ATR乘数。在这个例子中，红色的吊灯线通过使用5作为乘数允许更多的波动性。HPQ一直保持这个吊灯设置，直到12月中旬的突破，这标志着上升趋势的开始。
 - en: '![Chandelier - Chart 4](../Images/b8ec251488e2ff0ac402c308feb7b43c.jpg "Chandelier
     - Chart 4")'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![吊灯 - 图表 4](../Images/b8ec251488e2ff0ac402c308feb7b43c.jpg "吊灯 - 图表 4")'
 - en: The Chandelier Exit is good for stops, but chartists need to use basic chart
     analysis or a momentum oscillator to time entries. The Commodity Channel Index
     (CCI) can be used to identify short-term overbought conditions within a downtrend.
     CCI becomes overbought with a move above +100\. A subsequent move back below +100
     signals that momentum is turning down again.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 吊灯退出适用于止损，但图表分析师需要使用基本图表分析或动量振荡器来确定入场时机。商品通道指数（CCI）可用于识别下降趋势中的短期超买条件。CCI在上涨到+100以上时被超买。随后再次跌破+100则表明动量再次转为下行。
 - en: Conclusions
+  id: totrans-33
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: The Chandelier Exit is mostly used to set a trailing stop-loss during a trend.
     Trends sometimes extend further than we anticipate and the Chandelier Exit can
     help traders ride the trend a little longer. Even though it is mostly used for
@@ -188,12 +256,16 @@
     the Chandelier Exit (long) signals strength, while a break below the Chandelier
     Exit (short) signals weakness. Once a new trend begins, chartists can then use
     the corresponding Chandelier Exit to help define this trend.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 吊灯退出主要用于在趋势中设置移动止损。趋势有时会延伸得比我们预期的更远，吊灯退出可以帮助交易者延长一段时间跟随趋势。尽管它主要用于止损，但吊灯退出也可以用作趋势工具。突破吊灯退出（做多）表明力量强劲，而跌破吊灯退出（做空）则表明弱势。一旦新趋势开始，图表分析师可以使用相应的吊灯退出来帮助定义这一趋势。
 - en: Using with SharpCharts
+  id: totrans-35
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用SharpCharts
 - en: The Chandelier Exits are available on SharpCharts in the “Overlays” section.
     Once chosen, the default settings will appear in the parameters box (22,3.0).
     This default setting is designed for long positions. The number 22 sets the periods
@@ -205,43 +277,66 @@
     with the Dow Industrials. **[Click here](http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p18499824686&listNum=30&a=299747232
     "http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p18499824686&listNum=30&a=299747232")**
     for live Dow chart showing the Chandelier Exit (long).
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 吊灯出口可在SharpCharts的“覆盖物”部分找到。一旦选择，将在参数框中显示默认设置（22,3.0）。此默认设置适用于多头头寸。数字22设置了平均真实范围（ATR）的周期和期间高低的日期范围。数字3.0设置了ATR乘数。波动性股票可能需要更高的乘数以减少鞭策。相对沉闷的股票可能需要较低的乘数以增加灵敏度。图表师可以通过简单地添加逗号和单词short（22,3.0,short）来修改用于空头头寸的吊灯出口。点击这里查看道琼工业指数的实时示例。**[点击这里](http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p18499824686&listNum=30&a=299747232
+    "http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p18499824686&listNum=30&a=299747232")**
+    查看显示吊灯出口（多头）的道琼指数实时图表。
 - en: '![Chandelier - Chart 5](../Images/07a67424a145f52cb1670a5496c109cf.jpg "Chandelier
     - Chart 5")'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![吊灯 - 图表 5](../Images/07a67424a145f52cb1670a5496c109cf.jpg "吊灯 - 图表 5")'
 - en: Suggested Scans
+  id: totrans-38
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议扫描
 - en: Price Crosses above Chandelier Exit
+  id: totrans-39
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 价格突破吊灯出口
 - en: This simple scan searches for stocks where the price has crossed above the Chandelier
     Exit (long) and daily volume was above the 50-day moving average of volume. In
     other words, the bullish crossover occurred with expanding volume.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个简单的扫描搜索价格已经突破了吊灯出口（多头）并且每日成交量高于50日成交量移动平均线的股票。换句话说，牛市交叉发生时成交量在扩大。
 - en: '[PRE1]'
+  id: totrans-41
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: Price Crosses below Chandelier Exit
+  id: totrans-42
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 价格跌破吊灯出口
 - en: This simple scan searches for stocks where the price has crossed below the Chandelier
     Exit (short) and daily volume was above the 50-day moving average of volume. In
     other words, the bearish crossover occurred with expanding volume.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个简单的扫描搜索价格已经跌破了吊灯出口（空头）并且每日成交量高于50日成交量移动平均线的股票。换句话说，熊市交叉发生时成交量在扩大。
 - en: '[PRE2]'
+  id: totrans-44
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: For more details on the syntax to use for Chandelier Exit scans, please see
     our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#chandelier_exit_chandlr
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#chandelier_exit_chandlr")
     in the Support Center.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 欲了解更多有关使用吊灯出口扫描的语法细节，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#chandelier_exit_chandlr
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#chandelier_exit_chandlr")在支持中心。

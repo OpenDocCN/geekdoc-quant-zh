@@ -1,111 +1,155 @@
 - en: On Balance Volume (OBV) [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 成交量平衡（OBV）[图表学校]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[On Balance Volume (OBV)](#on_balance_volume_obv)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[成交量平衡（OBV）](#on_balance_volume_obv)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[Calculation](#calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算](#calculation)'
 - en: '[Interpretation](#interpretation)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[解释](#interpretation)'
 - en: '[Divergences](#divergences)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[背离](#divergences)'
 - en: '[Trend Confirmation](#trend_confirmation)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[趋势确认](#trend_confirmation)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与SharpCharts一起使用](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议扫描](#suggested_scans)'
 - en: '[Bullish Divergence in OBV and ADL](#bullish_divergence_in_obv_and_adl)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[OBV和ADL中的牛市背离](#bullish_divergence_in_obv_and_adl)'
 - en: '[Bearish divergence in OBV and ADL](#bearish_divergence_in_obv_and_adl)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[OBV和ADL中的熊市背离](#bearish_divergence_in_obv_and_adl)'
 - en: '[Further Study](#further_study)'
+  id: totrans-13
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[进一步学习](#further_study)'
 - en: '[Additional Resources](#additional_resources)'
+  id: totrans-14
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[额外资源](#additional_resources)'
 - en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  id: totrans-15
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[股票与商品杂志文章](#stocks_commodities_magazine_articles)'
 - en: Introduction
+  id: totrans-16
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: On Balance Volume (OBV) measures buying and selling pressure as a cumulative
     indicator that adds volume on up days and subtracts volume on down days. OBV was
     developed by Joe Granville and introduced in his 1963 book, Granville's New Key
     to Stock Market Profits. It was one of the first indicators to measure positive
     and negative volume flow. Chartists can look for divergences between OBV and price
     to predict price movements or use OBV to confirm price trends.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 成交量平衡（OBV）衡量买卖压力，是一个累积指标，将上涨日的成交量相加，下跌日的成交量相减。OBV由乔·格兰维尔开发，并在他1963年的著作《格兰维尔股市利润的新关键》中介绍。它是最早衡量正向和负向成交量流动的指标之一。图表分析师可以寻找OBV和价格之间的背离来预测价格走势，或使用OBV来确认价格趋势。
 - en: Calculation
+  id: totrans-18
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算
 - en: The On Balance Volume (OBV) line is simply a running total of positive and negative
     volume. A period's volume is positive when the close is above the prior close.
     A period's volume is negative when the close is below the prior close.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 成交量平衡（OBV）线简单地是正向和负向成交量的累计总和。当收盘价高于前一个收盘价时，该时期的成交量为正。当收盘价低于前一个收盘价时，该时期的成交量为负。
 - en: '[PRE0]'
+  id: totrans-20
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: '![Table 1  -  On Balance Volume](../Images/8d2d3b0d1ad66223f7819274348f403c.jpg
     "Table 1  -  On Balance Volume")'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![表1  -  成交量平衡](../Images/8d2d3b0d1ad66223f7819274348f403c.jpg "表1  -  成交量平衡")'
 - en: Data in the table above comes from Wal-mart (WMT). Volume figures were rounded
     off and are shown in 1000's. In other words, 8,200 really equals 8,200,000 or
     8.2 million shares. First, we must determine if Wal-mart closed up (+1) or down
@@ -114,16 +158,22 @@
     volume. Because OBV has to start somewhere, the first value (8200) is simply equal
     to the first period's positive/negative volume. The chart below shows Wal-mart
     with volume and OBV.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 上表中的数据来自沃尔玛（WMT）。成交量数据已四舍五入，并以千为单位显示。换句话说，8200实际上等于820万股。首先，我们必须确定沃尔玛是收盘上涨（+1）还是下跌（-1）。这个数字现在被用作成交量乘数，用于计算正向或负向成交量。最后一列（OBV）形成正向/负向成交量的累计总和。因为OBV必须从某个地方开始，第一个值（8200）只是等于第一个时期的正向/负向成交量。下面的图表显示了沃尔玛的成交量和OBV。
 - en: '![Table 1  -  On Balance Volume](../Images/7401aa3a9f1a60384446199b914fd426.jpg
     "Table 1  -  On Balance Volume")'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![表1  -  成交量平衡](../Images/7401aa3a9f1a60384446199b914fd426.jpg "表1  -  成交量平衡")'
 - en: Interpretation
+  id: totrans-24
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 解释
 - en: Granville theorized that volume precedes price. OBV rises when volume on up
     days outpaces volume on down days. OBV falls when volume on down days is stronger.
     A rising OBV reflects positive volume pressure that can lead to higher prices.
@@ -132,8 +182,10 @@
     price. Expect prices to move higher if OBV is rising while prices are either flat
     or moving down. Expect prices to move lower if OBV is falling while prices are
     either flat or moving up.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 格兰维尔理论认为成交量先于价格。当上涨日的成交量超过下跌日的成交量时，OBV上升。当下跌日的成交量更强时，OBV下降。上升的OBV反映了正向的成交量压力，可能导致价格上涨。相反，下降的OBV反映了负向的成交量压力，可能预示价格下跌。格兰维尔在他的研究中指出，OBV通常会在价格之前移动。如果OBV上升而价格要么持平要么下跌，预计价格会上涨。如果OBV下降而价格要么持平要么上涨，预计价格会下跌。
 - en: The absolute value of OBV is not important. Chartists should instead focus on
     the characteristics of the OBV line. First, define the trend for OBV. Second,
     determine if the current trend matches the trend for the underlying security.
@@ -143,12 +195,16 @@
     when looking for divergences or support/resistance breaks. And finally, volume
     spikes can sometimes throw off the indicator by causing a sharp move that will
     require a settling period.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: OBV的绝对值并不重要。图表分析师应该关注OBV线的特征。首先，定义OBV的趋势。其次，确定当前趋势是否与基础证券的趋势相匹配。第三，寻找潜在的支撑或阻力水平。一旦突破，OBV的趋势将改变，这些突破可以用来生成信号。此外，请注意OBV是基于收盘价的。因此，在寻找背离或支撑/阻力突破时应考虑收盘价。最后，成交量的激增有时可能会使指标失真，导致急剧波动，需要一段时间来稳定。
 - en: Divergences
+  id: totrans-27
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 背离
 - en: Bullish and [bearish divergence](/school/doku.php?id=chart_school:glossary_b#bearish_divergence
     "chart_school:glossary_b") signals can be used to anticipate a trend reversal.
     These signals are truly based on the theory that volume precedes prices. A bullish
@@ -157,8 +213,10 @@
     forms a lower low even as prices move higher or forge a higher high. The divergence
     between OBV and price should alert chartists that a price reversal could be in
     the making.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 多头和[空头背离](/school/doku.php?id=chart_school:glossary_b#bearish_divergence "chart_school:glossary_b")信号可以用来预测趋势反转。这些信号真正基于成交量领先价格的理论。当OBV上升或形成高点时，即使价格下跌或形成低点时，就形成了多头背离。当OBV下降或形成低点时，即使价格上涨或形成高点时，就形成了空头背离。OBV与价格之间的背离应该提醒图表分析师，价格可能会发生反转。
 - en: The chart for Starbucks (SBUX) shows a [bullish divergence](/school/doku.php?id=chart_school:glossary_b#bullish_divergence
     "chart_school:glossary_b") forming in July. On the price chart, SBUX moved below
     its June low with a lower low in early July. OBV, on the other hand, held above
@@ -167,16 +225,23 @@
     resistance a week later and continued above 20 for a 30+ percent gain. The second
     chart shows OBV moving higher as Texas Instruments (TXN) trades within a range.
     Rising OBV during a trading range indicates accumulation, which is bullish.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 星巴克（SBUX）的图表显示，7月份形成了一个[多头背离](/school/doku.php?id=chart_school:glossary_b#bullish_divergence
+    "chart_school:glossary_b")。在价格图表上，SBUX在7月初的时候低于了6月的低点。然而，OBV保持在6月的低点之上，形成了一个多头背离。OBV在SBUX突破阻力之前就已经突破了阻力。这是一个经典的成交量领先价格的案例。SBUX一周后突破了阻力，并继续上涨超过20，获得了30%以上的收益。第二张图显示了在德州仪器（TXN）交易区间内交易时，OBV上升。在交易区间内OBV上升表示积累，这是多头的。
 - en: '![Chart 2  -  On Balance Volume](../Images/3c66257c4c1d656de9c3952372f53f85.jpg
     "Chart 2  -  On Balance Volume")'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 2  -  成交量平衡](../Images/3c66257c4c1d656de9c3952372f53f85.jpg "图表 2  -  成交量平衡")'
 - en: '![Chart 3  -  On Balance Volume](../Images/3b1cf99f5a0393fa0adfde99f624ccb5.jpg
     "Chart 3  -  On Balance Volume")'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 3  -  成交量平衡](../Images/3b1cf99f5a0393fa0adfde99f624ccb5.jpg "图表 3  -  成交量平衡")'
 - en: The chart for Medtronic (MDT) shows a bearish divergence with volume leading
     price lower. The blue dotted lines identify the divergence period. MDT moved higher
     (43 to 45) as OBV moved lower. Also, notice that OBV broke support during this
@@ -185,54 +250,74 @@
     day as MDT followed volume lower with a decline into the low 30s. The second chart
     shows Valero Energy (VLO) with OBV forming a bearish divergence in April and a
     confirming support break in May.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 梅德特龙（MDT）的图表显示，成交量领先价格下跌的空头背离。蓝色虚线标识了背离期。MDT上涨（从43涨到45），而OBV下降。此外，请注意，OBV在这个背离期间突破了支撑。随着突破2月低点，OBV的上升趋势逆转。另一方面，MDT仍在上涨。最终成交量赢得了胜利，随着MDT跟随成交量下跌，跌至30美元以下。第二张图显示了瓦莱罗能源（VLO）在4月形成空头背离，并在5月确认支撑突破。
 - en: '![Chart 4  -  On Balance Volume](../Images/44f968a3528d1665f5b1e438e9041dcb.jpg
     "Chart 4  -  On Balance Volume")'
+  id: totrans-33
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 4  -  成交量平衡](../Images/44f968a3528d1665f5b1e438e9041dcb.jpg "图表 4  -  成交量平衡")'
 - en: '![Chart 5  -  On Balance Volume](../Images/6dc60f820cd463f1e2cb27a52bce6e91.jpg
     "Chart 5  -  On Balance Volume")'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 5  -  成交量平衡指标](../Images/6dc60f820cd463f1e2cb27a52bce6e91.jpg "图表 5  -  成交量平衡指标")'
 - en: Trend Confirmation
+  id: totrans-35
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 趋势确认
 - en: OBV can be used to confirm a price trend, upside breakout or downside break.
     The chart for Best Buy (BBY) shows three confirming signals as well as confirmation
     of the price trend. OBV and BBY moved lower in December-January, higher from March
     to April, lower from May to August and higher from September to October. The trends
     in OBV matched the trend in BBY.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: OBV可以用来确认价格趋势、上涨突破或下跌突破。Best Buy（BBY）的图表显示了三个确认信号以及价格趋势的确认。OBV和BBY在12月至1月下跌，在3月至4月上涨，在5月至8月下跌，在9月至10月上涨。OBV的趋势与BBY的趋势相匹配。
 - en: '![Chart 6  -  On Balance Volume](../Images/de98496a3304efd34075756fbc8765d7.jpg
     "Chart 6  -  On Balance Volume")'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 6  -  成交量平衡指标](../Images/de98496a3304efd34075756fbc8765d7.jpg "图表 6  -  成交量平衡指标")'
 - en: OBV also confirmed trend reversals in BBY. Notice how BBY broke its downtrend
     line in late February and OBV confirmed with a resistance breakout in March. BBY
     broke its uptrend line in late April and OBV confirmed with a support break in
     early May. BBY broke its downtrend line in early September and OBV confirmed with
     a trend line break a week later. These coincident signals indicated that positive
     and negative volume were in harmony with price.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: OBV还确认了BBY的趋势反转。注意BBY如何在2月底突破了下降趋势线，而OBV在3月确认了阻力突破。BBY在4月底突破了上升趋势线，而OBV在5月初确认了支撑线突破。BBY在9月初突破了下降趋势线，而OBV在一周后确认了趋势线突破。这些一致的信号表明正成交量和负成交量与价格协调一致。
 - en: Sometimes OBV moves step-for-step with the underlying security. In this case,
     OBV is confirming the strength of the underlying trend, be it down or up. The
     chart for Autozone (AZO) shows prices as a black line and OBV as a pink line.
     Both moved steadily higher from November 2009 until October 2010\. Positive volume
     remained strong throughout the advance.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时OBV与基础证券步调一致。在这种情况下，OBV确认了基础趋势的强势，无论是上涨还是下跌。Autozone（AZO）的图表显示了价格为黑线，OBV为粉线。从2009年11月至2010年10月，两者都稳步上升。正成交量在整个上涨过程中保持强劲。
 - en: '![Chart 7  -  On Balance Volume](../Images/69c39979a9df8c350116ab318cf8cd9a.jpg
     "Chart 7  -  On Balance Volume")'
+  id: totrans-40
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 7  -  成交量平衡指标](../Images/69c39979a9df8c350116ab318cf8cd9a.jpg "图表 7  -  成交量平衡指标")'
 - en: Conclusions
+  id: totrans-41
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: On Balance Volume (OBV) is a simple indicator that uses volume and price to
     measure buying pressure and selling pressure. Buying pressure is evident when
     positive volume exceeds negative volume and the OBV line rises. Selling pressure
@@ -244,12 +329,18 @@
     "chart_school:chart_analysis:chart_patterns") or to confirm signals from [momentum
     oscillators](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
     "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators").
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 成交量平衡指标（OBV）是一个简单的指标，利用成交量和价格来衡量买盘和卖盘的压力。当正成交量超过负成交量且OBV线上升时，买盘明显。当负成交量超过正成交量且OBV线下降时，卖盘存在。技术分析师可以使用OBV来确认基本趋势或寻找可能预示价格变化的背离。与所有指标一样，重要的是将OBV与技术分析的其他方面结合使用。它不是一个独立的指标。OBV可以与基本的[图表分析](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
+    "chart_school:chart_analysis:chart_patterns")结合使用，或者确认来自[动量振荡器](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")的信号。
 - en: Using with SharpCharts
+  id: totrans-43
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用 SharpCharts
 - en: On Balance Volume (OBV) is available in SharpCharts as an indicator. After selecting,
     OBV can be positioned above, below or behind the price plot of the underlying
     security. Positioning it behind the plot makes it easy to compare OBV with the
@@ -259,111 +350,176 @@
     [Click here](http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p32660999348&listNum=30&a=216754758
     "http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p32660999348&listNum=30&a=216754758")
     for a live chart with On Balance Volume.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 在SharpCharts中，On Balance Volume（OBV）作为一个指标是可用的。选择后，OBV可以放置在基础证券的价格图之上、之下或之后。将其放在图表之后使得比较OBV和基础证券变得容易。图表分析师还可以通过选择高级选项向OBV添加[移动平均线](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages")或另一个指标，该选项位于指标位置的右侧。[点击这里](http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p32660999348&listNum=30&a=216754758
+    "http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p32660999348&listNum=30&a=216754758")查看带有On
+    Balance Volume的实时图表。
 - en: '![SharpCharts  -  On Balance Volume](../Images/6d9811e81290ada70b6f74573e453189.jpg
     "SharpCharts  -  On Balance Volume")'
+  id: totrans-45
   prefs: []
   type: TYPE_IMG
+  zh: '![SharpCharts  -  On Balance Volume](../Images/6d9811e81290ada70b6f74573e453189.jpg
+    "SharpCharts  -  On Balance Volume")'
 - en: '![SharpCharts  -  On Balance Volume](../Images/1ac18b19be874bdbd1dc3c380c6a802f.jpg
     "SharpCharts  -  On Balance Volume")'
+  id: totrans-46
   prefs: []
   type: TYPE_IMG
+  zh: '![SharpCharts  -  On Balance Volume](../Images/1ac18b19be874bdbd1dc3c380c6a802f.jpg
+    "SharpCharts  -  On Balance Volume")'
 - en: Suggested Scans
+  id: totrans-47
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议的扫描
 - en: Bullish Divergence in OBV and ADL
+  id: totrans-48
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: OBV和ADL的看涨背离
 - en: This scan starts with a base of stocks that are averaging at least $10 in price
     and 100,000 daily volume over the last 60 days. Potential bullish divergences
     are found by looking for stocks where price is BELOW the 65-day SMA and 20-day
     SMA, but OBV and the Accumulation Distribution Line are ABOVE the 65-day SMA and
     20-day SMA.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个扫描从股票的基础开始，这些股票在过去60天的平均价格至少为$10，每日交易量为100,000。通过查找价格低于65日SMA和20日SMA，但OBV和积累/分布线高于65日SMA和20日SMA的股票，可以找到潜在的看涨背离。
 - en: '[PRE1]'
+  id: totrans-50
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: Bearish divergence in OBV and ADL
+  id: totrans-51
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: OBV和ADL的看跌背离
 - en: This scan starts with a base of stocks that are averaging at least $10 in price
     and 100,000 daily volume over the last 60 days. Potential bearish divergences
     are found by looking for stocks where price is ABOVE the 65-day SMA and 20-day
     SMA, but OBV and the Accumulation Distribution Line are BELOW the 65-day SMA and
     20-day SMA.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个扫描从股票的基础开始，这些股票在过去60天的平均价格至少为$10，每日交易量为100,000。通过查找价格高于65日SMA和20日SMA，但OBV和积累/分布线低于65日SMA和20日SMA的股票，可以找到潜在的看跌背离。
 - en: '[PRE2]'
+  id: totrans-53
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: For more details on the syntax to use for OBV scans, please see our [Scanning
     Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#on_balance_volume
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#on_balance_volume")
     in the Support Center.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关OBV扫描的语法细节，请参阅我们支持中心的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#on_balance_volume
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#on_balance_volume")。
 - en: '**Note**: For the purposes of scanning, daily volume data is incomplete during
     the trading day. When running scans with volume-based indicators like OBV, be
     sure to base the scan on the “Last Market Close.” Examples of other volume-based
     indicators include Accumulation/Distribution, Chaikin Money Flow, and the PVO.'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意**：为了扫描的目的，在交易日内，每日交易量数据是不完整的。在运行基于OBV等基于交易量的指标的扫描时，请确保基于“上次市场收盘价”。其他基于交易量的指标的示例包括积累/分布、Chaikin货币流和PVO。'
 - en: Further Study
+  id: totrans-56
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 进一步研究
 - en: This book covers it all with explanations that are simple and clear. Murphy
     covers all the major charts patterns and indicators, including OBV. A complete
     chapter is devoted to understanding volume and open interest.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 这本书通过简单明了的解释涵盖了所有内容。墨菲涵盖了所有主要的图表模式和指标，包括OBV。一个完整的章节专门讨论了理解交易量和未平仓合约。
 - en: '| **Technical Analysis of the Financial Markets** John J. Murphy |'
+  id: totrans-58
   prefs: []
   type: TYPE_TB
+  zh: '| **金融市场技术分析** 约翰·J·墨菲 |'
 - en: '| [![](../Images/e00f9b0f57a7325646647a118f3ebe9e.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
     "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
     |'
+  id: totrans-59
   prefs: []
   type: TYPE_TB
+  zh: '| [![](../Images/e00f9b0f57a7325646647a118f3ebe9e.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    |'
 - en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
     "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
     |'
+  id: totrans-60
   prefs: []
   type: TYPE_TB
+  zh: '| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    |'
 - en: '* * *'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '* * *'
 - en: Additional Resources
+  id: totrans-62
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 其他资源
 - en: Stocks & Commodities Magazine Articles
+  id: totrans-63
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 股票与商品杂志文章
 - en: '**[On-Balance Volume Indicator by Bruce R. Faber](http://stockcharts.com/h-mem/tascredirect.html?artid=\V12\C07\ONBALAN.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V12\C07\ONBALAN.pdf")**'
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[布鲁斯·R·法伯的平衡量指标](http://stockcharts.com/h-mem/tascredirect.html?artid=\V12\C07\ONBALAN.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V12\C07\ONBALAN.pdf")**'
 - en: Jun 1994 - Stocks & Commodities
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 1994年6月 - 股票与商品
 - en: '**[On-Balance Volume by Stuart Evens](http://stockcharts.com/h-mem/tascredirect.html?artid=\V17\C05\036OBV.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V17\C05\036OBV.pdf")**'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[斯图尔特·伊文斯的平衡量](http://stockcharts.com/h-mem/tascredirect.html?artid=\V17\C05\036OBV.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V17\C05\036OBV.pdf")**'
 - en: Apr 1999 - Stocks & Commodities
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 1999年4月 - 股票与商品
 - en: '**[Daytrading with On-Balance Volume by D.W. Davies](http://stockcharts.com/h-mem/tascredirect.html?artid=\V22\C01\004DAVE.PDF
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V22\C01\004DAVE.PDF")**'
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[D.W.戴维斯的平衡量日内交易](http://stockcharts.com/h-mem/tascredirect.html?artid=\V22\C01\004DAVE.PDF
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V22\C01\004DAVE.PDF")**'
 - en: Dec 2003 - Stocks & Commodities
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 2003年12月 - 股票与商品

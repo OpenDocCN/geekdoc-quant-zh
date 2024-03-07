@@ -1,71 +1,99 @@
 - en: Average True Range (ATR) [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 真实波动幅度（ATR）[图表学校]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Average True Range (ATR)](#average_true_range_atr)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[平均真实波动幅度（ATR）](#average_true_range_atr)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[True Range](#true_range)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[真实波动幅度](#true_range)'
 - en: '[Calculation](#calculation)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算](#calculation)'
 - en: '[Absolute ATR](#absolute_atr)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[绝对ATR](#absolute_atr)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与SharpCharts一起使用](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议扫描](#suggested_scans)'
 - en: '[Weeding Out High Volatility](#weeding_out_high_volatility)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[排除高波动性](#weeding_out_high_volatility)'
 - en: '[Additional Resources](#additional_resources)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[额外资源](#additional_resources)'
 - en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[股票与商品杂志文章](#stocks_commodities_magazine_articles)'
 - en: Introduction
+  id: totrans-13
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: Developed by J. Welles Wilder, the Average True Range (ATR) is an indicator
     that measures [volatility](/school/doku.php?id=chart_school:glossary_v#volatility
     "chart_school:glossary_v"). As with most of his indicators, Wilder designed ATR
@@ -76,34 +104,49 @@
     from gap or limit moves. Wilder created Average True Range to capture this “missing”
     volatility. It is important to remember that ATR does not provide an indication
     of price direction, just volatility.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 由J.韦尔斯·怀尔德（J. Welles Wilder）开发，平均真实波动幅度（ATR）是一种衡量[波动性](/school/doku.php?id=chart_school:glossary_v#volatility
+    "chart_school:glossary_v")的指标。与他的大多数指标一样，怀尔德设计ATR时考虑了商品和每日价格。商品通常比股票更具波动性。它们经常受到间隙和涨跌停限制的影响，当商品开盘时向上或向下移动到当日允许的最大幅度。基于高低范围的波动性公式无法捕捉间隙或涨跌停限制移动的波动性。怀尔德创建了平均真实波动幅度来捕捉这种“缺失”的波动性。重要的是要记住，ATR并不提供价格方向的指示，只是波动性。
 - en: Wilder features ATR in his 1978 book, *New Concepts in Technical Trading Systems*.
     This book also includes the Parabolic SAR, RSI and the Directional Movement Concept
     (ADX). Despite being developed before the computer age, Wilder's indicators have
     stood the test of time and remain extremely popular.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 怀尔德在他的1978年著作《技术交易系统中的新概念》中介绍了ATR。这本书还包括抛物线SAR、RSI和方向运动概念（ADX）。尽管是在计算机时代之前开发的，怀尔德的指标经受住了时间的考验，仍然非常受欢迎。
 - en: True Range
+  id: totrans-16
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 真实波动幅度
 - en: 'Wilder started with a concept called **True Range (TR)**, which is defined
     as the greatest of the following:'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 怀尔德最初提出了一个称为**真实波动幅度（TR）**的概念，它被定义为以下三者中的最大值：
 - en: 'Method 1: Current High less the current Low'
+  id: totrans-18
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 方法1：当前高价减去当前低价
 - en: 'Method 2: Current High less the previous Close (absolute value)'
+  id: totrans-19
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 方法2：当前高价减去前一日收盘价（绝对值）
 - en: 'Method 3: Current Low less the previous Close (absolute value)'
+  id: totrans-20
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 方法3：当前低价减去前一日收盘价（绝对值）
 - en: Absolute values are used to ensure positive numbers. After all, Wilder was interested
     in measuring the distance between two points, not the direction. If the current
     period's high is above the prior period's high and the low is below the prior
@@ -114,62 +157,90 @@
     (signaling a potential gap down or limit move) or the previous close is lower
     than the current low (signaling a potential gap up or limit move). The image below
     shows examples of when methods 2 and 3 are appropriate.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用绝对值确保为正数。毕竟，怀尔德感兴趣的是测量两点之间的距离，而不是方向。如果当前周期的高价高于前一周期的高价，且低价低于前一周期的低价，则当前周期的高低范围将被用作真实波动幅度。这是一个使用方法1计算TR的外部日。这非常直接了当。当存在间隙或内部日时，将使用方法2和3。间隙发生在前一日收盘价高于当前高价（表示可能的向下间隙或涨跌停限制移动）或前一日收盘价低于当前低价（表示可能的向上间隙或涨跌停限制移动）时。下面的图像显示了何时适合使用方法2和3的示例。
 - en: '![ATR - True Range Image](../Images/6c7cbf77edbb814a44b1e0ddfd30df1e.jpg "ATR
     - True Range Image")'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![ATR - 真实波动幅度图像](../Images/6c7cbf77edbb814a44b1e0ddfd30df1e.jpg "ATR - 真实波动幅度图像")'
 - en: 'Example A: A small high/low range formed after a gap up. The TR equals the
     absolute value of the difference between the current high and the previous close.'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例A：间隙上涨后形成的小高低范围。TR等于当前高价与前一日收盘价之间的差的绝对值。
 - en: 'Example B: A small high/low range formed after a gap down. The TR equals the
     absolute value of the difference between the current low and the previous close.'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例 B：在跳空下跌后形成了一个较小的高/低范围。TR 等于当前最低价和前一收盘价之间的差值的绝对值。
 - en: 'Example C: Even though the current close is within the previous high/low range,
     the current high/low range is quite small. In fact, it is smaller than the absolute
     value of the difference between the current high and the previous close, which
     is used to value the TR.'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例 C：尽管当前收盘价在前一高/低范围内，但当前高/低范围非常小。事实上，它比当前高价和前一收盘价之间的差值的绝对值还要小，而这个差值用于计算 TR。
 - en: Calculation
+  id: totrans-26
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算
 - en: Typically, the Average True Range (ATR) is based on 14 periods and can be calculated
     on an intraday, daily, weekly or monthly basis. For this example, the ATR will
     be based on daily data. Because there must be a beginning, the first TR value
     is simply the High minus the Low, and the first 14-day ATR is the average of the
     daily TR values for the last 14 days. After that, Wilder sought to smooth the
     data by incorporating the previous period's ATR value.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 通常，平均真实范围（ATR）基于 14 个周期，并可以根据分钟、日、周或月的基础数据进行计算。在这个示例中，ATR 将基于日数据。因为必须有一个起点，第一个
+    TR 值简单地是最高价减去最低价，而前 14 天的 ATR 是过去 14 天的每日 TR 值的平均值。之后，Wilder 试图通过纳入前一期的 ATR 值来平滑数据。
 - en: '[PRE0]'
+  id: totrans-28
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: '![ATR - Spreadsheet](../Images/4e5fdcdb3297687e6a55a9ba1a1e3c3b.jpg "ATR -
     Spreadsheet")'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![ATR - 电子表格](../Images/4e5fdcdb3297687e6a55a9ba1a1e3c3b.jpg "ATR - 电子表格")'
 - en: '[Click here for an Excel Spreadsheet](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:average_true_range_atr:cs-atr.xls
     "chart_school:technical_indicators_and_overlays:average_true_range_atr:cs-atr.xls
     (36 KB)") showing the start of an ATR calculation for QQQ.'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: '[点击这里查看一个 Excel 电子表格](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:average_true_range_atr:cs-atr.xls
+    "chart_school:technical_indicators_and_overlays:average_true_range_atr:cs-atr.xls
+    (36 KB)")，展示了 QQQ ATR 计算的开始。'
 - en: In the spreadsheet example, the first True Range value (.91) equals the High
     minus the Low (yellow cells). The first 14-day ATR value (.56)) was calculated
     by finding the average of the first 14 True Range values (blue cell). Subsequent
     ATR values were smoothed using the formula above. The spreadsheet values correspond
     with the yellow area on the chart below. Notice how ATR surged as QQQ plunged
     in May with many long candlesticks.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 在电子表格示例中，第一个真实范围值（.91）等于最高价减去最低价（黄色单元格）。第一个 14 天 ATR 值（.56）是通过计算前 14 个真实范围值的平均值（蓝色单元格）得出的。随后的
+    ATR 值使用上述公式进行平滑处理。电子表格中的数值对应下图中的黄色区域。请注意，随着 QQQ 在五月份暴跌并出现许多长蜡烛图，ATR 值激增。
 - en: '![ATR - Chart 1](../Images/a7861e6f3a4e458eec5688b13a3cfccc.jpg "ATR - Chart
     1")'
+  id: totrans-32
   prefs: []
   type: TYPE_IMG
+  zh: '![ATR - 图表 1](../Images/a7861e6f3a4e458eec5688b13a3cfccc.jpg "ATR - 图表 1")'
 - en: For those trying this at home, a few caveats apply. First, just like with [Exponential
     Moving Averages (EMAs)](/school/doku.php?id=chart_school:technical_indicators:moving_averages#ema_accuracy
     "chart_school:technical_indicators:moving_averages"), ATR values depend on how
@@ -181,12 +252,19 @@
     with what is seen on the price chart. Decimal rounding can also slightly affect
     ATR values. On our charts, we calculate back at least 250 periods (typically much
     further), to ensure a much greater degree of accuracy for our ATR values.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于那些在家尝试的人，有一些注意事项。首先，就像[指数移动平均线（EMAs）](/school/doku.php?id=chart_school:technical_indicators:moving_averages#ema_accuracy
+    "chart_school:technical_indicators:moving_averages")一样，ATR 值取决于你从多远的历史数据开始计算。第一个真实范围值简单地是当前最高价减去当前最低价，而第一个
+    ATR 是前 14 个真实范围值的平均值。真正的 ATR 公式直到第 15 天才开始生效。即便如此，这两个计算的残留效应会略微影响随后的 ATR 值。对于一小部分数据的电子表格数值可能与价格图表上看到的不完全匹配。小数四舍五入也可能会略微影响
+    ATR 值。在我们的图表中，我们至少计算了 250 个周期（通常更多），以确保我们的 ATR 值更加准确。
 - en: Absolute ATR
+  id: totrans-34
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 绝对 ATR
 - en: ATR is based on the True Range, which uses absolute price changes. As such,
     ATR reflects volatility as absolute level. In other words, ATR is not shown as
     a percentage of the current close. This means low-priced stocks will have lower
@@ -196,18 +274,26 @@
     from 70 to 20, can make long-term ATR comparisons impractical. Chart 4 shows Google
     with double-digit ATR values and chart 5 shows Microsoft with ATR values below
     1\. Despite different values, their ATR lines have similar shapes.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: ATR基于真实范围，使用绝对价格变动。因此，ATR反映波动性作为绝对水平。换句话说，ATR不显示为当前收盘价的百分比。这意味着低价股的ATR值将低于高价股。例如，一只$20-30的证券的ATR值将远低于一只$200-300的证券。由于这个原因，ATR值是不可比较的。即使对于单个证券的大幅价格波动，比如从70下跌到20，也会使长期ATR比较变得不切实际。图表4显示了谷歌的两位数ATR值，图表5显示了微软的ATR值低于1。尽管值不同，它们的ATR线形状相似。
 - en: '![](../Images/207f49e32b661497845df4fe774b04f7.jpg)'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/207f49e32b661497845df4fe774b04f7.jpg)'
 - en: '![](../Images/c5b5e44faaa25c8f45d7430fd33ea31f.jpg)'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/c5b5e44faaa25c8f45d7430fd33ea31f.jpg)'
 - en: Conclusions
+  id: totrans-38
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: ATR is not a directional indicator, such as MACD or RSI. Instead, ATR is a unique
     volatility indicator that reflects the degree of interest or disinterest in a
     move. Strong moves, in either direction, are often accompanied by large ranges,
@@ -217,12 +303,16 @@
     an increase in ATR would show strong buying pressure and reinforce the reversal.
     A bearish support break with an increase in ATR would show strong selling pressure
     and reinforce the support break.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: ATR不是一个方向性指标，如MACD或RSI。相反，ATR是一个反映移动的兴趣或不感兴趣程度的独特波动性指标。强劲的移动，无论是向任何方向，通常伴随着大范围或大真实范围。这在移动开始时尤其明显。乏味的移动可能伴随着相对较窄的范围。因此，ATR可用于验证移动或突破背后的热情。具有ATR增加的牛市逆转将显示强劲的买盘压力并加强逆转。具有ATR增加的熊市支撑突破将显示强劲的卖盘压力并加强支撑突破。
 - en: Using with SharpCharts
+  id: totrans-40
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用SharpCharts
 - en: Listed as “Average True Range”, ATR is on the Indicators drop-down menu. The
     “parameters” box to the right of the indicator contains the default value, 14,
     for the number of periods used to smooth the data. To adjust the period setting,
@@ -233,55 +323,86 @@
     [Click here](http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p51341747448&listNum=30&a=202613287
     "http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p51341747448&listNum=30&a=202613287")
     for a live example of ATR.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 在指标下拉菜单中列为“平均真实范围”，ATR。指标右侧的“参数”框包含用于平滑数据的周期数的默认值，14。要调整周期设置，请突出显示默认值并输入新设置。Wilder经常使用8周期ATR。SharpCharts还允许用户将指标放置在价格图表的上方、下方或后面。可以添加移动平均线以识别ATR的上升或下降。单击“高级选项”以将移动平均线添加为指标叠加。[点击这里](http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p51341747448&listNum=30&a=202613287
+    "http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p51341747448&listNum=30&a=202613287")查看ATR的实时示例。
 - en: '![ATR - SharpCharts](../Images/ee27c0be5574d4226be3c3b0d63cda12.jpg "ATR -
     SharpCharts")'
+  id: totrans-42
   prefs: []
   type: TYPE_IMG
+  zh: '![ATR - SharpCharts](../Images/ee27c0be5574d4226be3c3b0d63cda12.jpg "ATR -
+    SharpCharts")'
 - en: Suggested Scans
+  id: totrans-43
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议的扫描
 - en: Weeding Out High Volatility
+  id: totrans-44
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 筛选出高波动性
 - en: The Average True Range indicator can be used in scans to weed out securities
     with extremely high volatility. This simple scan searches for S&P 600 stocks that
     are in an uptrend. The final scan clause excludes high volatility stocks from
     the results. Note that the ATR is converted to a percentage of sorts so that the
     ATR of different stocks can be compared on the same scale.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 平均真实范围指标可用于扫描以筛选出波动极高的证券。这个简单的扫描搜索处于上升趋势的S&P 600股票。最终的扫描条款排除了高波动性股票的结果。请注意，ATR被转换为一种百分比，以便可以在相同的比例上比较不同股票的ATR。
 - en: '[PRE1]'
+  id: totrans-46
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: For more details on the syntax to use for ATR scans, please see our [Scanning
     Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#average_true_range_atr
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#average_true_range_atr")
     in the Support Center.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 欲了解有关ATR扫描使用的语法详情，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#average_true_range_atr
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#average_true_range_atr")在支持中心。
 - en: Additional Resources
+  id: totrans-48
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 其他资源
 - en: Stocks & Commodities Magazine Articles
+  id: totrans-49
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 股票与商品杂志文章
 - en: '**[Working Money: Average True Range by Sharon Yamanaka](http://stockcharts.com/h-mem/tascredirect.html?artid=\V20\C03\054ATR.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V20\C03\054ATR.pdf")**'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[工作资金：真实波幅 by Sharon Yamanaka](http://stockcharts.com/h-mem/tascredirect.html?artid=\V20\C03\054ATR.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V20\C03\054ATR.pdf")**'
 - en: Feb 2002 - Stocks & Commodities
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 2002年2月 - 股票与商品
 - en: '**[Which Volatility Measure? by Gordon Gustafson](http://stockcharts.com/h-mem/tascredirect.html?artid=\V19\C06\067VOL.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V19\C06\067VOL.pdf")**'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[哪种波动率度量方法？by Gordon Gustafson](http://stockcharts.com/h-mem/tascredirect.html?artid=\V19\C06\067VOL.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V19\C06\067VOL.pdf")**'
 - en: May 2001 - Stocks & Commodities V. 19:6 (46-50)
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 2001年5月 - 股票与商品 V. 19:6 (46-50)

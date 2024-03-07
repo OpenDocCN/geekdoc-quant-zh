@@ -1,131 +1,185 @@
 - en: Bollinger BandWidth [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 布林带宽度 [ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Bollinger BandWidth](#bollinger_bandwidth)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[布林带宽度](#bollinger_bandwidth)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[SharpCharts Calculation](#sharpcharts_calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[SharpCharts 计算](#sharpcharts_calculation)'
 - en: '[Defining Narrowness](#defining_narrowness)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[定义窄度](#defining_narrowness)'
 - en: '[Signal: The Squeeze](#signalthe_squeeze)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[信号：挤压](#signalthe_squeeze)'
 - en: '[Summary](#summary)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[摘要](#summary)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与 SharpCharts 一起使用](#using_with_sharpcharts)'
 - en: '[Using with MarketCarpets](#using_with_marketcarpets)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与 MarketCarpets 一起使用](#using_with_marketcarpets)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议的扫描](#suggested_scans)'
 - en: '[Bollinger Band Breakout](#bollinger_band_breakout)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[布林带突破](#bollinger_band_breakout)'
 - en: Introduction
+  id: totrans-12
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: Bollinger BandWidth is an indicator derived from [Bollinger Bands](/school/doku.php?id=chart_school:technical_indicators:bollinger_bands
     "chart_school:technical_indicators:bollinger_bands"). In his book, *Bollinger
     on Bollinger Bands*, John Bollinger refers to Bollinger BandWidth as one of two
     indicators that can be derived from Bollinger Bands. The other indicator is %B.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 布林带宽度是从[布林带](/school/doku.php?id=chart_school:technical_indicators:bollinger_bands
+    "chart_school:technical_indicators:bollinger_bands")衍生出的指标。在他的书《布林带上的布林格》中，约翰·布林格将布林带宽度称为可以从布林带中衍生出的两个指标之一。另一个指标是%B。
 - en: BandWidth measures the percentage difference between the upper band and the
     lower band. BandWidth decreases as Bollinger Bands narrow and increases as Bollinger
     Bands widen. Because Bollinger Bands are based on the standard deviation, falling
     BandWidth reflects decreasing volatility and rising BandWidth reflects increasing
     volatility.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 带宽度衡量上带和下带之间的百分比差异。随着布林带变窄，带宽度减小，随着布林带扩大，带宽度增加。由于布林带基于标准差，带宽度的下降反映了波动性的减少，而带宽度的上升反映了波动性的增加。
 - en: SharpCharts Calculation
+  id: totrans-15
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: SharpCharts 计算
 - en: '[PRE0]'
+  id: totrans-16
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: Bollinger Bands consist of a middle band with two outer bands. The middle band
     is a [simple moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
     "chart_school:technical_indicators:moving_averages") usually set at 20 periods.
     The outer bands are usually set 2 standard deviations above and below the middle
     band. Settings can be adjusted to suit the characteristics of particular securities
     or trading styles.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 布林带由一个中间带和两个外部带组成。中间带通常设置为20个周期的[简单移动平均](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages")。外部带通常设置为中间带上下2个标准差。设置可以根据特定证券或交易风格的特征进行调整。
 - en: When calculating BandWidth, the first step is to subtract the value of the lower
     band from the value of the upper band. This shows the absolute difference. This
     difference is then divided by the middle band, which normalizes the value. This
     normalized Bandwidth can then be compared across different timeframes or with
     the BandWidth values for other securities.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 在计算带宽时，第一步是从上带的值中减去下带的值。这显示了绝对差异。然后将此差异除以中间带，这将使值标准化。然后可以在不同时间段内或与其他证券的带宽值进行比较。
 - en: '![Chart 1](../Images/8bd0aeb209a3a38dfff98b8965105e8a.jpg "Chart 1")'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 1](../Images/8bd0aeb209a3a38dfff98b8965105e8a.jpg "图表 1")'
 - en: The chart above shows the Nasdaq 100 ETF (QQQ) with Bollinger Bands, BandWidth,
     and the Standard Deviation. Notice how BandWidth tracks the Standard Deviation
     (volatility). Both rise and fall together. The image below shows a spreadsheet
     with a calculation example.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 上图显示了纳斯达克100 ETF（QQQ）的布林带、带宽度和标准差。请注意带宽度如何跟踪标准差（波动性）。两者一起上升和下降。下图显示了一个带有计算示例的电子表格。
 - en: '![Spreadsheet 1](../Images/419fa826e8678c1f564a5b12dcf646f4.jpg "Spreadsheet
     1")'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![电子表格 1](../Images/419fa826e8678c1f564a5b12dcf646f4.jpg "电子表格 1")'
 - en: Defining Narrowness
+  id: totrans-22
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 定义窄度
 - en: Narrow BandWidth is relative. BandWidth values should be gauged relative to
     prior BandWidth values over a period of time. It is important to get a good look-back
     period to define BandWidth range for a particular ETF, index or stock. For example,
     an eight to twelve-month chart will show BandWidth highs and lows over a significant
     timeframe. BandWidth is considered narrow as it approaches the lows of this range
     and wide as it approaches the high end.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 窄带宽是相对的。带宽值应该相对于一段时间内先前的带宽值进行评估。重要的是要获得一个良好的回顾期，以定义特定ETF、指数或股票的带宽范围。例如，八到十二个月的图表将显示一段重要时间内的带宽高点和低点。当带宽接近此范围的低点时被认为是窄的，当接近高点时被认为是宽的。
 - en: '![Chart 2](../Images/101cfde779c6dc426a5112525e9d7919.jpg "Chart 2")'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 2](../Images/101cfde779c6dc426a5112525e9d7919.jpg "图表 2")'
 - en: '![Chart 3](../Images/c2ea79b827cdab1e1534f6b739ab70f8.jpg "Chart 3")'
+  id: totrans-25
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 3](../Images/c2ea79b827cdab1e1534f6b739ab70f8.jpg "图表 3")'
 - en: Securities with low volatility will have lower BandWidth values than securities
     with high volatility. For example, the Utilities SPDR (XLU) represents utility
     stocks, which have relatively low volatility. The Technology SPDR (XLK) represents
@@ -133,12 +187,18 @@
     XLU will have consistently lower BandWidth values than XLK. The 200-day moving
     average of XLU BandWidth is below 5, while the 200-day moving average of XLK BandWidth
     is above 7\.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 低波动性证券的BandWidth值将低于高波动性证券。例如，Utilities SPDR（XLU）代表公用事业股票，其波动性相对较低。Technology
+    SPDR（XLK）代表科技股票，其波动性相对较高。由于低波动性，XLU的BandWidth值将始终低于XLK。XLU的BandWidth 200日移动平均值低于5，而XLK的BandWidth
+    200日移动平均值高于7。
 - en: 'Signal: The Squeeze'
+  id: totrans-27
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 信号：挤压
 - en: Bollinger BandWidth is best known for identifying The Squeeze. This occurs when
     volatility falls to a very low level, as evidenced by the narrowing bands. The
     upper and lower bands are based on the standard deviation, which is a measure
@@ -149,8 +209,10 @@
     band break signal the start of a new move. A new advance starts with a Squeeze
     and subsequent break above the upper band. A new decline starts with a Squeeze
     and subsequent break below the lower band.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: Bollinger BandWidth最为人所知的是用于识别“挤压”现象。当波动性降至非常低的水平时，就会出现狭窄的带状。上下带基于标准偏差，这是波动性的一种度量。当价格趋于平稳或在相对狭窄的范围内波动时，带状变窄。理论认为，低波动性期后将会出现高波动性期。相对较窄的BandWidth（也称为挤压）可能预示着重大上涨或下跌。挤压后，价格激增并随后带状突破信号标志着新趋势的开始。新的上涨始于挤压和随后突破上带。新的下跌始于挤压和随后突破下带。
 - en: Chart 2 shows Alaska Airlines (ALK) with a squeeze in mid-June. After declining
     in April-May, ALK stabilized in early June as Bollinger Bands narrowed. BandWidth
     dipped below 10 to put the Squeeze play on in mid-June. Keep in mind that 10 refers
@@ -159,11 +221,15 @@
     stock around 15-16, BandWidth was less than 10% and at its lowest level in over
     a year. With the subsequent surge above the upper band, the stock broke out to
     trigger an extended advance.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表2显示了阿拉斯加航空（ALK）在6月中旬出现的挤压现象。在4月至5月下跌后，ALK在6月初稳定下来，因为Bollinger带变窄。BandWidth下降到10以下，使6月中旬的挤压现象出现。请记住，10指的是10%。换句话说，带的宽度等于中间带的10%。尽管这个水平看起来很高，但对于ALK来说实际上相当低。股价在15-16左右时，BandWidth低于10%，是一年多来的最低水平。随着股价突破上带，股票开始大幅上涨。
 - en: '![Chart 4](../Images/6c133691e15036f8ec526db70662778d.jpg "Chart 4")'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 4](../Images/6c133691e15036f8ec526db70662778d.jpg "图表 4")'
 - en: Chart 3 shows Aeropostale (ARO) with a couple of Squeezes. A horizontal line
     was added to the indicator window. This line marks 8, which is deemed relatively
     low based on the historical range. The BandWidth indicator alerted traders to
@@ -172,11 +238,15 @@
     and BandWidth narrowed again in October. Notice how BandWidth declined below the
     lows set in August and then flattened out. The subsequent break below the lower
     Bollinger Band triggered a bearish signal in late October.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表3显示了Aeropostale（ARO）出现了几次挤压现象。在指标窗口中添加了一条水平线。这条线标记为8，根据历史范围被认为相对较低。BandWidth指标提醒交易者准备在8月中旬进行交易。股票随后突破上带并在整个9月持续上涨。上涨在9月底停滞，BandWidth再次收窄在10月。请注意，BandWidth下降到低于8月份设定的低点，然后趋于平稳。随后在10月底突破下轨的信号触发了一个熊市信号。
 - en: '![Chart 5](../Images/3a533d1f5b5762881484c97d9a00b5dd.jpg "Chart 5")'
+  id: totrans-32
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 5](../Images/3a533d1f5b5762881484c97d9a00b5dd.jpg "图表 5")'
 - en: The Squeeze can also be applied to weekly charts or longer timeframes. Volatility
     and BandWidth are typically higher on the weekly timeframe than a daily timeframe.
     This makes sense because larger price movements can be expected over longer timeframes.
@@ -186,23 +256,34 @@
     at low levels as the consolidation extended. A bullish signal triggered with the
     breakout in July 2007\. BandWidth also rose as prices moved sharply in one direction
     and Bollinger Bands widened.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 挤压也可以应用于周线图或更长的时间框架。周线时间框架上的波动性和带宽通常比日线时间框架上更高。这是因为在更长的时间框架上可以预期更大的价格波动。图4显示了
+    Barrick Gold (ABX) 在2006年和2007年持续整理。随着整理变窄并形成三角形，布林带收缩，带宽在2007年1月下降到10以下。请注意，随着整理的延伸，带宽保持在低水平。在2007年7月突破时触发了一个看涨信号。随着价格朝一个方向急剧变动，布林带也扩大，带宽也上升。
 - en: '![Chart 6](../Images/012e4c92bffebf8d406af9e3d3a12955.jpg "Chart 6")'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 6](../Images/012e4c92bffebf8d406af9e3d3a12955.jpg "图表 6")'
 - en: Chart 5 shows Honeywell (HON) with an extended trading range in the 50-55 area.
     There was a move to the upper band in May, but no breakout for a signal. Instead,
     HON clearly broke below the lower band to trigger a bearish signal in June 2007.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 图5显示了 Honeywell (HON) 在50-55区域的扩展交易范围。5月份价格上涨到上轨，但没有突破信号。相反，HON 明显跌破下轨，于2007年6月触发了一个看跌信号。
 - en: '![Chart 7](../Images/729369505c25ce3c7aa56f3ed9264230.jpg "Chart 7")'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 7](../Images/729369505c25ce3c7aa56f3ed9264230.jpg "图表 7")'
 - en: Summary
+  id: totrans-37
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 总结
 - en: The BandWidth indicator can be used to identify the Bollinger Band Squeeze.
     This alerts chartists to prepare for a move, but direction depends on the subsequent
     band break. A squeeze followed by a break above the upper band is bullish, while
@@ -210,12 +291,16 @@
     however. Sometimes the first break fails to hold as prices reverse the other way.
     Strong breaks hold and seldom look back. An upside breakout followed by an immediate
     pullback should serve as a warning.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 带宽指标可用于识别布林带挤压。这警示图表分析师准备行动，但方向取决于随后的带突破。挤压后上轨突破是看涨的，而下轨突破是看跌的。但要小心虚假突破。有时第一次突破未能保持，价格会反转。强劲的突破保持并且很少回头。上涨突破后立即回调应作为警告。
 - en: Using with SharpCharts
+  id: totrans-39
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用 SharpCharts
 - en: Bollinger BandWidth can be found in the indicator list on SharpCharts. The default
     parameters (20,2) are based on the default parameters for Bollinger Bands. These
     can be changed accordingly. 20 represents the simple moving average. 2 represents
@@ -223,15 +308,23 @@
     be positioned above, below or behind the price plot. [Click here](http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=6&dy=0&id=p38029592805&listNum=30&a=195096097
     "http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=6&dy=0&id=p38029592805&listNum=30&a=195096097")
     to see a live example of BandWidth.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 带宽指标可以在 SharpCharts 的指标列表中找到。默认参数（20,2）基于布林带的默认参数。这些可以相应地更改。20代表简单移动平均。2代表上下轨的标准差数。带宽可以放置在价格图的上方、下方或后面。[点击这里](http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=6&dy=0&id=p38029592805&listNum=30&a=195096097
+    "http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=6&dy=0&id=p38029592805&listNum=30&a=195096097")
+    查看带宽的实时示例。
 - en: '![Chart 8](../Images/224833de27c84ea95f9553b76b87112a.jpg "Chart 8")'
+  id: totrans-41
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 8](../Images/224833de27c84ea95f9553b76b87112a.jpg "图表 8")'
 - en: Using with MarketCarpets
+  id: totrans-42
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用 MarketCarpets
 - en: Normalized Bollinger BandWidth is shown in the Market Carpet and this allows
     users to compare BandWidth for a number of securities. Using the [S&P Sector MarketCarpet](http://stockcharts.com/freecharts/carpet.html
     "http://stockcharts.com/freecharts/carpet.html") as an example, choose Bollinger
@@ -244,29 +337,45 @@
     on the sector heading (e.g. Technology). With nine sectors and the Bottom 5 stocks
     listed for each sector, users can quickly view 45 stocks with relatively narrow
     BandWidth.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 标准化的布林带宽显示在市场地毯中，这使用户可以比较多个证券的带宽。以[S&P行业市场地毯](http://stockcharts.com/freecharts/carpet.html
+    "http://stockcharts.com/freecharts/carpet.html")为例，选择布林带宽，然后点击三角形的Δ图标查看绝对水平。有阴影的Δ图标显示百分比变化。白色的Δ图标显示绝对水平。绿色框显示带宽相对较宽的股票。浅色框显示带宽相对较窄的股票。在市场地毯右下方显示带宽最窄的股票列表（底部5）。点击名称可查看上方的小图表。用户可以通过点击行业标题（例如技术）来深入了解各个行业。有九个行业和每个行业列出的底部5个股票，用户可以快速查看相对带宽较窄的45只股票。
 - en: '![Chart 9](../Images/355729f80d9c152bfee8122a2d3e8982.jpg "Chart 9")'
+  id: totrans-44
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 9](../Images/355729f80d9c152bfee8122a2d3e8982.jpg "图表 9")'
 - en: Suggested Scans
+  id: totrans-45
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议的扫描
 - en: Bollinger Band Breakout
+  id: totrans-46
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 布林带突破
 - en: This scan reveals stocks whose Bollinger Bands just expanded rapidly after being
     contracted for 5 or more days.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描显示了布林带在收缩5天或更长时间后迅速扩张的股票。
 - en: '[PRE1]'
+  id: totrans-48
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: For more details on the syntax to use for BandWidth scans, please see our [Scanning
     Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_band_width_bb_width
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_band_width_bb_width")
     in the Support Center.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关用于带宽扫描的语法的更多详细信息，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_band_width_bb_width
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_band_width_bb_width")在支持中心。

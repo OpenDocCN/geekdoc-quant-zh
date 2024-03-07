@@ -1,97 +1,135 @@
 - en: Keltner Channels [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 凯尔特纳通道[图表学校]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Keltner Channels](#keltner_channels)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[凯尔特纳通道](#keltner_channels)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[Calculation](#calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算](#calculation)'
 - en: '[Interpretation](#interpretation)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[解释](#interpretation)'
 - en: '[Versus Bollinger Bands](#versus_bollinger_bands)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与布林带对比](#versus_bollinger_bands)'
 - en: '[Uptrend](#uptrend)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[上升趋势](#uptrend)'
 - en: '[Downtrend](#downtrend)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[下降趋势](#downtrend)'
 - en: '[Flat Trend](#flat_trend)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[平稳趋势](#flat_trend)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[使用SharpCharts](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议扫描](#suggested_scans)'
 - en: '[Oversold after Bullish Keltner Channel Breakout](#oversold_after_bullish_keltner_channel_breakout)'
+  id: totrans-13
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[牛市凯尔特纳通道突破后的超卖](#oversold_after_bullish_keltner_channel_breakout)'
 - en: '[Overbought after Bearish Keltner Channel Breakout](#overbought_after_bearish_keltner_channel_breakout)'
+  id: totrans-14
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[熊市凯尔特纳通道突破后的超买](#overbought_after_bearish_keltner_channel_breakout)'
 - en: '[Further Study](#further_study)'
+  id: totrans-15
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[进一步研究](#further_study)'
 - en: '[Additional Resources](#additional_resources)'
+  id: totrans-16
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[额外资源](#additional_resources)'
 - en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  id: totrans-17
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[股票与商品杂志文章](#stocks_commodities_magazine_articles)'
 - en: Introduction
+  id: totrans-18
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: Keltner Channels are volatility-based envelopes set above and below an exponential
     moving average. This indicator is similar to Bollinger Bands, which use the standard
     deviation to set the bands. Instead of using the standard deviation, Keltner Channels
@@ -103,8 +141,12 @@
     used to identify reversals with channel breakouts and channel direction.** Channels
     can also be used to identify overbought and oversold levels when the trend is
     flat.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 凯尔特纳通道是基于波动率的信封，设置在指数移动平均线的上方和下方。这个指标类似于布林带，布林带使用标准差来设定带。凯尔特纳通道不使用标准差，而是使用[真实波幅（ATR）](/school/doku.php?id=chart_school:technical_indicators:average_true_range_atr
+    "chart_school:technical_indicators:average_true_range_atr")来设定通道距离。通常情况下，通道设置在20日EMA的两个真实波幅值的上方和下方。指数移动平均线决定方向，真实波幅设定通道宽度。**凯尔特纳通道是一种趋势跟踪指标，用于识别通道突破和通道方向的逆转。**
+    当趋势平稳时，通道也可以用来识别超买和超卖水平。
 - en: In his 1960 book, How to Make Money in Commodities, Chester Keltner introduced
     the “Ten-Day Moving Average Trading Rule,” which is credited as the original version
     of Keltner Channels. This original version started with a 10-day SMA of the typical
@@ -114,20 +156,28 @@
     Bands, this new version used a volatility based indicator, Average True Range
     (ATR), to set channel width. StockCharts.com uses this newer version of Keltner
     Channels.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 在他1960年的著作《如何在商品市场赚钱》中，切斯特·凯尔特纳介绍了“十日移动平均交易规则”，被认为是凯尔特纳通道的原始版本。这个原始版本以典型价格的10日简单移动平均（{(H+L+C)/3)}）作为中线。高低范围的10日简单移动平均被加减以设定上下通道线。琳达·布拉德福德·拉什克在1980年代介绍了凯尔特纳通道的更新版本。与布林带类似，这个新版本使用基于波动率的指标——真实波幅（ATR），来设定通道宽度。StockCharts.com使用这个更新版本的凯尔特纳通道。
 - en: Calculation
+  id: totrans-21
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算
 - en: There are three steps to calculating Keltner Channels. First, select the length
     for the exponential moving average. Second, choose the time periods for the Average
     True Range (ATR). Third, choose the multiplier for the Average True Range.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 计算凯尔特纳通道有三个步骤。首先，选择指数移动平均线的长度。其次，选择真实波幅（ATR）的时间周期。第三，选择真实波幅的乘数。
 - en: '[PRE0]'
+  id: totrans-23
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: The example above is based on the default settings for SharpCharts. Because
     moving averages lag price, a longer moving average will have more lag and a shorter
     moving average will have less lag. ATR is the basic volatility setting. Short
@@ -136,18 +186,28 @@
     to produce a more constant ATR reading. The multiplier has the most effect on
     the channel width. Simply changing from 2 to 1 will cut channel width in half.
     Increasing from 2 to 3 will increase channel width by 50%.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 上面的示例基于 SharpCharts 的默认设置。由于移动平均线滞后于价格，较长的移动平均线会有更多的滞后，而较短的移动平均线则会有较少的滞后。ATR
+    是基本的波动率设置。较短的时间框架，如 10，会产生更加波动的 ATR，随着 10 期波动性的起伏而波动。较长的时间框架，如 100，会平滑这些波动，产生更加稳定的
+    ATR 读数。乘数对通道宽度影响最大。简单地从 2 改为 1 会将通道宽度减半。从 2 增加到 3 会使通道宽度增加 50%。
 - en: Here's a chart showing three Keltner Channels set at 1, 2, and 3 ATRs away from
     the central moving average. This particular technique has been advocated by Kerry
     Lovvorn of [SpikeTrade.com](http://spiketrade.com "http://spiketrade.com") for
     years.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有一张图表展示了三条 Keltner 通道，分别设置在中心移动平均线的 1、2 和 3 个 ATR 之外。这种特定技术多年来一直由 [SpikeTrade.com](http://spiketrade.com
+    "http://spiketrade.com") 的 Kerry Lovvorn 提倡。
 - en: '![Keltner Channels - Chart 1](../Images/09e6e3d8d1de051eaee6ec1e5b9adc09.jpg
     "Keltner Channels - Chart 1")'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![Keltner 通道 - 图表 1](../Images/09e6e3d8d1de051eaee6ec1e5b9adc09.jpg "Keltner
+    通道 - 图表 1")'
 - en: The chart above shows the default Keltner Channels in red, a wider channel in
     blue and a narrower channel in green. The blue channels were set three Average
     True Range values above and below (3 x ATR). The green channels used one ATR value.
@@ -155,20 +215,28 @@
     windows show differences in the Average True Range (ATR) for 10 periods, 50 periods
     and 100 periods. Notice how the short ATR (10) is more volatile and has the widest
     range. In contrast, 100-period ATR is much smoother with a less volatile range.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 上图显示了默认的红色 Keltner 通道，更宽的蓝色通道和更窄的绿色通道。蓝色通道设置为中心移动平均线的三个平均真实范围值之上和之下（3 x ATR）。绿色通道使用一个
+    ATR 值。所有三个通道共享 20 天的 EMA，即中间的虚线。指标窗口显示了 10 期、50 期和 100 期的平均真实范围（ATR）的差异。请注意，短期
+    ATR（10）更加波动，范围更广。相比之下，100 期 ATR 更加平稳，范围波动较小。
 - en: Interpretation
+  id: totrans-28
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 解释
 - en: Indicators based on channels, bands and envelopes are designed to encompass
     most price action. Therefore, moves above or below the channel lines warrant attention
     because they are relatively rare. Trends often start with strong moves in one
     direction or another. A surge above the upper channel line shows extraordinary
     strength, while a plunge below the lower channel line shows extraordinary weakness.
     Such strong moves can signal the end of one trend and the beginning of another.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于通道、波段和包络线的指标旨在涵盖大部分价格行为。因此，超出或低于通道线的走势值得关注，因为这种情况相对较少见。趋势通常始于某个方向的强劲走势。突破上通道线显示出非凡的力量，而跌破下通道线则显示出非凡的弱势。这种强劲的走势可能预示着一种趋势的结束和另一种趋势的开始。
 - en: With an exponential [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
     "chart_school:technical_indicators:moving_averages") as its foundation, Keltner
     Channels are a trend following indicator. As with moving averages and trend following
@@ -176,20 +244,28 @@
     dictates the direction of the channel. In general, a downtrend is present when
     the channel moves lower, while an uptrend exists when the channel moves higher.
     The trend is flat when the channel moves sideways.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 以指数[移动平均线](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages")为基础，Keltner 通道是一种趋势跟踪指标。与移动平均线和趋势跟踪指标一样，Keltner
+    通道滞后于价格走势。移动平均线的方向决定了通道的方向。通道向下移动时通常存在下降趋势，而通道向上移动时存在上升趋势。当通道横向移动时，趋势是平的。
 - en: A channel upturn and break above the upper trendline can signal the start of
     an uptrend. A channel downturn and break below the lower trendline can signal
     the start a downtrend. Sometimes a strong trend does not take hold after a channel
     breakout and prices oscillate between the channel lines. Such trading ranges are
     marked by a relatively flat moving average. The channel boundaries can then be
     used to identify overbought and oversold levels for trading purposes.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 通道上升并突破上升趋势线可能预示着上升趋势的开始。通道下降并突破下降趋势线可能预示着下降趋势的开始。有时，在通道突破后强劲的趋势并没有形成，价格在通道线之间波动。这种交易范围以相对平坦的移动平均线为特征。然后可以利用通道边界来识别超买和超卖水平以进行交易。
 - en: Versus Bollinger Bands
+  id: totrans-32
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 与布林带相比
 - en: There are two differences between Keltner Channels and Bollinger Bands. First,
     Keltner Channels are smoother than [Bollinger Bands](/school/doku.php?id=chart_school:technical_indicators:bollinger_bands
     "chart_school:technical_indicators:bollinger_bands") because the width of the
@@ -203,28 +279,41 @@
     comparison. Notice how the Keltner Channels are smoother than the Bollinger Bands.
     Also, notice how the Standard Deviation covers a larger range than the Average
     True Range (ATR).
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: Keltner通道和布林带之间有两个区别。首先，Keltner通道比[布林带](/school/doku.php?id=chart_school:technical_indicators:bollinger_bands
+    "chart_school:technical_indicators:bollinger_bands")更平滑，因为布林带的宽度基于标准偏差，比真实波幅（ATR）更不稳定。许多人认为这是一个优点，因为它创造了一个更为恒定的宽度。这使得Keltner通道非常适合趋势跟踪和趋势识别。其次，Keltner通道还使用指数移动平均线，比布林带中使用的简单移动平均线更敏感。下图显示了Keltner通道（蓝色）、布林带（粉色）、真实波幅（10）、标准偏差（10）和标准偏差（20）进行比较。请注意Keltner通道比布林带更平滑。另外，请注意标准偏差的范围比真实波幅（ATR）大。
 - en: '![Keltner Channels - Chart 7](../Images/ca93c4c5d8beae79af176467aef09fc2.jpg
     "Keltner Channels - Chart 7")'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![Keltner通道 - 图表7](../Images/ca93c4c5d8beae79af176467aef09fc2.jpg "Keltner通道
+    - 图表7")'
 - en: Uptrend
+  id: totrans-35
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 上升趋势
 - en: The chart below shows Archer Daniels Midland (ADM) starting an uptrend as the
     Keltner Channels turn up and the stock surges above the upper channel line. ADM
     was in a clear downtrend in April-May as prices continued to pierce the lower
     channel. With a strong thrust up in June, prices exceeded the upper channel and
     the channel turned up to start a new uptrend. Notice that prices held above the
     lower channel on dips in early and late July.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 下图显示了阿彻丹尼尔斯中部（ADM）在Keltner通道上升并股价突破上通道线时开始上升趋势。ADM在4月至5月明显处于下降趋势，因为价格继续穿过下通道。6月份价格强劲上涨，超过了上通道，通道转向上方开始新的上升趋势。请注意，7月初和7月底价格在下通道线上方保持。
 - en: '![Keltner Channels - Chart 1](../Images/01fbaa07316ea0f4ce07e1bba0fbabf5.jpg
     "Keltner Channels - Chart 1")'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![Keltner通道 - 图表1](../Images/01fbaa07316ea0f4ce07e1bba0fbabf5.jpg "Keltner通道
+    - 图表1")'
 - en: Even with a new uptrend established, it is often prudent to wait for a pullback
     or better entry point to improve the reward-to-risk ratio. Momentum oscillators
     or other indicators can then be employed to define oversold readings. This chart
@@ -233,22 +322,32 @@
     oscillators, dipping below .20 to become oversold at least three times during
     the uptrend. The subsequent crosses back above .20 signaled a resumption of the
     uptrend.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 即使建立了新的上升趋势，通常也明智地等待回调或更好的入场点以改善回报风险比。然后可以使用动量振荡器或其他指标来定义超卖读数。本图显示了[StochRSI](/school/doku.php?id=chart_school:technical_indicators:stochrsi
+    "chart_school:technical_indicators:stochrsi")之一，这是更敏感的动量振荡器，在上升趋势期间至少三次跌破0.20以变为超卖。随后再次上穿0.20标志着上升趋势的恢复。
 - en: Downtrend
+  id: totrans-39
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 下降趋势
 - en: The second chart shows Nvidia (NVDA) starting a downtrend with a sharp decline
     below the lower channel line. After this initial break, the stock met resistance
     near the 20-day EMA (middle line) from mid-May until early August. The inability
     to even come close to the upper channel line showed strong downside pressure.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二张图显示了英伟达（NVDA）开始下跌趋势，急剧跌破下通道线。在这一初始突破之后，股票在五月中旬至八月初的时间内遇到了 20 天 EMA（中线）附近的阻力。未能接近上通道线显示了强烈的下行压力。
 - en: '![Keltner Channels - Chart 3](../Images/d03eb5ad9e774534442819545e015c71.jpg
     "Keltner Channels - Chart 3")'
+  id: totrans-41
   prefs: []
   type: TYPE_IMG
+  zh: '![Keltner 通道 - 图表 3](../Images/d03eb5ad9e774534442819545e015c71.jpg "Keltner
+    通道 - 图表 3")'
 - en: A 10-period [Commodity Channel Index (CCI)](/school/doku.php?id=chart_school:technical_indicators:commodity_channel_index_cci
     "chart_school:technical_indicators:commodity_channel_index_cci") is shown as the
     momentum oscillator to identify short-term overbought conditions. A move above
@@ -256,31 +355,46 @@
     of the downtrend. This signal worked well until September. These failed signals
     indicated a possible trend change that was subsequently confirmed with a break
     above the upper channel line.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 以 10 期[商品通道指数（CCI）](/school/doku.php?id=chart_school:technical_indicators:commodity_channel_index_cci
+    "chart_school:technical_indicators:commodity_channel_index_cci")作为动量振荡器，用于识别短期超买条件。超过
+    100 的移动被视为超买。随后回落至 100 以下信号着下跌趋势的恢复。这个信号一直有效直到九月。这些失败的信号表明可能发生趋势变化，随后通过突破上通道线得到确认。
 - en: Flat Trend
+  id: totrans-43
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 平稳趋势
 - en: Once a trading range or flat trading environment has been identified, traders
     can use the Keltner Channels to identify overbought and oversold levels. A trading
     range can be identified with a flat moving average and the Average Directional
     Index (ADX). The chart below shows IBM fluctuating between support in the 120-122
     area and resistance in the 130-132 area from February to late September. The 20-day
     EMA, middle line, lagged price action, but flattened out from April to September.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦确定了交易区间或平稳交易环境，交易员可以使用 Keltner 通道来识别超买和超卖水平。交易区间可以通过平坦的移动平均线和平均趋向指数（ADX）来识别。下图显示了
+    IBM 在二月至九月底之间在 120-122 区域的支撑和 130-132 区域的阻力之间波动。20 天 EMA，中线，滞后于价格走势，但在四月至九月间趋于平缓。
 - en: The indicator window shows ADX (black line) confirming a weak trend. Low and
     falling ADX shows a weak trend. High and rising ADX shows a strong trend. ADX
     was below 40 the entire time and below 30 most of the time. This reflects the
     absence of a trend. Also, notice that ADX peaked in early June and fell until
     late August.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 指标窗口显示 ADX（黑线）确认了弱势趋势。低且下降的 ADX 表示弱势趋势。高且上升的 ADX 表示强势趋势。ADX 在整个时间内都低于 40，在大部分时间内低于
+    30。这反映了趋势的缺失。此外，请注意，ADX 在六月初达到峰值，直到八月底下降。
 - en: '![Keltner Channels - Chart 4](../Images/a1255b0cf0cb4c50640f0e2154bfb2cf.jpg
     "Keltner Channels - Chart 4")'
+  id: totrans-46
   prefs: []
   type: TYPE_IMG
+  zh: '![Keltner 通道 - 图表 4](../Images/a1255b0cf0cb4c50640f0e2154bfb2cf.jpg "Keltner
+    通道 - 图表 4")'
 - en: Armed with the prospects of a weak trend and trading range, traders can use
     Keltner Channels to anticipate reversals. In addition, notice that the channel
     lines often coincide with chart support and resistance. IBM dipped below the lower
@@ -288,16 +402,23 @@
     low-risk entry points. The stock did not manage to reach the upper channel line,
     but did get close as it reversed in the resistance zone. The Disney chart shows
     a similar situation.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 武装着弱势趋势和交易区间的前景，交易员可以使用 Keltner 通道来预测逆转。此外，请注意通道线通常与图表支撑和阻力重合。IBM 从五月底到八月底三次跌破下通道线。这些跌幅提供了低风险的入场点。股票未能触及上通道线，但在阻力区逆转时接近。迪士尼图表显示了类似的情况。
 - en: '![Keltner Channels - Chart 5](../Images/167e23c0d9ffe692a2e558bd8ffedf22.jpg
     "Keltner Channels - Chart 5")'
+  id: totrans-48
   prefs: []
   type: TYPE_IMG
+  zh: '![Keltner 通道 - 图表 5](../Images/167e23c0d9ffe692a2e558bd8ffedf22.jpg "Keltner
+    通道 - 图表 5")'
 - en: Conclusions
+  id: totrans-49
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: '**Keltner Channels are a trend following indicator designed to identify the
     underlying trend.** Trend identification is more than half the battle. The trend
     can be up, down or flat. Using the methods described above, traders and investors
@@ -308,12 +429,18 @@
     should be used in conjunction with other indicators and analysis. [Momentum indicators](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
     "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")
     offer a good complement to the trend-following Keltner Channels.'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: '**凯尔特纳通道是一种趋势跟踪指标，旨在识别潜在趋势。** 趋势识别占据了大部分战斗。趋势可以是上升、下降或平稳的。使用上述方法，交易员和投资者可以识别趋势以建立交易偏好。在上升趋势中偏好看涨交易，在下降趋势中偏好看跌交易。平稳趋势需要更灵活的方法，因为价格往往在上轨线处顶峰，在下轨线处低谷。与所有分析技术一样，凯尔特纳通道应与其他指标和分析一起使用。[动量指标](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")
+    是对趋势跟踪凯尔特纳通道的良好补充。'
 - en: Using with SharpCharts
+  id: totrans-51
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用SharpCharts
 - en: Keltner Channels can be found in SharpCharts as a price overlay. As with a moving
     average, Keltner Channels should be shown on top of a price plot. Upon selecting
     the indicator from the dropdown box, the default setting will appear in the parameters
@@ -324,82 +451,132 @@
     parameters to suit their charting needs. [Click here](http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2010-02-03&en=2010-10-09&id=p15714633106&listNum=30&a=211776022
     "http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2010-02-03&en=2010-10-09&id=p15714633106&listNum=30&a=211776022")
     for a live example.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 凯尔特纳通道可以在SharpCharts中作为价格叠加显示。与移动平均线一样，凯尔特纳通道应该显示在价格图上方。在从下拉框中选择指标后，参数窗口中将显示默认设置（20,2.0,10）。第一个数字（20）设置指数移动平均线的周期。第二个数字（2.0）是ATR倍数。第三个数字（10）是真实波幅（ATR）的周期数。这些默认参数将通道设置为20日EMA的2个ATR值之上/之下。用户可以根据自己的图表需求更改参数。[点击这里](http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2010-02-03&en=2010-10-09&id=p15714633106&listNum=30&a=211776022
+    "http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2010-02-03&en=2010-10-09&id=p15714633106&listNum=30&a=211776022")
+    查看实时示例。
 - en: '![Keltner Channels - SharpCharts](../Images/c744403df12b068be894339eaeba9044.jpg
     "Keltner Channels - SharpCharts")'
+  id: totrans-53
   prefs: []
   type: TYPE_IMG
+  zh: '![凯尔特纳通道 - SharpCharts](../Images/c744403df12b068be894339eaeba9044.jpg "凯尔特纳通道
+    - SharpCharts")'
 - en: Suggested Scans
+  id: totrans-54
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议扫描
 - en: Oversold after Bullish Keltner Channel Breakout
+  id: totrans-55
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 在牛市凯尔特纳通道突破后超卖
 - en: This scan looks for stocks that broke above their upper Keltner Channel 20 days
     ago to affirm or establish an uptrend. The current 10-period CCI is below -100
     to indicate a short-term oversold condition.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个扫描器寻找在20天前突破其上轨凯尔特纳通道的股票，以确认或建立上升趋势。当前的10周期CCI低于-100，表明短期超卖状态。
 - en: '[PRE1]'
+  id: totrans-57
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: Overbought after Bearish Keltner Channel Breakout
+  id: totrans-58
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 在熊市凯尔特纳通道突破后超买
 - en: This scan looks for stocks that broke below their lower Keltner Channel 20 days
     ago to affirm or establish a downtrend. The current 10-period CCI is above +100
     to indicate a short-term overbought condition.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个扫描器寻找在20天前突破其下轨凯尔特纳通道的股票，以确认或建立下降趋势。当前的10周期CCI高于+100，表明短期超买状态。
 - en: '[PRE2]'
+  id: totrans-60
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: For more details on the scan syntax to use for Keltner Channel scans, please
     see our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#keltner_channels
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#keltner_channels") in
     the Support Center.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关用于凯尔特纳通道扫描的扫描语法的更多详细信息，请参阅我们支持中心的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#keltner_channels
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#keltner_channels")。
 - en: Further Study
+  id: totrans-62
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 进一步研究
 - en: '| **Trend Trading for a Living** Thomas Carr | **Trend Following** Michael
     Covel |'
+  id: totrans-63
   prefs: []
   type: TYPE_TB
+  zh: '| **趋势交易谋生** 托马斯·卡尔 | **趋势跟踪** 迈克尔·科维尔 |'
 - en: '| [![](../Images/fd7b150db3a8ea902f5f22b5f07cc54f.jpg)](http://store.stockcharts.com/products/trend-trading-for-a-living
     "http://store.stockcharts.com/products/trend-trading-for-a-living") | [![](../Images/24dae431dd127df01c0a553f30ece02c.jpg)](http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets
     "http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets")
     |'
+  id: totrans-64
   prefs: []
   type: TYPE_TB
+  zh: '| [![](../Images/fd7b150db3a8ea902f5f22b5f07cc54f.jpg)](http://store.stockcharts.com/products/trend-trading-for-a-living
+    "http://store.stockcharts.com/products/trend-trading-for-a-living") | [![](../Images/24dae431dd127df01c0a553f30ece02c.jpg)](http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets
+    "http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets")
+    |'
 - en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/trend-trading-for-a-living
     "http://store.stockcharts.com/products/trend-trading-for-a-living") | [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg
     "Buy Now")](http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets
     "http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets")
     |'
+  id: totrans-65
   prefs: []
   type: TYPE_TB
+  zh: '| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/trend-trading-for-a-living
+    "http://store.stockcharts.com/products/trend-trading-for-a-living") | [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg
+    "立即购买")](http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets
+    "http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets")
+    |'
 - en: '* * *'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: '* * *'
 - en: Additional Resources
+  id: totrans-67
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 附加资源
 - en: Stocks & Commodities Magazine Articles
+  id: totrans-68
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: Stocks & Commodities Magazine 文章
 - en: '**[Keltner Channel by Stuart Evens](http://stockcharts.com/h-mem/tascredirect.html?artid=\V17\C12\095KELT.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V17\C12\095KELT.pdf")**'
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[Keltner Channel by Stuart Evens](http://stockcharts.com/h-mem/tascredirect.html?artid=\V17\C12\095KELT.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V17\C12\095KELT.pdf")**'
 - en: Nov 1999
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 1999年11月

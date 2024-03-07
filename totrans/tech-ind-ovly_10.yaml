@@ -1,88 +1,122 @@
 - en: Pivot Points [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 枢轴点 [ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Pivot Points](#pivot_points)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[枢轴点](#pivot_points)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[Timeframes](#timeframes)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[时间框架](#timeframes)'
 - en: '[Standard Pivot Points](#standard_pivot_points)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[标准枢轴点](#standard_pivot_points)'
 - en: '[Fibonacci Pivot Points](#fibonacci_pivot_points)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[斐波那契枢轴点](#fibonacci_pivot_points)'
 - en: '[Demark Pivot Points](#demark_pivot_points)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[Demark枢轴点](#demark_pivot_points)'
 - en: '[Setting the Tone](#setting_the_tone)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[设定基调](#setting_the_tone)'
 - en: '[Support and Resistance](#support_and_resistance)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[支撑和阻力](#support_and_resistance)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与SharpCharts一起使用](#using_with_sharpcharts)'
 - en: '[Further Study](#further_study)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[进一步研究](#further_study)'
 - en: '[Additional Resources](#additional_resources)'
+  id: totrans-13
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[额外资源](#additional_resources)'
 - en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  id: totrans-14
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[股票与商品杂志文章](#stocks_commodities_magazine_articles)'
 - en: Introduction
+  id: totrans-15
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: '**Pivots Points are significant levels chartists can use to determine directional
     movement and potential support/resistance levels.** Pivot Points use the prior
     period''s high, low, and close to estimate future support and resistance levels.
     In this regard, Pivot Points are predictive or leading indicators. There are at
     least five different versions of Pivot Points. This article will focus on Standard
     Pivot Points, Demark Pivot Points, and Fibonacci Pivot Points.'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: '**枢轴点是图表分析师可以用来确定方向运动和潜在支撑/阻力水平的重要水平。** 枢轴点使用先前时期的最高、最低和收盘价来估计未来的支撑和阻力水平。在这方面，枢轴点是预测性或领先指标。至少有五种不同版本的枢轴点。本文将重点介绍标准枢轴点、Demark枢轴点和斐波那契枢轴点。'
 - en: Pivot Points were originally used by floor traders to set key levels. Floor
     traders are the original day traders. They deal in a very fast moving environment
     with a short-term focus. At the beginning of the trading day, floor traders would
@@ -90,114 +124,170 @@
     the current trading day. With this Pivot Point as the base, further calculations
     were used to set support 1, support 2, resistance 1, and resistance 2\. These
     levels would then be used to assist their trading throughout the day.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 枢轴点最初是由地板交易员用来设定关键水平的。地板交易员是最初的日间交易员。他们在一个快节奏的环境中进行短期关注的交易。在交易日开始时，地板交易员会查看前一天的最高、最低和收盘价，以计算当天的枢轴点。以此枢轴点为基础，进一步的计算用于设定支撑1、支撑2、阻力1和阻力2。这些水平将在整天交易中用于辅助他们的交易。
 - en: Timeframes
+  id: totrans-18
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 时间框架
 - en: Pivot Points for 1-, 5-, 10- and 15-minute charts use the prior day's high,
     low and close. In other words, Pivot Points for today's intraday charts would
     be based solely on yesterday's high, low and close. Once Pivot Points are set,
     they do not change and remain in play throughout the day.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 1、5、10和15分钟图表的枢轴点使用前一天的最高、最低和收盘价。换句话说，今天的盘内图表的枢轴点将仅基于昨天的最高、最低和收盘价。一旦设置了枢轴点，它们将不会改变，并在整天内保持有效。
 - en: '![Pivot Points  -  Chart 1](../Images/7340af632f63d7a16d9d588e81bcd18a.jpg
     "Pivot Points  -  Chart 1")'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![枢轴点 - 图表1](../Images/7340af632f63d7a16d9d588e81bcd18a.jpg "枢轴点 - 图表1")'
 - en: Pivot Points for 30- 60- and 120-minute charts use the prior week's high, low,
     and close. These calculations are based on calendar weeks. Once the week starts,
     the Pivot Points for 30- 60- and 120-minute charts remain fixed for the entire
     week. **They do not change until the week ends and new Pivots can be calculated.**
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 30、60和120分钟图表的枢轴点使用前一周的最高、最低和收盘价。这些计算是基于日历周的。一旦周开始，30、60和120分钟图表的枢轴点将在整个周内保持不变。**直到周结束并且可以计算新的枢轴点，它们才会改变。**
 - en: '![Pivot Points  -  Chart 2](../Images/f30afd69e1c419d1411f744d3bf22f97.jpg
     "Pivot Points  -  Chart 2")'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![枢轴点 - 图表2](../Images/f30afd69e1c419d1411f744d3bf22f97.jpg "枢轴点 - 图表2")'
 - en: Pivot Points for daily charts use the prior month's data. Pivot Points for June
     1st would be based on the high, low and close for May. They remain fixed the entire
     month of June. New Pivot Points would be calculated on the first trading day of
     July. These would be based on the high, low and close for June.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 每日图表的枢轴点使用前一个月的数据。6月1日的枢轴点将基于5月的最高、最低和收盘价。它们在整个6月保持不变。新的枢轴点将在7月的第一个交易日计算。这些将基于6月的最高、最低和收盘价。
 - en: '![Pivot Points  -  Chart 3](../Images/f1307519517eaed9943f7edc6e82b43f.jpg
     "Pivot Points  -  Chart 3")'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![枢轴点 - 图表3](../Images/f1307519517eaed9943f7edc6e82b43f.jpg "枢轴点 - 图表3")'
 - en: Pivot Points for weekly and monthly charts use the prior year's data.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 每周和每月图表的枢轴点使用前一年的数据。
 - en: Standard Pivot Points
+  id: totrans-26
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 标准枢轴点
 - en: Standard Pivot Points begin with a base Pivot Point. This is a simple average
     of the high, low and close. The middle Pivot Point is shown as a solid line between
     the support and resistance pivots. Keep in mind that the high, low and close are
     all from the prior period.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 标准 Pivot Points 从基准 Pivot Point 开始。这是高、低和收盘价的简单平均值。中间 Pivot Point 在支撑和阻力 Pivot
+    之间显示为实线。请记住，高、低和收盘价都是来自前一时期的数据。
 - en: '[PRE0]'
+  id: totrans-28
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: The chart below shows the Nasdaq 100 ETF (QQQ) with Standard Pivot points on
     a 15-minute chart. At the start of trading on June 9th, the Pivot Point is in
     the middle, the resistance levels are above and the support levels are below.
     These levels remain constant throughout the day.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 下图显示了纳斯达克100 ETF（QQQ）在15分钟图表上的标准 Pivot Points。在6月9日交易开始时，Pivot Point 处于中间位置，阻力水平在上方，支撑水平在下方。这些水平在一天内保持不变。
 - en: '![Pivot Points  -  Chart 4](../Images/ad17543763434c2aee7ef6ea34c715f6.jpg
     "Pivot Points  -  Chart 4")'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![Pivot Points  -  图表 4](../Images/ad17543763434c2aee7ef6ea34c715f6.jpg "Pivot
+    Points  -  图表 4")'
 - en: Fibonacci Pivot Points
+  id: totrans-31
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 斐波那契 Pivot Points
 - en: Fibonacci Pivot Points start just the same as Standard Pivot Points. From the
     base Pivot Point, Fibonacci multiples of the high-low differential are added to
     form resistance levels and subtracted to form support levels.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 斐波那契 Pivot Points 与标准 Pivot Points 开始方式相同。从基准 Pivot Point 开始，将高低差的斐波那契倍数加到形成阻力水平，减去形成支撑水平。
 - en: '[PRE1]'
+  id: totrans-33
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: The chart below shows the Dow Industrials SPDR (DIA) with Fibonacci Pivot Points
     on a 15-minute chart. R1 and S1 are based on 38.2%. R2 and S2 are based on 61.8%.
     R3 and S3 are based on 100%.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 下图显示了道琼斯工业平均指数 SPDR（DIA）在15分钟图表上的斐波那契 Pivot Points。R1 和 S1 基于38.2%。R2 和 S2 基于61.8%。R3
+    和 S3 基于100%。
 - en: '![Pivot Points  -  Chart 5](../Images/e925733240b3aadf2248df1742e43705.jpg
     "Pivot Points  -  Chart 5")'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![Pivot Points  -  图表 5](../Images/e925733240b3aadf2248df1742e43705.jpg "Pivot
+    Points  -  图表 5")'
 - en: Demark Pivot Points
+  id: totrans-36
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: Demark Pivot Points
 - en: Demark Pivot Points start with a different base and use different formulas for
     support and resistance. These Pivot Points are conditional on the relationship
     between the close and the open.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: Demark Pivot Points 以不同的基准开始，并使用不同的支撑和阻力公式。这些 Pivot Points 取决于收盘价和开盘价之间的关系。
 - en: '[PRE2]'
+  id: totrans-38
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: The chart below shows the Russell 2000 ETF (IWM) with Demark Pivot Points on
     a 15-minute chart. Notice that there is only one resistance (R1) and one support
     (S1). Demark Pivot Points do not have multiple support or resistance levels.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 下图显示了罗素2000 ETF（IWM）在15分钟图表上的 Demark Pivot Points。请注意，只有一个阻力（R1）和一个支撑（S1）。Demark
+    Pivot Points 没有多个支撑或阻力水平。
 - en: '![Pivot Points  -  Chart 6](../Images/928b04e318a922cff8e25944b23732c0.jpg
     "Pivot Points  -  Chart 6")'
+  id: totrans-40
   prefs: []
   type: TYPE_IMG
+  zh: '![Pivot Points  -  图表 6](../Images/928b04e318a922cff8e25944b23732c0.jpg "Pivot
+    Points  -  图表 6")'
 - en: Setting the Tone
+  id: totrans-41
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 设定基调
 - en: The Pivot Point sets the general tone for price action. This is the middle line
     of the group that is marked (P). A move above the Pivot Point is positive and
     shows strength. Keep in mind that this Pivot Point is based on the prior period's
@@ -205,21 +295,31 @@
     above the Pivot Point suggests strength with a target to the first resistance.
     A break above first resistance shows even more strength with a target to the second
     resistance level.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: Pivot Point 为价格走势设定了一般基调。这是标记为 (P) 的一组中间线。突破 Pivot Point 是积极的，显示出力量。请记住，这个 Pivot
+    Point 基于前一时期的数据。它在当前时期被提出作为第一个重要水平。突破 Pivot Point 表明有力量，目标是第一个阻力。突破第一个阻力显示出更多力量，目标是第二个阻力水平。
 - en: '![Pivot Points  -  Chart 7](../Images/c18b966dd0e88dac6656de827f61d945.jpg
     "Pivot Points  -  Chart 7")'
+  id: totrans-43
   prefs: []
   type: TYPE_IMG
+  zh: '![Pivot Points  -  图表 7](../Images/c18b966dd0e88dac6656de827f61d945.jpg "Pivot
+    Points  -  图表 7")'
 - en: The converse is true on the downside. A move below the Pivot Point suggests
     weakness with a target to the first support level. A break below the first support
     level shows even more weakness with a target to the second support level.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 相反的情况发生在下行。突破 Pivot Point 表明弱势，目标是第一个支撑水平。突破第一个支撑水平显示出更多弱势，目标是第二个支撑水平。
 - en: Support and Resistance
+  id: totrans-45
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 支撑和阻力
 - en: Support and resistance levels based on Pivot Points can be used just like traditional
     support and resistance levels. The key is to watch price action closely when these
     levels come into play. Should prices decline to support and then firm, traders
@@ -228,28 +328,38 @@
     Similarly, should prices advance to resistance and stall, traders can look for
     a failure at resistance and decline. Again, chartists should look for a bearish
     chart pattern or indicator signal to confirm a downturn from resistance.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于枢纽点的支撑和阻力水平可以像传统的支撑和阻力水平一样使用。关键是当这些水平发挥作用时密切关注价格走势。如果价格下跌到支撑然后企稳，交易者可以寻找对支撑的成功测试和反弹。通常有助于寻找一个看涨的图表模式或指标信号来确认从支撑处的上升。同样，如果价格上涨到阻力然后停滞，交易者可以寻找在阻力处的失败和下跌。同样，图表分析师应该寻找一个看跌的图表模式或指标信号来确认从阻力处的下降。
 - en: '![Pivot Points  -  Chart 8](../Images/4cbb1c5fda781895b5ede3f217bd15f2.jpg
     "Pivot Points  -  Chart 8")'
+  id: totrans-47
   prefs: []
   type: TYPE_IMG
+  zh: '![枢纽点 - 图表 8](../Images/4cbb1c5fda781895b5ede3f217bd15f2.jpg "枢纽点 - 图表 8")'
 - en: The second support and resistance levels can also be used to identify potentially
     overbought and oversold situations. A move above the second resistance level would
     show strength, but it would also indicate an overbought situation that could give
     way to a pullback. Similarly, a move below the second support would show weakness,
     but would also suggest a short-term oversold condition that could give way to
     a bounce.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二支撑和阻力水平也可以用来识别潜在的超买和超卖情况。突破第二阻力水平将显示出力量，但也会表明一种可能导致回调的超买情况。同样，跌破第二支撑将显示出弱势，但也会暗示一种可能导致反弹的短期超卖状态。
 - en: '![Pivot Points  -  Chart 9](../Images/c766087fcdce05932d61a0c4a0d1c9e3.jpg
     "Pivot Points  -  Chart 9")'
+  id: totrans-49
   prefs: []
   type: TYPE_IMG
+  zh: '![枢纽点 - 图表 9](../Images/c766087fcdce05932d61a0c4a0d1c9e3.jpg "枢纽点 - 图表 9")'
 - en: Conclusions
+  id: totrans-50
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: '**Pivot Points offer chartists a methodology to determine price direction and
     then set support and resistance levels.** It usually starts with a cross of the
     Pivot Point. Sometimes the market starts above or below the Pivot Point. Support
@@ -262,12 +372,16 @@
     support test. On a final note, sometimes the second or third support/resistance
     levels are not seen on the chart. This is simply because their levels exceed the
     price scale on the right. In other words, they are off the chart.'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: '**枢纽点为图表分析师提供了一种确定价格走势然后设定支撑和阻力水平的方法。** 它通常从枢纽点的交叉开始。有时市场在枢纽点之上或之下开始。支撑和阻力在交叉后发挥作用。虽然最初是为地板交易者设计的，但枢纽点背后的概念可以应用于各种时间框架。与所有指标一样，重要的是用技术分析的其他方面来确认枢纽点信号。一个看跌的蜡烛图反转模式可以确认在第二阻力处的反转。超卖的相对强弱指标可以确认在第二支撑处的超卖情况。MACD的上升可以用来确认成功的支撑测试。最后，有时第二或第三支撑/阻力水平在图表上看不到。这仅仅是因为它们的水平超过了右侧的价格刻度。换句话说，它们在图表之外。'
 - en: Using with SharpCharts
+  id: totrans-52
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用 SharpCharts
 - en: Pivot Points can be found as an “overlay” on the SharpCharts Workbench. Standard
     Pivot Points are the default setting and the parameters box is empty. Chartists
     can apply Fibonacci Pivot Points by putting an “F” in the parameters box and Demark
@@ -276,61 +390,102 @@
     "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237")
     for a live chart with all three Pivot Points. You can then remove the ones you
     do not want.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 枢纽点可以在 SharpCharts 工作台上作为“覆盖层”找到。标准枢纽点是默认设置，参数框为空。图表分析师可以通过在参数框中放置“F”来应用斐波那契枢纽点，通过在框中放置“D”来应用
+    Demark 枢纽点。甚至可以同时显示所有三个。[点击这里](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237
+    "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237")
+    查看带有所有三个枢纽点的实时图表。然后您可以删除您不想要的那些。
 - en: '[![Pivot Points  -  SPY Example](../Images/5248548a8301aea1cb689fbbcf1f9757.jpg
     "Pivot Points  -  SPY Example")](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237
     "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237")'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: '[![枢轴点  -  SPY示例](../Images/5248548a8301aea1cb689fbbcf1f9757.jpg "枢轴点  -  SPY示例")](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237
+    "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237")'
 - en: '![Pivot Points - SharpCharts](../Images/a95df3dd4dd05d885bcc146d39c0d9eb.jpg
     "Pivot Points - SharpCharts")'
+  id: totrans-55
   prefs: []
   type: TYPE_IMG
+  zh: '![枢轴点 - SharpCharts](../Images/a95df3dd4dd05d885bcc146d39c0d9eb.jpg "枢轴点 -
+    SharpCharts")'
 - en: Further Study
+  id: totrans-56
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 进一步研究
 - en: This book has a complete chapter devoted to trading with Standard Pivot Points.
     Person shows chartists how to incorporate Pivot Point support and resistance levels
     with other aspects of technical analysis to generate buy and sell signals.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 本书专门有一整章介绍如何使用标准枢轴点进行交易。Person向图表分析师展示如何将枢轴点支撑和阻力水平与技术分析的其他方面结合起来，生成买入和卖出信号。
 - en: '| **A Complete Guide to Technical Trading Tactics** John Person |'
+  id: totrans-58
   prefs: []
   type: TYPE_TB
+  zh: '| **技术交易战术完全指南** 约翰·珀森 |'
 - en: '| [![](../Images/c3544022b2f24f16e18c19a16b6207ff.jpg)](http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics
     "http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics")
     |'
+  id: totrans-59
   prefs: []
   type: TYPE_TB
+  zh: '| [![](../Images/c3544022b2f24f16e18c19a16b6207ff.jpg)](http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics
+    "http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics")
+    |'
 - en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics
     "http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics")
     |'
+  id: totrans-60
   prefs: []
   type: TYPE_TB
+  zh: '| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics
+    "http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics")
+    |'
 - en: '* * *'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '* * *'
 - en: Additional Resources
+  id: totrans-62
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 其他资源
 - en: Stocks & Commodities Magazine Articles
+  id: totrans-63
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 股票与商品杂志文章
 - en: '**[Predicting Reversals With Pivot Points by John Devcic](http://stockcharts.com/h-mem/tascredirect.html?artid=\V24\C03\054DEVC.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V24\C03\054DEVC.pdf")**'
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[John Devcic撰写的利用枢轴点预测逆转](http://stockcharts.com/h-mem/tascredirect.html?artid=\V24\C03\054DEVC.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V24\C03\054DEVC.pdf")**'
 - en: Feb 2006 - Stocks & Commodities V. 24:3 (72-73)
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 2006年2月 - 股票与商品 V. 24:3 (72-73)
 - en: '**[Pivot Points by Jayanthi Gopalakrishnan](http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C02\010PIV.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C02\010PIV.pdf")**'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[Jayanthi Gopalakrishnan撰写的枢轴点文章](http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C02\010PIV.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C02\010PIV.pdf")**'
 - en: Jan 2000 - Stocks & Commodities V. 18:2 (16-22)
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 2000年1月 - 股票与商品 V. 18:2 (16-22)

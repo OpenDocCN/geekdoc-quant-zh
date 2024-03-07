@@ -1,124 +1,172 @@
 - en: Moving Averages - Simple and Exponential [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 移动平均线 - 简单和指数[ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Moving Averages - Simple and Exponential](#moving_averages_-_simple_and_exponential)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[移动平均线 - 简单和指数](#moving_averages_-_simple_and_exponential)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[Simple Moving Average Calculation](#simple_moving_average_calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[简单移动平均线计算](#simple_moving_average_calculation)'
 - en: '[Exponential Moving Average Calculation](#exponential_moving_average_calculation)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[指数移动平均线计算](#exponential_moving_average_calculation)'
 - en: '[The Weighting Multiplier](#the_weighting_multiplier)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[加权乘数](#the_weighting_multiplier)'
 - en: '[EMA Accuracy](#ema_accuracy)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[EMA准确性](#ema_accuracy)'
 - en: '[The Lag Factor](#the_lag_factor)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[滞后因素](#the_lag_factor)'
 - en: '[Simple vs Exponential Moving Averages](#simple_vs_exponential_moving_averages)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[简单移动平均线与指数移动平均线的比较](#simple_vs_exponential_moving_averages)'
 - en: '[Lengths and Timeframes](#lengths_and_timeframes)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[长度和时间范围](#lengths_and_timeframes)'
 - en: '[Trend Identification](#trend_identification)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[趋势识别](#trend_identification)'
 - en: '[Double Crossovers](#double_crossovers)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[双交叉](#double_crossovers)'
 - en: '[Price Crossovers](#price_crossovers)'
+  id: totrans-13
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[价格交叉](#price_crossovers)'
 - en: '[Support and Resistance](#support_and_resistance)'
+  id: totrans-14
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[支撑和阻力](#support_and_resistance)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-15
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-16
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与SharpCharts一起使用](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-17
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议的扫描](#suggested_scans)'
 - en: '[Bullish Moving Average Cross](#bullish_moving_average_cross)'
+  id: totrans-18
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[看涨移动平均线交叉](#bullish_moving_average_cross)'
 - en: '[Bearish Moving Average Cross](#bearish_moving_average_cross)'
+  id: totrans-19
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[看跌移动平均线交叉](#bearish_moving_average_cross)'
 - en: '[Further Study](#further_study)'
+  id: totrans-20
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[进一步研究](#further_study)'
 - en: '[Additional Resources](#additional_resources)'
+  id: totrans-21
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[其他资源](#additional_resources)'
 - en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  id: totrans-22
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[股票与商品杂志文章](#stocks_commodities_magazine_articles)'
 - en: Introduction
+  id: totrans-23
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: Moving averages smooth the price data to form a trend following indicator. They
     do not predict price direction, but rather define the current direction with a
     lag. Moving averages lag because they are based on past prices. Despite this lag,
@@ -132,23 +180,38 @@
     of moving averages are the **Simple Moving Average (SMA)** and the **Exponential
     Moving Average (EMA)**. These moving averages can be used to identify the direction
     of the trend or define potential support and resistance levels.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 移动平均线平滑价格数据，形成趋势跟踪指标。它们不预测价格方向，而是以滞后的方式定义当前方向。移动平均线滞后是因为它们基于过去的价格。尽管有这种滞后，移动平均线有助于平滑价格走势并过滤噪音。它们也构成许多其他技术指标和叠加图形的基础，如[Bollinger
+    Bands](/school/doku.php?id=chart_school:technical_indicators:bollinger_bands "chart_school:technical_indicators:bollinger_bands")、[MACD](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd
+    "chart_school:technical_indicators:moving_average_convergence_divergence_macd")和[McClellan
+    Oscillator](/school/doku.php?id=chart_school:market_indicators:mcclellan_oscillator
+    "chart_school:market_indicators:mcclellan_oscillator")。最流行的两种移动平均线类型是**简单移动平均线（SMA）**和**指数移动平均线（EMA）**。这些移动平均线可用于识别趋势方向或定义潜在的支撑和阻力水平。
 - en: 'Here''s a chart with both an SMA and an EMA on it:'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个同时包含简单移动平均线和指数移动平均线的图表：
 - en: '[![Moving Averages](../Images/b223bd4a03af331339dd2bb33fb2abb8.jpg "Moving
     Averages")](http://stockcharts.com/h-sc/ui?s=INTC&p=D&st=2010-04-05&en=2010-05-05&id=p46230689776&listNum=30&a=200579140
     "http://stockcharts.com/h-sc/ui?s=INTC&p=D&st=2010-04-05&en=2010-05-05&id=p46230689776&listNum=30&a=200579140")'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: '[![移动平均线](../Images/b223bd4a03af331339dd2bb33fb2abb8.jpg "移动平均线")](http://stockcharts.com/h-sc/ui?s=INTC&p=D&st=2010-04-05&en=2010-05-05&id=p46230689776&listNum=30&a=200579140
+    "http://stockcharts.com/h-sc/ui?s=INTC&p=D&st=2010-04-05&en=2010-05-05&id=p46230689776&listNum=30&a=200579140")'
 - en: Click the chart for a live version
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击图表查看实时版本
 - en: Simple Moving Average Calculation
+  id: totrans-28
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 简单移动平均线计算
 - en: '**A simple moving average is formed by computing the average price of a security
     over a specific number of periods.** Most moving averages are based on closing
     prices. A 5-day simple moving average is the five-day sum of closing prices divided
@@ -156,11 +219,16 @@
     is dropped as new data comes available. This causes the average to move along
     the time scale. Below is an example of a 5-day moving average evolving over three
     days.'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: '**简单移动平均线是通过计算特定周期内某个证券的平均价格形成的。** 大多数移动平均线是基于收盘价格的。 5天简单移动平均线是收盘价格的五天总和除以五。
+    正如其名称所示，移动平均线是一个移动的平均值。 随着新数据的出现，旧数据被丢弃。 这导致平均值沿着时间尺度移动。 以下是一个5天移动平均线在三天内演变的示例。'
 - en: '[PRE0]'
+  id: totrans-30
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: The first day of the moving average simply covers the last five days. The second
     day of the moving average drops the first data point (11) and adds the new data
     point (16). The third day of the moving average continues by dropping the first
@@ -170,20 +238,29 @@
     that each moving average value is just below the last price. For example, the
     moving average for day one equals 13 and the last price is 15\. Prices the prior
     four days were lower and this causes the moving average to lag.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 移动平均线的第一天简单地涵盖了过去五天。 移动平均线的第二天删除了第一个数据点（11）并添加了新的数据点（16）。 移动平均线的第三天继续删除第一个数据点（12）并添加新的数据点（17）。
+    在上面的示例中，价格在七天内逐渐从11增加到17。 请注意，移动平均线在三天的计算期间也从13上升到15。 还要注意，每个移动平均值都略低于最后的价格。 例如，第一天的移动平均值等于13，而最后的价格是15。
+    过去四天的价格较低，这导致移动平均线滞后。
 - en: Exponential Moving Average Calculation
+  id: totrans-32
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 指数移动平均线计算
 - en: Exponential moving averages (EMAs) reduce the lag by applying more weight to
     recent prices. The weighting applied to the most recent price depends on the number
     of periods in the moving average. EMAs differ from simple moving averages in that
     a given day's EMA calculation depends on the EMA calculations for all the days
     prior to that day. You need far more than 10 days of data to calculate a reasonably
     accurate 10-day EMA.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 指数移动平均线（EMAs）通过对最近价格应用更多权重来减少滞后。 应用于最近价格的权重取决于移动平均线中的周期数。 EMAs与简单移动平均线不同之处在于给定日期的EMA计算取决于该日期之前所有日期的EMA计算。
+    您需要远远超过10天的数据才能计算出一个相当准确的10天EMA。
 - en: There are three steps to calculating an exponential moving average (EMA). First,
     calculate the simple moving average for the initial EMA value. An exponential
     moving average (EMA) has to start somewhere, so a simple moving average is used
@@ -191,42 +268,60 @@
     multiplier. Third, calculate the exponential moving average for each day between
     the initial EMA value and today, using the price, the multiplier, and the previous
     period's EMA value. The formula below is for a 10-day EMA.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 计算指数移动平均线（EMA）有三个步骤。 首先，计算初始EMA值的简单移动平均线。 指数移动平均线（EMA）必须从某个地方开始，因此在第一次计算中，使用简单移动平均线作为前一期的EMA。
+    其次，计算权重乘数。 第三，使用价格、乘数和前一期的EMA值，计算初始EMA值和今天之间每天的指数移动平均线。 以下公式是用于10天EMA的。
 - en: '[PRE1]'
+  id: totrans-35
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: The Weighting Multiplier
+  id: totrans-36
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 权重乘数
 - en: A 10-period exponential moving average applies an 18.18% weighting to the most
     recent price. A 10-period EMA can also be called an 18.18% EMA. A 20-period EMA
     applies a 9.52% weighting to the most recent price (2/(20+1) = .0952). Notice
     that the weighting for the shorter time period is more than the weighting for
     the longer time period. In fact, the weighting drops by half every time the moving
     average period doubles.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 10周期指数移动平均线对最近价格应用18.18%的权重。 10周期EMA也可以称为18.18%EMA。 20周期EMA对最近价格应用9.52%的权重（2/（20+1）=
+    .0952）。 请注意，较短时间段的权重大于较长时间段的权重。 实际上，每当移动平均线周期加倍时，权重就会减半。
 - en: 'If you want to use a specific percentage for an EMA, you can use this formula
     to convert it to time periods and then enter that value as the EMA''s parameter:'
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果您想要使用特定百分比的EMA，您可以使用此公式将其转换为时间周期，然后将该值输入为EMA的参数：
 - en: '[PRE2]'
+  id: totrans-39
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: EMA Accuracy
+  id: totrans-40
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: EMA准确性
 - en: 'Below is a spreadsheet example of a 10-day simple moving average and a 10-day
     exponential moving average for Intel. The SMA calculation is straightforward and
     requires little explanation: the 10-day SMA simply moves as new prices become
     available and old prices drop off. The exponential moving average in the spreadsheet
     starts with the SMA value (22.22) for its first EMA value. After the first calculation,
     the normal EMA formula is used.'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面是英特尔的10日简单移动平均线和10日指数移动平均线的电子表格示例。SMA的计算很简单，几乎不需要解释：10日SMA随着新价格的出现而移动，旧价格消失。电子表格中的指数移动平均线从其第一个EMA值（22.22）的SMA值开始。在第一次计算后，使用正常的EMA公式。
 - en: The formula for an EMA incorporates the previous period's EMA value, which in
     turn incorporates the value for the EMA value before that, and so on. Each previous
     EMA value accounts for a small portion of the current value. Therefore, the current
@@ -236,54 +331,78 @@
     the stock existed. This is not always practical, but the more data points you
     use, the more accurate your EMA will be. The goal is to maximize accuracy while
     minimizing calculation time.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: EMA的公式包含了前一期的EMA值，而前一期的EMA值又包含了更早之前的EMA值，依此类推。每个先前的EMA值占当前值的一小部分。因此，当前的EMA值将根据您在EMA计算中使用了多少过去数据而变化。理想情况下，为了获得100%准确的EMA，您应该使用股票历史上的每个数据点来计算EMA，从股票存在的第一天开始计算。这并不总是切实可行，但您使用的数据点越多，EMA就越准确。目标是在最小化计算时间的同时最大化准确性。
 - en: The spreadsheet example below goes back 30 periods. With only 30 data points
     incorporated in the EMA calculations, the 10-day EMA values in the spreadsheet
     are not very accurate. On our charts, we calculate back at least 250 periods (typically
     much further), resulting in EMA values that are accurate to within a fraction
     of a penny.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面的电子表格示例回溯了30个周期。在EMA计算中仅包含了30个数据点，电子表格中的10日EMA值并不是非常准确。在我们的图表中，我们至少计算了250个周期（通常更多），导致EMA值准确到几分之一美分。
 - en: '![Moving Averages - Spreadsheet](../Images/a42bfa9651de1d5c8d8caf6394a1ff83.jpg
     "Moving Averages - Spreadsheet")'
+  id: totrans-44
   prefs: []
   type: TYPE_IMG
+  zh: '![移动平均线 - 电子表格](../Images/a42bfa9651de1d5c8d8caf6394a1ff83.jpg "移动平均线 - 电子表格")'
 - en: '[Click here to download this spreadsheet example.](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:moving_averages:cs-movavg.xls
     "chart_school:technical_indicators_and_overlays:moving_averages:cs-movavg.xls
     (12.5 KB)")'
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: '[点击此处下载此电子表格示例。](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:moving_averages:cs-movavg.xls
+    "chart_school:technical_indicators_and_overlays:moving_averages:cs-movavg.xls
+    (12.5 KB)")'
 - en: The Lag Factor
+  id: totrans-46
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 滞后因素
 - en: The longer the moving average, the more the lag. A 10-day exponential moving
     average will hug prices quite closely and turn shortly after prices turn. Short
     moving averages are like speedboats - nimble and quick to change. In contrast,
     a 100-day moving average contains lots of past data that slows it down. Longer
     moving averages are like ocean tankers - lethargic and slow to change. It takes
     a larger and longer price movement for a 100-day moving average to change course.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 移动平均线越长，滞后越多。10日指数移动平均线会紧密跟随价格并在价格转向后很快转向。短期移动平均线就像快艇 - 灵活且快速变化。相比之下，100日移动平均线包含大量过去数据，使其变化缓慢。长期移动平均线就像海洋油轮
+    - 行动迟缓且变化缓慢。100日移动平均线需要更大更长的价格波动才能改变方向。
 - en: '[![Moving Averages](../Images/84130672150768d2068ee91313111a9b.jpg "Moving
     Averages")](http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2009-11-01&en=2010-05-05&id=p82097442241
     "http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2009-11-01&en=2010-05-05&id=p82097442241")'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: '[![移动平均线](../Images/84130672150768d2068ee91313111a9b.jpg "移动平均线")](http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2009-11-01&en=2010-05-05&id=p82097442241
+    "http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2009-11-01&en=2010-05-05&id=p82097442241")'
 - en: Click on the chart for a live version.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 点击图表查看实时版本。
 - en: The chart above shows the S&P 500 ETF with a 10-day EMA closely following prices
     and a 100-day SMA grinding higher. Even with the January-February decline, the
     100-day SMA held the course and did not turn down. The 50-day SMA fits somewhere
     between the 10- and 100-day moving averages when it comes to the lag factor.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 上面的图表显示了标普500ETF的10日EMA紧随价格走势，而100日SMA持续上涨。即使在1月至2月的下跌中，100日SMA也保持不变。当涉及滞后因素时，50日SMA介于10日和100日移动平均线之间。
 - en: Simple vs Exponential Moving Averages
+  id: totrans-51
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 简单移动平均线 vs 指数移动平均线
 - en: Even though there are clear differences between simple moving averages and exponential
     moving averages, one is not necessarily better than the other. Exponential moving
     averages have less lag and are therefore more sensitive to recent prices - and
@@ -292,8 +411,10 @@
     of prices for the entire time period. As such, simple moving averages may be better
     suited to identify [support or resistance](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
     "chart_school:chart_analysis:support_and_resistance") levels.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管简单移动平均线和指数移动平均线之间存在明显差异，但一个不一定比另一个更好。指数移动平均线滞后较少，因此对最近的价格和最近的价格变化更敏感。指数移动平均线会在简单移动平均线之前转折。另一方面，简单移动平均线代表整个时间段内价格的真实平均值。因此，简单移动平均线可能更适合识别支撑或阻力水平。
 - en: Moving average preference depends on objectives, analytical style, and time
     horizon. Chartists should experiment with both types of moving averages as well
     as different timeframes to find the best fit. The chart below shows IBM with the
@@ -301,51 +422,70 @@
     the decline in the EMA was sharper than the decline in the SMA. The EMA turned
     up in mid-February, but the SMA continued lower until the end of March. Notice
     that the SMA turned up over a month after the EMA.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 移动平均线的偏好取决于目标、分析风格和时间范围。图表分析师应该尝试使用两种类型的移动平均线以及不同的时间框架，以找到最合适的选择。下图显示了IBM的50天简单移动平均线以红色显示，50天指数移动平均线以绿色显示。两者在一月底达到峰值，但指数移动平均线的下降比简单移动平均线更陡。指数移动平均线在二月中旬转折，但简单移动平均线一直下跌直到三月底。请注意，简单移动平均线在指数移动平均线之后一个多月才转折。
 - en: '![Moving Averages](../Images/5414a9bfd41847797639e3098b58acce.jpg "Moving Averages")'
+  id: totrans-54
   prefs: []
   type: TYPE_IMG
+  zh: '![移动平均线](../Images/5414a9bfd41847797639e3098b58acce.jpg "移动平均线")'
 - en: Lengths and Timeframes
+  id: totrans-55
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 长度和时间框架
 - en: The length of the moving average depends on the analytical objectives. Short
     moving averages (5-20 periods) are best suited for short-term trends and trading.
     Chartists interested in medium-term trends would opt for longer moving averages
     that might extend 20-60 periods. Long-term investors will prefer moving averages
     with 100 or more periods.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 移动平均线的长度取决于分析目标。短期移动平均线（5-20周期）最适合短期趋势和交易。对中期趋势感兴趣的图表分析师会选择更长的移动平均线，可能延伸至20-60周期。长期投资者会更喜欢具有100个或更多周期的移动平均线。
 - en: Some moving average lengths are more popular than others. The 200-day moving
     average is perhaps the most popular. Because of its length, this is clearly a
     long-term moving average. Next, the 50-day moving average is quite popular for
     the medium-term trend. Many chartists use the 50-day and 200-day moving averages
     together. Short-term, a 10-day moving average was quite popular in the past because
     it was easy to calculate. One simply added the numbers and moved the decimal point.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些移动平均线长度比其他更受欢迎。200天移动平均线可能是最受欢迎的。由于其长度，这显然是一个长期移动平均线。其次，50天移动平均线在中期趋势中相当受欢迎。许多图表分析师同时使用50天和200天移动平均线。在短期内，10天移动平均线过去相当受欢迎，因为它容易计算。只需将数字相加并移动小数点即可。
 - en: Trend Identification
+  id: totrans-58
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 趋势识别
 - en: The same signals can be generated using simple or exponential moving averages.
     As noted above, the preference depends on each individual. These examples below
     will use both simple and exponential moving averages. The term “moving average”
     applies to both simple and exponential moving averages.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用简单移动平均线或指数移动平均线可以产生相同的信号。如上所述，偏好取决于个人。以下示例将同时使用简单和指数移动平均线。术语“移动平均线”适用于简单和指数移动平均线。
 - en: The direction of the moving average conveys important information about prices.
     A rising moving average shows that prices are generally increasing. A falling
     moving average indicates that prices, on average, are falling. A rising long-term
     moving average reflects a long-term uptrend. A falling long-term moving average
     reflects a long-term downtrend.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 移动平均线的方向传达了关于价格的重要信息。上升的移动平均线显示价格一般在上涨。下降的移动平均线表明价格平均下跌。上升的长期移动平均线反映了长期上升趋势。下降的长期移动平均线反映了长期下降趋势。
 - en: '![Moving Averages - Chart 4](../Images/c8e3c1cd4fec55ec40a001c2518ceeaf.jpg
     "Moving Averages - Chart 4")'
+  id: totrans-61
   prefs: []
   type: TYPE_IMG
+  zh: '![移动平均线 - 图表 4](../Images/c8e3c1cd4fec55ec40a001c2518ceeaf.jpg "移动平均线 - 图表
+    4")'
 - en: The chart above shows 3M (MMM) with a 150-day exponential moving average. This
     example shows just how well moving averages work when the trend is strong. The
     150-day EMA turned down in November 2007 and again in January 2008\. Notice that
@@ -355,12 +495,16 @@
     that the 150-day EMA did not turn up until after this surge. Once it did, however,
     MMM continued higher the next 12 months. Moving averages work brilliantly in strong
     trends.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 上图显示了3M（MMM）的150天指数移动平均线。这个例子展示了在趋势强劲时移动平均线的工作效果。150天EMA在2007年11月和2008年1月再次下降。请注意，需要一个15%的下跌才能改变这个移动平均线的方向。这些滞后指标在趋势反转发生时（最好情况下）或发生后（最坏情况下）识别出来。MMM持续下跌至2009年3月，然后激增40-50%。请注意，直到这次激增之后，150天EMA才开始上升。然而，一旦开始上升，MMM在接下来的12个月内继续上涨。在强劲趋势中，移动平均线的效果非常出色。
 - en: Double Crossovers
+  id: totrans-63
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 双重交叉
 - en: Two moving averages can be used together to generate crossover signals. In *[Technical
     Analysis of the Financial Markets](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
     "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")*,
@@ -370,31 +514,42 @@
     timeframe for the system. A system using a 5-day EMA and 35-day EMA would be deemed
     short-term. A system using a 50-day SMA and 200-day SMA would be deemed medium-term,
     perhaps even long-term.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 两个移动平均线可以一起使用以生成交叉信号。在《金融市场技术分析》中，约翰·墨菲称之为“双重交叉法”。双重交叉涉及一个相对较短的移动平均线和一个相对较长的移动平均线。与所有移动平均线一样，移动平均线的一般长度定义了系统的时间框架。使用5天EMA和35天EMA的系统将被视为短期。使用50天SMA和200天SMA的系统将被视为中期，甚至是长期。
 - en: A bullish crossover occurs when the shorter moving average crosses above the
     longer moving average. This is also known as a golden cross. A bearish crossover
     occurs when the shorter moving average crosses below the longer moving average.
     This is known as a dead cross.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 当较短的移动平均线穿过较长的移动平均线时，会出现看涨的交叉。这也被称为金叉。当较短的移动平均线穿过较长的移动平均线时，会出现看跌的交叉。这被称为死叉。
 - en: Moving average crossovers produce relatively late signals. After all, the system
     employs two lagging indicators. The longer the moving average periods, the greater
     the lag in the signals. These signals work great when a good trend takes hold.
     However, a moving average crossover system will produce lots of whipsaws in the
     absence of a strong trend.
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 移动平均线交叉产生相对较晚的信号。毕竟，该系统使用了两个滞后指标。移动平均线周期越长，信号滞后越大。这些信号在趋势确立时效果很好。然而，在没有强劲趋势的情况下，移动平均线交叉系统会产生很多虚假信号。
 - en: There is also a triple crossover method that involves three moving averages.
     Again, a signal is generated when the shortest moving average crosses the two
     longer moving averages. A simple triple crossover system might involve 5-day,
     10-day, and 20-day moving averages.
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有一种三重交叉法，涉及三个移动平均线。当最短的移动平均线穿过两个较长的移动平均线时，就会产生信号。一个简单的三重交叉系统可能涉及5天、10天和20天的移动平均线。
 - en: '![Moving Averages - Chart 5](../Images/9cb8882378b15d7274c0bce5b29a42f5.jpg
     "Moving Averages - Chart 5")'
+  id: totrans-68
   prefs: []
   type: TYPE_IMG
+  zh: '![移动平均线 - 图表 5](../Images/9cb8882378b15d7274c0bce5b29a42f5.jpg "移动平均线 - 图表
+    5")'
 - en: The chart above shows Home Depot (HD) with a 10-day EMA (green dotted line)
     and 50-day EMA (red line). The black line is the daily close. Using a moving average
     crossover would have resulted in three whipsaws before catching a good trade.
@@ -405,8 +560,10 @@
     as the 10-day EMA moved back above the 50-day a few days later (4). After three
     bad signals, the fourth signal foreshadowed a strong move as the stock advanced
     over 20%.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 上图显示了家得宝（HD）的10日EMA（绿色虚线）和50日EMA（红线）。黑线是每日收盘价。使用移动平均线交叉会导致三次鞭策，然后才捕捉到一个好的交易。10日EMA在10月底（1）跌破50日EMA，但这并没有持续很久，因为10日EMA在11月中旬又回升（2）。这次交叉持续时间更长，但在1月份（3）发生的下一个空头交叉接近11月底的价格水平，导致另一次鞭策。这次空头交叉也没有持续很久，因为10日EMA在几天后又回升到50日EMA之上（4）。经历了三次错误信号后，第四个信号预示着一次强劲的上涨，股价上涨超过20%。
 - en: There are two takeaways here. First, crossovers are prone to whipsaw. A price
     or time filter can be applied to help prevent whipsaws. Traders might require
     the crossover to last 3 days before acting or require the 10-day EMA to move above/below
@@ -418,23 +575,34 @@
     Percentage Price Oscillator (PPO) can be used the same way to show percentage
     differences. Note that MACD and the PPO are based on exponential moving averages
     and will not match up with simple moving averages.
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有两个要点。首先，交叉点容易出现鞭策。可以应用价格或时间过滤器来帮助防止鞭策。交易者可能要求交叉点持续3天才采取行动，或要求10日EMA在移动超过/低于50日EMA一定量之后才采取行动。其次，[MACD](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd
+    "chart_school:technical_indicators:moving_average_convergence_divergence_macd")可用于识别和量化这些交叉点。MACD
+    (10,50,1)将显示代表两个指数移动平均线之间差异的线。MACD在金叉时变为正值，在死叉时变为负值。百分比价格振荡器（PPO）可以用相同的方式显示百分比差异。请注意，MACD和PPO基于指数移动平均线，与简单移动平均线不匹配。
 - en: '![Moving Averages - Chart 6](../Images/c65998d5af48da6f7991314885b6c7c8.jpg
     "Moving Averages - Chart 6")'
+  id: totrans-71
   prefs: []
   type: TYPE_IMG
+  zh: '![移动平均线 - 图表 6](../Images/c65998d5af48da6f7991314885b6c7c8.jpg "移动平均线 - 图表
+    6")'
 - en: This chart shows Oracle (ORCL) with the 50-day EMA, 200-day EMA and MACD(50,200,1).
     There were four moving average crossovers over a 2 1/2 year period. The first
     three resulted in whipsaws or bad trades. A sustained trend began with the fourth
     crossover as ORCL advanced to the mid-20s. Once again, moving average crossovers
     work great when the trend is strong, but produce losses in the absence of a trend.
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 这张图显示了甲骨文（ORCL）的50日EMA，200日EMA和MACD(50,200,1)。在2年半的时间里，有四次移动平均线交叉。前三次导致鞭策或糟糕的交易。随着第四次交叉，ORCL开始持续上涨至20美元左右。再次强调，当趋势强劲时，移动平均线交叉效果很好，但在没有趋势的情况下会导致亏损。
 - en: Price Crossovers
+  id: totrans-73
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 价格交叉
 - en: Moving averages can also be used to generate signals with simple price crossovers.
     A bullish signal is generated when prices move above the moving average. A bearish
     signal is generated when prices move below the moving average. Price crossovers
@@ -449,8 +617,10 @@
     simply suggest a pullback within a bigger uptrend. A cross back above the 50-day
     moving average would signal an upturn in prices and continuation of the bigger
     uptrend.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 移动平均线也可以用于生成简单价格交叉信号。当价格上涨超过移动平均线时，会产生多头信号。当价格下跌低于移动平均线时，会产生空头信号。价格交叉可以结合在更大趋势内进行交易。较长的移动平均线为更大趋势设定基调，较短的移动平均线用于生成信号。只有当价格已经高于较长移动平均线时，才会寻找多头价格交叉。这将与更大趋势保持一致。例如，如果价格高于200日移动平均线，图表分析师只会关注价格上涨至50日移动平均线时的信号。显然，价格跌破50日移动平均线将先于此类信号出现，但这种空头交叉将被忽略，因为更大趋势是上涨的。空头交叉只会暗示更大上涨趋势中的回撤。价格再次突破50日移动平均线将标志着价格上涨的转势和更大上涨趋势的延续。
 - en: The next chart shows Emerson Electric (EMR) with the 50-day EMA and 200-day
     EMA. The stock moved above and held above the 200-day moving average in August.
     There were dips below the 50-day EMA in early November and again in early February.
@@ -459,16 +629,23 @@
     window to confirm price crosses above or below the 50-day EMA. The 1-day EMA equals
     the closing price. MACD(1,50,1) is positive when the close is above the 50-day
     EMA and negative when the close is below the 50-day EMA.
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 下一个图表显示了爱默生电气（EMR）的50日EMA和200日EMA。该股票在8月份突破并保持在200日移动平均线之上。在11月初和2月初，价格曾短暂跌破50日EMA。价格迅速回升至50日EMA之上，提供了与更大上升趋势一致的多头信号（绿色箭头）。指标窗口中显示了MACD(1,50,1)，以确认价格穿越50日EMA之上或之下。1日EMA等于收盘价。当收盘价高于50日EMA时，MACD(1,50,1)为正，当收盘价低于50日EMA时，MACD(1,50,1)为负。
 - en: '![Moving Averages - Chart 7](../Images/1f280a683f9ee7f099a594b69d91629a.jpg
     "Moving Averages - Chart 7")'
+  id: totrans-76
   prefs: []
   type: TYPE_IMG
+  zh: '![移动平均线 - 图表 7](../Images/1f280a683f9ee7f099a594b69d91629a.jpg "移动平均线 - 图表
+    7")'
 - en: Support and Resistance
+  id: totrans-77
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 支撑和阻力
 - en: Moving averages can also act as [support](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
     "chart_school:chart_analysis:support_and_resistance") in an uptrend and [resistance](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
     "chart_school:chart_analysis:support_and_resistance") in a downtrend. A short-term
@@ -477,28 +654,41 @@
     simple moving average, which is the most popular long-term moving average. In
     fact, the 200-day moving average may offer support or resistance simply because
     it is so widely used. It is almost like a self-fulfilling prophecy.
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 移动平均线也可以在上升趋势中充当[支撑](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
+    "chart_school:chart_analysis:support_and_resistance")，在下降趋势中充当[阻力](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
+    "chart_school:chart_analysis:support_and_resistance")。短期上升趋势可能会在20日简单移动平均线附近找到支撑，这也是布林带中使用的。长期上升趋势可能会在200日简单移动平均线附近找到支撑，这是最受欢迎的长期移动平均线。事实上，200日移动平均线可能会提供支撑或阻力，仅仅因为它被广泛使用。这几乎就像是一个自我实现的预言。
 - en: '![Moving Averages - Chart 8](../Images/ed6f92814a49bc34a9e89b56469759e5.jpg
     "Moving Averages - Chart 8")'
+  id: totrans-79
   prefs: []
   type: TYPE_IMG
+  zh: '![移动平均线 - 图表 8](../Images/ed6f92814a49bc34a9e89b56469759e5.jpg "移动平均线 - 图表
+    8")'
 - en: The chart above shows the NY Composite with the 200-day simple moving average
     from mid-2004 until the end of 2008\. The 200-day provided support numerous times
     during the advance. Once the trend reversed with a double top support break, the
     200-day moving average acted as resistance around 9500\.
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 上图显示了从2004年中期到2008年底的纽约综合指数与200日简单移动平均线。在上涨过程中，200日线多次提供支撑。一旦趋势发生逆转，形成双顶支撑突破，200日移动平均线在9500附近充当了阻力。
 - en: Do not expect exact support and resistance levels from moving averages, especially
     longer moving averages. Markets are driven by emotion, which makes them prone
     to overshoots. Instead of exact levels, moving averages can be used to identify
     support or resistance ***zones***.
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 不要期望从移动平均线中得到精确的支撑和阻力水平，尤其是较长的移动平均线。市场受情绪驱动，这使其容易出现过度波动。移动平均线可以用来识别支撑或阻力***区域***，而不是精确的水平。
 - en: Conclusions
+  id: totrans-82
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: The advantages of using moving averages need to be weighed against the disadvantages.
     Moving averages are trend following, or lagging, indicators that will always be
     a step behind. This is not necessarily a bad thing though. After all, the trend
@@ -512,138 +702,214 @@
     tools. Chartists can use moving averages to define the overall trend and then
     use RSI to define [overbought or oversold](/school/doku.php?id=chart_school:glossary_o#overbought
     "chart_school:glossary_o") levels.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用移动平均线的优势需要与劣势权衡。移动平均线是追随趋势或滞后的指标，总是落后一步。尽管如此，这并不一定是坏事。毕竟，趋势是你的朋友，最好是跟随趋势交易。移动平均线确保交易者与当前趋势保持一致。尽管趋势是你的朋友，但证券在交易范围内花费了大量时间，这使移动平均线失效。一旦进入趋势，移动平均线会让你保持在内部，但也会提供晚期信号。不要指望使用移动平均线在顶部卖出和底部买入。与大多数技术分析工具一样，移动平均线不应单独使用，而应与其他互补工具结合使用。图表分析师可以使用移动平均线来定义整体趋势，然后使用RSI来定义[超买或超卖](/school/doku.php?id=chart_school:glossary_o#overbought
+    "chart_school:glossary_o")水平。
 - en: '* * *'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: '* * *'
 - en: Using with SharpCharts
+  id: totrans-85
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 与SharpCharts一起使用
 - en: Moving averages are available in SharpCharts as a price overlay. Using the Overlays
     drop-down menu, users can choose either a simple moving average or an exponential
     moving average. The first parameter is used to set the number of time periods.
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 移动平均线在SharpCharts中作为价格叠加线可用。用户可以通过叠加菜单选择简单移动平均线或指数移动平均线。第一个参数用于设置时间周期数。
 - en: An optional parameter can be added to specify which price field should be used
     in the calculations - “O” for the Open, “H” for the High, “L” for the Low, and
     “C” for the Close. A comma is used to separate parameters.
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 可以添加一个可选参数来指定计算中应使用哪个价格字段 - “O”表示开盘价，“H”表示最高价，“L”表示最低价，“C”表示收盘价。逗号用于分隔参数。
 - en: Another optional parameter can be added to shift the moving averages to the
     left (past) or right (future). A negative number (-10) would shift the moving
     average to the left 10 periods. A positive number (10) would shift the moving
     average to the right 10 periods.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个可选参数可以用于将移动平均线向左（过去）或向右（未来）移动。负数（-10）会将移动平均线向左移动10个周期。正数（10）会将移动平均线向右移动10个周期。
 - en: Multiple moving averages can be overlaid the price plot by simply adding another
     overlay line to the workbench. StockCharts members can change the colors and style
     to differentiate between multiple moving averages. After selecting an indicator,
     open “Advanced Options” by clicking the little green triangle.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 可以通过简单地向工作台添加另一个叠加线来将多个移动平均线叠加到价格图中。StockCharts会员可以更改颜色和样式以区分多个移动平均线。选择指标后，点击小绿色三角形打开“高级选项”。
 - en: '![Moving Averages - SharpCharts](../Images/ddc07798779effc04894a266a106d6cd.jpg
     "Moving Averages - SharpCharts")'
+  id: totrans-90
   prefs: []
   type: TYPE_IMG
+  zh: '![移动平均线 - SharpCharts](../Images/ddc07798779effc04894a266a106d6cd.jpg "移动平均线
+    - SharpCharts")'
 - en: “Advanced Options” can also be used to add a moving average overlay to other
     technical indicators like RSI, CCI, and Volume.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: “高级选项”也可以用于将移动平均线叠加到其他技术指标如RSI、CCI和成交量上。
 - en: '![Moving Averages - SharpCharts](../Images/cb1da52173fad62f962b477d78169952.jpg
     "Moving Averages - SharpCharts")'
+  id: totrans-92
   prefs: []
   type: TYPE_IMG
+  zh: '![移动平均线 - SharpCharts](../Images/cb1da52173fad62f962b477d78169952.jpg "移动平均线
+    - SharpCharts")'
 - en: '**[Click here](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&b=5&g=0&id=p77483337065&listNum=30&a=200726208
     "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&b=5&g=0&id=p77483337065&listNum=30&a=200726208")
     for a live chart with several different moving averages.**'
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[点击这里](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&b=5&g=0&id=p77483337065&listNum=30&a=200726208
+    "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&b=5&g=0&id=p77483337065&listNum=30&a=200726208")
+    查看带有几种不同移动平均线的实时图表。**'
 - en: Suggested Scans
+  id: totrans-94
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议的扫描
 - en: Bullish Moving Average Cross
+  id: totrans-95
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 看涨移动平均线交叉
 - en: This scan looks for stocks with a rising 150-day simple moving average and a
     bullish cross of the 5-day EMA and 35-day EMA. The 150-day moving average is rising
     as long as it is trading above its level five days ago. A bullish cross occurs
     when the 5-day EMA moves above the 35-day EMA on above-average volume.
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描寻找具有上升150天简单移动平均线和5天EMA与35天EMA看涨交叉的股票。只要150天移动平均线交易高于五天前的水平，它就会上升。当5天EMA在高于平均水平的交易量下移动到35天EMA上方时，就会出现看涨交叉。
 - en: '[PRE3]'
+  id: totrans-97
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: Bearish Moving Average Cross
+  id: totrans-98
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 看跌移动平均线交叉
 - en: This scan looks for stocks with a falling 150-day simple moving average and
     a bearish cross of the 5-day EMA and 35-day EMA. The 150-day moving average is
     falling as long as it is trading below its level five days ago. A bearish cross
     occurs when the 5-day EMA moves below the 35-day EMA on above-average volume.
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描寻找具有下跌150天简单移动平均线和5天EMA与35天EMA看跌交叉的股票。只要150天移动平均线交易低于五天前的水平，它就会下降。当5天EMA在高于平均水平的交易量下移动到35天EMA下方时，就会出现看跌交叉。
 - en: '[PRE4]'
+  id: totrans-100
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: For more details on the syntax to use for Moving Average scans, please see our
     [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#moving_average
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#moving_average") in
     the Support Center.
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 欲了解有关移动平均线扫描的语法详情，请参阅我们支持中心的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#moving_average
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#moving_average")。
 - en: '* * *'
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: '* * *'
 - en: Further Study
+  id: totrans-103
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 进一步研究
 - en: John Murphy's book has a chapter devoted to moving averages and their various
     uses. Murphy covers the pros and cons of moving averages. In addition, Murphy
     shows how moving averages work with Bollinger Bands and channel-based trading
     systems.
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 约翰·墨菲的书中有一章专门讨论移动平均线及其各种用途。墨菲介绍了移动平均线的利弊。此外，墨菲展示了移动平均线如何与布林带和基于通道的交易系统配合使用。
 - en: '| **Technical Analysis of the Financial Markets** John Murphy |'
+  id: totrans-105
   prefs: []
   type: TYPE_TB
+  zh: '| **金融市场技术分析** 约翰·墨菲 |'
 - en: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
     "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
     |'
+  id: totrans-106
   prefs: []
   type: TYPE_TB
+  zh: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    |'
 - en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
     "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
     |'
+  id: totrans-107
   prefs: []
   type: TYPE_TB
+  zh: '| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    |'
 - en: '* * *'
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: '* * *'
 - en: Additional Resources
+  id: totrans-109
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 附加资源
 - en: Stocks & Commodities Magazine Articles
+  id: totrans-110
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 股票与商品杂志文章
 - en: '**[Trade with Moving Averages by Colin Alexander](http://stockcharts.com/h-mem/tascredirect.html?artid=\V11\C06\TRADEWI.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V11\C06\TRADEWI.pdf")**'
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[与移动平均线交易的科林·亚历山大](http://stockcharts.com/h-mem/tascredirect.html?artid=\V11\C06\TRADEWI.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V11\C06\TRADEWI.pdf")**'
 - en: May 1993 - Stocks & Commodities V. 11:6 (257-260)
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 1993年5月 - 股票与商品 V. 11:6 (257-260)
 - en: '**[Applying Moving Averages by John Sweeney](http://stockcharts.com/h-mem/tascredirect.html?artid=\V16\C04\029APPL.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V16\C04\029APPL.pdf")**'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[约翰·斯威尼的移动平均线应用](http://stockcharts.com/h-mem/tascredirect.html?artid=\V16\C04\029APPL.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V16\C04\029APPL.pdf")**'
 - en: Mar 1998 - Stocks & Commodities
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 1998年3月 - 股票与商品

@@ -1,82 +1,114 @@
 - en: Bollinger Bands [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 布林带 [ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Bollinger Bands](#bollinger_bands)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[布林带](#bollinger_bands)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[SharpCharts Calculation](#sharpcharts_calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[SharpCharts 计算](#sharpcharts_calculation)'
 - en: '[Signal: W-Bottoms](#signalw-bottoms)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[信号：W底部](#signalw-bottoms)'
 - en: '[Signal: M-Tops](#signalm-tops)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[信号：M顶](#signalm-tops)'
 - en: '[Signal: Walking the Bands](#signalwalking_the_bands)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[信号：走势带](#signalwalking_the_bands)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[使用SharpCharts](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议的扫描](#suggested_scans)'
 - en: '[Bullish Bollinger Band Crossover](#bullish_bollinger_band_crossover)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[看涨布林带交叉](#bullish_bollinger_band_crossover)'
 - en: '[Bearish Bollinger Band Crossover](#bearish_bollinger_band_crossover)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[看跌布林带交叉](#bearish_bollinger_band_crossover)'
 - en: '[Additional Resources](#additional_resources)'
+  id: totrans-13
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[额外资源](#additional_resources)'
 - en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  id: totrans-14
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[股票与商品杂志文章](#stocks_commodities_magazine_articles)'
 - en: Introduction
+  id: totrans-15
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: Developed by John Bollinger, Bollinger Bands® are volatility bands placed above
     and below a moving average. Volatility is based on the [standard deviation](/school/doku.php?id=chart_school:technical_indicators:standard_deviation_volatility
     "chart_school:technical_indicators:standard_deviation_volatility"), which changes
@@ -87,27 +119,43 @@
     determine the strength of the trend. Signals derived from narrowing BandWidth
     are discussed in the [ChartSchool article on BandWidth.](/school/doku.php?id=chart_school:technical_indicators:bollinger_band_width
     "chart_school:technical_indicators:bollinger_band_width")
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 由约翰·博林格（John Bollinger）开发，布林带®是放置在移动平均线上下的波动性带。波动性基于[标准差](/school/doku.php?id=chart_school:technical_indicators:standard_deviation_volatility
+    "chart_school:technical_indicators:standard_deviation_volatility")，随着波动性的增加和减少而变化。当波动性增加时，带自动扩大，当波动性减少时，带变窄。布林带的这种动态特性也意味着它们可以在不同的证券上使用标准设置。对于信号，布林带可用于识别M顶和W底部，或确定趋势的强度。从带宽变窄中得出的信号在[ChartSchool关于带宽的文章](/school/doku.php?id=chart_school:technical_indicators:bollinger_band_width
+    "chart_school:technical_indicators:bollinger_band_width")中讨论。
 - en: 'Note: Bollinger Bands® is a registered trademark of John Bollinger.'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 注：布林带®是约翰·博林格的注册商标。
 - en: SharpCharts Calculation
+  id: totrans-18
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: SharpCharts 计算
 - en: '[PRE0]'
+  id: totrans-19
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: '![Spreadsheet 1](../Images/fe1186ae76f8dfd9e45b704cbb78a8b5.jpg "Spreadsheet
     1")'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![电子表格 1](../Images/fe1186ae76f8dfd9e45b704cbb78a8b5.jpg "电子表格 1")'
 - en: '[Click here to download this spreadsheet example.](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:bollinger_bands:cs-bbands.xls
     "chart_school:technical_indicators_and_overlays:bollinger_bands:cs-bbands.xls
     (22.5 KB)")'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: '[点击这里下载此电子表格示例。](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:bollinger_bands:cs-bbands.xls
+    "chart_school:technical_indicators_and_overlays:bollinger_bands:cs-bbands.xls
+    (22.5 KB)")'
 - en: '**Bollinger Bands consist of a middle band with two outer bands.** The middle
     band is a [simple moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
     "chart_school:technical_indicators:moving_averages") that is usually set at 20
@@ -115,12 +163,17 @@
     also uses a simple moving average. The look-back period for the standard deviation
     is the same as for the simple moving average. The outer bands are usually set
     2 standard deviations above and below the middle band.'
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: '**布林带由一个中间带和两个外部带组成。** 中间带是一个通常设置为20个周期的[简单移动平均](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages")。使用简单移动平均是因为标准差公式也使用简单移动平均。标准差的回溯期与简单移动平均相同。外部带通常设置在中间带的上下2个标准差处。'
 - en: '![Bollinger Bands - Chart 1](../Images/110a234f5ce8dae8d2f89276136fbcc6.jpg
     "Bollinger Bands - Chart 1")'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![布林带 - 图表 1](../Images/110a234f5ce8dae8d2f89276136fbcc6.jpg "布林带 - 图表 1")'
 - en: Settings can be adjusted to suit the characteristics of particular securities
     or trading styles. Bollinger recommends making small incremental adjustments to
     the standard deviation multiplier. Changing the number of periods for the moving
@@ -132,12 +185,17 @@
     Standard Deviation, the standard deviation multiplier is set at 2\. Bollinger
     suggests increasing the standard deviation multiplier to 2.1 for a 50-period SMA
     and decreasing the standard deviation multiplier to 1.9 for a 10-period SMA.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 设置可以调整以适应特定证券或交易风格的特征。 布林格建议对标准差乘数进行小幅调整。 更改移动平均线的周期数也会影响用于计算标准差的周期数。 因此，标准差**乘数**只需要进行小幅调整。
+    增加移动平均线周期将自动增加用于计算标准差的周期数，并且还需要增加标准差**乘数**。 使用20天SMA和20天标准差，标准差乘数设置为2。 布林格建议将标准差乘数增加到2.1以用于50周期SMA，并将标准差乘数降低到1.9以用于10周期SMA。
 - en: 'Signal: W-Bottoms'
+  id: totrans-25
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 信号：W底部
 - en: W-Bottoms were part of Arthur Merrill's work that identified 16 patterns with
     a basic W shape. Bollinger uses these various W patterns with Bollinger Bands
     to identify W-Bottoms. A “W-Bottom” forms in a downtrend and involves two reaction
@@ -149,12 +207,19 @@
     the lower band. The ability to hold above the lower band on the test shows less
     weakness on the last decline. Fourth, the pattern is confirmed with a strong move
     off the second low and a resistance break.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: W底部也是亚瑟·梅里尔（Arthur Merrill）的工作的一部分，他识别出具有基本W形状的16种模式。 布林格使用这些不同的W形状模式与布林带来识别W底部。
+    “W底部”形成在下降趋势中，并涉及两个反应低点。 特别是，布林格寻找W底部，其中第二个低点低于第一个低点，但保持在下轨之上。 有四个步骤可以确认布林带中的W底部。
+    首先，形成反应低点。 这个低点通常，但并非总是，低于下轨。 其次，向中轨反弹。 第三，证券中有一个新的价格低点。 这个低点**高于**下轨。 在测试中保持在下轨之上的能力显示了最后一次下跌的弱势。
+    第四，模式通过第二个低点的强劲走势和阻力突破得到确认。
 - en: '![Bollinger Bands - Chart 2](../Images/f54c96e7132332cfa8439041a4c55d4d.jpg
     "Bollinger Bands - Chart 2")'
+  id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![布林带 - 图表 2](../Images/f54c96e7132332cfa8439041a4c55d4d.jpg "布林带 - 图表 2")'
 - en: Chart 2 shows Nordstrom (JWN) with a W-Bottom in January-February 2010\. First,
     the stock formed a reaction low in January (black arrow) and broke below the lower
     band. Second, there was a bounce back above the middle band. Third, the stock
@@ -163,23 +228,34 @@
     so signals should also be based on closing prices. Fourth, the stock surged with
     expanding volume in late February and broke above the early February high. Chart
     3 shows Sandisk with a smaller W-Bottom in July-August 2009\.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表2显示了2010年1月至2月的Nordstrom（JWN）中的W底部。 首先，股票在1月形成了一个反应低点（黑色箭头）并跌破了下轨。 其次，股票反弹至中轨之上。
+    第三，股票跌破了1月的低点并保持在下轨之上。 即使2月5日的低点突破了下轨，但布林带是使用收盘价计算的，因此信号也应基于收盘价。 第四，股票在2月底大幅上涨，并伴随着扩大的交易量突破了2月初的高点。
+    图表3显示了2009年7月至8月的Sandisk中的较小W底部。
 - en: '![Bollinger Bands - Chart 3](../Images/bf510be6f35a8239b261b036f9d1e345.jpg
     "Bollinger Bands - Chart 3")'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![布林带 - 图表 3](../Images/bf510be6f35a8239b261b036f9d1e345.jpg "布林带 - 图表 3")'
 - en: 'Signal: M-Tops'
+  id: totrans-30
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 信号：M顶
 - en: M-Tops were also part of Arthur Merrill's work that identified 16 patterns with
     a basic M shape. Bollinger uses these various M patterns with Bollinger Bands
     to identify M-Tops. According to Bollinger, tops are usually more complicated
     and drawn out than bottoms. Double tops, head-and-shoulders patterns, and diamonds
     represent evolving tops.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: M顶也是亚瑟·梅里尔（Arthur Merrill）的工作的一部分，他识别出具有基本M形状的16种模式。 布林格（Bollinger）使用这些不同的M形状模式与布林带来识别M顶。
+    根据布林格的说法，顶部通常比底部更复杂且拉长。 双顶，头肩顶模式和钻石代表不断演变的顶部。
 - en: In its most basic form, an M-Top is similar to a double top. However, the reaction
     highs are not always equal. The first high can be higher or lower than the second
     high. Bollinger suggests looking for signs of non-confirmation when a security
@@ -190,24 +266,34 @@
     The inability of the second reaction high to reach the upper band shows waning
     momentum, which can foreshadow a trend reversal. Final confirmation comes with
     a support break or bearish indicator signal.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 在其最基本形式中，M-顶类似于双顶。然而，反弹高点并不总是相等的。第一个高点可能高于或低于第二个高点。布林格建议在证券创造新高时寻找非确认迹象。这基本上是
+    W-底的相反。非确认发生有三个步骤。首先，证券创造了一个高于上轨的反弹高点。其次，价格回调至中轨。第三，价格上涨至先前高点但未能达到上轨。这是一个警示信号。第二个反弹高点无法达到上轨显示了动量减弱，这可能预示着趋势反转。最终确认是通过支撑位被突破或出现熊市指标信号。
 - en: '![Bollinger Bands - Chart 4](../Images/ef2a2266ca0d40f277d475782b570b33.jpg
     "Bollinger Bands - Chart 4")'
+  id: totrans-33
   prefs: []
   type: TYPE_IMG
+  zh: '![布林带 - 图表 4](../Images/ef2a2266ca0d40f277d475782b570b33.jpg "布林带 - 图表 4")'
 - en: Chart 4 shows Exxon Mobil (XOM) with an M-Top in April-May 2008\. The stock
     moved above the upper band in April. There was a pullback in May and then another
     push above 90\. Even though the stock moved above the upper band on an intraday
     basis, it did not CLOSE above the upper band. The M-Top was confirmed with a support
     break two weeks later. Also, notice that MACD formed a bearish divergence and
     moved below its signal line for confirmation.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表 4 显示了 2008 年 4 月至 5 月间埃克森美孚（XOM）出现了一个 M-顶形态。股票在 4 月份突破了上轨。5 月份出现了回调，然后再次上涨至
+    90 美元以上。尽管股票在日内交易中突破了上轨，但并未收盘在上轨之上。两周后，M-顶得到确认，支撑位被突破。同时，注意到 MACD 形成了一个熊市背离，并跌破了其信号线以得到确认。
 - en: '![Bollinger Bands - Chart 5](../Images/fd6b7e6856a00cb2e1fb5c819cadaae7.jpg
     "Bollinger Bands - Chart 5")'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![布林带 - 图表 5](../Images/fd6b7e6856a00cb2e1fb5c819cadaae7.jpg "布林带 - 图表 5")'
 - en: Chart 5 shows Pulte Homes (PHM) within an uptrend in July-August 2008\. Price
     exceeded the upper band in early September to affirm the uptrend. After a pullback
     below the 20-day SMA (middle Bollinger Band), the stock moved to a higher high
@@ -216,12 +302,18 @@
     moved below its signal line. Notice that this M-top is more complex because there
     are lower reaction highs on either side of the peak (blue arrow). This evolving
     top formed a small head-and-shoulders pattern.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表 5 显示了 2008 年 7 月至 8 月间 Pulte Homes（PHM）处于上升趋势中。价格在 9 月初突破了上轨，确认了上升趋势。在回调至
+    20 日简单移动平均线（布林带中轨）以下后，股票上涨至 17 美元以上的新高。尽管这是本次上涨的新高，但价格并未突破上轨。这是一个警示信号。一周后股票跌破支撑位，MACD
+    跌破了其信号线。注意到这个 M-顶更为复杂，因为在峰值两侧有较低的反弹高点（蓝色箭头）。这个不断演变的顶部形成了一个小的头肩顶形态。
 - en: 'Signal: Walking the Bands'
+  id: totrans-37
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 信号：走出布林带
 - en: Moves above or below the bands are not signals per se. As Bollinger puts it,
     moves that touch or exceed the bands are not signals, but rather “tags”. On the
     face of it, a move to the upper band shows strength, while a sharp move to the
@@ -236,12 +328,17 @@
     also common for prices to never reach the lower band during an uptrend. The 20-day
     SMA sometimes acts as support. In fact, dips below the 20-day SMA sometimes provide
     buying opportunities before the next tag of the upper band.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 突破或触及布林带并不是信号本身。正如布林格所说，触及或超过布林带的动作并不是信号，而是“标签”。从表面上看，向上突破显示力量，而向下急剧移动到下轨显示弱点。动量振荡器的工作方式基本相同。超买并不一定是看涨的。达到超买水平需要一定的力量，而超买条件在强劲的上升趋势中可能延续。同样，价格可以在强劲的上升趋势中“走在带子上”并多次触及。想一想。上轨是20周期简单移动平均线的2个标准差之上。需要相当强劲的价格波动才能超过这个上轨。在布林带确认
+    W 底之后发生的上轨触及将标志着上升趋势的开始。正如强劲的上升趋势产生了许多上轨标签一样，价格在上升趋势中永远不触及下轨也是常见的。20日简单移动平均线有时充当支撑。事实上，在下穿20日简单移动平均线之前，有时提供买入机会，以便下一次触及上轨。
 - en: '![Bollinger Bands - Chart 6](../Images/051ab7377a0e2e10a77e58774468744d.jpg
     "Bollinger Bands - Chart 6")'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![布林带 - 图表 6](../Images/051ab7377a0e2e10a77e58774468744d.jpg "布林带 - 图表 6")'
 - en: Chart 6 shows Air Products (APD) with a surge and close above the upper band
     in mid-July. First, notice that this is a strong surge that broke above two resistance
     levels. A strong upward thrust is a sign of strength, not weakness. Trading turned
@@ -254,12 +351,18 @@
     started the uptrend. CCI then identified tradable pullbacks with dips below -100\.
     This is an example of combining Bollinger Bands with a momentum oscillator for
     trading signals.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表 6 显示了空气产品（APD）在七月中旬突然上涨并收于上轨之上。首先，请注意这是一次强劲的上涨，突破了两个阻力水平。强劲的向上推力是力量的表现，而非弱点。八月份交易走平，20日简单移动平均线横向移动。布林带变窄，但
+    APD 没有收于下轨之下。价格和20日简单移动平均线在九月份上涨。总体而言，APD 在四个月内至少五次收于上轨之上。指标窗口显示了10周期的商品通道指数（CCI）。CCI
+    低于 -100 被视为超卖，回升至 -100 以上标志着超卖反弹的开始（绿色虚线）。上轨标签和突破开启了上升趋势。CCI 随后识别了可交易的回调，低于 -100。这是将布林带与动量振荡器结合以获取交易信号的示例。
 - en: '![Bollinger Bands - Chart 7](../Images/ccc80ddfe581bcdc69d617f8af24cd07.jpg
     "Bollinger Bands - Chart 7")'
+  id: totrans-41
   prefs: []
   type: TYPE_IMG
+  zh: '![布林带 - 图表 7](../Images/ccc80ddfe581bcdc69d617f8af24cd07.jpg "布林带 - 图表 7")'
 - en: Chart 7 shows Monsanto (MON) with a walk down the lower band. The stock broke
     down in January with a support break and closed below the lower band. From mid-January
     until early May, Monsanto closed below the lower band at least five times. Notice
@@ -269,12 +372,17 @@
     overbought situations. A move above +100 is overbought. A move back below +100
     signals a resumption of the downtrend (red arrows). This system triggered two
     good signals in early 2010\.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表 7 显示了孟山都（MON）在下轨上行走。该股票在一月份突破支撑并收于下轨之下。从一月中旬到五月初，孟山都至少五次收于下轨之下。请注意，在此期间该股票没有一次收于上轨之上。支撑突破和最初收于下轨之下标志着下降趋势。因此，使用10周期的商品通道指数（CCI）来识别短期超买情况。超过
+    +100 是超买。回落至 +100 以下标志着下降趋势的恢复（红色箭头）。该系统在2010年初触发了两个良好的信号。
 - en: Conclusions
+  id: totrans-43
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: Bollinger Bands reflect direction with the 20-period SMA and volatility with
     the upper/lower bands. As such, they can be used to determine if prices are relatively
     high or low. **According to Bollinger, the bands should contain 88-89% of price
@@ -285,12 +393,17 @@
     buy signal. Prices are high or low for a reason. As with other indicators, Bollinger
     Bands are not meant to be used as a stand-alone tool. Chartists should combine
     Bollinger Bands with basic trend analysis and other indicators for confirmation.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 布林带通过20周期SMA反映方向，通过上/下带反映波动性。因此，它们可以用来确定价格相对高低。**根据布林的说法，带应该包含88-89%的价格行动，这使得带外的移动具有重要意义。**
+    从技术上讲，当价格高于上带时，价格相对较高，当价格低于下带时，价格相对较低。然而，相对高不应被视为熊市或卖出信号。同样，相对低不应被视为牛市或买入信号。价格之所以高或低是有原因的。与其他指标一样，布林带不应被单独使用。图表分析师应将布林带与基本趋势分析和其他指标结合使用以进行确认。
 - en: Using with SharpCharts
+  id: totrans-45
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用SharpCharts
 - en: Bollinger Bands can be found in SharpCharts as a price overlay. As with a simple
     moving average, Bollinger Bands should be shown on top of a price plot. Upon selecting
     Bollinger Bands, the default setting will appear in the parameters window (20,2).
@@ -302,68 +415,107 @@
     or Bollinger Bands (10,1.9) can be used for a shorter timeframe. [Click here](http://stockcharts.com/h-sc/ui?s=QQQ&p=D&b=5&g=0&id=p50569930924
     "http://stockcharts.com/h-sc/ui?s=QQQ&p=D&b=5&g=0&id=p50569930924") for a live
     example.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 在SharpCharts中可以找到布林带作为价格叠加。与简单移动平均线一样，布林带应该显示在价格图上方。在选择布林带时，默认设置将出现在参数窗口中（20,2）。第一个数字（20）设置了简单移动平均线和标准差的周期。第二个数字（2）设置了上下带的标准差倍数。这些默认参数将带设置为简单移动平均线的2个标准差之上/之下。用户可以根据自己的图表需求更改参数。布林带（50,2.1）可用于较长时间范围，或者布林带（10,1.9）可用于较短时间范围。[点击这里](http://stockcharts.com/h-sc/ui?s=QQQ&p=D&b=5&g=0&id=p50569930924
+    "http://stockcharts.com/h-sc/ui?s=QQQ&p=D&b=5&g=0&id=p50569930924")查看实时示例。
 - en: '![Bollinger Bands - Sharpcharts](../Images/adabdf9386749ff0c360aa590554654a.jpg
     "Bollinger Bands - Sharpcharts")'
+  id: totrans-47
   prefs: []
   type: TYPE_IMG
+  zh: '![布林带 - Sharpcharts](../Images/adabdf9386749ff0c360aa590554654a.jpg "布林带 -
+    Sharpcharts")'
 - en: Suggested Scans
+  id: totrans-48
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议的扫描
 - en: Bullish Bollinger Band Crossover
+  id: totrans-49
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 牛市布林带交叉
 - en: This scan finds stocks that have just moved above their upper Bollinger Band
     line. This scan is just a starting point. Further refinement and analysis are
     required.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描找到刚刚突破其上布林带线的股票。这个扫描只是一个起点。需要进一步的细化和分析。
 - en: '[PRE1]'
+  id: totrans-51
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: Bearish Bollinger Band Crossover
+  id: totrans-52
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 熊市布林带交叉
 - en: This scan finds stocks that have just moved below their lower Bollinger Band
     line. This scan is just a starting point. Further refinement and analysis are
     required.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描找到刚刚跌破其下布林带线的股票。这个扫描只是一个起点。需要进一步的细化和分析。
 - en: '[PRE2]'
+  id: totrans-54
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: For more details on the syntax to use for Bollinger Band scans, please see our
     [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_bands
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_bands") in
     the Support Center.
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关布林带扫描的语法详细信息，请参阅我们支持中心的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_bands
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_bands")。
 - en: '* * *'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: '* * *'
 - en: Additional Resources
+  id: totrans-57
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 其他资源
 - en: Stocks & Commodities Magazine Articles
+  id: totrans-58
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 《股票与商品》杂志文章
 - en: '**[Bollinger Bands by Amy Wu](http://stockcharts.com/h-mem/tascredirect.html?artid=\V20\C01\015BOLL.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V20\C01\015BOLL.pdf")**'
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[艾米·吴的布林带](http://stockcharts.com/h-mem/tascredirect.html?artid=\V20\C01\015BOLL.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V20\C01\015BOLL.pdf")**'
 - en: Dec 2001 - Stocks & Commodities V. 20:1 (78-79)
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 2001年12月 - 《股票与商品》V. 20:1 (78-79)
 - en: '**[Using Bollinger Bands by John Bollinger](http://stockcharts.com/h-mem/tascredirect.html?artid=\V10\C02\USINGBO.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V10\C02\USINGBO.pdf")**'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[使用布林带（Bollinger Bands）by 约翰·布林格（John Bollinger）](http://stockcharts.com/h-mem/tascredirect.html?artid=\V10\C02\USINGBO.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V10\C02\USINGBO.pdf")**'
 - en: Jan 1992 - Stocks & Commodities V. 10:2 (47-51)
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 1992年1月 - 股票与商品 V. 10:2 (47-51)

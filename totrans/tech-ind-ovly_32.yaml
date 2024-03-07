@@ -1,90 +1,128 @@
 - en: Mass Index [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 质量指数 [ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Mass Index](#mass_index)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[质量指数](#mass_index)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[SharpCharts Calculation](#sharpcharts_calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[SharpCharts 计算](#sharpcharts_calculation)'
 - en: '[Signals](#signals)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[信号](#signals)'
 - en: '[Tweaking](#tweaking)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[微调](#tweaking)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与 SharpCharts 结合使用](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议扫描](#suggested_scans)'
 - en: '[Mass Index Bullish Reversal](#mass_index_bullish_reversal)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[质量指数看涨反转](#mass_index_bullish_reversal)'
 - en: '[Mass Index Bearish Reversal](#mass_index_bearish_reversal)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[质量指数看跌反转](#mass_index_bearish_reversal)'
 - en: '[Further Study](#further_study)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[进一步研究](#further_study)'
 - en: Introduction
+  id: totrans-13
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: Developed by Donald Dorsey, the Mass Index uses the high-low range to identify
     trend reversals based on range expansions. In this sense, the Mass Index is a
     volatility indicator that does not have a directional bias. Instead, the Mass
     Index identifies range bulges that can foreshadow a reversal of the current trend.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 由唐纳德·多尔西（Donald Dorsey）开发，质量指数（Mass Index）利用高低范围来识别基于范围扩展的趋势反转。在这个意义上，质量指数是一个没有方向偏见的波动性指标。相反，质量指数识别可以预示当前趋势反转的范围膨胀。
 - en: SharpCharts Calculation
+  id: totrans-15
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: SharpCharts 计算
 - en: 'There are four parts involved in the Mass Index calculation:'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 质量指数计算涉及四个部分：
 - en: '[PRE0]'
+  id: totrans-17
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: '![Chart 1](../Images/4886b2591c4631833238106b2ba83c6c.jpg "Chart 1")'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 1](../Images/4886b2591c4631833238106b2ba83c6c.jpg "图表 1")'
 - en: The calculation is fairly straightforward. First, the Single EMA provides the
     average for the high-low range. Second, the Double EMA provides a second smoothing
     of this volatility measure. Using a ratio of these two exponential [moving averages](/school/doku.php?id=chart_school:technical_indicators:moving_averages
@@ -93,24 +131,34 @@
     The final step, a 25-period summation, acts like a moving average to further smooth
     the data series. Overall, the Mass Index rises as the high-low range widens, and
     falls as the high-low range narrows. A spreadsheet example is shown below.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 计算相当简单。首先，单一EMA提供高低范围的平均值。其次，双重EMA对这种波动性指标进行第二次平滑。使用这两个指数移动平均数的比率对数据系列进行归一化。这个比率显示单一EMA相对于双重EMA变大的时候。最后一步，25期总和，类似于移动平均线，进一步平滑数据系列。总的来说，随着高低范围的扩大，质量指数上升，随着高低范围的缩小，质量指数下降。下面展示了一个电子表格示例。
 - en: '![Spreadsheet 1](../Images/3e4307932289d84bc8164a84c6a7954d.jpg "Spreadsheet
     1")'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![电子表格 1](../Images/3e4307932289d84bc8164a84c6a7954d.jpg "电子表格 1")'
 - en: Some of the spreadsheet values are off by a penny because the exponential moving
     average calculation extends back less than three months. Calculations in SharpCharts
     extend back two years, which makes the exponential moving average calculation
     more robust.[Click here to download this spreadsheet example.](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:mass_index:cs-massindex.xls
     "chart_school:technical_indicators_and_overlays:mass_index:cs-massindex.xls (154.5
     KB)")
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些电子表格数值有一分钱的偏差，因为指数移动平均计算的时间跨度不到三个月。SharpCharts中的计算时间跨度为两年，这使指数移动平均计算更加稳健。[点击这里下载这个电子表格示例。](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:mass_index:cs-massindex.xls
+    "chart_school:technical_indicators_and_overlays:mass_index:cs-massindex.xls (154.5
+    KB)")
 - en: Signals
+  id: totrans-22
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 信号
 - en: Donald Dorsey looked for “reversal bulges” to signal a trend reversal. According
     to Dorsey, a bulge occurs when the Mass Index moves above 27\. This initial bulge
     does not complete the signal though. Dorsey waited for this bulge to reverse with
@@ -119,11 +167,15 @@
     a downtrend followed by a reversal bulge would suggest a bullish trend reversal.
     Conversely, an uptrend followed by a reversal bulge would suggest a bearish trend
     reversal.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 唐纳德·多尔西寻找“反转膨胀”来发出趋势反转信号。根据多尔西的说法，当质量指数上升至27以上时会出现膨胀。然而，这种初始膨胀并不完成信号。多尔西等待这种膨胀反转，回落至26.50以下。一旦反转膨胀完成，交易者应该使用其他分析技术来确定下一步走势的方向。理想情况下，下跌趋势后出现反转膨胀将暗示看涨趋势反转。相反，上涨趋势后出现反转膨胀将暗示看跌趋势反转。
 - en: '![Chart 2](../Images/df48c1a6a50b160c0af3f138e2a3c813.jpg "Chart 2")'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 2](../Images/df48c1a6a50b160c0af3f138e2a3c813.jpg "图表 2")'
 - en: The example above shows Chipotle with the Mass Index producing two reversal
     bulges over a 12 month period. In both cases, the trend was up when the Mass Index
     moved above 27, which means a bearish reversal was expected. The first signal
@@ -131,19 +183,25 @@
     Chartists looking for signals will most likely have to relax Dorsey's requirements
     for the reversal bulge because the Mass Index rarely exceeds 27\. It takes exceptional
     volatility to push the index above this level.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 上面的例子显示了Chipotle在12个月内质量指数产生两次逆转突出。在这两种情况下，当质量指数超过27时，趋势是向上的，这意味着预期看跌逆转。第一个信号预示着一个交易范围。第二个信号预示着急剧下降。寻找信号的图表分析师很可能需要放宽多尔西对逆转突出的要求，因为质量指数很少超过27。需要异常波动才能将指数推至这个水平。
 - en: Tweaking
+  id: totrans-26
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 调整
 - en: Chartists can lower the threshold for a reversal bulge to generate more signals.
     One size does not fit all when it comes to volatility. In other words, chartists
     may need to compare Mass Index levels over time to identify historical highs and
     lows. A move that nears the high end of the historical range would suggest a volatility
     bulge that could foreshadow a reversal.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表分析师可以降低逆转突出的阈值以生成更多信号。波动性并非一刀切。换句话说，图表分析师可能需要比较一段时间内的质量指数水平，以识别历史高点和低点。接近历史范围高端的移动将表明波动性突出，可能预示着逆转。
 - en: The chart below shows International Paper with the Mass Index moving above 26
     twice. Even though the Mass Index touched 27 in August 2011, the 26 level seems
     more appropriate for a reversal bulge. Also keep in mind that August 2011 was
@@ -151,11 +209,15 @@
     like an outlier. The trend was down when the Mass Index moved above 26 in August
     2011 and May 2012\. This suggested that a bullish reversal would follow and chartists
     could then use other analytical techniques to identify such a reversal.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 下图显示了国际纸业的质量指数两次上升至26以上。尽管质量指数在2011年8月触及27，但26水平似乎更适合作为逆转突出。还要记住，2011年8月对整个股市来说是一个极端波动的时期，这个读数看起来像是一个异常值。当质量指数在2011年8月和2012年5月上升至26以上时，趋势是向下的，这表明随后会出现看涨逆转，图表分析师可以使用其他分析技术来识别这种逆转。
 - en: '![Chart 3](../Images/b668d2f65bdb4e14702dfb3112f53dfb.jpg "Chart 3")'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 3](../Images/b668d2f65bdb4e14702dfb3112f53dfb.jpg "图表 3")'
 - en: The bottom indicator is the [TRIX oscillator](/school/doku.php?id=chart_school:technical_indicators:trix
     "chart_school:technical_indicators:trix"), which is the one-period rate-of-change
     for the triple smoothed exponential moving average. The TRIX is like the smoothed
@@ -164,12 +226,16 @@
     were down when these reversal bulges occurred, the trading bias was bullish and
     only bullish signals were considered. The green arrows show when the TRIX moved
     above its signal line to signal an upturn in prices.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 底部指标是[TRIX振荡器](/school/doku.php?id=chart_school:technical_indicators:trix "chart_school:technical_indicators:trix")，它是三次平滑指数移动平均的一期变化率。TRIX类似于MACD的平滑版本。一旦逆转突出出现并建立了交易偏向，图表分析师可以使用TRIX生成方向信号。由于这些逆转突出发生时趋势向下，交易偏向是看涨的，只有看涨信号被考虑。绿色箭头显示了当TRIX移动超过其信号线以示价格上涨时。
 - en: Conclusions
+  id: totrans-31
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: The Mass Index uses the high-low differential to provide a smoothed volatility
     measure. The indicator typically fluctuates in the mid-20s. Readings near the
     high end of the historical range suggest increasing volatility, which increases
@@ -178,80 +244,122 @@
     that the Mass Index does not have a directional bias. The directional bias depends
     on the existing trend. As with all indicators, chartists should use other analysis
     techniques to complement the Mass Index.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 质量指数利用高低差异提供平滑的波动率测量。该指标通常在中20左右波动。接近历史范围高端的读数表明波动性增加，这增加了趋势逆转的可能性。尽管多尔西将突出阈值设定为27，但图表分析师应考虑降低阈值以产生更多信号。请记住，质量指数没有方向偏见。方向偏见取决于现有趋势。与所有指标一样，图表分析师应使用其他分析技术来补充质量指数。
 - en: Using with SharpCharts
+  id: totrans-33
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用SharpCharts
 - en: The Mass Index can be found in the “indicators” section under the chart. Users
     can adjust the summation periods by changing the number in the “parameters” box.
     The indicator can then be positioned “behind price”, “above” the main window or
     “below” the main window. Chartists can add a horizontal line by using the “advanced”
     options. This line can be used to set the thresholds for the reversal bulge signal.
     [Click here for a live example](http://scharts.co/Rz7CZ1 "http://scharts.co/Rz7CZ1").
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 质量指数可以在图表下的“指标”部分找到。用户可以通过更改“参数”框中的数字来调整总结期。然后，指标可以被定位在“价格后面”、“主窗口上方”或“主窗口下方”。图表分析师可以使用“高级”选项添加水平线。这条线可用于设置反转膨胀信号的阈值。[点击这里查看实时示例](http://scharts.co/Rz7CZ1
+    "http://scharts.co/Rz7CZ1")。
 - en: '![Chart 4](../Images/96380e6c360c34942e3dadd240c28fb6.jpg "Chart 4")'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 4](../Images/96380e6c360c34942e3dadd240c28fb6.jpg "图表 4")'
 - en: '![SharpCharts](../Images/a0d33c33f1bf56a413179e5e95475ec3.jpg "SharpCharts")'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![SharpCharts](../Images/a0d33c33f1bf56a413179e5e95475ec3.jpg "SharpCharts")'
 - en: Suggested Scans
+  id: totrans-37
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议扫描
 - en: Mass Index Bullish Reversal
+  id: totrans-38
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 质量指数看涨反转
 - en: This scan searches for stocks that are trading below their 200-day moving average
     to define a long-term downtrend. A bullish reversal is identified when Mass Index
     moves below 26.5.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描搜索交易价格低于其200日移动平均线以定义长期下降趋势的股票。当质量指数移动到26.5以下时，将识别出看涨反转。
 - en: '[PRE1]'
+  id: totrans-40
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: Mass Index Bearish Reversal
+  id: totrans-41
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 质量指数看跌反转
 - en: This scan searches for stocks that are trading above their 200-day moving average
     to define a long-term uptrend. A bearish reversal is identified when Mass Index
     moves below 26.5\.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 此扫描搜索交易价格高于其200日移动平均线以定义长期上升趋势的股票。当质量指数移动到26.5以下时，将识别出看跌反转。
 - en: '[PRE2]'
+  id: totrans-43
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: For more details on the syntax to use for Mass Index scans, please see our [Scanning
     Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#mass_index_mass
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#mass_index_mass") in
     the Support Center.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关用于质量指数扫描的语法的更多详细信息，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#mass_index_mass
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#mass_index_mass")在支持中心。
 - en: Further Study
+  id: totrans-45
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 进一步学习
 - en: This books details 16 simple, yet effective, strategies crucial to the success
     of any trader or investor. Readers will learn oscillator techniques, mean reversion
     strategies and even see back-tested results.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 这本书详细介绍了对任何交易员或投资者成功至关重要的16种简单而有效的策略。读者将学习振荡器技术、均值回归策略，甚至看到经过回测的结果。
 - en: '| **Short Term Trading Strategies That Work** Larry Connors and Cesar Alvarez
     |'
+  id: totrans-47
   prefs: []
   type: TYPE_TB
+  zh: '| **短期交易策略** 拉里·康纳斯和塞萨尔·阿尔瓦雷斯 |'
 - en: '| [![](../Images/1bcf7dc658fe94db162658d667958f9e.jpg)](http://store.stockcharts.com/products/short-term-trading-strategies-that-work
     "http://store.stockcharts.com/products/short-term-trading-strategies-that-work")
     |'
+  id: totrans-48
   prefs: []
   type: TYPE_TB
+  zh: '| [![](../Images/1bcf7dc658fe94db162658d667958f9e.jpg)](http://store.stockcharts.com/products/short-term-trading-strategies-that-work
+    "http://store.stockcharts.com/products/short-term-trading-strategies-that-work")
+    |'
 - en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/short-term-trading-strategies-that-work
     "http://store.stockcharts.com/products/short-term-trading-strategies-that-work")
     |'
+  id: totrans-49
   prefs: []
   type: TYPE_TB
+  zh: '| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/short-term-trading-strategies-that-work
+    "http://store.stockcharts.com/products/short-term-trading-strategies-that-work")
+    |'

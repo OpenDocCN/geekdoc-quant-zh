@@ -1,59 +1,83 @@
 - en: RRG Relative Strength [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: RRG相对强度[ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[RRG Relative Strength](#rrg_relative_strength)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[RRG相对强度](#rrg_relative_strength)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[Normalization](#normalization)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[标准化](#normalization)'
 - en: '[JdK RS-Ratio](#jdk_rs-ratio)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[JdK RS-Ratio](#jdk_rs-ratio)'
 - en: '[JdK RS-Momentum](#jdk_rs-momentum)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[JdK RS-Momentum](#jdk_rs-momentum)'
 - en: '[Weekly Versus Daily](#weekly_versus_daily)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[周线对比日线](#weekly_versus_daily)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与SharpCharts一起使用](#using_with_sharpcharts)'
 - en: '[Frequently Asked Questions](#frequently_asked_questions)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[常见问题](#frequently_asked_questions)'
 - en: Introduction
+  id: totrans-11
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: RRG Relative Strength is an indicator pair designed to measure relative performance
     and the momentum of relative performance. JdK RS-Ratio is an indicator used to
     measure the relative performance of one security against another. Its companion,
@@ -64,16 +88,25 @@
     There is another [ChartSchool article](/school/doku.php?id=chart_school:chart_analysis:rrg_charts
     "chart_school:chart_analysis:rrg_charts") detailing their use in Relative Rotation
     Graphs.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: RRG相对强度是一对设计用于衡量相对表现和相对表现动量的指标。JdK RS-Ratio是用于衡量一种证券相对于另一种证券的相对表现的指标。它的伴侣，JdK
+    RS-Momentum衡量RS-Ratio的动量，这意味着它衡量相对表现的动量。RS-Ratio和RS-Momentum被用于相对旋转图（RRGs），但这对指标也可以在SharpCharts上绘制。本文将重点介绍RS-Ratio和RS-Momentum作为SharpCharts上的指标。还有另一篇[ChartSchool文章](/school/doku.php?id=chart_school:chart_analysis:rrg_charts
+    "chart_school:chart_analysis:rrg_charts")详细介绍了它们在相对旋转图中的使用。
 - en: '***Note:** “Relative Rotation Graphs™” and “RRG Charts™” are registered trademarks
     of [RRG Research](https://www.relativerotationgraphs.com "https://www.relativerotationgraphs.com").*'
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: '***注意:** “相对旋转图™”和“RRG图表™”是[RRG Research](https://www.relativerotationgraphs.com
+    "https://www.relativerotationgraphs.com")的注册商标。*'
 - en: Normalization
+  id: totrans-14
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 标准化
 - en: RS-Ratio and RS-Momentum are “normalized”, which means these indicators are
     expressed in the same unit of measure and fluctuate above/below the same level
     (100). This normalization process means RS-Ratio values for different securities
@@ -82,35 +115,49 @@
     the benchmark. The sector with the highest RS-Ratio would show the most relative
     strength, while the sector with the lowest RS-Ratio would show the most relative
     weakness.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: RS-Ratio和RS-Momentum是“标准化”的，这意味着这些指标以相同的计量单位表示，并在相同水平（100）上下波动。这个标准化过程意味着不同证券的RS-Ratio值可以进行比较，只要使用相同的基准。例如，图表分析师可以绘制九个Sector
+    SPDRs的RS-Ratio，并使用S&P 500作为基准。具有最高RS-Ratio的部门将显示最大的相对强度，而具有最低RS-Ratio的部门将显示最大的相对弱势。
 - en: JdK RS-Ratio
+  id: totrans-16
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: JdK RS-Ratio
 - en: RS-Ratio is an indicator that measures the trend for relative performance. Similar
     to the price relative, RS-Ratio uses ratio analysis to compare one security against
     another (usually the benchmark). It is designed to define the trend in relative
     performance and measure the strength of that trend.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: RS-Ratio是一种衡量相对表现趋势的指标。类似于价格相对性，RS-Ratio使用比率分析来比较一种证券与另一种证券（通常是基准）的表现。它旨在定义相对表现的趋势并衡量该趋势的强度。
 - en: The chart below shows the Technology SPDR (XLK) in the main window, the price
     relative (XLK:$SPX ratio) in the middle window and the RRG indicators in the bottom
     window. We will focus on RS-Ratio (red) first. RS-Momentum (green) will be covered
     in the next section.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 下图显示了主窗口中的Technology SPDR（XLK），中间窗口中的价格相对性（XLK:$SPX比率）以及底部窗口中的RRG指标。我们将首先关注RS-Ratio（红色）。RS-Momentum（绿色）将在下一节中介绍。
 - en: '![](../Images/2a0dc50b78fb0963a6c32a93675df51e.jpg)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/2a0dc50b78fb0963a6c32a93675df51e.jpg)'
 - en: RS-Ratio gives chartists a clear tool to define the trend in relative performance.
     This indicator reflects an uptrend in relative performance when above 100 (relative
     strength) and a downtrend in relative performance when below 100 (relative weakness).
     The further the indicator is above 100, the stronger the uptrend in relative performance.
     The further the indicator is below 100, the stronger the downtrend in relative
     performance.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: RS-Ratio 为图表分析师提供了一个清晰的工具来定义相对表现的趋势。当指标高于 100 时（相对强势），反映了相对表现的上升趋势；当指标低于 100
+    时（相对弱势），反映了相对表现的下降趋势。指标越高于 100，相对表现的上升趋势就越强。指标越低于 100，相对表现的下降趋势就越强。
 - en: As with all trend-following indicators, such as moving averages, the trend-following
     model that powers RS-Ratio includes a lag period. This means there will already
     be upward movement in the price relative before RS-Ratio crosses above 100\. Conversely,
@@ -121,11 +168,18 @@
     above 100 until mid-September. This is typical for trend-following indicators
     that are designed to ignore the blips and focus on the trend. The chart below
     shows the Consumer Discretionary SPDR (XLY) with another example.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 与所有追随趋势的指标一样，如移动平均线，驱动 RS-Ratio 的趋势跟踪模型包括滞后期。这意味着在 RS-Ratio 穿过 100 之前，价格相对会有上涨。相反，在
+    RS-Ratio 穿过 100 之前，价格相对会有下降。请注意上图中价格相对（XLK:$SPX 比率）在八月初达到峰值，但 RS-Ratio 直到十月中旬才跌破
+    100。同样，价格相对在七月中旬触底，但 RS-Ratio 直到九月中旬才突破 100。这对于设计忽略波动并专注于趋势的趋势跟踪指标来说是典型的。下图显示了另一个例子，消费者自由
+    SPDR（XLY）。
 - en: '![](../Images/01807eb150ee32efaafc287e0d19ffff.jpg)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/01807eb150ee32efaafc287e0d19ffff.jpg)'
 - en: 'Keep in mind that the values for RS-Ratio can be compared when using the same
     benchmark security. Let''s assume we are comparing relative performance for four
     Sector SPDRs against the S&P 500 and the RS-Ratio values are as follows: XLK=102.04,
@@ -133,18 +187,26 @@
     and this means all four show relative strength (against the S&P 500). Second,
     XLV shows the most relative strength because its RS-Ratio is the highest of the
     four. XLF is the weakest of the four because its RS-Ratio is the lowest.'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 请记住，当使用相同的基准证券时，RS-Ratio 的值可以进行比较。假设我们正在比较四个行业 SPDR 与标普 500 的相对表现，RS-Ratio 的值如下：XLK=102.04，XLI=101.41，XLF=100.2，XLV=103.66。首先，所有四个都有高于
+    100 的 RS-Ratio，这意味着所有四个显示出相对强势（相对于标普 500）。其次，XLV 显示出最强的相对强势，因为它的 RS-Ratio 是四个中最高的。XLF
+    是四个中最弱的，因为它的 RS-Ratio 是最低的。
 - en: JdK RS-Momentum
+  id: totrans-24
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: JdK RS-Momentum
 - en: Before looking at RS-Momentum in detail, let's review the concept behind momentum
     and how it relates to trend. As with price charts, chartists should keep in mind
     that momentum changes course before the trend actually reverses. Not all momentum
     moves, however, result in trend reversals.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 在详细查看 RS-Momentum 之前，让我们回顾一下动量的概念以及它与趋势的关系。与价格图表一样，图表分析师应该记住，动量在趋势实际逆转之前就会改变方向。然而，并非所有动量变化都会导致趋势逆转。
 - en: Consider an example using price and a moving average. Price first moves towards
     the moving average and then crosses the moving average if the move extends. Price,
     however, does not always cross the moving average to signal a trend reversal.
@@ -152,51 +214,76 @@
     moving average because this means momentum is improving. Conservative investors
     would more likely wait for price to move above the moving average because the
     trend has not fully reversed.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 以价格和移动平均线为例。价格首先朝向移动平均线移动，然后在延伸时穿过移动平均线。然而，价格并不总是穿过移动平均线来信号趋势反转。激进的交易者更可能在价格朝向移动平均线移动时建仓，因为这意味着动量正在改善。保守的投资者更可能等待价格上涨到移动平均线之上，因为趋势尚未完全逆转。
 - en: RS-Momentum is an indicator that measures the momentum (rate-of-change) of RS-Ratio.
     As a momentum indicator, it leads RS-Ratio and can be used to anticipate turns
     in RS-Ratio. Typically, RS-Momentum crosses above 100 when RS-Ratio is forming
     a trough and starting to move up. Conversely, RS-Momentum crosses below 100 when
     RS-Ratio is forming a peak and starting to move down.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: RS-Momentum 是一个衡量 RS-Ratio 动量（变化率）的指标。作为一个动量指标，它领先于 RS-Ratio，并可用于预测 RS-Ratio
+    的转折点。通常，当 RS-Ratio 形成低谷并开始上升时，RS-Momentum 会上穿 100。相反，当 RS-Ratio 形成高峰并开始下降时，RS-Momentum
+    会下穿 100。
 - en: The chart below shows the Utilities SPDR (XLU) with RS-Momentum in green and
     RS-Ratio in red. RS-Momentum crossed above 100 in mid-December and held mostly
     above 100 for four weeks. Notice how RS-Ratio bottomed as RS-Momentum moved above
     100 and RS-Ratio crossed above 100 later in January.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面的图表显示了公用事业 SPDR（XLU），绿色表示 RS-Momentum，红色表示 RS-Ratio。RS-Momentum 在十二月中旬上穿 100，并在四周内大部分时间保持在
+    100 以上。请注意，RS-Ratio 在 RS-Momentum 上穿 100 时触底，而 RS-Ratio 在一月下旬后期上穿 100。
 - en: '![](../Images/1c2136a1291063b6fac86347c59630de.jpg)'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/1c2136a1291063b6fac86347c59630de.jpg)'
 - en: Keep in mind that RS-Momentum is an indicator of an indicator (RS-Ratio). Furthermore,
     it is a momentum indicator and that means it will move above/below the 100 level
     often. Chartists may want to focus on sustained moves above/below 100 to anticipate
     a similar cross in RS-Ratio.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 请记住，RS-Momentum 是 RS-Ratio 的指标。此外，它是一个动量指标，这意味着它经常会在 100 以上/以下波动。图表分析师可能希望专注于持续在
+    100 以上/以下的波动，以预测 RS-Ratio 中类似的交叉。
 - en: The chart below shows the Biotech SPDR (XBI) with two examples highlighting
     the relationship between RS-Momentum and RS-Ratio. The gray shading shows RS-Momentum
     below 100 for four of six weeks in February-March. Even though the indicator popped
     above 100 briefly, this pop did not last long and quickly moved back below 100\.
     This was a sign that momentum was turning negative for RS-Ratio and RS-Ratio ultimately
     crossed below 100 in the second half of March.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面的图表显示了生物科技 SPDR（XBI），突出显示了 RS-Momentum 和 RS-Ratio 之间关系的两个示例。灰色阴影显示了二月至三月六周中有四周
+    RS-Momentum 低于 100。尽管指标短暂上升到 100 以上，但这种上升并没有持续很长时间，很快又回落到 100 以下。这表明 RS-Ratio
+    的动量转为负面，最终在三月下半月 RS-Ratio 下穿 100。
 - en: '![](../Images/eb9a2b0fa5088363104d13e9c54c5335.jpg)'
+  id: totrans-32
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/eb9a2b0fa5088363104d13e9c54c5335.jpg)'
 - en: The blue shading shows RS-Momentum above 100 from mid-April until late May.
     RS-Ratio bottomed as RS-Momentum moved above 100, but did not cross above 100
     until the end of May. The cross above 100 in RS-Ratio, by the way, came just before
     the early June surge in XBI.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 蓝色阴影显示了从四月中旬到五月下旬 RS-Momentum 在 100 以上的情况。RS-Ratio 在 RS-Momentum 超过 100 时触底，但直到五月底才上穿
+    100。顺便说一句，RS-Ratio 在上穿 100 之前，正好在 XBI 于六月初大幅上涨之前。
 - en: Weekly Versus Daily
+  id: totrans-34
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 周线与日线
 - en: As with regular bar charts, the chosen timeframe can affect RS-Ratio and result
     in different conclusions. In the example below, the left chart shows two months
     of daily data for the S&P 500, and the two-month trend is down. The chart on the
@@ -204,11 +291,15 @@
     shaded area highlights the two months shown on the daily chart to put this decline
     into perspective. Clearly, this is a short-term downtrend (pullback) within a
     long-term uptrend.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 与常规柱状图一样，选择的时间范围会影响 RS-Ratio，并导致不同的结论。在下面的示例中，左侧图表显示了标普500指数两个月的日常数据，两个月的趋势是下降的。右侧图表显示了一年的周数据，总体趋势明显向上。黄色阴影区域突出显示了日常图表上显示的两个月数据，以便将这种下降放入透视中。显然，这是长期上升趋势中的短期下降趋势（回撤）。
 - en: '![](../Images/b0be3ac4a89fc5eb7a961ac87f75e3f6.jpg)'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/b0be3ac4a89fc5eb7a961ac87f75e3f6.jpg)'
 - en: Now let's look at examples using weekly and daily charts for RS-Ratio and RS-Momentum.
     The first chart uses a weekly timeframe and both indicators are below 100, which
     indicates a downtrend in relative performance and negative momentum. This weekly
@@ -216,30 +307,41 @@
     both indicators are above 100, which indicates an uptrend in relative performance
     and positive momentum. This daily chart captures a smaller trend than the weekly
     chart.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们看看使用周线和日线图表的 RS-Ratio 和 RS-Momentum 的示例。第一个图表使用周时间范围，两个指标都低于 100，表明相对表现处于下降趋势且动量为负。这周线图表捕捉了长期趋势。第二个图表使用日时间范围，两个指标都高于
+    100，表明相对表现处于上升趋势且动量为正。这日线图表捕捉了比周线图表更小的趋势。
 - en: '![](../Images/1660cf159293a87aa73cc050e704b22d.jpg) ![](../Images/97b1216f8ef8cf70d0c2c8b736cce38c.jpg)'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/1660cf159293a87aa73cc050e704b22d.jpg) ![](../Images/97b1216f8ef8cf70d0c2c8b736cce38c.jpg)'
 - en: If we assume that the long-term trend is dominant here, then we can also infer
     that the long-term downtrend in relative performance will ultimately trump the
     short-term uptrend in relative performance. In other words, the uptrend in relative
     performance on the daily chart is a mere blip on the weekly chart and not enough
     to reverse the bigger downtrend in relative performance.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们假设长期趋势在这里占主导地位，那么我们也可以推断长期相对表现的下降趋势最终将战胜短期相对表现的上升趋势。换句话说，日线图上的相对表现上升趋势只是周线图上的一个小波动，不足以扭转相对表现的更大下降趋势。
 - en: As with all aspects of technical analysis, it is a very good habit to study
     different timeframes to get a complete picture. The Telecom sector is clearly
     underperforming on the weekly timeframe and momentum is negative. The upturn in
     RS-Momentum shows a decrease in negative momentum on the weekly timeframe, and
     this is reflected on the daily chart where RS-Ratio and RS-Momentum moved above
     100.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 与技术分析的所有方面一样，研究不同的时间框架以获得完整的图片是一个非常好的习惯。电信部门在周线图上明显表现不佳，动量为负。RS-Momentum的上升显示了在周线图上负动量的减少，这反映在日线图上，其中RS-Ratio和RS-Momentum移动超过100。
 - en: Conclusions
+  id: totrans-41
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: RS-Ratio and RS-Momentum give chartists a four-pronged approach for measuring
     relative performance. First, RS-Ratio measures relative performance against another
     security, usually the benchmark. At its simplest, a security shows relative strength
@@ -251,12 +353,16 @@
     can be used to anticipate turns in RS-Ratio. As with all indicators, chartists
     should combine relative performance with other technical tools to get a complete
     picture.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: RS-Ratio和RS-Momentum为图表分析师提供了一个四方面的方法来衡量相对表现。首先，RS-Ratio根据另一个证券（通常是基准）来衡量相对表现。简单来说，当证券高于100时显示相对强势，低于100时显示相对弱势。其次，RS-Ratio值告诉我们相对强势或相对弱势的程度。值越高于100，相对强势越大。值越低于100，相对弱势越大。第三，图表分析师可以比较RS-Ratio值以确定组内最强的证券。第四，RS-Momentum衡量RS-Ratio的动量，这可以用来预测RS-Ratio的转折点。与所有指标一样，图表分析师应该将相对表现与其他技术工具结合起来，以获得完整的图片。
 - en: Using with SharpCharts
+  id: totrans-43
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用SharpCharts
 - en: RS-Ratio and RS-Momentum are available as indicators in SharpCharts. They are
     grouped together as “RRG Relative Strength” in the indicator dropdown list. Once
     selected, users can set the benchmark security by entering its symbol in the “parameter”
@@ -267,19 +373,31 @@
     click update. [Click here](http://stockcharts.com/h-sc/ui?s=XLY&p=D&yr=0&mn=6&dy=0&id=p07575376366&a=399188908
     "http://stockcharts.com/h-sc/ui?s=XLY&p=D&yr=0&mn=6&dy=0&id=p07575376366&a=399188908")
     for a live example of RRG Relative Strength in action.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: RS-Ratio和RS-Momentum在SharpCharts中作为指标可用。它们在指标下拉列表中被分组为“RRG相对强度”。一旦选择，用户可以通过在“参数”框中输入其符号来设置基准证券。下面的示例显示了消费者自由支出SPDR（XLY）与标普500作为基准的情况。请记住，任何符号都可以用来衡量相对表现。如果您想比较消费者自由支出SPDR（XLY）与技术SPDR（XLK）的表现，请简单地输入XLK作为参数并单击更新。[点击这里](http://stockcharts.com/h-sc/ui?s=XLY&p=D&yr=0&mn=6&dy=0&id=p07575376366&a=399188908
+    "http://stockcharts.com/h-sc/ui?s=XLY&p=D&yr=0&mn=6&dy=0&id=p07575376366&a=399188908")
+    查看RRG相对强度实际运行的实例。
 - en: '![](../Images/cd94b164ca4ebceabb5fce240ff2ccfa.jpg)'
+  id: totrans-45
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/cd94b164ca4ebceabb5fce240ff2ccfa.jpg)'
 - en: Frequently Asked Questions
+  id: totrans-46
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 常见问题
 - en: '**Q: How much data is needed to plot RRG?**'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: '**问：绘制RRG需要多少数据？**'
 - en: 'A: You need about 50 data points minimum, so more than 50 days of data for
     a daily RRG. For weekly, you''ll need roughly 250 days of data.'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 答：您至少需要大约50个数据点，因此对于每日RRG，您需要超过50天的数据。对于每周RRG，您将需要大约250天的数据。

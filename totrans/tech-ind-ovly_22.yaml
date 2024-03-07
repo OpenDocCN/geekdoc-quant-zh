@@ -1,87 +1,121 @@
 - en: Chaikin Money Flow [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 查金资金流量 [图表学校]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Chaikin Money Flow](#chaikin_money_flow)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[查金资金流量](#chaikin_money_flow)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[Calculation](#calculation)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算](#calculation)'
 - en: '[Interpretation](#interpretation)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[解释](#interpretation)'
 - en: '[Buying/Selling Pressure](#buying_selling_pressure)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[买入/卖出压力](#buying_selling_pressure)'
 - en: '[Calculation Quirk](#calculation_quirk)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[计算特点](#calculation_quirk)'
 - en: '[Conclusions](#conclusions)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[结论](#conclusions)'
 - en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[与SharpCharts一起使用](#using_with_sharpcharts)'
 - en: '[Suggested Scans](#suggested_scans)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[建议的扫描](#suggested_scans)'
 - en: '[Chaikin Money Flow Turns Positive and RSI Moves Above 50](#chaikin_money_flow_turns_positive_and_rsi_moves_above_50)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[查金资金流量转为正值且RSI移动超过50](#chaikin_money_flow_turns_positive_and_rsi_moves_above_50)'
 - en: '[Chaikin Money Flow Turns Negative and RSI Moves Below 45](#chaikin_money_flow_turns_negative_and_rsi_moves_below_45)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[查金资金流量转为负值且RSI移动低于45](#chaikin_money_flow_turns_negative_and_rsi_moves_below_45)'
 - en: '[Further Study](#further_study)'
+  id: totrans-13
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[进一步研究](#further_study)'
 - en: '[Additional Resources](#additional_resources)'
+  id: totrans-14
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[其他资源](#additional_resources)'
 - en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  id: totrans-15
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[股票与商品杂志文章](#stocks_commodities_magazine_articles)'
 - en: Introduction
+  id: totrans-16
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: Developed by Marc Chaikin, Chaikin Money Flow measures the amount of Money Flow
     Volume over a specific period. Money Flow Volume forms the basis for the Accumulation
     Distribution Line. Instead of a cumulative total of Money Flow Volume, Chaikin
@@ -90,22 +124,30 @@
     like an oscillator. Chartists weigh the balance of buying or selling pressure
     with the absolute level of Chaikin Money Flow. Chartists can also look for crosses
     above or below the zero line to identify changes on money flow.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 由马克·查金（Marc Chaikin）开发，查金资金流量（Chaikin Money Flow）衡量了特定时期内的资金流量量。资金流量量构成了积累分布线的基础。查金资金流量不是资金流量量的累积总和，而是简单地对特定回顾期内的资金流量量进行求和，通常为20或21天。所得指标像振荡器一样在零线上下波动。图表分析师根据查金资金流量的绝对水平权衡买入或卖出压力的平衡。图表分析师还可以寻找在零线上方或下方的交叉点，以识别资金流动的变化。
 - en: Calculation
+  id: totrans-18
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算
 - en: There are four steps to calculating Chaikin Money Flow (CMF). The example below
     is based on 20-periods. First, calculate the Money Flow Multiplier for each period.
     Second, multiply this value by the period's volume to find Money Flow Volume.
     Third, sum Money Flow Volume for the 20 periods and divide by the 20-period sum
     of volume.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 计算查金资金流量（CMF）有四个步骤。下面的示例基于20个时期。首先，计算每个时期的资金流量乘数。其次，将此值乘以该时期的交易量，以找到资金流量量。第三，对20个时期的资金流量量进行求和，并除以20个时期的交易量总和。
 - en: '[PRE0]'
+  id: totrans-20
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: Each period's Money Flow Volume depends on the Money Flow Multiplier. This multiplier
     is positive when the close is in the upper a half of the period's high-low range
     and negative when the close is in the lower half. The multiplier equals 1 when
@@ -113,12 +155,16 @@
     multiplier adjusts the amount of volume that ends up in Money Flow Volume. Volume
     is in effect reduced unless the Money Flow Multiplier is at its extremes (+1 or
     -1).
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 每个时期的资金流量量取决于资金流量乘数。当收盘价位于该时期最高-最低范围的上半部时，该乘数为正；当收盘价位于下半部时，该乘数为负。当收盘价等于最高价时，乘数为1；当收盘价等于最低价时，乘数为-1。通过这种方式，乘数调整了最终进入资金流量量的量。除非资金流量乘数处于极端值（+1或-1），否则实际上会减少交易量。
 - en: '![Chart 1  -  Chaikin Money Flow](../Images/4f96a964b17239a0eb9ab8287749a875.jpg
     "Chart 1  -  Chaikin Money Flow")'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![图表1 - 查金资金流量](../Images/4f96a964b17239a0eb9ab8287749a875.jpg "图表1 - 查金资金流量")'
 - en: The table above shows some examples using daily data for Research in Motion
     (RIMM). Notice how the multiplier was near +1 on 5-Jan when the stock closed near
     its high. The multiplier dipped to -.97 on 18-Jan when the stock closed near its
@@ -126,40 +172,60 @@
     of its high-low range on 29-Dec. [Click here](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:chaikin_money_flow_cmf:cs-cmf.xls
     "chart_school:technical_indicators_and_overlays:chaikin_money_flow_cmf:cs-cmf.xls
     (33 KB)") for a calculation example of Chaikin Money Flow in an Excel Spreadsheet.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 上表显示了使用 Research in Motion（RIMM）的每日数据的一些示例。请注意，当股票在 1 月 5 日收盘时，乘数接近 +1。当股票在
+    1 月 18 日收盘时，乘数下降到 -0.97。当股票在 12 月 29 日收盘时，乘数接近零（-0.07），股票收于其高低范围的中点附近。[点击这里](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:chaikin_money_flow_cmf:cs-cmf.xls
+    "chart_school:technical_indicators_and_overlays:chaikin_money_flow_cmf:cs-cmf.xls
+    (33 KB)") 查看 Excel 电子表格中 Chaikin Money Flow 的计算示例。
 - en: Interpretation
+  id: totrans-24
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 解释
 - en: Chaikin Money Flow (CMF) is an oscillator that fluctuates between -1 and +1\.
     Rarely, if ever, will the indicator reach these extremes. It would take 20 consecutive
     closes on the high (low) for 20-day Chaikin Money Flow to reach +1 (-1). Typically,
     this oscillator fluctuates between -0.50 and +0.50 with zero as the centerline.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: Chaikin Money Flow（CMF）是在 -1 和 +1 之间波动的振荡器。极少情况下，指标会达到这些极端值。要使 20 天 Chaikin
+    Money Flow 达到 +1（-1），需要连续 20 次收盘在高位（低位）。通常，这个振荡器在 -0.50 和 +0.50 之间波动，以零为中心线。
 - en: '![Chart 2  -  Chaikin Money Flow](../Images/84cabf5a30f42df1866f979d62d26555.jpg
     "Chart 2  -  Chaikin Money Flow")'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 2  -  Chaikin Money Flow](../Images/84cabf5a30f42df1866f979d62d26555.jpg
+    "图表 2  -  Chaikin Money Flow")'
 - en: Chaikin Money Flow measures buying and selling pressure for a given period of
     time. A move into positive territory indicates buying pressure, while a move into
     negative territory indicates selling pressure. Chartists can use the absolute
     value of Chaikin Money Flow to confirm or question the price action of the underlying.
     Positive CMF would confirm an uptrend, but negative CMF would call into question
     the strength behind an uptrend. The reverse holds true for downtrends.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: Chaikin Money Flow 衡量了一段时间内的买卖压力。进入正区域表示买盘压力，而进入负区域表示卖盘压力。图表分析师可以使用 Chaikin
+    Money Flow 的绝对值来确认或质疑基础资产的价格走势。正 CMF 将确认上升趋势，但负 CMF 将质疑上升趋势背后的力量。对于下降趋势，情况相反。
 - en: Buying/Selling Pressure
+  id: totrans-28
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 买入/卖出压力
 - en: Chaikin Money Flow can be used to define a general buying or selling bias simply
     with positive or negative values. The indicator oscillates above/below the zero
     line. Generally, buying pressure is stronger when the indicator is positive and
     selling pressure is stronger when the indicator is negative.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: Chaikin Money Flow 可以用正值或负值简单地定义一般的买入或卖出偏见。该指标在零线上方/下方振荡。一般来说，当指标为正时，买盘压力更强，当指标为负时，卖盘压力更强。
 - en: While this zero line cross seems simple enough, the reality is much choppier.
     Chaikin Money Flow sometimes only briefly crosses the zero line with a move that
     turns the indicator barely positive or negative. There is no follow through and
@@ -168,24 +234,35 @@
     (+0.05) and the bearish threshold a little below zero (-0.05). These thresholds
     will not entirely eliminate bad signals, but can help reduce whipsaws and filter
     out weaker signals.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然这个零线交叉看起来很简单，但实际情况要复杂得多。 Chaikin Money Flow 有时只是短暂地穿过零线，指标的变化几乎没有积极或消极的后续。没有跟进，这个零线交叉最终变成了一个鞭炮（错误信号）。图表分析师可以通过设置牛市阈值略高于零（+0.05）和熊市阈值略低于零（-0.05）来使用缓冲区来过滤这些信号。这些阈值不会完全消除错误信号，但可以帮助减少鞭炮并过滤掉较弱的信号。
 - en: '![Chart 2  -  Chaikin Money Flow](../Images/05718bc39a9021d21080dd33a7760b4e.jpg
     "Chart 2  -  Chaikin Money Flow")'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 2  -  Chaikin Money Flow](../Images/05718bc39a9021d21080dd33a7760b4e.jpg
+    "图表 2  -  Chaikin Money Flow")'
 - en: The chart above shows Freeport McMoran (FCX) with 20-day Chaikin Money Flow
     in the indicator window. There were at least 10 crosses of the zero line between
     February and December 2010\. Adding a small buffer greatly reduced the number
     of bullish and bearish signals. A move above +0.05 was considered bullish, while
     a move below -0.05 was considered bearish. There were only three signals. While
     these signals will come a little later, it may be worth it to reduce whipsaw.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 上面的图表显示了 Freeport McMoran (FCX) 的 20 天 Chaikin Money Flow 在指标窗口中。在 2010 年 2
+    月至 12 月之间至少有 10 次零线交叉。增加一个小缓冲区大大减少了多头和空头信号的数量。移动超过 +0.05 被视为多头，而移动低于 -0.05 被视为空头。只有三个信号。虽然这些信号会稍晚一些出现，但减少误导可能是值得的。
 - en: '![Chart 3  -  Chaikin Money Flow](../Images/13932b381e4912f0a447d9c75e3e8d9b.jpg
     "Chart 3  -  Chaikin Money Flow")'
+  id: totrans-33
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 3  -  Chaikin Money Flow](../Images/13932b381e4912f0a447d9c75e3e8d9b.jpg
+    "图表 3  -  Chaikin Money Flow")'
 - en: The chart for Harley Davidson (HOG) shows a few good signals and a whipsaw with
     the May bounce. CMF moved above +0.05 for a few days, but this move failed to
     hold and the indicator broke back below -0.05 in early June. Whipsaws are going
@@ -193,12 +270,19 @@
     turned bullish in July and stayed bullish the rest of the year. Notice that HOG
     formed a falling wedge that retraced just over 62% in August, when CMF was still
     in bull mode. This pullback offered a second chance to partake in the CMF signal.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: Harley Davidson (HOG) 的图表显示了一些良好的信号和五月反弹的误导。CMF 在几天内上升到 +0.05 以上，但这个动作未能持续，指标在六月初再次跌破
+    -0.05。误导将会发生，特别是在波动期间或趋势变平时。CMF 在七月转为多头，并在今年的其余时间保持多头。请注意，HOG 形成了一个下降楔形，在八月回撤了超过
+    62%，而此时 CMF 仍处于多头模式。这次回撤提供了第二次参与 CMF 信号的机会。
 - en: '![Chart 4  -  Chaikin Money Flow](../Images/7621610bd32ba1b0a59609743acfa831.jpg
     "Chart 4  -  Chaikin Money Flow")'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 4  -  Chaikin Money Flow](../Images/7621610bd32ba1b0a59609743acfa831.jpg
+    "图表 4  -  Chaikin Money Flow")'
 - en: Chaikin Money Flow is not suited for all securities. The chart above shows P.F.
     Chang (PFCB) with some 18 crosses above +0.05 or below -0.05\. Basing CMF signals
     on these crosses resulted in one whipsaw after another. It is important to analyze
@@ -206,12 +290,17 @@
     security. PFCB exhibits some trend, but price action within this trend is choppy
     and money flow cannot maintain a positive or negative bias. It would be better
     to find a different indicator for this stocks.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: Chaikin Money Flow 并不适用于所有证券。上面的图表显示了 P.F. Chang (PFCB) 的一些 18 次在 +0.05 或 -0.05
+    以上的交叉。基于这些交叉来制定 CMF 信号导致了一次又一次的误导。分析基本价格趋势和特定证券的指标特征是很重要的。PFCB 表现出一些趋势，但在这个趋势内的价格波动很大，资金流动无法保持正面或负面偏向。最好为这些股票找到不同的指标。
 - en: Calculation Quirk
+  id: totrans-37
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 计算怪癖
 - en: The Money Flow Multiplier in Chaikin Money Flow focuses on the level of the
     close relative to the high-low range for a given period (day, week, month). With
     this formula, a security could gap down and close significantly lower, but the
@@ -221,27 +310,42 @@
     on high volume, Chaikin Money Flow rose because the Money Flow Multiplier was
     positive and volume was well above average. Ignoring the change from close-to-close
     means that Chaikin Money Flow can sometimes disconnect with price.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: Chaikin Money Flow 中的资金流乘数关注收盘价相对于给定期间（日、周、月）的高低范围的水平。根据这个公式，一支证券可能会跳空下跌并收盘明显较低，但如果收盘价高于高低范围的中点，资金流乘数将上升。下面的图表显示了
+    Clorox (CLX) 的大幅跳空下跌，收盘价接近当天的高低范围顶部。尽管股价在高交易量下急剧下跌，但由于资金流乘数为正且交易量远高于平均水平，Chaikin
+    Money Flow 上升。忽略从收盘到收盘的变化意味着 Chaikin Money Flow 有时会与价格脱节。
 - en: '![Chart 5  -  Chaikin Money Flow](../Images/f8c8017066653f851b4cb536e3f37936.jpg
     "Chart 5  -  Chaikin Money Flow")'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 5  -  Chaikin Money Flow](../Images/f8c8017066653f851b4cb536e3f37936.jpg
+    "图表 5  -  Chaikin Money Flow")'
 - en: The opposite can happen when a security gaps up and closes near the low for
     the day. The chart below shows Travellers (TRV) gapping up and closing over 1%
     higher on the day. Despite this jump, the close was near the low for the day,
     which insured a Money Flow Multiplier near -1\. As a result, almost all of the
     day's volume was counted as negative money flow and the Chaikin Money Flow fell.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 当一只证券跳空上涨并且收盘接近当天的低点时，相反的情况可能发生。下图显示了Travelers（TRV）在当天跳空上涨并收盘超过1%。尽管有这一跳升，但收盘接近当天的低点，这导致了一个接近-1的资金流乘数。因此，几乎所有的交易量都被计为负资金流，Chaikin
+    Money Flow 下降了。
 - en: '![Chart 6  -  Chaikin Money Flow](../Images/fe882824fad9da1afa3ad218abd98050.jpg
     "Chart 6  -  Chaikin Money Flow")'
+  id: totrans-41
   prefs: []
   type: TYPE_IMG
+  zh: '![Chart 6  -  Chaikin Money Flow](../Images/fe882824fad9da1afa3ad218abd98050.jpg
+    "Chart 6  -  Chaikin Money Flow")'
 - en: Conclusions
+  id: totrans-42
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: Chaikin Money Flow is an oscillator that measures buying and selling pressure
     over a set period of time. At its most basic, money flow favors the bulls when
     CMF is positive and the bears when negative. Chartists looking for quicker money
@@ -257,12 +361,20 @@
     "chart_school:technical_indicators:accumulation_distribution_line") and the [Chaikin
     Oscillator](/school/doku.php?id=chart_school:technical_indicators:chaikin_oscillator
     "chart_school:technical_indicators:chaikin_oscillator").
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: Chaikin Money Flow 是一种振荡器，用于衡量一段时间内的买入和卖出压力。在最基本的情况下，当CMF为正时，资金流向看涨，当为负时看跌。寻找更快资金流向变化的图表分析师可以寻找看涨和看跌的背离。不过要小心。即使存在看涨背离，卖出压力仍然占优势。这种看涨背离只是显示了较少的卖出压力。要指示实际的买入压力，需要进入正区域。作为资金流振荡器，CMF可以与纯价格振荡器一起使用，例如MACD或[RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi
+    "chart_school:technical_indicators:relative_strength_index_rsi")。与所有指标一样，Chaikin
+    Money Flow 不应作为独立指标使用。马克·查金还开发了[积聚分配线](/school/doku.php?id=chart_school:technical_indicators:accumulation_distribution_line
+    "chart_school:technical_indicators:accumulation_distribution_line")和[查金振荡器](/school/doku.php?id=chart_school:technical_indicators:chaikin_oscillator
+    "chart_school:technical_indicators:chaikin_oscillator")。
 - en: Using with SharpCharts
+  id: totrans-44
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用 SharpCharts
 - en: Chaikin Money Flow can be set as an indicator above or below the main window.
     Because it is shown in area format, it is not really suited for placement behind
     the security's price plot. Once the indicator is chosen from the dropdown list,
@@ -272,104 +384,163 @@
     longer Chaikin Money Flow indicator on top of the other. Periods of overlap show
     when money flow is strong for two different periods. [Click here for a live example](http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=8&dy=0&id=p77394964602&listNum=30&a=223019825
     "http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=8&dy=0&id=p77394964602&listNum=30&a=223019825").
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: Chaikin Money Flow 可以设置为主窗口上方或下方的指标。由于它以区域格式显示，因此不适合放置在证券价格图后面。一旦从下拉列表中选择指标，就会出现默认参数（20）。这些参数可以调整以增加或减少灵敏度。用户可以点击“高级选项”添加水平线、移动平均线或其他叠加。图表分析师甚至可以在其他指标上方绘制第二个更长的Chaikin
+    Money Flow指标。重叠期显示了两个不同期间的资金流强劲。[点击这里查看实时示例](http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=8&dy=0&id=p77394964602&listNum=30&a=223019825
+    "http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=8&dy=0&id=p77394964602&listNum=30&a=223019825")。
 - en: '![Chart 7  -  Chaikin Money Flow](../Images/b48cb1392a499fc33cf3ba27363f8ed6.jpg
     "Chart 7  -  Chaikin Money Flow")'
+  id: totrans-46
   prefs: []
   type: TYPE_IMG
+  zh: '![Chart 7  -  Chaikin Money Flow](../Images/b48cb1392a499fc33cf3ba27363f8ed6.jpg
+    "Chart 7  -  Chaikin Money Flow")'
 - en: '![SharpCharts  -  Chaikin Money Flow](../Images/7f77bf110b389674d4ec4987eca8780e.jpg
     "SharpCharts  -  Chaikin Money Flow")'
+  id: totrans-47
   prefs: []
   type: TYPE_IMG
+  zh: '![SharpCharts  -  Chaikin Money Flow](../Images/7f77bf110b389674d4ec4987eca8780e.jpg
+    "SharpCharts  -  Chaikin Money Flow")'
 - en: Suggested Scans
+  id: totrans-48
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 建议的扫描
 - en: Chaikin Money Flow Turns Positive and RSI Moves Above 50
+  id: totrans-49
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: Chaikin Money Flow 转为正值，RSI 上升至 50 以上
 - en: This scan starts with a base of stocks that are averaging at least $10 in price
     and 100,000 in daily volume over the last 60 days. Accumulation and buying pressure
     is identified when Chaikin Money Flow moves into positive territory. Price momentum
     confirms when RSI moves above 50, its centerline. This scan is meant as a starting
     point for further analysis and due diligence.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个扫描从股价至少为$10且过去60天日均交易量为100,000的股票开始。当查金货币流指标进入正区时，会识别出积累和买入压力。当相对强弱指标（RSI）上穿50，即其中线时，价格动量得到确认。这个扫描旨在作为进一步分析和尽职调查的起点。
 - en: '[PRE1]'
+  id: totrans-51
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: Chaikin Money Flow Turns Negative and RSI Moves Below 45
+  id: totrans-52
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 查金货币流指标转为负值，RSI下穿45
 - en: This scan starts with a base of stocks that are averaging at least $10 in price
     and 100,000 in daily volume over the last 60 days. Distribution and selling pressure
     are identified when Chaikin Money Flow moves into negative territory. Price momentum
     confirms when RSI moves below 50, its centerline. This scan is meant as a starting
     point for further analysis and due diligence.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个扫描从股价至少为$10且过去60天日均交易量为100,000的股票开始。当查金货币流指标进入负区时，会识别出分销和卖出压力。当相对强弱指标（RSI）下穿50，即其中线时，价格动量得到确认。这个扫描旨在作为进一步分析和尽职调查的起点。
 - en: '[PRE2]'
+  id: totrans-54
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: For more details on the syntax to use for Chaikin Money Flow scans, please see
     our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#chaikin_money_flow_cmf
     "http://stockcharts.com/docs/doku.php?id=scans:indicators#chaikin_money_flow_cmf")
     in the Support Center.
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关查金货币流扫描的语法详细信息，请参阅我们支持中心的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#chaikin_money_flow_cmf
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#chaikin_money_flow_cmf")。
 - en: '**Note**: For the purposes of scanning, daily volume data is incomplete during
     the trading day. When running scans with volume-based indicators like CMF, be
     sure to base the scan on the “Last Market Close.” Examples of other volume-based
     indicators include Accumulation/Distribution, On Balance Volume, and the PVO.'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意**：出于扫描目的，交易日内的日交易量数据是不完整的。在运行基于交易量的指标（如CMF）的扫描时，请确保基于“上次市场收盘价”。其他基于交易量的指标的示例包括积累/分布指标、成交量平衡指标和PVO。'
 - en: Further Study
+  id: totrans-57
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 进一步研究
 - en: This book covers it all with explanations that are simple and clear. Murphy
     covers most the major charts patterns and indicators. A complete chapter is devoted
     to understanding volume and open interest.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 这本书通过简单清晰的解释涵盖了所有内容。墨菲涵盖了大部分主要的图表模式和指标。有一个完整的章节专门讨论了理解成交量和未平仓合约。
 - en: '| **Technical Analysis of the Financial Markets** John J. Murphy |'
+  id: totrans-59
   prefs: []
   type: TYPE_TB
+  zh: '| **金融市场技术分析** 约翰·J·墨菲 |'
 - en: '| [![](../Images/e00f9b0f57a7325646647a118f3ebe9e.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
     "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
     |'
+  id: totrans-60
   prefs: []
   type: TYPE_TB
+  zh: '| [![](../Images/e00f9b0f57a7325646647a118f3ebe9e.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    |'
 - en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
     "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
     |'
+  id: totrans-61
   prefs: []
   type: TYPE_TB
+  zh: '| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    |'
 - en: '* * *'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: '* * *'
 - en: Additional Resources
+  id: totrans-63
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 其他资源
 - en: Stocks & Commodities Magazine Articles
+  id: totrans-64
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 股票与商品杂志文章
 - en: '**[Chaikin''s Money Flow by Christopher Narcouzi](http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C08\072CHA.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C08\072CHA.pdf")**'
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[查金货币流指标（作者：克里斯托弗·纳尔库齐）](http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C08\072CHA.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C08\072CHA.pdf")**'
 - en: July 2000 - Stocks & Commodities
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 2000年7月 - 股票与商品
 - en: '**[Comparing Seven Money Flow Indicators by Markos Katsanos](http://stockcharts.com/h-mem/tascredirect.html?artid=\V29\C07\110KATS.pdf
     "http://stockcharts.com/h-mem/tascredirect.html?artid=\V29\C07\110KATS.pdf")**'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[比较七种货币流指标（作者：马科斯·卡特萨诺斯）](http://stockcharts.com/h-mem/tascredirect.html?artid=\V29\C07\110KATS.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V29\C07\110KATS.pdf")**'
 - en: Jun 2011 - Stocks & Commodities
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 2011年6月 - 股票与商品

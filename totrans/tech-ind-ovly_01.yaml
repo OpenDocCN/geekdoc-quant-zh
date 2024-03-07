@@ -1,126 +1,174 @@
 - en: Introduction to Technical Indicators and Oscillators [ChartSchool]
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 技术指标和振荡器简介 [ChartSchool]
 - en: Table of Contents
+  id: totrans-1
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Introduction to Technical Indicators and Oscillators](#introduction_to_technical_indicators_and_oscillators)'
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[技术指标和振荡器简介](#introduction_to_technical_indicators_and_oscillators)'
 - en: '[Introduction](#introduction)'
+  id: totrans-3
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[介绍](#introduction)'
 - en: '[What Is a Technical Indicator?](#what_is_a_technical_indicator)'
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[什么是技术指标？](#what_is_a_technical_indicator)'
 - en: '[What Does a Technical Indicator Offer?](#what_does_a_technical_indicator_offer)'
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[技术指标提供了什么？](#what_does_a_technical_indicator_offer)'
 - en: '[Why Use Indicators?](#why_use_indicators)'
+  id: totrans-6
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[为什么使用指标？](#why_use_indicators)'
 - en: '[Tips for Using Indicators](#tips_for_using_indicators)'
+  id: totrans-7
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[使用指标的技巧](#tips_for_using_indicators)'
 - en: '[Leading Indicators](#leading_indicators)'
+  id: totrans-8
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[领先指标](#leading_indicators)'
 - en: '[Momentum Oscillators](#momentum_oscillators)'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[动量振荡器](#momentum_oscillators)'
 - en: '[Benefits and Drawbacks of Leading Indicators](#benefits_and_drawbacks_of_leading_indicators)'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[领先指标的优缺点](#benefits_and_drawbacks_of_leading_indicators)'
 - en: '[Lagging Indicators](#lagging_indicators)'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[滞后指标](#lagging_indicators)'
 - en: '[Benefits and Drawbacks of Lagging Indicators](#benefits_and_drawbacks_of_lagging_indicators)'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[滞后指标的优缺点](#benefits_and_drawbacks_of_lagging_indicators)'
 - en: '[The Challenge of Indicators](#the_challenge_of_indicators)'
+  id: totrans-13
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[指标的挑战](#the_challenge_of_indicators)'
 - en: '[Oscillator Types](#oscillator_types)'
+  id: totrans-14
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[振荡器类型](#oscillator_types)'
 - en: '[Centered Oscillators](#centered_oscillators)'
+  id: totrans-15
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[中心化振荡器](#centered_oscillators)'
 - en: '[Banded Oscillators](#banded_oscillators)'
+  id: totrans-16
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[带状振荡器](#banded_oscillators)'
 - en: '[Pros and Cons of Centered and Banded Oscillators](#pros_and_cons_of_centered_and_banded_oscillators)'
+  id: totrans-17
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[中心化和带状振荡器的优缺点](#pros_and_cons_of_centered_and_banded_oscillators)'
 - en: '[Oscillator Signals](#oscillator_signals)'
+  id: totrans-18
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[振荡器信号](#oscillator_signals)'
 - en: '[Positive and Negative Divergences](#positive_and_negative_divergences)'
+  id: totrans-19
   prefs:
   - PREF_IND
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[正向和负向背离](#positive_and_negative_divergences)'
 - en: '[Overbought and Oversold Extremes](#overbought_and_oversold_extremes)'
+  id: totrans-20
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[超买和超卖极端](#overbought_and_oversold_extremes)'
 - en: '[Centerline Crossovers](#centerline_crossovers)'
+  id: totrans-21
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[中线交叉](#centerline_crossovers)'
 - en: '[Pros and Cons of Oscillator Signals](#pros_and_cons_of_oscillator_signals)'
+  id: totrans-22
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[振荡器信号的优缺点](#pros_and_cons_of_oscillator_signals)'
 - en: Introduction
+  id: totrans-23
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 介绍
 - en: This article is designed to introduce the concept of technical indicators and
     explain how to use them in your analysis. We will shed light on the difference
     between **leading** and **lagging indicators**, as well as look into the benefits
@@ -128,20 +176,27 @@
     With this in mind, we will also show how to read oscillators and explain how signals
     are derived. Later we will turn our focus to specific technical indicators and
     provide examples of signals in action.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 本文旨在介绍技术指标的概念，并解释如何在分析中使用它们。我们将阐明**领先**和**滞后指标**之间的区别，以及探讨其优缺点。许多流行的指标，如果不是大多数，都显示为**振荡器**。基于此，我们还将展示如何阅读振荡器，并解释信号是如何产生的。稍后，我们将把重点转向特定的技术指标，并提供信号实例。
 - en: What Is a Technical Indicator?
+  id: totrans-25
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 什么是技术指标？
 - en: '**A technical indicator is a series of data points that are derived by applying
     a formula to the price data of a security.** Price data includes any combination
     of the open, high, low or close over a period of time. Some indicators may use
     only the closing prices, while others incorporate [volume](/school/doku.php?id=chart_school:glossary_v#volume
     "chart_school:glossary_v") and open interest into their formulas. The price data
     is entered into the formula and a data point is produced.'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: '**技术指标是通过将公式应用于证券的价格数据而导出的一系列数据点。** 价格数据包括一段时间内的开盘价、最高价、最低价或收盘价的任意组合。一些指标可能仅使用收盘价，而其他指标则将[成交量](/school/doku.php?id=chart_school:glossary_v#volume
+    "chart_school:glossary_v")和未平仓合约量纳入其公式中。价格数据输入到公式中，产生一个数据点。'
 - en: For example, the average of 3 closing prices is one data point [ (41+43+43)
     / 3 = 42.33 ]. However, one data point does not offer much information and does
     not an indicator make. A series of data points over a period of time is required
@@ -151,12 +206,16 @@
     above or below a security's price chart. Once shown in graphical form, an indicator
     can then be compared with the corresponding price chart of the security. Sometimes
     indicators are plotted on top of the price plot for a more direct comparison.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，3个收盘价格的平均值是一个数据点[(41+43+43) / 3 = 42.33]。然而，一个数据点并不能提供太多信息，也不能成为一个指标。需要一系列一段时间内的数据点来创建有效的参考点，以便进行分析。通过创建数据点的时间序列，可以比较当前水平和过去水平。为了分析目的，技术指标通常以图形形式显示在证券价格图表的上方或下方。一旦以图形形式显示，指标就可以与相应的证券价格图表进行比较。有时，指标会绘制在价格图上，以进行更直接的比较。
 - en: What Does a Technical Indicator Offer?
+  id: totrans-28
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 技术指标提供了什么？
 - en: A technical indicator offers a different perspective from which to analyze the
     price action. Some, such as [moving averages](/school/doku.php?id=chart_school:glossary_m#moving_average_ma
     "chart_school:glossary_m"), are derived from simple formulas and the mechanics
@@ -165,8 +224,12 @@
     understand and appreciate. Regardless of the complexity of the formula, technical
     indicators can provide a unique perspective on the strength and direction of the
     underlying price action.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 技术指标提供了一个不同的视角来分析价格走势。有些指标，比如[移动平均线](/school/doku.php?id=chart_school:glossary_m#moving_average_ma
+    "chart_school:glossary_m")，是从简单的公式中衍生出来的，其机制相对容易理解。而另一些指标，比如[随机指标](/school/doku.php?id=chart_school:glossary_s#stochastic_oscillator
+    "chart_school:glossary_s")，则有复杂的公式，需要更多的学习才能完全理解和欣赏。无论公式的复杂程度如何，技术指标都可以提供对基础价格走势的强度和方向的独特视角。
 - en: '**A simple moving average is an indicator that calculates the average price
     of a security over a specified number of periods.** If a security is exceptionally
     volatile, then a moving average will help to smooth the data. A moving average
@@ -174,42 +237,59 @@
     Veritas (VRTSE) displays a lot of volatility and an analyst may have difficulty
     discerning a trend. By applying a 10-day simple moving average to the price action,
     random fluctuations are smoothed to make it easier to identify a trend.'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: '**简单移动平均线是一种指标，计算出一段特定周期内证券的平均价格。**如果一个证券异常波动，那么移动平均线将有助于平滑数据。移动平均线滤除了随机噪音，提供了对价格走势更平滑的视角。Veritas（VRTSE）显示出很多波动性，分析师可能很难辨别出趋势。通过将10天简单移动平均线应用于价格走势，随机波动被平滑处理，更容易识别趋势。'
 - en: '![](../Images/a13233ea9020f764b30126de3f8de73b.jpg)'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/a13233ea9020f764b30126de3f8de73b.jpg)'
 - en: Why Use Indicators?
+  id: totrans-32
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 为什么要使用指标？
 - en: 'Indicators serve three broad functions: **to alert, to confirm and to predict**.'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 指标具有三个广泛的功能：**警报、确认和预测**。
 - en: An indicator can act as an **alert** to study price action a little more closely.
     If momentum is waning, it may be a signal to watch for a break of support. Or,
     if there is a large positive divergence building, it may serve as an alert to
     watch for a resistance breakout.
+  id: totrans-34
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 指标可以作为一个**警报**，让人更仔细地研究价格走势。如果动量减弱，这可能是一个观察支撑位突破的信号。或者，如果有一个大的正向背离正在形成，这可能作为一个观察阻力位突破的警报。
 - en: Indicators can be used to **confirm** other technical analysis tools. If there
     is a breakout on the price chart, a corresponding moving average crossover could
     serve to confirm the breakout. Or, if a stock breaks support, a corresponding
     low in the [On-Balance-Volume](/school/doku.php?id=chart_school:glossary_o#on_balance_volume_obv
     "chart_school:glossary_o") (OBV) could serve to confirm the weakness.
+  id: totrans-35
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 指标可以用来**确认**其他技术分析工具。如果价格图表上有突破，相应的移动平均线交叉可能用来确认突破。或者，如果一支股票突破支撑位，相应的[成交量动态平衡指标](/school/doku.php?id=chart_school:glossary_o#on_balance_volume_obv
+    "chart_school:glossary_o")（OBV）可能用来确认弱势。
 - en: Some investors and traders use indicators to **predict** the direction of future
     prices.
+  id: totrans-36
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 一些投资者和交易者使用指标来**预测**未来价格的走势。
 - en: Tips for Using Indicators
+  id: totrans-37
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用指标的提示
 - en: Indicators indicate. This may sound straightforward, but sometimes traders ignore
     the price action of a security and focus solely on an indicator. Indicators filter
     price action with formulas. As such, they are derivatives and not direct reflections
@@ -217,16 +297,21 @@
     Any analysis of an indicator should be taken with the **price action** in mind.
     What is the indicator saying about the price action of a security? Is the price
     action getting stronger? Weaker?
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 指标指示。这听起来很简单，但有时交易者会忽略证券的价格走势，只关注指标。指标通过公式过滤价格走势。因此，它们是衍生物，而不是价格走势的直接反映。在应用分析时应考虑这一点。对指标的任何分析都应考虑**价格走势**。指标对证券的价格走势有何说法？价格走势是变强还是变弱？
 - en: Even though it may be obvious when indicators generate [buy](/school/doku.php?id=chart_school:glossary_b#buy_signal
     "chart_school:glossary_b") and [sell](/school/doku.php?id=chart_school:glossary_s#sell_signal
     "chart_school:glossary_s") signals, the signals should be taken in context with
     other technical analysis tools. An indicator may flash a buy signal, but if the
     chart pattern shows a descending triangle with a series of declining peaks, it
     may be a false signal.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 即使指标生成[买入](/school/doku.php?id=chart_school:glossary_b#buy_signal "chart_school:glossary_b")和[卖出](/school/doku.php?id=chart_school:glossary_s#sell_signal
+    "chart_school:glossary_s")信号时可能很明显，这些信号也应与其他技术分析工具的背景结合起来。指标可能会闪烁出一个买入信号，但如果图表模式显示出一系列下降峰的下降三角形，那可能是一个虚假信号。
 - en: On the Rambus (RMBS) chart, [MACD](/school/doku.php?id=chart_school:glossary_m#macd_moving_average_convergence_divergence
     "chart_school:glossary_m") improved from November to March, forming a positive
     divergence. All the earmarks of a MACD buying opportunity were present, but the
@@ -234,20 +319,28 @@
     This non-confirmation from the stock should have served as a warning sign against
     a long position. For the record, a sell signal occurred when the stock broke support
     from the descending triangle in March-01.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Rambus（RMBS）图表上，[MACD](/school/doku.php?id=chart_school:glossary_m#macd_moving_average_convergence_divergence
+    "chart_school:glossary_m")从11月到3月有所改善，形成了正向分歧。所有MACD买入机会的特征都存在，但股票未能突破阻力并超过先前的反应高点。股票的这种非确认应该被视为不持有多头头寸的警告信号。值得一提的是，当股票在03年3月突破下降三角形的支撑时，出现了卖出信号。
 - en: '![Rambus, Inc. (RMBS) MACD example chart from StockCharts.com](../Images/53cc9de5539471a52c5134f382777c98.jpg
     "Rambus, Inc. (RMBS) MACD example chart from StockCharts.com")'
+  id: totrans-41
   prefs: []
   type: TYPE_IMG
+  zh: '![Rambus, Inc. (RMBS)来自StockCharts.com的MACD示例图表](../Images/53cc9de5539471a52c5134f382777c98.jpg
+    "Rambus, Inc. (RMBS)来自StockCharts.com的MACD示例图表")'
 - en: As always in technical analysis, learning how to read indicators is more of
     an art than a science. The same indicator may exhibit different behavioral patterns
     when applied to different stocks. Indicators that work well for IBM might not
     work the same for Delta Airlines. Through careful study and analysis, expertise
     with the various indicators will develop over time. As this expertise develops,
     certain nuances, as well as favorite setups, will become clear.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 在技术分析中，学习如何阅读指标更多是一门艺术而非科学。同一指标在应用于不同股票时可能表现出不同的行为模式。对IBM有效的指标可能不适用于达美航空。通过仔细研究和分析，随着时间的推移，对各种指标的专业知识将会逐渐发展。随着这种专业知识的发展，某些微妙之处以及喜欢的设置将变得清晰起来。
 - en: There are hundreds of indicators in use today, with new indicators being created
     every week. Technical analysis software programs come with dozens of indicators
     built in and even allow users to create their own. Given the amount of hype that
@@ -256,8 +349,10 @@
     few really offer a different perspective and are worthy of attention. Strangely
     enough, the indicators that usually merit the most attention are those that have
     been around the longest time and have stood the test of time.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 今天有数百种指标在使用中，每周都会有新指标被创建。技术分析软件程序内置了几十种指标，甚至允许用户创建自己的指标。鉴于与指标相关的炒作量，选择要遵循的指标可能是一项艰巨的任务。即使引入了数百种新指标，只有少数几种确实提供了不同的视角并值得关注。奇怪的是，通常最值得关注的指标是那些存在时间最长且经受住时间考验的指标。
 - en: When choosing an indicator to use for analysis, choose ***carefully*** and ***moderately***.
     Attempts to cover more than five indicators are usually futile. It is best to
     focus on two or three indicators and learn their intricacies inside and out. Try
@@ -267,12 +362,18 @@
     "chart_school:glossary_o") and [oversold](/school/doku.php?id=chart_school:glossary_o#oversold
     "chart_school:glossary_o") levels, such as Stochastics and RSI. Both of these
     indicators measure momentum and both have overbought/oversold levels.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 在选择用于分析的指标时，要***谨慎***和***适度***选择。试图涵盖五个以上的指标通常是徒劳的。最好专注于两到三个指标，并彻底了解它们的复杂性。尽量选择互补而不是同步移动并生成相同信号的指标。例如，使用两个适合显示[超买](/school/doku.php?id=chart_school:glossary_o#overbought
+    "chart_school:glossary_o")和[超卖](/school/doku.php?id=chart_school:glossary_o#oversold
+    "chart_school:glossary_o")水平的指标是多余的，比如随机指标和RSI。这两个指标都衡量动量，并且都有超买/超卖水平。
 - en: Leading Indicators
+  id: totrans-45
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 领先指标
 - en: As their name implies, leading indicators are designed to lead price movements.
     Most represent a form of price [momentum](/school/doku.php?id=chart_school:glossary_m#momentum
     "chart_school:glossary_m") over a fixed lookback period, which is the number of
@@ -285,12 +386,22 @@
     "chart_school:glossary_r") (RSI), [Stochastic Oscillator](/school/doku.php?id=chart_school:glossary_s#stochastic_oscillator
     "chart_school:glossary_s") and [Williams %R](/school/doku.php?id=chart_school:glossary_w#williams_r
     "chart_school:glossary_w").
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如它们的名称所示，领先指标旨在引导价格走势。大多数代表一种固定回顾期内的价格[动量](/school/doku.php?id=chart_school:glossary_m#momentum
+    "chart_school:glossary_m")，即用于计算指标的周期数。例如，一个20天的随机振荡器将使用过去20天的价格走势（大约一个月）进行计算。所有先前的价格走势将被忽略。一些更受欢迎的领先指标包括[商品通道指数](/school/doku.php?id=chart_school:glossary_c#commodity_channel_index_cci
+    "chart_school:glossary_c")（CCI）、[动量](/school/doku.php?id=chart_school:glossary_m#momentum
+    "chart_school:glossary_m")、[相对强弱指数](/school/doku.php?id=chart_school:glossary_r#relative_strength_index_rsi
+    "chart_school:glossary_r")（RSI）、[随机振荡器](/school/doku.php?id=chart_school:glossary_s#stochastic_oscillator
+    "chart_school:glossary_s")和[威廉斯%R](/school/doku.php?id=chart_school:glossary_w#williams_r
+    "chart_school:glossary_w")。
 - en: Momentum Oscillators
+  id: totrans-47
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 动量振荡器
 - en: Many leading indicators come in the form of momentum oscillators. **Generally
     speaking, momentum measures the rate-of-change of a security's price.** As the
     price of a security rises, price momentum increases. The faster the security rises
@@ -299,12 +410,17 @@
     begins to trade flat, momentum starts to actually decline from previous high levels.
     However, declining momentum in the face of sideways trading is not always a bearish
     signal. It simply means that momentum is returning to a more median level.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 许多领先指标采用动量振荡器的形式。**一般来说，动量衡量了证券价格的变化速度。** 当证券价格上涨时，价格动量增加。证券上涨得越快（周期内价格变化越大），动量增加就越大。一旦这种上涨开始放缓，动量也会减缓。当证券开始横盘交易时，动量实际上开始从先前的高水平下降。然而，在横盘交易中动量下降并不总是一个熊市信号。这只是意味着动量正在回归到一个更中间的水平。
 - en: '![International Business Machines (IBM) RSI example chart from StockCharts.com](../Images/59bb1364ed8b6542529d81d2d43515c8.jpg
     "International Business Machines (IBM) RSI example chart from StockCharts.com")'
+  id: totrans-49
   prefs: []
   type: TYPE_IMG
+  zh: '![国际商业机器公司（IBM）RSI示例图表来自StockCharts.com](../Images/59bb1364ed8b6542529d81d2d43515c8.jpg
+    "国际商业机器公司（IBM）RSI示例图表来自StockCharts.com")'
 - en: Momentum indicators employ various formulas to measure price changes. **RSI
     (*a momentum indicator*) compares the average price change of the advancing periods
     with the average change of the declining periods.** On the IBM chart, RSI advanced
@@ -318,12 +434,16 @@
     sideways trading in the stock and in RSI. RSI started from a relatively median
     level, around 50\. The subsequent flat price action in the stock also produced
     relatively flat price action in the indicator and it remains around 50\.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 动量指标采用各种公式来衡量价格变化。**RSI（*一种动量指标*）比较了上涨期间的平均价格变化与下跌期间的平均变化**。在IBM图表上，RSI从十月上升到十一月底。在这段时间内，股价从上六十多上涨到低八十多。当股价在十二月上半月横盘交易时，RSI急剧下降（蓝线）。股票的这种整理是相当正常且健康的。从这些高位（接近70）开始，平价行动预计会导致RSI（和动量）下降。如果RSI围绕50左右交易，而股票开始横盘交易，预计指标不会下降。图表上的绿线标记了股票和RSI横盘交易的时期。RSI从一个相对中位水平开始，大约在50左右。随后股票的平价行动也产生了相对平价行动的指标，保持在50左右。
 - en: Benefits and Drawbacks of Leading Indicators
+  id: totrans-51
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 领先指标的优缺点
 - en: There are clearly many benefits to using leading indicators. **Early signaling
     for entry and exit is the main benefit**. Leading indicators generate more signals
     and allow more opportunities to trade. Early signals can also act to forewarn
@@ -333,20 +453,28 @@
     a market that is trending up, the best use is to help identify oversold conditions
     for buying opportunities. In a market that is trending down, leading indicators
     can help identify overbought situations for selling opportunities.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 显然使用领先指标有许多好处。**提前发出进入和退出的信号是主要好处**。领先指标产生更多信号，允许更多交易机会。早期信号也可以预警潜在的强势或弱势。由于它们产生更多信号，领先指标最适合在交易市场中使用。这些指标可以在趋势市场中使用，但通常是*跟随*主要趋势，*而不是*反对它。在上涨市场中，最佳用法是帮助识别超卖条件以寻找买入机会。在下跌市场中，领先指标可以帮助识别超买情况以寻找卖出机会。
 - en: With early signals comes the prospect of higher returns and with higher returns
     comes the reality of greater risk. More signals and earlier signals mean that
     the chances of false signals and [whipsaws](/school/doku.php?id=chart_school:glossary_w#whipsaw
     "chart_school:glossary_w") increase. False signals will increase the potential
     for losses. [Whipsaws](/school/doku.php?id=chart_school:glossary_w#whipsaw "chart_school:glossary_w")
     can generate commissions that can eat away profits and test trading stamina.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 早期信号带来更高回报的可能性，而更高回报意味着更大的风险。更多信号和更早的信号意味着虚假信号和[鞭挞](/school/doku.php?id=chart_school:glossary_w#whipsaw
+    "chart_school:glossary_w")的机会增加。虚假信号会增加潜在损失的可能性。[鞭挞](/school/doku.php?id=chart_school:glossary_w#whipsaw
+    "chart_school:glossary_w")可能会产生佣金，从而侵蚀利润并考验交易耐力。
 - en: Lagging Indicators
+  id: totrans-54
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 滞后指标
 - en: As their name implies, **lagging indicators** follow the price action and are
     commonly referred to as trend-following indicators. Rarely, if ever, will these
     indicators lead the price of a security. Trend-following indicators work best
@@ -357,12 +485,19 @@
     Some popular trend-following indicators include [moving averages](/school/doku.php?id=chart_school:glossary_m#moving_average_ma
     "chart_school:glossary_m") (exponential, simple, weighted, variable) and [MACD](/school/doku.php?id=chart_school:glossary_m#macd_moving_average_convergence_divergence
     "chart_school:glossary_m").
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如其名称所示，**滞后指标**跟随价格走势，通常被称为趋势跟踪指标。很少情况下，这些指标会领先于证券价格。趋势跟踪指标在市场或证券出现强劲趋势时效果最佳。它们旨在让交易者进入并保持在趋势持续的情况下。因此，在交易或横向市场中，这些指标并不有效。如果在交易市场中使用趋势跟踪指标，可能会导致许多错误信号和突发事件。一些流行的趋势跟踪指标包括[移动平均线](/school/doku.php?id=chart_school:glossary_m#moving_average_ma
+    "chart_school:glossary_m")（指数、简单、加权、变量）和[MACD](/school/doku.php?id=chart_school:glossary_m#macd_moving_average_convergence_divergence
+    "chart_school:glossary_m")。
 - en: '![S&P 500 Large Cap Index () MA 20/100 example chart from StockCharts.com](../Images/7ae83fd103045d0a72c50c26c4edb8d1.jpg
     "S&P 500 Large Cap Index () MA 20/100 example chart from StockCharts.com")'
+  id: totrans-56
   prefs: []
   type: TYPE_IMG
+  zh: '![标普500大盘指数（）MA 20/100来自StockCharts.com的示例图表](../Images/7ae83fd103045d0a72c50c26c4edb8d1.jpg
+    "标普500大盘指数（）MA 20/100来自StockCharts.com的示例图表")'
 - en: The chart above shows the [S&P 500 ($SPX)![[$SPX]](../Images/b38b179934b0dddea47bcd5abdbb525a.jpg)](http://stockcharts.com/h-sc/ui?s=$spx
     "$SPX (current chart)") with the 20-day simple moving average and the 100-day
     simple moving average. Using a moving average crossover to generate the signals,
@@ -375,36 +510,49 @@
     and 200-day moving averages), there would have been fewer whipsaws. Had these
     moving averages been shorter (10 and 50-day moving average), there would have
     been more whipsaws, more signals, and earlier signals.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 上图显示了[S&P 500 ($SPX)![[$SPX]](../Images/b38b179934b0dddea47bcd5abdbb525a.jpg)](http://stockcharts.com/h-sc/ui?s=$spx
+    "$SPX (current chart)")的20日简单移动平均线和100日简单移动平均线。使用移动平均线交叉来生成信号，在图表涵盖的两年内出现了七个信号。在这两年内，该系统将会获利颇丰。这是由于从1997年10月到1998年8月以及从1998年11月到1999年8月形成的强劲趋势。然而，请注意，一旦指数开始在交易区间内横向移动，突发事件就会开始。1997年11月（卖出）、1999年8月（卖出）和1999年9月（买入）的信号在几天内就被逆转。如果这些移动平均线更长（50日和200日移动平均线），那么突发事件将会更少。如果这些移动平均线更短（10日和50日移动平均线），那么突发事件将会更多，信号也会更早。
 - en: Benefits and Drawbacks of Lagging Indicators
+  id: totrans-58
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 滞后指标的优缺点
 - en: One of the main benefits of trend-following indicators is the ability to catch
     a move and remain in a move. Provided the market or security in question develops
     a sustained move, trend-following indicators can be enormously profitable and
     easy to use. The longer the trend, the fewer the signals and less trading involved.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 趋势跟踪指标的主要好处之一是能够抓住趋势并保持在趋势中。只要市场或相关证券发展出持续的趋势，趋势跟踪指标就可以获利颇丰且易于使用。趋势越长，信号越少，交易越少。
 - en: The benefits of trend-following indicators are lost when a security moves in
     a trading range. In the S&P 500 example, the index appears to have been range-bound
     at least 50% of the time. Even though the index trended higher from 1982 to 1999,
     there have also been large periods of sideways movement. From 1964 to 1980, the
     index traded within a large range bound by 85 and 110\.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 趋势跟踪指标的好处在于当证券处于交易区间时会丧失。以标普500指数为例，该指数至少有50%的时间处于区间交易状态。尽管该指数从1982年到1999年呈上升趋势，但也存在大段的横向运动。从1964年到1980年，该指数在85和110之间的大范围区间内交易。
 - en: Another drawback of trend-following indicators is that signals tend to be late.
     By the time a moving average crossover occurs, a significant portion of the move
     has already occurred. The Nov-98 buy signal occurred at 1130, about 19% above
     the Oct-98 low of 950\. **Late entry and exit points can skew the risk/reward
     ratio.**
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 趋势跟踪指标的另一个缺点是信号往往较晚。当移动平均线交叉发生时，已经发生了相当大部分的波动。1998年11月的买入信号发生在1130，比1998年10月的低点950高约19%。**晚入场和退出点可能扭曲风险/收益比。**
 - en: The Challenge of Indicators
+  id: totrans-62
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 指标的挑战
 - en: For technical indicators, there is a trade-off between sensitivity and consistency.
     In an ideal world, we want an indicator that is sensitive to price movements,
     gives early signals and has few false signals (whipsaws). If we increase the sensitivity
@@ -413,8 +561,11 @@
     the number of periods, then the number of false signals will decrease, but the
     signals will lag and this will skew the [reward-to-risk ratio](/school/doku.php?id=chart_school:glossary_r#reward-to-risk_ratio
     "chart_school:glossary_r").
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于技术指标，灵敏度和一致性之间存在权衡。在理想情况下，我们希望一种指标对价格波动敏感，提供早期信号，并且虚假信号（鞭挞）较少。如果通过减少周期数来增加灵敏度，指标将提供早期信号，但虚假信号的数量将增加。如果通过增加周期数来降低灵敏度，那么虚假信号的数量将减少，但信号将滞后，这将扭曲[风险收益比](/school/doku.php?id=chart_school:glossary_r#reward-to-risk_ratio
+    "chart_school:glossary_r")。
 - en: The longer a moving average is, the slower it will react and fewer signals will
     be generated. As the moving average is shortened, it becomes faster and more volatile,
     increasing the number of false signals. The same holds true for the various momentum
@@ -422,24 +573,33 @@
     5 period RSI will be much more sensitive and have more overbought and oversold
     readings. It is up to each investor to select a timeframe that suits his or her
     trading style and objectives.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 移动平均线越长，反应越慢，生成的信号越少。随着移动平均线缩短，它变得更快、更易变动，增加了虚假信号的数量。各种动量指标也是如此。14周期的RSI将生成比5周期的RSI更少的信号。5周期的RSI将更为敏感，具有更多的超买和超卖读数。每位投资者都应选择适合自己交易风格和目标的时间框架。
 - en: Oscillator Types
+  id: totrans-65
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 振荡器类型
 - en: '**An oscillator is an indicator that fluctuates above and below a centerline
     or between set levels as its value changes over time.** Oscillators can remain
     at extreme levels (overbought or oversold) for extended periods, but they cannot
     trend for a sustained period. In contrast, a security or a cumulative indicator
     like On-Balance-Volume (OBV) can trend as it continually increases or decreases
     in value over a sustained period of time.'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: '**振荡器是一种指标，随着时间的变化，其值在中心线上下或在设定水平之间波动。** 振荡器可以在极端水平（超买或超卖）上保持较长时间，但不能持续趋势。相比之下，像累积指标OBV这样的证券或累积指标可以随着时间的持续增加或减少而趋势。'
 - en: '![MACD, OBV chart example from StockCharts.com](../Images/aea64ba719cb2cf100ee3baed7574ec8.jpg
     "MACD, OBV chart example from StockCharts.com")'
+  id: totrans-67
   prefs: []
   type: TYPE_IMG
+  zh: '![来自StockCharts.com的MACD、OBV图表示例](../Images/aea64ba719cb2cf100ee3baed7574ec8.jpg
+    "来自StockCharts.com的MACD、OBV图表示例")'
 - en: As the indicator comparison chart shows, oscillator movements are more confined
     and sustained movements (trends) are limited, no matter how long the time period.
     Over the two-year period, [Moving Average Convergence Divergence (MACD)](/school/doku.php?id=chart_school:glossary_m#macd_moving_average_convergence_divergence
@@ -449,8 +609,11 @@
     of values, its movements appear confined. OBV, on the other hand, began an uptrend
     in March 2003 and advanced steadily for the next year. Its movements are not confined
     and long-term trends can develop.
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 如指标比较图所示，振荡器的运动更为有限，持续运动（趋势）受到限制，无论时间跨度多长。在两年的时间内，[移动平均收敛差离指标（MACD）](/school/doku.php?id=chart_school:glossary_m#macd_moving_average_convergence_divergence
+    "chart_school:glossary_m")在零线上下波动，大约触及零线约18次。此外，请注意，每次MACD超过+80时，指标都会回落。尽管MACD的值范围没有上限或下限，但其运动似乎受到限制。另一方面，OBV在2003年3月开始上升趋势，并在接下来的一年稳步增长。其运动不受限制，可以发展出长期趋势。
 - en: 'There are many different types of oscillators and some belong to more than
     one category. The breakdown of oscillator types begins with two types: **centered
     oscillators** which fluctuate above and below a center point or line and **banded
@@ -458,31 +621,42 @@
     centered oscillators are best suited for analyzing the direction of price momentum,
     while banded oscillators are best suited for identifying overbought and oversold
     levels.'
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 有许多不同类型的振荡器，有些属于多个类别。振荡器类型的分类始于两种类型：**中心振荡器**，在中心点或线上下波动，以及**带状振荡器**，在超买和超卖的极端之间波动。一般来说，中心振荡器最适合分析价格动量的方向，而带状振荡器最适合识别超买和超卖水平。
 - en: Centered Oscillators
+  id: totrans-70
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 中心振荡器
 - en: '**Centered oscillators fluctuate above and below a central point or line.**
     These oscillators are good for identifying the strength or weakness, or direction,
     of momentum behind a security''s move. In its purest form, momentum is positive
     (bullish) when a centered oscillator is trading above its center line and negative
     (bearish) when the oscillator is trading below its center line.'
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: '**中心振荡器在中心点或线上下波动。**这些振荡器适合识别证券走势背后的动量的强度或弱点，或者方向。在其最纯粹的形式中，当中心振荡器交易在其中心线上方时，动量为正（看涨），当振荡器交易在其中心线下方时，动量为负（看跌）。'
 - en: '[MACD](/school/doku.php?id=chart_school:glossary_m#macd_moving_average_convergence_divergence
     "chart_school:glossary_m") is an example of a centered oscillator that fluctuates
     above and below zero. MACD is the difference between the 12-day EMA and 26-day
     EMA of a security. The further one moving average moves away from the other, the
     higher the reading. Even though there is no range limit to MACD, extremely large
     differences between the two moving averages are unlikely to last for long.'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: '[MACD](/school/doku.php?id=chart_school:glossary_m#macd_moving_average_convergence_divergence
+    "chart_school:glossary_m")是一个在零线上下波动的中心振荡器的例子。MACD是一个证券的12日EMA和26日EMA之间的差值。一个移动平均线远离另一个移动平均线，读数就越高。尽管MACD没有范围限制，但两个移动平均线之间的极端差异不太可能持续很长时间。'
 - en: MACD
+  id: totrans-73
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: MACD
 - en: MACD is unique in that it has lagging elements as well as leading elements.
     Moving averages are lagging indicators and would be classified as trend-following
     or lagging elements. However, by taking the differences in the moving averages,
@@ -491,12 +665,16 @@
     MACD becomes a leading indicator, but still with a bit of lag. With the integration
     of both moving averages and rate-of-change, MACD has forged a unique spot among
     oscillators as both a lagging and a leading indicator.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: MACD独特之处在于它既有滞后元素，也有领先元素。移动平均线是滞后指标，可以被归类为趋势跟随或滞后元素。然而，通过取移动平均线的差值，MACD融合了动量或领先元素的方面。移动平均线之间的差异代表变化率。通过测量变化率，MACD成为领先指标，但仍带有一点滞后。通过整合移动平均线和变化率，MACD在振荡器中占据了一个独特的位置，既是滞后指标又是领先指标。
 - en: ROC
+  id: totrans-75
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: ROC
 - en: Rate-of-change (ROC) is a centered oscillator that also fluctuates above and
     below zero. As its name implies, ROC measures the percentage price change over
     a given time period. For example, the 20-day ROC would measure the percentage
@@ -504,12 +682,17 @@
     price and the price 20 days ago, the higher the value of the ROC Oscillator. When
     the indicator is above 0, the percentage price change is positive (bullish). When
     the indicator is below 0, the percentage price change is negative (bearish).
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 变动率（ROC）是一个中心振荡器，也在零线上下波动。顾名思义，ROC测量给定时间段内的价格变化百分比。例如，20天的ROC将测量过去20天的价格变化百分比。当前价格与20天前的价格之间的差异越大，ROC振荡器的值就越高。当指标高于0时，价格变化百分比为正（看涨）。当指标低于0时，价格变化百分比为负（看跌）。
 - en: '![ROC 20-period example chart from StockCharts.com](../Images/949406f1eb1d76fd6d81b4f3a6db4a50.jpg
     "ROC 20-period example chart from StockCharts.com")'
+  id: totrans-77
   prefs: []
   type: TYPE_IMG
+  zh: '![来自StockCharts.com的ROC 20周期示例图表](../Images/949406f1eb1d76fd6d81b4f3a6db4a50.jpg
+    "来自StockCharts.com的ROC 20周期示例图表")'
 - en: As with MACD, ROC is not bound by upper or lower limits. This is typical of
     most centered oscillators and can make it difficult to spot overbought and oversold
     conditions. This ROC chart indicates that readings above +20% and below -20% represent
@@ -518,12 +701,16 @@
     Also, +20% and -20% represent extremes for this particular security and may not
     be the same for other securities. Banded oscillators offer a better alternative
     to gauge extreme price levels.
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 与MACD一样，ROC没有上限或下限。这是大多数中心振荡器的典型特征，可能会使人难以发现超买和超卖的情况。这个ROC图表表明，读数在+20%以上和-20%以下代表极端情况，并且不太可能持续很长时间。然而，判断+20%和-20%为极端读数的唯一方法是根据过去的观察。此外，+20%和-20%代表这种特定证券的极端情况，可能对其他证券不适用。带状振荡器提供了更好的选择来判断极端价格水平。
 - en: Banded Oscillators
+  id: totrans-79
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 带状振荡器
 - en: 'Banded oscillators fluctuate above and below two bands that signify extreme
     price levels. The lower band represents oversold readings and the upper band represents
     overbought readings. These set bands are based on the oscillator and change little
@@ -533,16 +720,23 @@
     "chart_school:glossary_s") are two examples of banded oscillators. (Note: The
     formulas and rationale behind RSI and the Stochastic Oscillator are more complicated
     than those for MACD and ROC. As such, calculations are addressed in separate articles.)'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 带状振荡器在两个代表极端价格水平的带上下波动。下带代表超卖读数，上带代表超买读数。这些设定的带基于振荡器，从一个证券到另一个证券变化很小，使用户能够轻松识别超买和超卖的情况。相对强弱指数（RSI）和随机指标是带状振荡器的两个例子。（注：RSI和随机指标的公式和原理比MACD和ROC更复杂。因此，计算在单独的文章中讨论。）
 - en: Stochastics/RSI
+  id: totrans-81
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 随机指标/RSI
 - en: '![Stochastics/RSI example chart from StockCharts.com](../Images/d479ca766d024f30ca588bf7b3ea9343.jpg
     "Stochastics/RSI example chart from StockCharts.com")'
+  id: totrans-82
   prefs: []
   type: TYPE_IMG
+  zh: '![来自StockCharts.com的随机指标/RSI示例图表](../Images/d479ca766d024f30ca588bf7b3ea9343.jpg
+    "来自StockCharts.com的随机指标/RSI示例图表")'
 - en: For RSI, the bands for overbought and oversold are usually set at 70 and 30
     respectively. A reading greater than 70 would be considered overbought and a reading
     below 30 would be considered oversold. For the Stochastic Oscillator, a reading
@@ -551,27 +745,38 @@
     and might require more fine-tuning. Making adjustments to the bands is usually
     a judgment call that will reflect a trader's preferences and the volatility of
     the security.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于RSI，超买和超卖的带通常设置为70和30。大于70的读数被视为超买，低于30的读数被视为超卖。对于随机指标，大于80的读数为超买，低于20的读数为超卖。尽管这些是推荐的带设置，但某些证券可能不符合这些范围，可能需要更精细的调整。对带的调整通常是一个判断，反映了交易者的偏好和证券的波动性。
 - en: Many, but not all, banded oscillators fluctuate within set upper and lower limits.
     The Relative Strength Index (RSI) is range-bound by 0 and 100 and will never go
     higher than 100 or lower than zero. The Stochastic Oscillator is another oscillator
     with a set range and is bound by 100 and 0 as well. However, the Commodity Channel
     Index (CCI) is an example of a banded oscillator that is not range bound.
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 许多，但并非所有，带状振荡器在设定的上限和下限内波动。相对强弱指数（RSI）的范围为0到100，永远不会高于100或低于零。随机指标是另一个具有固定范围的振荡器，上限和下限分别为100和0。然而，商品通道指数（CCI）是一个不受范围限制的带状振荡器的例子。
 - en: CCI
+  id: totrans-85
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: CCI
 - en: '![CCI example chart from StockCharts.com](../Images/6d91287fc475a0715079f3b735c76231.jpg
     "CCI example chart from StockCharts.com")'
+  id: totrans-86
   prefs: []
   type: TYPE_IMG
+  zh: '![来自StockCharts.com的CCI示例图表](../Images/6d91287fc475a0715079f3b735c76231.jpg
+    "来自StockCharts.com的CCI示例图表")'
 - en: Pros and Cons of Centered and Banded Oscillators
+  id: totrans-87
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 中心振荡器和带状振荡器的优缺点
 - en: Centered oscillators are best used to identify the underlying strength or direction
     of momentum behind a move. Broadly speaking, readings above the center point indicate
     bullish momentum and readings below the center point indicate bearish momentum.
@@ -579,12 +784,16 @@
     the latter's ability to identify extreme readings. While it is possible to identify
     extreme readings with centered oscillators, they are not ideal for this purpose.
     Banded oscillators are best suited to identify overbought and oversold conditions.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 居中振荡器最适合用于识别背后动能的潜在强度或方向。广义上讲，超过中心点的读数表示看涨动能，而低于中心点的读数表示看跌动能。居中振荡器和带状振荡器之间最大的区别在于后者能够识别极端读数。虽然可以用居中振荡器识别极端读数，但并不理想。带状振荡器最适合识别超买和超卖条件。
 - en: Oscillator Signals
+  id: totrans-89
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 振荡器信号
 - en: Oscillators generate [buy](/school/doku.php?id=chart_school:glossary_b#buy_signal
     "chart_school:glossary_b") and [sell](/school/doku.php?id=chart_school:glossary_s#sell_signal
     "chart_school:glossary_s") signals in various ways. Some signals are geared towards
@@ -596,23 +805,32 @@
     and only reflect one characteristic of a security's price action. [Volume](/school/doku.php?id=chart_school:glossary_v#volume
     "chart_school:glossary_v"), price patterns and support/resistance levels should
     also be taken into consideration.
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 振荡器以各种方式生成[买入](/school/doku.php?id=chart_school:glossary_b#buy_signal "chart_school:glossary_b")和[卖出](/school/doku.php?id=chart_school:glossary_s#sell_signal
+    "chart_school:glossary_s")信号。有些信号旨在提前进入，而其他信号则在趋势开始后出现。除了买入和卖出信号外，振荡器还可以表明当前趋势存在问题或当前趋势即将改变。尽管振荡器可以生成自己的信号，但重要的是将这些信号与技术分析的其他方面结合使用。大多数振荡器都是动量指标，只反映了证券价格行为的一个特征。还应考虑成交量、价格模式和支撑/阻力水平。
 - en: Positive and Negative Divergences
+  id: totrans-91
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 正向和负向背离
 - en: 'Divergence is a key concept behind many signals for oscillators as well as
     other indicators. Divergences can serve as a warning that the trend is about to
     change or set up a buy or sell signal. There are two types of divergences: **positive
     and negative**. In its most basic form, a ***negative*** divergence is when an
     indicator declines while the underlying security advances. A ***positive*** divergence
     is when the indicator advances while the underlying security declines.'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 背离是许多振荡器信号以及其他指标背后的关键概念。背离可以作为一个警告，表明趋势即将改变或设置一个买入或卖出信号。有两种类型的背离：**正向和负向**。在其最基本形式中，***负向***背离是指当指标下降而基础证券上涨时。***正向***背离是指当指标上涨而基础证券下跌时。
 - en: '![](../Images/6a1e6d120196fb756e46f8ea0db8466d.jpg)'
+  id: totrans-93
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/6a1e6d120196fb756e46f8ea0db8466d.jpg)'
 - en: A negative divergence occurs when the underlying security moves to a new high,
     but the indicator fails to record a new high and forms a lower high. For momentum
     indicators, a negative divergence shows slowing upside momentum that can sometimes
@@ -620,11 +838,16 @@
     especially during a strong uptrend. On the Staples (SPLS) chart above, the stock
     formed a higher high in September, but the MACD did not exceed its prior high.
     A negative divergence formed and the MACD soon moved below its signal line (red).
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 当基础证券达到新高时，但指标未能记录新高并形成较低的高点时，就会出现负向背离。对于动量指标，负向背离显示出逐渐减弱的上涨动能，有时可能预示着一个看跌反转。并非所有负向背离都会产生良好的信号，特别是在强势上涨期间。在上面的Staples
+    (SPLS)图表中，股票在九月形成了一个更高的高点，但MACD未超过其先前的高点。形成了一个负向背离，MACD很快移动到了其信号线以下（红色）。
 - en: '![](../Images/759ec475fb362510607a853b310231ea.jpg)'
+  id: totrans-95
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/759ec475fb362510607a853b310231ea.jpg)'
 - en: A positive divergence occurs when a security moves to a new low, but the indicator
     holds above its prior low to form a higher low. For momentum indicators, a positive
     divergence shows less downside momentum that can sometimes foreshadow a bullish
@@ -635,30 +858,43 @@
     The subsequent move above 50 in RSI and the breakout in Sprint confirmed the signal.
     Sprint later moved back below its breakout and warranted a reassessment at that
     time.
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 当一项证券创下新低，但指标保持在先前低点之上形成更高低点时，就会出现正向背离。对于动量指标来说，正向背离显示出较少的下行动量，有时可以预示着一个看涨反转。并非所有正向背离都会产生良好的信号，特别是在强势下跌趋势中。在上面的
+    Sprint (S) 图表中，该股票在九月初形成了一个较低低点，但 RSI 保持在先前低点之上形成了正向背离。此外，请注意 RSI 在八月中旬处于超卖状态，并在九月保持在
+    30 以上。随后 RSI 上涨至 50 以上并 Sprint 的突破证实了信号。 Sprint 后来回落至突破点以下，这时需要重新评估。
 - en: '![](../Images/fab675b90097e4c865c5e66c540d93d0.jpg)'
+  id: totrans-97
   prefs: []
   type: TYPE_IMG
+  zh: '![](../Images/fab675b90097e4c865c5e66c540d93d0.jpg)'
 - en: Divergences, both positive and negative, can also form in non-momentum indicators
     like On Balance Volume, the Accumulation Distribution Line, the AD Line and Chaikin
     Money Flow. On the Expeditors (EXPD) chart above, the stock moved to a new high
     in September, but On Balance Volume (OBV) did not confirm with a higher high.
     A lower high is forming in OBV and the indicator moved below its 10-day SMA.
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 背离，无论是正向还是负向，也可能出现在非动量指标中，如成交量平衡线、积累/分布线、AD 线和 Chaikin 资金流。在上面的 Expeditors (EXPD)
+    图表中，该股票在九月创下新高，但成交量平衡线（OBV）未能确认出现更高高点。OBV 正在形成较低高点，并且该指标已经跌破了其 10 日简单移动平均线。
 - en: Overbought and Oversold Extremes
+  id: totrans-99
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 超买和超卖极端
 - en: '**Banded oscillators are designed to identify overbought and oversold extremes.**
     Since these oscillators fluctuate between extremes, they can be difficult to use
     in trending markets. Banded oscillators are best used in trading ranges or with
     securities that are not trending. In a strong trend, users may see many signals
     that are not really valid. If a stock is in a strong uptrend, buying on oversold
     conditions will work much better than selling on overbought conditions.'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: '**带状振荡器旨在识别超买和超卖极端。** 由于这些振荡器在极端值之间波动，它们在趋势市场中可能难以使用。带状振荡器最适用于交易区间或不呈现趋势的证券。在强势趋势中，用户可能会看到许多实际上并不有效的信号。如果一只股票处于强势上涨趋势中，在超卖条件下买入会比在超买条件下卖出要好得多。'
 - en: In a strong trend, oscillator signals against the direction of the underlying
     trend are less robust than those with the trend. **The trend is your friend and
     it can be dangerous to fight it.** Even though securities develop trends, they
@@ -669,8 +905,10 @@
     the path of least resistance is up (down), then acting on only bullish (bearish)
     signals would be in harmony with the trend. Attempts to trade against the trend
     carry added risk.
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 在强势趋势中，与基础趋势相反的振荡器信号比与趋势一致的信号不那么可靠。**趋势是你的朋友，与其对抗可能会很危险。** 尽管证券会发展出趋势，但它们也会在这些趋势内波动。如果一只股票处于强势上涨趋势中，那么在振荡器达到超卖条件（并接近支撑测试）时买入会比在超买条件下卖出要好得多。在强势下跌趋势中，当振荡器达到超买条件时卖出会更好。如果最小阻力路径是向上（向下），那么只对牛市（熊市）信号采取行动将与趋势保持一致。试图违背趋势进行交易会带来额外的风险。
 - en: When the trend is strong, banded oscillators can remain near overbought or oversold
     levels for extended periods. An overbought condition does not indicate that it
     is time to sell, nor does an oversold condition indicate that it is time to buy.
@@ -682,8 +920,10 @@
     may form, but a bullish signal against the downtrend should be considered suspect.
     This does not mean counter-trend signals won't work, but they should be viewed
     in proper context and considered with other aspects of technical analysis.
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 当趋势强劲时，带状振荡器可能在超买或超卖水平附近持续较长时间。超买条件并不表示是卖出时机，超卖条件也不表示是买入时机。在强劲上涨趋势中，振荡器可能达到超买条件，并随着基础证券继续上涨而保持该状态。可能会出现负面背离，但应对上涨趋势的卖出信号持怀疑态度。在强劲下跌趋势中，振荡器可能达到超卖条件，并随着基础证券继续下跌而保持该状态。同样，可能会出现正面背离，但应对下跌趋势的买入信号持怀疑态度。这并不意味着逆势信号不起作用，但应在适当的背景下考虑，并与技术分析的其他方面一起考虑。
 - en: The first step in using banded oscillators is to identify the upper and lower
     bands that mark the extremities. For RSI, anything below 30 and above 70 represents
     an extremity. For the Stochastic Oscillator, anything below 20 and above 80 represents
@@ -693,16 +933,20 @@
     **Identification of an overbought or oversold condition should serve as an alert
     to monitor other technical aspects** (*price pattern, trend, support, resistance,
     candlesticks, volume or other indicators*) **with extra vigilance.**
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用带状振荡器的第一步是确定标记极端的上下限。对于RSI，30以下和70以上代表一个极端。对于随机指标，20以下和80以上代表一个极端。我们知道当RSI低于30或随机指标低于20时，存在超卖条件。同样，当RSI高于70和随机指标高于80时，存在超买条件。**识别超买或超卖条件应作为警示，以更加警惕地监视其他技术方面**（*价格模式、趋势、支撑、阻力、蜡烛图形、成交量或其他指标*）。
 - en: The simplest method to generate signals is to note when the upper and lower
     bands are crossed. If a security is overbought (above 70 for RSI and 80 for the
     Stochastic Oscillator) and moves back down below the upper band, then a sell signal
     is generated. If a security is oversold (below 30 for RSI and 20 for the Stochastic
     Oscillator) and moves back above the lower band, then a buy signal is generated.
     Keep in mind that these are the simplest methods.
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成信号的最简单方法是注意上下限的交叉。如果一项证券超买（RSI超过70，随机指标超过80）并回落至上限以下，则会产生卖出信号。如果一项证券超卖（RSI低于30，随机指标低于20）并回升至下限以上，则会产生买入信号。请记住，这些是最简单的方法。
 - en: 'Simple signals can also be combined with divergences and moving average crossovers
     to create more robust signals. Once a stock becomes oversold, traders may look
     for a positive divergence to develop in the RSI and then a cross above 30\. With
@@ -712,12 +956,17 @@
     moving average that acts as the trigger line. When the Stochastic Oscillator crosses
     above the trigger line it is a bullish moving average crossover, and when it crosses
     below it is bearish).'
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 简单信号也可以与背离和移动平均线交叉结合，产生更可靠的信号。一旦股票超卖，交易者可能会寻找RSI中出现正面背离，然后上穿30。当随机指标超买时，交易者可能会寻找负面背离，并将其与移动平均线交叉和下穿80结合起来产生信号。（注：随机指标通常与3天简单移动平均线一起绘制，作为触发线。当随机指标上穿触发线时，这是一个看涨的移动平均线交叉，当下穿时则是看跌的）。
 - en: '![Cisco Systems, Inc. (CSCO) Stochastics example chart from StockCharts.com](../Images/7a39b78266a0281ada34e114cddc5230.jpg
     "Cisco Systems, Inc. (CSCO) Stochastics example chart from StockCharts.com")'
+  id: totrans-106
   prefs: []
   type: TYPE_IMG
+  zh: '![思科系统公司（CSCO）在StockCharts.com上的随机指标示例图](../Images/7a39b78266a0281ada34e114cddc5230.jpg
+    "思科系统公司（CSCO）在StockCharts.com上的随机指标示例图")'
 - en: The Cisco (CSCO) chart shows that the Stochastic Oscillator can change from
     oversold to overbought quite quickly. Much depends on the number of time periods
     used to calculate the oscillator. A 10-day Slow Stochastic Oscillator will be
@@ -730,8 +979,11 @@
     and not the proper strategy. When a security is trending up or has a bullish bias,
     traders would be better off looking for oversold conditions to generate buying
     opportunities.
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 思科（CSCO）图表显示，随机振荡器可以很快地从超卖变为超买。很大程度上取决于用于计算振荡器的时间周期数量。10天慢速随机振荡器比20天更[波动](/school/doku.php?id=chart_school:glossary_v#volatility
+    "chart_school:glossary_v")。细绿线表示随机振荡器触及或穿过20的超卖线时。细红线表示随机振荡器触及或穿过超买线时。当时CSCO处于强劲的上升趋势，并且几乎没有卖压。因此，试图在振荡器再次跌破80以下时卖出将违背上升趋势，不是正确的策略。当一项证券趋势向上或有多头偏向时，交易者最好寻找超卖条件以产生购买机会。
 - en: 'We can also see that much of the upside for the stock occurred after the Stochastic
     Oscillator advanced above 80 (thin red lines). The green circle in August shows
     a buy signal that was generated with three separate items: one, the oscillator
@@ -740,12 +992,17 @@
     these three items makes for a more robust signal. After the buy signal, the oscillator
     was in overbought territory a mere 4 days later. However, the stock continued
     its advance for 2-3 weeks before reaching its high.'
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还可以看到，股票的很大上涨发生在随机振荡器上升到80以上之后（红色细线）。八月份的绿色圆圈显示了一个购买信号，由三个独立的项目生成：一，振荡器从超卖条件中上升到20以上；二，振荡器上升到其3日移动平均线以上；三，振荡器形成了正向分歧。这三个项目的确认使信号更加可靠。购买信号后，仅仅4天后振荡器就进入了超买区。然而，股票在达到高点之前继续上涨了2-3周。
 - en: '![Microsoft Corp. (MSFT) chart from StockCharts.com](../Images/b4e738b625905a6cb3fb2bbb499b586e.jpg
     "Microsoft Corp. (MSFT) chart from StockCharts.com")'
+  id: totrans-109
   prefs: []
   type: TYPE_IMG
+  zh: '![来自StockCharts.com的微软公司（MSFT）图表](../Images/b4e738b625905a6cb3fb2bbb499b586e.jpg
+    "来自StockCharts.com的微软公司（MSFT）图表")'
 - en: The Microsoft (MSFT) chart reveals trading opportunities with the Relative Strength
     Index (RSI). Because a 14-period RSI rarely moved below 30 and above 70, a 10-period
     RSI was chosen to increase sensitivity. With the intermediate-term and long-term
@@ -756,12 +1013,16 @@
     a move above 30 from oversold conditions. The third buy signal came after RSI
     briefly dipped below 30\. Keep in mind that these three signals were against the
     larger downtrend and trading strategies should be adjusted accordingly.
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 微软（MSFT）图表显示了相对强弱指数（RSI）的交易机会。由于14周期RSI很少下跌到30以下和上涨到70以上，选择了10周期RSI以增加灵敏度。随着中期和长期趋势明显偏向熊市，精明的交易者可以在RSI达到超买时做空（黑色垂直线）。更激进的交易者可以在RSI下跌到30以下然后再次上升到这个超卖水平时做多。前两个购买信号是由正向分歧和从超卖条件下跌到30以上生成的。第三个购买信号是在RSI短暂下跌到30以下后产生的。请记住，这三个信号都是违背更大的下降趋势的，交易策略应相应调整。
 - en: Centerline Crossovers
+  id: totrans-111
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 中线交叉
 - en: As the name implies, centerline crossover signals apply mainly to centered oscillators
     that fluctuate above and below a centerline. Traders have been also known to use
     centerline crosses with RSI in order validate a divergence or signal generated
@@ -773,26 +1034,40 @@
     "chart_school:glossary_c"), [MACD](/school/doku.php?id=chart_school:glossary_m#macd_moving_average_convergence_divergence
     "chart_school:glossary_m") and [Rate-of-Change](/school/doku.php?id=chart_school:glossary_r#rate_of_change_percent
     "chart_school:glossary_r") (ROC).
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如其名称所示，中线交叉信号主要适用于在中线上下波动的居中振荡器。交易者也被称为使用RSI的中线交叉来验证从超买或超卖读数生成的背离或信号。然而，大多数带状振荡器，如RSI和随机指标，依赖于背离和超买/超卖水平来生成信号。对于带状振荡器来说，中间地带有点像无人之地，可能最好留给其他工具。对于我们的目的，中线交叉的分析将集中在诸如[Chaikin
+    Money Flow](/school/doku.php?id=chart_school:glossary_c#chaikin_money_flow_cmf
+    "chart_school:glossary_c")、[MACD](/school/doku.php?id=chart_school:glossary_m#macd_moving_average_convergence_divergence
+    "chart_school:glossary_m")和[Rate-of-Change](/school/doku.php?id=chart_school:glossary_r#rate_of_change_percent
+    "chart_school:glossary_r")（ROC）等居中振荡器上。
 - en: A centerline crossover is sometimes interpreted as a [buy](/school/doku.php?id=chart_school:glossary_b#buy_signal
     "chart_school:glossary_b") or [sell](/school/doku.php?id=chart_school:glossary_s#sell_signal
     "chart_school:glossary_s") signal. A buy signal would be generated with a cross
     above the centerline and a sell signal with a cross below the centerline. For
     MACD or ROC, a cross above or below zero would act as a signal.
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 中线交叉有时被解释为[买入](/school/doku.php?id=chart_school:glossary_b#buy_signal "chart_school:glossary_b")或[卖出](/school/doku.php?id=chart_school:glossary_s#sell_signal
+    "chart_school:glossary_s")信号。当交叉线上方时产生买入信号，当交叉线下方时产生卖出信号。对于MACD或ROC，交叉线上方或下方零线将作为信号。
 - en: '**Movements above or below the centerline indicate that momentum has changed
     from either positive to negative or negative to positive.** When a centered momentum
     oscillator advances above its centerline, momentum turns positive and could be
     considered bullish. When a centered momentum oscillator declines below its centerline,
     momentum turns negative and could be considered bearish.'
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: '**在中线上方或下方的运动表明动量已经从正向转为负向或从负向转为正向。** 当一个居中的动量振荡器上升到中线以上时，动量变为正向，可能被视为看涨。当一个居中的动量振荡器下降到中线以下时，动量变为负向，可能被视为看跌。'
 - en: '![Intel Corp. (INTC) MACD, ROX example chart from StockCharts.com](../Images/b84f410eb81bd3f62c7b1e154147f3ce.jpg
     "Intel Corp. (INTC) MACD, ROX example chart from StockCharts.com")'
+  id: totrans-115
   prefs: []
   type: TYPE_IMG
+  zh: '![来自StockCharts.com的英特尔公司（INTC）MACD、ROX示例图表](../Images/b84f410eb81bd3f62c7b1e154147f3ce.jpg
+    "来自StockCharts.com的英特尔公司（INTC）MACD、ROX示例图表")'
 - en: On this Intel (INTC) chart with MACD and ROC, there have been a number of signals
     generated from the centerline crossover. There were a couple of excellent signals,
     but there were also plenty of false signals and [whipsaws](/school/doku.php?id=chart_school:glossary_w#whipsaw
@@ -801,8 +1076,11 @@
     various signals in order to create more robust buy and sell signals. Some traders
     also criticize centerline crossover signals as being too late and missing too
     much of the move.
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这张英特尔（INTC）的MACD和ROC图表上，有许多信号是由中线交叉产生的。有一些优秀的信号，但也有很多虚假信号和[鞭挞](/school/doku.php?id=chart_school:glossary_w#whipsaw
+    "chart_school:glossary_w")。这突显了与交易振荡器信号相关的一些挑战。此外，它强调了结合各种信号以创建更强大的买入和卖出信号的重要性。一些交易者也批评中线交叉信号过于迟到，错过了很多行情。
 - en: A centerline crossover can also act as a [confirmation](/school/doku.php?id=chart_school:glossary_c#confirmation
     "chart_school:glossary_c") signal to validate a previous signal or reinforce the
     current trend. If there were a positive [divergence](/school/doku.php?id=chart_school:glossary_d#divergence
@@ -811,39 +1089,59 @@
     would confirm the previous buy signal. Failure of the oscillator to move above
     the centerline could be seen as a non-confirmation and act as an alert that something
     was amiss.
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 中线交叉也可以作为[确认](/school/doku.php?id=chart_school:glossary_c#confirmation "chart_school:glossary_c")信号，验证先前的信号或加强当前趋势。如果存在正向[背离](/school/doku.php?id=chart_school:glossary_d#divergence
+    "chart_school:glossary_d")和看涨的[移动平均线](/school/doku.php?id=chart_school:glossary_m#moving_average_ma
+    "chart_school:glossary_m")交叉，那么在中线上方的后续上涨将确认先前的买入信号。振荡器未能上穿中线可能被视为非确认，并作为出现问题的警示。
 - en: '![Intel Corp. (INTC) MACD example chart from StockCharts.com](../Images/4ed66d4153b8803c2b9d983f6274f16d.jpg
     "Intel Corp. (INTC) MACD example chart from StockCharts.com")'
+  id: totrans-118
   prefs: []
   type: TYPE_IMG
+  zh: '![英特尔公司（INTC）来自StockCharts.com的MACD示例图表](../Images/4ed66d4153b8803c2b9d983f6274f16d.jpg
+    "英特尔公司（INTC）来自StockCharts.com的MACD示例图表")'
 - en: On the Intel (INTC) chart with MACD, the centerline crossover acts as the third
     in a series of bullish signals. Even after the third signal, Intel still has plenty
     of upside left.
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 在带有MACD的英特尔（INTC）图表上，中线交叉作为一系列看涨信号中的第三个。即使在第三个信号之后，英特尔仍有很多上涨空间。
 - en: There was the higher low forming that signaled a potential positive divergence.
+  id: totrans-120
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 出现了形成更高低点的信号，表明可能存在正向背离。
 - en: There was the bullish moving average crossover to confirm the positive divergence.
+  id: totrans-121
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 出现了看涨的移动平均线交叉以确认正向背离。
 - en: And finally, there was the bullish centerline crossover.
+  id: totrans-122
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 最后，出现了看涨的中线交叉。
 - en: Some traders would worry about missing too much of the move by waiting for the
     third and final confirmation. However, this can be a more reliable signal and
     help to avoid whipsaws and false signals. It is true that waiting for the third
     signal will reduce profits, but it can also help reduce risk.
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些交易者可能担心等待第三个和最终确认会错过太多的行情。然而，这可能是一个更可靠的信号，有助于避免虚假信号。等待第三个信号将减少利润，但也有助于降低风险。
 - en: '![International Business Machines (IBM) CMF example chart from StockCharts.com](../Images/2c6d216844fdc67c25ee5c1f87fc9d81.jpg
     "International Business Machines (IBM) CMF example chart from StockCharts.com")'
+  id: totrans-124
   prefs: []
   type: TYPE_IMG
+  zh: '![国际商业机器公司（IBM）CMF来自StockCharts.com的示例图表](../Images/2c6d216844fdc67c25ee5c1f87fc9d81.jpg
+    "国际商业机器公司（IBM）CMF来自StockCharts.com的示例图表")'
 - en: '[Chaikin Money Flow](/school/doku.php?id=chart_school:glossary_c#chaikin_money_flow_cmf
     "chart_school:glossary_c") is an example of a centered oscillator that places
     importance on crosses above and below the centerline. Divergences, overbought
@@ -854,50 +1152,65 @@
     more evidence of distribution. **Hence, Chaikin Money Flow is considered to be
     bullish when the oscillator is trading above zero and bearish when trading below
     zero.**'
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: '[查金货币流量](/school/doku.php?id=chart_school:glossary_c#chaikin_money_flow_cmf
+    "chart_school:glossary_c")是一个以中线为中心的振荡器的例子，重视在中线上下交叉。背离、超买水平和超卖水平都次于指标的绝对水平。振荡器的运动方向很重要，但需要放在绝对水平的背景下。振荡器在零线以上的时间越长，越有积累的证据。振荡器在零线以下的时间越长，越有分布的证据。**因此，当振荡器在零线以上交易时被认为是看涨的，而在零线以下交易时被认为是看跌的。**'
 - en: On the IBM chart, Chaikin Money Flow began to turn down in July. At this time,
     the stock was declining with the market and the decline in the oscillator was
     normal. However, in the second half of August, concerns began to grow when the
     oscillator failed to continue up with the stock and fell below zero. As the stock
     advanced further, Chaikin Money Flow continued to deteriorate. This served as
     a signal that something was amiss.
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 IBM 的图表上，查金货币流量在七月份开始下降。此时，股票随市场下跌，振荡器的下降是正常的。然而，在八月下半月，当振荡器未能继续上涨而股票下跌并跌破零线时，人们开始担忧。随着股票进一步上涨，查金货币流量继续恶化。这作为一个信号表明出了问题。
 - en: Pros and Cons of Oscillator Signals
+  id: totrans-127
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 振荡器信号的利弊
 - en: Banded oscillators are best used to identify overbought and oversold conditions.
     However, overbought is not meant to act as a sell signal, and oversold is not
     meant to act as a buy signal. Overbought and oversold situations serve as an alert
     that conditions are reaching extreme levels and close attention should be paid
     to the price action and other indicators.
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 带状振荡器最适合用于识别超买和超卖条件。然而，超买并不意味着要作为卖出信号，超卖也不意味着要作为买入信号。超买和超卖情况仅作为警示，表明条件正在达到极端水平，应密切关注价格走势和其他指标。
 - en: To improve the robustness of oscillator signals, traders can look for multiple
     signals. The criteria for a buy or sell signal could depend on three separate
     yet confirming signals. A buy signal might be generated with an oversold reading,
     positive divergence, and bullish moving average crossover. Conversely, a sell
     signal might be generated from a negative divergence, bearish moving average crossover,
     and bearish centerline crossover.
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了提高振荡器信号的稳健性，交易者可以寻找多个信号。买入或卖出信号的标准可能取决于三个独立但相互确认的信号。买入信号可能是由超卖读数、正向分歧和牛市移动平均线交叉产生的。相反，卖出信号可能是由负向分歧、熊市移动平均线交叉和熊市中线交叉产生的。
 - en: Traditional chart pattern analysis can also be applied to oscillators. This
     is a bit trickier but can help to identify the strength behind an oscillator's
     move. Looking for higher highs or lower lows can help confirm the previous analysis.
     A trend line breakout can signal that a change in the direction of the momentum
     is imminent.
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 传统的图表模式分析也可以应用于振荡器。这有点棘手，但可以帮助识别振荡器运动背后的力量。寻找更高的高点或更低的低点可以帮助确认先前的分析。趋势线突破可以表明动量方向的变化即将发生。
 - en: It is dangerous to trade an oscillator signal against the major trend of the
     market. In bull moves, it is best to look for buying opportunities through oversold
     signals, positive divergences, bullish moving average crossovers and bullish centerline
     crossovers. In bear moves, it is best to look for selling opportunities through
     overbought signals, negative divergences, bearish moving average crossovers and
     bearish centerline crossovers.
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 在市场的主要趋势相反的情况下交易振荡器信号是危险的。在牛市中，最好通过超卖信号、正向分歧、牛市移动平均线交叉和牛市中线交叉寻找买入机会。在熊市中，最好通过超买信号、负向分歧、熊市移动平均线交叉和熊市中线交叉寻找卖出机会。
 - en: And finally, oscillators are most effective when used in conjunction with pattern
     analysis, support/resistance identification, trend identification and other technical
     analysis tools. By being aware of the broader picture, oscillator signals can
@@ -906,5 +1219,7 @@
     can have different meanings in differing circumstances. By using other analysis
     techniques in conjunction with oscillator reading, the chances of success can
     be greatly enhanced.
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，振荡器在与图案分析、支撑/阻力识别、趋势识别和其他技术分析工具结合使用时效果最佳。通过了解更广泛的情况，振荡器信号可以被放入背景中。重要的是要识别当前趋势，甚至确定证券是否根本没有趋势。在不同情况下，振荡器读数和信号可能具有不同的含义。通过将其他分析技术与振荡器读数结合使用，成功的机会可以大大增加。
