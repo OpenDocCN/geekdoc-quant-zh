@@ -1,1 +1,0 @@
-["```py\n( (Upper Band - Lower Band) / Middle Band) * 100\n\n```", "```py\n[type = stock] AND [country = US] \nAND [Daily SMA(20,Daily Volume) > 40000] \nAND [Daily SMA(60,Daily Close) > 20] \n\nAND [Daily BB Width(20,2) > Yesterday's max(5, BB Width(20,2)) * 2]\n```"]

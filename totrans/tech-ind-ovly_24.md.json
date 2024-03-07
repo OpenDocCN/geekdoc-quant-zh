@@ -1,1 +1,0 @@
-["```py\n[type = stock] AND [country = US] \nAND [Daily SMA(60,Daily Volume) > 100000] \nAND [Daily SMA(60,Daily Close) > 20] \n\nAND [Chande Trend Meter x 60.0]\nAND [volume > SMA(50,volume) * 1.5]\n```", "```py\n[type = stock] AND [country = US] \nAND [Daily SMA(60,Daily Volume) > 100000] \nAND [Daily SMA(60,Daily Close) > 20] \n\nAND [SMA(50,Chande Trend Meter) > 80.0]\n```"]

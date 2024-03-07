@@ -1,1 +1,0 @@
-["```py\nAroon-Up = ((25 - Days Since 25-day High)/25) x 100\nAroon-Down = ((25 - Days Since 25-day Low)/25) x 100\n\n```", "```py\n[type = stock] AND [country = US] \nAND [Daily SMA(20,Daily Volume) > 100000] \nAND [Daily SMA(60,Daily Close) > 20] \n\nAND [Daily Aroon Up(25) < 20] \nAND [Daily Aroon Down(25) < 20]\n```"]
