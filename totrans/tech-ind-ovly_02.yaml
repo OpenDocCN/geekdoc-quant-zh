@@ -1,0 +1,369 @@
+- en: Bollinger Bands [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Bollinger Bands](#bollinger_bands)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[SharpCharts Calculation](#sharpcharts_calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Signal: W-Bottoms](#signalw-bottoms)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Signal: M-Tops](#signalm-tops)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Signal: Walking the Bands](#signalwalking_the_bands)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bullish Bollinger Band Crossover](#bullish_bollinger_band_crossover)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bearish Bollinger Band Crossover](#bearish_bollinger_band_crossover)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Additional Resources](#additional_resources)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Developed by John Bollinger, Bollinger Bands® are volatility bands placed above
+    and below a moving average. Volatility is based on the [standard deviation](/school/doku.php?id=chart_school:technical_indicators:standard_deviation_volatility
+    "chart_school:technical_indicators:standard_deviation_volatility"), which changes
+    as volatility increases and decreases. The bands automatically widen when volatility
+    increases and narrow when volatility decreases. This dynamic nature of Bollinger
+    Bands also means they can be used on different securities with the standard settings.
+    For signals, Bollinger Bands can be used to identify M-Tops and W-Bottoms or to
+    determine the strength of the trend. Signals derived from narrowing BandWidth
+    are discussed in the [ChartSchool article on BandWidth.](/school/doku.php?id=chart_school:technical_indicators:bollinger_band_width
+    "chart_school:technical_indicators:bollinger_band_width")
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Note: Bollinger Bands® is a registered trademark of John Bollinger.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: SharpCharts Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: '![Spreadsheet 1](../Images/fe1186ae76f8dfd9e45b704cbb78a8b5.jpg "Spreadsheet
+    1")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Click here to download this spreadsheet example.](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:bollinger_bands:cs-bbands.xls
+    "chart_school:technical_indicators_and_overlays:bollinger_bands:cs-bbands.xls
+    (22.5 KB)")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Bollinger Bands consist of a middle band with two outer bands.** The middle
+    band is a [simple moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") that is usually set at 20
+    periods. A simple moving average is used because the standard deviation formula
+    also uses a simple moving average. The look-back period for the standard deviation
+    is the same as for the simple moving average. The outer bands are usually set
+    2 standard deviations above and below the middle band.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Bollinger Bands - Chart 1](../Images/110a234f5ce8dae8d2f89276136fbcc6.jpg
+    "Bollinger Bands - Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Settings can be adjusted to suit the characteristics of particular securities
+    or trading styles. Bollinger recommends making small incremental adjustments to
+    the standard deviation multiplier. Changing the number of periods for the moving
+    average also affects the number of periods used to calculate the standard deviation.
+    Therefore, only small adjustments are required for the standard deviation **multiplier**.
+    An increase in the moving average period would automatically increase the number
+    of periods used to calculate the standard deviation and would also warrant an
+    increase in the standard deviation **multiplier**. With a 20-day SMA and 20-day
+    Standard Deviation, the standard deviation multiplier is set at 2\. Bollinger
+    suggests increasing the standard deviation multiplier to 2.1 for a 50-period SMA
+    and decreasing the standard deviation multiplier to 1.9 for a 10-period SMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Signal: W-Bottoms'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: W-Bottoms were part of Arthur Merrill's work that identified 16 patterns with
+    a basic W shape. Bollinger uses these various W patterns with Bollinger Bands
+    to identify W-Bottoms. A “W-Bottom” forms in a downtrend and involves two reaction
+    lows. In particular, Bollinger looks for W-Bottoms where the second low is lower
+    than the first but holds above the lower band. There are four steps to confirm
+    a W-Bottom with Bollinger Bands. First, a reaction low forms. This low is usually,
+    but not always, below the lower band. Second, there is a bounce towards the middle
+    band. Third, there is a new price low in the security. This low holds **above**
+    the lower band. The ability to hold above the lower band on the test shows less
+    weakness on the last decline. Fourth, the pattern is confirmed with a strong move
+    off the second low and a resistance break.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Bollinger Bands - Chart 2](../Images/f54c96e7132332cfa8439041a4c55d4d.jpg
+    "Bollinger Bands - Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 2 shows Nordstrom (JWN) with a W-Bottom in January-February 2010\. First,
+    the stock formed a reaction low in January (black arrow) and broke below the lower
+    band. Second, there was a bounce back above the middle band. Third, the stock
+    moved below its January low and held above the lower band. Even though the 5-Feb
+    spike low broke the lower band, Bollinger Bands are calculated using closing prices
+    so signals should also be based on closing prices. Fourth, the stock surged with
+    expanding volume in late February and broke above the early February high. Chart
+    3 shows Sandisk with a smaller W-Bottom in July-August 2009\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Bollinger Bands - Chart 3](../Images/bf510be6f35a8239b261b036f9d1e345.jpg
+    "Bollinger Bands - Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Signal: M-Tops'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: M-Tops were also part of Arthur Merrill's work that identified 16 patterns with
+    a basic M shape. Bollinger uses these various M patterns with Bollinger Bands
+    to identify M-Tops. According to Bollinger, tops are usually more complicated
+    and drawn out than bottoms. Double tops, head-and-shoulders patterns, and diamonds
+    represent evolving tops.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In its most basic form, an M-Top is similar to a double top. However, the reaction
+    highs are not always equal. The first high can be higher or lower than the second
+    high. Bollinger suggests looking for signs of non-confirmation when a security
+    is making new highs. This is basically the opposite of the W-Bottom. A non-confirmation
+    occurs with three steps. First, a security creates a reaction high above the upper
+    band. Second, there is a pullback towards the middle band. Third, prices move
+    above the prior high but fail to reach the upper band. This is a warning sign.
+    The inability of the second reaction high to reach the upper band shows waning
+    momentum, which can foreshadow a trend reversal. Final confirmation comes with
+    a support break or bearish indicator signal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Bollinger Bands - Chart 4](../Images/ef2a2266ca0d40f277d475782b570b33.jpg
+    "Bollinger Bands - Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 4 shows Exxon Mobil (XOM) with an M-Top in April-May 2008\. The stock
+    moved above the upper band in April. There was a pullback in May and then another
+    push above 90\. Even though the stock moved above the upper band on an intraday
+    basis, it did not CLOSE above the upper band. The M-Top was confirmed with a support
+    break two weeks later. Also, notice that MACD formed a bearish divergence and
+    moved below its signal line for confirmation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Bollinger Bands - Chart 5](../Images/fd6b7e6856a00cb2e1fb5c819cadaae7.jpg
+    "Bollinger Bands - Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 5 shows Pulte Homes (PHM) within an uptrend in July-August 2008\. Price
+    exceeded the upper band in early September to affirm the uptrend. After a pullback
+    below the 20-day SMA (middle Bollinger Band), the stock moved to a higher high
+    above 17\. Despite this new high for the move, price did not exceed the upper
+    band. This flashed a warning sign. The stock broke support a week later and MACD
+    moved below its signal line. Notice that this M-top is more complex because there
+    are lower reaction highs on either side of the peak (blue arrow). This evolving
+    top formed a small head-and-shoulders pattern.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Signal: Walking the Bands'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Moves above or below the bands are not signals per se. As Bollinger puts it,
+    moves that touch or exceed the bands are not signals, but rather “tags”. On the
+    face of it, a move to the upper band shows strength, while a sharp move to the
+    lower band shows weakness. Momentum oscillators work much the same way. Overbought
+    is not necessarily bullish. It takes strength to reach overbought levels and overbought
+    conditions can extend in a strong uptrend. Similarly, prices can “walk the band”
+    with numerous touches during a strong uptrend. Think about it for a moment. The
+    upper band is 2 standard deviations above the 20-period simple moving average.
+    It takes a pretty strong price move to exceed this upper band. An upper band touch
+    that occurs after a Bollinger Band confirmed W-Bottom would signal the start of
+    an uptrend. Just as a strong uptrend produces numerous upper band tags, it is
+    also common for prices to never reach the lower band during an uptrend. The 20-day
+    SMA sometimes acts as support. In fact, dips below the 20-day SMA sometimes provide
+    buying opportunities before the next tag of the upper band.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Bollinger Bands - Chart 6](../Images/051ab7377a0e2e10a77e58774468744d.jpg
+    "Bollinger Bands - Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 6 shows Air Products (APD) with a surge and close above the upper band
+    in mid-July. First, notice that this is a strong surge that broke above two resistance
+    levels. A strong upward thrust is a sign of strength, not weakness. Trading turned
+    flat in August and the 20-day SMA moved sideways. The Bollinger Bands narrowed,
+    but APD did not close below the lower band. Prices and the 20-day SMA turned up
+    in September. Overall, APD closed above the upper band at least five times over
+    a four month period. The indicator window shows the 10-period Commodity Channel
+    Index (CCI). Dips below -100 are deemed oversold and moves back above -100 signal
+    the start of an oversold bounce (green dotted line). The upper band tag and breakout
+    started the uptrend. CCI then identified tradable pullbacks with dips below -100\.
+    This is an example of combining Bollinger Bands with a momentum oscillator for
+    trading signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Bollinger Bands - Chart 7](../Images/ccc80ddfe581bcdc69d617f8af24cd07.jpg
+    "Bollinger Bands - Chart 7")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 7 shows Monsanto (MON) with a walk down the lower band. The stock broke
+    down in January with a support break and closed below the lower band. From mid-January
+    until early May, Monsanto closed below the lower band at least five times. Notice
+    that the stock did not close above the upper band once during this period. The
+    support break and initial close below the lower band signaled a downtrend. As
+    such, the 10-period Commodity Channel Index (CCI) was used to identify short-term
+    overbought situations. A move above +100 is overbought. A move back below +100
+    signals a resumption of the downtrend (red arrows). This system triggered two
+    good signals in early 2010\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Bollinger Bands reflect direction with the 20-period SMA and volatility with
+    the upper/lower bands. As such, they can be used to determine if prices are relatively
+    high or low. **According to Bollinger, the bands should contain 88-89% of price
+    action, which makes a move outside the bands significant.** Technically, prices
+    are relatively high when above the upper band and relatively low when below the
+    lower band. However, relatively high should not be regarded as bearish or as a
+    sell signal. Likewise, relatively low should not be considered bullish or as a
+    buy signal. Prices are high or low for a reason. As with other indicators, Bollinger
+    Bands are not meant to be used as a stand-alone tool. Chartists should combine
+    Bollinger Bands with basic trend analysis and other indicators for confirmation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Bollinger Bands can be found in SharpCharts as a price overlay. As with a simple
+    moving average, Bollinger Bands should be shown on top of a price plot. Upon selecting
+    Bollinger Bands, the default setting will appear in the parameters window (20,2).
+    The first number (20) sets the periods for the simple moving average and the standard
+    deviation. The second number (2) sets the standard deviation multiplier for the
+    upper and lower bands. These default parameters set the bands 2 standard deviations
+    above/below the simple moving average. Users can change the parameters to suit
+    their charting needs. Bollinger Bands (50,2.1) can be used for a longer timeframe
+    or Bollinger Bands (10,1.9) can be used for a shorter timeframe. [Click here](http://stockcharts.com/h-sc/ui?s=QQQ&p=D&b=5&g=0&id=p50569930924
+    "http://stockcharts.com/h-sc/ui?s=QQQ&p=D&b=5&g=0&id=p50569930924") for a live
+    example.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Bollinger Bands - Sharpcharts](../Images/adabdf9386749ff0c360aa590554654a.jpg
+    "Bollinger Bands - Sharpcharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Bullish Bollinger Band Crossover
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan finds stocks that have just moved above their upper Bollinger Band
+    line. This scan is just a starting point. Further refinement and analysis are
+    required.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Bearish Bollinger Band Crossover
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan finds stocks that have just moved below their lower Bollinger Band
+    line. This scan is just a starting point. Further refinement and analysis are
+    required.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Bollinger Band scans, please see our
+    [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_bands
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_bands") in
+    the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* * *'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additional Resources
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Stocks & Commodities Magazine Articles
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '**[Bollinger Bands by Amy Wu](http://stockcharts.com/h-mem/tascredirect.html?artid=\V20\C01\015BOLL.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V20\C01\015BOLL.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Dec 2001 - Stocks & Commodities V. 20:1 (78-79)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Using Bollinger Bands by John Bollinger](http://stockcharts.com/h-mem/tascredirect.html?artid=\V10\C02\USINGBO.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V10\C02\USINGBO.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Jan 1992 - Stocks & Commodities V. 10:2 (47-51)
+  prefs: []
+  type: TYPE_NORMAL

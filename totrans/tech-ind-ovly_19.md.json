@@ -1,0 +1,1 @@
+["```py\n\nCurrent ATR = [(Prior ATR x 13) + Current TR] / 14\n\n  - Multiply the previous 14-day ATR by 13.\n  - Add the most recent day's TR value.\n  - Divide the total by 14\n\n```", "```py\n[group is SP600]\nAND [Daily EMA(50,close) > Daily EMA(200,close)]  \n\nAND [ATR(250) / SMA(20,Close) * 100 < 4] \n```"]

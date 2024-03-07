@@ -1,0 +1,257 @@
+- en: Coppock Curve [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Coppock Curve](#coppock_curve)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[SharpCharts Calculation](#sharpcharts_calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Signals](#signals)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Flexibility](#flexibility)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Coppock Curve Crosses above Zero](#coppock_curve_crosses_above_zero)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Coppock Curve Crosses below Zero](#coppock_curve_crosses_below_zero)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Coppock Curve is a momentum indicator developed by Edwin “Sedge” Coppock,
+    who was an economist by training. Coppock introduced the indicator in Barron's
+    in October 1965\. The goal of this indicator is to identify long-term buying opportunities
+    in the S&P 500 and Dow Industrials. The signal is very simple. Coppock used monthly
+    data to identify buying opportunities when the indicator moved from negative territory
+    to positive territory. Although Coppock did not use it for sell signals, many
+    technical analysts consider a cross from positive to negative territory as a sell
+    signal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: SharpCharts Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: The [Rate-of-Change indicator](/school/doku.php?id=chart_school:technical_indicators:rate_of_change_roc_and_momentum
+    "chart_school:technical_indicators:rate_of_change_roc_and_momentum") is a momentum
+    oscillator that oscillates above and below the zero line. Coppock used 11 and
+    14 periods because, according to an Episcopal priest, this was the average mourning
+    period when grieving the loss of a loved one. Coppock theorized that the recovery
+    period for stock market losses would be similar to this timeframe.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 1](../Images/090124138fd2094e161e31af676fa021.jpg "Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: The Rate-of-Change indicators were then smoothed with a weighted [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages"). As its name implies, a weighted
+    moving average puts more weight on recent data and less weight on older data.
+    For example, a 3-period WMA would multiply the first data point by 1, the second
+    data point by 2 and the third data point by 3\. The sum of these three numbers
+    is then divided by 6, which is the sum of the weightings (1 + 2 + 3), to create
+    a weighted average. The table below shows a calculation from an excel spreadsheet.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Spreadsheet 1](../Images/59dcbc5a0aa62857dbc89eebb338b93d.jpg "Spreadsheet
+    1")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Click here to download this spreadsheet example.](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:coppock_curve:cs-coppock.xls
+    "chart_school:technical_indicators_and_overlays:coppock_curve:cs-coppock.xls (38.5
+    KB)")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Signals
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Using monthly data, this indicator will not trigger very many signals. A buy
+    signal triggers with a cross into positive territory, while a sell signal triggers
+    with a cross into negative territory. Unsurprisingly, there have been only five
+    signals since the late 1980s. The chart below shows the last four signals. The
+    first signal triggered in 1988, which was after the 1987 crash.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 2](../Images/4c5c5f83d2a5944c1e38afa4766befe4.jpg "Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chartists following the two sell signals would have avoided the last two bear
+    markets. The February 2001 sell signal would have avoided most of the bear market
+    from 2000 to 2002\. The June 2008 sell signal would have gotten investors out
+    before the market plunge in the second half of 2008\. These sell signals could
+    have been used to simply exit the stock market and move into cash, which would
+    have lowered market exposure and overall risk.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Flexibility
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: As noted above, the Coppock Curve is simply a smoothed momentum oscillator.
+    The Rate-of-Change indicator measures momentum and the weighted moving average
+    smooths the data. This means the indicator can be used on any timeframe. Intraday,
+    daily and weekly data can be used to fit one's trading/investing style and time
+    horizon. The chart below shows the Coppock Curve using weekly data on the Dow
+    Industrials. As expected, the weekly chart produced many more signals than the
+    monthly chart.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 3](../Images/550f7b92341fb33be036374b88e3ba66.jpg "Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: In addition to different timeframes, the parameters can be adjusted to make
+    the indicator faster or slower. A shorter Rate-of-Change setting will make the
+    Coppock Curve more sensitive and faster, while a longer setting will make it less
+    sensitive and slower. The chart below shows daily bars for the Nasdaq 100 ETF
+    (QQQ) and the Coppock Curve (20,10,10). This setting makes the Coppock Curve a
+    little less sensitive, which may be better suited for daily charts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 4](../Images/44cc79ba8fb3a67960e8960cce634535.jpg "Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Coppock Curve is simply a smoothed momentum oscillator. Even though it was
+    originally designed for monthly charts and long-term analysis, it can be used
+    on intraday, daily or weekly charts and the settings can be adjusted to suit one's
+    style. The main signals are generated with crosses above and below the zero line.
+    More aggressive chartists can consider looking for bullish and bearish divergences
+    to anticipate such crossovers. Be careful though. Divergences do not always result
+    in trend reversals because the trend can simply slow and continue in the same
+    direction.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Coppock Curve can be found in the Indicators section below the chart. Users
+    can adjust the settings by changing the numbers in the Parameters box. The indicator
+    can then be positioned “behind price,” “above” the main window or “below” the
+    main window. It helps to change the color when placing it behind the price. Chartists
+    can also add a moving average using the “advanced” options. This moving average
+    acts like a signal line, similar to [MACD](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd
+    "chart_school:technical_indicators:moving_average_convergence_divergence_macd").
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 5](../Images/618f6c1cb1a174722cd65228be635034.jpg "Chart 5") ![Chart
+    6](../Images/4b1081f7c788fab96f42991e840e858c.jpg "Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Coppock Curve Crosses above Zero
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This simple scan searches for stocks where the Coppock Curve crossed from negative
+    territory to positive territory and daily volume was above the 50-day moving average
+    of volume. In other words, the bullish crossover occurred with expanding volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Coppock Curve Crosses below Zero
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This simple scan searches for stocks where the Coppock Curve crossed from positive
+    territory to negative territory and daily volume was above the 50-day moving average
+    of volume. In other words, the bearish crossover occurred with expanding volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Coppock Curve scans, please see our
+    [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#coppock_curve_coppock
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#coppock_curve_coppock")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Technical Analysis of the Financial Markets has a chapter devoted to momentum
+    oscillators and their various uses. Murphy covers the pros and cons as well as
+    some examples specific to Rate-of-Change. Pring's book shows the basics of momentum
+    indicators by covering divergences, crossovers, and other signals. There are two
+    more chapters covering specific momentum indicators with plenty of examples.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis of the Financial Markets** John J. Murphy | **Technical
+    Analysis Explained by Martin Pring** Martin Pring |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB

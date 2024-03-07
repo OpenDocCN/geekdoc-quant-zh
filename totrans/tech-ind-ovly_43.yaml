@@ -1,0 +1,351 @@
+- en: Rate of Change (ROC) [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Rate of Change (ROC)](#rate_of_change_roc)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Trend Identification](#trend_identification)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overbought/Oversold Extremes](#overbought_oversold_extremes)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Oversold Rate-of-Change](#oversold_rate-of-change)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overbought Rate-of-Change](#overbought_rate-of-change)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Rate-of-Change (ROC) indicator, which is also referred to as simply Momentum,
+    is a pure [momentum oscillator](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")
+    that measures the percent change in price from one period to the next. The ROC
+    calculation compares the current price with the price “n” periods ago. The plot
+    forms an oscillator that fluctuates above and below the zero line as the Rate-of-Change
+    moves from positive to negative. As a momentum oscillator, ROC signals include
+    centerline crossovers, divergences and overbought-oversold readings. Divergences
+    fail to foreshadow reversals more often than not so this article will forgo a
+    discussion on divergences. Even though centerline crossovers are prone to whipsaw,
+    especially short-term, these crossovers can be used to identify the overall trend.
+    Identifying overbought or oversold extremes comes naturally to the Rate-of-Change
+    oscillator.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: '![ROC - Spreadsheet 1](../Images/e68d80196e9cd3903aacafbdb04eb415.jpg "ROC
+    - Spreadsheet 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Click here to download this spreadsheet example.](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:roc:cs-roc.xls
+    "chart_school:technical_indicators_and_overlays:roc:cs-roc.xls (16.5 KB)")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ROC - Chart 1](../Images/16f032d9a9d473d10b9a24fceae2cd0b.jpg "ROC - Chart
+    1")'
+  prefs: []
+  type: TYPE_IMG
+- en: The table above shows the 12-day Rate-of-Change calculations for the Dow Industrials
+    in May 2010\. The yellow cells show the Rate-of-Change from April 28th to May
+    14th. It is actually 13 trading days, but the close on the 28th acts as the starting
+    point on the 29th. The blue cells show the 12-day Rate-of-Change from May 7th
+    until May 25th.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: As noted above, the Rate-of-Change indicator is momentum in its purest form.
+    It measures the percentage increase or decrease in price over a given period of
+    time. Think of its as the rise (price change) over the run (time). In general,
+    prices are rising as long as the Rate-of-Change remains positive. Conversely,
+    prices are falling when the Rate-of-Change is negative. ROC expands into positive
+    territory as an advance accelerates. ROC dives deeper into negative territory
+    as a decline accelerates. There is no upward boundary on the Rate-of-Change. The
+    sky is the limit for an advance. There is, however, a downside limit. Securities
+    can only decline 100%, which would be to zero. Even with these lopsided boundaries,
+    Rate-of-Change produces identifiable extremes that signal [overbought](/school/doku.php?id=chart_school:glossary_o#overbought
+    "chart_school:glossary_o") and oversold conditions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Trend Identification
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Even though momentum oscillators are best suited for trading ranges or zigzag
+    trends, they can also be used to define the overall direction of the underlying
+    trend. There are approximately 250 trading days in a year. This can be broken
+    down into 125 days per half year, 63 days per quarter and 21 days per month. A
+    trend reversal starts with the shortest timeframe and gradually spreads to the
+    other timeframes. In general, the long-term trend is up when both the 250-day
+    and 125-day Rate-of-Change are positive. This means that prices are higher now
+    than they were 12 and 6 months ago. Long positions taken 6 or 12 months ago would
+    be profitable and buyers would be happy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ROC - Chart 2](../Images/c7b37b048fe8667e8b873e883052356d.jpg "ROC - Chart
+    2")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 2 shows IBM with the 250-day, 125-day, 63-day and 21-day Rate-of-Change.
+    There have been three big trends in the last three years. The first was up as
+    the 250-day Rate-of-Change was largely positive until September 2008 (1). The
+    second was down as the indicator turned negative from October 2008 until September
+    2009 (2). The third is up as the indicator turned positive in late September 2009
+    (3). Even though the big uptrend remains in force, IBM flattened out on the price
+    chart and this affected the 125-day and 63-day Rate-of-Change. The 63-day Rate-of-Change
+    (quarterly) has been flirting with negative territory since February (4). The
+    125-day Rate-of-Change (six-month) dipped into negative territory for the first
+    time since April 2009 (5). This shows some deterioration in IBM that serves as
+    an alert to watch the stock carefully. A break below the six-month trading range
+    would be a bearish development (6).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Overbought/Oversold Extremes
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'There are basically three price movements: up, down and sideways. Momentum
+    oscillators are ideally suited for sideways price action with regular fluctuations.
+    This makes it easier to identify extremes and forecast turning points. Security
+    prices can also fluctuate when trending. For example, an uptrend consists of a
+    series of higher highs and higher lows as prices zigzag higher. Pullbacks often
+    occur at regular intervals based on the percentage move, time elapsed or both.
+    A downtrend consists of lower lows and lower highs as prices zigzag lower. Counter
+    trend advances retrace a portion of the prior decline and usually peak below the
+    prior high. Peaks can occur at regular intervals based on the percentage move,
+    time elapsed or both. The Rate-of-Change can be used to identify periods when
+    the percentage change nears a level that foreshadowed a turning point in the past.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ROC - Chart 3](../Images/a4ccb1f4d9d28a19dc93bb4a98be68d5.jpg "ROC - Chart
+    3")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 3 shows Aetna (AET) with an uptrend from April 2009 until April 2010\.
+    Notice how the stock zigzagged up with a series of higher highs and higher lows.
+    Because the overall trend was up, the Rate-of-Change indicator was used to identify
+    short-term oversold levels as a chance to partake in the bigger uptrend. Short-term
+    overbought signals were ignored because the bigger trend was up. Based on the
+    May-June bounces, -10% was set as the oversold boundary. Movements below this
+    level indicated that prices were at a short-term extreme. Overbought and oversold
+    settings depend on the volatility of the underlying security. A more volatile
+    stock may use -15% for oversold, while a less volatile stock may use -5%. Oversold
+    readings serve as an alert to be ready for a turning point. Prices are oversold,
+    but have yet to actually turn. Remember, a security can become oversold and remain
+    oversold as the decline continues. A 20-day [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") was overlaid to identify
+    an actual upturn. After ROC became oversold in early October, AET moved above
+    its 20-day SMA in late October to confirm an upturn (1). The second oversold reading
+    occurred in early February and AET moved above its 20-day SMA in late February
+    (2).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ROC - Chart 4](../Images/a993f806dbac32a1bc8d7b66b85ddae7.jpg "ROC - Chart
+    4")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 4 shows Microsoft (MSFT) in a downtrend from November 2007 until March
+    2009\. This example uses a 20-day Rate-of-Change to identify oversold levels within
+    a bigger downtrend. The number of time periods depends on the individual security
+    and the desired trading timeframe. The late December high occurred with an overbought
+    reading above +10%. This means Microsoft was up over 10% in a 20-day period, which
+    is about a month. That's a pretty good bounce within a bigger downtrend. The next
+    overbought reading did not occur until April when the Rate-of-Change again exceeded
+    +10%. MSFT broke trend line support in May to signal a continuation of the downtrend.
+    The next overbought reading occurred in early August 2008\. It took a while, but
+    the stock eventually broke support at 24 in mid-September and again in early October.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ROC - Chart 5](../Images/20469b3708ff4c3653c405bdff5ddb32.jpg "ROC - Chart
+    5")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 5 shows Abercrombie & Fitch (ANF) within a trading range from October
+    2006 to February 2008\. The 20-day Rate-of-Change indicator sets overbought at
+    +10% and oversold at -10%. The overbought and oversold levels identify extremes
+    quite well, but timing the actual turn is more difficult because of the volatility.
+    The next chart reduces this volatility by using an exponential [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") in place of the price plot.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ROC - Chart 6](../Images/860eda756c50c7f025464e788594e554.jpg "ROC - Chart
+    6")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 6 shows ANF as a 10-day EMA (black) and the actual price plot is invisible.
+    A 30-day EMA has been overlaid as a signal line. Furthermore, the 20-day Rate-of-Change
+    is shown with a 5-day SMA to smooth out the fluctuations. There are fewer overbought
+    and oversold readings using the 5-day SMA. Focusing only on the buy signals, the
+    green dotted line shows when ROC exceeds -10% and the green arrow shows when the
+    10-day EMA crosses above the 30-day SMA. The oversold readings are usually early,
+    but the moving average crossovers are usually late. Such is life with technical
+    analysis. The point here is to reduce whipsaws by smoothing the data. A 10-day
+    EMA was used because it is faster than a 10-day SMA. A 30-day SMA was used because
+    it is slower than a 30-day EMA. Speeding up the shorter moving average and slowing
+    down the longer moving average makes for slightly quicker signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Rate-of-Change oscillator measures the speed at which prices are changing.
+    An upward surge in the Rate-of-Change reflects a sharp price advance. A downward
+    plunge indicates a steep price decline. Even though chartists can look for bullish
+    and bearish divergences, these formations can be misleading because of sharp moves.
+    Sustained advances often start with a big surge out of the gate. Subsequent advances
+    are usually less sharp and this causes a bearish divergence to form in the Rate-of-Change
+    oscillator. It is important to remember that prices are constantly increasing
+    as long as the Rate-of-Change remains positive. Positive readings may be less
+    than before, but a positive Rate-of-Change still reflects a price increase, not
+    a price decline. Like all technical indicator, the Rate-of-Change oscillator should
+    be used in conjunction with other aspects of technical analysis.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ROC - Chart 7](../Images/026769ac86b1a7a02730e148e6677dbc.jpg "ROC - Chart
+    7")'
+  prefs: []
+  type: TYPE_IMG
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Rate-of-Change can be set as an indicator above, below or behind a security's
+    price plot. Once the indicator is chosen from the dropdown list, the default parameter
+    setting appears (12). This parameter can be adjusted to increase or decrease sensitivity.
+    Users can add a moving average by clicking “advanced options” and choosing an
+    overlay. A moving average can be used as a signal line or to simply smooth the
+    data. Horizontal lines can also be added to mark overbought or oversold levels.
+    [Click here for a live example of Rate-of-Change](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&b=5&g=0&id=p79327039629&listNum=30&a=201216941
+    "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&b=5&g=0&id=p79327039629&listNum=30&a=201216941").
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ROC - SharpCharts](../Images/1dd0ac8a96ca6fced9795baacabde806.jpg "ROC -
+    SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Oversold Rate-of-Change
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks with a positive 125-day Rate-of-Change and an oversold
+    21-day Rate-of-Change (below -8%). Once these criteria are met, a bullish signal
+    is triggered when the stock closes above the 20-day SMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Overbought Rate-of-Change
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks with a negative 125-day Rate-of-Change and an overbought
+    21-day Rate-of-Change (above 8%). Once these criteria are met, a bearish signal
+    is triggered when the stock closes below the 20-day SMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for ROC scans, please see our [Scanning
+    Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#rate_of_change_roc
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#rate_of_change_roc")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Technical Analysis of the Financial Markets has a chapter devoted to momentum
+    oscillators and their various uses. Murphy covers the pros and cons as well as
+    some examples specific to Rate-of-Change. Pring's book shows the basics of momentum
+    indicators by covering divergences, crossovers, and other signals. There are two
+    more chapters covering specific momentum indicators with plenty of examples.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis of the Financial Markets** John J. Murphy | **Technical
+    Analysis Explained by Martin Pring** Martin Pring |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB

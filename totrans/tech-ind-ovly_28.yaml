@@ -1,0 +1,394 @@
+- en: DecisionPoint Price Momentum Oscillator (PMO) [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[DecisionPoint Price Momentum Oscillator (PMO)](#decisionpoint_price_momentum_oscillator_pmo)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overbought/Oversold Indicator](#overbought_oversold_indicator)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Momentum Indicator](#momentum_indicator)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Signal Generator](#signal_generator)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[PMO Configurations](#pmo_configurations)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusion](#conclusion)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[PMO Rising But Not Yet Crossed Over Signal Line](#pmo_rising_but_not_yet_crossed_over_signal_line)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[PMO Falling But Not Yet Crossed Below Signal Line](#pmo_falling_but_not_yet_crossed_below_signal_line)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The DecisionPoint Price Momentum Oscillator (PMO) is an oscillator based on
+    a [Rate of Change (ROC)](/school/doku.php?id=chart_school:technical_indicators:rate_of_change_roc_and_momentum
+    "chart_school:technical_indicators:rate_of_change_roc_and_momentum") calculation
+    that is smoothed twice with exponential moving averages that use a custom smoothing
+    process. Because the PMO is normalized, it can also be used as a relative strength
+    tool. Stocks can thus be ranked by their PMO value as an expression of relative
+    strength.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The DecisionPoint Price Momentum Oscillator is derived by taking a one period
+    rate of change and smoothing it with two custom smoothing functions. The custom
+    smoothing functions are very similar to Exponential Moving Averages but instead
+    of adding one to the time period setting to create the smoothing multiplier (as
+    in a true EMA), the smoothing functions just use the period by itself.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: '![](../Images/fcf273d3319262ef16792bc1bc61ab3d.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'The table below shows the calculation for Amazon''s PMO:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/848e8a353e052ece6f3bcd60d6a8d12d.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: To download an Excel spreadsheet with these calculations, [click here](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:dp_price_momentum_osc:cs-dp-pmo.xls
+    "chart_school:technical_indicators_and_overlays:dp_price_momentum_osc:cs-dp-pmo.xls
+    (387 KB)").
+  prefs: []
+  type: TYPE_NORMAL
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The PMO oscillates in relation to a zero line. Normally, the PMO direction indicates
+    if strength is increasing or decreasing, and the steepness of the trend angle
+    demonstrates the power behind the move. Since this is an internal ratio calculation
+    (versus external, like the standard relative strength calculation, which divides
+    one price by another price index), it returns a result that is normalized and
+    can be compared to the PMO result of any other security or index. Therefore, chartists
+    can rank a list of securities or indexes in relative strength order simply by
+    using their PMO values. The list does not have to be homogeneous ­ the PMO can
+    be used to rank market indexes, stocks and mutual funds in the same list.
+  prefs: []
+  type: TYPE_NORMAL
+- en: An indicator that looks very similar to the PMO is the MACD ([Moving Average
+    Convergence-Divergence](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd
+    "chart_school:technical_indicators:moving_average_convergence_divergence_macd"))
+    indicator invented by Gerald Appel. The main difference between the PMO and MACD
+    is the absolute value of each indicator. The MACD is based on moving average calculations,
+    and one MACD reading bears no relationship whatsoever to another; whereas the
+    PMO, as explained above, is an internal ratio. The chart below shows the PMO and
+    MACD together.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/457845a6ea2559fed652cafacd582514.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: While the PMO and MACD have similar shapes on shorter-term charts, the advantage
+    of the ratio-type calculation for the PMO is evident on longer-term charts because
+    the PMO is fairly constant, unlike the MACD. See the weekly and monthly charts
+    below.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/a08bcced80290d35246987d59e81dc54.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](../Images/20c4ca5aa0b58aeca3a430277fa2a5e4.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Overbought/Oversold Indicator
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: As demonstrated below, the PMO can help determine if a price index is overbought
+    or oversold. Below is a five-year chart of the S&P 500 Index showing a wide range
+    of extreme market conditions. The normal PMO range for this index is from about
+    +2.5 (overbought) to -2.5 (oversold), and, when the PMO approaches or breaches
+    those limits, it often signals a price reversal. When the PMO changes direction
+    at or beyond the extremes of its normal range, it is a fairly reliable indication
+    that an intermediate-term change in price direction is taking place.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/b239a0f4276f4700c25ce232f3e93497.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: While the +2.5 to -2.5 is the usual range for broad stock market indexes, each
+    price index will have its own “signature” range. For example, the chart of Microsoft
+    (MSFT) below shows a range of +5.0 to -5.0\. Always check a longer-term chart
+    to verify the normal range for the index you are analyzing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/5d9d22230c2bc2b87a50c7f89a529be1.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Also, remember that technical indicators are calculated based on a specific
+    number of time periods within the timeframe being addressed, so a monthly PMO
+    looks completely different from a daily PMO. See the monthly based chart below
+    which uses the same seven-year period as the daily MSFT chart above.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/10dfebd3a39e9bfd5a8df9dd956a17e4.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Momentum Indicator
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: As a momentum indicator, the PMO expresses the direction and velocity of price
+    movement. In this regard, it is like other momentum indicators. On the chart of
+    the Gold ETF (GLD) below, the strongest moves in either direction are characterized
+    by straight, steep, smooth PMO movement. More halting trends usually are accompanied
+    by frequent PMO direction changes. PMO bottoms and tops suggest that price momentum
+    has shifted direction, so they can provide early flags to price tops and bottoms.
+    They are usually more reliable when the PMO is in overbought or oversold territory.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/1d6878b0e6c3cd294add5976d7cb3b69.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Finally, like other oscillators, the PMO gives hints of important direction
+    changes by forming divergences against the price index. Three separate divergences
+    have been highlighted below. The two negative divergences (red lines) warn of
+    important tops as the price index makes a higher high, and the PMO makes a lower
+    high. The Positive divergence (green lines) signal an important bottom with price
+    making a lower low while the PMO makes a higher low.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/89a082a88c19e71ee85e527a1a1b4b27.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Signal Generator
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The PMO generates a crossover signal when it crosses through its 10 period EMA.
+    These signals tend to be short-term in duration, but they can last for several
+    weeks. Do not take them at face value because they can whipsaw quite a bit. They
+    should be used to alert you to possible trading opportunities not used as a mechanical
+    trading model. Always check the chart to verify the price pattern and the configuration
+    of the PMO. Signals are best when price appears extended, is near support or resistance,
+    and the PMO is very overbought or oversold. These signals may also be used with
+    DecisionPoint [Trend Analysis](/school/doku.php?id=chart_school:trading_strategies:decisionpoint_trend_model
+    "chart_school:trading_strategies:decisionpoint_trend_model") using 20/50/200-EMA
+    crossovers which determine long-term, intermediate-term and short-term bull or
+    bear bias.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The most reliable signals are generated when the PMO is near the extremes of
+    its normal range, or when a direction change and crossover occurs following a
+    strong, clean, straight PMO move. Quite a bit of “noise” can be generated around
+    the zero line and while the PMO is moving in a relatively flat pattern. Crossover
+    signals have been highlighted on the chart below:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/952d8b706d469bae41b4c1a63a297b3b.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: PMO Configurations
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '**SIDEWAYS WIGGLE**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The following chart illustrates a common PMO formation that emphasizes why all
+    PMO crossover signals cannot be taken literally. The area circled in red is typical
+    of PMO movement during a steady rising price trend. There is little volatility
+    in price movement, so the PMO moves sideways. The fact that the PMO remains above
+    the zero line testifies to the strength of the price move; however, minor zigzags
+    in price movement cause the PMO to whipsaw above and below its 10-EMA, generating
+    many unprofitable crossover bull signals. This chart also shows how sideways wiggle
+    ultimately will end and how it can offer subtle clues that the end of the trend
+    is near.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/a267835c9e58dc8c96412576062c795f.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**BEAR KISS**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The “bear kiss” is the final part of three distinct topping actions often displayed
+    by the PMO. When we see this classic formation, it offers additional reassurance
+    that a tradable top is in place. We start looking for this formation when the
+    PMO has become relatively overbought and the price index has experienced a substantial
+    move up. This formation doesn't always occur at tops, but, when it does, it helps
+    build our confidence in the reliability of the signal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first action is a false PMO top. Major tops are always accompanied by an
+    overbought PMO top, but all PMO tops do not signal major price tops. The false
+    top alerts us that a price top is probably just a few weeks away.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Next we'll see a slightly higher PMO top followed by a crossover sell signal,
+    which is generated when the PMO (blue line) crosses down through its 10-EMA (green
+    line). When these signals occur at very overbought levels, they may tentatively
+    be taken at face value, but, when they have been preceded by very strong price
+    action, it is possible for prices to make yet another new high, which causes the
+    PMO to begin rising again.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, as prices roll over from the final top, the PMO turns up again, this
+    time topping after just barely “kissing” the underside of the 10-EMA. Some refer
+    to this as the “kiss of death,” but this seems a tad dramatic, so a bear kiss
+    seems more appropriate. Besides, there is a reciprocal formation at important
+    bottoms, and the term “bull kiss” seems more apt than “kiss of life.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that an important aspect of this analysis is that the price index has broken
+    a rising trend line in conjunction with the bear kiss.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/4a5c4d6de8e91a0cca696d0531374246.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**BULL KISS**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The “bull kiss” occurs shortly after a PMO crossover buy signal, and is the
+    result of a price pullback after the initial up thrust that generates the crossover
+    signal. While the bull kiss and bear kiss are essentially equal but opposite formations,
+    price behavior between the two is different. Normally, the bear kiss is a non-confirmation
+    which coincides with the final price high in a rally; whereas, the bull kiss normally
+    coincides with a higher price low in a new rally.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/f366d38c3af656f556528191e87cdcb8.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**CLEAN SIGNALS**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: While the bull and bear kiss formations are quite common, it is also possible
+    to have very clean PMO reversals and crossovers without any of the gyrations associated
+    with blow-offs and retests because the change in price trend is relatively smooth.
+    The point is that reversals and crossover actions can cover a wide range of configurations.
+    A study of the charts will lead to a better understanding of the kind of price
+    action that begets a certain type of PMO behavior. The PMO behavior also gives
+    clues as to what kind of price behavior to expect.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/3b9d93e56c554d2b93239a87ad899bde.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusion
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The DecisionPoint Price Momentum Oscillator (PMO) can be used as both a measure
+    of relative strength, momentum, and overbought/oversold conditions. It can also
+    be used to determine price reversals using bull and bear crossovers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The DecisionPoint PMO is available as an indicator for SharpCharts. The default
+    settings use a 35 period and 20 period EMA with a 10 period EMA signal line, but
+    users can opt for a shorter timeframe to produce a more sensitive oscillator or
+    a longer timeframe to produce a less sensitive oscillator. Once selected, the
+    indicator can be placed above, below or behind the underlying price plot.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/9fbde43fe23bd887d872262f67faf3c8.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: PMO Rising But Not Yet Crossed Over Signal Line
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with a base of stocks that are averaging at least $10 in price
+    and 100,000 in daily volume over the last 60 days. The stock's PMO must have been
+    rising for the last three days, but has not yet crossed over its signal line.
+    In addition, the 20-day EMA is above the 50-day EMA, which is above the 200-day
+    EMA, indicating the stock is in an intermediate-term or long-term bull market.
+    This scan is meant as a starting point for further analysis and due diligence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: PMO Falling But Not Yet Crossed Below Signal Line
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with a base of stocks that are averaging at least $10 in price
+    and 100,000 in daily volume over the last 60 days. The stock's PMO must have been
+    in decline for the last three days, but has not yet crossed below its signal line.
+    In addition, the 20-day EMA is below the 50-day EMA, which is below the 200-day
+    EMA, indicating the stock is in an intermediate-term or long-term bear market.
+    This scan is meant as a starting point for further analysis and due diligence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for PMO scans, please see our [Scanning
+    Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#decisionpoint_price_momentum_oscillator_pmo
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#decisionpoint_price_momentum_oscillator_pmo")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL

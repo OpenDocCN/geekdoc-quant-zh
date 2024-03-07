@@ -1,0 +1,311 @@
+- en: Percentage Volume Oscillator [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Percentage Volume Oscillator](#percentage_volume_oscillator)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Validating Breaks](#validating_breaks)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Fine-Tuning the PVO](#fine-tuning_the_pvo)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[PPO Bullish Cross with PVO Positive](#ppo_bullish_cross_with_pvo_positive)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[PPO Bearish Cross with PVO Positive](#ppo_bearish_cross_with_pvo_positive)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Percentage Volume Oscillator (PVO) is a momentum oscillator for volume.
+    The PVO measures the difference between two volume-based moving averages as a
+    percentage of the larger moving average. As with MACD and the [Percentage Price
+    Oscillator (PPO)](/school/doku.php?id=chart_school:technical_indicators:price_oscillators_ppo
+    "chart_school:technical_indicators:price_oscillators_ppo"), it is shown with a
+    signal line, a histogram and a centerline. The PVO is positive when the shorter
+    volume EMA is above the longer volume EMA and negative when the shorter volume
+    EMA is below. This indicator can be used to define the ups and downs for volume,
+    which can then be used to confirm or refute other signals. Typically, a breakout
+    or support break is validated when the PVO is rising or positive.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: The default settings for the PVO are (12,26,9), which is the same as MACD or
+    the PPO. This means the PVO is positive when the 12-day Volume EMA moves above
+    the 26-day Volume EMA. The PVO is negative when the 12-day Volume EMA moves below
+    the 26-day Volume EMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The positive or negative degree depends on how far above or below. A PVO that
+    equals 5 would indicate that the 12-day Volume EMA was 5% above the 26-day Volume
+    EMA. A PVO that equals -3% would indicate that the 12-day Volume EMA was 3% less
+    than the 26-day Volume EMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The PVO-Histogram acts just like the MACD and PPO histograms. The PVO-Histogram
+    is positive when the PVO is trading above its signal line (9-day EMA). The PVO-Histogram
+    is negative when the PVO is below its signal line. Note that the PVO is multiplied
+    by 100 to move the decimal point two places.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![PVO - Chart 1](../Images/b54195ea4b3aa6bfb9b5a5020652ba51.jpg "PVO - Chart
+    1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Generally speaking, volume is above average when the PVO is positive and below
+    average when the PVO is negative. A negative and rising PVO indicates that volume
+    levels are increasing. A positive and falling PVO indicates that volume levels
+    are decreasing. Chartists can use this information to confirm or refute movements
+    on the price chart.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Even though the PVO is based on a momentum oscillator formula, it is important
+    to remember that moving averages lag. A 12-day EMA carries 12 days of volume data
+    with data weighted more towards the newest data. A 26-day EMA lags even more because
+    it contains 26 days of data. This means that the PVO(12,26,9) can sometimes be
+    out of sync with price action.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Validating Breaks
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Percentage Volume Oscillator (PVO) can be used to confirm a [support or
+    resistance](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
+    "chart_school:chart_analysis:support_and_resistance") break. We have all heard
+    that volume validates a price movement. A support break on increasing volume has
+    more credibility than a support break on low volume. Similarly, a resistance break
+    on expanding volume shows more buying interest and this increases the chances
+    of success.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The chart below shows Volero (VLO) with the PVO(12,26,9) confirming a [pennant](/school/doku.php?id=chart_school:chart_analysis:chart_patterns:flag_pennant_continuation
+    "chart_school:chart_analysis:chart_patterns:flag_pennant_continuation") breakout.
+    Volume declined in August as the PVO moved lower until mid-September. The PVO
+    then turned up, but did not move into positive territory until late October. This
+    meant the 12-day Volume EMA finally crossed above the 26-day EMA and volume was
+    increasing. VLO was still stuck in the pennant on the first PVO cross, but broke
+    pennant resistance with the second PVO cross. Volume confirmed the breakout and
+    VLO continued its advance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![PVO - Chart 2](../Images/5db7c11cefa5ac6717d346e778f8ae86.jpg "PVO - Chart
+    2")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart for Archer Daniels Midland (ADM) shows a support and resistance break
+    confirmed by surges in the PVO. The stock broke resistance at the beginning of
+    August as the PVO moved into positive territory with a sharp surge. Expanding
+    volume on an upside breakout is bullish. After a three-month run, the stock broke
+    support with a gap and another surge in the PVO. Notice how the PVO surged to
+    20 both times. This meant that the 12-day Volume EMA was some 20% above the 26-day
+    Volume EMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![PVO - Chart 3](../Images/93399ac4dc2ba9984aa5cbbc6c99a1a9.jpg "PVO - Chart
+    3")'
+  prefs: []
+  type: TYPE_IMG
+- en: Fine-Tuning the PVO
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Chartists can fine-tune the PVO to highlight volume surges for a specific period.
+    There are around 250 trading days in a year. Therefore, a 250-day EMA would represent
+    average annual volume with a weighting towards the most recent periods. Using
+    this for the long EMA in the PVO, we can choose a short EMA to highlight volume
+    surges that are above this average. A PVO(1,250) would be positive when the 1-day
+    volume was above the 250-day Volume EMA. A PVO(5,250) would be positive when the
+    5-day Volume EMA is above the 250-day EMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The chart for Merck (MRK) shows volume bars with a 5-day EMA in blue and a 250-day
+    EMA in red. The PVO(1,250) is shown in the first indicator window (green) and
+    the PVO(5,250) is shown in the lower indicator window (black). The signal line
+    is not shown because there is no parameter entered. PVO(5,250,9) would show the
+    PVO with a 9-day EMA for the signal line.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![PVO - Chart 4](../Images/fd428c3cb8aa1e29dcd23584d921fcef.jpg "PVO - Chart
+    4")'
+  prefs: []
+  type: TYPE_IMG
+- en: From the chart above, we can see that the PVO(1,250) turned positive when a
+    volume bar surged above the 250-day EMA (green arrows). The PVO(5,250) turned
+    positive when the 5-day Volume EMA moved above the 250-day Volume EMA (blue arrows).
+    As one might expect, PVO(1,250) crosses the zero line more often and is just a
+    little bit quicker. Basically, volume is above average when PVO(1,250) is positive
+    and below average when negative. A breakout on above-average volume is more robust
+    than one with below-average volume. Same thing goes for a support break.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Percentage Volume Oscillator (PVO) is a momentum indicator applied to volume.
+    Volume doesn't trend so this oscillator can be quite choppy. Bullish and bearish
+    divergences are not well suited for the PVO. Instead, chartists would be better
+    off looking for signs of increasing volume with a move into positive territory
+    and signs of decreasing volume with a move into negative territory. Increasing
+    volume can validate a support or resistance break. Similarly, a surge or significant
+    support break on low volume may be less robust. As with all technical indicators,
+    it is important to use the Percentage Volume Oscillator (PVO) in conjunction with
+    other aspects of technical analysis, such as [chart patterns](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
+    "chart_school:chart_analysis:chart_patterns") and [momentum oscillators](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators").
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: PVO can be set as an indicator above, below or behind a security's price plot.
+    Once the indicator is chosen from the dropdown list, the default parameters will
+    appear (12,26,9). These parameters can be adjusted as shown in the example below.
+    Click “advanced options” to add the moving average or a horizontal line to an
+    indicator. In the example below, volume was added as an indicator twice in order
+    to show two moving averages. The second volume indicator was placed behind the
+    first volume indicator (behind ind) and the EMA was set at 250 with the advanced
+    options. [Click here for a live example of the PVO](http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p28625227150&listNum=30&a=217316123
+    "http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p28625227150&listNum=30&a=217316123").
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![PVO - Chart 5](../Images/03f663e028d13e2be279d12c217d323e.jpg "PVO - Chart
+    5")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![PVO - Chart 6](../Images/6fcb0223599ee4eb2bebc7809261a011.jpg "PVO - Chart
+    6")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: PPO Bullish Cross with PVO Positive
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks where the PPO(12,26,9) moved above the PPO Signal Line
+    and the PVO(12,26,9) moved into positive territory to show increasing volume.
+    This scan is just meant as a starter for further refinement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: PPO Bearish Cross with PVO Positive
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks where the PPO(12,26,9) moved below the PPO Signal Line
+    and the PVO(12,26,9) moved into positive territory to show increasing volume.
+    This scan is just meant as a starter for further refinement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for PVO scans, please see our [Scanning
+    Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#percentage_volume_oscillator
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#percentage_volume_oscillator")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note**: For the purposes of scanning, daily volume data is incomplete during
+    the trading day. When running scans with volume-based indicators like the PVO,
+    be sure to base the scan on the “Last Market Close.” Examples of other volume-based
+    indicators include Accumulation/Distribution, Chaikin Money Flow, and On Balance
+    Volume.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: John Murphy's book covers all the bases for technical analysis with sections
+    explaining volume, open interest, and volume indicators. Murphy discusses the
+    importance of volume and shows many chart examples. Introduction to Technical
+    Analysis is a workbook that comes with a CD-Rom that includes over 7 hours of
+    audio-visual presentation. Pring shows how to apply, analyze and interpret charts
+    along with volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis of the Financial Markets** John J. Murphy |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    |'
+  prefs: []
+  type: TYPE_TB

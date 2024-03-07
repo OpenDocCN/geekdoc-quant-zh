@@ -1,0 +1,284 @@
+- en: Aroon Oscillator [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Aroon Oscillator](#aroon_oscillator)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[General Trend Bias](#general_trend_bias)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Strong Trend Bias](#strong_trend_bias)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Aroon Oscillator Crosses above Zero](#aroon_oscillator_crosses_above_zero)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Aroon Oscillator Crosses below Zero](#aroon_oscillator_crosses_below_zero)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Aroon Oscillator is the difference between Aroon-Up and Aroon-Down. These
+    two indicators are usually plotted together for easy comparison, but chartists
+    can also view the difference between these two indicators with the Aroon Oscillator.
+    This indicator fluctuates between -100 and +100 with zero as the middle line.
+    An upward trend bias is present when the oscillator is positive, while a downward
+    trend bias exists when the oscillator is negative. Chartists can also expand the
+    bull-bear threshold to identify stronger signals. See our [ChartSchool article](/school/doku.php?id=chart_school:technical_indicators:aroon
+    "chart_school:technical_indicators:aroon") for more details on Aroon-Up and Aroon-Down.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Aroon-Up and Aroon-Down measure the number of periods since price recorded an
+    x-day high or low. Aroon Up is based on time and price highs. Aroon Down is based
+    on time and price lows. For example, 25-day Aroon-Up measures the number of days
+    since a 25-day high, while 25-day Aroon-Down measures the number of days since
+    a 25-day low. These indicators are shown in percentage terms and fluctuate between
+    0 and 100\. The Aroon Oscillator is simply Aroon-Up less Aroon-Down. The default
+    parameter in SharpCharts is 25 and the example below is based on the 25-day Aroon
+    Oscillator.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: '![Aroon Oscillator - Chart 1](../Images/d63579f789ea11724000b6f1a0d1f359.jpg
+    "Aroon Oscillator - Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Simply crunching the numbers reveals some interesting pairings. To get above
+    or below a certain threshold requires Aroon-Up or Aroon-Down to reach a minimum
+    level. For example, the oscillator equals +100 when Aroon-Up equals 100 and Aroon-Down
+    equals 0\. Similarly, the Aroon Oscillator equals -100 when Aroon-Up is 0 and
+    Aroon-Down is 100\. It requires some strong upward price movement for the Aroon
+    Oscillator to reach +100\. Similarly, strong downward price movement is required
+    for the oscillator to reach -100\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: An Aroon Oscillator that equals +40 requires Aroon-Up to be at least 40, which
+    means Aroon-Down would be 0\. A positive 40 could occur from an array of Aroon-Up
+    and Aroon-Down combinations (40-0, 44-4, 48-8, 60-20, 72-32, 80-40 or 100-40).
+    Reverse these numbers to see possible combinations that will produce a negative
+    40\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In general, a relatively high positive number requires Aroon-Up to be relatively
+    high, while a relatively low negative number requires Aroon-Down to be relatively
+    high. The table below shows an array of Aroon-Up and Aroon-Down pairings to form
+    the Aroon Oscillator.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Aroon Oscillator - Table 1](../Images/9ed3dd5936466984b501ca93825364d3.jpg
+    "Aroon Oscillator - Table 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: A reading above zero means that Aroon-Up is greater than Aroon-Down, which implies
+    that prices are making new highs more recently than new lows. Conversely, readings
+    below zero indicate that Aroon-Down is greater than Aroon-Up. This implies that
+    prices are recording new lows more recently than new highs. As you can see, the
+    Aroon Oscillator is either going to be positive or negative the vast majority
+    of the time. This makes interpretation straight-forward. Time and price favor
+    an uptrend when the indicator is positive and a downtrend when the indicator is
+    negative. A positive or negative threshold can be used to define the strength
+    of the trend. For example, a surge above +50 would reflect a strong upside move,
+    while a plunge below -50 would indicate a strong downside move.
+  prefs: []
+  type: TYPE_NORMAL
+- en: General Trend Bias
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Defining a general trend bias is the most basic use for the Aroon Oscillator.
+    The indicator will remain in positive territory during strong uptrends and in
+    negative territory during strong downtrends. Depending on the parameters, short
+    trends or choppy trading can cause the indicator to move above/below zero quite
+    often. The chart below shows Disney with two different Aroon Oscillator settings:
+    25 days and 75 days. 25-day Aroon was much more sensitive than 75 day Aroon. Notice
+    that 25-day Aroon crossed the zero line over eight times in eighteen months. 75-day
+    Aroon crossed the zero line just four times. Chartists must decide their timeframe
+    first and then choose the setting that best captures this timeframe. Short-term
+    traders would clearly opt for a 25-day Aroon or shorter, while position traders
+    looking for 2-4 month moves would opt for 75-day Aroon.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Aroon Oscillator - Chart 3](../Images/f2d5ac47329234ee594c3bc1bbbf3536.jpg
+    "Aroon Oscillator - Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart also shows that the Aroon Oscillator is not immune to lag as the oscillator
+    turns positive or negative after prices have already moved. The longer the parameter
+    setting, the more the lag. Do not expect to pick bottoms or tops with positive
+    or negative crossovers. As more of a trend following indicator, the Aroon Oscillator
+    identifies moves that may be strong enough to signal the start of a sustained
+    trend. Not all trends extend though.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Strong Trend Bias
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Chartists can expand the bullish and bearish parameters to further filter signals.
+    Widening the parameters will produce signals with more lag and a longer time horizon.
+    For example, the bullish threshold could be set at +90 and the bearish threshold
+    at -90\. A +90 would indicate that Aroon-Up is between 90 and 100, while Aroon-Down
+    is between 0 and 10\. The opposite is true for a reading below -90\. Such strong
+    readings occur after a significant move that can foreshadow the beginning of an
+    extended trend. A move above +90 is considered bullish until negated with a move
+    below -90\. This level is deep enough to absorb most pullbacks within an uptrend.
+    Similarly, a move below -90 is deemed strong enough to signal the start of an
+    extended decline. This signal is not reversed until there is a move above +90,
+    which is high enough to absorb most oversold bounces.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Aroon Oscillator - Chart 4](../Images/c189e740a78b18f0373a7afe578a522f.jpg
+    "Aroon Oscillator - Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: The Google (GOOG) chart shows the Aroon Oscillator(25) with horizontal lines
+    at +90 and -90\. The indicator was added twice and “advanced options” were used
+    to add the horizontal lines. A live example is shown in the SharpCharts section
+    below. Even though these signals lag, they last longer than a simple zero line
+    crossover. Clearly, these signals are not going to pick bottoms or tops because
+    they occur after a significant move. Also, notice how Google moved counter to
+    the signal just after the signals were given. There were two sharp pullbacks after
+    the bullish signal in January 2009\. The trend continued in the direction of the
+    signal after these counter-trend moves. These 90/90 signals can be used to establish
+    the big trend and then trade in the direction of that trend. For example, chartists
+    can focus exclusively on bullish signals when the big trend is up (Aroon > +90).
+    Conversely, chartists can focus exclusively on bearish signals when the big trend
+    is down (Aroon < -90). Chartists can even tweak the bullish and bearish thresholds.
+    Be careful not to over-fit though.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Aroon Oscillator merges the Aroon-Up and Aroon-Down indicators into one
+    indicator. This makes it easy to identify the stronger of the two. The oscillator
+    is positive when Aroon-Up is stronger than Aroon-Down and negative when Aroon-Down
+    is stronger than Aroon-Up. A general bullish bias is present when the oscillator
+    is positive and a bearish bias exists when negative. It is tempting to look for
+    bullish and bearish divergences, but the indicator was not designed for traditional
+    oscillator signals. As with all technical indicators, the Aroon Oscillator should
+    be used in conjunction with other aspects of technical analysis, such as [chart
+    pattern analysis](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
+    "chart_school:chart_analysis:chart_patterns") or [momentum indicators](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators").
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Aroon Oscillator is available on SharpCharts as an indicator that can be
+    positioned above, below or behind the price plot of the underlying security. As
+    noted above, users can add two Aroon Oscillators with the same parameters and
+    then click the green arrow for advanced options. Horizontal lines can then be
+    added to set the bullish and bearish thresholds. These thresholds may vary according
+    to the characteristics of the underlying security. Click the image below to see
+    the settings. SharpCharts subscribers can even save this chart to their favorites
+    list by clicking the “add new” link at the top-right of the chart. **[Click here](http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=1&mn=0&dy=0&id=p74556881166&a=214937192
+    "http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=1&mn=0&dy=0&id=p74556881166&a=214937192")**
+    for a live chart with the Aroon Oscillator.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Aroon Oscillator - SharpCharts](../Images/842bef31f4ac71c23dffd3c795c1cb7f.jpg
+    "Aroon Oscillator - SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Aroon Oscillator - SharpCharts](../Images/d96e753d179ea6cd5d86472b6284d478.jpg
+    "Aroon Oscillator - SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Aroon Oscillator Crosses above Zero
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This simple scan searches for stocks where the Aroon Oscillator crossed from
+    negative territory to positive territory and daily volume was above the 50-day
+    moving average of volume. In other words, the bullish crossover occurred with
+    expanding volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Aroon Oscillator Crosses below Zero
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This simple scan searches for stocks where the Aroon Oscillator crossed from
+    positive territory to negative territory and daily volume was above the 50-day
+    moving average of volume. In other words, the bearish crossover occurred with
+    expanding volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Aroon Oscillator scans, please see
+    our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#aroon_oscillator
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#aroon_oscillator") in
+    the Support Center.
+  prefs: []
+  type: TYPE_NORMAL

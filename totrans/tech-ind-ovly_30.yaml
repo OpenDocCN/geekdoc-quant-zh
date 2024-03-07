@@ -1,0 +1,273 @@
+- en: Ease of Movement [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Ease of Movement](#ease_of_movement)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[SharpCharts Calculation](#sharpcharts_calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Confirming Other Signals](#confirming_other_signals)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[EMV Crosses above Zero](#emv_crosses_above_zero)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[EMV Crosses below Zero](#emv_crosses_below_zero)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Developed by Richard Arms, Ease of Movement (EMV) is a volume-based oscillator
+    that fluctuates above and below the zero line. As its name implies, it is designed
+    to measure the “ease” of price movement. Arms created [Equivolume](/school/doku.php?id=chart_school:chart_analysis:equivolume
+    "chart_school:chart_analysis:equivolume") charts to visually display price ranges
+    and volume. Ease of Movement takes Equivolume to the next level by quantifying
+    the price/volume relationship and showing the results as an oscillator. In general,
+    prices are advancing with relative ease when the oscillator is in positive territory.
+    Conversely, prices are declining with relative ease when the oscillator is in
+    negative territory.
+  prefs: []
+  type: TYPE_NORMAL
+- en: SharpCharts Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'There are three parts to the EMV formula: distance moved, volume and the high-low
+    range. First, the distance moved is calculated by comparing the current period''s
+    midpoint with the prior period''s midpoint, which is the high plus the low divided
+    by two. Distance moved is positive when the current midpoint is above the prior
+    midpoint and negative when the current midpoint is below the prior midpoint. Distance
+    moved is shown as the numerator in the formula below.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: The other two parts form the Box ratio, which uses volume and the high-low range.
+    Equivolume charts are based on volume and the high-low range as well. The Box
+    ratio is the denominator of EMV. Note that volume is divided by 100,000,000 to
+    keep it relevant with the other numbers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Relatively low volume and a relatively large high-low range will produce a smaller
+    denominator (Box ratio), which means the EMV value will be larger because of division
+    by a smaller number. The Box ratio would be .50 if V/10000000 equals 2 and the
+    high-low range equals 4\. A wide range on low volume implies relatively easy price
+    movement. In other words, it did not take much volume to move prices.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A relatively small high-low range on high volume would produce a larger denominator,
+    which means the EMV value will be smaller. The denominator would be 2 if V/10000000
+    equals 4 and the high-low range equals 2\. This implies that price movement was
+    difficult because there was a relatively small high-low range on big volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Spreadsheet](../Images/923efc16fee7603d95555cb8cbc4b00b.jpg "Spreadsheet")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Click here to download this spreadsheet example.](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:ease_of_movement:cs-easeofmovement.xls
+    "chart_school:technical_indicators_and_overlays:ease_of_movement:cs-easeofmovement.xls
+    (33.5 KB)")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The example below shows the Nasdaq 100 ETF (QQQ) with the 1-period EMV in the
+    lower indicator window. I am using Equivolume bars because these show only the
+    high-low range for the given period. The blue arrows show two small EMV values.
+    One is slightly positive and the other is slightly negative. Volume on both days
+    was above average, but the high-low range was modest or even small. This means
+    prices had difficulty moving even though volume was relatively high.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 1](../Images/5504f8ecce8aece6a1f68f5216fdaa78.jpg "Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: The red arrow shows an EMV value near -3, which is very negative. This is because
+    volume was low and the high-low range was large. This implies that prices declined
+    with relative ease and there was little buying or no buying pressure. The green
+    arrow shows an EMV value near +3\. Again, volume was low and the high-low range
+    was large. This means prices advanced with relative ease and there was little
+    or no selling pressure. The chart below shows Jabil Circuit (JBL) with the 14-period
+    Ease of Movement indicator. This is just a 14-period simple [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") of each period's EMV value.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 2](../Images/7a2d59780336200ed696974ccc2745a5.jpg "Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: Confirming Other Signals
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Ease of Movement is best used to confirm other indicators or chart analysis.
+    In other words, it is not a standalone indicator. Keep in mind that the “Distance
+    Moved” portion of the formula is the positive/negative driver. EMV is generally
+    positive when the midpoint rises and negative when the midpoint falls. This means
+    EMV will generally rise and fall along with the price of the underlying security.
+    The amount of this rise or fall depends on the Box ratio. Chartists can use EMV
+    to confirm a breakout on the price chart or a bullish indicator signal. Conversely,
+    a move into negative territory can be used to confirm a breakdown on the price
+    chart or a bearish indicator signal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 3](../Images/b7b50efa36b9b54b59a83de21d87a27d.jpg "Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: The example above shows Mosaic (MOS) with a bearish breakdown in early April
+    and a bullish breakout in mid-June. Prior to the bearish breakdown, EMV deteriorated
+    for two months and dipped into negative territory in March. With the stock rising
+    and EMV declining in January-February, the advance was becoming more laborious
+    (difficult). MOS broke support with a decline in early April and EMV confirmed
+    with another dip into negative territory. After negative readings for most of
+    April and May, EMV improved from late May to early June with a move into positive
+    territory. The stock also formed a small inverse head-and-shoulders and broke
+    resistance at 50\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 4](../Images/dabe39fe926887604c539a45dfd84164.jpg "Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: The second example shows Valero Energy (VLO) with EMV signals confirmed by RSI
+    and the price chart. After advancing from January to mid-March, VLO reversed course
+    and broke support at the end of March. Notice that EMV broke its late February
+    low and moved deep into negative territory at the end of March. Also, notice that
+    RSI broke to its lowest level since early January. The second reversal occurred
+    when VLO broke resistance in mid-July. EMV began to improve before this breakout
+    and was firmly positive at the time of the breakout. [RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi
+    "chart_school:technical_indicators:relative_strength_index_rsi") also confirmed
+    with a break above its April high and a move above 55\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Ease of Movement (EMV) combines price direction with volume to create a volume-based
+    momentum oscillator. Because it is closely tied with price changes, EMV tends
+    to track the price of the underlying security quite closely. For the most part,
+    EMV is used to confirm signals derived from the price chart or other indicators.
+    Chartists looking for a smoother EMV line can lengthen the look-back period.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Ease of Movement (EMV) can be found in the “indicators” section under the chart.
+    Users can adjust the settings by changing the numbers in the “parameters” box.
+    The indicator can then be positioned “behind price”, “above” the main window or
+    “below” the main window. It helps to change the color when placing it behind the
+    price. Chartists can also add a moving average using the “advanced” indicator
+    options.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 5](../Images/99d464f621f03e9596d5d50e8d129b95.jpg "Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Chart 6](../Images/5b2d14bb19d8a5dc2951b4bd42bd601e.jpg "Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: EMV Crosses above Zero
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This simple scan searches for stocks where the EMV crossed from negative territory
+    to positive territory.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: EMV Crosses below Zero
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This simple scan searches for stocks where the EMV crossed from positive territory
+    to negative territory.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Ease of Movement scans, please see
+    our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#ease_of_movement_emv
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#ease_of_movement_emv")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '| **Profits in Volume** Richard W. Arms Jr. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/f6246cfcfa94391e7a495c6298a5b9fa.jpg)](http://store.stockcharts.com/products/profits-in-volume
+    "http://store.stockcharts.com/products/profits-in-volume") |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/profits-in-volume
+    "http://store.stockcharts.com/products/profits-in-volume") |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Website: Richard W. Arms Jr. has a website with more information on EquiVolume,
+    including a downloadable ebook: [Trading with EquiVolume](http://www.armsinsider.com/pdf/index.asp
+    "http://www.armsinsider.com/pdf/index.asp").'
+  prefs: []
+  type: TYPE_NORMAL

@@ -1,0 +1,262 @@
+- en: Standard Deviation (Volatility) [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Standard Deviation (Volatility)](#standard_deviation_volatility)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Standard Deviation Values](#standard_deviation_values)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Measuring Expectations](#measuring_expectations)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Weeding Out High Volatility](#weeding_out_high_volatility)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Standard deviation is a statistical term that measures the amount of variability
+    or dispersion around an average. Standard deviation is also a measure of volatility.
+    Generally speaking, dispersion is the difference between the actual value and
+    the average value. The larger this dispersion or variability is, the higher the
+    standard deviation. The smaller this dispersion or variability is, the lower the
+    standard deviation. Chartists can use the standard deviation to measure expected
+    risk and determine the significance of certain price movements.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'StockCharts.com calculates the standard deviation for a population, which assumes
+    that the periods involved represent the whole data set, not a sample from a bigger
+    data set. The calculation steps are as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculate the average (mean) price for the number of periods or observations.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Determine each period's deviation (close less average price).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Square each period's deviation.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Sum the squared deviations.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Divide this sum by the number of observations.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The standard deviation is then equal to the square root of that number.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![Standard Deviation Excel Spreadsheet](../Images/827d70a25b78c87bbc4fd2ce5240e301.jpg
+    "Standard Deviation Excel Spreadsheet")'
+  prefs: []
+  type: TYPE_IMG
+- en: The spreadsheet above shows an example for a 10-period standard deviation using
+    QQQQ data. Notice that the 10-period [average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") is calculated after the 10th
+    period and this average is applied to all 10 periods. Building a running standard
+    deviation with this formula would be quite intensive. Excel has an easier way
+    with the STDEVP formula. The table below shows the 10-period standard deviation
+    using this formula. Here's [an Excel Spreadsheet](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:std_dev_volatility:cs-stddev.xls
+    "chart_school:technical_indicators_and_overlays:std_dev_volatility:cs-stddev.xls
+    (23 KB)") that shows the standard deviation calculations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Standard Deviation  -  Excel Spreadsheet](../Images/20acae58150f68d328f7e669eb5eeb35.jpg
+    "Standard Deviation  -  Excel Spreadsheet")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Standard Deviation Chart 1](../Images/2bd5601c884e6b166edd1d5d763cfb12.jpg
+    "Standard Deviation Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Standard Deviation Values
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Standard deviation values are dependent on the price of the under security.
+    Securities with high prices, such as Google (±550), will have higher standard
+    deviation values than securities with low prices, such as Intel (±22). These higher
+    values are not a reflection of higher volatility, but rather a reflection of the
+    actual price. Standard deviation values are shown in terms that relate directly
+    to the price of the underlying security. Historical standard deviation values
+    will also be affected if a security experiences a large price change over a period
+    of time. A security that moves from 10 to 50 will most likely have a higher standard
+    deviation at 50 than at 10\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Standard Deviation Chart 2](../Images/b15fb064ddd009c33e95e4a2feb59e98.jpg
+    "Standard Deviation Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: On the chart above, the left scale relates to the standard deviation. Google's
+    standard deviation scale extends from 2.5 to 35, while the Intel range runs from
+    .10 to .75\. Average price changes (deviations) in Google range from $2.5 to $35,
+    while average price changes (deviations) in Intel range from 10 cents to 75 cents.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Despite the range differences, chartists can visually assess volatility changes
+    for each security. Volatility in Intel picked up from April to June as the standard
+    deviation moved above .70 numerous times. Google experienced a surge in volatility
+    in October as the standard deviation shot above 30\. One would have to divide
+    the standard deviation by the closing price to directly compare volatility for
+    the two securities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Measuring Expectations
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The current value of the standard deviation can be used to estimate the importance
+    of a move or set expectations. This assumes that price changes are normally distributed
+    with a classic bell curve. Even though price changes for securities are not always
+    normally distributed, chartists can still use normal distribution guidelines to
+    gauge the significance of a price movement. In a normal distribution, 68% of the
+    observations fall within one standard deviation. 95% of the observations fall
+    within two standard deviations. 99.7% of the observations fall within three standard
+    deviations. Using these guidelines, traders can estimate the significance of a
+    price movement. A move greater than one standard deviation would show above average
+    strength or weakness, depending on the direction of the move.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Standard Deviation Chart 3](../Images/f7c32e5b52d1b30aadb7c56f4542ef0b.jpg
+    "Standard Deviation Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows Microsoft (MSFT) with a 21-day standard deviation in the
+    indicator window. There are around 21 trading days in a month and the monthly
+    standard deviation was .88 on the last day. In a normal distribution, 68% of the
+    21 observations should show a price change less than 88 cents. 95% of the 21 observations
+    should show a price change of less than 1.76 cents (2 x .88 or two standard deviations).
+    99.7% of the observations should show a price change of less than 2.64 (3 x .88
+    or three standard deviations. Price movements that were 1,2 or 3 standard deviations
+    would be deemed noteworthy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Standard Deviation Chart 4](../Images/75f8e377509bdf6de0b3f18e8d55dbc0.jpg
+    "Standard Deviation Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: The 21-day standard deviation is still quite variable as it fluctuated between
+    .32 and .88 from mid-August until mid-December. A 250-day moving average can be
+    applied to smooth the indicator and find an average, which is around 68 cents.
+    Price moves larger than 68 cents were greater than the 250-day SMA of the 21-day
+    standard deviation. These above average price movements indicate heightened interest
+    that could foreshadow a trend change or mark a breakout.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The standard deviation is a statistical measure of volatility. These values
+    provide chartists with an estimate for expected price movements. Price moves greater
+    than the Standard deviation show above average strength or weakness. The standard
+    deviation is also used with other indicators, such as [Bollinger Bands](/school/doku.php?id=chart_school:technical_indicators:bollinger_bands
+    "chart_school:technical_indicators:bollinger_bands"). These bands are set 2 standard
+    deviations above and below a moving average. Moves that exceed the bands are deemed
+    significant enough to warrant attention. As with all indicators, the standard
+    deviation should be used in conjunction with other analysis tools, such as [momentum
+    oscillators](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")
+    or [chart patterns](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
+    "chart_school:chart_analysis:chart_patterns").
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The standard deviation is available as an indicator in SharpCharts with a default
+    parameter of 10\. This parameter can be changed according to analysis needs. Roughly
+    speaking, 21 days equals one month, 63 days equals one quarter and 250 days equals
+    one year. The standard deviation can also be used on weekly or monthly charts.
+    Indicators can be applied to the standard deviation by clicking advanced options
+    and then adding an overlay. [Click here](http://stockcharts.com/h-sc/ui?s=QQQ&p=D&yr=0&mn=6&dy=0&id=p80789045093&listNum=30&a=217969334
+    "http://stockcharts.com/h-sc/ui?s=QQQ&p=D&yr=0&mn=6&dy=0&id=p80789045093&listNum=30&a=217969334")
+    for a live chart with the standard deviation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Standard Deviation Chart 5](../Images/7337c0f649f6341a85e587d7fdf3a381.jpg
+    "Standard Deviation Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Standard Deviation SharpCharts](../Images/98f43a0592a70f119e0718bd3ab5bd75.jpg
+    "Standard Deviation SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Weeding Out High Volatility
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The Standard Deviation indicator is often used in scans to weed out securities
+    with extremely high volatility. This simple scan searches for S&P 600 stocks that
+    are in an uptrend. The final scan clause excludes high volatility stocks from
+    the results. Note that the standard deviation is converted to a percentage of
+    sorts so that the standard deviation of different stocks can be compared on the
+    same scale.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Standard Deviation scans, please see
+    our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#standard_deviation_std_deviation
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#standard_deviation_std_deviation")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL

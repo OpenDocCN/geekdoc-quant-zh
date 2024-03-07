@@ -1,0 +1,287 @@
+- en: Average True Range (ATR) [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Average True Range (ATR)](#average_true_range_atr)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[True Range](#true_range)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Absolute ATR](#absolute_atr)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Weeding Out High Volatility](#weeding_out_high_volatility)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Additional Resources](#additional_resources)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Developed by J. Welles Wilder, the Average True Range (ATR) is an indicator
+    that measures [volatility](/school/doku.php?id=chart_school:glossary_v#volatility
+    "chart_school:glossary_v"). As with most of his indicators, Wilder designed ATR
+    with commodities and daily prices in mind. Commodities are frequently more volatile
+    than stocks. They were are often subject to gaps and limit moves, which occur
+    when a commodity opens up or down its maximum allowed move for the session. A
+    volatility formula based only on the high-low range would fail to capture volatility
+    from gap or limit moves. Wilder created Average True Range to capture this “missing”
+    volatility. It is important to remember that ATR does not provide an indication
+    of price direction, just volatility.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Wilder features ATR in his 1978 book, *New Concepts in Technical Trading Systems*.
+    This book also includes the Parabolic SAR, RSI and the Directional Movement Concept
+    (ADX). Despite being developed before the computer age, Wilder's indicators have
+    stood the test of time and remain extremely popular.
+  prefs: []
+  type: TYPE_NORMAL
+- en: True Range
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Wilder started with a concept called **True Range (TR)**, which is defined
+    as the greatest of the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Method 1: Current High less the current Low'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Method 2: Current High less the previous Close (absolute value)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Method 3: Current Low less the previous Close (absolute value)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Absolute values are used to ensure positive numbers. After all, Wilder was interested
+    in measuring the distance between two points, not the direction. If the current
+    period's high is above the prior period's high and the low is below the prior
+    period's low, then the current period's high-low range will be used as the True
+    Range. This is an outside day that would use Method 1 to calculate the TR. This
+    is pretty straightforward. Methods 2 and 3 are used when there is a gap or an
+    inside day. A gap occurs when the previous close is greater than the current high
+    (signaling a potential gap down or limit move) or the previous close is lower
+    than the current low (signaling a potential gap up or limit move). The image below
+    shows examples of when methods 2 and 3 are appropriate.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ATR - True Range Image](../Images/6c7cbf77edbb814a44b1e0ddfd30df1e.jpg "ATR
+    - True Range Image")'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Example A: A small high/low range formed after a gap up. The TR equals the
+    absolute value of the difference between the current high and the previous close.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Example B: A small high/low range formed after a gap down. The TR equals the
+    absolute value of the difference between the current low and the previous close.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Example C: Even though the current close is within the previous high/low range,
+    the current high/low range is quite small. In fact, it is smaller than the absolute
+    value of the difference between the current high and the previous close, which
+    is used to value the TR.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Typically, the Average True Range (ATR) is based on 14 periods and can be calculated
+    on an intraday, daily, weekly or monthly basis. For this example, the ATR will
+    be based on daily data. Because there must be a beginning, the first TR value
+    is simply the High minus the Low, and the first 14-day ATR is the average of the
+    daily TR values for the last 14 days. After that, Wilder sought to smooth the
+    data by incorporating the previous period's ATR value.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: '![ATR - Spreadsheet](../Images/4e5fdcdb3297687e6a55a9ba1a1e3c3b.jpg "ATR -
+    Spreadsheet")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Click here for an Excel Spreadsheet](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:average_true_range_atr:cs-atr.xls
+    "chart_school:technical_indicators_and_overlays:average_true_range_atr:cs-atr.xls
+    (36 KB)") showing the start of an ATR calculation for QQQ.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the spreadsheet example, the first True Range value (.91) equals the High
+    minus the Low (yellow cells). The first 14-day ATR value (.56)) was calculated
+    by finding the average of the first 14 True Range values (blue cell). Subsequent
+    ATR values were smoothed using the formula above. The spreadsheet values correspond
+    with the yellow area on the chart below. Notice how ATR surged as QQQ plunged
+    in May with many long candlesticks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ATR - Chart 1](../Images/a7861e6f3a4e458eec5688b13a3cfccc.jpg "ATR - Chart
+    1")'
+  prefs: []
+  type: TYPE_IMG
+- en: For those trying this at home, a few caveats apply. First, just like with [Exponential
+    Moving Averages (EMAs)](/school/doku.php?id=chart_school:technical_indicators:moving_averages#ema_accuracy
+    "chart_school:technical_indicators:moving_averages"), ATR values depend on how
+    far back you begin your calculations. The first True Range value is simply the
+    current High minus the current Low and the first ATR is an average of the first
+    14 True Range values. The real ATR formula does not kick in until day 15\. Even
+    so, the remnants of these first two calculations “linger” to slightly affect subsequent
+    ATR values. Spreadsheet values for a small subset of data may not match exactly
+    with what is seen on the price chart. Decimal rounding can also slightly affect
+    ATR values. On our charts, we calculate back at least 250 periods (typically much
+    further), to ensure a much greater degree of accuracy for our ATR values.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Absolute ATR
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: ATR is based on the True Range, which uses absolute price changes. As such,
+    ATR reflects volatility as absolute level. In other words, ATR is not shown as
+    a percentage of the current close. This means low-priced stocks will have lower
+    ATR values than high price stocks. For example, a $20-30 security will have much
+    lower ATR values than a $200-300 security. Because of this, ATR values are not
+    comparable. Even large price movements for a single security, such as a decline
+    from 70 to 20, can make long-term ATR comparisons impractical. Chart 4 shows Google
+    with double-digit ATR values and chart 5 shows Microsoft with ATR values below
+    1\. Despite different values, their ATR lines have similar shapes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/207f49e32b661497845df4fe774b04f7.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](../Images/c5b5e44faaa25c8f45d7430fd33ea31f.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: ATR is not a directional indicator, such as MACD or RSI. Instead, ATR is a unique
+    volatility indicator that reflects the degree of interest or disinterest in a
+    move. Strong moves, in either direction, are often accompanied by large ranges,
+    or large True Ranges. This is especially true at the beginning of a move. Uninspiring
+    moves can be accompanied by relatively narrow ranges. As such, ATR can be used
+    to validate the enthusiasm behind a move or breakout. A bullish reversal with
+    an increase in ATR would show strong buying pressure and reinforce the reversal.
+    A bearish support break with an increase in ATR would show strong selling pressure
+    and reinforce the support break.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Listed as “Average True Range”, ATR is on the Indicators drop-down menu. The
+    “parameters” box to the right of the indicator contains the default value, 14,
+    for the number of periods used to smooth the data. To adjust the period setting,
+    highlight the default value and enter a new setting. Wilder often used an 8-period
+    ATR. SharpCharts also allows users to position the indicator above, below, or
+    behind the price plot. A moving average can be added to identify upturns or downturns
+    in ATR. Click “advanced options” to add a moving average as an indicator overlay.
+    [Click here](http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p51341747448&listNum=30&a=202613287
+    "http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p51341747448&listNum=30&a=202613287")
+    for a live example of ATR.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ATR - SharpCharts](../Images/ee27c0be5574d4226be3c3b0d63cda12.jpg "ATR -
+    SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Weeding Out High Volatility
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The Average True Range indicator can be used in scans to weed out securities
+    with extremely high volatility. This simple scan searches for S&P 600 stocks that
+    are in an uptrend. The final scan clause excludes high volatility stocks from
+    the results. Note that the ATR is converted to a percentage of sorts so that the
+    ATR of different stocks can be compared on the same scale.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for ATR scans, please see our [Scanning
+    Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#average_true_range_atr
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#average_true_range_atr")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additional Resources
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Stocks & Commodities Magazine Articles
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '**[Working Money: Average True Range by Sharon Yamanaka](http://stockcharts.com/h-mem/tascredirect.html?artid=\V20\C03\054ATR.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V20\C03\054ATR.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Feb 2002 - Stocks & Commodities
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Which Volatility Measure? by Gordon Gustafson](http://stockcharts.com/h-mem/tascredirect.html?artid=\V19\C06\067VOL.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V19\C06\067VOL.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: May 2001 - Stocks & Commodities V. 19:6 (46-50)
+  prefs: []
+  type: TYPE_NORMAL

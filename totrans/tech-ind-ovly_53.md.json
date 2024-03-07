@@ -1,0 +1,1 @@
+["```py\nPercent-Drawdown = ((Close - 14-period Max Close)/14-period Max Close) x 100\n\nSquared Average = (14-period Sum of Percent-Drawdown Squared)/14 \n\nUlcer Index = Square Root of Squared Average\n\n```", "```py\n[group is SP600]\nAND [Daily EMA(50,close) > Daily EMA(200,close)]  \n\nAND [ULCER(14) < 10] \n```"]

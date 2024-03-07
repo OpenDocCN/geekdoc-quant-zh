@@ -1,0 +1,317 @@
+- en: Money Flow Index (MFI) [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Money Flow Index (MFI)](#money_flow_index_mfi)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overbought/Oversold](#overbought_oversold)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Divergences and Failures](#divergences_and_failures)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[MFI Oversold](#mfi_oversold)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[MFI Overbought](#mfi_overbought)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Money Flow Index (MFI) is an oscillator that uses both price and volume
+    to measure buying and selling pressure. Created by Gene Quong and Avrum Soudack,
+    MFI is also known as volume-weighted [RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi
+    "chart_school:technical_indicators:relative_strength_index_rsi"). MFI starts with
+    the typical price for each period. Money flow is positive when the typical price
+    rises (buying pressure) and negative when the typical price declines (selling
+    pressure). A ratio of positive and negative money flow is then plugged into an
+    RSI formula to create an oscillator that moves between zero and one hundred. As
+    a momentum oscillator tied to volume, the Money Flow Index (MFI) is best suited
+    to identify reversals and price extremes with a variety of signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: There are several steps involved in the Money Flow Index calculation. The example
+    below is based on a 14-period Money Flow Index, which is the default setting in
+    SharpCharts and the setting recommended by the creators.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: First, notice that Raw Money Flow is essentially dollar volume because the formula
+    is volume multiplied by the typical price. Raw Money Flow is positive when the
+    typical price advances from one period to the next and negative when the typical
+    price declines. The Raw Money Flow values are not used when the typical price
+    is unchanged. The Money Flow Ratio in step 3 forms the basis for the Money Flow
+    Index (MFI). Positive and Negative Money Flow are summed for the look-back period
+    (14) and the Positive Money Flow sum is divided by the Negative Money Flow sum
+    to create the ratio. The RSI formula is then applied to create a volume-weighted
+    indicator. The table below shows a calculation example taken from an excel spreadsheet.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Money Flow Index - Spreadsheet](../Images/10f9697b4bf60877d8b1d8c0a63739e1.jpg
+    "Money Flow Index - Spreadsheet")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Click here](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:mfi:cs-mfi.xls
+    "chart_school:technical_indicators_and_overlays:mfi:cs-mfi.xls (60.5 KB)") for
+    an MFI calculation in an Excel Spreadsheet.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Money Flow Index  -  Chart 1](../Images/17b556cfdce83ec9616407b09365e409.jpg
+    "Money Flow Index  -  Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: As a volume-weighted version of RSI, the Money Flow Index (MFI) can be interpreted
+    similarly to RSI. The big difference is, of course, volume. Because volume is
+    added to the mix, the Money Flow Index will act a little differently than RSI.
+    Theories suggest that volume leads prices. RSI is a momentum oscillator that already
+    leads prices. Incorporating volume can increase this lead time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Quong and Soudack identified three basic signals using the Money Flow Index.
+    First, chartists can look for overbought or oversold levels to warn of unsustainable
+    price extremes. Second, bullish and bearish divergence can be used to anticipate
+    trend reversals. Third, failure swings at 80 or 20 can also be used to identify
+    potential price reversals. For this article, the divergences and failure swings
+    are be combined to create one signal group and increase robustness.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Overbought/Oversold
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '[Overbought](/school/doku.php?id=chart_school:glossary_o#overbought "chart_school:glossary_o")
+    and oversold levels can be used to identify unsustainable price extremes. Typically,
+    MFI above 80 is considered overbought and MFI below 20 is considered oversold.
+    Strong trends can present a problem for these classic overbought and oversold
+    levels. MFI can become overbought (>80) and prices can simply continue higher
+    when the uptrend is strong. Conversely, MFI can become oversold (<20) and prices
+    can simply continue lower when the downtrend is strong. Quong and Soudack recommended
+    expanding these extremes to further qualify signals. A move above 90 is truly
+    overbought and a move below 10 is truly oversold. Moves above 90 and below 10
+    are rare occurrences that suggest a price move is unsustainable. Admittedly, many
+    stocks will trade for a long time without reaching the 90/10 extremes. However,
+    chartists can use the StockCharts.com scan engine to find those that do. Links
+    to such scans are provided at the end of this article.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Money Flow Index  -  Chart 2](../Images/0d6ae905c4754cc3f7d96e259cf1498b.jpg
+    "Money Flow Index  -  Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: JB Hunt (JBHT) became oversold when the Money Flow Index moved below 10 in late
+    October 2009 and early February 2010\. The preceding declines were sharp enough
+    to produce these readings, but the oversold extremes suggested that these declines
+    were unsustainable. Oversold levels alone are not reason enough to turn bullish.
+    Some sort of reversal or upturn is needed to confirm that prices have indeed turned
+    a corner. JBHT confirmed the first oversold reading with a gap and trend line
+    break on good volume. The stock confirmed the second oversold reading with a resistance
+    breakout on good volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Money Flow Index  -  Chart 3](../Images/198a223ddb8dbb2969155ec4d424c816.jpg
+    "Money Flow Index  -  Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: Aeropostale (ARO) became overbought when the Money Flow Index moved above 90
+    in late September and late December 2009\. Extremes in MFI suggested that these
+    advances were unsustainable and a pullback was imminent. The first overbought
+    reading led to a sizable decline, but the second did not. Notice that ARO peaked
+    with the first overbought reading and formed lower highs into October. The late
+    October support break signaled a clear trend reversal. After the December overbought
+    reading, ARO moved above 23 and consolidated. There were two down gaps and a support
+    break, but these did not hold. Price action was stronger than the overbought reading.
+    ARO ultimately broke resistance at 24 and surged back above 28\. The second signal
+    did not work.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Divergences and Failures
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Failure swings and divergences can be combined to create more robust signals.
+    A bullish failure swing occurs when MFI becomes oversold below 20, surges above
+    20, holds above 20 on a pullback and then breaks above its prior reaction high.
+    A bullish divergence forms when prices move to a lower low, but the indicator
+    forms a higher low to show improving money flow or momentum.
+  prefs: []
+  type: TYPE_NORMAL
+- en: On the Aetna (AET) chart below, a bullish divergence and failure swing formed
+    in January-February 2010\. First, notice how the stock formed a lower low in February
+    and MFI held well above its January low for a bullish divergence. Second, notice
+    how MFI dipped below 20 in January, held above 20 in February and broke its prior
+    high in late February. This signal combination foreshadowed a strong advance in
+    March.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Money Flow Index  -  Chart 4](../Images/6fa36a1c891904fffa48f95b380e943e.jpg
+    "Money Flow Index  -  Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: A bearish failure swing occurs when MFI becomes overbought above 80, plunges
+    below 80, fails to exceed 80 on a bounce and then breaks below the prior reaction
+    low. A bearish divergence forms when the stock forges a higher high and the indicator
+    forms a lower high, which indicates deteriorating money flow or momentum.
+  prefs: []
+  type: TYPE_NORMAL
+- en: On the Aetna chart above, a [bearish divergence](/school/doku.php?id=chart_school:glossary_b#bearish_divergence
+    "chart_school:glossary_b") and failure swing formed in August-September. The stock
+    moved to a new high in September, but MFI formed a significantly lower high. A
+    bearish failure swing occurred as MFI became overbought above 80 in late August,
+    failed to reach 80 with the September bounce and broke the prior lows with a decline
+    in late September.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Money Flow Index is a rather unique indicator that combines momentum and
+    volume with an RSI formula. RSI momentum generally favors the bulls when the indicator
+    is above 50 and the bears when below 50\. Even though MFI is considered a volume-weighted
+    RSI, using the centerline to determine a bullish or bearish bias does not work
+    as well. Instead, MFI is better suited to identify potential reversals with overbought/oversold
+    levels, bullish/bearish divergences, and bullish/bearish failure swings. As with
+    all indicators, MFI should not be used by itself. A pure [momentum oscillator](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators"),
+    such as RSI, or [pattern analysis](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
+    "chart_school:chart_analysis:chart_patterns") can be combined with MFI to increase
+    signal robustness.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'The Money Flow Index is available as a SharpCharts indicator that can be placed
+    above, below or behind the price plot of the underlying security. Placing MFI
+    directly behind the price makes it easy to compare indicator swings with price
+    movements. The default setting is 14-periods, but this can be adjusted to suit
+    analysis needs. A shorter timeframe makes the indicator more sensitive. A longer
+    timeframe makes it less sensitive. Users can click the green arrow next to “Advanced
+    Options” to add horizontal lines for custom overbought and oversold levels. Two
+    lines can be added by separating the numbers with a comma: (10,90).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Money Flow Index  -  Chart 5](../Images/21733d489d6b7177b9346398c45f5ecf.jpg
+    "Money Flow Index  -  Chart 5")](http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p62268879970&listNum=30&a=221699049
+    "http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p62268879970&listNum=30&a=221699049")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![CCI - SharpCharts](../Images/42900cb4d85953c860dc6e6b17a3cdab.jpg "CCI -
+    SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: MFI Oversold
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan searches for stocks that are above $20 per share, trade over 100,000
+    shares per day and have oversold Money Flow Index (<10). Consider this a starting
+    point for further analysis and due diligence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: MFI Overbought
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan searches for stocks that are above $20 per share, trade over 100,000
+    shares per day and have overbought Money Flow Index (>90). Consider this a starting
+    point for further analysis and due diligence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Money Flow Index scans, please see
+    our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#money_flow_index_mfi
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#money_flow_index_mfi")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis for the Trading Professional** Constance Brown |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/68e1d0b6e06443cb595baa528172bcd0.jpg)](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional
+    "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional
+    "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional")
+    |'
+  prefs: []
+  type: TYPE_TB

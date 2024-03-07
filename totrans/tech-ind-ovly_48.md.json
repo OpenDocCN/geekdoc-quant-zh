@@ -1,0 +1,1 @@
+["```py\n[group is SP600]\nAND [Daily EMA(50,close) > Daily EMA(200,close)]  \n\nAND [Std Deviation(250) / SMA(20,Close) * 100 < 20] \n```"]

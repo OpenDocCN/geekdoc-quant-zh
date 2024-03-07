@@ -1,0 +1,223 @@
+- en: ZigZag [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[ZigZag](#zigzag)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Elliott Wave Counts](#elliott_wave_counts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Retracements and Projections](#retracements_and_projections)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The ZigZag feature on SharpCharts is not an indicator per se, but rather a means
+    to filter out smaller price movements. A ZigZag set at 10% would ignore all price
+    movements less than 10%. Only price movements greater than 10% would be shown.
+    Filtering out smaller movements gives chartists the ability to see the forest
+    instead of just trees. It is important to remember that the ZigZag feature has
+    no predictive power because it draws lines base on hindsight. Any predictive power
+    will come from applications such as Elliott Wave, price pattern analysis or indicators.
+    Chartists can also use the ZigZag with retracements feature to identify Fibonacci
+    retracements and projections.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The ZigZag is based on the chart “type.” Line and dot charts, which are based
+    on the close, will show the ZigZag based on closing prices. High-Low-Close bars
+    (HLC), Open-High-Low-Close (OHLC) bars and candlesticks, which show the period's
+    high-low range, will show the ZigZag based on this high-low range. A ZigZag based
+    on the high-low range is more likely to change course than a ZigZag based on the
+    close because the high-low range will be much larger and produce bigger swings.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The parameters box allows chartists to set the sensitivity of the ZigZag feature.
+    A ZigZag with 5 in the parameter box will filter out all movements less than 5%.
+    A ZigZag(10) will filter out movements less than 10%. If a stock traded from a
+    reaction low of 100 to a high of 109 (+9%), there would not be a line because
+    the move was less than 10%. If the stock advanced from a low of 100 to a high
+    of 110 (+10%), there would be a line from 100 to 110\. If the stock continued
+    on to 112, this line would extend to 112 (100 to 112). The ZigZag would not reverse
+    until the stock declined 10% or more from its high. From a high of 112, a stock
+    would have to decline 11.2 points (or to a low of 100.8) to warrant another line.
+    The chart below shows a QQQQ line chart with a 7% ZigZag. The early June bounce
+    was ignored because it was less than 7% (black arrow). The two pullbacks in July
+    were ignored because they were much less than 7% (red arrows).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ZigZag - Chart 1](../Images/0a062c468971ec2a37068fd17aa8ce58.jpg "ZigZag
+    - Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Be careful with the last ZigZag line. Astute chartists will notice that the
+    last ZigZag line is up even though QQQQ advanced just 4.13% (43.36 to 45.15).
+    This is just a temporary line because QQQQ has yet to reach the 7% change threshold.
+    A move to 46.40 is needed for a gain of 7%, which would then warrant a permanent
+    ZigZag line. Should QQQQ fail to reach the 7% threshold on this bounce and then
+    decline below 43, this temporary line would disappear and the prior ZigZag line
+    would continue from the early August high.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ZigZag - Chart 2](../Images/e3d7fefaf2cec25331994401bd084724.jpg "ZigZag
+    - Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: Elliott Wave Counts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The ZigZag feature can be used to filter out small moves and make [Elliott Wave](/school/doku.php?id=chart_school:market_analysis:introduction_to_elliott_wave_theory
+    "chart_school:market_analysis:introduction_to_elliott_wave_theory") counts more
+    straightforward. The chart below shows the S&P 500 ETF with a 6% ZigZag to filter
+    moves less than 6%. After a little trial and error, 6% was deemed the threshold
+    of importance. An advance or decline greater than 6% was deemed significant enough
+    to warrant a wave for an Elliott count. Keep in mind that this is just an example.
+    The threshold and the wave count are subjective and dependent on individual preferences.
+    Based on the 6% ZigZag, a complete cycle was identified from March 2009 until
+    July 2010\. A complete cycle consists of 8 waves, 5 up and 3 down.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ZigZag - Chart 4](../Images/c7bc2129d97eae138657f14d227f97e9.jpg "ZigZag
+    - Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: Retracements and Projections
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Sharpcharts users can choose between the normal “ZigZag” and “ZigZag (Retrace.).”
+    As shown in the examples above, the normal ZigZag shows lines that move at least
+    a specific percentage. The ZigZag (Retrace.) connects the reaction highs and lows
+    with labels that measure the prior move. The numbers on the dotted lines reflect
+    the difference between the current Zigzag line and the ZigZag line immediately
+    before it. For example, the chart below shows Altera (ALTR) with the 15% ZigZag
+    (Retrace.) feature. Three ZigZag lines have been labeled (1, 2 and 3). The dotted
+    line connecting the low of Line 1 with the low of Line 2 shows a box with 0.638\.
+    This means Line 2 is .638 (63.8%) of Line 1\. A number below 1 means the line
+    is shorter than the prior line. The dotted line connecting the high of Line 2
+    with the high of Line 3 shows a box with 1.646\. This means Line 3 is 1.646 (164.6%)
+    of Line 2\. A number above 1 means the line is longer than the prior line.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ZigZag - Chart 3](../Images/a82588f71d48ba3b7a944f177603537b.jpg "ZigZag
+    - Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: As you may have guessed, seeing these lines as a percentage of the prior lines
+    makes it possible to assess Fibonacci projections. The August decline (Line 2)
+    retraced around 61.8% of the June-July advance (Line 1). This is a classic Fibonacci
+    retracement. The advance from early September to early November was 1.646 times
+    the August decline. In this sense, the ZigZag (Retrace.) can be used to project
+    the length of an advance. Again, 1.646 is close to the Fibonacci 1.618, which
+    is the Golden Ratio used in many projection estimates. See our ChartSchool article
+    for more on [Fibonacci retracements.](/school/doku.php?id=chart_school:chart_analysis:fibonacci_retracemen
+    "chart_school:chart_analysis:fibonacci_retracemen")
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The ZigZag and ZigZag (Retrace.) filter price action and do not have any predictive
+    power. The ZigZag lines simply react when prices move a certain percentage. Chartists
+    can apply an array of [technical analysis tools](/school/doku.php?id=chart_school:chart_analysis
+    "chart_school:chart_analysis") to the ZigZag. Chartists can perform basic trend
+    analysis by comparing reaction highs and lows. Chartists can also overlay the
+    ZigZag feature to look for price patterns that might not be as visible on a normal
+    bar or line chart. The ZigZag has a way of highlighting the important movements
+    and ignoring the noise. When using the ZigZag feature, don't forget to measure
+    the last line to determine if it is temporary or permanent. The last ZigZag line
+    is temporary if the current price change is less than the ZigZag parameter. The
+    last line is permanent when the price change is greater than or equal to the ZigZag
+    parameter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The ZigZag and ZigZag (Retrace.) can be found in SharpCharts as a price overlay
+    in the Chart Attributes section or as an addition to an indicator. Upon selecting
+    the Zigzag feature from the dropdown box, the parameters window will appear empty.
+    Five (5%) is the default parameter, but this can change depending on a security's
+    price characteristics. Some securities produce too few Zigzag lines at 5% so the
+    default is set lower (e.g. 3.75%). Some securities produce too many zigzag lines
+    at 5% so the default is set higher (e.g. 6.25%). The Zigzag parameter can be seen
+    in the upper left corner of the chart. Once the Zigzag feature is applied, chartists
+    can adjust the parameter to suit their charting needs. A lower number will make
+    the feature more sensitive, while a higher number will make it less sensitive.
+    [Click here](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=8&dy=0&id=p52942080253&listNum=30&a=213475204
+    "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=8&dy=0&id=p52942080253&listNum=30&a=213475204")
+    for a live chart with the Zigzag (Retrace.) feature.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ZigZag - SharpCharts](../Images/0647435763830c7f4686202a27f2e98b.jpg "ZigZag
+    - SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![ZigZag - SharpCharts](../Images/a30c4b8e935ac023c8ac3870d0a2efc8.jpg "ZigZag
+    - SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![ZigZag - SharpCharts](../Images/950acc8018316dd367477e78e1aa0913.jpg "ZigZag
+    - SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '| **Elliott Wave Principle** Robert Prechter |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/74272f03b0af5bf3b0ba902aa0a7b2bf.jpg)](http://store.stockcharts.com/products/elliott-wave-principle-key-to-market-behavior
+    "http://store.stockcharts.com/products/elliott-wave-principle-key-to-market-behavior")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/elliott-wave-principle-key-to-market-behavior
+    "http://store.stockcharts.com/products/elliott-wave-principle-key-to-market-behavior")
+    |'
+  prefs: []
+  type: TYPE_TB

@@ -1,0 +1,293 @@
+- en: Vortex Indicator [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Vortex Indicator](#vortex_indicator)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[SharpCharts Calculation](#sharpcharts_calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[VM Crossovers](#vm_crossovers)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[VM Thresholds](#vm_thresholds)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overall Uptrend with +VI Crossing above -VI](#overall_uptrend_with_vi_crossing_above_-vi)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overall Downtrend with -VI Crossing above +VI](#overall_downtrend_with_-vi_crossing_above_vi)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Developed by Etienne Botes and Douglas Siepman, the Vortex Indicator consists
+    of two oscillators that capture positive and negative trend movement. In creating
+    this indicator, Botes and Seipman drew on the work of Welles Wilder and Viktor
+    Schauberger, who is considered the father of implosion technology. Despite a rather
+    involved formula, the indicator is quite straightforward to understand and easy
+    to interpret. A bullish signal triggers when the positive trend indicator crosses
+    above the negative trend indicator or a key level. A bearish signal triggers when
+    the negative trend indicator crosses above the positive trend indicator or a key
+    level. The Vortex Indicator is either above or below these levels, which means
+    it always has a clear bullish or bearish bias.
+  prefs: []
+  type: TYPE_NORMAL
+- en: SharpCharts Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '![Chart 1](../Images/413893e028220e95a4f40cb5b44f4221.jpg "Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Calculation of the Vortex Indicator (VTX) can be divided into three parts. First,
+    calculate the positive and negative trend movements based on the highs and lows
+    of the last two periods. Positive trend movement is the distance from the current
+    high to the prior low. The further the current high is from the prior low, the
+    more positive the trend movement. Negative trend movement is the distance from
+    the current low to the prior high. The further the current low is from the prior
+    high, the more negative the trend movement. These periodic values are then summed
+    based on the indicator setting, which is the usually 14 periods.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The second part involves the True Range, which was created by Welles Wilder.
+    This indicator uses the current high, current low and prior close to measure volatility.
+    See the formula box below for details.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The third part normalizes the positive and negative trend movements by dividing
+    them by the True Range. In effect, the Vortex Indicator shows volatility-adjusted
+    positive trend movement and volatility-adjusted negative trend movement. The end
+    result creates two indicators that oscillate above/below 1\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: '![Spreadsheet](../Images/ecc5ea4c1b5ccf25c226276933fe78e7.jpg "Spreadsheet")'
+  prefs: []
+  type: TYPE_IMG
+- en: The table above comes from an excel spreadsheet. [Click here to download](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:vortex_indicator:cs-vortex.xls
+    "chart_school:technical_indicators_and_overlays:vortex_indicator:cs-vortex.xls
+    (33.5 KB)") this spreadsheet.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Vortex Indicator (VTX) can be used to identify the start of a trend and
+    subsequently affirm trend direction. First, a simple cross of the two oscillators
+    can be used to signal the start of a trend. After this crossover, the trend is
+    up when +VI is above -VI and down when -VI is greater than +VI. Second, a cross
+    above or below a particular level can signal the start of a trend and these levels
+    can be used to affirm trend direction.
+  prefs: []
+  type: TYPE_NORMAL
+- en: VM Crossovers
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The simplest signal triggers when +VI and -VI cross. The example below shows
+    the Nasdaq 100 ETF (QQQ) using weekly bars and a 26-period VTX, which amounts
+    to around six months. There were over a dozen crossovers in a six and a half year
+    period. The yellow areas show bullish crossovers that lasted more than six months.
+    This is what happens in a strong uptrend. There was also a significant bearish
+    crossover in the second half of 2008\. Even though there were plenty of good signals,
+    there were also whipsaws. This is simply the nature of the beast and the nature
+    of indicators in general. The blue circles show periods of indecision when both
+    trend indicators hovered around 1 and the S&P 500 consolidated.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 2](../Images/e3bf249a03fc6f3a0d9fb4f4b27d06d6.jpg "Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: The second example shows Baxter (BAX) using daily charts and the 23-period VTX,
+    which covers around one month. Not every crossover results in a clear trend signal.
+    Notice how VTX traded in a narrow range around 1 from October to early November
+    (yellow area). This marked a consolidation as prices formed a triangle. There
+    were some whipsaws at the beginning of 2012 (blue circle) and then a few good
+    signals later in the year. It sometimes helps to qualify a signal by waiting for
+    confirmation with a move above 1\. A bullish crossover is further validated when
+    +VM moves above 1 and a bearish crossover is validated when -VM moves above 1\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 3](../Images/80f3d495d519ad57fd8336e554e3a119.jpg "Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: VM Thresholds
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Traders can reduce whipsaws by setting signal thresholds just above and below
+    1\. A bullish signal can be divided into two parts. First, downward trend movement
+    weakens. Second, upward trend movement strengthens. -VI often weakens and moves
+    below .90 before an uptrend starts. After this weakening in downward trend movement,
+    upward movement strengthens as +VI moves above 1.10 to complete the bullish signal.
+    This bullish signal remains in play until countered with a bearish signal. The
+    reverse logic can be applied to generate bearish signals. First, upward trend
+    movement weakens with a move below .90\. Second, downward trend movement strengthens
+    with a move above 1.10\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 4](../Images/bc3a600fe72897ce44ac1e4efaf6f595.jpg "Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows Microchip Technology using a daily chart and 23-period
+    VTX. Despite numerous crosses of the two oscillators, there were only three “threshold”
+    signals over a twelve-month period. First, -VM moved below .90 in early September
+    and +VI crossed above 1.1 a few days later. Even though +VM moved below .90 several
+    times, this bullish signal was not completely reversed because -VI never confirmed
+    with a move above 1.10\. The second signal occurred when +VI moved below .90 in
+    late February and -VI crossed above 1.1 in early March. The third signal occurred
+    when -VI dipped below .90 in mid-June and +VI crossed above 1.1 a few days later.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Decreasing the look-back period will increase sensitivity and result in more
+    threshold crosses. The chart below shows Cummins (CMI) using daily bars and a
+    14-period VTX. This indicator is much more sensitive (volatile) than the 23-period
+    version. The yellow highlights mark the bullish signals and the orange highlights
+    mark the bearish signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 5](../Images/072301f30292366d258ffa99f1dce6d7.jpg "Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: Keep in mind that VTX is not designed as a standalone indicator. Chartists should
+    use other aspects of technical analysis to confirm VTX, improve the reward-to-risk
+    ratio for a trade setup, or derive buy-sell signals. The bullish VTX signal in
+    early January was confirmed by a wedge breakout. After the bearish VTX signal
+    in April, CMI formed a rising wedge and broke wedge support with a sharp decline
+    in early May. VTX provided the alert and the price chart provided the signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Vortex Indicator is a unique directional indicator that provides clear signals
+    and defines the overall trend. As with all technical analysis tools and indicators,
+    the Vortex Indicator can be used on a range of securities and across various timeframes.
+    For example, VTX can be applied to weekly and monthly charts to define the bigger
+    trend and then applied to daily charts to generate signals within that trend.
+    Using the daily chart, chartists could focus exclusively on bullish signals when
+    VTX on the weekly chart indicates an uptrend. Conversely, chartists can focus
+    on bearish signals when VTX on the daily chart is in bear mode.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Vortex Index is available as an indicator for SharpCharts. Once selected,
+    users can place the indicator above, below or behind the underlying price plot.
+    Placing the indicator directly behind the price plot accentuates the movements
+    relative to the price action of the underlying security. Users can apply “advanced
+    options” to add horizontal lines and set signal thresholds. [Click here](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p98321339986&a=277125891
+    "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p98321339986&a=277125891")
+    for a live example of the Vortex Indicator in action.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 6](../Images/63b4c2145a55641447698478d165f148.jpg "Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Chart 6](../Images/788f8ac4f029fb678d70fc71212dbbaf.jpg "Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Overall Uptrend with +VI Crossing above -VI
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with stocks that average 100,000 shares daily volume and have
+    an average closing price above 10\. An uptrend is present when trading above the
+    50-day SMA. A buy signal materializes when +VI crosses above -VI.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Overall Downtrend with -VI Crossing above +VI
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with stocks that average 100,000 shares daily volume and have
+    an average closing price above 10\. An downtrend is present when trading below
+    the 50-day SMA. A sell signal materializes when -VI crosses above +VI.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Vortex Indicator scans, please see
+    our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#vortex_indicator
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#vortex_indicator") in
+    the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis of the Financial Markets** John J. Murphy | **Technical
+    Analysis Explained by Martin Pring** Martin Pring |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB

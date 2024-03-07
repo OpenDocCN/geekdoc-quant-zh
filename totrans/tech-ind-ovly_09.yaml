@@ -1,0 +1,307 @@
+- en: Parabolic SAR [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Parabolic SAR](#parabolic_sar)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Step Increments](#step_increments)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Maximum Step](#maximum_step)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Break above falling SAR](#break_above_falling_sar)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Break below rising SAR](#break_below_rising_sar)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Additional Resources](#additional_resources)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Developed by Welles Wilder, the Parabolic SAR refers to a price-and-time-based
+    trading system. Wilder called this the “Parabolic Time/Price System.” SAR stands
+    for “stop and reverse,” which is the actual indicator used in the system. **SAR
+    trails price as the trend extends over time.** The indicator is below prices when
+    prices are rising and above prices when prices are falling. In this regard, the
+    indicator stops and reverses when the price trend reverses and breaks above or
+    below the indicator.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Wilder introduced the Parabolic Time/Price System in his 1978 book, New Concepts
+    in Technical Trading Systems. This book also includes [RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi
+    "chart_school:technical_indicators:relative_strength_index_rsi"), Average True
+    Range (ATR), and the Directional Movement Concept (ADX). Despite being developed
+    before the computer age, Wilder's indicators have stood the test of time and remain
+    extremely popular.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Parabolic SAR - Chart 1](../Images/0999f08b37d2af289f97278ac09cd137.jpg "Parabolic
+    SAR - Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Calculation of SAR is complex with if/then variables that make it difficult
+    to put in a spreadsheet. These examples will provide a general idea of how SAR
+    is calculated. Because the formulas for rising and falling SAR are different,
+    it is easier to divide the calculation into two parts. The first calculation covers
+    rising SAR and the second covers falling SAR.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: '![Parabolic SAR - Calculation Up](../Images/0f040fe2c6c2b1a170ec0876a29a69b5.jpg
+    "Parabolic SAR - Calculation Up")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Parabolic SAR - Chart 2](../Images/dc1ca0f288b799d85b3b4efa3747d20b.jpg "Parabolic
+    SAR - Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: '![Parabolic SAR - Calculation Down](../Images/01b887a7e9931f3ad7a2908bfd732af6.jpg
+    "Parabolic SAR - Calculation Down")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Parabolic SAR - Chart 5](../Images/9baf1242e1aa9f9fab30f82ec4072528.jpg "Parabolic
+    SAR - Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: SAR follows price and can be considered a trend following indicator. Once a
+    downtrend reverses and starts up, SAR follows prices like a trailing stop. The
+    stop continuously rises as long as the uptrend remains in place. In other words,
+    SAR never decreases in an uptrend and continuously protects profits as prices
+    advance. The indicator acts as a guard against the propensity to lower a stop-loss.
+    Once price stops rising and reverses below SAR, a downtrend starts and SAR is
+    above the price. SAR follows prices lower like a trailing stop. The stop continuously
+    falls as long as the downtrend extends. Because SAR never rises in a downtrend,
+    it continuously protects profits on [short positions](/school/doku.php?id=chart_school:glossary_s#short_selling
+    "chart_school:glossary_s").
+  prefs: []
+  type: TYPE_NORMAL
+- en: Step Increments
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Acceleration Factor (AF), which is also referred to as the Step, dictates
+    SAR sensitivity. SharpCharts users can set the Step and the Maximum Step. As shown
+    in the spreadsheet example, the Step is a multiplier that influences the rate-of-change
+    in SAR. That is why it is referred to as the Acceleration Factor. Step gradually
+    increases as the trend extends until it hits a maximum. **SAR sensitivity can
+    be *decreased* by decreasing the Step**. A lower step moves SAR further from price,
+    which makes a reversal less likely.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SAR sensitivity can be *increased* by increasing the step.** A higher step
+    moves SAR closer to the price action, which makes a reversal more likely. The
+    indicator will reverse too often if the step is set too high. This will produce
+    [whipsaws](/school/doku.php?id=chart_school:glossary_w#whipsaw "chart_school:glossary_w")
+    and fail to capture the trend. Chart 6 shows IBM with SAR (.01, .20). The step
+    is .01 and the Maximum Step is .20\. Chart 7 shows IBM with a higher Step (.03).
+    SAR is more sensitive in chart 7 because there are more reversals. This is because
+    the Step is higher in chart 7 (.03) than chart 6 (.01).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Parabolic SAR - Chart 6](../Images/593e36b1fad1a33116de0c0549bf5baa.jpg "Parabolic
+    SAR - Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Parabolic SAR - Chart 7](../Images/c598324b960e21b14b34cf29157f2422.jpg "Parabolic
+    SAR - Chart 7")'
+  prefs: []
+  type: TYPE_IMG
+- en: Maximum Step
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The sensitivity of the indicator can also be adjusted using the Maximum Step.
+    While the Maximum Step can influence sensitivity, the Step carries more weight
+    because it sets the incremental rate-of-increase as the trend develops. Also,
+    note that increasing the Step ensures that the Maximum Step will be hit quicker
+    when a trend develops. Chart 8 shows Best Buy (BBY) with a Maximum Step (.10),
+    which is lower than the default setting (.20). This lower Maximum Step decreases
+    the sensitivity of the indicator and produces fewer reversals. Notice how this
+    setting caught a two-month downtrend and a subsequent two-month uptrend. Chart
+    9 shows BBY with a higher Maximum Step (.20). This higher reading produced extra
+    reversals in early February and early April.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Parabolic SAR - Chart 8](../Images/18b5acaa9e2b250970e39944013e716e.jpg "Parabolic
+    SAR - Chart 8")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Parabolic SAR - Chart 9](../Images/a688735bc3d0544ff42cb0bd9e46fb95.jpg "Parabolic
+    SAR - Chart 9")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Parabolic SAR works best with trending securities, which occur roughly 30%
+    of the time according to Wilder's estimates. This means the indicator will be
+    prone to whipsaws over 50% of the time or when a security is not trending. After
+    all, SAR is designed to catch the trend and follow it like a trailing stop. As
+    with most indicators, the signal quality depends on the settings and the characteristics
+    of the underlying security. The right settings combined with decent trends can
+    produce a great trading system. The wrong settings will result in whipsaws, losses,
+    and frustration. There is no golden rule or one-size-fits-all setting. Each security
+    should be evaluated based on its own characteristics. Parabolic SAR should also
+    be used in conjunction with other indicators and technical analysis techniques.
+    For example, Wilder's [Average Directional Index](/school/doku.php?id=chart_school:technical_indicators:average_directional_index_adx
+    "chart_school:technical_indicators:average_directional_index_adx") can be used
+    to estimate the strength of the trend before considering signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Parabolic SAR can be found as an Overlay in SharpCharts. The default parameters
+    are .02 for the Step and .20 for the Maximum Step. As shown above, these can be
+    changed to suit the characteristics of an individual security. The example below
+    shows the indicator in pink with prices in black/white and the chart grid removed.
+    This contrast makes it easier to compare the indicator with the price action of
+    the underlying security. [Click here](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p25997070229&listNum=30&a=202528465
+    "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p25997070229&listNum=30&a=202528465")
+    for a live example of Parabolic SAR.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Parabolic SAR - Chart 10](../Images/4d865a6efe789775c5cf5bcf2bebb1b5.jpg
+    "Parabolic SAR - Chart 10")](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p25997070229&listNum=30&a=202528465
+    "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p25997070229&listNum=30&a=202528465")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Parabolic SAR - SharpCharts 10](../Images/0cf14b7a8cf25ecfb256426c002d7b44.jpg
+    "Parabolic SAR - SharpCharts 10")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Break above falling SAR
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with stocks that have an average price of $10 or greater over
+    the last three months and average volume greater than 40,000\. The scan then filters
+    for stocks that have a bullish SAR reversal (Parabolic SAR (.01,.20)). This scan
+    is just meant as a starter for further refinement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: Break below rising SAR
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with stocks that have an average price of $10 or greater over
+    the last three months and average volume greater than 40,000\. The scan then filters
+    for stocks that have a bearish SAR reversal (Parabolic SAR (.01,.20)). This scan
+    is just meant as a starter for further refinement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE3]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Parabolic SAR scans, please see our
+    [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#parabolic_stop_and_reverse_parabolic_sar
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#parabolic_stop_and_reverse_parabolic_sar")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* * *'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additional Resources
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Stocks & Commodities Magazine Articles
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '**[The Parabolic Trading System by Thom Hartle](http://stockcharts.com/h-mem/tascredirect.html?artid=\V11\C11\THEPARA.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V11\C11\THEPARA.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Oct 1993
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Parabolics by John Sweeney](http://stockcharts.com/h-mem/tascredirect.html?artid=\V15\C07\PARABOL.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V15\C07\PARABOL.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Jun 1997
+  prefs: []
+  type: TYPE_NORMAL

@@ -1,0 +1,452 @@
+- en: Ichimoku Clouds [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Ichimoku Clouds](#ichimoku_clouds)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Analyzing the Cloud](#analyzing_the_cloud)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Trend and Signals](#trend_and_signals)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conversion-Base Line Signals](#conversion-base_line_signals)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Price-Base Line Signals](#price-base_line_signals)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Signal Summary](#signal_summary)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Ichimoku Uptrend with Close above Base Line](#ichimoku_uptrend_with_close_above_base_line)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Ichimoku Downtrend with Close below Base Line](#ichimoku_downtrend_with_close_below_base_line)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Additional Resources](#additional_resources)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Ichimoku Cloud, also known as Ichimoku Kinko Hyo, is a versatile indicator
+    that defines support and resistance, identifies trend direction, gauges momentum
+    and provides trading signals. Ichimoku Kinko Hyo translates into “one look equilibrium
+    chart”. With one look, chartists can identify the trend and look for potential
+    signals within that trend. The indicator was developed by Goichi Hosoda, a journalist,
+    and published in his 1969 book. Even though the Ichimoku Cloud may seem complicated
+    when viewed on the price chart, it is really a straightforward indicator that
+    is very usable. It was, after all, created by a journalist, not a rocket scientist!
+    Moreover, the concepts are easy to understand and the signals are well-defined.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Four of the five plots within the Ichimoku Cloud are based on the average of
+    the high and low over a given period of time. For example, the first plot is simply
+    an average of the 9-day high and 9-day low. Before computers were widely available,
+    it would have been easier to calculate this high-low average rather than a 9-day
+    [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages"). The Ichimoku Cloud consists
+    of five plots:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: '[PRE3]'
+  prefs: []
+  type: TYPE_PRE
+- en: '[PRE4]'
+  prefs: []
+  type: TYPE_PRE
+- en: This tutorial will use the English equivalents when explaining the various plots.
+    The chart below shows the Dow Industrials with the Ichimoku Cloud plots. The Conversion
+    Line (blue) is the fastest and most sensitive line. Notice that it follows price
+    action the closest. The Base Line (red) trails the faster Conversion Line, but
+    follows price action pretty well. The relationship between the Conversion Line
+    and Base Line is similar to the relationship between a 9-day moving average and
+    26-day moving average. The 9-day is faster and more closely follows the price
+    plot. The 26-day is slower and lags behind the 9-day. Incidentally, notice that
+    9 and 26 are the same periods used to calculate [MACD](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd
+    "chart_school:technical_indicators:moving_average_convergence_divergence_macd").
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 1 - Ichimoku Cloud](../Images/bdd79746a4c3180489cb85237f053f56.jpg
+    "Chart 1 - Ichimoku Cloud")'
+  prefs: []
+  type: TYPE_IMG
+- en: Analyzing the Cloud
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Cloud (Kumo) is the most prominent feature of the Ichimoku Cloud plots.
+    The Leading Span A (green) and Leading Span B (red) form the Cloud. The Leading
+    Span A is the average of the Conversion Line and the Base Line. Because the Conversion
+    Line and Base Line are calculated with 9 and 26 periods, respectively, the green
+    Cloud boundary moves faster than the red Cloud boundary, which is the average
+    of the 52-day high and the 52-day low. It is the same principle with moving averages.
+    Shorter moving averages are more sensitive and faster than longer moving averages.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are two ways to identify the overall trend using the Cloud. **First, the
+    trend is up when prices are above the Cloud, down when prices are below the Cloud
+    and flat when prices are in the Cloud.** Second, the uptrend is strengthened when
+    the Leading Span A (green cloud line) is rising and above the Leading Span B (red
+    cloud line). This situation produces a ***green Cloud***. Conversely, a downtrend
+    is reinforced when the Leading Span A (green cloud line) is falling and below
+    the Leading Span B (red cloud line). This situation produces a ***red Cloud***.
+    Because the Cloud is shifted forward 26 days, it also provides a glimpse of future
+    support or resistance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Chart 2 shows IBM with a focus on the uptrend and the Cloud. First, notice that
+    IBM was in an uptrend from June to January as it traded above the Cloud. Second,
+    notice how the Cloud offered support in July, early October, and early November.
+    Third, notice how the Cloud provides a glimpse of future [resistance](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
+    "chart_school:chart_analysis:support_and_resistance"). **Remember, the entire
+    Cloud is shifted forward 26 days.** This means it is plotted 26 days ahead of
+    the last price point to indicate future support or resistance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 2 - Ichimoku Cloud](../Images/fac386b1c584418089980bfb7544819e.jpg
+    "Chart 2 - Ichimoku Cloud")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 3 shows Boeing (BA) with a focus on the downtrend and the cloud. The trend
+    changed when Boeing broke below Cloud support in June. The Cloud changed from
+    green to red when the Leading Span A (green) moved below the Leading Span B (red)
+    in July. The cloud break represented the first trend change signal, while the
+    color change represented the second trend change signal. Notice how the Cloud
+    then acted as resistance in August and January.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 3 - Ichimoku Cloud](../Images/61304952cefc74e631c48cc9a11e20e6.jpg
+    "Chart 3 - Ichimoku Cloud")'
+  prefs: []
+  type: TYPE_IMG
+- en: Trend and Signals
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Price, the Conversion Line and the Base Line are used to identify faster, and
+    more frequent, signals. It is important to remember that bullish signals are reinforced
+    when prices are above the cloud and the cloud is green. Bearish signals are reinforced
+    when prices are below the cloud and the cloud is red. In other words, bullish
+    signals are preferred when the bigger trend is up (prices above green cloud),
+    while bearish signals are preferred when the bigger trend is down (prices are
+    below red cloud). This is the essence of trading in the direction of the bigger
+    trend. Signals that are counter to the existing trend are deemed weaker. Short-term
+    bullish signals within a long-term downtrend and short-term bearish signals within
+    a long-term uptrend are less robust.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conversion-Base Line Signals
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Chart 4 shows Kimberly Clark (KMB) producing two bullish signals within an uptrend.
+    First, the trend was up because the stock was trading above the Cloud and the
+    Cloud was green. The Conversion Line dipped below the Base Line for a few days
+    in late June to enable the setup. A bullish crossover signal was triggered when
+    the Conversion Line moved back above the Base Line in July. The second signal
+    occurred as the stock moved towards Cloud [support](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
+    "chart_school:chart_analysis:support_and_resistance"). The Conversion Line moved
+    below the Base Line in September to enable the setup. Another bullish crossover
+    signal was triggered when the Conversion Line moved back above the Base Line in
+    October. Sometimes it is hard to determine exact Conversion Line and Base Line
+    levels on the price chart. For reference, these numbers are displayed in the upper
+    left-hand corner of each Sharpchart. As of the January 8 close, the Conversion
+    Line was 62.62 (blue) and the Base Line was 63.71 (red).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 6 - Ichimoku Cloud](../Images/75f23a7f8c1b45d9596fa3f4a320d207.jpg
+    "Chart 6 - Ichimoku Cloud")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 5 shows AT&T (T) producing a bearish signal within a downtrend. First,
+    the trend was down as the stock was trading below the Cloud and the Cloud was
+    red. After a sideways bounce in August, the Conversion Line moved above the Base
+    Line to enable the setup. This did not last long as the Conversion Line moved
+    back below the Base Line to trigger a bearish signal on September 15th.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 5 - Ichimoku Cloud](../Images/08e655546f0193f13ff133d21245f342.jpg
+    "Chart 5 - Ichimoku Cloud")'
+  prefs: []
+  type: TYPE_IMG
+- en: Price-Base Line Signals
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Chart 6 shows Disney producing two bullish signals within an uptrend. With the
+    stock trading above the green cloud, prices moved below the Base Line (red) to
+    enable the setup. This move represented a short-term oversold situation within
+    a bigger uptrend. The pullback ended when prices moved back above the Base Line
+    to trigger the bullish signal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 6 - Ichimoku Cloud](../Images/52ddebaf763774112fe5e84ddb3c40a3.jpg
+    "Chart 6 - Ichimoku Cloud")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 7 shows DR Horton (DHI) producing two bearish signals within a downtrend.
+    With the stock trading below the red cloud, prices bounced above the Base Line
+    (red) to enable the setup. This move created a short-term overbought situation
+    within a bigger downtrend. The bounce ended when prices moved back below the Base
+    Line to trigger the bearish signal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 7 - Ichimoku Cloud](../Images/51d20fcb698fb1c4bffd0f451487fcec.jpg
+    "Chart 7 - Ichimoku Cloud")'
+  prefs: []
+  type: TYPE_IMG
+- en: Signal Summary
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: This article features four bullish and four bearish signals derived from the
+    Ichimoku Cloud plots. The trend-following signals focus on the Cloud, while the
+    momentum signals focus on the Turning and Base Lines. In general, movements above
+    or below the cloud define the overall trend. Within that trend, the Cloud changes
+    color as the trend ebbs and flows. Once the trend is identified, the Conversion
+    Line and Base Line act similar to MACD for signal generation. And finally, simple
+    price movements above or below the Base Line can be used to generate signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Bullish Signals:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Price moves above Cloud (trend)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Cloud turns from red to green (ebb-flow within trend)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Price Moves above the Base Line (momentum)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Conversion Line moves above Base Line (momentum)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Bearish Signals:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Price moves below Cloud (trend)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Cloud turns from green to red (ebb-flow within trend)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Price Moves below Base Line (momentum)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Conversion Line moves below Base Line (momentum)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Ichimoku Cloud is a comprehensive indicator designed to produce clear signals.
+    Chartists can first determine the trend by using the Cloud. Once the trend is
+    established, appropriate signals can be determined using the price plot, Conversion
+    Line, and Base Line. The classic signal is to look for the Conversion Line to
+    cross the Base Line. While this signal can be effective, it can also be rare in
+    a strong trend. More signals can be found by looking for price to cross the Base
+    Line (or even the Conversion Line).
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is important to look for signals in the direction of the bigger trend. With
+    the Cloud offering support in an uptrend, traders should also be on alert for
+    bullish signals when prices approach the Cloud on a pullback or consolidation.
+    Conversely, in a bigger downtrend, traders should be on alert for bearish signals
+    when prices approach the Cloud on an oversold bounce or consolidation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Ichimoku Cloud can also be used in conjunction with other indicators. Traders
+    can identify the trend using the Cloud and then use classic momentum oscillators
+    to identify overbought or oversold conditions. [Click here](http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371
+    "http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371")
+    for a live example using the Ichimoku Cloud.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Ichimoku Cloud indicator is available on SharpCharts by selecting it as
+    an indicator in the “Overlay” drop-down box. Default settings are 9 for the Conversion
+    Line, 26 for the Base Line and 52 for the Leading Span B. The Leading Span A is
+    based on the Conversion Line and Base Line. The number for the Base Line (26)
+    is also used to move the Cloud forward (26 days). These numbers can be adjusted
+    to suit individual trading and investing styles. Sometimes it is necessary to
+    add extra bars to the chart when increasing the Base Line, which also increases
+    the forward movement of the Cloud.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/9bd54a62eb5c151943fa68cc71c22b01.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[![Chart 8 - Ichimoku Cloud](../Images/8ddae703d19f58f7adbd98a42e637b2e.jpg
+    "Chart 8 - Ichimoku Cloud")](http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371
+    "http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Ichimoku Uptrend with Close above Base Line
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with a base of stocks that are averaging at least $10 in price
+    and 100,000 daily volume over the last 60 days. Stocks are classified in an uptrend
+    as long as Span A is above Span B and the Close is above Span B. A breakout within
+    this uptrend occurs when price moves above the Base Line.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE5]'
+  prefs: []
+  type: TYPE_PRE
+- en: Ichimoku Downtrend with Close below Base Line
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with a base of stocks that are averaging at least $10 in price
+    and 100,000 daily volume over the last 60 days. Stocks are classified in a downtrend
+    as long as Span A is below Span B and the Close is below Span A. A continuation
+    of this downtrend could be starting when price crosses below the Base Line.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE6]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Ichimoku Cloud scans, please see our
+    [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#ichimoku_cloud
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#ichimoku_cloud") in
+    the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '| **Ichimoku Charts** Nicole Elliott |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/0f3b7b6868a2ab78a4d698e4336b0a65.jpg)](http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds
+    "http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds
+    "http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '* * *'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additional Resources
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Stocks & Commodities Magazine Articles
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '**[Ichimoku Charts by Ken Muranaka](http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C10\088ICH.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C10\088ICH.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sep 2000 - Stocks & Commodities V. 18:10 (22-30)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Ichimoku Kinko Hyo Charts by Nicole Elliott](http://stockcharts.com/h-mem/tascredirect.html?artid=\V25\C09\172ELLT.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V25\C09\172ELLT.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Aug 2007 - Stocks & Commodities V. 25:9 (34-36)
+  prefs: []
+  type: TYPE_NORMAL

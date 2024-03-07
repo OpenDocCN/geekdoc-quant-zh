@@ -1,0 +1,351 @@
+- en: MACD-Histogram [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[MACD-Histogram](#macd-histogram)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Four Steps Removed](#four_steps_removed)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Peak-Trough Divergence](#peak-trough_divergence)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Slant Divergence](#slant_divergence)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[MACD-Histogram Turns Positive](#macd-histogram_turns_positive)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[MACD-Histogram Turns Negative](#macd-histogram_turns_negative)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Developed by Thomas Aspray in 1986, the MACD-Histogram measures the distance
+    between MACD and its signal line (the 9-day EMA of MACD). Like MACD, the MACD-Histogram
+    is also an oscillator that fluctuates above and below the zero line. Aspray developed
+    the MACD-Histogram to anticipate signal line crossovers in MACD. Because MACD
+    uses moving averages and moving averages lag price, signal line crossovers can
+    come late and affect the reward-to-risk ratio of a trade. Bullish or bearish divergences
+    in the MACD-Histogram can alert chartists to an imminent signal line crossover
+    in MACD. See our [ChartSchool article](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd
+    "chart_school:technical_indicators:moving_average_convergence_divergence_macd")
+    for more on MACD.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: Standard MACD is the 12-day Exponential [Moving Average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") (EMA) less the 26-day EMA.
+    Closing prices are used to form the moving averages so MACD. A 9-day EMA of MACD
+    is plotted along side to act as a signal line to identify turns in the indicator.
+    The MACD-Histogram represents the difference between MACD and its 9-day EMA, the
+    signal line. The histogram is positive when MACD is above its 9-day EMA and negative
+    when MACD is below its 9-day EMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![MACD - Example](../Images/3ce03c762d1297743e8a8026a569b750.jpg "MACD - Example")'
+  prefs: []
+  type: TYPE_IMG
+- en: Four Steps Removed
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The MACD-Histogram is an indicator of an indicator. In fact, MACD is also an
+    indicator of an indicator. This means that the MACD-Histogram is four steps removed
+    from the price of the underlying security. In other words, it is the fourth derivative
+    of price.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'First derivative: 12-day EMA and 26-day EMA'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Second derivative: MACD (12-day EMA less the 26-day EMA)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Third derivative: MACD signal line (9-day EMA of MACD)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Fourth derivative: MACD-Histogram (MACD less MACD signal line)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The base for this indicator is the security's price. It takes four steps to
+    get from the actual price to the MACD-Histogram. Talk about massaging the data.
+    While not necessarily a bad thing, chartists should keep this in mind when analyzing
+    the MACD-Histogram. It is an indicator of an indicator. Therefore, it is designed
+    to anticipate signals in MACD, which in turn is designed to identify changes in
+    the price [momentum](/school/doku.php?id=chart_school:technical_indicators:rate_of_change_roc_and_momentum
+    "chart_school:technical_indicators:rate_of_change_roc_and_momentum") of the underlying
+    security.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: As with MACD, the MACD-Histogram is also designed to identify convergence, divergence
+    and crossovers. The MACD-Histogram, however, is measuring the distance between
+    MACD and its signal line. The histogram is positive when MACD is above its signal
+    line. Positive values increase as MACD diverges further from its signal line (to
+    the upside). Positive values decrease as MACD and its signal line converge. The
+    MACD-Histogram crosses the zero line as MACD crosses below its signal line. The
+    indicator is negative when MACD is below its signal line. Negative values increase
+    as MACD diverges further from its signal line (to the downside). Conversely, negative
+    values decrease as MACD converges on its signal line.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/02bb64289386dab91b16988721b2b986.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 1 shows Darden Restaurants (DRI) with MACD and the MACD-Histogram. A bearish
+    signal line crossover occurred in late September and this turned the MACD-Histogram
+    negative. A bullish signal line crossover occurred in early December and this
+    turned the MACD-Histogram positive the rest of the month. There was a period of
+    divergence as MACD moved further from its signal line (green line) and a period
+    of convergence as MACD moved closer to its signal line (red line).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Peak-Trough Divergence
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'The MACD-Histogram anticipates signal line crossovers in MACD by forming bullish
+    and [bearish divergences](/school/doku.php?id=chart_school:glossary_b#bearish_divergence
+    "chart_school:glossary_b"). These divergences signal that MACD is converging on
+    its signal line and could be ripe for a cross. There are two types of divergences:
+    peak-trough and slant. A peak-trough divergence forms with two peaks or two troughs
+    in the MACD-Histogram. A peak-trough bullish divergence forms when MACD forges
+    a lower low and the MACD-Histogram forges a higher low. Well-defined troughs are
+    important to the robustness of a peak-trough divergence. Chart 2 shows Caterpillar
+    with a bullish divergence in the MACD-Histogram. Notice that MACD moved to a lower
+    low in June-July, but the MACD-Histogram formed a higher low (trough). There are
+    two distinct troughs. This bullish divergence foreshadowed the bullish signal
+    line crossover in mid-July and a big rally.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![MACD-Histogram - Chart 2](../Images/ab246bbc508d9cc394d43a23a5b751bf.jpg
+    "MACD-Histogram - Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 3 shows Aeropostale (ARO) with a bearish divergence in August-September
+    2009\. MACD moved to a new high in September, but the MACD-Histogram formed a
+    lower high. Notice that there are two definitive peaks (higher) with a dip in
+    between on the MACD-Histogram (red line). The subsequent bearish signal line crossover
+    foreshadowed a sharp decline in the stock.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![MACD-Histogram - Chart 3](../Images/256f789aa3f3eda786387925dc8466ac.jpg
+    "MACD-Histogram - Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: Slant Divergence
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: As its name implies, slant divergences form without well-defined peaks or troughs.
+    Instead of two reaction highs, there is simply a slant lower as the MACD-Histogram
+    moves towards the zero line. This slant towards the zero line reflects a convergence
+    between MACD and its signal line. In other words, they are getting closer to each
+    other. Momentum shows strength when MACD is moving away from its signal line and
+    the MACD-Histogram expands. Momentum weakens as MACD moves closer to its signal
+    line and the MACD-Histogram contracts. Contracting MACD-Histogram is the first
+    step towards a signal line crossover.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Chart 4 shows Boeing with a classic slant divergence in the MACD-Histogram.
+    MACD moved sharply lower after the bearish signal line crossover in June 2009\.
+    MACD moved to a new low in mid-July, but the MACD-Histogram held well above its
+    prior low. In fact, the MACD-Histogram bottomed towards the end of June and formed
+    a bullish slant divergence. The thick red lines show the distance between MACD
+    and its signal line. It is sometimes hard to gauge distance on the chart so these
+    lines highlight the difference between 26-June and 8-July. This slant divergence
+    foreshadowed the bullish signal line crossover in mid-July and a sharp advance
+    in the stock.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![MACD-Histogram - Chart 4](../Images/0656008c452b2a376f0abef254989b97.jpg
+    "MACD-Histogram - Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 5 shows Disney (DIS) with a bearish slant divergence in May 2008\. Notice
+    how MACD continued to a new high on 16-May, but the MACD-Histogram peaked on 8-May
+    and formed a slant divergence. The advance in MACD was losing momentum and the
+    indicator moved below its signal line to foreshadow a sharp decline in the stock.
+    This chart also shows a nice bullish divergence in March-April.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![MACD-Histogram - Chart 5](../Images/240251697f522a74972a0bb308390ed7.jpg
+    "MACD-Histogram - Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The MACD-Histogram is an indicator designed to predict signal line crossovers
+    in MACD. By extension, it is designed as an early warning system for these signal
+    line crossovers, which are the most frequent of MACD signals. Divergences in the
+    MACD-Histogram can be used to filter signal line crossovers, which will reduce
+    the number of signals. Even with a filter, the robustness of MACD-Histogram divergences
+    is still an issue. Short and shallow divergences are much more frequent than long
+    and large divergences. In other words, divergences that develop over a few days
+    with shallow movements are generally less robust than divergences that develop
+    over a few weeks with more pronounced movements. The signal line crossover provides
+    the ultimate confirmation, but aggressive traders may try to improve the reward-to-risk
+    ratio by making their move just before the crossover. This is when the MACD-Histogram
+    is as close to the zero line as it can be without actually making a cross, usually
+    between -.20 and +.20\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: MACD comes with the MACD-Histogram, but the MACD-Histogram can be shown as a
+    stand-alone indicator. This makes it much easier to identify divergences and crossovers.
+    The MACD-Histogram can be set as an indicator above, below or behind the price
+    plot of the underlying security. The histogram covers a lot of chart space so
+    it is often best to place it above or below the main window. It is possible to
+    show MACD without the histogram in the main window. Choose MACD as an indicator
+    and change the signal line number from 9 to 1 (9,26,1). This will remove the signal
+    line and the histogram. The signal line can be added separately by clicking the
+    advanced indicator options and adding a 9-day EMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Click here for a live chart](http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p59749230423&listNum=30&a=199515976
+    "http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p59749230423&listNum=30&a=199515976")
+    featuring the MACD-Histogram.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![MACD-Histogram - Chart 6](../Images/f147f387e412e93098fbcbbed505f1ba.jpg
+    "MACD-Histogram - Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![MACD - Chart 7](../Images/d0e0483cce2b025663909f8a8430f885.jpg "MACD - Chart
+    7")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: MACD-Histogram Turns Positive
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: First, this scan only considers stocks trading above their 200-day moving average,
+    which implies an uptrend overall. Second, the MACD-Histogram moves from negative
+    territory to positive territory. Also, notice that MACD is required to be negative
+    to ensure this upturn occurs after a pullback. This scan is just meant as a starter
+    for further refinement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: MACD-Histogram Turns Negative
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: First, this scan only considers stocks trading below their 200-day moving average,
+    which implies a downtrend overall. Second, the MACD-Histogram moves from positive
+    territory to negative territory. Also notice that MACD is required to be positive
+    to ensure this downturn occurs after a bounce. This scan is just meant as a starter
+    for further refinement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for MACD-Histogram scans, please see our
+    [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#macd_histogram_macd_hist
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#macd_histogram_macd_hist")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Technical Analysis - Power Tools for Active Investors offers a complete course
+    in market forecasting from the creator of MACD. Short, intermediate and long term
+    strategies are explained with many incorporating MACD.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis - Power Tools for Active Investors** Gerald Appel |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/a2673256615cb182a677e60a34c2b755.jpg)](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors
+    "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors
+    "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors")
+    |'
+  prefs: []
+  type: TYPE_TB

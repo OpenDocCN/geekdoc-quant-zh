@@ -1,0 +1,359 @@
+- en: Price Channels [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Price Channels](#price_channels)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Trend Identification](#trend_identification)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Similar to Stochastics](#similar_to_stochastics)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overbought/Oversold](#overbought_oversold)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Oversold Bounce in Larger Uptrend](#oversold_bounce_in_larger_uptrend)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overbought Decline in Larger Downtrend](#overbought_decline_in_larger_downtrend)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Price Channels are lines set above and below the price of a security. The upper
+    channel is set at the x-period high and the lower channel is set at the x-period
+    low. For a 20-day Price Channel, the upper channel would equal the 20-day high
+    and the lower channel would equal the 20-day low. The dotted centerline is the
+    midpoint between the two channel lines. Price Channels can be used to identify
+    upward thrusts that signal the start of an uptrend or downward plunges that signal
+    the start of a downtrend. Price Channels can also be used to identify overbought
+    or oversold levels within a bigger downtrend or uptrend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: '![Price Channels - Chart 1](../Images/e3440ad72d8390070fa10a6b634913e5.jpg
+    "Price Channels - Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: The formula above is based on a daily chart and a 20-period Price Channel, which
+    is the default setting in SharpCharts. Price Channels can be used on intraday,
+    daily, weekly or monthly charts. The look-back period (20) can be shorter or longer.
+    Shorter look-back periods, such as 10 days, produce tighter channel lines. Longer
+    look-back periods produce wider channels.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Price Channel formula does not include the most recent period. Price Channels
+    are based on prices prior to the current period. A 20-day Price Channel for October
+    21 would be based on the 20-day high and 20-day low ending the day before, October
+    20\. A channel break would not be possible if the most recent period was used.
+    On the chart below, notice how prices broke above the upper price channel because
+    the high was based on the next-to-the-last bar, not the current bar.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Price Channels - Chart 2](../Images/ede221540886ebd1a3a87c67753c6ed3.jpg
+    "Price Channels - Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Price Channels can be used to identify trend reversals or overbought/oversold
+    levels that denote pullbacks within a bigger trend. A surge above the upper channel
+    line shows extraordinary strength that can signal the start of an uptrend. Conversely,
+    a plunge below the lower channel line shows serious weakness that can signal the
+    start of a downtrend. Once an uptrend has started, chartists can move to a shorter
+    timeframe to identify pullbacks with oversold readings. A move below the lower
+    channel line indicates oversold conditions that can foreshadow an end to the pullback.
+    Similarly, short-term bounces within a bigger uptrend can be identified with Price
+    Channels. A move above the upper channel line signals [overbought](/school/doku.php?id=chart_school:glossary_o#overbought
+    "chart_school:glossary_o") conditions that can foreshadow an end to the bounce.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Trend Identification
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Price Channels can be used to identify strong moves that may result in lasting
+    trend reversals. Basically, a move above the 20-day Price Channel signals a new
+    20-day high. A move above the 20-week Price Channel signals a new 20-week high.
+    Obviously, a 20-week high is more consequential than a 20-day high. The choice
+    of timeframe depends on your trading timeframe and rationale for using Price Channels.
+    For example, chartists can use weekly charts with 20-week Price Channels to determine
+    the big trend and overall trading bias.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The chart above shows weekly prices for the Nasdaq 100 ETF (QQQQ) over a 4 1/2
+    year period. The green arrows mark weekly highs above the upper channel line that
+    signaled the start of an uptrend. The red arrows mark weekly lows below the lower
+    channel that signaled the start of a downtrend. These channel breaks caught a
+    few good trends, but there were two whipsaws or bad signals. Indicator signals
+    are not perfect and there will be whipsaws. It is just part of the game.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Price Channels - Chart 3](../Images/afe76cc1e28e8aa594575bc419dfc37d.jpg
+    "Price Channels - Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: Signals can be filtered further by using a close-only line plot. The second
+    chart shows the same 4 1/2 year period with 20-week Price Channels and QQQQ as
+    a close-only line plot. This eliminates the intra-week highs and lows. Notice
+    that QQQQ did not close above the upper channel line in May 2008 or below the
+    lower channel line in May 2010 (blue arrows). Using a close-only price chart reduces
+    volatility and signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Price Channels - Chart 4](../Images/8526981e40ec856f3af5bbe08cddf262.jpg
+    "Price Channels - Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: Similar to Stochastics
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Price Channels are similar to the [Stochastic Oscillator](/school/doku.php?id=chart_school:technical_indicators:stochastic_oscillator_fast_slow_and_full
+    "chart_school:technical_indicators:stochastic_oscillator_fast_slow_and_full")
+    when one considers what the Stochastic Oscillator measures. This momentum oscillator
+    measures the level of the close relative to the high-low range over a given period
+    of time, say 20 days. The Stochastic Oscillator is relatively high when the close
+    is near the high end of its 20-day range and low when the Stochastic Oscillator
+    is near the low end of this range. Put in numbers, the Stochastic Oscillator is
+    relatively high above 80 and relatively low below 20\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let's compare the 20-day Fast Stochastic Oscillator with 20-day Price Channels.
+    The Stochastic Oscillator will usually be above 80 when prices exceed the upper
+    Price Channel. Similarly, the 20-day Fast Stochastic Oscillator will usually be
+    below 20 when prices move below the lower Price Channel. There is a slight timing
+    difference because Price Channel data ends with the prior period. Stochastic Oscillator
+    data, on the other hand, ends with the current period. This means the Stochastic
+    Oscillator includes the most recent price action, but Price Channels do not. Nevertheless,
+    the two measure pretty much the same thing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Price Channels - Chart 5](../Images/60112c023bef3aa1feacfc541c978102.jpg
+    "Price Channels - Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: The Dow Industrials SPDR (DIA) chart shows 20-day Price Channels (pink) with
+    the 20-day Fast Stochastic Oscillator. Prices are near the upper channel line
+    when the Stochastic Oscillator is overbought (red lines). Prices are near the
+    lower channel line when the Stochastic Oscillator is oversold (green lines). Prices
+    are usually below the centerline of the Price Channel when the Stochastic Oscillator
+    is below 50, which is its centerline (early June). Prices are usually above the
+    centerline when the Stochastic Oscillator is above 50\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Overbought/Oversold
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Measuring overbought and oversold conditions can be tricky with Price Channels.
+    Securities can become overbought and remain overbought in a strong uptrend. Similarly,
+    securities can become oversold and remain oversold in a strong downtrend. In a
+    strong uptrend, prices can move above the upper channel line and continue above
+    the upper channel line. In fact, the upper channel trend line will rise as price
+    continues above the upper channel. This may seem technically overbought, but it
+    is a sign of strength to remain overbought. Similarly, the Stochastic Oscillator
+    can move above 80, which is technically overbought, and remain overbought for
+    an extended period.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Successful use of overbought and [oversold](/school/doku.php?id=chart_school:glossary_o#oversold
+    "chart_school:glossary_o") levels depends on successful trend identification.
+    Once a bigger uptrend has been identified, traders can look for oversold levels
+    in the smaller trend. Short-term oversold levels occur after a pullback within
+    a bigger uptrend. As noted above, the weekly charts turned bullish when QQQQ surged
+    above the upper channel line. Once the weekly chart is bullish, traders can turn
+    to the daily chart to look for oversold signals. The weekly chart represents the
+    bigger trend. The daily chart represents the smaller trend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Price Channels - Chart 6](../Images/68aec9b31a07d14893387dc05e69644d.jpg
+    "Price Channels - Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows daily prices for QQQQ. The bigger trend (weekly chart)
+    is up so we would be looking for pullbacks on the daily chart. The green arrows
+    show when QQQQ dipped below the 20-day Price Channel. There were two good signals
+    in early July and early November. There were three touches in January-February.
+    The first two signals were “early”, while the February signal was a direct hit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Inverse logic can be applied in downtrends. A weekly downtrend starts with a
+    plunge below the lower channel line. Once this downtrend is established, chartists
+    can turn to the daily chart to look for overbought signals. Overbought signals
+    occur after a bounce within a bigger downtrend. Downtrends tend to be faster than
+    uptrends. This means overbought readings may not occur during a strong or fast
+    downtrend. Chartists may then need to tweak the Price Channel settings or use
+    the centerline for signals. Prices are more likely to touch the centerline than
+    the upper channel line.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '**Price Channels tells us when a security reaches an xx-period high or an xx-period
+    low.** 20-day Price Channels mark the 20-day high-low range, 10-week Price Channels
+    mark the 10-week high-low range. The centerline marks the midpoint. Securities
+    that continuously exceed the upper channel line show strength. After all, it takes
+    strong buying pressure to forge higher highs. Conversely, securities that continuously
+    break the lower channel line show weakness. Strong selling pressure is evident
+    with lower lows. Using Price Channels, chartists can determine the dominant force,
+    buying pressure or selling pressure. As with all indicators, it is important to
+    use other analysis techniques to confirm or refute the Price Channels. Chartists
+    can use [chart patterns](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
+    "chart_school:chart_analysis:chart_patterns"), [indicators](/school/doku.php?id=chart_school:technical_indicators
+    "chart_school:technical_indicators") or basic chart analysis to complement Price
+    Channels.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Price Channels can be found in SharpCharts as a price overlay and should be
+    shown on top of a price plot. Upon selecting the indicator from the dropdown box,
+    the default setting will appear in the parameters window (20). Users can change
+    the parameters to suit their charting needs. A shorter look-back period will narrow
+    the channels. A longer look-back period will widen the channels. [Click here](http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=6&dy=0&id=p40145316764&listNum=30&a=212191178
+    "http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=6&dy=0&id=p40145316764&listNum=30&a=212191178")
+    for a live example.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Price Channels - SharpCharts](../Images/0461f757c1d538bdc64914ce92824143.jpg
+    "Price Channels - SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Oversold Bounce in Larger Uptrend
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with stocks that average $20 per share and 100,000 daily volume
+    per day. An uptrend is present because the stock is trading above its 200-day
+    SMA. The stock becomes oversold with a move below the Lower Price Channel and
+    then turns up with a cross back above the Lower Price Channel.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Overbought Decline in Larger Downtrend
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with stocks that average $20 per share and 100,000 daily volume
+    per day. A downtrend is present because the stock is trading below its 200-day
+    SMA. The stock becomes overbought with a move above the Upper Price Channel and
+    then turns down with a cross back below the Upper Price Channel.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Price Channel scans, please see our
+    [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#price_channels
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#price_channels") in
+    the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Even though Price Channels are not used specifically in Trend Trading for a
+    Living, it shows traders how to trade in the direction of the underlying trend.
+    This hands-on book will also show readers how to configure a bullish and bearish
+    watch list from which to set your entry and exit prices
+  prefs: []
+  type: TYPE_NORMAL
+- en: Michael Covel's book introduces the fundamental concepts and techniques for
+    a variety of trend following systems, including a system made famous by the Turtles.
+    Covel shows why market prices contain all available information. Readers will
+    learn how to interpret price movements and profit from trend following.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Trend Trading for a Living** Thomas Carr | **Trend Following** Michael
+    Covel |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/fd7b150db3a8ea902f5f22b5f07cc54f.jpg)](http://store.stockcharts.com/products/trend-trading-for-a-living
+    "http://store.stockcharts.com/products/trend-trading-for-a-living") | [![](../Images/24dae431dd127df01c0a553f30ece02c.jpg)](http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets
+    "http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/trend-trading-for-a-living
+    "http://store.stockcharts.com/products/trend-trading-for-a-living") | [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg
+    "Buy Now")](http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets
+    "http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets")
+    |'
+  prefs: []
+  type: TYPE_TB

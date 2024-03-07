@@ -1,0 +1,298 @@
+- en: Volume-by-Price [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Volume-by-Price](#volume-by-price)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Nuances](#nuances)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Identifying Support](#identifying_support)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Identifying Resistance](#identifying_resistance)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Support Breaks](#support_breaks)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Resistance Breaks](#resistance_breaks)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Volume-by-Price is an indicator that shows the amount of volume for a particular
+    price range, which is based on closing prices. The Volume-by-Price bars are horizontal
+    and shown on the left side of the chart to correspond with these price ranges.
+    Chartists can view these bars as a single color or with two colors to separate
+    up volume and down volume. By combining volume and closing prices, this indicator
+    can be used to identify high-volume price ranges to mark support or resistance.
+    StockCharts shows twelve Volume-by-Price bars by default, but users can increase
+    or decrease this number to suit their preferences.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Volume-by-Price calculations are based on the entire period displayed on the
+    chart. Volume-by-Price on a five-month daily chart would be based on **ALL** five
+    months of daily closing data. Volume-by-Price on a two-week 30-minute chart would
+    be based on two weeks of 30-minute closing data. Volume-by-Price on a three-year
+    weekly chart would be based on three years of weekly closing data. You get the
+    idea. Volume-by-Price calculations do not extend beyond the historical data shown
+    on the chart.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: Note that volume is negative when the closing price moves down from one period
+    to the next. Volume is positive when the closing price moves up from one period
+    to the next.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![VBYP - Spreadsheet](../Images/a7b7e6498413cfa5ac62ef3cf22c8e9e.jpg "VBYP
+    - Spreadsheet")'
+  prefs: []
+  type: TYPE_IMG
+- en: The example above shows a Volume-by-Price calculation taken for the Nasdaq 100
+    ETF from April 12th until September 15th, 2010\. Closing prices ranged from 40.32
+    to 47.87 during this period (47.87 – 40.32 = 7.55). The one hundred and ten closing
+    prices (one for each trading day) were sorted from low to high and then divided
+    into 12 even price zones (7.55/12 = .6292).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![VBYP - QQQ Example](../Images/377febb1d6cc50e6a95df01b33bd4d52.jpg "VBYP
+    - QQQ Example")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above highlights the first three price zones (40.32 to 40.95, 40.96
+    to 41.58 and 41.59 to 42.21). Starting from the low (40.32), we can add the zone
+    size (.6292) to create the price zones leading to the high. Only prices that fall
+    within these zones are used for that particular Volume-by-Price calculation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![VBYP - QQQ Example](../Images/c7364dd882253a58fa6f0a00c05e73e8.jpg "VBYP
+    - QQQ Example")'
+  prefs: []
+  type: TYPE_IMG
+- en: The Volume-by-Price bars represent the total volume for each price zone. Volume
+    can then be separated into positive and negative volume. Notice that the Volume-by-Price
+    bars on the chart above are red and green to separate positive volume from negative
+    volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Volume-by-Price can be used to identify current [support and resistance](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
+    "chart_school:chart_analysis:support_and_resistance") levels as well as estimate
+    future support and resistance levels. Price zones with heavy volume reflect elevated
+    interest levels that can influence future supply or demand (a.k.a. resistance
+    or support). Long Volume-by-Price bars underneath prices should be watched as
+    potential support during a pullback. Similarly, long Volume-by-Price bars above
+    prices should be watched as potential resistance on a bounce.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Price breaks above or below long Volume-by-Price bars can also be used as signals.
+    A break above a long bar shows strength because demand was strong enough to overcome
+    a supply overhang. Similarly, a break below a long bar shows weakness because
+    supply was ample enough to overwhelm demand.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Nuances
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Before looking at some examples, it is important to understand how Volume-by-Price
+    works. Volume-by-Price can be used to identify current support or resistance.
+    Current bars **should not be used to validate past support or resistance levels**
+    because the indicator is based on all the price-volume data shown on the chart.
+    This means six months of data for a chart that extends from January to June. Bars
+    may appear to identify support in March, but keep in mind that the indicator data
+    extends well beyond March because the chart ends in June.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Chartists should also understand that big gaps can produce bars that equal zero.
+    This makes sense because Volume-by-Price equals zero when there are no closing
+    prices within a specific price zone.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![VBYP - Gaps](../Images/c531035e7eb831f21a94b463c6f2c9d1.jpg "VBYP - Gaps")'
+  prefs: []
+  type: TYPE_IMG
+- en: Identifying Support
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The chart for Netflix (NFLX) shows Volume-by-Price identifying support around
+    95-100 at the end of June. Notice that this is the longest bar. Also, notice that
+    NFLX is beginning a pullback so we can use Volume-by-Price to estimate support
+    in the near future. The second chart shows NFLX with the yellow area marking Volume-by-Price
+    support from the first chart. Support was expected in the 95-100 area and the
+    stock reversed here in late July. Notice that volume surged in August to validate
+    the reversal off of support.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![VBYP - NFLX](../Images/fa5175005500d7135a902946a49a371f.jpg "VBYP - NFLX")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![VBYP - NFLX](../Images/ba10c8cec010ab1cc2f11134f8bfff93.jpg "VBYP - NFLX")'
+  prefs: []
+  type: TYPE_IMG
+- en: Identifying Resistance
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The chart for TE Connectivity (TEL) shows Volume-by-Price identifying resistance
+    around 26-26.5 in early August. Remember, the April break above this bar is not
+    really a breakout because the current Volume-by-Price calculation extends from
+    January to early August. The second longest bar marks current resistance in the
+    26-26.5 area. TEL is at its make-or-break point with prices near resistance. The
+    second chart shows Volume-by-Price resistance from the first and the ultimate
+    failure at resistance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![VBYP - TEL](../Images/2130d976f90ec68d8324add71f53f0ad.jpg "VBYP - TEL")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![VBYP - TEL](../Images/5804c32f6906a46a15cd49e41a9b71a6.jpg "VBYP - TEL")'
+  prefs: []
+  type: TYPE_IMG
+- en: Support Breaks
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: A break below a long Volume-by-Price bar signals increasing supply or selling
+    pressure that can foreshadow lower prices. Long bars below prices show elevated
+    interest areas and potential support. A break below this support zone signals
+    a significant increase in selling pressure and lower prices are then expected.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The SanDisk (SNDK) chart shows a long Volume-by-Price bar marking support in
+    the 39-43 area in mid-August. Also, notice that the stock forged at least three
+    reaction lows around 42 from early July to mid-August. This support (demand) zone
+    is clearly marked. The second chart shows SNDK breaking below the previously identified
+    Volume-by-Price support zone with high volume. Demand crumbled, supply won the
+    day and prices moved sharply lower.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![VBYP - SNDK](../Images/0aa91b9fa93ceea22c83fa7f0e2d6ab7.jpg "VBYP - SNDK")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![VBYP - SNDK](../Images/b3a4b2475a55417c450e62180edbd46f.jpg "VBYP - SNDK")'
+  prefs: []
+  type: TYPE_IMG
+- en: Resistance Breaks
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: A break above a long Volume-by-Price bar signals an increase in demand that
+    can foreshadow higher prices. Long bars above prices mark supply overhangs that
+    demand has not been able to overcome. A break above this resistance zone signals
+    strengthening demand and higher prices are expected.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sometimes chartists need to combine price action and Volume-by-Price to identify
+    support zones and resistance zones. The McDonalds (MCD) chart shows a long bar
+    marking overhead supply between 60 and 61\. The stock also met resistance between
+    61 and 62 with reaction highs in late April and mid-June. For support, the second
+    and third longest bars mark potential demand in the 57.5-58.5 area and the stock
+    is near the late May low. Overall, a large [Symmetrical Triangle](/school/doku.php?id=chart_school:chart_analysis:chart_patterns:symmetrical_triangle_continuation
+    "chart_school:chart_analysis:chart_patterns:symmetrical_triangle_continuation")
+    could be forming on the price chart as MCD tries to hold above the late May low.
+    The second chart shows MCD breaking resistance in July and surging to new highs
+    in August.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![VBYP - MCD](../Images/4c6e42ead8ec8db11e73229b3aff2287.jpg "VBYP - MCD")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![VBYP - MCD](../Images/babbaae97e239a671d01306a6b7a2c42.jpg "VBYP - MCD")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Volume-by-Price is best suited for identifying present or future support and
+    resistance. The indicator marks potential support when prices are above a long
+    bar and potential resistance when prices are below a long bar. Chartists can enhance
+    their analysis by looking at the positive (green) and negative (red) volume within
+    the Volume-by-Price bars. Long green portions reflect more demand that can further
+    validate support. Long red portions reflect more supply that can further validate
+    resistance. It is important to confirm Volume-by-Price findings with other indicators
+    and analysis techniques. [Momentum oscillators](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")
+    and [chart patterns](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
+    "chart_school:chart_analysis:chart_patterns") are good complements to this volume
+    based indicator.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Volume-by-Price can be found in SharpCharts in the “overlays” section. The parameter
+    box is empty and this means the default is used (12 periods). Chartists can increase
+    or decrease the default setting depending on the amount of detail desired. Keep
+    in mind that Volume-by-Price is based on closing prices, which means highs and
+    lows are not included. This is why chartists may sometimes see a spike low or
+    high without a Volume-by-Price bar. Volume-by-Price is one color when the “color
+    volume” box is not checked and two-toned when this box is checked. Chartists can
+    also use the advanced indicator settings to set the opacity. The example below
+    shows Apple with 20-bar Volume-by-Price, colored volume, and 0.3 opacity. [Click
+    here](http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=6&dy=0&id=p03412996346&listNum=30&a=209159944
+    "http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=6&dy=0&id=p03412996346&listNum=30&a=209159944")
+    for a live example.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![VBYP - SharpCharts](../Images/47682eb7a9aa175a9e0b0e21b3d943cf.jpg "VBYP
+    - SharpCharts")'
+  prefs: []
+  type: TYPE_IMG

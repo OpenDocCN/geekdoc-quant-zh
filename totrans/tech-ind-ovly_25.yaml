@@ -1,0 +1,367 @@
+- en: Commodity Channel Index (CCI) [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Commodity Channel Index (CCI)](#commodity_channel_index_cci)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[New Trend Emerging](#new_trend_emerging)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overbought/Oversold](#overbought_oversold)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bullish Bearish Divergences](#bullish_bearish_divergences)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[CCI Oversold in Uptrend](#cci_oversold_in_uptrend)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[CCI Overbought in Downtrend](#cci_overbought_in_downtrend)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Developed by Donald Lambert and featured in *Commodities* magazine in 1980,
+    the Commodity Channel Index (CCI) is a versatile indicator that can be used to
+    identify a new trend or warn of extreme conditions. Lambert originally developed
+    CCI to identify cyclical turns in commodities, but the indicator can be successfully
+    applied to indices, ETFs, stocks, and other securities. In general, CCI measures
+    the current price level relative to an [average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") price level over a given
+    period of time. CCI is relatively high when prices are far above their average.
+    CCI is relatively low when prices are far below their average. In this manner,
+    CCI can be used to identify overbought and oversold levels.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The example below is based on a 20-period Commodity Channel Index (CCI) calculation.
+    The number of CCI periods is also used for the calculations of the simple moving
+    average and Mean Deviation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: Lambert set the constant at .015 to ensure that approximately 70 to 80 percent
+    of CCI values would fall between -100 and +100\. This percentage also depends
+    on the look-back period. A shorter CCI (10 periods) will be more [volatile](/school/doku.php?id=chart_school:technical_indicators:standard_deviation_volatility
+    "chart_school:technical_indicators:standard_deviation_volatility") with a smaller
+    percentage of values between +100 and -100\. Conversely, a longer CCI (40 periods)
+    will have a higher percentage of values between +100 and -100.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![CCI- Spreadsheet](../Images/9c685e4d92befe735a206b838a47effd.jpg "CCI- Spreadsheet")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Click here](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:commodity_channel_index_cci:cs-cci.xls
+    "chart_school:technical_indicators_and_overlays:commodity_channel_index_cci:cs-cci.xls
+    (64 KB)") for a CCI calculation in an Excel Spreadsheet.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![CCI  -  Chart 1](../Images/7d6f9ce0f86f76ed976a31f9483f9b7e.jpg "CCI  -  Chart
+    1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: CCI measures the difference between a security's price change and its average
+    price change. High positive readings indicate that prices are well above their
+    average, which is a show of strength. Low negative readings indicate that prices
+    are well below their average, which is a show of weakness.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Commodity Channel Index (CCI) can be used as either a coincident or leading
+    indicator. As a coincident indicator, surges above +100 reflect strong price action
+    that can signal the start of an uptrend. Plunges below -100 reflect weak price
+    action that can signal the start of a downtrend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As a [leading indicator](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators"),
+    chartists can look for overbought or oversold conditions that may foreshadow a
+    mean reversion. Similarly, bullish and bearish divergences can be used to detect
+    early momentum shifts and anticipate trend reversals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: New Trend Emerging
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: As noted above, the majority of CCI movement occurs between -100 and +100\.
+    A move that exceeds this range shows unusual strength or weakness that can foreshadow
+    an extended move. Think of these levels as bullish or bearish filters. Technically,
+    CCI favors the bulls when positive and the bears when negative. However, using
+    a simple zero line crossovers can result in many whipsaws. Although entry points
+    will lag more, requiring a move above +100 for a bullish signal and a move below
+    -100 for a bearish signal reduces whipsaws.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The chart below shows Caterpillar (CAT) with 20-day CCI. There were four trend
+    signals within a seven-month period. Obviously, a 20-day CCI is not suited for
+    long-term signals. Chartists need to use weekly or monthly charts for long-term
+    signals. The stock peaked on 11-Jan and turned down. CCI moved below -100 on 22-January
+    (8 days later) to signal the start of an extended move. Similarly, the stock bottomed
+    on 8-February and CCI moved above +100 on 17-February (6 days later) to signal
+    the start of an extended advance. CCI does not catch the exact top or bottom,
+    but it can help filter out insignificant moves and focus on the larger trend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![CCI  -  Chart 2](../Images/1763c789e7f19c87c31ee52d48305605.jpg "CCI  -  Chart
+    2")'
+  prefs: []
+  type: TYPE_IMG
+- en: CCI triggered a bullish signal when CAT surged above 60 in June. Some traders
+    may have considered the stock overbought and the reward-to-risk ratio unfavorable
+    at these levels. With the bullish signal in force, the focus would have been on
+    bullish setups with a good reward-to-risk ratio. Notice that the stock retraced
+    around 62% of the prior advance and formed a falling flag by the end of June.
+    The subsequent surge above the flag trend line provided another bullish signal
+    with CCI still in bull mode.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Overbought/Oversold
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Identifying overbought and oversold levels can be tricky with the Commodity
+    Channel Index (CCI), or any other momentum oscillator for that matter. First,
+    CCI is an unbound oscillator. Theoretically, there are no upside or downside limits.
+    This makes an overbought or oversold assessment subjective. Second, securities
+    can continue moving higher after an indicator becomes overbought. Likewise, securities
+    can continue moving lower after an indicator becomes oversold.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The definition of overbought or oversold varies for the Commodity Channel Index
+    (CCI). ±100 may work in a trading range, but more extreme levels are needed for
+    other situations. ±200 is a much harder level to reach and more representative
+    of a true extreme. Selection of overbought/oversold levels also depends on the
+    volatility of the underlying security. The CCI range for an index ETF, such as
+    SPY, will usually be smaller than for most stocks, such as Google.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![CCI  -  Chart 3](../Images/e13b282f8d5cca2aca7bcaf2cab818bf.jpg "CCI  -  Chart
+    3")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows Google (GOOG) with CCI(20). Horizontal lines at ±200 were
+    added using the advanced indicators options. From early February to early October
+    (2010), Google exceeded ±200 at least five times. The red dotted lines show when
+    CCI moved back below +200 and the green dotted lines show when CCI moved back
+    above -200\. It is important to wait for these crosses to reduce whipsaws should
+    the trend extend. Such a system is not fool proof though. Notice how Google kept
+    on moving higher even after CCI became overbought in mid-September and moved below
+    -200\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Bullish Bearish Divergences
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Divergences signal a potential reversal point because directional momentum does
+    not confirm price. A bullish divergence occurs when the underlying security makes
+    a lower low and CCI forms a higher low, which shows less downside momentum. A
+    bearish divergence forms when the security records a higher high and CCI forms
+    a lower high, which shows less upside momentum. Before getting too excited about
+    divergences as great reversal indicators, note that divergences can be misleading
+    in a strong trend. A strong uptrend can show numerous bearish divergences before
+    a top actually materializes. Conversely, bullish divergences often appear in extended
+    downtrends.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Confirmation holds the key to divergences. While divergences reflect a change
+    in momentum that can foreshadow a trend reversal, chartists should set a confirmation
+    point for CCI or the price chart. A bearish divergence can be confirmed with a
+    break below zero in CCI or a support break on the price chart. Conversely, a bullish
+    divergence can be confirmed with a break above zero in CCI or a resistance break
+    on the price chart.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![CCI  -  Chart 4](../Images/0d83531ea614e45e0ce7613239449687.jpg "CCI  -  Chart
+    4")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows United Parcel Service (UPS) with 40-day CCI. A longer
+    timeframe, 40 versus 20, was used to reduce volatility. There are three sizable
+    divergences over a seven-month period, which is actually quite a few for just
+    seven months. First, UPS raced to new highs in early May, but CCI failed to exceed
+    its March high and formed a bearish divergence. A support break on the price chart
+    and CCI move into negative territory confirm this divergence a few days later.
+    Second, a bullish divergence formed in early July as the stock moved to a lower
+    low, but CCI formed a higher low. This divergence was confirmed with a CCI break
+    into positive territory. Also notice that UPS filled the late June gap with a
+    surge in early July. Third, a bearish divergence formed in early September and
+    this was confirmed when CCI dipped into negative territory. Despite a CCI confirmation,
+    price never broke support and the divergence did not result in a trend reversal.
+    Not all divergences produce good signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: CCI is a versatile momentum oscillator that can be used to identify overbought/oversold
+    levels or trend reversals. The indicator becomes overbought or oversold when it
+    reaches a relative extreme. That extreme depends on the characteristics of the
+    underlying security and the historical range for CCI. Volatile securities are
+    likely to require greater extremes than docile securities. Trend changes can be
+    identified when CCI crosses a specific threshold between zero and 100\. Regardless
+    of how CCI is used, chartists should use CCI in conjunction with other indicators
+    or price analysis. Another momentum oscillator would be redundant, but [On Balance
+    Volume (OBV)](/school/doku.php?id=chart_school:technical_indicators:on_balance_volume_obv
+    "chart_school:technical_indicators:on_balance_volume_obv") or the [Accumulation
+    Distribution Line](/school/doku.php?id=chart_school:technical_indicators:accumulation_distribution_line
+    "chart_school:technical_indicators:accumulation_distribution_line") can add value
+    to CCI signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: CCI is available as a SharpCharts indicator that can be placed above, below
+    or behind the price plot of the underlying security. Placing CCI directly behind
+    the price makes it easy to compare indicator movements with price movements. The
+    default setting is 20-periods, but this can be adjusted to suit analysis needs.
+    A shorter timeframe makes the indicator more sensitive. A longer timeframe makes
+    it less sensitive. Members can click the green arrow next to “advanced options”
+    to add horizontal lines to mark overbought or oversold levels. Two lines can be
+    added by separating the numbers with a comma (200,-200). [Click here for a live
+    example](http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=8&dy=0&id=p10448180746&listNum=30&a=221403127
+    "http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=8&dy=0&id=p10448180746&listNum=30&a=221403127").
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![CCI - Chart 5](../Images/62dd4b7f415aa13b5c20ab56a32d063e.jpg "CCI - Chart
+    5")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![CCI - SharpCharts](../Images/22f76e80de0846d80c931e6431e83a6a.jpg "CCI -
+    SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: CCI Oversold in Uptrend
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks that are in an uptrend with oversold CCI turning up.
+    First, stocks must be above their 200-day moving average to be in an overall uptrend.
+    Second, CCI must cross above -200 to show the indicator rising from oversold levels.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: CCI Overbought in Downtrend
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks that are in a downtrend with overbought CCI turning
+    down. First, stocks must be below their 200-day moving average to be in an overall
+    downtrend. Second, CCI must cross below +200 to show the indicator falling from
+    overbought levels.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for CCI scans, please see our [Scanning
+    Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#commodity_channel_index_cci
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#commodity_channel_index_cci")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Murphy has a chapter devoted to momentum oscillators and their various uses.
+    Murphy covers the pros and cons as well as some examples specific to the Commodity
+    Channel Index.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Pring shows the basics of momentum indicators by covering divergences, crossovers,
+    and other signals. There are two more chapters covering specific momentum indicators
+    with plenty of examples.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis of the Financial Markets** John J. Murphy | **Technical
+    Analysis Explained by Martin Pring** Martin Pring |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB

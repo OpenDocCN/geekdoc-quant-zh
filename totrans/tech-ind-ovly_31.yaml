@@ -1,0 +1,355 @@
+- en: Force Index [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Force Index](#force_index)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Trend Identification](#trend_identification)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Divergences](#divergences)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Identifying Corrections](#identifying_corrections)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Oversold in Up Trend](#oversold_in_up_trend)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overbought in Down Trend](#overbought_in_down_trend)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'The Force Index is an indicator that uses price and volume to assess the power
+    behind a move or identify possible turning points. Developed by Alexander Elder,
+    the Force Index was introduced in his classic book, *[Trading for a Living](http://store.stockcharts.com/products/the-new-trading-for-a-living
+    "http://store.stockcharts.com/products/the-new-trading-for-a-living")*. According
+    to Elder, there are three essential elements to a stock''s price movement: direction,
+    extent and volume. The Force Index combines all three as an oscillator that fluctuates
+    in positive and negative territory as the balance of power shifts. The Force Index
+    can be used to reinforce the overall trend, identify playable corrections or foreshadow
+    reversals with divergences.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: Calculation of the 1-period Force Index is straightforward. Simply subtract
+    the prior close from the current close and multiply by volume. The Force Index
+    for more than one day is simply an exponential [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") of the 1-period Force Index.
+    For example, a 13-period Force Index is a 13-period EMA of the 1-period Force
+    Index values for the last 13 periods.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Three factors affect Force Index values. First, the Force Index is positive
+    when the current close is above the prior close. The Force Index is negative when
+    the current close is below the prior close. Second, the extent of the move determines
+    the volume multiplier. Bigger moves warrant larger multipliers that influence
+    the Force Index accordingly. Small moves produce small multipliers that reduce
+    the influence. Third, volume plays a key role. A big move on big volume produces
+    a high Force Index values. Small moves on low volume produce relatively low Force
+    Index values. The table below shows the Force Index calculations for Pfizer (PFE).
+    Line 27 marks the biggest move (+84 cents) and the biggest volume (162,619). This
+    combination produces the biggest Force Index value on the table (136,600).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Table 1  -  Force Index](../Images/9c4788762468800e591f64172bc5418a.jpg "Table
+    1  -  Force Index")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows the Force Index in action. Notice how the 1-period Force
+    Index fluctuates above/below the zero line and looks quite jagged. Elder recommends
+    smoothing the indicator with a 13-period EMA to reduce the positive-negative crossovers.
+    Chartists should experiment with different smoothing periods to determine what
+    best suits their analytical needs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 1  -  Force Index](../Images/331f37ba3fd3edb0c3e155b1a4b08c6f.jpg "Chart
+    1  -  Force Index")'
+  prefs: []
+  type: TYPE_IMG
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: As noted above, there are three elements to the Force Index. First, there is
+    either a positive or negative price change. A positive price change signals that
+    buyers were stronger than sellers, while a negative price change signals that
+    sellers were stronger than buyers. Second, there is the extent of the price change,
+    which is simply the current close less the prior close. The “extent” shows us
+    just how far prices moved. A big advance shows strong buying pressure, while a
+    big decline shows strong selling pressure. The third and final element is volume,
+    which, according to Elder, measures commitment. Just how committed are the buyers
+    and sellers? A big advance on heavy volume shows a strong commitment from buyers.
+    Likewise, a big decline on heavy volume shows a strong commitment from sellers.
+    The Force Index quantifies these three elements into one indicator that measures
+    buying and selling pressure.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Trend Identification
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Force Index can be used to reinforce or determine the [trend](/school/doku.php?id=chart_school:chart_analysis:trend_lines
+    "chart_school:chart_analysis:trend_lines"). The trend in question, short-term,
+    medium-term or long-term, depends on the Force Index parameters. While the default
+    Force Index parameter is 13, chartists can use a higher number for more smoothing
+    or a lower number for less smoothing. The chart below shows Home Depot with a
+    100-day Force Index and a 13-day Force Index. Notice how the 13-day Force Index
+    is more volatile and jagged. The 100-day Force Index is smoother and crosses the
+    zero line fewer times. In this regard, the 100-day Force Index can be used to
+    determine the medium or long-term trend. Notice how a resistance breakout on the
+    price chart corresponds to a resistance breakout on the 100-day Force Index. The
+    100-day Force Index moved into positive territory and broke resistance in mid-February.
+    The indicator remained positive during the entire uptrend and turned negative
+    in mid-May. The early June support break on the price chart was confirmed with
+    a support break in the Force Index.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 2  -  Force Index](../Images/a3fa63c34e6f2181f8ac88ec3550c882.jpg "Chart
+    2  -  Force Index")'
+  prefs: []
+  type: TYPE_IMG
+- en: Divergences
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Bullish and [bearish divergences](/school/doku.php?id=chart_school:glossary_b#bearish_divergence
+    "chart_school:glossary_b") can alert chartists of a potential trend change. Divergences
+    are classic signals associated with oscillators. A bullish divergence forms when
+    the indicator moves higher as the security moves lower. The indicator is not confirming
+    weakness in price and this can foreshadow a bullish trend reversal. A bearish
+    divergence forms when the indicator moves lower as the security moves higher.
+    Even though the security is moving higher, the indicator shows underlying weakness
+    by moving lower. This discrepancy can foreshadow a bearish trend reversal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Confirmation is an important part of bullish and bearish divergences. Even though
+    the divergences signal something is amiss, confirmation from the indicator or
+    price chart is needed. A bullish divergence can be confirmed with the Force Index
+    moving into positive territory or a resistance breakout on the price chart. A
+    bearish divergence can be confirmed with the Force Index moving into negative
+    territory or a support break on the price chart. Chartists can also use candlesticks,
+    moving average crosses, pattern breaks and other forms of technical analysis for
+    confirmation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 3  -  Force Index](../Images/83316043828e15bad30d905ef5e4d703.jpg "Chart
+    3  -  Force Index")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows Best Buy (BBY) with the Force Index (39) sporting a series
+    of divergences. The green lines show bullish divergences, while the red lines
+    show bearish divergences. A bullish divergence is confirmed when the Force Index
+    (39) crosses into positive territory (green dotted lines). A bearish divergence
+    is confirmed when the Force Index (39) crosses into negative territory (red dotted
+    lines). Chartists can also use trendline breaks on the price chart for confirmation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This chart shows two versions of the Force Index. The Force Index (13) captures
+    short-term fluctuations and is more sensitive. The Force Index (39) captures medium-term
+    fluctuations and is smoother. The 39-day Force Index produces fewer zero line
+    crossovers and these crossovers last longer. There is no right or wrong answer
+    for these settings. It depends on trading objectives, time horizon, and analytical
+    style.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Identifying Corrections
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Force Index can be used in conjunction with a trend following indicator
+    to identify short-term corrections within that trend. A pullback from [overbought](/school/doku.php?id=chart_school:glossary_o#overbought
+    "chart_school:glossary_o") levels represents a short-term correction within an
+    uptrend. An oversold bounce represents a short-term correction within a downtrend.
+    Yes, corrections can be up or down, it depends on the direction of the bigger
+    trend. Alexander Elder recommends using a 22-day EMA for trend identification
+    and a 2-day Force Index to identify corrections. The trend is up when the 22-day
+    EMA is moving higher, which means the 2-day Force Index would be used to identify
+    short-term pullbacks for buying. The trend is down when the 22-day EMA is moving
+    lower, which means the 2-day Force Index would be used to identify short-term
+    bounces for selling. This is an aggressive strategy best suiting for active traders.
+    The timeframe can be adjusted by using a longer moving average and timeframe for
+    the Force Index. For example, medium-term traders might experiment with a 100-day
+    EMA and 10-day Force Index.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are two schools of thought regarding the correction play. Traders can
+    either act as soon as the correction is evident or act when there is evidence
+    the correction has ended. Let's look at an example with the 22-day EMA and 2-day
+    Force Index. Keep in mind that this is designed to identify very short corrections
+    within a bigger trend. The chart below shows Texas Instruments (TXN) with the
+    22-day EMA turning up in mid-September.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 4  -  Force Index](../Images/78bd9f42e29733834512ed4370bbf434.jpg "Chart
+    4  -  Force Index")'
+  prefs: []
+  type: TYPE_IMG
+- en: With the 22-day EMA rising, traders are looking for very short-term pullbacks
+    when the 2-day Force Index turns negative. Traders can act when the Force Index
+    turns negative or wait for it to move back into positive territory. Acting when
+    negative may improve the reward-to-risk ratio, but the correction could extend
+    a few more days. Waiting for the Force Index to turn positive again shows some
+    strength that could signal the correction has ended. The green dotted lines show
+    when the 2-day Force Index turns negative.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Force Index uses both price and volume to measure buying and selling pressure.
+    The price portion covers the trend, while the volume portion determines the intensity.
+    At its most basic, chartists can use a long-term Force Index to confirm the underlying
+    trend. The bulls have the edge when the 100-day Force Index is positive. The bears
+    have the edge when the 100-day Force Index is negative. Armed with this information,
+    traders can then look for short-term setups in harmony with the larger trend,
+    such as bullish setups in a larger uptrend or bearish setups within a larger downtrend.
+    As with all indicators, traders should use the Force Index in conjunction with
+    other [indicators](/school/doku.php?id=chart_school:technical_indicators "chart_school:technical_indicators")
+    and [analysis techniques](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
+    "chart_school:chart_analysis:chart_patterns").
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Force Index is available as an indicator for SharpCharts. Once selected,
+    users can place the indicator above, below or behind the underlying price plot.
+    Placing the Force Index directly on top of the price plot accentuates the movements
+    relative to price action of the underlying security. This can make it easier to
+    identify bullish and bearish divergences. Chartists can click “advanced options”
+    to add a moving average, horizontal line, or another indicator to the Force Index.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Chart 5  -  Force Index](../Images/337c5ceeba4fba3122bcac8be953b668.jpg
+    "Chart 5  -  Force Index")](http://stockcharts.com/h-sc/ui?s=MSFT&p=D&yr=1&mn=0&dy=0&id=p81333023268&listNum=30&a=219526357
+    "http://stockcharts.com/h-sc/ui?s=MSFT&p=D&yr=1&mn=0&dy=0&id=p81333023268&listNum=30&a=219526357")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![SharpCharts  -  Force Index](../Images/3a417a568f0a13488f1a48e528715220.jpg
+    "SharpCharts  -  Force Index")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Oversold in Up Trend
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan searches for stocks where the Force Index (100) is in positive territory
+    and the Commodity Channel Index (20) is oversold. A positive Force Index establishes
+    an overall uptrend. An oversold CCI identifies a pullback within this uptrend.
+    This scan is meant as a starting point. Further scrutiny and adjustment is advised.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Overbought in Down Trend
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan searches for stocks where the Force Index (100) is in negative territory
+    and the Commodity Channel Index (20) is overbought. A negative Force Index establishes
+    an overall downtrend. An overbought CCI identifies a corrective bounce within
+    this downtrend. This scan is meant as a starting point. Further scrutiny and adjustment
+    is advised.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Force Index scans, please see our
+    [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#force_index_force
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#force_index_force")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '*Come Into My Trading Room* covers trading from A to Z. In addition to technical
+    analysis and trading systems, readers will learn trading psychology, risk control,
+    money management and record keeping.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Come Into My Trading Room** Alexander Elder |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/8f918f5a5f0fb55e589dcebc337e397d.jpg)](http://store.stockcharts.com/products/come-into-my-trading-room-a-complete-guide-to-trading
+    "http://store.stockcharts.com/products/come-into-my-trading-room-a-complete-guide-to-trading")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/come-into-my-trading-room-a-complete-guide-to-trading
+    "http://store.stockcharts.com/products/come-into-my-trading-room-a-complete-guide-to-trading")
+    |'
+  prefs: []
+  type: TYPE_TB

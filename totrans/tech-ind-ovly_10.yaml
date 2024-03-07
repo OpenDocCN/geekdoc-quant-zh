@@ -1,0 +1,336 @@
+- en: Pivot Points [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Pivot Points](#pivot_points)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Timeframes](#timeframes)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Standard Pivot Points](#standard_pivot_points)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Fibonacci Pivot Points](#fibonacci_pivot_points)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Demark Pivot Points](#demark_pivot_points)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Setting the Tone](#setting_the_tone)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Support and Resistance](#support_and_resistance)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Additional Resources](#additional_resources)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '**Pivots Points are significant levels chartists can use to determine directional
+    movement and potential support/resistance levels.** Pivot Points use the prior
+    period''s high, low, and close to estimate future support and resistance levels.
+    In this regard, Pivot Points are predictive or leading indicators. There are at
+    least five different versions of Pivot Points. This article will focus on Standard
+    Pivot Points, Demark Pivot Points, and Fibonacci Pivot Points.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Pivot Points were originally used by floor traders to set key levels. Floor
+    traders are the original day traders. They deal in a very fast moving environment
+    with a short-term focus. At the beginning of the trading day, floor traders would
+    look at the previous day's high, low and close to calculate a Pivot Point for
+    the current trading day. With this Pivot Point as the base, further calculations
+    were used to set support 1, support 2, resistance 1, and resistance 2\. These
+    levels would then be used to assist their trading throughout the day.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Timeframes
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Pivot Points for 1-, 5-, 10- and 15-minute charts use the prior day's high,
+    low and close. In other words, Pivot Points for today's intraday charts would
+    be based solely on yesterday's high, low and close. Once Pivot Points are set,
+    they do not change and remain in play throughout the day.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Pivot Points  -  Chart 1](../Images/7340af632f63d7a16d9d588e81bcd18a.jpg
+    "Pivot Points  -  Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Pivot Points for 30- 60- and 120-minute charts use the prior week's high, low,
+    and close. These calculations are based on calendar weeks. Once the week starts,
+    the Pivot Points for 30- 60- and 120-minute charts remain fixed for the entire
+    week. **They do not change until the week ends and new Pivots can be calculated.**
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Pivot Points  -  Chart 2](../Images/f30afd69e1c419d1411f744d3bf22f97.jpg
+    "Pivot Points  -  Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: Pivot Points for daily charts use the prior month's data. Pivot Points for June
+    1st would be based on the high, low and close for May. They remain fixed the entire
+    month of June. New Pivot Points would be calculated on the first trading day of
+    July. These would be based on the high, low and close for June.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Pivot Points  -  Chart 3](../Images/f1307519517eaed9943f7edc6e82b43f.jpg
+    "Pivot Points  -  Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: Pivot Points for weekly and monthly charts use the prior year's data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Standard Pivot Points
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Standard Pivot Points begin with a base Pivot Point. This is a simple average
+    of the high, low and close. The middle Pivot Point is shown as a solid line between
+    the support and resistance pivots. Keep in mind that the high, low and close are
+    all from the prior period.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: The chart below shows the Nasdaq 100 ETF (QQQ) with Standard Pivot points on
+    a 15-minute chart. At the start of trading on June 9th, the Pivot Point is in
+    the middle, the resistance levels are above and the support levels are below.
+    These levels remain constant throughout the day.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Pivot Points  -  Chart 4](../Images/ad17543763434c2aee7ef6ea34c715f6.jpg
+    "Pivot Points  -  Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: Fibonacci Pivot Points
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Fibonacci Pivot Points start just the same as Standard Pivot Points. From the
+    base Pivot Point, Fibonacci multiples of the high-low differential are added to
+    form resistance levels and subtracted to form support levels.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: The chart below shows the Dow Industrials SPDR (DIA) with Fibonacci Pivot Points
+    on a 15-minute chart. R1 and S1 are based on 38.2%. R2 and S2 are based on 61.8%.
+    R3 and S3 are based on 100%.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Pivot Points  -  Chart 5](../Images/e925733240b3aadf2248df1742e43705.jpg
+    "Pivot Points  -  Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: Demark Pivot Points
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Demark Pivot Points start with a different base and use different formulas for
+    support and resistance. These Pivot Points are conditional on the relationship
+    between the close and the open.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: The chart below shows the Russell 2000 ETF (IWM) with Demark Pivot Points on
+    a 15-minute chart. Notice that there is only one resistance (R1) and one support
+    (S1). Demark Pivot Points do not have multiple support or resistance levels.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Pivot Points  -  Chart 6](../Images/928b04e318a922cff8e25944b23732c0.jpg
+    "Pivot Points  -  Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: Setting the Tone
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Pivot Point sets the general tone for price action. This is the middle line
+    of the group that is marked (P). A move above the Pivot Point is positive and
+    shows strength. Keep in mind that this Pivot Point is based on the prior period's
+    data. It is put forth in the current period as the first important level. A move
+    above the Pivot Point suggests strength with a target to the first resistance.
+    A break above first resistance shows even more strength with a target to the second
+    resistance level.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Pivot Points  -  Chart 7](../Images/c18b966dd0e88dac6656de827f61d945.jpg
+    "Pivot Points  -  Chart 7")'
+  prefs: []
+  type: TYPE_IMG
+- en: The converse is true on the downside. A move below the Pivot Point suggests
+    weakness with a target to the first support level. A break below the first support
+    level shows even more weakness with a target to the second support level.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Support and Resistance
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Support and resistance levels based on Pivot Points can be used just like traditional
+    support and resistance levels. The key is to watch price action closely when these
+    levels come into play. Should prices decline to support and then firm, traders
+    can look for a successful test and bounce off support. It often helps to look
+    for a bullish chart pattern or indicator signal to confirm an upturn from support.
+    Similarly, should prices advance to resistance and stall, traders can look for
+    a failure at resistance and decline. Again, chartists should look for a bearish
+    chart pattern or indicator signal to confirm a downturn from resistance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Pivot Points  -  Chart 8](../Images/4cbb1c5fda781895b5ede3f217bd15f2.jpg
+    "Pivot Points  -  Chart 8")'
+  prefs: []
+  type: TYPE_IMG
+- en: The second support and resistance levels can also be used to identify potentially
+    overbought and oversold situations. A move above the second resistance level would
+    show strength, but it would also indicate an overbought situation that could give
+    way to a pullback. Similarly, a move below the second support would show weakness,
+    but would also suggest a short-term oversold condition that could give way to
+    a bounce.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Pivot Points  -  Chart 9](../Images/c766087fcdce05932d61a0c4a0d1c9e3.jpg
+    "Pivot Points  -  Chart 9")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '**Pivot Points offer chartists a methodology to determine price direction and
+    then set support and resistance levels.** It usually starts with a cross of the
+    Pivot Point. Sometimes the market starts above or below the Pivot Point. Support
+    and resistance come into play after the crossover. While originally designed for
+    floor traders, the concepts behind Pivot Points can be applied across various
+    timeframes. As with all indicators, it is important to confirm Pivot Point signals
+    with other aspects of technical analysis. A bearish candlestick reversal pattern
+    could confirm a reversal at second resistance. Oversold RSI could confirm oversold
+    conditions at second support. An upturn in MACD could be used to confirm a successful
+    support test. On a final note, sometimes the second or third support/resistance
+    levels are not seen on the chart. This is simply because their levels exceed the
+    price scale on the right. In other words, they are off the chart.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Pivot Points can be found as an “overlay” on the SharpCharts Workbench. Standard
+    Pivot Points are the default setting and the parameters box is empty. Chartists
+    can apply Fibonacci Pivot Points by putting an “F” in the parameters box and Demark
+    Pivot Points by putting a “D” in the box. It is even possible to display all three
+    at the same time. [Click here](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237
+    "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237")
+    for a live chart with all three Pivot Points. You can then remove the ones you
+    do not want.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Pivot Points  -  SPY Example](../Images/5248548a8301aea1cb689fbbcf1f9757.jpg
+    "Pivot Points  -  SPY Example")](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237
+    "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Pivot Points - SharpCharts](../Images/a95df3dd4dd05d885bcc146d39c0d9eb.jpg
+    "Pivot Points - SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: This book has a complete chapter devoted to trading with Standard Pivot Points.
+    Person shows chartists how to incorporate Pivot Point support and resistance levels
+    with other aspects of technical analysis to generate buy and sell signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **A Complete Guide to Technical Trading Tactics** John Person |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/c3544022b2f24f16e18c19a16b6207ff.jpg)](http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics
+    "http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics
+    "http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '* * *'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additional Resources
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Stocks & Commodities Magazine Articles
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '**[Predicting Reversals With Pivot Points by John Devcic](http://stockcharts.com/h-mem/tascredirect.html?artid=\V24\C03\054DEVC.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V24\C03\054DEVC.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Feb 2006 - Stocks & Commodities V. 24:3 (72-73)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Pivot Points by Jayanthi Gopalakrishnan](http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C02\010PIV.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C02\010PIV.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Jan 2000 - Stocks & Commodities V. 18:2 (16-22)
+  prefs: []
+  type: TYPE_NORMAL

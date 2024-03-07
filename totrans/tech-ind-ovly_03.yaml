@@ -1,0 +1,247 @@
+- en: Chandelier Exit [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Chandelier Exit](#chandelier_exit)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Chandelier Uptrend](#chandelier_uptrend)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Chandelier Downtrend](#chandelier_downtrend)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Price Crosses above Chandelier Exit](#price_crosses_above_chandelier_exit)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Price Crosses below Chandelier Exit](#price_crosses_below_chandelier_exit)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Developed by Charles Le Beau and featured in Alexander Elder's books, the Chandelier
+    Exit sets a trailing stop-loss based on the Average True Range (ATR). The indicator
+    is designed to keep traders in a trend and prevent an early exit as long as the
+    trend extends. Typically, the Chandelier Exit will be above prices during a downtrend
+    and below prices during an uptrend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'The Chandelier Exit formula consists of three parts: a period high or period
+    low, the Average True Range (ATR) and a multiplier. Using the default setting
+    of 22-periods on a daily chart, the Chandelier Exit will look for the highest
+    high or lowest low of the last 22 days. Note that there are 22 trading days in
+    a month. This parameter (22) will also be used to calculate the Average True Range.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: As shown in the formulas above, there is a Chandelier exit for long positions
+    and one for short positions. The Chandelier Exit (long) hangs three ATR values
+    below the 22-period high. This means it rises and falls as the period high and
+    the ATR value changes. The Chandelier Exit for short positions is placed three
+    ATR values above the 22-period low. The spreadsheet examples show sample calculations
+    for both.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chandelier - Chart 1](../Images/a4b196c93ae4d87aafb7745af704556a.jpg "Chandelier
+    - Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Chandelier Exit is basically a volatility-based system that identifies outsized
+    price movements. Le Beau defined volatility by using the Average True Range, which
+    was developed by Welles Wilder, creator of RSI and the Average Directional Index.
+    ATR uses the prior close, current high and current low to determine the “True
+    Range” for a given period. After some smoothing, the daily True Range values evolve
+    into the Average True Range for a given period of time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chandelier - Chart 2](../Images/f0c59d68fd54302c52d5cd785496a558.jpg "Chandelier
+    - Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Chandelier - Chart 3](../Images/96d39fa3e34bdb5e2a2f84b2618e4b3a.jpg "Chandelier
+    - Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: By setting the Chandelier Exit for longs three ATR values BELOW the period high,
+    the indicator provides a buffer that is three times the volatility. A decline
+    strong enough to break this level warrants a reevaluation of long positions. The
+    opposite applies to short positions. The Chandelier Exit for shorts is set three
+    ATR values ABOVE the period low, which provides a volatility-based buffer. An
+    advance strong enough to exceed this level warrants a reevaluation of short positions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Chandelier Uptrend
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Sometimes chartists will see a strong uptrend, but not know where to jump on
+    and when to exit. The Chandelier Exit can be used to define the trend and set
+    a trailing stop-loss. The example below shows Eaton Corp (ETN) breaking out in
+    early November and starting an extended uptrend. The Chandelier Exit defined this
+    uptrend quite well as it followed price action steadily higher. This trailing
+    stop-loss could have been used to control risk for new long positions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chandelier - Chart 3](../Images/1dc7b0c15c514bad946f8da487c7ae9c.jpg "Chandelier
+    - Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: With the Chandelier Exit providing the stop-loss, traders would then need to
+    find an indicator to trigger buy signals within this trend. A sensitive momentum
+    oscillator can be used to capture short-term oversold conditions. The indicator
+    window shows StochRSI, which is the Stochastic Oscillator applied to RSI. Dips
+    below .20 reflect short-term oversold conditions. A subsequent move back above
+    .20 suggests that the uptrend is continuing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Chandelier Downtrend
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Some stocks are more volatile than others and require a bigger buffer, which
+    means the multiplier should be increased. The Hewlett-Packard (HPQ) example shows
+    the stock in a clear downtrend for most of 2012\. A normal Chandelier Exit (22,3.0,short)
+    would have triggered some stops just before the downtrend continued. Notice how
+    HPQ moved above the dashed gray line several times during this downtrend. Chartists
+    should increase the ATR multiplier for more volatile stocks, such as techs. In
+    this example, the red Chandelier line allows for more volatility by using 5 as
+    the multiplier. HPQ held this Chandelier setting until the breakout in mid-December,
+    which signaled the start of an uptrend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chandelier - Chart 4](../Images/b8ec251488e2ff0ac402c308feb7b43c.jpg "Chandelier
+    - Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: The Chandelier Exit is good for stops, but chartists need to use basic chart
+    analysis or a momentum oscillator to time entries. The Commodity Channel Index
+    (CCI) can be used to identify short-term overbought conditions within a downtrend.
+    CCI becomes overbought with a move above +100\. A subsequent move back below +100
+    signals that momentum is turning down again.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Chandelier Exit is mostly used to set a trailing stop-loss during a trend.
+    Trends sometimes extend further than we anticipate and the Chandelier Exit can
+    help traders ride the trend a little longer. Even though it is mostly used for
+    stop-losses, the Chandelier Exit can also be used as a trend tool. A break above
+    the Chandelier Exit (long) signals strength, while a break below the Chandelier
+    Exit (short) signals weakness. Once a new trend begins, chartists can then use
+    the corresponding Chandelier Exit to help define this trend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Chandelier Exits are available on SharpCharts in the “Overlays” section.
+    Once chosen, the default settings will appear in the parameters box (22,3.0).
+    This default setting is designed for long positions. The number 22 sets the periods
+    for the Average True Range (ATR) and the date range for the period high or low.
+    The number 3.0 sets the ATR multiplier. Volatile stocks may require a higher multiplier
+    to reduce whipsaws. Relatively dull stocks may need a lower multiplier to increase
+    sensitivity. Chartists can modify the Chandelier Exit for short positions by simply
+    adding a comma and the word short (22,3.0,short). Click here for a live example
+    with the Dow Industrials. **[Click here](http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p18499824686&listNum=30&a=299747232
+    "http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p18499824686&listNum=30&a=299747232")**
+    for live Dow chart showing the Chandelier Exit (long).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chandelier - Chart 5](../Images/07a67424a145f52cb1670a5496c109cf.jpg "Chandelier
+    - Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Price Crosses above Chandelier Exit
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This simple scan searches for stocks where the price has crossed above the Chandelier
+    Exit (long) and daily volume was above the 50-day moving average of volume. In
+    other words, the bullish crossover occurred with expanding volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Price Crosses below Chandelier Exit
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This simple scan searches for stocks where the price has crossed below the Chandelier
+    Exit (short) and daily volume was above the 50-day moving average of volume. In
+    other words, the bearish crossover occurred with expanding volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Chandelier Exit scans, please see
+    our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#chandelier_exit_chandlr
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#chandelier_exit_chandlr")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL

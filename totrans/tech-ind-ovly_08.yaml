@@ -1,0 +1,407 @@
+- en: Moving Average Envelopes [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Moving Average Envelopes](#moving_average_envelopes)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Parameters](#parameters)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Trend Identification](#trend_identification)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Similar to %Price Oscillator](#similar_to_price_oscillator)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overbought/Oversold](#overbought_oversold)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Oversold after Break above Upper Envelope](#oversold_after_break_above_upper_envelope)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overbought after Break below Lower Envelope](#overbought_after_break_below_lower_envelope)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Moving Average Envelopes are percentage-based envelopes set above and below
+    a moving average. The moving average, which forms the base for this indicator,
+    can be a simple or exponential moving average. Each envelope is then set the same
+    percentage above or below the moving average. This creates parallel bands that
+    follow price action. With a moving average as the base, Moving Average Envelopes
+    can be used as a trend following indicator. However, this indicator is not limited
+    to just trend following. The envelopes can also be used to identify overbought
+    and oversold levels when the trend is relatively flat.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Calculation for Moving Average Envelopes is straight-forward. First, choose
+    a simple moving average or exponential moving average. Simple moving averages
+    weight each data point (price) equally. Exponential moving averages put more weight
+    on recent prices and have less lag. Second, select the number of time periods
+    for the moving average. Third, set the percentage for the envelopes. A 20-day
+    moving average with a 2.5% envelope would show the following two lines:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: '![Moving Average Envelopes - Chart 1](../Images/5de2a14cc9327831eb73cda0527f213e.jpg
+    "Moving Average Envelopes - Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows IBM with a 20-day SMA and 2.5% envelopes. Note that the
+    20-day SMA was added to this SharpChart for reference. Notice how the envelopes
+    move parallel with the 20-day SMA. They remain a constant 2.5% above and below
+    the moving average.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Indicators based on channels, bands and envelopes are designed to encompass
+    most price action. Therefore, moves above or below the envelopes warrant attention.
+    Trends often start with strong moves in one direction or another. A surge above
+    the upper envelope shows extraordinary strength, while a plunge below the lower
+    envelope shows extraordinary weakness. Such strong moves can signal the end of
+    one trend and the beginning of another.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With a [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") as its foundation, Moving
+    Average Envelopes are a natural trend following indicator. As with moving averages,
+    the envelopes will lag price action. The direction of the moving average dictates
+    the direction of the channel. In general, a downtrend is present when the channel
+    moves lower, while an uptrend exists when the channel moves higher. The trend
+    is flat when the channel moves sideways.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sometimes a strong trend does not take hold after an envelope break and prices
+    move into a trading range. Such trading ranges are marked by a relatively flat
+    moving average. The envelopes can then be used to identify overbought and oversold
+    levels for trading purposes. A move above the upper envelope denotes an overbought
+    situation, while a move below the lower envelope marks an oversold condition.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Parameters
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The parameters for the Moving Average Envelopes depend on your trading/investing
+    objectives and the characteristics of the security involved. Traders will likely
+    use shorter (faster) moving averages and relatively tight envelopes. Investors
+    will likely prefer longer (slower) moving averages with wider envelopes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A security's volatility will also influence the parameters. Bollinger Bands
+    and Keltner Channels have built-in mechanisms that automatically adjust to a security's
+    volatility. [Bollinger Bands](/school/doku.php?id=chart_school:technical_indicators:bollinger_bands
+    "chart_school:technical_indicators:bollinger_bands") use the standard deviation
+    to set bandwidth. [Keltner Channels](/school/doku.php?id=chart_school:technical_indicators:keltner_channels
+    "chart_school:technical_indicators:keltner_channels") use the Average True Range
+    (ATR) to set channel width. These automatically adjust for volatility. Chartists
+    must independently account for volatility when setting the Moving Average Envelopes.
+    Securities with high volatility will require wider bands to encompass most price
+    action. Securities with low volatility can use narrower bands.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Moving Average Envelopes - Chart 2](../Images/e55f0b23fc6715a7a95dea133aa1c552.jpg
+    "Moving Average Envelopes - Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: In choosing the right parameters, it often helps to overlay a few different
+    Moving Average Envelopes and compare. The chart above shows the S&P 500 ETF with
+    three Moving Average Envelopes based on the 20-day SMA. The 2.5% envelopes (red)
+    were touched several times, the 5% envelopes (green) were only touched during
+    the July surge. The 10% envelopes (pink) were never touched, which means this
+    band is too wide. A medium-term trader might use the 5% envelopes, while a short-term
+    trader could use the 2.5% envelopes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Moving Average Envelopes - Chart 3](../Images/0124c331aebcc93955c57b842b9fd941.jpg
+    "Moving Average Envelopes - Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: Stock indices and ETFs require tighter envelopes because they are typically
+    less volatile than individual stocks. The Alcoa chart has the same Moving Average
+    Envelopes as the SPY chart. However, notice that Alcoa breached the 10% envelopes
+    numerous times because it is more volatile.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Trend Identification
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Moving Average Envelopes can be used to identify strong moves that signal the
+    start of an extended trend. The trick, as always, is picking the correct parameters.
+    This takes practice, trial and error. The chart below shows Dow Chemical (DOW)
+    with the Moving Average Envelopes (20,10). Closing prices are used because moving
+    averages are calculated with closing prices. Some chartists prefer bars or candlesticks
+    to utilize the intraday day high and low. Notice how DOW surged above the upper
+    envelope in mid-July and continued moving above this envelope until early August.
+    This shows extraordinary strength. Also, note that the Moving Average Envelopes
+    turned up and followed the advance. After a move from 14 to 23, the stock was
+    clearly overbought. However, this move established a strong precedent that marked
+    the beginning of an extended trend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Moving Average Envelopes - Chart 4](../Images/ee1a2ef2089b2239973ae6d418c5fdb2.jpg
+    "Moving Average Envelopes - Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: With DOW becoming overbought soon after establishing its uptrend, it was time
+    to wait for a playable pullback. Traders can look for pullbacks with basic chart
+    analysis or with indicators. Pullbacks often come in the form of falling flags
+    or wedges. DOW formed a picture perfect falling flag in August and broke resistance
+    in September. Another flag formed in late October with a breakout in November.
+    After the November surge, the stock pulled back with a five-week flag into December.
+    The Commodity Channel Index (CCI) is shown in the indicator window. Moves below
+    -100 show oversold readings. When the bigger trend is up, oversold readings can
+    be used to identify pullbacks to improve the risk-reward profile for a trade.
+    Momentum turns bullish again when CCI moves back into positive territory (green
+    dotted lines).
+  prefs: []
+  type: TYPE_NORMAL
+- en: The inverse logic can be applied for a downtrend. A strong move below the lower
+    envelope signals extraordinary weakness that can foreshadow an extended downtrend.
+    The chart below shows International Game Tech (IGT) breaking below the 10% envelope
+    to establish a downtrend in late October 2009\. Because the stock was quite oversold
+    after this sharp decline, it would have been prudent to wait for a bounce. We
+    can then use basic price analysis or another momentum indicator to identify bounces.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Moving Average Envelopes - Chart 5](../Images/b22bd8992f58aa3f9f77b4d7bdb64f00.jpg
+    "Moving Average Envelopes - Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: The indicator window shows the Stochastic Oscillator being used to identify
+    overbought bounces. A move above 80 is considered overbought. Once above 80, chartists
+    can then look for a chart signal or a move back below 80 to signal a downturn
+    (red dotted lines). The first signal was confirmed with a support break. The second
+    signal resulted in a whipsaw (loss) because the stock moved above 20 a few weeks
+    later. The third signal was confirmed with a trend line break that resulted in
+    a rather sharp decline.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Similar to %Price Oscillator
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Before moving on to overbought and oversold levels, it is worth pointing out
+    that Moving Average Envelopes are similar to the [Percent Price Oscillator (PPO)](/school/doku.php?id=chart_school:technical_indicators:price_oscillators_ppo
+    "chart_school:technical_indicators:price_oscillators_ppo"). Moving Average Envelopes
+    tell us when a security is trading a certain percentage above a particular moving
+    average. PPO shows the percentage difference between a short exponential moving
+    average and a longer exponential moving average. PPO(1,20) shows the percentage
+    difference between a 1-period EMA and a 20-period EMA. A 1-day EMA is equal to
+    the close. 20-period Exponential Moving Average Envelopes reflect the same information.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Moving Average Envelopes - Chart 6](../Images/8ccf4792e95258edb8a0892a076384cf.jpg
+    "Moving Average Envelopes - Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows the Russell 2000 ETF (IWM) with PPO(1,20) and 2.5% Exponential
+    Moving Average Envelopes. Horizontal lines were set at 2.5% and -2.5% on the PPO.
+    Notice that prices move above the 2.5% envelope when PPO moves above 2.5% (yellow
+    shading) and prices move below the 2.5% envelope when PPO moves below -2.5% (orange
+    shading). PPO is a momentum oscillator that can be used to identify overbought
+    and oversold levels. By extension, Moving Average Envelopes can also be used to
+    identify overbought and oversold levels. PPO uses exponential moving averages
+    so it must be compared to Moving Average Envelopes using EMAs, not SMAs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Overbought/Oversold
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Measuring overbought and oversold conditions is tricky. Securities can become
+    overbought and remain overbought in a strong uptrend. Similarly, securities can
+    become oversold and remain oversold in a strong downtrend. In a strong uptrend,
+    prices often move above the upper envelope and continue above this line. In fact,
+    the upper envelope will rise as price continues above the upper envelope. This
+    may seem technically overbought, but it is a sign of strength to remain overbought.
+    The reverse is true for oversold. Overbought and oversold readings are best used
+    when the trend flattens.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The chart for Nokia has it all. The pink lines represent the Moving Average
+    Envelopes (50,10). A 50-day simple moving average is in the middle (red). The
+    envelopes are set 10% above and below this moving average. The chart starts with
+    an overbought level that stayed overbought as a strong trend emerged in April-May.
+    Price action turned choppy from June to April, which is the perfect scenario for
+    overbought and oversold levels. Overbought levels in September and mid-March foreshadowed
+    reversals. Similarly, oversold levels in August and late October foreshadowed
+    advances. The chart ends with an oversold condition that remains oversold as a
+    strong downtrend emerges.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Moving Average Envelopes - Chart 7](../Images/5c7d2fbdce1c3fd5cc3015a16c87c116.jpg
+    "Moving Average Envelopes - Chart 7")'
+  prefs: []
+  type: TYPE_IMG
+- en: Overbought and oversold conditions should serve as alerts for further analysis.
+    Overbought levels should be confirmed with chart resistance. Chartists can also
+    look for bearish patterns to reinforce reversal potential at overbought levels.
+    Similarly, oversold levels should be confirmed with chart support. Chartist can
+    also look for bullish patterns to reinforce reversal potential at oversold levels.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Moving Average Envelopes are mostly used as a trend following indicator, but
+    can also be used to identify overbought and oversold conditions. After a consolidation
+    period, a strong envelope break can signal the start of an extended trend. Once
+    an uptrend is identified, chartists can turn to [momentum indicators](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")
+    and other techniques to identify oversold readers and pullbacks within that trend.
+    Overbought conditions and bounces can be used as selling opportunities within
+    a bigger downtrend. In the absence of a strong trend, the Moving Average Envelopes
+    can be used like the Percent Price Oscillator. Moves above the upper envelope
+    signal overbought readings, while moves below the lower envelope signal oversold
+    readings. It is also important to incorporate other aspects of technical analysis
+    to confirm overbought and oversold reading. Resistance and bearish reversals patterns
+    can be used to corroborate overbought readings. Support and bullish reversal patterns
+    can be used to affirm oversold conditions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Moving Average Envelopes can be found in SharpCharts as a price overlay. As
+    with a moving average, the envelopes should be shown on top of a price plot. Upon
+    selecting the indicator from the dropdown box, the default setting will appear
+    in the parameters window (20,2.5). “MA Envelopes” are based on a simple moving
+    average. “EMA Envelopes” are based on an exponential moving average. The first
+    number (20) sets the periods for the moving average. The second number (2.5) sets
+    the percentage offset. Users can change the parameters to suit their charting
+    needs. The corresponding [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") can be added as separate
+    overlay. [Click here](http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2010-02-03&en=2010-10-09&id=p15714633106&listNum=30&a=211776022
+    "http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2010-02-03&en=2010-10-09&id=p15714633106&listNum=30&a=211776022")
+    for a live example.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![SharpCharts - Chart 9](../Images/2070daf2f9ad0df505c8377ca1b75ccb.jpg "SharpCharts
+    - Chart 9")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Oversold after Break above Upper Envelope
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan looks for stocks that broke above their upper exponential Moving Average
+    Envelope (50,10) twenty days ago to affirm or establish an uptrend. The current
+    10-period CCI is below -100 to indicate a short-term oversold condition.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Overbought after Break below Lower Envelope
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan looks for stocks that broke below their lower exponential Moving Average
+    Envelope (50,10) twenty days ago to affirm or establish a downtrend. The current
+    10-period CCI is above +100 to indicate a short-term overbought condition.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the scan syntax to use for Moving Average Envelope scans,
+    please see our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#moving_average_envelopes
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#moving_average_envelopes")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '| **Trend Trading for a Living** Thomas Carr | **Trend Following** Michael
+    Covel |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/fd7b150db3a8ea902f5f22b5f07cc54f.jpg)](http://store.stockcharts.com/products/trend-trading-for-a-living
+    "http://store.stockcharts.com/products/trend-trading-for-a-living") | [![](../Images/24dae431dd127df01c0a553f30ece02c.jpg)](http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets
+    "http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/trend-trading-for-a-living
+    "http://store.stockcharts.com/products/trend-trading-for-a-living") | [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg
+    "Buy Now")](http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets
+    "http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets")
+    |'
+  prefs: []
+  type: TYPE_TB

@@ -1,0 +1,223 @@
+- en: Detrended Price Oscillator (DPO) [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Detrended Price Oscillator (DPO)](#detrended_price_oscillator_dpo)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Displaced Moving Average](#displaced_moving_average)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[What Does DPO Measure?](#what_does_dpo_measure)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using DPO](#using_dpo)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[To Shift or not to Shift](#to_shift_or_not_to_shift)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Detrended Price Oscillator (DPO) is an indicator designed to remove trend
+    from price and make it easier to identify cycles. DPO does not extend to the last
+    date because it is based on a displaced moving average. However, alignment with
+    the most recent is not an issue because DPO is not a momentum oscillator. Instead,
+    DPO is used to identify cycles highs/lows and estimate cycle length.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: Displaced Moving Average
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The moving average displacement actually centers the moving average. Consider
+    a 20-day simple [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") offset 11 days to the left.
+    There are 10 days in front of the moving average, 1 day at the moving average
+    and 9 days behind the moving average. In reality, this moving average is in the
+    middle of its look-back period. Roughly half the prices used in the calculation
+    are to the right and half are to the left. Chart 1 shows the S&P 500 ETF (SPY)
+    with a 20-day SMA (green dotted line) and a 20-day SMA offset 11 days (pink line).
+    The ending values are the same (106.84), but the pink moving average ends on October
+    27th and the green moving average ends on November 11th, which is the last date
+    on the chart. Also, notice how the “centered” moving average (pink) more closely
+    follows the actual price plot.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 1](../Images/8419e6c154fd8618f4c8a5b69608bd6f.jpg "Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: What Does DPO Measure?
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Detrended Price Oscillator (DPO) measures the difference between a past
+    price and a moving average. Keep in mind that DPO is itself displaced to the left.
+    The indicator oscillates above/below zero as prices move above/below the displaced
+    moving average. Chart 2 shows the S&P 500 ETF (SPY) with a 20-day moving average
+    displaced -11 days. 20-day DPO is shown in the indicator window. Notice how DPO
+    is positive when price is above the displaced moving average and negative when
+    price is below the displaced moving average.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 2](../Images/ddda0101523677d0228d0be781a5ac45.jpg "Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: Using DPO
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Even though this indicator looks like a classic oscillator, it is not designed
+    for momentum signals. The displaced moving average is set in the past and this
+    is why the DPO is shown in the past. Even with this displacement, DPO peaks and
+    troughs can be used to estimate cycle length. DPO filters out the longer trends
+    to focus on shorter cycles. Chart 3 shows the Nasdaq 100 ETF (QQQQ) with DPO (20)
+    in the indicator window. Looking at the peaks and troughs, we can see a 20-day
+    cycle with the lows in early September, early October, early November and early
+    December. There are roughly 20 days between these lows. The cycle missed in early
+    January.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 3](../Images/92fec60995e6bccf644e015e6c93204b.jpg "Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: To Shift or not to Shift
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: It is possible to displace the Detrended Price Oscillator (DPO) with a horizontal
+    shift to the right. If DPO is set at 20, then an 11-period shift is needed to
+    place it in line with the most recent price. This displacement number comes from
+    the formula at the top (20/2 + 1) = 11\. While shifting may seem like a good idea,
+    it really defeats the purpose of this indicator, which is to identify cycles.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 4](../Images/5f769e9237eac25d48823cf47a1a7141.jpg "Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: Even with a positive displacement, DPO fluctuations do not match up well with
+    prices. In the example below, the last value for DPO (20,11) is still based on
+    the close 11 days ago and the value of the moving average. Notice that DPO turned
+    negative as price moved below the centered moving average 11 days ago (orange
+    box). DPO simply does not match current price action. In contrast to DPO, price
+    has been below the 20-day EMA the last 12 days. The Percentage Price Oscillator
+    (PPO) is better suited to identify overbought and oversold levels. PPO(1,20,1)
+    shows the percentage difference between current price and the normal 20-day exponential
+    moving average. Overbought/oversold conditions occur when prices get relatively
+    far from their 20-day EMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 5](../Images/e8e908501dd600de3df7a9b5d6726160.jpg "Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Detrended Price Oscillator shows the difference between a past price and
+    a simple moving average. In contrast to other price oscillators, DPO is not a
+    momentum indicator. Instead, it is simply designed to identify cycles with its
+    peaks and troughs. Cycles can be estimated by counting the periods between peaks
+    or troughs. Users can experiment with shorter and longer DPO settings to find
+    the best fit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Detrended Price Oscillator (DPO) can be found in the indicator list on SharpCharts.
+    The default parameter is 20 periods, but this can be adjusted accordingly to find
+    cycles. Users can also add another parameter separated by a comma. A comma plus
+    a positive number shifts the indicator to the right. DPO can be positioned above,
+    below or behind the price plot. [Click here](http://stockcharts.com/h-sc/ui?s=SPY&p=D&b=5&g=0&id=p14005429311&listNum=30&a=191188211
+    "http://stockcharts.com/h-sc/ui?s=SPY&p=D&b=5&g=0&id=p14005429311&listNum=30&a=191188211")
+    for a live example of the Detrended Price Oscillator.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 6](../Images/9edbeafb366991f09334999d5d3c547c.jpg "Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Detrended Price Oscillator is not well suited for scans because the indicator
+    is based on an offset moving average. A 20-day DPO correlates to a price 11 days
+    ago, which is not practical for scans. DPO is also based on absolute levels and
+    this makes it difficult for comparative purposes. A $100 stock will have a much
+    wider DPO range than a $20 stock. Google traded around $590 per share in early
+    January with a DPO around 21\. Intel traded around 20.5 in early January with
+    a DPO around .20, which is much lower. The DPO lower because Intel is priced much
+    lower than Google.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis** Charles Kirkpatrick & Julie R. Dahlquist |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/a24d1a5e5526382bfdec0424da3adce6.jpg)](http://store.stockcharts.com/products/technical-analysis-the-complete-resource-for-financial-market-technicians-2nd-edition
+    "http://store.stockcharts.com/products/technical-analysis-the-complete-resource-for-financial-market-technicians-2nd-edition")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-the-complete-resource-for-financial-market-technicians-2nd-edition
+    "http://store.stockcharts.com/products/technical-analysis-the-complete-resource-for-financial-market-technicians-2nd-edition")
+    |'
+  prefs: []
+  type: TYPE_TB

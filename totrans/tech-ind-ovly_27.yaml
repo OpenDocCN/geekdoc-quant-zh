@@ -1,0 +1,218 @@
+- en: Correlation Coefficient [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Correlation Coefficient](#correlation_coefficient)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Diversification](#diversification)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Correlation Coefficient is a statistical measure that reflects the correlation
+    between two securities. In other words, this statistic tells us how closely one
+    security is related to the other. The Correlation Coefficient is positive when
+    both securities move in the same direction, up or down. The Correlation Coefficient
+    is negative when the two securities move in opposite directions. Determining the
+    relationship between two securities is useful for analyzing intermarket relationships,
+    sector/stock relationships, and sector/market relationships. This indicator can
+    also help investors diversify by identifying securities with a low or negative
+    correlation to the stock market.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The calculation for the Correlation Coefficient is rather complicated so feel
+    free to skip this section. We will simply look at the basics to see some of the
+    method behind the madness. This indicator is right at the heart of classical statistics.
+    The first step is to select two securities. In this example, we will be using
+    Intel (INTC) and the Nasdaq 100 ETF (QQQ). Namely, we want to see the degree of
+    correlation between Intel and QQQ. The excel table below lays out the groundwork.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Correlation Coefficient  -  Excel Example](../Images/77af7d6083199f02f34a7774a33c9762.jpg
+    "Correlation Coefficient  -  Excel Example")'
+  prefs: []
+  type: TYPE_IMG
+- en: The INTC column shows Intel prices over a 20 day period with an average at the
+    bottom.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The QQQ column shows the same for QQQ.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The next two columns show each period's price squared with the average at the
+    bottom.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The last columns show INTC multiplied by QQQ for each period with an average
+    at the bottom.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Using the bottom row, we can now compute the Variance, Covariance and Correlation
+    Coefficient. The Excel formula is shown alongside the long formula. As the results
+    show, over the 20 day period from June 22nd to July 20th, Intel showed a strong
+    positive correlation (+.95) with the Nasdaq 100 ETF.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Correlation Coefficient - Intel](../Images/5d49358a0e02c4ac44fcaf0d4cdc14b8.jpg
+    "Correlation Coefficient - Intel")'
+  prefs: []
+  type: TYPE_IMG
+- en: Here's [an Excel Spreadsheet](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:correlation_coeffici:cs-corrcoef.xls
+    "chart_school:technical_indicators_and_overlays:correlation_coeffici:cs-corrcoef.xls
+    (25 KB)") that shows the Correlation Coefficient in action. Some numbers may differ
+    slightly due to rounding issues.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Correlation Coefficient oscillates between -1 and +1\. It is not a momentum
+    oscillator though. Instead, it moves from periods of positive correlation to periods
+    negative correlation. +1 is considered perfect positive correlation, which is
+    rare. Anything between 0 and +1 indicates that two securities move in the same
+    direction. The degree of positive correlation is likely to vary over time. Oil
+    stocks and oil are positively correlated most of the time. The example below shows
+    the Energy SPDR (XLE) with Spot Light Crude ($WTIC). Unsurprisingly, the 20-day
+    Correlation Coefficient remains largely positive with regular forays above +.75\.
+    There is clearly a positive relationship between these two securities. In general,
+    anything above .50 shows a strong positive correlation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Correlation Coefficient  -  Oil and Oil Stocks](../Images/b689c4126d59a296b4105f90068e9f98.jpg
+    "Correlation Coefficient  -  Oil and Oil Stocks")'
+  prefs: []
+  type: TYPE_IMG
+- en: At the other end of the spectrum, -1 is considered perfect negative correlation,
+    which is rare. Anything between 0 and -1 indicates that two securities move in
+    opposite directions. The degree of negative correlation is likely to vary over
+    time. Gold and the Dollar are the first two securities that come to mind for a
+    negative correlation. The chart below shows Spot Gold Spot ($GOLD) with the US
+    Dollar Index ($USD). Although the Correlation Coefficient spends a fair amount
+    of time in positive territory, it is negative the majority of the time. In general,
+    anything below -.50 shows a strong negative correlation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Correlation Coefficient  -  Gold and Dollar](../Images/30b24667d3b93e41ffc9e418660a064f.jpg
+    "Correlation Coefficient  -  Gold and Dollar")'
+  prefs: []
+  type: TYPE_IMG
+- en: Diversification
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Correlation Coefficient can be used to identify non-correlated securities,
+    which is important in developing a diversified portfolio. Unsurprisingly, the
+    nine S&P sectors are mostly positively correlated with the S&P 500\. However,
+    some are more positively correlated than others. For example, the Technology ETF
+    (XLK) and the Consumer Discretionary SPDR (XLY) have a strong positive correlation
+    with the S&P 500 over the last three years. The Correlation Coefficients below
+    are based on 50 days. The consumer discretionary sector dipped below .50 only
+    once in the last three years. The technology sector never dipped below .50 as
+    techs remained strongly correlated to the market. In contrast, the Correlation
+    Coefficient for the consumer staples sector dipped below .50 a few times and the
+    Correlation Coefficient for the utilities sector even dipped below zero twice.
+    This indicator shows us that the consumer staples and utilities sectors are less
+    correlated to the S&P 500 than the consumer discretionary and technology sectors.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Correlation Coefficient - Sectors](../Images/05549c34a02e0df590bd58513dfa665b.jpg
+    "Correlation Coefficient - Sectors")'
+  prefs: []
+  type: TYPE_IMG
+- en: In order to truly diversify from stocks, it is often necessary to look outside
+    of the stock market. The chart below shows four ETFs that have many periods of
+    negative correlation with the stock market (SPY). Notice how the Correlation Coefficients
+    dip below zero numerous times. In this example, I am also using the 50-day Correlation
+    Coefficient. The 20+ year Bond ETF (TLT) represents bonds, which are negatively
+    correlated with stocks most of the time. Gold (red) moves between periods of positive
+    and negative correlation. On the whole, it has been more positively correlated
+    than negative the last three years. The Yen Trust (green) appears split its time
+    between periods of positive and negative correlation. Surprisingly, the US Dollar
+    Fund (UUP) shows a propensity to be negatively correlated with the stock market.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Correlation Coefficient  -  Other Assets](../Images/6b1d5a2cfae43db56646757cf0a11988.jpg
+    "Correlation Coefficient  -  Other Assets")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Correlation Coefficient tells us the relationship between two securities.
+    Over a given time period, the two securities move together when the Correlation
+    Coefficient is positive. Conversely, the two securities move in opposite directions
+    when the Correlation Coefficient is negative. The examples above show 20-day and
+    50-day Correlation Coefficients. Longer-term investors may use 150 or even 250
+    days (one year) for smoother lines that reflect longer-term relationships.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Correlation Coefficient is available in SharpCharts under “indicators”.
+    First, create a chart with the base security entered in the symbol box at the
+    top of the chart (INTC). Second, select Correlation Coefficient as an indicator
+    in the drop-down menu. Third, enter the symbol for the other security and the
+    timeframe in the parameters box ($SPX,20). These two are separated by a comma.
+    The example below shows Intel in the main window with the 10-day Correlation Coefficient
+    in the indicator window. This shows how Intel correlates to the S&P 500\. Also,
+    notice that the S&P 500 price plot (red dashed) is placed behind the Intel price
+    plot for comparison. [Click here](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p61512839073&listNum=30&a=239762181
+    "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p61512839073&listNum=30&a=239762181")
+    for a live chart with the Correlation Coefficient.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Correlation Coefficient  -  Intel SharpCharts](../Images/51c5ab73134bcf509d6ee450828be753.jpg
+    "Correlation Coefficient  -  Intel SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Correlation Coefficient  -  SharpCharts](../Images/77da97cb5e6fe5079347dda736b8f9e4.jpg
+    "Correlation Coefficient  -  SharpCharts")'
+  prefs: []
+  type: TYPE_IMG

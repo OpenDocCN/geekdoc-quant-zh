@@ -1,0 +1,472 @@
+- en: Average Directional Index (ADX) [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Average Directional Index (ADX)](#average_directional_index_adx)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Indicator Calculation](#indicator_calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Wilder''s Smoothing Techniques](#wilder_s_smoothing_techniques)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Trend Strength](#trend_strength)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Trend Direction and Crossovers](#trend_direction_and_crossovers)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overall Uptrend with +DI Crossing above -DI](#overall_uptrend_with_di_crossing_above_-di)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overall Downtrend with -DI Crossing above +DI](#overall_downtrend_with_-di_crossing_above_di)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Additional Resources](#additional_resources)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Average Directional Index (ADX), Minus Directional Indicator (-DI) and Plus
+    Directional Indicator (+DI) represent a group of directional movement indicators
+    that form a trading system developed by Welles Wilder. Although Wilder designed
+    his Directional Movement System with commodities and daily prices in mind, these
+    indicators can also be applied to stocks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Positive and negative directional movement form the backbone of the Directional
+    Movement System. Wilder determined directional movement by comparing the difference
+    between two consecutive lows with the difference between their respective highs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The **Plus Directional Indicator (+DI)** and **Minus Directional Indicator (-DI)**
+    are derived from smoothed averages of these differences, and measure trend ***direction***
+    over time. These two indicators are often referred to collectively as the Directional
+    Movement Indicator (DMI).
+  prefs: []
+  type: TYPE_NORMAL
+- en: The **Average Directional Index (ADX)** is in turn derived from the smoothed
+    averages of the difference between +DI and -DI, and measures the ***strength***
+    of the trend (regardless of direction) over time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using these three indicators together, chartists can determine both the ***direction***
+    and ***strength*** of the trend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Wilder features the Directional Movement indicators in his 1978 book, *New Concepts
+    in Technical Trading Systems*. This book also includes details on [Average True
+    Range (ATR)](/school/doku.php?id=chart_school:technical_indicators:average_true_range_atr
+    "chart_school:technical_indicators:average_true_range_atr"), the [Parabolic SAR](/school/doku.php?id=chart_school:technical_indicators:parabolic_sar
+    "chart_school:technical_indicators:parabolic_sar") system, and [RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi
+    "chart_school:technical_indicators:relative_strength_index_rsi"). Despite being
+    developed before the computer age, Wilder's indicators are incredibly detailed
+    in their calculation and have stood the test of time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Directional movement is calculated by comparing the difference between two consecutive
+    lows with the difference between their respective highs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Directional movement is **positive** (plus) when the current high minus the
+    prior high is greater than the prior low minus the current low. This so-called
+    Plus Directional Movement (+DM) then equals the current high minus the prior high,
+    provided it is positive. A negative value would simply be entered as zero.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Directional movement is **negative** (minus) when the prior low minus the current
+    low is greater than the current high minus the prior high. This so-called Minus
+    Directional Movement (-DM) equals the prior low minus the current low, provided
+    it is positive. A negative value would simply be entered as zero.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/3339cb9422bd3e637443ef99c926525e.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows four calculation examples for directional movement. The
+    first pairing shows a big positive difference between the highs for a strong Plus
+    Directional Movement (+DM). The second pairing shows an outside day with Minus
+    Directional Movement (-DM) getting the edge. The third pairing shows a big difference
+    between the lows for a strong Minus Directional Movement (-DM). The final pairing
+    shows an inside day, which amounts to no directional movement (zero). Both Plus
+    Directional Movement (+DM) and Minus Directional Movement (-DM) are negative and
+    revert to zero, so they cancel each other out. All inside days will have zero
+    directional movement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Indicator Calculation
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The calculation steps for the Average Directional Index (ADX), Plus Directional
+    Indicator (+DI), and Minus Directional Indicator (-DI) are based on the Plus Directional
+    Movement (+DM) and Minus Directional Movement (-DM) values calculated above, as
+    well as the Average True Range. Smoothed versions of +DM and -DM are divided by
+    a smoothed version of the Average True Range to reflect the true magnitude of
+    the move.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Note: Average True Range (ATR) is not described because there is an entire
+    [ChartSchool article](/school/doku.php?id=chart_school:technical_indicators:average_true_range_atr
+    "chart_school:technical_indicators:average_true_range_atr") for this. Basically,
+    ATR is Wilder''s version of the two-period trading range.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The calculation example below is based on a 14-period indicator setting, as
+    recommended by Wilder.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculate the True Range (TR), Plus Directional Movement (+DM) and Minus Directional
+    Movement (-DM) for each period.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Smooth these periodic values using Wilder's smoothing techniques. These are
+    explained in detail in the next section.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Divide the 14-day smoothed Plus Directional Movement (+DM) by the 14-day smoothed
+    True Range to find the 14-day Plus Directional Indicator (+DI14). Multiply by
+    100 to move the decimal point two places. This +DI14 is the green Plus Directional
+    Indicator line (+DI) that is plotted along with the ADX line.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Divide the 14-day smoothed Minus Directional Movement (-DM) by the 14-day smoothed
+    True Range to find the 14-day Minus Directional Indicator (-DI14). Multiply by
+    100 to move the decimal point two places. This -DI14 is the red Minus Directional
+    Indicator line (-DI) that is plotted along with the ADX line.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Directional Movement Index (DX) equals the absolute value of +DI14 less
+    -DI14 divided by the sum of +DI14 and -DI14\. Multiply the result by 100 to move
+    the decimal point over two places.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: After all these steps, it is time to calculate the Average Directional Index
+    (ADX) line. The first ADX value is simply a 14-day average of DX. Subsequent ADX
+    values are smoothed by multiplying the previous 14-day ADX value by 13, adding
+    the most recent DX value, and dividing this total by 14.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](../Images/0d0dabfcc23db99add7ffcf5182969bd.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Above is a spreadsheet example with all the calculations involved. There is
+    a 119-day calculation gap because approximately 150 periods are required to absorb
+    the smoothing techniques. ADX/DMI enthusiasts can [click here to download](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:average_directional_index_adx:cs-adx.xls
+    "chart_school:technical_indicators_and_overlays:average_directional_index_adx:cs-adx.xls
+    (343.5 KB)") this spreadsheet and see the gory details. The chart below shows
+    an example of ADX with +DI and -DI using the Nasdaq 100 ETF (QQQQ).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/784b2ce5a39aaad9f2d73e3fca03b3aa.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Wilder's Smoothing Techniques
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: As seen in the ADX, +DI, and -DI calculations, there is a lot of smoothing involved
+    and it is important to understand the effects. Because of Wilder's smoothing techniques,
+    it can take around 150 periods of data to get true ADX values. Wilder uses similar
+    smoothing techniques with his RSI and Average True Range calculations. ADX values
+    using only 30 periods of historical data will not match ADX values using 150 periods
+    of historical data. ADX values with 150 days or more of data will remain consistent.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first technique is used to smooth each period's +DM1, -DM1, and TR1 values
+    over 14 periods. As with an exponential [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages"), the calculation has to start
+    somewhere so the first value is simply the sum of the first 14 periods. As shown
+    below, smoothing starts with the second 14-period calculation and continues throughout.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'The second technique is used to smooth each period''s DX value to finish with
+    the Average Directional Index (ADX). First, calculate an average for the first
+    14 days as a starting point. The second and subsequent calculations use the smoothing
+    technique below:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Average Directional Index (ADX) is used to measure the strength or weakness
+    of a trend, not the actual direction. Directional movement is defined by +DI and
+    -DI. In general, the bulls have the edge when +DI is greater than -DI, while the
+    bears have the edge when -DI is greater. Crosses of these directional indicators
+    can be combined with ADX for a complete trading system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Before looking at some signals with examples, keep in mind that Wilder was a
+    commodity and currency trader. The examples in his books are based on these instruments,
+    not stocks. This does not mean his indicators cannot be used with stocks. Some
+    stocks have price characteristics similar to commodities, which tend to be more
+    volatile with short and strong trends. Stocks with low volatility may not generate
+    signals based on Wilder's parameters. Chartists will likely need to adjust the
+    indicator settings or the signal parameters according to the characteristics of
+    the security.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Trend Strength
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: At its most basic, the Average Directional Index (ADX) can be used to determine
+    if a security is trending or not. This determination helps traders choose between
+    a trend-following system or a non-trend-following system. Wilder suggests that
+    a strong trend is present when ADX is above 25 and no trend is present when below
+    20\. There appears to be a gray zone between 20 and 25\. As noted above, chartists
+    may need to adjust the settings to increase sensitivity and signals. ADX also
+    has a fair amount of lag because of all the smoothing techniques. Many technical
+    analysts use 20 as the key level for ADX.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/eb5fabd1028aa4638404dbdfee96dad7.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows Nordstrom (JWN) with the 50-day SMA and 14-day Average
+    Directional Index (ADX). The stock moved from a strong uptrend to a strong downtrend
+    in April-May, but ADX remained above 20 because the strong uptrend quickly changed
+    into a strong downtrend. There were two non-trending periods as the stock formed
+    a bottom in February and August. A strong trend emerged after the August bottom
+    as ADX moved above 20 and remained above 20.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Trend Direction and Crossovers
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Wilder put forth a simple system for trading with these directional movement
+    indicators. The first requirement is for ADX to be trading above 25\. This ensures
+    that prices are trending. Many traders, however, use 20 as the key level. A buy
+    signal occurs when +DI crosses above -DI. Wilder based the initial stop on the
+    low of the signal day. The signal remains in force as long as this low holds,
+    even if +DI crosses back below -DI. Wait for this low to be penetrated before
+    abandoning the signal. This bullish signal is reinforced if/when ADX turns up
+    and the trend strengthens. Once the trend develops and becomes profitable, traders
+    will have to incorporate a stop-loss and trailing stop should the trend continue.
+    A sell signal triggers when -DI crosses above +DI. The high on the day of the
+    sell signal becomes the initial stop-loss.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/cb3923d0ab1bf987c95e1c1af48e34c4.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows Medco Health Solutions with the three directional movement
+    indicators. Note that 20 is used instead of 25 to qualify ADX signals. A lower
+    setting means more possible signals. The green dotted lines show the buy signals
+    and the red dotted lines show the sell signals. Wilder's initial stops were not
+    incorporated in order to focus on the indicator signals. As the chart clearly
+    shows, there are plenty of +DI and -DI crosses. Some occur with ADX above 20 to
+    validate signals. Others occur to invalidate signals. As with most such systems,
+    there will be whipsaws, great signals, and bad signals. The key, as always, is
+    to incorporate other aspects of technical analysis. For example, the first group
+    of whipsaws in September 2009 occurred during a consolidation. Moreover, this
+    consolidation looked like a flag, which is a bullish consolidation that forms
+    after an advance. It would have been prudent to ignore bearish signals with a
+    bullish continuation pattern taking shape. The June 2010 buy signal occurred near
+    a resistance zone marked by broken support and the 50-62% retracement zone. It
+    would have been prudent to ignore a buy signal so close to this resistance zone.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/84c145349e142211e786c87d87b753f9.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows AT&T (T) with three signals over a 12-month period. These
+    three signals were pretty good, provided profits were taken and trailing stops
+    were used. Wilder's [Parabolic SAR](/school/doku.php?id=chart_school:technical_indicators:parabolic_sar
+    "chart_school:technical_indicators:parabolic_sar") could have been used to set
+    a trailing stop-loss. Notice that there was no sell signal between the March and
+    July buy signals. This is because ADX was not above 20 when -DI crossed above
+    +DI in late April.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Directional Movement System indicator calculations are complex, interpretation
+    is straightforward, and successful implementation takes practice. +DI and -DI
+    crossovers are quite frequent and chartists need to filter these signals with
+    complementary analysis. Setting an ADX requirement will reduce signals, but this
+    uber-smoothed indicator tends to filter as many good signals as bad. In other
+    words, chartists might consider moving ADX to the back burner and focusing on
+    the Directional Movement Indicators (+DI and -DI) to generate signals. These crossover
+    signals will be similar to those generated using momentum oscillators. Therefore,
+    chartists need to look elsewhere for confirmation help. Volume-based indicators,
+    basic trend analysis, and [chart patterns](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
+    "chart_school:chart_analysis:chart_patterns") can help distinguish strong crossover
+    signals from weak crossover signals. For example, chartists can focus on +DI buy
+    signals when the bigger trend is up and -DI sell signals when the bigger trend
+    is down.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: SharpCharts users can plot these three directional movement indicators by selecting
+    Average Directional Index (ADX) from the indicator dropdown list. By default,
+    the ADX line will be in black, the Plus Directional Indicator (+DI) in green and
+    the Minus Directional Indicator (-DI) in red. This makes it easy to identify directional
+    indicator crosses. While ADX can be plotted above, below or behind the main price
+    plot, it is recommended to plot above or below because there are three lines involved.
+    A horizontal line can be added to help identify ADX moves. The chart example below
+    also shows the 50-day SMA and Parabolic SAR plotted behind the price plot. The
+    moving average is used to filter signals. Only buy signals are used when trading
+    above the 50-day [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages"). Once initiated, the Parabolic
+    SAR can be used to set stops. [Click here](http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=6&dy=0&id=p00212055984&listNum=30&a=224849203
+    "http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=6&dy=0&id=p00212055984&listNum=30&a=224849203")
+    for a live example of ADX.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/087aa74cee0a8201b012f0e546dff45e.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](../Images/f07ddbee5e38107caeab5b3fe20a8593.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Overall Uptrend with +DI Crossing above -DI
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with stocks that average 100,000 shares daily volume and have
+    an average closing price above 10\. An uptrend is present when trading above the
+    50-day SMA. A buy signal is possible when ADX is above 20\. This signal materializes
+    when +DI moves above -DI.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: Overall Downtrend with -DI Crossing above +DI
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with stocks that average 100,000 shares daily volume and have
+    an average closing price above 10\. A downtrend is present when trading below
+    the 50-day SMA. A sell signal is possible when ADX is above 20\. This signal materializes
+    when -DI moves above +DI.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE3]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Average Directional Index, Plus DI
+    and Minus DI scans, please see our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#average_directional_indicator
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#average_directional_indicator")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* * *'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additional Resources
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Stocks & Commodities Magazine Articles
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '**[The Average Directional Movement Index (ADX) by Thom Hartle](http://stockcharts.com/h-mem/tascredirect.html?artid=\V09\C03\ADX.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V09\C03\ADX.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Feb 1991 - Stocks & Commodities V. 9:3 (101-102)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[How the Pros Use Average Directional Index by Barbara Star, PhD.](http://stockcharts.com/h-mem/tascredirect.html?artid=\V17\C10\076HOW.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V17\C10\076HOW.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sep 1999 - Stocks & Commodities
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* * *'
+  prefs: []
+  type: TYPE_NORMAL

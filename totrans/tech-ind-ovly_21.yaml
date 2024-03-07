@@ -1,0 +1,234 @@
+- en: '%B Indicator [ChartSchool]'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[%B Indicator](#b_indicator)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Signals: Overbought/Oversold](#signalsoverbought_oversold)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Signals: Trend Identification](#signalstrend_identification)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[%B Uptrend Scan](#b_uptrend_scan)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[%B Downtrend Scan](#b_downtrend_scan)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '%B quantifies a security''s price relative to the upper and lower Bollinger
+    Band. There are six basic relationship levels:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '%B equals 1 when price is at the upper band'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '%B equals 0 when price is at the lower band'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '%B is above 1 when price is above the upper band'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '%B is below 0 when price is below the lower band'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '%B is above .50 when price is above the middle band (20-day SMA)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '%B is below .50 when price is below the middle band (20-day SMA)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: The default setting for %B is based on the default setting for Bollinger Bands
+    (20,2). The bands are set 2 standard deviations above and below the 20-day simple
+    [moving average](/school/doku.php?id=chart_school:glossary_m#moving_average_ma
+    "chart_school:glossary_m"), which is also the middle band. Security price is the
+    close or the last trade.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Signals: Overbought/Oversold'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '%B can be used to identify [overbought](/school/doku.php?id=chart_school:glossary_o#overbought
+    "chart_school:glossary_o") and [oversold](/school/doku.php?id=chart_school:glossary_o#oversold
+    "chart_school:glossary_o") situations. However, it is important to know when to
+    look for overbought readings and when to look for oversold readings. As with most
+    momentum oscillators, it is best to look for short-term oversold situations when
+    the medium-term trend is up and short-term overbought situations when the medium-term
+    trend is down. In other words, look for opportunities in the direction of the
+    bigger trend, such as a pullback within a bigger uptrend. Define the bigger trend
+    before looking for overbought or oversold readings.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Chart 1 shows Apple (AAPL) within a strong uptrend. Notice how %B moved above
+    1 several times, but did not even come close to 0\. Even though %B moved above
+    1 numerous times, these “overbought” readings did not produce good sell signals.
+    Pullbacks were shallow as Apple reversed well above the lower band and resumed
+    its uptrend. John Bollinger refers to “walking the band” during strong trends.
+    In a strong uptrend, prices can walk up the upper band and rarely touch the lower
+    band. Conversely, prices can walk down the lower band and rarely touch the upper
+    band in a strong downtrend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 1](../Images/c4fa534a5d5084d8eec51018e540dc06.jpg "Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: After identifying a bigger uptrend, %B can be considered oversold when it moves
+    to zero or below. Remember, %B moves to zero when price hits the lower band and
+    below zero when price moves below the lower band. This represents a move that
+    is 2 standard deviations below the 20-day moving average. Chart 2 shows the Nasdaq
+    100 ETF (QQQQ) within an uptrend that began in March 2009\. %B moved below zero
+    three times during this uptrend. The oversold readings in early July and early
+    November provided good entry points to partake in the bigger uptrend (green arrows).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 2](../Images/52356e78881d017a2e0ca7130dd14ba3.jpg "Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Signals: Trend Identification'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: John Bollinger described a trend-following system using %B with the Money Flow
+    Index (MFI). An uptrend begins when %B is above .80 and MFI(10) is above 80\.
+    MFI is bound between zero and one hundred. A move above 80 places MFI(10) in the
+    upper 20% of its range, which is a strong reading. Downtrends are identified when
+    %B is below .20 and MFI(10) is below 20\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Chart 3 shows FedEx (FDX) with %B and MFI(10). An uptrend started in late July
+    when %B was above .80 and MFI was above 80\. This uptrend was subsequently affirmed
+    with two more signals in early September and mid-November. While these signals
+    were good for trend identification, traders would likely have had issues with
+    the risk-reward ratio after such big moves. It takes a substantial price surge
+    to push %B above .80 and MFI(10) above 80 at the same time. Traders might consider
+    using this method to identify the trend and then look for appropriate overbought
+    or oversold levels for better entry points.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 3](../Images/399aab008a29a4f5157274f8fd11b0d7.jpg "Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '%B quantifies the relationship between price and Bollinger Bands. Readings
+    above .80 indicate that price is near the upper band. Readings below .20 indicate
+    that price is near the lower band. Surges towards the upper band show strength,
+    but can sometimes be interpreted as overbought. Plunges to the lower band show
+    weakness, but can sometimes be interpreted as oversold. A lot depends on the underlying
+    trend and other indicators. While %B can have some value on its own, it is best
+    when used in conjunction with other indicators or price analysis. [Click here](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p62195116429&listNum=61&a=259167452
+    "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p62195116429&listNum=61&a=259167452")
+    for a live chart.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '%B can be found in the indicator list on SharpCharts. The default parameters
+    (20,2) are based on the default parameters for Bollinger Bands. These can be changed
+    accordingly. 20 represents the simple moving average. 2 represents the number
+    of standard deviations for the upper and lower band. %B can be positioned above,
+    below or behind the price plot. [Click here](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p62195116429&listNum=61&a=259167452
+    "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&yr=0&mn=6&dy=0&id=p62195116429&listNum=61&a=259167452")
+    to see a live example of %B.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 4](../Images/425ebea37a0c8a5ab7614f2e902ca3c7.jpg "Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '%B Uptrend Scan'
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan filters out stocks where %B is above .80 and MFI just crossed above
+    80\. According to Bollinger, these stocks could be starting new up swings. This
+    scan is just a starting point. Further refinement and analysis are required.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: '%B Downtrend Scan'
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan filters out stocks where %B is below .20 and MFI just crossed below
+    20\. According to Bollinger, these stocks could be starting new down swings. This
+    scan is just a starting point. Further refinement and analysis are required.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for %B scans, please see our [Scanning
+    Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_s_b_indicator
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#bollinger_s_b_indicator")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL

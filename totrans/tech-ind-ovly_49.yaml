@@ -1,0 +1,539 @@
+- en: Stochastic Oscillator [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Stochastic Oscillator](#stochastic_oscillator)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Fast, Slow or Full](#fast_slow_or_full)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overbought Oversold](#overbought_oversold)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bull Bear Divergences](#bull_bear_divergences)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bull Bear Set-ups](#bull_bear_set-ups)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Stochastic Oscillator Oversold Upturn](#stochastic_oscillator_oversold_upturn)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Stochastic Oscillator Overbought Downturn](#stochastic_oscillator_overbought_downturn)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Additional Resources](#additional_resources)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Developed by George C. Lane in the late 1950s, the Stochastic Oscillator is
+    a momentum indicator that shows the location of the close relative to the high-low
+    range over a set number of periods. According to an interview with Lane, the Stochastic
+    Oscillator “doesn't follow price, it doesn't follow volume or anything like that.
+    It follows the speed or the momentum of price. As a rule, the momentum changes
+    direction before price.” As such, bullish and bearish divergences in the Stochastic
+    Oscillator can be used to foreshadow reversals. This was the first, and most important,
+    signal that Lane identified. Lane also used this oscillator to identify bull and
+    bear set-ups to anticipate a future reversal. Because the Stochastic Oscillator
+    is range bound, is also useful for identifying overbought and oversold levels.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: The default setting for the Stochastic Oscillator is 14 periods, which can be
+    days, weeks, months or an intraday timeframe. A 14-period %K would use the most
+    recent close, the highest high over the last 14 periods and the lowest low over
+    the last 14 periods. %D is a 3-day simple [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") of %K. This line is plotted
+    alongside %K to act as a signal or trigger line.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Stochastics - Spreadsheet 1](../Images/edbf044b998165c21ce3d23c9a0ef7b3.jpg
+    "Stochastics - Spreadsheet 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Click here to download this spreadsheet example.](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:stochastic_oscillator:cs-soo.xls
+    "chart_school:technical_indicators_and_overlays:stochastic_oscillator:cs-soo.xls
+    (19 KB)")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Stochastics - Chart 1](../Images/a0988553f178685a752a2cb61495ffc2.jpg "Stochastics
+    - Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Stochastic Oscillator measures the level of the close relative to the high-low
+    range over a given period of time. Assume that the highest high equals 110, the
+    lowest low equals 100 and the close equals 108\. The high-low range is 10, which
+    is the denominator in the %K formula. The close less the lowest low equals 8,
+    which is the numerator. 8 divided by 10 equals .80 or 80%. Multiply this number
+    by 100 to find %K %K would equal 30 if the close was at 103 (.30 x 100). The Stochastic
+    Oscillator is above 50 when the close is in the upper half of the range and below
+    50 when the close is in the lower half. Low readings (below 20) indicate that
+    price is near its low for the given time period. High readings (above 80) indicate
+    that price is near its high for the given time period. The IBM example above shows
+    three 14-day ranges (yellow areas) with the closing price at the end of the period
+    (red dotted) line. The Stochastic Oscillator equals 91 when the close was at the
+    top of the range. The Stochastic Oscillator equals 15 when the close was near
+    the bottom of the range. The close equals 57 when the close was in the middle
+    of the range.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fast, Slow or Full
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: There are three versions of the Stochastic Oscillator available on SharpCharts.
+    The Fast Stochastic Oscillator is based on George Lane's original formulas for
+    %K and %D. %K in the fast version that appears rather choppy. %D is the 3-day
+    SMA of %K. In fact, Lane used %D to generate buy or sell signals based on bullish
+    and bearish divergences. Lane asserts that a %D divergence is the “only signal
+    which will cause you to buy or sell.” Because %D in the Fast Stochastic Oscillator
+    is used for signals, the Slow Stochastic Oscillator was introduced to reflect
+    this emphasis. The Slow Stochastic Oscillator smooths %K with a 3-day SMA, which
+    is exactly what %D is in the Fast Stochastic Oscillator. Notice that %K in the
+    Slow Stochastic Oscillator equals %D in the Fast Stochastic Oscillator (chart
+    2).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Stochastics - Chart 2](../Images/43ef6d88eb9893dd076f967fa05a93e3.jpg "Stochastics
+    - Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Fast Stochastic Oscillator:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fast %K = %K basic calculation
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Fast %D = 3-period SMA of Fast %K
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Slow Stochastic Oscillator:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Slow %K = Fast %K smoothed with 3-period SMA
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Slow %D = 3-period SMA of Slow %K
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'The Full Stochastic Oscillator is a fully customizable version of the Slow
+    Stochastic Oscillator. Users can set the look-back period, the number of periods
+    to slow %K and the number of periods for the %D moving average. The default parameters
+    were used in these examples: Fast Stochastic Oscillator (14,3), Slow Stochastic
+    Oscillator (14,3) and Full Stochastic Oscillator (14,3,3).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Full Stochastic Oscillator:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Full %K = Fast %K smoothed with X-period SMA
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Full %D = X-period SMA of Full %K
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Overbought Oversold
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: As a [bound oscillator](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#banded_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators"),
+    the Stochastic Oscillator makes it easy to identify overbought and oversold levels.
+    The oscillator ranges from zero to one hundred. No matter how fast a security
+    advances or declines, the Stochastic Oscillator will always fluctuate within this
+    range. Traditional settings use 80 as the overbought threshold and 20 as the oversold
+    threshold. These levels can be adjusted to suit analytical needs and security
+    characteristics. Readings above 80 for the 20-day Stochastic Oscillator would
+    indicate that the underlying security was trading near the top of its 20-day high-low
+    range. Readings below 20 occur when a security is trading at the low end of its
+    high-low range.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Before looking at some chart examples, it is important to note that overbought
+    readings are not necessarily bearish. Securities can become overbought and remain
+    overbought during a strong uptrend. Closing levels that are consistently near
+    the top of the range indicate sustained buying pressure. In a similar vein, oversold
+    readings are not necessarily bullish. Securities can also become oversold and
+    remain oversold during a strong downtrend. Closing levels consistently near the
+    bottom of the range indicate sustained selling pressure. It is, therefore, important
+    to identify the bigger trend and trade in the direction of this trend. Look for
+    occasional oversold readings in an uptrend and ignore frequent overbought readings.
+    Similarly, look for occasional overbought readings in a strong downtrend and ignore
+    frequent oversold readings.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Chart 3 shows Yahoo! (YHOO) with the Full Stochastic Oscillator (20,5,5). A
+    longer look-back period (20 days versus 14) and longer moving averages for smoothing
+    (5 versus 3) produce a less sensitive oscillator with fewer signals. Yahoo was
+    trading between 14 and 18 from July 2009 until April 2010\. Such trading ranges
+    are well suited for the Stochastic Oscillator. Dips below 20 warn of oversold
+    conditions that could foreshadow a bounce. Moves above 80 warn of overbought conditions
+    that could foreshadow a decline. Notice how the oscillator can move above 80 and
+    remain above 80 (orange highlights). Similarly, the oscillator moved below 20
+    and sometimes remained below 20\. The indicator is both overbought AND strong
+    when above 80\. A subsequent move below 80 is needed to signal some sort of reversal
+    or failure at resistance (red dotted lines). Conversely, the oscillator is both
+    oversold and weak when below 20\. A move above 20 is needed to show an actual
+    upturn and successful support test (green dotted lines).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Stochastics - Chart 3](../Images/be6a72cac37f0c5eefe8d8694f4d0f78.jpg "Stochastics
+    - Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 4 shows Crown Castle (CCI) with a breakout in July to start an uptrend.
+    The Full Stochastic Oscillator (20,5,5) was used to identify oversold readings.
+    Overbought readings were ignored because the bigger trend was up. Trading in the
+    direction of the bigger trend improves the odds. The Full Stochastic Oscillator
+    moved below 20 in early September and early November. Subsequent moves back above
+    20 signaled an upturn in prices (green dotted line) and continuation of the bigger
+    uptrend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Stochastics - Chart 4](../Images/94b4d95dcc18513dcd86ecc95336365e.jpg "Stochastics
+    - Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 5 shows Autozone (AZO) with a support break in May 2009 that started a
+    downtrend. With a downtrend in force, the Full Stochastic Oscillator (10,3,3)
+    was used to identify overbought readings to foreshadow a potential reversal. Oversold
+    readings were ignored because of the bigger downtrend. The shorter look-back period
+    (10 versus 14) increases the sensitivity of the oscillator for more overbought
+    readings. For reference, the Full Stochastic Oscillator (20,5,5) is also shown.
+    Notice that this less sensitive version did not become overbought in August, September,
+    and October. It is sometimes necessary to increase sensitivity to generate signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Stochastics - Chart 5](../Images/4f60486f984802f233d514fdbf69c7ad.jpg "Stochastics
+    - Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: Bull Bear Divergences
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '[Divergences](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#positive_and_negative_divergences
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")
+    form when a new high or low in price is not confirmed by the Stochastic Oscillator.
+    A bullish divergence forms when price records a lower low, but the Stochastic
+    Oscillator forms a higher low. This shows less downside momentum that could foreshadow
+    a bullish reversal. A bearish divergence forms when price records a higher high,
+    but the Stochastic Oscillator forms a lower high. This shows less upside momentum
+    that could foreshadow a bearish reversal. Once a divergence takes hold, chartists
+    should look for a confirmation to signal an actual reversal. A bearish divergence
+    can be confirmed with a support break on the price chart or a Stochastic Oscillator
+    break below 50, which is the centerline. A bullish divergence can be confirmed
+    with a resistance break on the price chart or a Stochastic Oscillator break above
+    50\.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 50 is an important level to watch. The Stochastic Oscillator moves between zero
+    and one hundred, which makes 50 the centerline. Think of it as the 50-yard line
+    in football. The offense has a higher chance of scoring when it crosses the 50-yard
+    line. The defense has an edge as long as it prevents the offense from crossing
+    the 50-yard line. A Stochastic Oscillator cross above 50 signals that prices are
+    trading in the upper half of their high-low range for the given look-back period.
+    This suggests that the cup is half full. Conversely, a cross below 50 means that
+    prices are trading in the bottom half of the given look-back period. This suggests
+    that the cup is half empty.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Chart 6 shows International Gaming Tech (IGT) with a bullish divergence in February-March
+    2010\. Notice how the stock moved to a new low, but the Stochastic Oscillator
+    formed a higher low. There are three steps to confirming this higher low. The
+    first is a signal line cross and/or move back above 20\. A signal line cross occurs
+    when %K (black) crosses %D (red). This provides the earliest entry possible. The
+    second is a move above 50, which puts prices in the upper half of the Stochastic
+    range. The third is a resistance breakout on the price chart. Notice how the Stochastic
+    Oscillator moved above 50 in late March and remained above 50 until late May.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Stochastics - Chart 6](../Images/f9c66a249f5e59c317d0addbc14d298d.jpg "Stochastics
+    - Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: Chart 7 shows Kohls (KSS) with a bearish divergence in April 2010\. The stock
+    moved to higher highs in early and late April, but the Stochastic Oscillator peaked
+    in late March and formed lower highs. The signal line crosses and moves below
+    80 did not provide good early signals in this case because KSS kept moving higher.
+    The Stochastic Oscillator moved below 50 for the second signal and the stock broke
+    support for the third signal. As KSS shows, early signals are not always clean
+    and simple. Signal line crosses, moves below 80, and moves above 20 are frequent
+    and prone to whipsaw. Even after KSS broke support and the Stochastic Oscillator
+    moved below 50, the stock bounced back above 57 and the Stochastic Oscillator
+    bounced back above 50 before the stock continued sharply lower.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Stochastics - Chart 7](../Images/913e794169804c32024d6589b9bbff3f.jpg "Stochastics
+    - Chart 7")'
+  prefs: []
+  type: TYPE_IMG
+- en: Bull Bear Set-ups
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: George Lane identified another form of divergence to predict bottoms or tops.
+    A bull set-up is basically the inverse of a bullish divergence. The underlying
+    security forms a lower high, but the Stochastic Oscillator forms a higher high.
+    Even though the stock could not exceed its prior high, the higher high in the
+    Stochastic Oscillator shows strengthening upside momentum. The next decline is
+    then expected to result in a tradable bottom. Chart 8 shows Network Appliance
+    (NTAP) with a bull set-up in June 2009\. The stock formed a lower high as the
+    Stochastic Oscillator forged a higher high. This higher high shows strength in
+    upside momentum. Remember that this is a set-up, not a signal. The set-up foreshadows
+    a tradable low in the near future. NTAP declined below its June low and the Stochastic
+    Oscillator moved below 20 to become oversold. Traders could have acted when the
+    Stochastic Oscillator moved above its signal line, above 20 or above 50\. Alternatively,
+    NTAP subsequently broke resistance with a strong move.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Stochastics - Chart 8](../Images/7fccae9b26aa80abc74306eee01ddd21.jpg "Stochastics
+    - Chart 8")'
+  prefs: []
+  type: TYPE_IMG
+- en: A bear set-up occurs when the security forms a higher low, but the Stochastic
+    Oscillator forms a lower low. Even though the stock held above its prior low,
+    the lower low in the Stochastic Oscillator shows increasing downside momentum.
+    The next advance is expected to result in an important peak. Chart 9 shows Motorola
+    (MOT) with a bear set-up in November 2009\. The stock formed a higher low in late-November
+    and early December, but the Stochastic Oscillator formed a lower low with a move
+    below 20\. This showed strong downside momentum. The subsequent bounce did not
+    last long as the stock quickly peaked. Notice that the Stochastic Oscillator did
+    not make it back above 80 and turned down below its signal line in mid-December.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Stochastics - Chart 9](../Images/3ad2c8e7cb901c7385207981bf9452dd.jpg "Stochastics
+    - Chart 9")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: While momentum oscillators are best suited for trading ranges, they can also
+    be used with securities that trend, provided the trend takes on a zigzag format.
+    Pullbacks are part of uptrends that zigzag higher. Bounces are part of downtrends
+    that zigzag lower. In this regard, the Stochastic Oscillator can be used to identify
+    opportunities in harmony with the bigger trend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The indicator can also be used to identify turns near support or resistance.
+    Should a security trade near support with an oversold Stochastic Oscillator, look
+    for a break above 20 to signal an upturn and successful support test. Conversely,
+    should a security trade near resistance with an overbought Stochastic Oscillator,
+    look for a break below 80 to signal a downturn and resistance failure.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The settings on the Stochastic Oscillator depend on personal preferences, trading
+    style, and timeframe. A shorter look-back period will produce a choppy oscillator
+    with many overbought and oversold readings. A longer look-back period will provide
+    a smoother oscillator with fewer overbought and oversold readings.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Like all technical indicators, it is important to use the Stochastic Oscillator
+    in conjunction with other technical analysis tools. Volume, support/resistance,
+    and breakouts can be used to confirm or refute signals produced by the Stochastic
+    Oscillator.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'As noted above, there are three versions of the Stochastic Oscillator available
+    as an indicator on SharpCharts. The default settings are as follows: Fast Stochastic
+    Oscillator (14,3), Slow Stochastic Oscillator (14,3) and Full Stochastic Oscillator
+    (14,3,3). The look-back period (14) is used for the basic %K calculation. Remember,
+    %K in the Fast Stochastic Oscillator is unsmoothed and %K in the Slow Stochastic
+    Oscillator is smoothed with a 3-day SMA. The “3” in the Fast and Slow Stochastic
+    Oscillator settings (14,3) sets the moving average period for %D. Chartists looking
+    for maximum flexibility can simply choose the Full Stochastic Oscillator to set
+    the look-back period, the smoothing factor for %K and the moving average for %D.
+    The indicator can be placed above, below or behind the actual price plot. Placing
+    the Stochastic Oscillator behind the price allows users to easily match indicator
+    swings with price swings. [Click here for a live example](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p82180859243&listNum=30&a=201659153
+    "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p82180859243&listNum=30&a=201659153").'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Stochastics - Chart 10](../Images/0d677db6645a73b48fac77b013b14a53.jpg "Stochastics
+    - Chart 10")]'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Stochastics - SharpCharts](../Images/3761fcf544476c52205492714f5c5cdf.jpg
+    "Stochastics - SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Stochastic Oscillator Oversold Upturn
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with stocks that are trading above their 200-day moving average
+    to focus on those in a bigger uptrend. Of these, the scan then looks for stocks
+    with a Stochastic Oscillator that turned up from an oversold level (below 20).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Stochastic Oscillator Overbought Downturn
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with stocks that are trading below their 200-day moving average
+    to focus on those in a bigger downtrend. Of these, the scan then looks for stocks
+    with a Stochastic Oscillator that turned down after an overbought reading (above
+    80).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Stochastic Oscillator scans, please
+    see our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#stochastic_oscillators
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#stochastic_oscillators")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Murphy's book has a chapter devoted to momentum oscillators and their various
+    uses. Murphy covers the pros and cons as well as some examples specific to the
+    Stochastic Oscillator.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Pring's book shows the basics of momentum indicators by covering divergences,
+    crossovers, and other signals. There are two more chapters covering specific momentum
+    indicators with plenty of examples.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis of the Financial Markets** John J. Murphy | **Technical
+    Analysis Explained** Martin Pring |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '* * *'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additional Resources
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Stocks & Commodities Magazine Articles
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '**[The Stochastic Oscillator by Joe Luisi](http://stockcharts.com/h-mem/tascredirect.html?artid=\V15\C12\THESTOC.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V15\C12\THESTOC.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Nov 1997 - Stocks & Commodities
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Candlesticks And Stochastics by Greg Morris](http://stockcharts.com/h-mem/tascredirect.html?artid=\V09\C08\CANDLES.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V09\C08\CANDLES.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Jul 1991 - Stocks & Commodities
+  prefs: []
+  type: TYPE_NORMAL

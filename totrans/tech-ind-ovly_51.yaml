@@ -1,0 +1,366 @@
+- en: TRIX [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[TRIX](#trix)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Signal Line Crossovers](#signal_line_crossovers)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Centerline Crossovers](#centerline_crossovers)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Divergences](#divergences)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[TRIX Bullish Signal Line Cross](#trix_bullish_signal_line_cross)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[TRIX Bearish Signal Line Cross](#trix_bearish_signal_line_cross)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: TRIX is a momentum oscillator that displays the percent [rate of change](/school/doku.php?id=chart_school:technical_indicators:rate_of_change_roc_and_momentum
+    "chart_school:technical_indicators:rate_of_change_roc_and_momentum") of a triple
+    exponentially smoothed moving average. It was developed in the early 1980's by
+    Jack Hutson, an editor for *Technical Analysis of Stocks and Commodities* magazine.
+    With its triple smoothing, TRIX is designed to filter insignificant price movements.
+    Chartists can use TRIX to generate signals similar to MACD. A signal line can
+    be applied to look for signal line crossovers. A directional bias can be determined
+    with the absolute level. Bullish and bearish divergences can be used to anticipate
+    reversals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: TRIX is the 1-period percentage rate-of-change for a triple smoothed exponential
+    [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") (EMA), which is an EMA of
+    an EMA of an EMA. Here is a breakdown of the steps involved for a 15 period TRIX.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 1\. Single-Smoothed EMA = 15-period EMA of the closing price
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 2\. Double-Smoothed EMA = 15-period EMA of Single-Smoothed EMA
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 3\. Triple-Smoothed EMA = 15-period EMA of Double-Smoothed EMA
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 4\. TRIX = 1-period percent change in Triple-Smoothed EMA
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The table and chart below provide examples for the 15-day EMA, double-smoothed
+    EMA and triple-smoothed EMA. Notice how each EMA lags price a little more. Even
+    though exponential moving averages put more weight on recent data, they still
+    contain past data that produces a lag. This lag increases with each smoothing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![TRIX  -  Table 1](../Images/05ee67d08a8d798e1eba1ee33c927d0b.jpg "TRIX  -  Table
+    1")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![TRIX - Chart 1](../Images/87ff30cd9841aaea46905e4876e4b919.jpg "TRIX - Chart
+    1")'
+  prefs: []
+  type: TYPE_IMG
+- en: The blue line is the price plot for SPY. It is clearly the most jagged (volatile)
+    of the four lines. The red line is the 15-day EMA, which follows the price plot
+    the closest. The green line is the double-smoothed EMA and the purple line is
+    the triple-smoothed EMA. Notice how these two lines turn flatter as the lag increases.
+  prefs: []
+  type: TYPE_NORMAL
+- en: TRIX is negative as long as the triple-smoothed 15-day EMA is moving lower.
+    TRIX turns positive when the triple-smoothed 15-day EMA turns up. The extra smoothing
+    ensures that upturns and downturns are kept to a minimum. In other words, it takes
+    more than a one-day advance to reverse a downtrend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![TRIX - Chart 2](../Images/15a026511c999fc032c9af5332bfb739.jpg "TRIX - Chart
+    2")'
+  prefs: []
+  type: TYPE_IMG
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: TRIX (15,9) is quite similar to [MACD (12,26,9)](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd
+    "chart_school:technical_indicators:moving_average_convergence_divergence_macd").
+    Both are momentum oscillators that fluctuate above and below the zero line. Both
+    have signal lines based on a 9-day EMA. Most notably, both lines have similar
+    shapes, signal line crossovers, and centerline crosses. The biggest difference
+    between TRIX and MACD is that TRIX is smoother than MACD. The TRIX lines are less
+    jagged and tend to turn a bit later.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![TRIX - Chart 3](../Images/9de115e687509eddb31acc457494987f.jpg "TRIX - Chart
+    3")'
+  prefs: []
+  type: TYPE_IMG
+- en: With the similarities outweighing the differences, signals applicable to MACD
+    are also applicable to TRIX. There are three main signals to watch for. First,
+    signal line crossovers are the most common signals. These indicate a change in
+    direction for TRIX and price momentum. A cross above the signal line is the first
+    bullish indication, while a cross below is the first negative implication. Second,
+    centerline crossovers provide chartists with a general momentum bias. The triple-smoothed
+    moving average is rising when TRIX is positive and falling when negative. Similarly,
+    momentum favors the bulls when TRIX is positive and the bears when negative. Third,
+    bullish and bearish divergences can alert chartists of a possible trend reversal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Signal Line Crossovers
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Signal line crossovers are the most common TRIX signals. The signal line is
+    a 9-day EMA of the TRIX. As a moving average of the indicator, it trails TRIX
+    and makes it easier to spot turns. A bullish crossover occurs when TRIX turns
+    up and crosses above the signal line. A bearish crossover occurs when TRIX turns
+    down and crosses below the signal line. Crossovers can last a few days or a few
+    weeks, it all depends on the strength of the move. Due diligence is required before
+    relying on these frequent signals. Volatility in the underlying security can also
+    increase the number of crossovers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![TRIX - Chart 4](../Images/357a48170163889d4a235ab720299530.jpg "TRIX - Chart
+    4")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows Intel (INTC) and TRIX with six signal line crosses in
+    a seven-month period. That is almost one per month. There were three good signals
+    and three bad signals resulting in whipsaws (yellow area). The bullish crossover
+    in June occurred near the top, the bearish crossover in late June occurred near
+    the low and the bullish crossover in July occurred near the top. In the absence
+    of a strong move, the lag from the triple-smoothed EMA results in late signals
+    that produce losses. The bearish signal line cross in August foreshadowed a sharp
+    decline and the bullish signal line cross in mid-September foreshadowed a strong
+    advance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Centerline Crossovers
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The [centerline crossover](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#centerline_crossovers
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")
+    indicates when the cup is half full (bullish) or half empty (bearish). Think of
+    the centerline as the 50-yard line in a football game. The offense has the edge
+    after crossing the 50 (midpoint), while the defense has the edge as long as the
+    ball remains beyond the 50\. As with signal line crossovers, these centerline
+    crossovers produce both good signals and bad signals. The key, as always, is to
+    minimize losses on the bad signals and maximize gains with the good signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![TRIX - Chart 5](../Images/e0b6d47d6bb925c02619d2fd9e91cd34.jpg "TRIX - Chart
+    5")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows Raytheon (RTN) with five signals over a 16 month period.
+    The first three were bad because the stock changed direction soon after the signals.
+    In other words, a trend failed to take hold. The fourth signal (November 2009)
+    coincided with a resistance breakout and foreshadowed a 20% advance. Great signal!
+    This is also a classic example of combining indicator signals with chart signals
+    for reinforcement. The resistance breakout on the price chart and the centerline
+    cross for the TRIX reinforced each other. TRIX produced a nice bearish signal
+    in May 2010 as RTN subsequently declined around 20%.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Divergences
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Bullish and bearish divergences form when the security and the indicator do
+    not confirm one another. A bullish divergence forms when the security forges a
+    lower low, but the indicator forms a higher low. This higher low shows less downside
+    momentum that may foreshadow a bullish reversal. A bearish divergence forms when
+    the security forges a higher low, but the indicator forms a lower high. This lower
+    high shows waning upside momentum that can sometimes foreshadow a bearish reversal.
+    Before looking at a successful divergence, note the BHP Billiton (BHP) chart with
+    several unsuccessful divergences.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![TRIX - Chart 6](../Images/fd19580734c611a9a656a328d0f867ed.jpg "TRIX - Chart
+    6")'
+  prefs: []
+  type: TYPE_IMG
+- en: Bearish divergences do not work well in strong uptrends. Even though momentum
+    seems to be waning because the indicator is producing lower highs, momentum still
+    has a bullish bias as long as the indicator is above its centerline. Upward momentum
+    may be less positive, but it is still positive as long as the cup is half full.
+    The rise is just not as fast as before. The opposite is true for bullish divergences.
+    These do not work well in strong downtrends. Even though the indicator shows less
+    downside momentum with higher lows, downward momentum is still stronger than upward
+    momentum as long as the indicator remains below its centerline.
+  prefs: []
+  type: TYPE_NORMAL
+- en: When bullish and bearish divergences work, they do work great. The trick is
+    separating the bad signals from the good signals. The chart below shows eBay (EBAY)
+    with a successful bullish divergence. The stock moved to a lower low in early
+    July, but TRIX held well above its prior low and formed a bullish divergence.
+    The first potential confirmation came when TRIX moved above its signal line. However,
+    there were no confirmations on the chart at the time. These came a little later.
+    The green arrows show EBAY breaking chart resistance with good volume and TRIX
+    moving into positive territory. Even though confirmation occurred well off the
+    low, there were enough signs of strength to validate the breakout.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![TRIX - Chart 7](../Images/8e451fee6d5a1d1646e5cfc4cce0e111.jpg "TRIX - Chart
+    7")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: TRIX is an indicator that combines trend with momentum. The triple smoothed
+    moving average covers the trend, while the 1-period percentage change measures
+    momentum. In this regard, TRIX is similar to MACD and PPO. The standard setting
+    for TRIX is 15 for the triple smoothed EMA and 9 for the signal line. Chartists
+    looking for more sensitivity should try a shorter timeframe (5 versus 15). This
+    will make the indicator more volatile and better suited for centerline crossovers.
+    Chartists looking for less sensitivity should try a longer timeframe (45 versus
+    15). This will smooth the indicator and make it better suited for signal line
+    crossovers. As with all indicators, TRIX should be used in conjunction with other
+    aspects of technical analysis, such as [chart patterns](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
+    "chart_school:chart_analysis:chart_patterns").
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![TRIX - Chart 8](../Images/4bcf07a0c3254616188386f09c3fb2a5.jpg "TRIX - Chart
+    8")'
+  prefs: []
+  type: TYPE_IMG
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: TRIX can be set as an indicator above, below or behind a security's price plot.
+    It is easy to compare indicator/price movements when the indicator is placed behind
+    the price plot. Once the indicator is chosen from the dropdown list, the default
+    parameter setting appears (15,9). These parameters can be adjusted to increase
+    or decrease sensitivity. The signal line default is 9, which can also be adjusted.
+    [Click here for a live example of TRIX](http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=6&dy=0&id=p97840257416&listNum=30&a=218370394
+    "http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=6&dy=0&id=p97840257416&listNum=30&a=218370394").
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![TRIX - Chart 7](../Images/8e451fee6d5a1d1646e5cfc4cce0e111.jpg "TRIX - Chart
+    7")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: TRIX Bullish Signal Line Cross
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks that meet four criteria. First, they must be above
+    their 200-day moving average to be in an overall uptrend. Second, the TRIX must
+    be negative to signal a pullback. Third, the TRIX crossed its signal line and
+    turned up. Fourth, volume moved above the 250-day average to show an increase
+    in buying pressure.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: TRIX Bearish Signal Line Cross
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks that meet four criteria. First, they must be below
+    their 200-day moving average to be in an overall downtrend. Second, the TRIX must
+    be positive to signal a bounce. Third, the TRIX crossed its signal line and turned
+    down. Fourth, volume moved above the 250-day average to show an increase in selling
+    pressure.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for TRIX scans, please see our [Scanning
+    Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#trix
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#trix") in the Support
+    Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis - Power Tools for Active Investors** Gerald Appel |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/a2673256615cb182a677e60a34c2b755.jpg)](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors
+    "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors
+    "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors")
+    |'
+  prefs: []
+  type: TYPE_TB

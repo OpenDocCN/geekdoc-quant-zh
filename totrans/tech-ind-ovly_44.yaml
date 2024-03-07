@@ -1,0 +1,521 @@
+- en: Relative Strength Index (RSI) [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Relative Strength Index (RSI)](#relative_strength_index_rsi)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Parameters](#parameters)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overbought-Oversold](#overbought-oversold)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Divergences](#divergences)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Failure Swings](#failure_swings)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Trend ID](#trend_id)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Positive-Negative Reversals](#positive-negative_reversals)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[RSI Oversold in Uptrend](#rsi_oversold_in_uptrend)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[RSI Overbought in Downtrend](#rsi_overbought_in_downtrend)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Additional Resources](#additional_resources)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Developed by J. Welles Wilder, the Relative Strength Index (RSI) is a momentum
+    oscillator that measures the speed and change of price movements. RSI oscillates
+    between zero and 100\. Traditionally, and according to Wilder, RSI is considered
+    overbought when above 70 and oversold when below 30\. Signals can also be generated
+    by looking for divergences, failure swings, and centerline crossovers. RSI can
+    also be used to identify the general trend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: RSI is an extremely popular [momentum indicator](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")
+    that has been featured in a number of articles, interviews, and books over the
+    years. In particular, Constance Brown's book, Technical Analysis for the Trading
+    Professional, features the concept of bull market and bear market ranges for RSI.
+    Andrew Cardwell, Brown's RSI mentor, introduced positive and negative reversals
+    for RSI. In addition, Cardwell turned the notion of divergence, literally and
+    figuratively, on its head.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Wilder features RSI in his 1978 book, *New Concepts in Technical Trading Systems*.
+    This book also includes the Parabolic SAR, Average True Range and the Directional
+    Movement Concept (ADX). Despite being developed before the computer age, Wilder's
+    indicators have stood the test of time and remain extremely popular.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'To simplify the calculation explanation, RSI has been broken down into its
+    basic components: **RS**, **Average Gain** and **Average Loss**. This RSI calculation
+    is based on 14 periods, which is the default suggested by Wilder in his book.
+    Losses are expressed as positive values, not negative values.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The very first calculations for average gain and average loss are simple 14-period
+    averages.
+  prefs: []
+  type: TYPE_NORMAL
+- en: First Average Gain = Sum of Gains over the past 14 periods / 14\.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: First Average Loss = Sum of Losses over the past 14 periods / 14
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'The second, and subsequent, calculations are based on the prior averages and
+    the current gain loss:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Average Gain = [(previous Average Gain) x 13 + current Gain] / 14\.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Average Loss = [(previous Average Loss) x 13 + current Loss] / 14\.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Taking the prior value plus the current value is a smoothing technique similar
+    to that used in calculating an exponential moving average. This also means that
+    RSI values become more accurate as the calculation period extends. SharpCharts
+    uses at least 250 data points prior to the starting date of any chart (assuming
+    that much data exists) when calculating its RSI values. To exactly replicate our
+    RSI numbers, a formula will need at least 250 data points.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Wilder's formula normalizes RS and turns it into an oscillator that fluctuates
+    between zero and 100\. In fact, a plot of RS looks exactly the same as a plot
+    of RSI. The normalization step makes it easier to identify extremes because RSI
+    is range bound. RSI is 0 when the Average Gain equals zero. Assuming a 14-period
+    RSI, a zero RSI value means prices moved lower all 14 periods. There were no gains
+    to measure. RSI is 100 when the Average Loss equals zero. This means prices moved
+    higher all 14 periods. There were no losses to measure.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 1 - RSI RS Plots](../Images/61b11aed88f6f370b37f3f52e7b07289.jpg "Chart
+    1 - RSI RS Plots")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Chart 2 - RSI Spreadsheet](../Images/7eb6a69718d9d50b9ad18099cdb29f2c.jpg
+    "Chart 2 - RSI Spreadsheet")'
+  prefs: []
+  type: TYPE_IMG
+- en: Here's [an Excel Spreadsheet](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:relative_strength_in:cs-rsi.xls
+    "chart_school:technical_indicators_and_overlays:relative_strength_in:cs-rsi.xls
+    (27.5 KB)") that shows the start of an RSI calculation in action.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Note: The smoothing process affects RSI values. RS values are smoothed after
+    the first calculation. Average Loss equals the sum of the losses divided by 14
+    for the first calculation. Subsequent calculations multiply the prior value by
+    13, add the most recent value and then divide the total by 14\. This creates a
+    smoothing affect. The same applies to Average Gain. Because of this smoothing,
+    RSI values may differ based on the total calculation period. 250 periods will
+    allow for more smoothing than 30 periods and this will slightly affect RSI values.
+    Stockcharts.com goes back 250 days when possible. If Average Loss equals zero,
+    a “divide by zero” situation occurs for RS and RSI is set to 100 by definition.
+    Similarly, RSI equals 0 when Average Gain equals zero.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Parameters
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The default look-back period for RSI is 14, but this can be lowered to increase
+    sensitivity or raised to decrease sensitivity. 10-day RSI is more likely to reach
+    overbought or oversold levels than 20-day RSI. The look-back parameters also depend
+    on a security's volatility. 14-day RSI for internet retailer Amazon (AMZN) is
+    more likely to become overbought or oversold than 14-day RSI for Duke Energy (DUK),
+    a utility.
+  prefs: []
+  type: TYPE_NORMAL
+- en: RSI is considered overbought when above 70 and oversold when below 30\. These
+    traditional levels can also be adjusted to better fit the security or analytical
+    requirements. Raising overbought to 80 or lowering oversold to 20 will reduce
+    the number of overbought/oversold readings. Short-term traders sometimes use 2-period
+    RSI to look for overbought readings above 80 and oversold readings below 20\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Overbought-Oversold
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Wilder considered RSI [overbought](/school/doku.php?id=chart_school:glossary_o#overbought
+    "chart_school:glossary_o") above 70 and [oversold](/school/doku.php?id=chart_school:glossary_o#oversold
+    "chart_school:glossary_o") below 30\. Chart 3 shows McDonalds with 14-day RSI.
+    This chart features daily bars in gray with a 1-day SMA in pink to highlight closing
+    prices because RSI is based on closing prices. Working from left to right, the
+    stock became oversold in late July and found support around 44 (1). Notice that
+    the bottom **evolved** after the oversold reading. The stock did not bottom as
+    soon as the oversold reading appeared. Bottoming can be a process. From oversold
+    levels, RSI moved above 70 in mid September to become overbought. Despite this
+    overbought reading, the stock did not decline. Instead, the stock stalled for
+    a couple weeks and then continued higher. Three more overbought readings occurred
+    before the stock finally peaked in December (2). Momentum oscillators can become
+    overbought (oversold) and remain so in a strong up (down) trend. The first three
+    overbought readings foreshadowed consolidations. The fourth coincided with a significant
+    peak. RSI then moved from overbought to oversold in January. The final bottom
+    did not coincide with the initial oversold reading as the stock ultimately bottomed
+    a few weeks later around 46 (3).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 3 - RSI Overbought Oversold](../Images/8b15124a83ee2c2e9142f4879270991a.jpg
+    "Chart 3 - RSI Overbought Oversold")'
+  prefs: []
+  type: TYPE_IMG
+- en: Like many momentum oscillators, overbought and oversold readings for RSI work
+    best when prices move sideways within a range. Chart 4 shows MEMC Electronics
+    (WFR) trading between 13.5 and 21 from April to September 2009\. The stock peaked
+    soon after RSI reached 70 and bottomed soon after the stock reached 30\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 4 - RSI Overbought Oversold](../Images/b672b9533477c26b5cf2653b2ec33b56.jpg
+    "Chart 4 - RSI Overbought Oversold")'
+  prefs: []
+  type: TYPE_IMG
+- en: Divergences
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: According to Wilder, divergences signal a potential reversal point because directional
+    momentum does not confirm price. A bullish divergence occurs when the underlying
+    security makes a lower low and RSI forms a higher low. RSI does not confirm the
+    lower low and this shows strengthening momentum. A bearish divergence forms when
+    the security records a higher high and RSI forms a lower high. RSI does not confirm
+    the new high and this shows weakening momentum. Chart 5 shows Ebay (EBAY) with
+    a bearish divergence in August-October. The stock moved to new highs in September-October,
+    but RSI formed lower highs for the bearish divergence. The subsequent breakdown
+    in mid October confirmed weakening momentum.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 5 - RSI Divergences](../Images/d404627511e3623b89d2b524a7634fba.jpg
+    "Chart 5 - RSI Divergences")'
+  prefs: []
+  type: TYPE_IMG
+- en: A bullish divergence formed in January-March. The bullish divergence formed
+    with eBay moving to new lows in March and RSI holding above its prior low. RSI
+    reflected less downside momentum during the February-March decline. The mid-March
+    breakout confirmed improving momentum. Divergences tend to be more robust when
+    they form after an overbought or oversold reading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Before getting too excited about divergences as great trading signals, it must
+    be noted that divergences are misleading in a strong trend. A strong uptrend can
+    show numerous bearish divergences before a top actually materializes. Conversely,
+    bullish divergences can appear in a strong downtrend - and yet the downtrend continues.
+    Chart 6 shows the S&P 500 ETF (SPY) with three bearish divergences and a continuing
+    uptrend. These bearish divergences may have warned of a short-term pullback, but
+    there was clearly no major trend reversal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 6 - RSI Divergences](../Images/ba10da814675364563daf3e16882982e.jpg
+    "Chart 6 - RSI Divergences")'
+  prefs: []
+  type: TYPE_IMG
+- en: Failure Swings
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Wilder also considered failure swings as strong indications of an impending
+    reversal. Failure swings are independent of price action. In other words, failure
+    swings focus solely on RSI for signals and ignore the concept of divergences.
+    A bullish failure swing forms when RSI moves below 30 (oversold), bounces above
+    30, pulls back, holds above 30 and then breaks its prior high. It is basically
+    a move to oversold levels and then a higher low above oversold levels. Chart 7
+    shows Research in Motion (RIMM) with 10-day RSI forming a bullish failure swing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 7 - RSI Failure Swing](../Images/c48d02342426484d3694723a688703bc.jpg
+    "Chart 7 - RSI Failure Swing")'
+  prefs: []
+  type: TYPE_IMG
+- en: A bearish failure swing forms when RSI moves above 70, pulls back, bounces,
+    fails to exceed 70 and then breaks its prior low. It is basically a move to overbought
+    levels and then a lower high below overbought levels. Chart 8 shows Texas Instruments
+    (TXN) with a bearish failure swing in May-June 2008\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 8 - RSI Failure Swing](../Images/5b448ef4251935e410308e94a36946ea.jpg
+    "Chart 8 - RSI Failure Swing")'
+  prefs: []
+  type: TYPE_IMG
+- en: Trend ID
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: In Technical Analysis for the Trading Professional, Constance Brown suggests
+    that oscillators do not travel between 0 and 100\. This also happens to be the
+    name of the first chapter. Brown identifies a bull market range and a bear market
+    for RSI. RSI tends to fluctuate between 40 and 90 in a bull market (uptrend) with
+    the 40-50 zones acting as support. These ranges may vary depending on RSI parameters,
+    strength of trend and volatility of the underlying security. Chart 9 shows 14-week
+    RSI for SPY during the bull market from 2003 until 2007\. RSI surged above 70
+    in late 2003 and then moved into its bull market range (40-90). There was one
+    overshoot below 40 in July 2004, but RSI held the 40-50 zone at least five times
+    from January 2005 until October 2007 (green arrows). In fact, notice that pullbacks
+    to this zone provided low risk entry points to participate in the uptrend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 9 - RSI Trend ID](../Images/7edeaa507a66377f687fdcb327ce056a.jpg "Chart
+    9 - RSI Trend ID")'
+  prefs: []
+  type: TYPE_IMG
+- en: On the flip side, RSI tends to fluctuate between 10 and 60 in a bear market
+    (downtrend) with the 50-60 zone acting as resistance. Chart 10 shows 14-day RSI
+    for the US Dollar Index ($USD) during its 2009 downtrend. RSI moved to 30 in March
+    to signal the start of a bear range. The 40-50 zone subsequently marked resistance
+    until a breakout in December.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 10 - RSI Trend ID](../Images/560366ecbcc73ffd4ad6448e2edb9411.jpg "Chart
+    10 - RSI Trend ID")'
+  prefs: []
+  type: TYPE_IMG
+- en: Positive-Negative Reversals
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Andrew Cardwell developed positive and negative reversals for RSI, which are
+    the opposite of bearish and bullish divergences. Cardwell's books are out of print,
+    but he does offer seminars detailing these methods. Constance Brown credits Andrew
+    Cardwell for her RSI enlightenment. Before discussing the reversal technique,
+    it should be noted that Cardwell's interpretation of divergences differs from
+    Wilder. Cardwell considered bearish divergences as bull market phenomenon. In
+    other words, bearish divergences are more likely to form in uptrends. Similarly,
+    bullish divergences are considered bear market phenomenon indicative of a downtrend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A positive reversal forms when RSI forges a lower low and the security forms
+    a higher low. This lower low is not at oversold levels, but usually somewhere
+    between 30 and 50\. Chart 11 shows MMM with a positive reversal forming in June
+    2009\. MMM broke resistance a few weeks later and RSI moved above 70\. Despite
+    weaker momentum with a lower low in RSI, MMM held above its prior low and showed
+    underlying strength. In essence, price action overruled momentum.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 11 - RSI Reversals](../Images/4b7e09558f3a383550a0715c7cdc782d.jpg
+    "Chart 11 - RSI Reversals")'
+  prefs: []
+  type: TYPE_IMG
+- en: A negative reversal is the opposite of a positive reversal. RSI forms a higher
+    high, but the security forms a lower high. Again, the higher high is usually just
+    below overbought levels in the 50-70 area. Chart 12 shows Starbucks (SBUX) forming
+    a lower high as RSI forms a higher high. Even though RSI forged a new high and
+    momentum was strong, the price action failed to confirm as lower high formed.
+    This negative reversal foreshadowed the big support break in late June and sharp
+    decline.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 12 - RSI Reversals](../Images/d7e1911adbb64175b757651d2d66ce32.jpg
+    "Chart 12 - RSI Reversals")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: RSI is a versatile momentum oscillator that has stood the test of time. Despite
+    changes in [volatility](/school/doku.php?id=chart_school:technical_indicators:standard_deviation_volatility
+    "chart_school:technical_indicators:standard_deviation_volatility") and the markets
+    over the years, RSI remains as relevant now as it was in Wilder's days. While
+    Wilder's original interpretations are useful to understanding the indicator, the
+    work of Brown and Cardwell takes RSI interpretation to a new level. Adjusting
+    to this level takes some rethinking on the part of the traditionally schooled
+    chartists. Wilder considers overbought conditions ripe for a reversal, but overbought
+    can also be a sign of strength. Bearish divergences still produce some good sell
+    signals, but chartists must be careful in strong trends when bearish divergences
+    are actually normal. Even though the concept of positive and negative reversals
+    may seem to undermine Wilder's interpretation, the logic makes sense and Wilder
+    would hardly dismiss the value of putting more emphasis on price action. Positive
+    and negative reversals put price action of the underlying security first and the
+    indicator second, which is the way it should be. Bearish and bullish divergences
+    place the indicator first and price action second. By putting more emphasis on
+    price action, the concept of positive and negative reversals challenges our thinking
+    towards momentum oscillators.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: RSI is available as an indicator for SharpCharts. Once selected, users can place
+    the indicator above, below or behind the underlying price plot. Placing RSI directly
+    on top of the price plot accentuates the movements relative to price action of
+    the underlying security. Users can apply “advanced options” to smooth the indicator
+    with a moving average or add a horizontal line to mark overbought or oversold
+    levels.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 13 - RSI SharpCharts](../Images/4942be02b895aa5fb43b0b72a842f274.jpg
+    "Chart 13 - RSI SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Chart 14 - RSI SharpCharts](../Images/ed24d6e03985fe73dad70255b8baf192.jpg
+    "Chart 14 - RSI SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: RSI Oversold in Uptrend
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks that are in an uptrend with oversold RSI. First, stocks
+    must be above their 200-day moving average to be in an overall uptrend. Second,
+    RSI must cross below 30 to become oversold.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: RSI Overbought in Downtrend
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks that are in a downtrend with overbought RSI turning
+    down. First, stocks must be below their 200-day moving average to be in an overall
+    downtrend. Second, RSI must cross above 70 to become overbought.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for RSI scans, please see our [Scanning
+    Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#relative_strength_index_rsi
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#relative_strength_index_rsi")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Constance Brown's book takes RSI to a new level with bull market and bear market
+    ranges, positive and negative reversals, and projections based on RSI. Some methods
+    of Andrew Cardwell, her RSI mentor, are also explained and refined in the book.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis for the Trading Professional** Constance Brown |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/68e1d0b6e06443cb595baa528172bcd0.jpg)](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional
+    "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional
+    "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '* * *'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additional Resources
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Stocks & Commodities Magazine Articles
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '**[The Relative Strength Index by Bruce Faber](http://stockcharts.com/h-mem/tascredirect.html?artid=\V12\C09\FABER.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V12\C09\FABER.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Aug 1994 - Stocks & Commodities V. 12:9 (381-384)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Improving the Win-Loss Ratio with the Relative Strength Index by Thomas
+    Bulkowski](http://stockcharts.com/h-mem/tascredirect.html?artid=\V16\C03\017WIN.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V16\C03\017WIN.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Feb 1998 - Stocks & Commodities V. 16:3 (111-121)
+  prefs: []
+  type: TYPE_NORMAL

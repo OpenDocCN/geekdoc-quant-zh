@@ -1,0 +1,381 @@
+- en: Ultimate Oscillator [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Ultimate Oscillator](#ultimate_oscillator)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Buy Signal](#buy_signal)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Sell Signal](#sell_signal)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Timeframes](#timeframes)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bullish Long-Term Cross](#bullish_long-term_cross)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bearish Long-Term Cross](#bearish_long-term_cross)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Additional Resources](#additional_resources)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Developed by Larry Williams in 1976 and featured in Stocks & Commodities Magazine
+    in 1985, the Ultimate Oscillator is a momentum oscillator designed to capture
+    momentum across three different timeframes. The multiple timeframe objective seeks
+    to avoid the pitfalls of other oscillators. Many [momentum oscillators](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")
+    surge at the beginning of a strong advance and then form a bearish divergence
+    as the advance continues. This is because they are stuck with one timeframe. The
+    Ultimate Oscillator attempts to correct this fault by incorporating longer timeframes
+    into the basic formula. Williams identified a buy signal a based on a bullish
+    divergence and a sell signal based on a bearish divergence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: There are quite a few steps involved in the Ultimate Oscillator (UO) calculation.
+    This example is based on the default settings (7,14,28). First, calculate Buying
+    Pressure (BP) to determine the overall direction of price action. Second, measure
+    Buying Pressure relative to the True Range (TR). This tells us the true magnitude
+    of a gain or loss. Third, create averages based on the three timeframes involved
+    (7,14,28). Fourth, create a weighted average of the three averages.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: Buying Pressure (BP) measures the level of the current close relative to the
+    current low or prior close, whichever is the lowest. True Range (TR) measures
+    the price range from the current high or prior close (whichever is highest) to
+    the current low or prior close (whichever is lowest). Both Buying Pressure and
+    True Range incorporate the prior close to account for possible gaps from one period
+    to the next. Buying Pressure is then shown relative to the True Range by dividing
+    the X-period sum of BP by the X-period Sum of True Range. Averages are created
+    for 7, 14 and 28 periods. These numbers correspond with the default parameters.
+    A weighted mean is then created by multiplying the shortest Average by 4, the
+    middle Average by 2 and the longest Average by 1\. These weighted amounts are
+    then summed and divided by the sum of the weightings (4+2+1).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Ultimate Oscillator- Spreadsheet](../Images/75cf3e5084a7859344fad15eba1c06e5.jpg
+    "Ultimate Oscillator- Spreadsheet")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Click here](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:ultimate_oscillator:cs-ultosc.xls
+    "chart_school:technical_indicators_and_overlays:ultimate_oscillator:cs-ultosc.xls
+    (41.5 KB)") for an Ultimate Oscillator calculation in an Excel Spreadsheet.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Ultimate Oscillator  -  Chart 1](../Images/881d6f7c3ce0a9992468abe01fe3f911.jpg
+    "Ultimate Oscillator  -  Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Buying Pressure and its relationship to the True Range forms the base for the
+    Ultimate Oscillator. Williams believes that the best way to measure Buying Pressure
+    is simply subtracting the Close from the Low or the Prior Close, whichever of
+    the two is the lowest. This will reflect the true magnitude of the advance, and
+    hence, buying pressure. The Ultimate Oscillator rises when Buying Pressure is
+    strong and falls when Buying Pressure is weak.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Ultimate Oscillator measures momentum for three distinct timeframes. Notice
+    that the second timeframe is double that of the first, and the third timeframe
+    is double that of the second. Even though the shortest timeframe carries the most
+    weight, the longest timeframe is not ignored and this should reduce the number
+    of false divergences. This is important because the basic buy signal is based
+    on a bullish divergence and the basic sell signal is based on a bearish divergence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Buy Signal
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: There are three steps to a buy signal. First, a [bullish divergence](/school/doku.php?id=chart_school:glossary_b#bullish_divergence
+    "chart_school:glossary_b") forms between the indicator and security price. This
+    means the Ultimate Oscillator forms a higher low as price forges a lower low.
+    The higher low in the oscillator shows less downside momentum. Second, the low
+    of the bullish divergence should be below 30\. This is to ensure that prices are
+    somewhat oversold or at a relative extremity. Third, the oscillator rises above
+    the high of the bullish divergence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Best Buy (BBY) is shown with the Ultimate Oscillator (7,14,28) becoming oversold
+    in late June and forming a large bullish divergence with a higher low in late
+    August. Technically, the indicator did not confirm the divergence until mid-September.
+    Technical analysis, however, requires a little flexibility. Chartists could have
+    used the move above 50 as a trigger for the Ultimate Oscillator instead. This
+    centerline acts as a bull-bear threshold for the indicator. The cup is half full
+    (bullish bias) when above and half empty (bearish bias) when below. Also notice
+    that the stock broke the June trend line and surged above short-term resistance
+    in early September for further confirmation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Ultimate Oscillator  -  Chart 2](../Images/3e23e5fe6d76f8ecb02d1f8c4efcea1e.jpg
+    "Ultimate Oscillator  -  Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart below shows American Eagle (AEO) with a smaller bullish divergence
+    signal. The Ultimate Oscillator moved to oversold levels (<30) as the stock fell
+    in early June. While the stock moved to new lows in late June, the indicator held
+    above its prior low and above 30\. The subsequent break above the intermittent
+    high confirmed the bullish divergence signal. Also notice that AEO broke above
+    resistance with a four-day surge. Even those who missed the breakout got a second
+    chance as the stock pulled back in August and again broke resistance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Ultimate Oscillator  -  Chart 3](../Images/21b96bc25a8916323240d34134fc4377.jpg
+    "Ultimate Oscillator  -  Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: Sell Signal
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: There are three steps to a sell signal. First, a [bearish divergence](/school/doku.php?id=chart_school:glossary_b#bearish_divergence
+    "chart_school:glossary_b") forms between the indicator and security price. This
+    means the Ultimate Oscillator forms a lower high as price forges a higher high.
+    The lower high in the oscillator shows less upside momentum. Second, the high
+    of the bearish divergence should be above 70\. This is to ensure that prices are
+    somewhat overbought or at a relative extremity. Third, the oscillator falls below
+    the low of the bearish divergence to confirm a reversal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Ultimate Oscillator  -  Chart 4](../Images/4d9b956466467d4315ee93da89324529.jpg
+    "Ultimate Oscillator  -  Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: Caterpillar surged to a new high in late April, but the Ultimate Oscillator
+    failed to confirm this high and formed a lower high. Also, notice that the indicator
+    became overbought in mid-April. The subsequent break below the divergence low
+    in late April confirmed the bearish signal. CAT broke trend line support two days
+    later and declined sharply into early June.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Ultimate Oscillator  -  Chart 5](../Images/02c99b2c56267273954ba3ce6f8630e2.jpg
+    "Ultimate Oscillator  -  Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows Starbucks with an unconfirmed bearish signal and then
+    a confirmed signal. The Ultimate Oscillator became overbought in the latter part
+    of April. As the stock moved to new highs, the indicator forged lower highs in
+    mid-May and again in late June. A bearish divergence was working in mid-May, but
+    the indicator never broke its divergence low for confirmation. After a bigger
+    divergence formed, the indicator broke its divergence low at the end of June to
+    foreshadow a rather sharp decline.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Timeframes
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Ultimate Oscillator can be used on intraday, daily, weekly or monthly charts.
+    It is sometimes necessary to adjust the parameters to generate overbought or oversold
+    readings, which are part of the buy and sell signals. Relatively docile stocks
+    or securities may not generate overbought or oversold readings with the default
+    parameters (7,14,28). Chartists need to increase sensitivity with shorter timeframes.
+    The chart for Boeing (BA) shows the Ultimate Oscillator (7,14,28) trading between
+    30 and 70 for six months. There were no overbought or oversold readings. Shortening
+    the timeframe to (4,8,16) increased sensitivity and generated at least six overbought
+    or oversold readings. The opposite is true for securities with high volatility.
+    It is sometimes necessary to lengthen the timeframes to reduce sensitivity and
+    the number of signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Ultimate Oscillator  -  Chart 6](../Images/d4b7712722fc5e1f7f14a40cd8f4f3fd.jpg
+    "Ultimate Oscillator  -  Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Ultimate Oscillator is a momentum oscillator that incorporates three different
+    timeframes. Traditional signals are derived from bullish and bearish divergence,
+    but chartists can also look at actual levels for a trading bias. This usually
+    works better with longer parameters and longer trends. For example, the Ultimate
+    Oscillator (20,40,80) and price trend favors the bulls when above 50 and the bears
+    when below 50\. As with all indicators, the Ultimate Oscillator should not be
+    used alone. Complementary indicators, [chart patterns](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
+    "chart_school:chart_analysis:chart_patterns") and other analysis tools should
+    be employed to confirm signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Ultimate Oscillator is available as a SharpCharts indicator that can be
+    placed above, below or behind the price plot of the underlying security. Placing
+    it directly behind the price plot in a bright color makes it easy to compare indicator
+    movements with price movements. Users can click the green arrow next to “advanced
+    options” to add horizontal lines or a [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages").
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Ultimate Oscillator - Chart 7](../Images/acf0c829ff080e42e2c09c63e63ca02c.jpg
+    "Ultimate Oscillator - Chart 7")](http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p72157742291&listNum=30&a=223328852
+    "http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p72157742291&listNum=30&a=223328852")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Ultimate Oscillator - SharpCharts](../Images/cc1659c27aae37050a1762de3dbd375c.jpg
+    "Ultimate Oscillator - SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Bullish Long-Term Cross
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks where the Ultimate Oscillator crosses above 50, which
+    is a bullish sign. This scan is just a starting point. Further refinement and
+    analysis are required.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Bearish Long-Term Cross
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks where the Ultimate Oscillator crosses below 50, which
+    is a bullish sign. This scan is just a starting point. Further refinement and
+    analysis are required.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Ultimate Oscillator scans, please
+    see our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#ultimate_oscillator_ultimate_osc
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#ultimate_oscillator_ultimate_osc")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Murphy's book has a chapter devoted to momentum oscillators and their various
+    uses. Murphy covers the pros and cons as well as some examples specific to the
+    Commodity Channel Index.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Technical Analysis Explained shows the basics of momentum indicators by covering
+    divergences, crossovers, and other signals. There are two more chapters covering
+    specific momentum indicators with plenty of examples.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis of the Financial Markets** John J. Murphy | **Technical
+    Analysis Explained by Martin Pring** Martin Pring |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '* * *'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additional Resources
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Stocks & Commodities Magazine Articles
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '**[The Ultimate Oscillator by Larry Williams](http://stockcharts.com/h-mem/tascredirect.html?artid=\V03\C04\ULTI.PDF
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V03\C04\ULTI.PDF")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Jul 1985 - Stocks & Commodities V. 3:4 (140-141)
+  prefs: []
+  type: TYPE_NORMAL

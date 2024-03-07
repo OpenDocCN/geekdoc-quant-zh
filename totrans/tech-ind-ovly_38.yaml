@@ -1,0 +1,320 @@
+- en: Percentage Price Oscillator [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Percentage Price Oscillator](#percentage_price_oscillator)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[MACD, PPO and Price](#macd_ppo_and_price)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Large Price Changes](#large_price_changes)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Comparing Different Securities](#comparing_different_securities)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[PPO Bullish Signal Line Cross](#ppo_bullish_signal_line_cross)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[PPO Bearish Signal Line Cross](#ppo_bearish_signal_line_cross)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Percentage Price Oscillator (PPO) is a momentum oscillator that measures
+    the difference between two moving averages as a percentage of the larger moving
+    average. As with its cousin, MACD, the Percentage Price Oscillator is shown with
+    a signal line, a histogram and a centerline. Signals are generated with signal
+    line crossovers, centerline crossovers, and divergences. Because these signals
+    are no different than those associated with MACD, this article will focus on a
+    few differences between the two. First, PPO readings are not subject to the price
+    level of the security. Second, PPO readings for different securities can be compared,
+    even when there are large differences in the price. See the [ChartSchool article
+    on MACD](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd
+    "chart_school:technical_indicators:moving_average_convergence_divergence_macd")
+    for information on signals common to both MACD and PPO.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: While MACD measures the absolute difference between two [moving averages](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages"), PPO makes this a relative
+    value by dividing the difference by the slower moving average (26-day EMA). PPO
+    is simply the MACD value divided by the longer moving average. The result is multiplied
+    by 100 to move the decimal place two spots. The table below shows Intel (INTC)
+    with values for the 12-day EMA, 26-day EMA, MACD and PPO. Intel is priced in the
+    low 20s and MACD values range from -44 cents to +64 cents. PPO puts this in percentage
+    terms with values ranging from -2.01 to +2.85\. It is easier to compare levels
+    over time with percentages. -2.01 is equivalent to -2.01%, while +2.85 is equivalent
+    to +2.85%.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![PPO - Spreadsheet 1](../Images/feeb3985cc37a52c91cea9e164ebbe18.jpg "PPO
+    - Spreadsheet 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Click here to download this spreadsheet example.](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:price_oscillators_ppo:cs-ppomacd.xls
+    "chart_school:technical_indicators_and_overlays:price_oscillators_ppo:cs-ppomacd.xls
+    (13.5 KB)")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![PPO - Chart 1](../Images/1fa37710aaf5da2b2c5b012d4b48e61e.jpg "PPO - Chart
+    1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Standard PPO is based on the 12-day Exponential Moving Average (EMA) and the
+    26-day EMA, but these parameters can be changed according to investor or trader
+    preferences. Closing prices are used to calculate the moving averages so PPO signals
+    should be measured against closing prices. A 9-day EMA of PPO is plotted as a
+    signal line to identify upturns and downturns in the indicator.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: As with MACD, the PPO reflects the convergence and divergence of two moving
+    averages. PPO is positive when the shorter moving average is above the longer
+    moving average. The indicator moves further into positive territory as the shorter
+    moving average distances itself from the longer moving average. This reflects
+    strong upside momentum. The PPO is negative when the shorter moving average is
+    below the longer moving average. Negative readings grow when the shorter moving
+    average distances itself from the longer moving average (goes further negative).
+    This reflects strong downside momentum. The histogram represents the difference
+    between PPO and its 9-day EMA, the signal line. The histogram is positive when
+    PPO is above its 9-day EMA and negative when PPO is below its 9-day EMA. The PPO-Histogram
+    can be used to anticipate signal line crossovers in the PPO. See the ChartSchool
+    article on the [MACD Histogram](/school/doku.php?id=chart_school:technical_indicators:macd-histogram
+    "chart_school:technical_indicators:macd-histogram") for signal details.
+  prefs: []
+  type: TYPE_NORMAL
+- en: MACD, PPO and Price
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: MACD levels are affected by the price of a security. A high-priced security
+    will have higher or lower MACD values than a low-priced security, even if volatility
+    is basically equal. This is because MACD is based on the absolute difference in
+    the two moving averages. Chart 2 shows Google with MACD and PPO for comparative
+    purposes. The 12-day EMA is around 495, the 26-day EMA is around 512 and the difference
+    is -17 (double digits). Notice that Google's MACD reached double digits on the
+    upside and the downside, but the Percentage Price Oscillator ranged from +2.5
+    to -3.5\. MACD values appear higher because Google is priced at a relatively high
+    level. MACD for the Dow Industrials, which is above 10,000, hits triple digits
+    on a regular basis. However, the PPO ranges from -2 to +2, which is a much more
+    definable range.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![PPO - Chart 2](../Images/b68ad8f268f627526c03d429d6b7cf76.jpg "PPO - Chart
+    2")'
+  prefs: []
+  type: TYPE_IMG
+- en: Although the indicator lines look the same, there are often subtle differences
+    between MACD and PPO. In the Google example, notice how the PPO broke below the
+    February low, but MACD has yet to break its February low. The lower low in the
+    PPO shows expanding downside momentum.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Large Price Changes
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Because MACD is based on absolute levels, large price changes can affect MACD
+    levels over an extended period of time. If a stock advances from 20 to 100, its
+    MACD levels will be considerably smaller around 20 than around 100\. The PPO solves
+    this problem by showing MACD values in percentage terms. Chart 3 shows Baidu (BIDU)
+    advancing from 25 to 75 over a 12 month period. MACD values around 25-30 are going
+    to be generally smaller than MACD values around 70-80\. Notice that MACD broke
+    above its July and March highs, but the PPO did not break these corresponding
+    highs. Also note that Baidu becomes [overbought](/school/doku.php?id=chart_school:glossary_o#overbought
+    "chart_school:glossary_o") when the PPO exceeds +5\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![PPO - Chart 3](../Images/babd0c1366955faf4d73da738a5fe4d6.jpg "PPO - Chart
+    3")'
+  prefs: []
+  type: TYPE_IMG
+- en: Comparing Different Securities
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Because the Percentage Price Oscillator (PPO) is a percentage version of MACD,
+    its values can be compared against other securities. Dell (DELL) and Hewlett Packard
+    (HPQ) are in the same industry group, but their stock prices are at different
+    levels. As of late May 2010, DELL was trading in the high teens and HPQ was trading
+    in the mid-40s. The absolute price level has nothing to do with fundamentals,
+    but it does affect the level of MACD. HPQ will no doubt have a higher MACD than
+    DELL. However, we can apply the Percentage Price Oscillator (PPO) to compare momentum.
+    First, notice that the PPO for DELL ranges from -4 to +4 for an 8 point range).
+    The PPO for HPQ ranges from -3 to +2 for a range of 5\. Right off the bat, we
+    can see that DELL is more volatile than HPQ because its PPO range is greater.
+    Second, we can see that upside momentum for DELL was stronger than HPQ in March-April.
+    The PPO for DELL advanced from negative territory and exceeded 4\. The PPO for
+    HPQ turned positive before the PPO for DELL, but did not exceed 1.6.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![PPO - Chart 4](../Images/3a830512b30d595878959d86e2cf2bc1.jpg "PPO - Chart
+    4")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![PPO - Chart 5](../Images/d1c7e0c90b92aaf0ed49acbbfe7dc18c.jpg "PPO - Chart
+    5")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Percentage Price Oscillator (PPO) generates the same signals as the MACD,
+    but provides an added dimension as a percentage version of MACD. The PPO levels
+    of the Dow Industrials (price ~11000) can be compared against the PPO levels of
+    IBM (price ~122) because the PPO “levels” the playing field, so to speak. In addition,
+    PPO levels in one security can be compared over extended periods of time, even
+    if the price has doubled or tripled. This is not the case for the MACD. Despite
+    its advantages, the PPO is still not the best oscillator to identify overbought
+    or oversold conditions because movements are unlimited (in theory). Levels for
+    [RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi
+    "chart_school:technical_indicators:relative_strength_index_rsi") and the [Stochastic
+    Oscillator](/school/doku.php?id=chart_school:technical_indicators:stochastic_oscillator_fast_slow_and_full
+    "chart_school:technical_indicators:stochastic_oscillator_fast_slow_and_full")
+    are limited and this makes them better suited to identify overbought and oversold
+    levels.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The PPO can be set as an indicator above, below or behind a security's price
+    plot. Once the indicator is chosen from the dropdown list, the default parameter
+    setting appears (12,26,9). These parameters can be adjusted to increase or decrease
+    sensitivity. A slower long moving average combined with a faster short moving
+    average will increase sensitivity. The histogram can be removed by setting the
+    signal line parameter to 1\. This is helpful when displaying the PPO behind the
+    price plot of a security. Users can even add back the signal line by applying
+    a 9-day EMA to the PPO. Click “advanced options” to add the moving average as
+    an overlay for an indicator. [Click here for a live example of the PPO](http://stockcharts.com/h-sc/ui?s=$INDU&p=D&yr=0&mn=6&dy=0&id=p81462571466&listNum=30&a=201062788
+    "http://stockcharts.com/h-sc/ui?s=$INDU&p=D&yr=0&mn=6&dy=0&id=p81462571466&listNum=30&a=201062788").
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![PPO - Chart 7](../Images/05c008550c47d098135d4d45fd4708c9.jpg "PPO - Chart
+    7")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![PPO - Chart 6](../Images/d4aff4f51a1507d181bc90a7345f3b82.jpg "PPO - Chart
+    6")]]'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: PPO Bullish Signal Line Cross
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks that are trading above their 200-day moving average
+    and have a bullish signal line crossover in the PPO. Also, notice that the PPO
+    is required to be negative to ensure that this upturn occurs after a pullback.
+    This scan is just meant as a starter for further refinement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: PPO Bearish Signal Line Cross
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks that are trading below their 200-day moving average
+    and have a bearish signal line crossover in PPO. Also, notice that the PPO is
+    required to be positive to ensure that this downturn occurs after a bounce. This
+    scan is just meant as a starter for further refinement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for PPO scans, please see our [Scanning
+    Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#percentage_price_oscillator_ppo
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#percentage_price_oscillator_ppo")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis - Power Tools for Active Investors** Gerald Appel |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/a2673256615cb182a677e60a34c2b755.jpg)](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors
+    "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors
+    "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors")
+    |'
+  prefs: []
+  type: TYPE_TB

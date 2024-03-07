@@ -1,0 +1,223 @@
+- en: Chande Trend Meter (CTM) [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Chande Trend Meter (CTM)](#chande_trend_meter_ctm)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[CTM Crosses Above 60 on Heavy Volume](#ctm_crosses_above_60_on_heavy_volume)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Stocks with Consistently High CTM](#stocks_with_consistently_high_ctm)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Chande Trend Meter (CTM), developed by Tushar Chande, assigns a numerical
+    score to a stock or other security, based on several different technical indicators
+    covering six different timeframes. Distilling all this technical information down
+    into a single number provides an easy way to identify the strength of the trend
+    for a given security.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'The calculation of the Chande Trend Meter is based on the following technical
+    indicators:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The position of the high, low, and close, relative to the [Bollinger bands](/school/doku.php?id=chart_school:technical_indicators:bollinger_bands
+    "chart_school:technical_indicators:bollinger_bands") in four different timeframes
+    (20-day, 50-day, 75-day, and 100-day)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The price change relative to the [standard deviation](/school/doku.php?id=chart_school:technical_indicators:standard_deviation_volatility
+    "chart_school:technical_indicators:standard_deviation_volatility") over the past
+    100 days
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The 14-day [RSI value](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi
+    "chart_school:technical_indicators:relative_strength_index_rsi")
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The existence of any short-term (2-day) [price channel breakouts](/school/doku.php?id=chart_school:technical_indicators:price_channels
+    "chart_school:technical_indicators:price_channels")
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The resulting score is converted to a 0-100 scale for ease of comparison.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: On the Chande Trend Meter scale of 0 to 100, stocks with a CTM score of 100
+    are in very strong uptrends. Conversely, stocks with a score of 0 are in very
+    strong downtrends.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This scale can be divided into 5 different levels:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Stocks with a score of 90-100 are in very strong uptrends
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Stocks with a score of 80-90 are in strong uptrends
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Stocks with a score of 60-80 are in weak uptrends
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Stocks with a score of 20-60 are either flat or in weak downtrends
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Stocks with a score of 0-20 are in very strong downtrends
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Momentum traders should look for stocks with a Chande Trend Meter score of 80
+    or higher. This indicates a strong uptrend. The stronger the uptrend, the more
+    likely it is to continue that trend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Chande Trend Meter can also be used with indexes and ETFs, to get an idea
+    of the relative trend for specific sectors and industries, or even entire markets.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One advantage of the Chande Trend Meter is that the value is set on an absolute
+    scale, not relative to other stocks in a group. So, when you compare CTM scores
+    of several different types of securities, you are comparing apples-to-apples across
+    all securities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Chande Trend Meter provides a simple way to determine whether a stock is
+    in an uptrend or a downtrend, and makes it easy to gauge the strength of that
+    trend. By combining several different proven technical trend indicators and boiling
+    them down into one number, the CTM gives chartists a wealth of trend information
+    at a quick glance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Chande Trend Meter can be found in the Indicators section under the chart.
+    The CTM indicator can be positioned above, below, or behind the main price plot.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'When placing above or below the main price plot, the background is color coded
+    to indicate the different trend strength levels:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Dark Green**: 90-100 (very strong uptrend)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Medium Green**: 80-90 (strong uptrend)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Light Green**: 60-80 (weak uptrend)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Yellow**: 20-60 (flat or weak downtrend)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Pink**: 0-20 (strong downtrend)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](../Images/6c5b52684e5b20214e5ea35d2ff227cb.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: CTM Crosses Above 60 on Heavy Volume
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks where the Chande Trend Meter has crossed above 60 with
+    heavier than normal volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: Stocks with Consistently High CTM
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks where the Chande Trend Meter for a US stock is consistently
+    high, averaging 80 or more over the last 50 trading days.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Chande Trend Meter scans, please see
+    our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#chande_trend_meter
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#chande_trend_meter")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL

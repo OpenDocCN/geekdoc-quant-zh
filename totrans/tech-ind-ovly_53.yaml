@@ -1,0 +1,239 @@
+- en: Ulcer Index [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Ulcer Index](#ulcer_index)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Comparing Funds](#comparing_funds)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Risk-Adjusted Return](#risk-adjusted_return)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Weeding Out High Volatility](#weeding_out_high_volatility)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Developed by Peter Martin and Byron McCann in 1987, the Ulcer Index is a volatility
+    indicator that measures downside risk. The Ulcer Index was first introduced in
+    their 1989 book, *The Investor's Guide to Fidelity Funds*. Originally, the index
+    was designed with mutual funds in mind, which is why it is only focused on downside
+    risk. Mutual funds are designed to make money by increasing in value. The only
+    risk, therefore, is the drawdown or downside. As its name implies, the Ulcer Index
+    measures the drawdown investors can expect to stomach on any given security. Many
+    consider the Ulcer Index superior to the standard deviation and other measures
+    of risk.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Based on closing prices, the Ulcer Index measures volatility based on price
+    depreciation from its high over a specific look-back period. The index is zero
+    if prices close higher each period. This means there is no downside risk because
+    prices are steadily rising. Prices, of course, do not steadily rise and there
+    will be declines along the way. Using a default setting of 14 periods, the Ulcer
+    Index reflects the expected percentage drawdown over this period. The table shows
+    a sample calculation for 14-periods.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 1](../Images/09b92f575d474b3f68da47c206f5ff67.jpg "Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: '![Spreadsheet](../Images/5fd523365dd8f5ed07dced35591c6789.jpg "Spreadsheet")'
+  prefs: []
+  type: TYPE_IMG
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'The following comes from Peter G. Martin himself:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “Ulcer Index measures the depth and duration of percentage drawdowns in price
+    from earlier highs. The greater a drawdown in value, and the longer it takes to
+    recover to earlier highs, the higher the UI. Technically, it is the square root
+    of the mean of the squared percentage drawdowns in value. The squaring effect
+    penalizes large drawdowns proportionately more than small drawdowns.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is hard to say it much better than that so we will leave it as is.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Comparing Funds
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: As a statistical measure, investors can compare Ulcer Index values to determine
+    relative risk. Martin notes that the Ulcer Index works well with weekly data.
+    The first chart below shows weekly closes for the Fidelity Select Technology Fund
+    (FSPTX) with the 9-period Ulcer Index in the indicator window. A 52-period moving
+    average was added to smooth the index and show a long-term average. There were
+    three spikes above 10 in 2008 and another in 2011 (yellow highlights). Perhaps
+    2008 was an anomaly because of the financial crisis. With only one spike above
+    10 since 2008, investors can conclude that a spike above 10 is relatively rare.
+    The 52-period moving average was at 4.71 and this value could be used to measure
+    adjusted return.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 2](../Images/ee4d11ec184da5483625aa3bb26100a2.jpg "Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Chart 3](../Images/5f089060db6e41066b271ee927f7166f.jpg "Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: The second chart shows the Fidelity Select Health Care Fund (FSPHX) with the
+    same chart features. The Ulcer Index breached 10 twice, once in 2008 and once
+    in 2011\. The 52-week moving average is at 3.24, which is much lower than the
+    moving average for the technology fund. This means the health care fund has less
+    risk or drawdown potential than the technology fund.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Risk-Adjusted Return
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Sharpe Ratio is used to measure risk-adjusted return. It is simply total
+    return less the risk-free return divided by the standard deviation. As noted above,
+    the standard deviation is considered inferior because it accounts for both upside
+    and downside volatility. Long-only investors are not concerned with upside volatility.
+    It is the downside volatility that produces drawdowns and stomach ulcers. To account
+    for this, Martin introduced the Ulcer Performance Index (UPI), or Martin Ratio.
+    This is simply total return less the risk-free return divided by the Ulcer Index.
+    The goal is to find securities (funds) with the highest UPI, which means the highest
+    risk-adjusted return.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 4](../Images/895641c7d658377cc19882cecdd6324a.jpg "Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: The table above compares the Fidelity Select Technology Fund (FSPTX) with the
+    Fidelity Select Health Care Fund (FSPHX). The 10-year Treasury Yield ($TNX) represents
+    the risk-free rate. The Ulcer Index is a 52-week average of the 9-week Ulcer Index.
+    The expected return is based on the 10-year total return data from Morningstar.
+    The expected return and the Ulcer Index are both higher for the technology fund.
+    Based on the higher UPI, the health care fund appears to provide a better risk-adjusted
+    return than the technology fund.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Ulcer Index measures risk by focusing on drawdowns represented by price
+    declines. This means it is best suited for long-only investors or traders. The
+    index hovers near zero when prices regularly record higher highs and advance.
+    The index rises when prices move lower and extend from their recent high. Keep
+    in mind that the Ulcer Index is not an indicator per se. It is just a measure
+    of downside risk that can be used to compute risk-adjusted returns.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Ulcer Index is available as an indicator for SharpCharts. Once selected,
+    users can place the indicator above, below or behind the underlying price plot.
+    Placing the Ulcer Index directly behind the price plot accentuates the movements
+    relative to the price action of the underlying security. Users can apply “advanced
+    options” to add horizontal lines to set a risk threshold. [Click here](http://stockcharts.com/h-sc/ui?s=SPY&p=W&st=2007-07-02&en=2012-07-02&id=p91585692867&a=276604685
+    "http://stockcharts.com/h-sc/ui?s=SPY&p=W&st=2007-07-02&en=2012-07-02&id=p91585692867&a=276604685")
+    for a live example of the Ulcer Index in action.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 5](../Images/f5019cb6aba3d0e10052ab43adcbe5c1.jpg "Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Chart 6](../Images/c7170a4c8c87617f478fcc621c442f86.jpg "Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Weeding Out High Volatility
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The Ulcer Index can be used in scans to weed out securities with extremely high
+    volatility. This simple scan searches for S&P 600 stocks that are in an uptrend.
+    The final scan clause excludes high volatility stocks from the results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Ulcer Index scans, please see our
+    [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#ulcer_index_ulcer
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#ulcer_index_ulcer")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis of the Financial Markets** John J. Murphy | **Technical
+    Analysis Explained by Martin Pring** Martin Pring |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB

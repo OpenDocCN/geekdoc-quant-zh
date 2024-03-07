@@ -1,0 +1,649 @@
+- en: Moving Averages - Simple and Exponential [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Moving Averages - Simple and Exponential](#moving_averages_-_simple_and_exponential)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Simple Moving Average Calculation](#simple_moving_average_calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Exponential Moving Average Calculation](#exponential_moving_average_calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[The Weighting Multiplier](#the_weighting_multiplier)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[EMA Accuracy](#ema_accuracy)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[The Lag Factor](#the_lag_factor)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Simple vs Exponential Moving Averages](#simple_vs_exponential_moving_averages)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Lengths and Timeframes](#lengths_and_timeframes)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Trend Identification](#trend_identification)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Double Crossovers](#double_crossovers)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Price Crossovers](#price_crossovers)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Support and Resistance](#support_and_resistance)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bullish Moving Average Cross](#bullish_moving_average_cross)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bearish Moving Average Cross](#bearish_moving_average_cross)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Additional Resources](#additional_resources)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Moving averages smooth the price data to form a trend following indicator. They
+    do not predict price direction, but rather define the current direction with a
+    lag. Moving averages lag because they are based on past prices. Despite this lag,
+    moving averages help smooth price action and filter out the noise. They also form
+    the building blocks for many other technical indicators and overlays, such as
+    [Bollinger Bands](/school/doku.php?id=chart_school:technical_indicators:bollinger_bands
+    "chart_school:technical_indicators:bollinger_bands"), [MACD](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd
+    "chart_school:technical_indicators:moving_average_convergence_divergence_macd")
+    and [the McClellan Oscillator](/school/doku.php?id=chart_school:market_indicators:mcclellan_oscillator
+    "chart_school:market_indicators:mcclellan_oscillator"). The two most popular types
+    of moving averages are the **Simple Moving Average (SMA)** and the **Exponential
+    Moving Average (EMA)**. These moving averages can be used to identify the direction
+    of the trend or define potential support and resistance levels.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here''s a chart with both an SMA and an EMA on it:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Moving Averages](../Images/b223bd4a03af331339dd2bb33fb2abb8.jpg "Moving
+    Averages")](http://stockcharts.com/h-sc/ui?s=INTC&p=D&st=2010-04-05&en=2010-05-05&id=p46230689776&listNum=30&a=200579140
+    "http://stockcharts.com/h-sc/ui?s=INTC&p=D&st=2010-04-05&en=2010-05-05&id=p46230689776&listNum=30&a=200579140")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Click the chart for a live version
+  prefs: []
+  type: TYPE_NORMAL
+- en: Simple Moving Average Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '**A simple moving average is formed by computing the average price of a security
+    over a specific number of periods.** Most moving averages are based on closing
+    prices. A 5-day simple moving average is the five-day sum of closing prices divided
+    by five. As its name implies, a moving average is an average that moves. Old data
+    is dropped as new data comes available. This causes the average to move along
+    the time scale. Below is an example of a 5-day moving average evolving over three
+    days.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: The first day of the moving average simply covers the last five days. The second
+    day of the moving average drops the first data point (11) and adds the new data
+    point (16). The third day of the moving average continues by dropping the first
+    data point (12) and adding the new data point (17). In the example above, prices
+    gradually increase from 11 to 17 over a total of seven days. Notice that the moving
+    average also rises from 13 to 15 over a three-day calculation period. Also, notice
+    that each moving average value is just below the last price. For example, the
+    moving average for day one equals 13 and the last price is 15\. Prices the prior
+    four days were lower and this causes the moving average to lag.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Exponential Moving Average Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Exponential moving averages (EMAs) reduce the lag by applying more weight to
+    recent prices. The weighting applied to the most recent price depends on the number
+    of periods in the moving average. EMAs differ from simple moving averages in that
+    a given day's EMA calculation depends on the EMA calculations for all the days
+    prior to that day. You need far more than 10 days of data to calculate a reasonably
+    accurate 10-day EMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are three steps to calculating an exponential moving average (EMA). First,
+    calculate the simple moving average for the initial EMA value. An exponential
+    moving average (EMA) has to start somewhere, so a simple moving average is used
+    as the previous period's EMA in the first calculation. Second, calculate the weighting
+    multiplier. Third, calculate the exponential moving average for each day between
+    the initial EMA value and today, using the price, the multiplier, and the previous
+    period's EMA value. The formula below is for a 10-day EMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: The Weighting Multiplier
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: A 10-period exponential moving average applies an 18.18% weighting to the most
+    recent price. A 10-period EMA can also be called an 18.18% EMA. A 20-period EMA
+    applies a 9.52% weighting to the most recent price (2/(20+1) = .0952). Notice
+    that the weighting for the shorter time period is more than the weighting for
+    the longer time period. In fact, the weighting drops by half every time the moving
+    average period doubles.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If you want to use a specific percentage for an EMA, you can use this formula
+    to convert it to time periods and then enter that value as the EMA''s parameter:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: EMA Accuracy
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'Below is a spreadsheet example of a 10-day simple moving average and a 10-day
+    exponential moving average for Intel. The SMA calculation is straightforward and
+    requires little explanation: the 10-day SMA simply moves as new prices become
+    available and old prices drop off. The exponential moving average in the spreadsheet
+    starts with the SMA value (22.22) for its first EMA value. After the first calculation,
+    the normal EMA formula is used.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The formula for an EMA incorporates the previous period's EMA value, which in
+    turn incorporates the value for the EMA value before that, and so on. Each previous
+    EMA value accounts for a small portion of the current value. Therefore, the current
+    EMA value will change depending on how much past data you use in your EMA calculation.
+    Ideally, for a 100% accurate EMA, you should use every data point the stock has
+    ever had in calculating the EMA, starting your calculations from the first day
+    the stock existed. This is not always practical, but the more data points you
+    use, the more accurate your EMA will be. The goal is to maximize accuracy while
+    minimizing calculation time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The spreadsheet example below goes back 30 periods. With only 30 data points
+    incorporated in the EMA calculations, the 10-day EMA values in the spreadsheet
+    are not very accurate. On our charts, we calculate back at least 250 periods (typically
+    much further), resulting in EMA values that are accurate to within a fraction
+    of a penny.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Moving Averages - Spreadsheet](../Images/a42bfa9651de1d5c8d8caf6394a1ff83.jpg
+    "Moving Averages - Spreadsheet")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Click here to download this spreadsheet example.](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:moving_averages:cs-movavg.xls
+    "chart_school:technical_indicators_and_overlays:moving_averages:cs-movavg.xls
+    (12.5 KB)")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Lag Factor
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The longer the moving average, the more the lag. A 10-day exponential moving
+    average will hug prices quite closely and turn shortly after prices turn. Short
+    moving averages are like speedboats - nimble and quick to change. In contrast,
+    a 100-day moving average contains lots of past data that slows it down. Longer
+    moving averages are like ocean tankers - lethargic and slow to change. It takes
+    a larger and longer price movement for a 100-day moving average to change course.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Moving Averages](../Images/84130672150768d2068ee91313111a9b.jpg "Moving
+    Averages")](http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2009-11-01&en=2010-05-05&id=p82097442241
+    "http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2009-11-01&en=2010-05-05&id=p82097442241")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Click on the chart for a live version.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The chart above shows the S&P 500 ETF with a 10-day EMA closely following prices
+    and a 100-day SMA grinding higher. Even with the January-February decline, the
+    100-day SMA held the course and did not turn down. The 50-day SMA fits somewhere
+    between the 10- and 100-day moving averages when it comes to the lag factor.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Simple vs Exponential Moving Averages
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Even though there are clear differences between simple moving averages and exponential
+    moving averages, one is not necessarily better than the other. Exponential moving
+    averages have less lag and are therefore more sensitive to recent prices - and
+    recent price changes. Exponential moving averages will turn before simple moving
+    averages. Simple moving averages, on the other hand, represent a true average
+    of prices for the entire time period. As such, simple moving averages may be better
+    suited to identify [support or resistance](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
+    "chart_school:chart_analysis:support_and_resistance") levels.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Moving average preference depends on objectives, analytical style, and time
+    horizon. Chartists should experiment with both types of moving averages as well
+    as different timeframes to find the best fit. The chart below shows IBM with the
+    50-day SMA in red and the 50-day EMA in green. Both peaked in late January, but
+    the decline in the EMA was sharper than the decline in the SMA. The EMA turned
+    up in mid-February, but the SMA continued lower until the end of March. Notice
+    that the SMA turned up over a month after the EMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Moving Averages](../Images/5414a9bfd41847797639e3098b58acce.jpg "Moving Averages")'
+  prefs: []
+  type: TYPE_IMG
+- en: Lengths and Timeframes
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The length of the moving average depends on the analytical objectives. Short
+    moving averages (5-20 periods) are best suited for short-term trends and trading.
+    Chartists interested in medium-term trends would opt for longer moving averages
+    that might extend 20-60 periods. Long-term investors will prefer moving averages
+    with 100 or more periods.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Some moving average lengths are more popular than others. The 200-day moving
+    average is perhaps the most popular. Because of its length, this is clearly a
+    long-term moving average. Next, the 50-day moving average is quite popular for
+    the medium-term trend. Many chartists use the 50-day and 200-day moving averages
+    together. Short-term, a 10-day moving average was quite popular in the past because
+    it was easy to calculate. One simply added the numbers and moved the decimal point.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Trend Identification
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The same signals can be generated using simple or exponential moving averages.
+    As noted above, the preference depends on each individual. These examples below
+    will use both simple and exponential moving averages. The term “moving average”
+    applies to both simple and exponential moving averages.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The direction of the moving average conveys important information about prices.
+    A rising moving average shows that prices are generally increasing. A falling
+    moving average indicates that prices, on average, are falling. A rising long-term
+    moving average reflects a long-term uptrend. A falling long-term moving average
+    reflects a long-term downtrend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Moving Averages - Chart 4](../Images/c8e3c1cd4fec55ec40a001c2518ceeaf.jpg
+    "Moving Averages - Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows 3M (MMM) with a 150-day exponential moving average. This
+    example shows just how well moving averages work when the trend is strong. The
+    150-day EMA turned down in November 2007 and again in January 2008\. Notice that
+    it took a 15% decline to reverse the direction of this moving average. These lagging
+    indicators identify trend reversals as they occur (at best) or after they occur
+    (at worst). MMM continued lower into March 2009 and then surged 40-50%. Notice
+    that the 150-day EMA did not turn up until after this surge. Once it did, however,
+    MMM continued higher the next 12 months. Moving averages work brilliantly in strong
+    trends.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Double Crossovers
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Two moving averages can be used together to generate crossover signals. In *[Technical
+    Analysis of the Financial Markets](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")*,
+    John Murphy calls this the “double crossover method”. Double crossovers involve
+    one relatively short moving average and one relatively long moving average. As
+    with all moving averages, the general length of the moving average defines the
+    timeframe for the system. A system using a 5-day EMA and 35-day EMA would be deemed
+    short-term. A system using a 50-day SMA and 200-day SMA would be deemed medium-term,
+    perhaps even long-term.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A bullish crossover occurs when the shorter moving average crosses above the
+    longer moving average. This is also known as a golden cross. A bearish crossover
+    occurs when the shorter moving average crosses below the longer moving average.
+    This is known as a dead cross.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Moving average crossovers produce relatively late signals. After all, the system
+    employs two lagging indicators. The longer the moving average periods, the greater
+    the lag in the signals. These signals work great when a good trend takes hold.
+    However, a moving average crossover system will produce lots of whipsaws in the
+    absence of a strong trend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There is also a triple crossover method that involves three moving averages.
+    Again, a signal is generated when the shortest moving average crosses the two
+    longer moving averages. A simple triple crossover system might involve 5-day,
+    10-day, and 20-day moving averages.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Moving Averages - Chart 5](../Images/9cb8882378b15d7274c0bce5b29a42f5.jpg
+    "Moving Averages - Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows Home Depot (HD) with a 10-day EMA (green dotted line)
+    and 50-day EMA (red line). The black line is the daily close. Using a moving average
+    crossover would have resulted in three whipsaws before catching a good trade.
+    The 10-day EMA broke below the 50-day EMA in late October (1), but this did not
+    last long as the 10-day moved back above in mid-November (2). This cross lasted
+    longer, but the next bearish crossover in January (3) occurred near late November
+    price levels, resulting in another whipsaw. This bearish cross did not last long
+    as the 10-day EMA moved back above the 50-day a few days later (4). After three
+    bad signals, the fourth signal foreshadowed a strong move as the stock advanced
+    over 20%.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are two takeaways here. First, crossovers are prone to whipsaw. A price
+    or time filter can be applied to help prevent whipsaws. Traders might require
+    the crossover to last 3 days before acting or require the 10-day EMA to move above/below
+    the 50-day EMA by a certain amount before acting. Second, [MACD](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd
+    "chart_school:technical_indicators:moving_average_convergence_divergence_macd")
+    can be used to identify and quantify these crossovers. MACD (10,50,1) will show
+    a line representing the difference between the two exponential moving averages.
+    MACD turns positive during a golden cross and negative during a dead cross. The
+    Percentage Price Oscillator (PPO) can be used the same way to show percentage
+    differences. Note that MACD and the PPO are based on exponential moving averages
+    and will not match up with simple moving averages.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Moving Averages - Chart 6](../Images/c65998d5af48da6f7991314885b6c7c8.jpg
+    "Moving Averages - Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: This chart shows Oracle (ORCL) with the 50-day EMA, 200-day EMA and MACD(50,200,1).
+    There were four moving average crossovers over a 2 1/2 year period. The first
+    three resulted in whipsaws or bad trades. A sustained trend began with the fourth
+    crossover as ORCL advanced to the mid-20s. Once again, moving average crossovers
+    work great when the trend is strong, but produce losses in the absence of a trend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Price Crossovers
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Moving averages can also be used to generate signals with simple price crossovers.
+    A bullish signal is generated when prices move above the moving average. A bearish
+    signal is generated when prices move below the moving average. Price crossovers
+    can be combined to trade within the bigger trend. The longer moving average sets
+    the tone for the bigger trend and the shorter moving average is used to generate
+    the signals. One would look for bullish price crosses only when prices are already
+    above the longer moving average. This would be trading in harmony with the bigger
+    trend. For example, if price is above the 200-day moving average, chartists would
+    only focus on signals when price moves above the 50-day moving average. Obviously,
+    a move below the 50-day moving average would precede such a signal, but such bearish
+    crosses would be ignored because the bigger trend is up. A bearish cross would
+    simply suggest a pullback within a bigger uptrend. A cross back above the 50-day
+    moving average would signal an upturn in prices and continuation of the bigger
+    uptrend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The next chart shows Emerson Electric (EMR) with the 50-day EMA and 200-day
+    EMA. The stock moved above and held above the 200-day moving average in August.
+    There were dips below the 50-day EMA in early November and again in early February.
+    Prices quickly moved back above the 50-day EMA to provide bullish signals (green
+    arrows) in harmony with the bigger uptrend. MACD(1,50,1) is shown in the indicator
+    window to confirm price crosses above or below the 50-day EMA. The 1-day EMA equals
+    the closing price. MACD(1,50,1) is positive when the close is above the 50-day
+    EMA and negative when the close is below the 50-day EMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Moving Averages - Chart 7](../Images/1f280a683f9ee7f099a594b69d91629a.jpg
+    "Moving Averages - Chart 7")'
+  prefs: []
+  type: TYPE_IMG
+- en: Support and Resistance
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Moving averages can also act as [support](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
+    "chart_school:chart_analysis:support_and_resistance") in an uptrend and [resistance](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance
+    "chart_school:chart_analysis:support_and_resistance") in a downtrend. A short-term
+    uptrend might find support near the 20-day simple moving average, which is also
+    used in Bollinger Bands. A long-term uptrend might find support near the 200-day
+    simple moving average, which is the most popular long-term moving average. In
+    fact, the 200-day moving average may offer support or resistance simply because
+    it is so widely used. It is almost like a self-fulfilling prophecy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Moving Averages - Chart 8](../Images/ed6f92814a49bc34a9e89b56469759e5.jpg
+    "Moving Averages - Chart 8")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows the NY Composite with the 200-day simple moving average
+    from mid-2004 until the end of 2008\. The 200-day provided support numerous times
+    during the advance. Once the trend reversed with a double top support break, the
+    200-day moving average acted as resistance around 9500\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Do not expect exact support and resistance levels from moving averages, especially
+    longer moving averages. Markets are driven by emotion, which makes them prone
+    to overshoots. Instead of exact levels, moving averages can be used to identify
+    support or resistance ***zones***.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The advantages of using moving averages need to be weighed against the disadvantages.
+    Moving averages are trend following, or lagging, indicators that will always be
+    a step behind. This is not necessarily a bad thing though. After all, the trend
+    is your friend and it is best to trade in the direction of the trend. Moving averages
+    ensure that a trader is in line with the current trend. Even though the trend
+    is your friend, securities spend a great deal of time in trading ranges, which
+    render moving averages ineffective. Once in a trend, moving averages will keep
+    you in, but also give late signals. Don't expect to sell at the top and buy at
+    the bottom using moving averages. As with most technical analysis tools, moving
+    averages should not be used on their own, but in conjunction with other complementary
+    tools. Chartists can use moving averages to define the overall trend and then
+    use RSI to define [overbought or oversold](/school/doku.php?id=chart_school:glossary_o#overbought
+    "chart_school:glossary_o") levels.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* * *'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Moving averages are available in SharpCharts as a price overlay. Using the Overlays
+    drop-down menu, users can choose either a simple moving average or an exponential
+    moving average. The first parameter is used to set the number of time periods.
+  prefs: []
+  type: TYPE_NORMAL
+- en: An optional parameter can be added to specify which price field should be used
+    in the calculations - “O” for the Open, “H” for the High, “L” for the Low, and
+    “C” for the Close. A comma is used to separate parameters.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another optional parameter can be added to shift the moving averages to the
+    left (past) or right (future). A negative number (-10) would shift the moving
+    average to the left 10 periods. A positive number (10) would shift the moving
+    average to the right 10 periods.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Multiple moving averages can be overlaid the price plot by simply adding another
+    overlay line to the workbench. StockCharts members can change the colors and style
+    to differentiate between multiple moving averages. After selecting an indicator,
+    open “Advanced Options” by clicking the little green triangle.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Moving Averages - SharpCharts](../Images/ddc07798779effc04894a266a106d6cd.jpg
+    "Moving Averages - SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: “Advanced Options” can also be used to add a moving average overlay to other
+    technical indicators like RSI, CCI, and Volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Moving Averages - SharpCharts](../Images/cb1da52173fad62f962b477d78169952.jpg
+    "Moving Averages - SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Click here](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&b=5&g=0&id=p77483337065&listNum=30&a=200726208
+    "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&b=5&g=0&id=p77483337065&listNum=30&a=200726208")
+    for a live chart with several different moving averages.**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Bullish Moving Average Cross
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan looks for stocks with a rising 150-day simple moving average and a
+    bullish cross of the 5-day EMA and 35-day EMA. The 150-day moving average is rising
+    as long as it is trading above its level five days ago. A bullish cross occurs
+    when the 5-day EMA moves above the 35-day EMA on above-average volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE3]'
+  prefs: []
+  type: TYPE_PRE
+- en: Bearish Moving Average Cross
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan looks for stocks with a falling 150-day simple moving average and
+    a bearish cross of the 5-day EMA and 35-day EMA. The 150-day moving average is
+    falling as long as it is trading below its level five days ago. A bearish cross
+    occurs when the 5-day EMA moves below the 35-day EMA on above-average volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE4]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Moving Average scans, please see our
+    [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#moving_average
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#moving_average") in
+    the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* * *'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: John Murphy's book has a chapter devoted to moving averages and their various
+    uses. Murphy covers the pros and cons of moving averages. In addition, Murphy
+    shows how moving averages work with Bollinger Bands and channel-based trading
+    systems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis of the Financial Markets** John Murphy |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '* * *'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additional Resources
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Stocks & Commodities Magazine Articles
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '**[Trade with Moving Averages by Colin Alexander](http://stockcharts.com/h-mem/tascredirect.html?artid=\V11\C06\TRADEWI.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V11\C06\TRADEWI.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: May 1993 - Stocks & Commodities V. 11:6 (257-260)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Applying Moving Averages by John Sweeney](http://stockcharts.com/h-mem/tascredirect.html?artid=\V16\C04\029APPL.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V16\C04\029APPL.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Mar 1998 - Stocks & Commodities
+  prefs: []
+  type: TYPE_NORMAL

@@ -1,0 +1,212 @@
+- en: Volume Weighted Average Price (VWAP) [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Volume Weighted Average Price (VWAP)](#volume_weighted_average_price_vwap)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Tick versus Minute](#tick_versus_minute)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Characteristics](#characteristics)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Uses for VWAP](#uses_for_vwap)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Volume-Weighted Average Price (VWAP) is exactly what it sounds like: **the
+    average price weighted by volume.** VWAP equals the dollar value of all trading
+    periods divided by the total trading volume for the current day. The calculation
+    starts when trading opens and ends when trading closes. Because it is good for
+    the current trading day only, intraday periods and data are used in the calculation.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Tick versus Minute
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Traditional VWAP is based on tick data. As one can imagine, there are many ticks
+    (trades) during each minute of the day. Active securities during active time periods
+    can have 20-30 ticks in one minute alone. With 390 minutes in a typical stock
+    exchange trading day, many stocks end up with well over 5000 ticks per day. There
+    are over 5000 stocks traded every day and these ticks start adding up exponentially.
+    Needless to say, tick-data is very resource intensive.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![VWAP - Chart 1](../Images/8d71258545bff6d5b4176905acff1c43.jpg "VWAP - Chart
+    1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Instead of VWAP based on tick data, StockCharts.com offers intraday VWAP based
+    on intraday periods (1, 5, 10, 15, 30 or 60 minute). Note that VWAP is not defined
+    for daily, weekly or monthly periods due to the nature of the calculation (see
+    below).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'There are five steps involved in the VWAP calculation. First, compute the typical
+    price for the intraday period. This is the average of the high, low, and close:
+    {(H+L+C)/3)}. Second, multiply the typical price by the period''s volume. Third,
+    create a running total of these values. This is also known as a cumulative total.
+    Fourth, create a running total of volume (cumulative volume). Fifth, divide the
+    running total of price-volume by the running total of volume.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: '![VWAP - Spreadsheet 1](../Images/b95b66afabcb769e415104b71652cec0.jpg "VWAP
+    - Spreadsheet 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: The example above shows 1-minute VWAP for the first 30 minutes of trading in
+    IBM. Dividing cumulative price-volume by cumulative volume produces a price level
+    that is adjusted (weighted) by volume. The first VWAP value is always the typical
+    price because volume is equal in the numerator and the denominator. They cancel
+    each other out in the first calculation. The chart below shows 1-minute bars with
+    VWAP for IBM. Prices ranged from 127.36 on the high to 126.67 on the low for the
+    first 30 minutes of trading. It was actually a pretty volatile first 30 minutes.
+    VWAP ranged from 127.21 to 127.09 and spent its time in the middle of this range.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![VWAP - Chart 2](../Images/566c94be67f7a73087710b66c5aa0f68.jpg "VWAP - Chart
+    2")'
+  prefs: []
+  type: TYPE_IMG
+- en: Characteristics
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Like moving averages, VWAP lags price because it is an average based on past
+    data. The more data there is, the greater the lag. A stock has been trading for
+    some 331 minutes by 3:00 PM. As a cumulative “average”, this indicator is akin
+    to a 330 period moving average. That is a lot of past data. The 1-minute VWAP
+    value at the end of the day is often quite close to the ending value for a 390-minute
+    moving average. Both moving averages are based on the 1-minute bars for that day.
+    At the close, both are based on 390 minutes of data (one full day). One cannot
+    compare the 390-minute moving average to VWAP during the day though. A 390-minute
+    moving average at 12:00 PM will include data from the previous day. VWAP will
+    not. Remember, VWAP calculations start fresh at the open and end at the close.
+    150 minutes of trading have elapsed by 12:00 PM. Therefore, VWAP at 12:00 PM would
+    need to be compared with a 150-minute moving average.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![VWAP - Chart 3](../Images/69a39c486c78865e7695c942ad5b22de.jpg "VWAP - Chart
+    3")'
+  prefs: []
+  type: TYPE_IMG
+- en: Despite this lag, chartists can compare VWAP with the current price to determine
+    the general direction of intraday prices. It works similar to a moving average.
+    In general, intraday prices are falling when below VWAP and intraday prices are
+    rising when above VWAP. VWAP will fall somewhere between the day's high-low range
+    when prices are range bound for the day. The next three charts show examples of
+    rising, falling and flat VWAP.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![VWAP - Chart 4](../Images/afaa7cbbbb3bea3913f335a1c9776f61.jpg "VWAP - Chart
+    4") ![VWAP - Chart 5](../Images/5897839258c78dd92ec788bfba18f522.jpg "VWAP - Chart
+    5") ![VWAP - Chart 6](../Images/64cc72c64fb470c1bc7144604770fded.jpg "VWAP - Chart
+    6")'
+  prefs: []
+  type: TYPE_IMG
+- en: Uses for VWAP
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: VWAP is used to identify liquidity points. As a volume-weighted price measure,
+    VWAP reflects price levels weighted by volume. This can help institutions with
+    large orders. The idea is not to disrupt the market when entering large buy or
+    sell orders. VWAP helps these institutions determine the [liquid](/school/doku.php?id=chart_school:glossary_l#liquidity
+    "chart_school:glossary_l") and illiquid price points for a specific security over
+    a very short time period.
+  prefs: []
+  type: TYPE_NORMAL
+- en: VWAP can also be used to measure trading efficiency. After buying or selling
+    a security, institutions or individuals can compare their price to VWAP values.
+    A buy order executed below the VWAP value would be considered a good fill because
+    the security was bought at a below average price. Conversely, a sell order executed
+    above the VWAP would be deemed a good fill because it was sold at an above average
+    price.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: VWAP serves as a reference point for prices for one day. As such, it is best
+    suited for **intraday analysis.** Chartists can compare current prices with the
+    VWAP values to determine the intraday trend. VWAP can also be used to determine
+    relative value. Prices below VWAP values are relatively low for that day or that
+    specific time. Prices above VWAP values are relatively high for that day or that
+    specific time. **Keep in mind that VWAP is a cumulative indicator, which means
+    the number of data points progressively increases throughout the day.** On a 1-minute
+    chart, IBM will have 90 data points (minutes) by 11:00 AM, 210 data points by
+    1:00 PM and 390 data points by the close. The number dramatically increases as
+    the day extends. This is why VWAP lags price and this lag increases as the day
+    extends.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Volume-Weighted Average Price (VWAP) can be plotted as an “overlay” indicator
+    on Sharpcharts. After entering the security symbol, choose an “intraday” period
+    and a “range.” This can be for 1 day or “fill the chart.” Chartists looking for
+    more detail can choose “fill the chart.” Chartist looking for general levels can
+    choose 1 day. VWAP can be plotted over more than one day, but the indicator will
+    jump from its prior closing value to the typical price for the next open as a
+    new calculation period begins. Also, note that VWAP values can sometimes fall
+    off the price chart. VWAP at 45.5 will show up on a chart with a price range from
+    45.8 to 47\. Chartists sometimes need to extend the range to a full day to see
+    VWAP on the chart. The VWAP value is always displayed at the top left of the chart.
+    Click the chart below to see a live example.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![VWAP - Chart 7](../Images/05cf52019c09547855bb5e9d5716994b.jpg "VWAP - Chart
+    7")](http://stockcharts.com/h-sc/ui?s=INTC&p=1&b=5&g=0&id=p44523558053&listNum=30&a=208264972
+    "http://stockcharts.com/h-sc/ui?s=INTC&p=1&b=5&g=0&id=p44523558053&listNum=30&a=208264972")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![VWAP - SharpCharts](../Images/670c45bf78990297dfb991e0f9d3e289.jpg "VWAP
+    - SharpCharts")'
+  prefs: []
+  type: TYPE_IMG

@@ -1,0 +1,326 @@
+- en: True Strength Index (TSI) [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[True Strength Index (TSI)](#true_strength_index_tsi)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Center Line Crossover](#center_line_crossover)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Trend Lines](#trend_lines)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Overbought/Oversold](#overbought_oversold)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Signal Line Crossovers](#signal_line_crossovers)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bullish TSI Signal Line Cross](#bullish_tsi_signal_line_cross)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bearish TSI Signal Line Cross](#bearish_tsi_signal_line_cross)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Developed by William Blau and introduced in Stocks & Commodities Magazine, the
+    True Strength Index (TSI) is a momentum oscillator based on a double smoothing
+    of price changes. Even though several steps are needed for calculation, the indicator
+    is actually pretty straightforward. By smoothing price changes, TSI captures the
+    ebbs and flows of price action with a steadier line that filters out the noise.
+    As with most momentum oscillators, chartists can derive signals from overbought/oversold
+    readings, centerline crossovers, bullish/bearish divergences and signal line crossovers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'The True Strength Index (TSI) can be divided into three parts: the double smoothed
+    price change, the double smoothed absolute price change, and the TSI formula.
+    First, calculate the price change from one period to the next. Second, calculate
+    a 25-period EMA of this price change. Third, calculate a 13-period EMA of this
+    25-period EMA to create a double smoothing. The same double smoothing technique
+    is used for the absolute price change. After these initial calculations, divide
+    the double smoothed price change by the absolute double smoothed price change
+    and multiply by 100 to move the decimal two places.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 1](../Images/af49ce62de72393fa4ac88806b1506e8.jpg "Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: The first part, which is the double smoothed price change, sets the positive
+    or negative tone for TSI. The indicator is negative when the double smoothed price
+    change is negative and positive when it is positive. The double smoothed absolute
+    price change normalizes the indicator and limits the range of the ensuing oscillator.
+    In other words, this indicator measures the double smoothed price change relative
+    to the double smoothed absolute price change. A string of large positive price
+    changes results in relatively high positive readings because this signals strong
+    upside momentum. A string of large negative price changes pushes TSI deep into
+    negative territory.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Spreadsheet](../Images/67ed19dfb3a7046f43b7006d84a5d63e.jpg "Spreadsheet")'
+  prefs: []
+  type: TYPE_IMG
+- en: The table above comes from an excel spreadsheet. Note that [exponential moving
+    averages](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") are used in the calculations.
+    These start with a simple moving average and then use a multiplier for calculation,
+    which means additional historical data is needed to reach true values. [Click
+    here to download this spreadsheet example](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:true_strength_index:cs-tsi.xls
+    "chart_school:technical_indicators_and_overlays:true_strength_index:cs-tsi.xls
+    (213 KB)") and try it at home.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The True Strength Index (TSI) is an oscillator that fluctuates between positive
+    and negative territory. As with many momentum oscillators, the centerline defines
+    the overall bias. The bulls have the momentum edge when TSI is positive and the
+    bears have the edge when it's negative. As with MACD, a signal line can be applied
+    to identify upturns and downturns. Signal line crossovers are, however, quite
+    frequent and require further filtering with other techniques. Chartists can also
+    look for bullish and bearish divergences to anticipate trend reversals; however,
+    keep in mind that divergences can be misleading in a strong trend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: TSI is somewhat unique because it tracks the underlying price quite well. In
+    other words, the oscillator can capture a sustained move in one direction or the
+    other. The peaks and troughs in the oscillator often match the peaks and troughs
+    in price. In this regard, chartists can draw trend lines and mark support/resistance
+    levels using TSI. Line breaks can then be used to generate signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Center Line Crossover
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The centerline crossover is the purest signal. The double smoothed momentum
+    of price changes is positive when TSI is above zero and negative when below zero.
+    Prices are generally rising when TSI is positive and falling when TSI is negative.
+    The example below shows Nike (NKE) turning bullish in September 2011 as TSI moved
+    into positive territory (green line). The stock remained bullish as the uptrend
+    extended into the spring of 2012\. Nike turned bearish when TSI turned negative
+    and the stock broke support.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 2](../Images/a8a126b97a26c1b91ed2dc469e0931f2.jpg "Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: Trend Lines
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: TSI often produces support and resistance levels that chartists can use to identify
+    breakouts or breakdowns. The example below shows Citigroup (C) with TSI establishing
+    support in March. The indicator broke support in early April and this breakdown
+    foreshadowed a significant decline into May. TSI then rebounded in June and formed
+    a flat consolidation into July. This consolidation resembled a falling flag and
+    TSI broke above the trend line in late July. This breakout preceded further strength
+    into August.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 3](../Images/91bdaa57cb8ccc8058058acc22a97488.jpg "Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: Overbought/Oversold
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Overbought and oversold levels for the True Strength Index vary according to
+    a security's volatility and the period settings for the indicator. The TSI range
+    will be smaller for stocks with low volatility, such as utilities. The TSI range
+    will be larger for stocks with high volatility, such as biotechs. Using shorter
+    time periods for the smoothing will result in a wider range and choppier indicator
+    line. Longer time periods will result in a smaller range and smoother line. It
+    is the classic technical analysis tradeoff. Chartists get quicker signals and
+    less lag with shorter periods, but this comes at the expense of more whipsaws
+    and false signals. Longer periods reduce the whipsaws, but these signals come
+    with more lag and a poorer reward-to-risk ratio.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 4](../Images/5225712091cb35513a8ec51340a0043b.jpg "Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows the Nasdaq 100 ETF (QQQ) with TSI using two different
+    timeframes. The upper indicator window shows TSI (40,20,7) fluctuating between
+    -20 and +44 with 20/-20 marking overbought/oversold. The lower window shows TSI
+    (13,7,7) fluctuating between +78 and -69 with 50/-50 marking overbought/oversold.
+    Notice how TSI in the lower window is much more volatile than TSI in the upper
+    window. Also, notice that the more sensitive TSI produced two oversold readings
+    and four overbought readings (blue arrows). Overbought and oversold are not signals
+    of an impending reversal. They simply suggest that prices have come too far too
+    fast. Chartists must wait for a confirming signal to suggest an actual reversal.
+    The blue lines mark support and resistance using trend lines, peaks or troughs.
+    Once an overbought or oversold reading occurs, chartists can use these lines to
+    define a price reversal. This will not illuminate whipsaws, but it will reduce
+    bad signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Signal Line Crossovers
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The last parameter in the TSI setting is the signal line, which is simply an
+    exponential moving average of TSI. Signal line crossovers are by far the most
+    common signals. This means there will be good, bad and ugly signals. In an effort
+    to reduce signals and noise, chartists should consider increasing the settings
+    for TSI or the price chart settings. The example below shows TSI(40,20,10) using
+    a weekly chart. This means the signal line is a 10-period EMA of TSI. There was
+    no shortage of signals on this chart as TSI crossed the signal line at least 12
+    times from April 2007 to July 2012\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 5](../Images/3426f468c310fc4ea7535754e4b96907.jpg "Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The True Strength Index (TSI) is a unique indicator based on double smoothed
+    price changes. Price change represents momentum in its truest form. The double
+    smoothing with two exponential moving averages reduces the noise and produces
+    an oscillator that tracks price quite well. In addition to the usual oscillator
+    signals, chartists can often draw trend lines, support lines and resistance lines
+    directly on TSI. These can then be used to generate signals based on breakouts
+    and breakdowns. As with all indicators, TSI signals should be confirmed with other
+    indicators and analysis techniques.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The True Strength Index (TSI) is available as an indicator for SharpCharts.
+    Once selected, users can place the indicator above, below or behind the underlying
+    price plot. Placing TSI directly behind the price plot accentuates the movements
+    relative to the price action of the underlying security. Users can apply “advanced
+    options” to add horizontal lines for setting overbought and oversold levels. Adjusting
+    the numbers in the Parameters box will change the settings. [Click here](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p28704616394&a=276577901
+    "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p28704616394&a=276577901")
+    for a live example of TSI in action.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 6](../Images/6f820f9a1b626cab77c7810cb9ecbb19.jpg "Chart 6")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Chart 7](../Images/02782217604d8aebb9dab43bcb46256d.jpg "Chart 7")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Bullish TSI Signal Line Cross
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks where TSI is in positive territory. A bullish signal
+    is triggered when TSI crosses above its signal line.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Bearish TSI Signal Line Cross
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks where TSI is in negative territory. A bearish signal
+    is triggered when TSI crosses below its signal line.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for TSI scans, please see our [Scanning
+    Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#true_strength_index
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#true_strength_index")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Technical Analysis of the Financial Markets has a chapter devoted to momentum
+    oscillators and their various uses. Murphy covers the pros and cons as well as
+    some examples specific to Rate-of-Change. Pring's book shows the basics of momentum
+    indicators by covering divergences, crossovers, and other signals. There are two
+    more chapters covering specific momentum indicators with plenty of examples.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis of the Financial Markets** John J. Murphy | **Technical
+    Analysis Explained by Martin Pring** Martin Pring |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB

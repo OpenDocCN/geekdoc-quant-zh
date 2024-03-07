@@ -1,0 +1,255 @@
+- en: Martin Pring's Special K [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Martin Pring''s Special K](#martin_pring_s_special_k)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using the Special K to Identify Long-term Price Movements](#using_the_special_k_to_identify_long-term_price_movements)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Identifying Pro Trend Short-term Buy and Sell Signals](#identifying_pro_trend_short-term_buy_and_sell_signals)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Special K Bullish Short-Term Cross](#special_k_bullish_short-term_cross)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Special K Bearish Short-Term Cross](#special_k_bearish_short-term_cross)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'The Pring Special K is a momentum indicator created by Martin Pring that combines
+    short-term, intermediate and long-term velocity into one complete series, thereby
+    giving us true summed cyclicality. It has two functions, first to identify primary
+    trend reversals at a relatively early stage, and second to use that information
+    for timing short-term pro-trend price moves. Here are all three trends as they
+    might be expressed in an overlaid momentum format:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/1d9d84230a439e8ec9a21b4a7c98df08.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Here is the (green) primary trend and the (orange) Special K, which is really
+    the short-term trend shown in the previous chart.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/c0a24e023878568746056a540fbdca47.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: In an ideal world, the Special K ought to peak and trough more or less simultaneously
+    with the price at bull and bear market turning points. In most situations that
+    actually happens. When it does, the trick is being able to identify these turning
+    points as quickly as possible after the fact. The formula assumes that prices
+    are revolving around the four-year business cycle. As a result, when a linear
+    uptrend, such as the 1990's secular bull market in equities develops, the Special
+    K leads turning points. Alternatively, when the cycle is truncated, as was the
+    case for the 1987 crash, the indicator is late. Charts 1 and 2 show that most
+    of the time the price and SPK reverse simultaneously.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '***The prime function of the Special K then is to identify primary trend turning
+    points.*** Since this indicator also includes short-term data in its calculation
+    a subsidiary benefit lies in the identification of smaller trends, for trading
+    purposes, and putting that in context with the direction and maturity of the primary
+    trend. Let''s consider both those aspects, starting with primary trend identification.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Special K is the sum of several different weighted averages of different
+    rate-of-change calculations. The periods and weightings were selected based on
+    years of market observations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: Note that at least 725 data points are required to accurately calculate this
+    indicator. If less data is available, then the final line of the calculation is
+    skipped.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using the Special K to Identify Long-term Price Movements
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'With the benefit of hindsight, it is easy to spot the Special K turning points
+    and relate them to primary trend peaks and troughs, as shown by the vertical arrows
+    in the charts below. Unfortunately, since traders and investors work in real time,
+    they do not have the luxury of hindsight. Here are several techniques that help
+    in spotting primary trend turning points using the Special K:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Since the Special K is quite a jagged indicator it lends itself best to trendline
+    construction. For example, if a trendline of 9-months or more is violated this
+    usually means that the primary trend for the Special K has reversed and when the
+    indicator changes trend so usually does the price.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: It is normal to run a moving average through the Special K. The default is a
+    100-day smoothed by a 100-day SMA. Crossovers of the average typically signal
+    a reversal in the direction of the primary trend. Occasionally, as with all moving
+    average situations, whipsaws are triggered. When combined with a trendline break,
+    though, a stronger and more reliable signal is triggered. Examples at the 2003
+    and 2009 bottoms for US equities are shown in the first chart above, where MA
+    crosses and trendline violations develop more or less simultaneously.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Occasionally the Special K traces out price patterns. When they are confirmed
+    by some kind of trend reversal in the price itself this usually represents a valid
+    indication of a reversal in the prevailing primary trend. The GLD chart below
+    offers two examples.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[![Figure 3](../Images/c07d7a7a05a30c07998203bac6b92860.jpg "Figure 3")](http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=1995-01-01&en=2010-04-01&id=p27191194097&a=351268055
+    "http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=1995-01-01&en=2010-04-01&id=p27191194097&a=351268055")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Figure 4](../Images/8f05ad510e4ebc5ea48281eb8c1978f6.jpg "Figure 4")](http://stockcharts.com/h-sc/ui?s=$CRB&p=D&st=1995-01-01&en=2014-01-01&id=p91095913553&a=351269321
+    "http://stockcharts.com/h-sc/ui?s=$CRB&p=D&st=1995-01-01&en=2014-01-01&id=p91095913553&a=351269321")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Figure 5](../Images/9a6514681d83e6846fc4534317976c1a.jpg "Figure 5")](http://stockcharts.com/h-sc/ui?s=GLD&p=D&st=2008-01-02&en=2013-05-06&id=p98657791953&a=351279812
+    "http://stockcharts.com/h-sc/ui?s=GLD&p=D&st=2008-01-02&en=2013-05-06&id=p98657791953&a=351279812")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is important to note that calculating the initial plot of the Special K involves
+    several years of data. To really appreciate the long-term perspective offered
+    by this indicator 5-10 years of additional data are required. That way it's possible
+    to see if the security in question is experiencing the expected cyclical swings.
+    Most do, but occasionally you will find some that do not.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Identifying Pro Trend Short-term Buy and Sell Signals
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: One of the most important things for short-term traders to grasp is the fact
+    that trades executed in the direction of the main trend are much more likely to
+    be successful than those generated in a counter-cyclical way. An objective method
+    of determining the direction of the primary trend is to use the Special K. Obviously
+    we can easily tell with the benefit of hindsight where the actual Special K peaks
+    and troughs formed but in real time we do not have this luxury. One solution is
+    to determine its position relative to its 100-day MA. Positive readings (i.e.
+    above the MA) would indicate a primary bull market and vice versa.
+  prefs: []
+  type: TYPE_NORMAL
+- en: When the direction of the primary trend has been determined to be bullish, trades
+    from the long side would be initiated when the Special K itself crosses above
+    its 10-day MA. These are shown with orange, upward arrows on the chart below.
+    Trades would be closed out when the Special K re-crosses back below its 10-day
+    MA. Short sales would be initiated in the opposite way i.e. when the Special K
+    is below its long-term MA and crosses below its 10-day MA. The chart below shows
+    such a system for the Dow Jones UBS Commodity Index. The green vertical line represents
+    the start of a bull market phase as defined by the Special K/100-day MA relationship.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Figure 6](../Images/6c30270b71ef5543d568c0b1bdfb0c05.jpg "Figure 6")](http://stockcharts.com/h-sc/ui?s=DJP&p=D&st=2008-02-14&en=2010-07-24&id=p13988319489&a=351486397
+    "http://stockcharts.com/h-sc/ui?s=DJP&p=D&st=2008-02-14&en=2010-07-24&id=p13988319489&a=351486397")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that no buy signals are generated during the bearish periods, only sell
+    signals (brown, downward arrows). The “Example Sell Point” was subpar because
+    it developed during a bull market, but unfortunately, the system was still in
+    a bearish mode because the Special K was below its 100-day MA showing that this
+    approach is far from perfect. As with all technical indicators, rather than blindly
+    using this approach as a mechanical system, it's better to use pro trend signals
+    as an alert and then use other indicators as a filter in a “weight of the evidence”
+    approach.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '- Martin Pring'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Special K is available as an indicator for SharpCharts. The first line in
+    the indicator is the raw Special K value. The second line is a double smoothed
+    moving average of the raw Special K value, which acts as a signal line.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The indicator can be positioned above, below or behind the underlying price
+    plot. Placing the Special K directly behind the price plot accentuates the movements
+    relative to the price action of the underlying security.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Users can adjust the signal line settings by changing the numbers in the Parameters
+    box. The two parameters specify the number of periods in the two simple moving
+    averages used for smoothing. The default parameter values are 100,100\. Users
+    can also apply “advanced options” to add a horizontal line.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 7](../Images/c4aa55e49173996e5a6149af3749ca5d.jpg "Figure 7")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Figure 8](../Images/25bb32c408525ebbbd173f21077dac7c.jpg "Figure 8")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Special K Bullish Short-Term Cross
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks where Special K is above its signal line. A bullish
+    signal is triggered when Special K crosses over its 10-day moving average.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Special K Bearish Short-Term Cross
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks where Special K is below its signal line. A bearish
+    signal is triggered when Special K crosses below its 10-day moving average.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Special K scans, please see our [Scanning
+    Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#pring_s_special_k
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#pring_s_special_k")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL

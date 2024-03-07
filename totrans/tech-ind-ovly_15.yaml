@@ -1,0 +1,374 @@
+- en: Accumulation Distribution Line [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Accumulation Distribution Line](#accumulation_distribution_line)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[ADL versus OBV](#adl_versus_obv)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Trend Confirmation](#trend_confirmation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Divergences](#divergences)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Disconnect with Prices](#disconnect_with_prices)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bullish Divergence in OBV and ADL](#bullish_divergence_in_obv_and_adl)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bearish divergence in OBV and ADL](#bearish_divergence_in_obv_and_adl)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Developed by Marc Chaikin, the Accumulation Distribution Line is a volume-based
+    indicator designed to measure the cumulative flow of money into and out of a security.
+    Chaikin originally referred to the indicator as the Cumulative Money Flow Line.
+    As with cumulative indicators, the Accumulation Distribution Line is a running
+    total of each period's Money Flow Volume. First, a multiplier is calculated based
+    on the relationship of the close to the high-low range. Second, the Money Flow
+    Multiplier is multiplied by the period's volume to come up with a Money Flow Volume.
+    A running total of the Money Flow Volume forms the Accumulation Distribution Line.
+    Chartists can use this indicator to affirm a security's underlying trend or anticipate
+    reversals when the indicator diverges from the security price.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: There are three steps to calculating the Accumulation Distribution Line (ADL).
+    First, calculate the Money Flow Multiplier. Second, multiply this value by volume
+    to find the Money Flow Volume. Third, create a running total of Money Flow Volume
+    to form the Accumulation Distribution Line (ADL).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: The Money Flow Multiplier fluctuates between +1 and -1\. As such, it holds the
+    key to the Money Flow Volume and the Accumulation Distribution Line. The multiplier
+    is positive when the close is in the upper half of the high-low range and negative
+    when in the lower half. This makes perfect sense. Buying pressure is stronger
+    than selling pressure when prices close in the upper half of the period's range
+    (and vice versa). The Accumulation Distribution Line rises when the multiplier
+    is positive and falls when the multiplier is negative.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 1  -  Accumulation Distribution Line](../Images/6059f42a4a2c03fb55b1c8e7ad292058.jpg
+    "Chart 1  -  Accumulation Distribution Line")'
+  prefs: []
+  type: TYPE_IMG
+- en: The multiplier adjusts the amount of volume that ends up in the Money Flow Volume.
+    Volume is in effect reduced unless the Money Flow Multiplier is at its extremes
+    (+1 or -1). The multiplier is +1 when the close is on the high and -1 when the
+    close is on the low. All volume is positive when +1 and all volume is negative
+    when -1\. At .50, only half of the volume translates into the period's Money Flow
+    Volume. The table below shows the Money Flow Multipliers, Money Flow Volume and
+    Accumulation Distribution Line for Research-in-Motion (RIMM). Notice how the multiplier
+    is between .50 and 1 when the close is strong and between -.50 and -1 when the
+    close is weak.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Table 1  -  Accumulation Distribution Line](../Images/bbb5d28a22efb997ac60ab9cf943b0f3.jpg
+    "Table 1  -  Accumulation Distribution Line")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Click here](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:accumulation_distribution_line:cs-accum.xls
+    "chart_school:technical_indicators_and_overlays:accumulation_distribution_line:cs-accum.xls
+    (33.5 KB)") for a calculation of the Accumulation Distribution Line in an Excel
+    Spreadsheet.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Accumulation Distribution Line is a cumulative measure of each period's
+    volume flow, or money flow. A high positive multiplier combined with high volume
+    shows strong buying pressure that pushes the indicator higher. Conversely, a low
+    negative number combined with high volume reflects strong selling pressure that
+    pushes the indicator lower. Money Flow Volume accumulates to form a line that
+    either confirms or contradicts the underlying price trend. In this regard, the
+    indicator is used to either reinforce the underlying trend or cast doubts on its
+    sustainability. An uptrend in prices with a downtrend in the Accumulation Distribution
+    Line suggests underlying selling pressure (distribution) that could foreshadow
+    a bearish reversal on the price chart. A downtrend in prices with an uptrend in
+    the Accumulation Distribution Line indicate underlying buying pressure (accumulation)
+    that could foreshadow a bullish reversal in prices.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ADL versus OBV
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Accumulation Distribution Line and On Balance Volume (OBV) are cumulative
+    volume-based indicators that sometimes move in opposite directions because their
+    basic formulas are different. Joe Granville developed [On Balance Volume](/school/doku.php?id=chart_school:technical_indicators:on_balance_volume_obv
+    "chart_school:technical_indicators:on_balance_volume_obv") (OBV) as a cumulative
+    measure of positive and negative volume flow. OBV adds a period's total volume
+    when the close is up and subtracts it when the close is down. A cumulative total
+    of this positive and negative volume flow forms the OBV line. This line can then
+    be compared with the price chart of the underlying security to look for divergences
+    or confirmation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 2  -  Accumulation Distribution Line](../Images/06f4000d84a40426a266d54b6920d1be.jpg
+    "Chart 2  -  Accumulation Distribution Line")'
+  prefs: []
+  type: TYPE_IMG
+- en: As the formula above shows, Chaikin took a different approach by completely
+    ignoring the change from one period to the next. Instead, the Accumulation Distribution
+    Line focuses on the level of the close relative to the high-low range for a given
+    period (day, week, month). With this formula, a security could gap down and close
+    significantly lower, but the Accumulation Distribution Line would rise if the
+    close were above the midpoint of the high-low range. The chart above shows Clorox
+    (CLX) with a big gap down and a close near the top of the day's high-low range.
+    OBV moved sharply lower because the close was below the prior close. The Accumulation
+    Distribution Line moved higher because the close was near the high of the day.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Trend Confirmation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Trend confirmation is a pretty straight-forward concept. An uptrend in the Accumulation
+    Distribution Line reinforces an uptrend on the price chart and vice versa. The
+    chart below shows Freeport McMoran (FCX) and the Accumulation Distribution Line
+    advancing in February-March, declining from April to June and then advancing from
+    July to January. The Accumulation Distribution Line confirmed each of these price
+    trends.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 3  -  Accumulation Distribution Line](../Images/edf68ebcd21571cba81beb4bf3323d16.jpg
+    "Chart 3  -  Accumulation Distribution Line")'
+  prefs: []
+  type: TYPE_IMG
+- en: Divergences
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Bullish and bearish divergences are where it starts getting interesting. A bullish
+    divergence forms when price moves to new lows, but the Accumulation Distribution
+    Line does not confirm these lows and moves higher. A rising Accumulation Distribution
+    Line shows, well, accumulation. Think of this as basically stealth buying pressure.
+    Based on the theory that volume precedes price, chartists should be on alert for
+    a bullish reversal on the price chart.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The chart above shows Nordstrom (JWN) with the Accumulation Distribution Line.
+    Notice how it is easy to compare price action when the indicator is placed “behind”
+    the price plot. The indicator (pink) and the price trend moved in unison from
+    February to June. Signs of accumulation emerged as the indicator bottomed in early
+    July and started moving higher. JWN moved to a new low in late August. Even though
+    the indicator showed signs of buying pressure, it was important to wait for a
+    bullish catalyst or confirmation on the price chart. This catalyst came as the
+    stock gapped up and surged on big volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 4  -  Accumulation Distribution Line](../Images/ae7322d4649c689187bbb1517239ec7e.jpg
+    "Chart 4  -  Accumulation Distribution Line")'
+  prefs: []
+  type: TYPE_IMG
+- en: A bearish divergence forms when price moves to new highs, but the Accumulation
+    Distribution Line does not confirm and moves lower. This shows distribution or
+    underlying selling pressure that can foreshadow a bearish reversal on the price
+    chart.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 5  -  Accumulation Distribution Line](../Images/2008ad33442385f54eb2b1c881ca5052.jpg
+    "Chart 5  -  Accumulation Distribution Line")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows Southwest Airlines (LUV) with the Accumulation Distribution
+    Line peaking two months ahead of prices. The indicator not only peaked, but it
+    also moved lower in March and April, which reflected some selling pressure. LUV
+    confirmed weakness with a support break on the price chart and RSI moved below
+    40 shortly afterward. RSI often trades in bull zones (40-80) and bear zones (20-60).
+    [RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi
+    "chart_school:technical_indicators:relative_strength_index_rsi") held in the bull
+    zone until early May and then moved into a bear zone.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Disconnect with Prices
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Accumulation Distribution Line is an indicator based on a derivative of
+    price and volume. This makes it at least two steps removed from the actual price
+    of the underlying security. Moreover, the Money Flow Multiplier does not take
+    into account price changes from period to period. As such, it cannot be expected
+    to always affirm price action or successfully predict price reversals with divergences.
+    Sometimes there is a disconnect between prices and the indicator. Sometimes the
+    Accumulation Distribution Line simply doesn't work. This is why it vitally important
+    to use the Accumulation Distribution Line, and all indicators for that matter,
+    in conjunction with price/trend analysis and/or other indicators.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 6  -  Accumulation Distribution Line](../Images/2125a7954b93a553f6da1308b98b7701.jpg
+    "Chart 6  -  Accumulation Distribution Line")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '**The Accumulation Distribution Line can be used to gauge the general flow
+    of volume.** An uptrend indicates that buying pressure is prevailing on a regular
+    basis, while a downtrend indicates that selling pressure is prevailing. Bullish
+    and bearish divergences serve as alerts for a potential reversal on the price
+    chart. As with all indicators, it is important to use the Accumulation Distribution
+    Line in conjunction with other aspects of technical analysis, such as [momentum
+    oscillators](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")
+    and [chart patterns](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
+    "chart_school:chart_analysis:chart_patterns"). It is not a standalone indicator.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Accumulation Distribution Line is available in SharpCharts as an indicator.
+    After selecting, the indicator can be positioned above, below or behind the price
+    of the underlying security. Positioning “behind price” makes it easy to compare
+    with the underlying security. Chartists can also add a moving average to the indicator
+    by using the advanced options. **[Click here](http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=8&dy=0&id=p93414126571&listNum=30&a=222506084
+    "http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=8&dy=0&id=p93414126571&listNum=30&a=222506084")**
+    for a live chart with the Accumulation Distribution Line.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 7  -  Accumulation Distribution Line](../Images/f805062269290aa87897d6396eb1311b.jpg
+    "Chart 7  -  Accumulation Distribution Line")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![SharpCharts  -  Accumulation Distribution Line](../Images/370a6f19ba12a1fbd2a386d6dbbc86fe.jpg
+    "SharpCharts  -  Accumulation Distribution Line")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Bullish Divergence in OBV and ADL
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with a base of stocks that are averaging at least $10 in price
+    and 100,000 daily volume over the last 60 days. Potential bullish divergences
+    are found by looking for stocks where price is BELOW the 65-day SMA and 20-day
+    SMA, but OBV and the Accumulation Distribution Line are ABOVE the 65-day SMA and
+    20-day SMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Bearish divergence in OBV and ADL
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with a base of stocks that are averaging at least $10 in price
+    and 100,000 daily volume over the last 60 days. Potential bearish divergences
+    are found by looking for stocks where price is ABOVE the 65-day SMA and 20-day
+    SMA, but OBV and the Accumulation Distribution Line are BELOW the 65-day SMA and
+    20-day SMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Accumulation Distribution Line scans,
+    please see our [Scanning Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#accumulation_distribution
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#accumulation_distribution")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note**: For the purposes of scanning, daily volume data is incomplete during
+    the trading day. When running scans with volume-based indicators like Accumulation/Distribution,
+    be sure to base the scan on the “Last Market Close.” Examples of other volume-based
+    indicators include Chaikin Money Flow, On Balance Volume, and the PVO.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: This book covers it all with explanations that are simple and clear. Murphy
+    covers most the major charts patterns and indicators. A complete chapter is devoted
+    to understanding volume and open interest.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis of the Financial Markets** John J. Murphy |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/e00f9b0f57a7325646647a118f3ebe9e.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    |'
+  prefs: []
+  type: TYPE_TB

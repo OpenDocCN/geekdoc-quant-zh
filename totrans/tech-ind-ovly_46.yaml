@@ -1,0 +1,470 @@
+- en: StockCharts Technical Rank (SCTR) [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[StockCharts Technical Rank (SCTR)](#stockcharts_technical_rank_sctr)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[SCTR Universes](#sctr_universes)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Long-term Indicators](#long-term_indicators)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Medium-term Indicators](#medium-term_indicators)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Short-term Indicators](#short-term_indicators)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using SCTR](#using_sctr)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[SCTR Crossing Above 90](#sctr_crossing_above_90)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[SCTR Has New High](#sctr_has_new_high)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Frequently Asked Questions](#frequently_asked_questions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The StockCharts Technical Rank (SCTR) is a numerical score that ranks a stock
+    within a group of stocks. The methodology for these rankings comes from the wisdom
+    of John Murphy, author of many books on technical analysis and contributor to
+    the Market Message at StockCharts.com. Stocks are assigned a score based on six
+    key indicators, which cover different timeframes. These indicator scores are then
+    sorted and assigned a technical rank. Using SCTR tables, chartists can sort stocks
+    according to their technical rank. This makes it easy to identify the technical
+    leaders and laggards within a specific group. Note that leveraged and inverse
+    ETFs are excluded from the SCTR rankings for the ETF universe. Above average volatility
+    and inverse movements skew the results. The VIX ETF (VXX) is also excluded because
+    it moves inverse to the S&P 500.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'It takes two steps to calculate the StockCharts Technical Rank (SCTR). First,
+    each stock is “scored” based on six different technical indicators. These six
+    indicators can be subdivided into three groups: long-term, medium-term and short-term.
+    The box below details these indicators, the relevant timeframe and the weightings.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: Except for the 3-day slope of the PPO-Histogram, the raw numbers are used to
+    calculate the indicator score. For example, if a stock is 15% above its 200-day
+    moving average, then this indicator will contribute 4.5 points to the total indicator
+    score (15 x .30 = 4.5). If the 20-day Rate-of-Change is -7%, then this indicator
+    will contribute a negative 1.05 points to the total indicator score (-7 x .15
+    = -1.05).
+  prefs: []
+  type: TYPE_NORMAL
+- en: For the PPO-Histogram, if its slope is greater than +1 (i.e., +45 degrees),
+    5 points (5% of 100) is contributed to the total indicator score. If the PPO-Histogram's
+    slope is less than -45 degrees, 0 points are contributed to the score. Otherwise,
+    5% of ((Slope + 1) x 50) is contributed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: After this first calculation round, StockCharts.com then ranks these stocks
+    by their indicator score. Keep in mind that these stocks are ranked solely within
+    their group, such as large-caps, mid-caps and small-caps. This article will first
+    show a simplified example using ten stocks sorted by indicator score. The stock
+    with the highest score gets the highest technical rank (10), while the stock with
+    the lowest score gets the lowest technical rank (1). The rankings are then filled
+    in according to the indicator score.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/a51c8d404e07d3e3ac3e70ad96a54c52.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: StockCharts Technical Rank goes into much more detail. First, the rankings extend
+    from 0.00 to 99.99, with 0 being the absolute weakest and 99.99 being the absolute
+    strongest. No stock will score a perfect 100\. Second, StockCharts.com creates
+    “buckets” to sort the stocks within a group. These are like percentiles. Using
+    an example with a universe of 500 stocks, ten equal buckets would be created and
+    each bucket would have 50 stocks (50 x 10 = 500). The 50 stocks with the lowest
+    indicator scores go into the bottom bucket and have SCTRs ranging from 0 to 10\.
+    The 50 stocks with the highest indicator scores go into the top bucket and have
+    SCTRs ranging from 90 to 99.99\. Each bucket will then be filled accordingly and
+    further sorted within the bucket. The end result is 500 stocks ranked from 0 to
+    99.99 and spread relatively evenly across the ranking pool.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The indicator score is unique and powerful because it accounts for several timeframes.
+    It is not tethered to one specific timeframe. A stock must score well with all
+    indicators and all timeframes to earn a top indicator score and technical rank.
+    The indicator score puts more weight on the two long-term indicators, which account
+    for 60% of the total score. This makes sense because the long-term trend is the
+    strongest force. The weightings decline as scoring moves to the short-term indicators.
+    The medium-term indicators account for 30% and the short-term indicators account
+    for 10%. Together, the long-term and medium-term indicators account for 90% of
+    the total score.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The StockCharts Technical Rank shows how a stock is performing relative to its
+    peers, not a benchmark index. Indices, such as the S&P 500, are dominated by large-caps
+    and may not truly reflect the market as a whole. Instead of benchmarking to one
+    index, SCTR sorts all stocks within a specific universe, such as large-caps, mid-caps
+    and small-caps. In this regard, chartists can see how Apple is performing relative
+    to Amazon, IBM and other large-cap stocks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/caaa84ef1f0ad3f6c1568c0f9ce221b2.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: SCTR tables can easily be sorted to separate the strongest stocks from the weakest.
+    In any given SCTR universe, the top 10% will rank between 90 and 100, while the
+    bottom 10% will rank between 0 and 10\. A stock scoring 50 would be average, showing
+    neither relative strength nor relative weakness. In general, scores between 40
+    and 60 are considered average. Signs of technical weakness start to appear as
+    scores move below 40\. Signs of technical strength emerge when scores move above
+    60.
+  prefs: []
+  type: TYPE_NORMAL
+- en: SCTR Universes
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: In order for a stock to have a SCTR value, it must first belong to a “Universe.”
+    Universes are large groups of stocks established by StockCharts.com for the purpose
+    of relative strength ranking. A stock can only belong to one SCTR Universe at
+    a time. Currently, we use country and/or market capitalization to determine which
+    universe a stock belongs to.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is a list of the current SCTR universes that we support:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Large-Cap** - US stocks that are components of the S&P 500 Index (or were
+    in the past).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Small-Cap** - US stocks that are components of the Russell 2000 Index.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Mid-Cap** - US stocks that have a significant market cap but do not fall
+    into either the Large-Cap or Small-Cap universes.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**ETF** - Non-leveraged US ETFs.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Toronto** - Canadian stocks that trade on the Toronto Stock Exchange and
+    have significant market cap'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**London** - Stocks that trade on the London Stock Exchange and have significant
+    market cap'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**India** - Stocks that trade on the National Stock Exchange of India and have
+    significant market cap'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: In order to keep the number of ranked stocks manageable, the exact meaning of
+    the phrase “significant market cap” changes from year to year depending on the
+    number of stocks that qualify for each universe.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The SCTR Universes are “re-balanced” each year around June 1st.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Long-term Indicators
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: There are two percentage-based long-term indicators. First, the indicator score
+    accounts for how far a stock is from its [200-day moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages"). A stock is in a long-term
+    uptrend when it is above the 200-day moving average and in a long-term downtrend
+    when it is below. The distance from the 200-day moving average line determines
+    the trend's strength. A strong uptrend is present when price is well above the
+    200-day. Conversely, a strong downtrend is present when price is well below the
+    200-day.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The 125-day Rate-of-Change is the second long-term indicator. This is a simple
+    indicator that measures the percentage price change over the last 125 days, which
+    is around six months. Strong stocks will show the largest gains, while weak stocks
+    will show the largest losses. It is a straight-forward indicator designed to measure
+    pure strength or weakness.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first chart shows Home Depot with the 200-day moving average and the 125-day
+    Rate-of-Change indicator. At the time this chart was created, HD had an SCTR score
+    of 97.4\. Price was over 40% higher than its moving average and the Rate-of-Change
+    was above 20%. Such strength in these long-term indicators packs a big positive
+    punch for the technical rank.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/ff07d294b156f92fe294c711eab63857.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: The second chart shows Whirlpool (WHR) with the same indicators, but a completely
+    different technical picture. Note that WHR has a SCTR score of 3.50, which is
+    in the bottom 10%. The stock is trading over 25% below its 200-day average and
+    the 125-day Rate-of-Change is below -30%. WHR recently hit a new 52-week low,
+    which is indicative of a long-term downtrend. This weakness is clearly confirmed
+    by the low technical rank.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/ca257131a03b4bf9b8193d5d559cc355.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Medium-term Indicators
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The next two indicators cover the medium-term picture. A 50-day moving average
+    covers around 2 1/2 months of trading. A stock is trending higher when above the
+    50-day moving average and trending lower when below the 50-day. This positive
+    effect is compounded when a stock is trading above both the 200-day *and* 50-day
+    averages. The converse is true when a stock is trading below both moving averages.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The 20-day [Rate-of-Change](/school/doku.php?id=chart_school:technical_indicators:rate_of_change_roc_and_momentum
+    "chart_school:technical_indicators:rate_of_change_roc_and_momentum") measures
+    the percentage price change over a 20-day period, which is about a month. Again,
+    stocks with big positive price changes over a 20-day period show above average
+    strength that will be reflected in the technical rank. A big decline over a 20-day
+    period would negatively affect the technical rank.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first chart shows Home Depot with the 50-day average and the 20-day Rate-of-Change
+    indicator. Remember, HD had an SCTR score of 97.4 at the time this chart was created.
+    Medium-term, price was over 10% above its 50-day average and the 20-day Rate-of-Change
+    was greater than 9%. Those are mighty strong numbers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/7d1fc416bf31fbf7d1a503ca83d7145d.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: The second chart shows Whirlpool (WHR) with the same indicators, but a completely
+    different technical picture - again. Remember, WHR had a SCTR score of 3.50 on
+    December 5th. The stock was trading over 5% below its 50-day moving average and
+    the 20-day Rate-of-Change was below -2.5%. These numbers are not that drastic
+    and definitely an improvement over the levels seen in late November. However,
+    ranked against other large-cap stocks, these negative numbers did not help Whirlpool
+    and kept its technical rank in the bottom 10%.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/f59cceab69127e4372bd47a5a593514b.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Short-term Indicators
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The two short-term indicators account for 10% of the indicator score. First,
+    [14-day RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi
+    "chart_school:technical_indicators:relative_strength_index_rsi") is used to gauge
+    short-term momentum. Developed by Welles Wilder, this classic momentum oscillator
+    fluctuates between 0 and 100\. High levels (above 60) reflect bullish momentum,
+    while low levels indicate bearish momentum (below 40).
+  prefs: []
+  type: TYPE_NORMAL
+- en: The 3-day slope of the PPO-Histogram is also used to gauge short-term momentum.
+    The [Percentage Price Oscillator (PPO)](/school/doku.php?id=chart_school:technical_indicators:price_oscillators_ppo
+    "chart_school:technical_indicators:price_oscillators_ppo") measures the percentage
+    difference between the 9-day EMA and the 26-day EMA of a stock. The PPO-Histogram
+    is the difference between the PPO and its 9-day EMA. In a sense, the PPO measures
+    momentum and the PPO-Histogram measures the momentum of the PPO. Taking this indicator
+    one step further, the 3-day Slope of the PPO-Histogram measures the degree of
+    change in the PPO-Histogram over a 3-day period. The slope is simply the rise
+    over the run (rise/run), which is the 3-day change in the PPO-Histogram divided
+    by 3\. SharpCharts does not have an indicator for this, but a quick look at the
+    charts tells us if the slope is positive or negative. We can also see when the
+    slope is relatively steep or flat. A steep slope reflects a sharp change, while
+    a flat slope reflects a slight change.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first chart shows Home Depot with 14-day RSI in red and the Percent Price
+    Oscillator (PPO) with its histogram in the indicator window. Keep in mind that
+    HD has a SCTR score of 97.4\. RSI shows strength because it was trading above
+    70 at the time. In fact, notice that RSI was at its highest level in over six
+    months. This strong reading contributed to the high technical rank for HD. The
+    last three bars of the histogram define the slope. There is a sharp rise from
+    the first bar to the third, which is a positive slope.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/d69780113f218088a0f6fc4c91bdb727.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: The second chart shows Whirlpool (WHR) with the same short-term indicators.
+    Remember, WHR had a SCTR score of 3.50\. 14-day RSI bounced off its late November
+    low, but remains below 50\. Short-term momentum is neutral at best, slightly bearish
+    at worst. The 3-day slope for the PPO-Histogram is, however, positive. Notice
+    that the first bar is in negative territory and the third bar is in positive territory.
+    The rise is not that steep though. This indicates that the 3-day slope of the
+    PPO-Histogram is not contributing that much to the indicator score. Also keep
+    in mind that this indicator accounts for just 10% of the total score.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/d0f545a333ce4711143c970294df74dc.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Using SCTR
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The StockCharts Technical Rank feature can be accessed from the [SCTR Reports
+    page](https://stockcharts.com/freecharts/sctr.html "https://stockcharts.com/freecharts/sctr.html").
+    Once on the page, users can choose their stock universe. Chartists can also choose
+    between end-of-day and intraday. End-of-day is based on the most recent daily
+    close. Intraday is based on price levels at that particular point in time. Indicators,
+    such as the 14-day RSI and the 200-day Moving Average, will be based on the intraday
+    price levels too.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once working with a SCTR table, users can sort the columns with the double arrows.
+    Sorting can be by industry group, SCTR, SCTR Change, or Close. The SCTR change
+    is the change in SCTR values from one period to the next. Sorting by this column
+    will show chartists which stocks had the biggest changes in their technical rank.
+    This feature can be used to spot big movers. Note that leveraged and inverse ETFs
+    are excluded from the SCTR rankings for the ETF universe. Above average volatility
+    and inverse movements skew the results. The VIX ETF (VXX) is also excluded because
+    it moves inverse to the S&P 500\. **[Click here](http://stockcharts.com/freecharts/sctr.html?&V=L&I=N
+    "http://stockcharts.com/freecharts/sctr.html?&V=L&I=N")** to see the StockCharts
+    Technical Rank page live.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](../Images/9313b1f909bb3d6b515c3b68701979f1.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The StockCharts Technical Rank (SCTR) separates the wheat from the chaff. Relative
+    strength is an important part of a successful trading or investing strategy. Based
+    on the wisdom of John Murphy, SCTR allows chartists to compare the technical strength
+    of one stock against all the stocks in its peer group. Chartists can also group
+    stocks according to the technical rank. Stocks in the top 30% will have a technical
+    rank of 70 or higher. Chartists can then focus on these relatively strong stocks
+    for potential long positions on pullbacks. Conversely, chartists can use the technical
+    rank to avoid weak stocks, such as those with a technical rank below 40\. As far
+    as new trends emerging, chartists can look for stocks with technical ranks moving
+    out of the middle zone (40-60). A move above 60 would show relative strength improving,
+    while a move below 40 would show an increase in relative weakness. As with all
+    technical tools, SCTR should be used in conjunction with other aspects of Technical
+    Analysis.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: SCTR Crossing Above 90
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks where the SCTR for a US stock has just crossed above
+    90\. The 'or' clause includes all US stocks with SCTR values, regardless of market
+    cap.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: SCTR Has New High
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals US ETFs that are having a new 6-month high SCTR value. Because
+    the scan covers a limited number of securities in a single SCTR universe, the
+    typical scan clauses for defining the universe are not necessary here.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: Frequently Asked Questions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '**Q: Why doesn''t XYZ have a SCTR?**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'A: Only those tickers included in predefined SCTR universe groups will have
+    a SCTR ranking.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Q: The SCTR value has been the same for XYZ for a while now, why is that?**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'A: That means it is consistently outperforming/underperforming its peers.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Q: How often are SCTRs updated?**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'A: During the trading day, SCTRs are updated every 1-2 minutes.'
+  prefs: []
+  type: TYPE_NORMAL

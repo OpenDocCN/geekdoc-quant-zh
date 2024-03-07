@@ -1,0 +1,258 @@
+- en: Negative Volume Index (NVI) [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Negative Volume Index (NVI)](#negative_volume_index_nvi)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[SharpCharts Calculation](#sharpcharts_calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Signal](#signal)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Fine Tuning](#fine_tuning)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bullish NVI Signal Line Cross](#bullish_nvi_signal_line_cross)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bearish NVI Signal Line Cross](#bearish_nvi_signal_line_cross)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Negative Volume Index (NVI) is a cumulative indicator that uses the change
+    in volume to decide when the smart money is active. Paul Dysart first developed
+    this indicator in the 1930s. In fact, the Market Technicians Association selected
+    Dysart for their annual award in 1990 to recognize his contributions to technical
+    analysis. Dysart's Negative Volume Index works under the assumption that the smart
+    money is active on days when volume decreases and the not-so-smart money is active
+    on days when volume increases.
+  prefs: []
+  type: TYPE_NORMAL
+- en: SharpCharts Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: There are two versions of the Negative Volume Index. In the original version,
+    Dysart formed a cumulative line by adding Net Advances when volume decreased from
+    one period to the other. Net Advances equal advancing issues less declining issues.
+    The cumulative NVI line was unchanged when volume increased from one period to
+    the other. In other words, nothing was done. Norman Fosback, of Stock Market Logic,
+    adjusted the indicator by substituting the percentage price change for Net Advances.
+    The SharpCharts formula uses this Fosback version.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: '![Chart 1](../Images/238223476ef072cf5e4e92a71a9a0e2f.jpg "Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: The spreadsheet example shows the calculation in detail. The Price %Change was
+    multiplied by 100 to reduce the number of decimal places needed. First, notice
+    the Volume %Change column. When this value is negative, the percentage change
+    for the S&P 500 is entered into the NVI Value column. When this value is positive,
+    nothing appears for the NVI Value. Starting at 1000, the NVI Values are applied
+    each period to create a cumulative indicator that only changes when volume decreases.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Spreadsheet](../Images/acc79417edd2413ca3c1c8ace0799444.jpg "Spreadsheet")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Click here to download this spreadsheet example.](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:negative_volume_inde:cs-negvolindex.xls
+    "chart_school:technical_indicators_and_overlays:negative_volume_inde:cs-negvolindex.xls
+    (69 KB)")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Signal
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The traditional use of the Negative Volume Index is quite simple. According
+    to Fosback, the odds favor a bull market when NVI is above its 255-day EMA and
+    the odds favor a bear market when NVI is below. However, Fosback notes that these
+    odds are not symmetrical. There is a 96% chance of a bull market when NVI is above
+    its 255-day EMA, but only a 53% chance of a bear market when NVI is below its
+    255-day EMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 2](../Images/4833a4998bab69992af8c63237523aaa.jpg "Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows the Dow Industrials with NVI in the lower window. Even
+    with a long-term moving average, there are plenty of whipsaws (bad signals). Notice
+    how the indicator crossed the 255-day EMA several times in 1998-1998 as it zigzagged
+    higher. There were also several crosses in 2001-2002 as trading in the Dow Industrials
+    turned volatile. The signals from late 2002 were less prone to whipsaw as stronger
+    trends emerged. Chartists can expect some lag because moving averages lag and
+    a 255-day EMA is being used to generate signals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fine Tuning
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Even though NVI was designed with a major stock index in mind, chartists can
+    use NVI with ETFs, stocks or anything that has volume. Keep in mind that the rationale
+    behind the indicator is a bit unconventional because price moves on increasing
+    volume are basically ignored.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 3](../Images/85171c4dfffa56717a0f923f7534ff52.jpg "Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: The example above shows the Consumer Discretionary SPDR (XLY) with NVI and two
+    exponential moving averages. The general trend is up when NVI is above its 255-day
+    EMA (red). A move below the 100-day EMA shows a correction within this uptrend.
+    Chartists can also apply basic technical analysis to this indicator by drawing
+    trend lines. There were three corrective periods from January 2010 to July 2012
+    (blue lines). A break above these trend lines signaled the end of a corrective
+    period and a resumption of the uptrend, for NVI that is. These breakout signals
+    also foreshadowed significant price moves in the underlying (XLY).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Negative Volume Index (NVI) is a hybrid indicator that combines inputs from
+    Paul Dysart and Norman Fosback. NVI counts price changes when volume decreases
+    and discounts price changes when volume increases. The assumption is that the
+    smart (informed) money is at work when volume decreases and the not-so-smart (uninformed)
+    money is at work when volume increases. Keep in mind that this indicator was designed
+    for broad market indices and exchange volume. It can be used on stocks and ETFs,
+    but NVI does not always act as expected. NVI will produce some great bullish/bearish
+    divergence signals with some stocks, but look totally out of sync with other stocks.
+    As with all indicators, NVI should not be used on its own. Instead, chartists
+    should use it in conjunction with other analysis techniques.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Negative Volume Index (NVI) can be found in the Indicators section below
+    the chart. NVI is set as a cumulative indicator and cannot be adjusted. Chartists
+    can adjust the exponential moving average by changing the number in the Parameters
+    box. Setting the parameter to “1” will essentially remove the moving average.
+    The indicator can then be positioned behind the main charting window, above the
+    main charting window or below the main charting window. It helps to change the
+    color when placing it behind the main charting window's price plot. Chartists
+    can apply another moving average or indicator to NVI using the “advanced” indicator
+    options. The example below shows the rate-of-change oscillator applied to NVI
+    in the indicator window. [Click here](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=8&dy=0&id=p79189698479&a=276034932
+    "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=8&dy=0&id=p79189698479&a=276034932")
+    for a live example of NVI in action.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 4](../Images/326a01cc2a8fe6ea2a16c7072c4c23fc.jpg "Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Chart 5](../Images/c49327ad7e2fe1489c514c9108f956f8.jpg "Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Bullish NVI Signal Line Cross
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks where NVI has crossed above its signal line, triggering
+    a bullish signal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Bearish NVI Signal Line Cross
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan reveals stocks where NVI has crossed below its signal line, triggering
+    a bearish signal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for NVI scans, please see our [Scanning
+    Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#negative_volume_index
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#negative_volume_index")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Technical Analysis of the Financial Markets has a chapter devoted to volume
+    and a chapter covering breadth indicators in detail. Pring's book has a chapter
+    devoted to making volume a part of your analysis process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis of the Financial Markets** John J. Murphy | **Technical
+    Analysis Explained** Martin Pring |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB

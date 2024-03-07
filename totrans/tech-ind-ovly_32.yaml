@@ -1,0 +1,257 @@
+- en: Mass Index [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Mass Index](#mass_index)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[SharpCharts Calculation](#sharpcharts_calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Signals](#signals)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Tweaking](#tweaking)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Mass Index Bullish Reversal](#mass_index_bullish_reversal)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Mass Index Bearish Reversal](#mass_index_bearish_reversal)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Developed by Donald Dorsey, the Mass Index uses the high-low range to identify
+    trend reversals based on range expansions. In this sense, the Mass Index is a
+    volatility indicator that does not have a directional bias. Instead, the Mass
+    Index identifies range bulges that can foreshadow a reversal of the current trend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: SharpCharts Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'There are four parts involved in the Mass Index calculation:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: '![Chart 1](../Images/4886b2591c4631833238106b2ba83c6c.jpg "Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: The calculation is fairly straightforward. First, the Single EMA provides the
+    average for the high-low range. Second, the Double EMA provides a second smoothing
+    of this volatility measure. Using a ratio of these two exponential [moving averages](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") normalizes the data series.
+    This ratio shows when the Single EMA becomes large relative to the Double EMA.
+    The final step, a 25-period summation, acts like a moving average to further smooth
+    the data series. Overall, the Mass Index rises as the high-low range widens, and
+    falls as the high-low range narrows. A spreadsheet example is shown below.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Spreadsheet 1](../Images/3e4307932289d84bc8164a84c6a7954d.jpg "Spreadsheet
+    1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Some of the spreadsheet values are off by a penny because the exponential moving
+    average calculation extends back less than three months. Calculations in SharpCharts
+    extend back two years, which makes the exponential moving average calculation
+    more robust.[Click here to download this spreadsheet example.](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:mass_index:cs-massindex.xls
+    "chart_school:technical_indicators_and_overlays:mass_index:cs-massindex.xls (154.5
+    KB)")
+  prefs: []
+  type: TYPE_NORMAL
+- en: Signals
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Donald Dorsey looked for “reversal bulges” to signal a trend reversal. According
+    to Dorsey, a bulge occurs when the Mass Index moves above 27\. This initial bulge
+    does not complete the signal though. Dorsey waited for this bulge to reverse with
+    a move back below 26.50\. Once the reversal bulge is complete, traders should
+    use other analysis techniques to determine the direction of the next move. Ideally,
+    a downtrend followed by a reversal bulge would suggest a bullish trend reversal.
+    Conversely, an uptrend followed by a reversal bulge would suggest a bearish trend
+    reversal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 2](../Images/df48c1a6a50b160c0af3f138e2a3c813.jpg "Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: The example above shows Chipotle with the Mass Index producing two reversal
+    bulges over a 12 month period. In both cases, the trend was up when the Mass Index
+    moved above 27, which means a bearish reversal was expected. The first signal
+    foreshadowed a trading range. The second signal foreshadowed a sharp decline.
+    Chartists looking for signals will most likely have to relax Dorsey's requirements
+    for the reversal bulge because the Mass Index rarely exceeds 27\. It takes exceptional
+    volatility to push the index above this level.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Tweaking
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Chartists can lower the threshold for a reversal bulge to generate more signals.
+    One size does not fit all when it comes to volatility. In other words, chartists
+    may need to compare Mass Index levels over time to identify historical highs and
+    lows. A move that nears the high end of the historical range would suggest a volatility
+    bulge that could foreshadow a reversal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The chart below shows International Paper with the Mass Index moving above 26
+    twice. Even though the Mass Index touched 27 in August 2011, the 26 level seems
+    more appropriate for a reversal bulge. Also keep in mind that August 2011 was
+    an extremely volatile period for the entire stock market and this reading looks
+    like an outlier. The trend was down when the Mass Index moved above 26 in August
+    2011 and May 2012\. This suggested that a bullish reversal would follow and chartists
+    could then use other analytical techniques to identify such a reversal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 3](../Images/b668d2f65bdb4e14702dfb3112f53dfb.jpg "Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: The bottom indicator is the [TRIX oscillator](/school/doku.php?id=chart_school:technical_indicators:trix
+    "chart_school:technical_indicators:trix"), which is the one-period rate-of-change
+    for the triple smoothed exponential moving average. The TRIX is like the smoothed
+    version of MACD. Once the reversal bulge is in place and the trading bias established,
+    chartists can use the TRIX to generate a directional signal. Because the trends
+    were down when these reversal bulges occurred, the trading bias was bullish and
+    only bullish signals were considered. The green arrows show when the TRIX moved
+    above its signal line to signal an upturn in prices.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Mass Index uses the high-low differential to provide a smoothed volatility
+    measure. The indicator typically fluctuates in the mid-20s. Readings near the
+    high end of the historical range suggest increasing volatility, which increases
+    the chances for a trend reversal. Although Dorsey set the bulge threshold at 27,
+    chartists should consider a lower threshold to produce more signals. Keep in mind
+    that the Mass Index does not have a directional bias. The directional bias depends
+    on the existing trend. As with all indicators, chartists should use other analysis
+    techniques to complement the Mass Index.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Mass Index can be found in the “indicators” section under the chart. Users
+    can adjust the summation periods by changing the number in the “parameters” box.
+    The indicator can then be positioned “behind price”, “above” the main window or
+    “below” the main window. Chartists can add a horizontal line by using the “advanced”
+    options. This line can be used to set the thresholds for the reversal bulge signal.
+    [Click here for a live example](http://scharts.co/Rz7CZ1 "http://scharts.co/Rz7CZ1").
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 4](../Images/96380e6c360c34942e3dadd240c28fb6.jpg "Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![SharpCharts](../Images/a0d33c33f1bf56a413179e5e95475ec3.jpg "SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Mass Index Bullish Reversal
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan searches for stocks that are trading below their 200-day moving average
+    to define a long-term downtrend. A bullish reversal is identified when Mass Index
+    moves below 26.5.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Mass Index Bearish Reversal
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan searches for stocks that are trading above their 200-day moving average
+    to define a long-term uptrend. A bearish reversal is identified when Mass Index
+    moves below 26.5\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for Mass Index scans, please see our [Scanning
+    Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#mass_index_mass
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#mass_index_mass") in
+    the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: This books details 16 simple, yet effective, strategies crucial to the success
+    of any trader or investor. Readers will learn oscillator techniques, mean reversion
+    strategies and even see back-tested results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Short Term Trading Strategies That Work** Larry Connors and Cesar Alvarez
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/1bcf7dc658fe94db162658d667958f9e.jpg)](http://store.stockcharts.com/products/short-term-trading-strategies-that-work
+    "http://store.stockcharts.com/products/short-term-trading-strategies-that-work")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/short-term-trading-strategies-that-work
+    "http://store.stockcharts.com/products/short-term-trading-strategies-that-work")
+    |'
+  prefs: []
+  type: TYPE_TB

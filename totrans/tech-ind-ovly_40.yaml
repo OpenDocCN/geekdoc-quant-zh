@@ -1,0 +1,326 @@
+- en: Price Relative / Relative Strength [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[Price Relative / Relative Strength](#price_relative_relative_strength)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Trend Identification](#trend_identification)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bullish/Bearish Divergences](#bullish_bearish_divergences)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Additional Resources](#additional_resources)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Price Relative indicator compares the performance of one security to another
+    with a ratio chart. This indicator is also known as the Relative Strength indicator
+    or sometimes the Relative Strength Comparative. Often, the Price Relative indicator
+    is used to compare the performance of a stock against a benchmark index, such
+    as the S&P 500\. Chartists can also use the Price Relative to compare the performance
+    of a stock to its sector or industry group. This makes it possible to determine
+    if a stock is leading or lagging its peers. The Price Relative indicator can also
+    be used to find stocks that are holding up better during a broad market decline
+    or showing weakness during a broad market advance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note:** At StockCharts.com, a **ratio ticker symbol** is used to create a
+    Price Relative indicator. A ratio symbol consists of two ticker symbols joined
+    together with a colon character (e.g., “IBM:$SPX”, “$INDU:$GOLD”). The value of
+    a ratio ticker symbol is equal to the close of the first symbol divided by the
+    close of the second symbol.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: The Price Relative indicator is simply the base security divided by the comparative
+    security. Typically, the underlying security is a stock and the benchmark is the
+    S&P 500\. For example, chartists can use the Price Relative to show the performance
+    of Starbucks (SBUX) relative to the S&P 500 ($SPX). This would simply be the price
+    of Starbucks divided by the S&P 500\. Starbucks is part of the consumer discretionary
+    sector. Chartists could also view the performance of Starbucks relative to the
+    Consumer Discretionary SPDR (XLY) with the appropriate [ratio symbol](http://stockcharts.com/docs/doku.php?id=data#ratio_symbols_relative_strength
+    "http://stockcharts.com/docs/doku.php?id=data#ratio_symbols_relative_strength")
+    (SBUX:XLY). Chartists could also view sector performance relative to the S&P 500
+    (XLY:$SPX).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Price Relative - Spreadsheet 1](../Images/652e553429404caea6d41eec0a33baca.jpg
+    "Price Relative - Spreadsheet 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Click here to download this spreadsheet example.](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:price_relative:cs-pricerelative.xls
+    "chart_school:technical_indicators_and_overlays:price_relative:cs-pricerelative.xls
+    (23 KB)")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The table above shows the Starbucks/S&P 500 Price Relative. The first value
+    in row two is .0256 (30.66/1197.75). This ratio increases when Starbucks advances
+    more than the S&P 500 or declines less than the S&P 500\. This ratio decreases
+    when Starbucks advances less than the S&P 500 or declines more than the S&P 500\.
+    For reference, the table also shows the percentage change in Starbucks and the
+    S&P 500\. The percentage change in Starbucks less the percentage change in the
+    S&P 500 is also equal to the daily changes in the Price Relative. In row two,
+    notice that Starbucks was down 2.66% and the S&P 500 was down 1.62%. The Price
+    Relative moved lower (-1.04%) because Starbucks declined more than the S&P 500\.
+    Row three shows the Price Relative rising because Starbucks (+.50%) was up more
+    than the S&P 500 (+.02%). The chart below shows the Price Relative in action.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Price Relative - Chart 1](../Images/28ad925566edc9c87372ac5abf21f805.jpg
+    "Price Relative - Chart 1")'
+  prefs: []
+  type: TYPE_IMG
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Price Relative is used to gauge relative strength, which is important when
+    it comes to stock selection. Many portfolio managers compare their performance
+    to a benchmark, such as the S&P 500\. Their goal is to outperform that benchmark.
+    In order to achieve this goal, managers often look for stocks that are showing
+    relative strength. Enter the Price Relative. The Price Relative rises when a stock
+    shows relative strength and is outperforming its benchmark. Conversely, the Price
+    Relative falls when a stock shows relative weakness and is underperforming its
+    benchmark.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are a few ways to use the Price Relative. First, chartists can perform
+    simple trend analysis to determine the direction of the Price Relative. This can
+    be based on the actual trend, support/resistance breaks, moving averages or other
+    indicators. Second, chartists can look for bullish and bearish divergences in
+    relative strength to warn of a potential reversal in the stock price.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Trend Identification
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Chartists can apply basic trend analysis or [moving averages](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") to determine the direction
+    of the Price Relative. As with any price chart, the Price Relative is trending
+    up when higher highs and higher lows form. Conversely, the Price Relative is trending
+    down when lower lows and lower highs form. Chartists can also apply a moving average
+    of choice. A long-term downtrend could be present when the Price Relative is trading
+    below its 150-day SMA. Alternatively, a long-term uptrend could be present when
+    the Price Relative is trading above its 150-day SMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Price Relative - Chart 2](../Images/d4a23d4173a9f3da488a65930921d4e9.jpg
+    "Price Relative - Chart 2")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart above shows Hewlett-Packard (HPQ) with the Price Relative (HPQ:$SPX).
+    A 15-day SMA was applied to both the HPQ price and the Price Relative. First,
+    notice that the Price Relative broke resistance in mid-June to signal the start
+    of an uptrend. Outperformance continued into December as the Price Relative traced
+    out higher highs and higher lows. The Price Relative peaked in late December and
+    formed a lower high in late February. The subsequent break below the 150-day SMA
+    signaled the start of a downtrend and a period of underperformance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Bullish/Bearish Divergences
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: A [bullish divergence](/school/doku.php?id=chart_school:glossary_b#bullish_divergence
+    "chart_school:glossary_b") in the Price Relative signals relative strength during
+    a price decline. Stocks that hold up the best during a decline are often the leaders
+    when the market turns around. The chart below shows Dupont (DD) with the Price
+    Relative (DD:$SPX). Even though the stock declined from late April until early
+    July, the Price Relative moved higher to signal relative strength during this
+    decline. Dupont was holding up better than the overall market. The stock subsequently
+    became a leader when the market reversed and started moving higher in July. Notice
+    that the Price Relative and the stock both broke resistance in late July (blue
+    lines).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Price Relative - Chart 3](../Images/bc7bbd83703a986ac1f5a5b60f26e951.jpg
+    "Price Relative - Chart 3")'
+  prefs: []
+  type: TYPE_IMG
+- en: A [bearish divergence](/school/doku.php?id=chart_school:glossary_b#bearish_divergence
+    "chart_school:glossary_b") in the Price Relative signals relative weakness during
+    a price advance. Stocks that underperform on the way up often lead lower when
+    the market reverses. The chart below shows Mastercard (MA) with the Price Relative
+    (MA:$SPX). After a sharp decline in early February, the stock advanced to a new
+    reaction high in late April. The Price Relative did not confirm and formed a significantly
+    lower high for a bearish divergence. Also, notice that Price Relative was flat
+    when the stock advanced from the second week of March until late April (blue lines).
+    These signs of relative weakness on the way up foreshadowed a sharp decline in
+    May.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Price Relative - Chart 4](../Images/924552fccc63461a9fa23d0ffecca853.jpg
+    "Price Relative - Chart 4")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Even though this article focused on using the Price Relative for stocks, the
+    Price Relative can also be used for broad market analysis. The stock market can
+    be broken down into nine sectors represented by the sector SPDRs. Chartists can
+    maintain charts with Price Relatives for these nine sectors to determine the leaders
+    and the laggards. The market is in offensive mode when the technology and consumer
+    discretionary sectors lead. The market is in defensive mode when consumer staples,
+    healthcare and utility sectors lead. Once the leading sectors have been determined,
+    chartists can then look within these sectors to find the leading stocks. Sectors
+    that show relative weakness can be avoided to help narrow the search. As with
+    all indicators, it is important to use the Price Relative in conjunction with
+    other technical analysis tools. [momentum oscillators](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")
+    and [chart patterns](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
+    "chart_school:chart_analysis:chart_patterns") can be used to confirm or refute
+    relative strength or relative weakness.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Price Relative is available in SharpCharts by using the “Price” indicator
+    with [a "Ratio" ticker symbol](http://stockcharts.com/docs/doku.php?id=data#ratio_symbols_relative_strength
+    "http://stockcharts.com/docs/doku.php?id=data#ratio_symbols_relative_strength")
+    (e.g., “IBM:$SPX”). First, select the “Price” indicator. Second, in the parameter
+    box, enter the symbol for the base security followed by a colon (”:”) and then
+    the symbol for the comparative security.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that you can also use two “pseudo-symbols” inside a ratio symbol - “$SECTOR”
+    and “$INDUSTRY”. We will automatically replace those symbols with the appropriate
+    sector or industry ETF/index. For example “IBM:$SECTOR” is the same as “IBM:XLK”.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Price Relative can be placed above, below or behind the price plot of the
+    base security. Placing the indicator “behind price” makes it easy to compare the
+    two lines. The chart below shows the Price Relative (pink) behind the price plot.
+    Notice the bullish divergence in August and the bearish divergence in December.
+    Use “Advanced Options” to add a moving average or another indicator to the Price
+    Relative. [Click here for a live example](http://stockcharts.com/h-sc/ui?s=XLY&p=D&yr=0&mn=6&dy=0&id=p08051994524&listNum=30&a=220460939
+    "http://stockcharts.com/h-sc/ui?s=XLY&p=D&yr=0&mn=6&dy=0&id=p08051994524&listNum=30&a=220460939").
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Price Relative - Chart 5](../Images/8750fa63f1c6716db84fec380fb89bcb.jpg
+    "Price Relative - Chart 5")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Price Relative - SharpCharts](../Images/a7c258055e692915c66fcdd4347d1438.jpg
+    "Price Relative - SharpCharts")'
+  prefs: []
+  type: TYPE_IMG
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Murphy's book covers relative strength analysis in the chapter on intermarket
+    analysis. Murphy also looks at sector relative strength and shows how to apply
+    relative strength to individual stocks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Technical Analysis Explained features a chapter on the concept of relative strength.
+    Pring shows chart examples to determine relative strength and also teaches readers
+    how to combine relative strength with other indicators.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis of the Financial Markets** John J. Murphy | **Technical
+    Analysis Explained by Martin Pring** Martin Pring |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    | [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition
+    "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '* * *'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additional Resources
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Stocks & Commodities Magazine Articles
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '**[Relative Strength by Martin Pring](http://stockcharts.com/h-mem/tascredirect.html?artid=\V19\C07\079RS.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V19\C07\079RS.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Jun 2001 - Stocks & Commodities V. 19:7 (42-46)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Working Money: Using Relative Strength by Steve Watkins](http://stockcharts.com/h-mem/tascredirect.html?artid=\V21\C05\101WATK.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V21\C05\101WATK.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Apr 2003 - Stocks & Commodities
+  prefs: []
+  type: TYPE_NORMAL

@@ -1,0 +1,369 @@
+- en: On Balance Volume (OBV) [ChartSchool]
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[On Balance Volume (OBV)](#on_balance_volume_obv)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introduction](#introduction)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Calculation](#calculation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Interpretation](#interpretation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Divergences](#divergences)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Trend Confirmation](#trend_confirmation)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusions](#conclusions)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using with SharpCharts](#using_with_sharpcharts)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Suggested Scans](#suggested_scans)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bullish Divergence in OBV and ADL](#bullish_divergence_in_obv_and_adl)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Bearish divergence in OBV and ADL](#bearish_divergence_in_obv_and_adl)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Further Study](#further_study)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Additional Resources](#additional_resources)'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Stocks & Commodities Magazine Articles](#stocks_commodities_magazine_articles)'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: On Balance Volume (OBV) measures buying and selling pressure as a cumulative
+    indicator that adds volume on up days and subtracts volume on down days. OBV was
+    developed by Joe Granville and introduced in his 1963 book, Granville's New Key
+    to Stock Market Profits. It was one of the first indicators to measure positive
+    and negative volume flow. Chartists can look for divergences between OBV and price
+    to predict price movements or use OBV to confirm price trends.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The On Balance Volume (OBV) line is simply a running total of positive and negative
+    volume. A period's volume is positive when the close is above the prior close.
+    A period's volume is negative when the close is below the prior close.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: '![Table 1  -  On Balance Volume](../Images/8d2d3b0d1ad66223f7819274348f403c.jpg
+    "Table 1  -  On Balance Volume")'
+  prefs: []
+  type: TYPE_IMG
+- en: Data in the table above comes from Wal-mart (WMT). Volume figures were rounded
+    off and are shown in 1000's. In other words, 8,200 really equals 8,200,000 or
+    8.2 million shares. First, we must determine if Wal-mart closed up (+1) or down
+    (-1). This number is now used as the volume multiplier to compute positive or
+    negative volume. The last column (OBV) forms the running total for positive/negative
+    volume. Because OBV has to start somewhere, the first value (8200) is simply equal
+    to the first period's positive/negative volume. The chart below shows Wal-mart
+    with volume and OBV.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Table 1  -  On Balance Volume](../Images/7401aa3a9f1a60384446199b914fd426.jpg
+    "Table 1  -  On Balance Volume")'
+  prefs: []
+  type: TYPE_IMG
+- en: Interpretation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Granville theorized that volume precedes price. OBV rises when volume on up
+    days outpaces volume on down days. OBV falls when volume on down days is stronger.
+    A rising OBV reflects positive volume pressure that can lead to higher prices.
+    Conversely, falling OBV reflects negative volume pressure that can foreshadow
+    lower prices. Granville noted in his research that OBV would often move before
+    price. Expect prices to move higher if OBV is rising while prices are either flat
+    or moving down. Expect prices to move lower if OBV is falling while prices are
+    either flat or moving up.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The absolute value of OBV is not important. Chartists should instead focus on
+    the characteristics of the OBV line. First, define the trend for OBV. Second,
+    determine if the current trend matches the trend for the underlying security.
+    Third, look for potential support or resistance levels. Once broken, the trend
+    for OBV will change and these breaks can be used to generate signals. Also, notice
+    that OBV is based on closing prices. Therefore, closing prices should be considered
+    when looking for divergences or support/resistance breaks. And finally, volume
+    spikes can sometimes throw off the indicator by causing a sharp move that will
+    require a settling period.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Divergences
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Bullish and [bearish divergence](/school/doku.php?id=chart_school:glossary_b#bearish_divergence
+    "chart_school:glossary_b") signals can be used to anticipate a trend reversal.
+    These signals are truly based on the theory that volume precedes prices. A bullish
+    divergence forms when OBV moves higher or forms a higher low even as prices move
+    lower or forge a lower low. A bearish divergence forms when OBV moves lower or
+    forms a lower low even as prices move higher or forge a higher high. The divergence
+    between OBV and price should alert chartists that a price reversal could be in
+    the making.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The chart for Starbucks (SBUX) shows a [bullish divergence](/school/doku.php?id=chart_school:glossary_b#bullish_divergence
+    "chart_school:glossary_b") forming in July. On the price chart, SBUX moved below
+    its June low with a lower low in early July. OBV, on the other hand, held above
+    its June low to form a bullish divergence. OBV went on to break resistance before
+    SBUX broke resistance. This was a classic case of volume leading price. SBUX broke
+    resistance a week later and continued above 20 for a 30+ percent gain. The second
+    chart shows OBV moving higher as Texas Instruments (TXN) trades within a range.
+    Rising OBV during a trading range indicates accumulation, which is bullish.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 2  -  On Balance Volume](../Images/3c66257c4c1d656de9c3952372f53f85.jpg
+    "Chart 2  -  On Balance Volume")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Chart 3  -  On Balance Volume](../Images/3b1cf99f5a0393fa0adfde99f624ccb5.jpg
+    "Chart 3  -  On Balance Volume")'
+  prefs: []
+  type: TYPE_IMG
+- en: The chart for Medtronic (MDT) shows a bearish divergence with volume leading
+    price lower. The blue dotted lines identify the divergence period. MDT moved higher
+    (43 to 45) as OBV moved lower. Also, notice that OBV broke support during this
+    divergence period. The uptrend in OBV reversed with the break below the February
+    low. MDT, on the other hand, was still moving higher. Volume ultimately won the
+    day as MDT followed volume lower with a decline into the low 30s. The second chart
+    shows Valero Energy (VLO) with OBV forming a bearish divergence in April and a
+    confirming support break in May.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 4  -  On Balance Volume](../Images/44f968a3528d1665f5b1e438e9041dcb.jpg
+    "Chart 4  -  On Balance Volume")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Chart 5  -  On Balance Volume](../Images/6dc60f820cd463f1e2cb27a52bce6e91.jpg
+    "Chart 5  -  On Balance Volume")'
+  prefs: []
+  type: TYPE_IMG
+- en: Trend Confirmation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: OBV can be used to confirm a price trend, upside breakout or downside break.
+    The chart for Best Buy (BBY) shows three confirming signals as well as confirmation
+    of the price trend. OBV and BBY moved lower in December-January, higher from March
+    to April, lower from May to August and higher from September to October. The trends
+    in OBV matched the trend in BBY.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 6  -  On Balance Volume](../Images/de98496a3304efd34075756fbc8765d7.jpg
+    "Chart 6  -  On Balance Volume")'
+  prefs: []
+  type: TYPE_IMG
+- en: OBV also confirmed trend reversals in BBY. Notice how BBY broke its downtrend
+    line in late February and OBV confirmed with a resistance breakout in March. BBY
+    broke its uptrend line in late April and OBV confirmed with a support break in
+    early May. BBY broke its downtrend line in early September and OBV confirmed with
+    a trend line break a week later. These coincident signals indicated that positive
+    and negative volume were in harmony with price.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sometimes OBV moves step-for-step with the underlying security. In this case,
+    OBV is confirming the strength of the underlying trend, be it down or up. The
+    chart for Autozone (AZO) shows prices as a black line and OBV as a pink line.
+    Both moved steadily higher from November 2009 until October 2010\. Positive volume
+    remained strong throughout the advance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chart 7  -  On Balance Volume](../Images/69c39979a9df8c350116ab318cf8cd9a.jpg
+    "Chart 7  -  On Balance Volume")'
+  prefs: []
+  type: TYPE_IMG
+- en: Conclusions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: On Balance Volume (OBV) is a simple indicator that uses volume and price to
+    measure buying pressure and selling pressure. Buying pressure is evident when
+    positive volume exceeds negative volume and the OBV line rises. Selling pressure
+    is present when negative volume exceeds positive volume and the OBV line falls.
+    Chartists can use OBV to confirm the underlying trend or look for divergences
+    that may foreshadow a price change. As with all indicators, it is important to
+    use OBV in conjunction with other aspects of technical analysis. It is not a standalone
+    indicator. OBV can be combined with basic [pattern analysis](/school/doku.php?id=chart_school:chart_analysis:chart_patterns
+    "chart_school:chart_analysis:chart_patterns") or to confirm signals from [momentum
+    oscillators](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators
+    "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators").
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using with SharpCharts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: On Balance Volume (OBV) is available in SharpCharts as an indicator. After selecting,
+    OBV can be positioned above, below or behind the price plot of the underlying
+    security. Positioning it behind the plot makes it easy to compare OBV with the
+    underlying security. Chartists can also add a [moving average](/school/doku.php?id=chart_school:technical_indicators:moving_averages
+    "chart_school:technical_indicators:moving_averages") or another indicator to OBV
+    by selecting Advanced options, which is to the right of the indicator position.
+    [Click here](http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p32660999348&listNum=30&a=216754758
+    "http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p32660999348&listNum=30&a=216754758")
+    for a live chart with On Balance Volume.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![SharpCharts  -  On Balance Volume](../Images/6d9811e81290ada70b6f74573e453189.jpg
+    "SharpCharts  -  On Balance Volume")'
+  prefs: []
+  type: TYPE_IMG
+- en: '![SharpCharts  -  On Balance Volume](../Images/1ac18b19be874bdbd1dc3c380c6a802f.jpg
+    "SharpCharts  -  On Balance Volume")'
+  prefs: []
+  type: TYPE_IMG
+- en: Suggested Scans
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Bullish Divergence in OBV and ADL
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with a base of stocks that are averaging at least $10 in price
+    and 100,000 daily volume over the last 60 days. Potential bullish divergences
+    are found by looking for stocks where price is BELOW the 65-day SMA and 20-day
+    SMA, but OBV and the Accumulation Distribution Line are ABOVE the 65-day SMA and
+    20-day SMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Bearish divergence in OBV and ADL
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This scan starts with a base of stocks that are averaging at least $10 in price
+    and 100,000 daily volume over the last 60 days. Potential bearish divergences
+    are found by looking for stocks where price is ABOVE the 65-day SMA and 20-day
+    SMA, but OBV and the Accumulation Distribution Line are BELOW the 65-day SMA and
+    20-day SMA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: For more details on the syntax to use for OBV scans, please see our [Scanning
+    Indicator Reference](http://stockcharts.com/docs/doku.php?id=scans:indicators#on_balance_volume
+    "http://stockcharts.com/docs/doku.php?id=scans:indicators#on_balance_volume")
+    in the Support Center.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note**: For the purposes of scanning, daily volume data is incomplete during
+    the trading day. When running scans with volume-based indicators like OBV, be
+    sure to base the scan on the “Last Market Close.” Examples of other volume-based
+    indicators include Accumulation/Distribution, Chaikin Money Flow, and the PVO.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further Study
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: This book covers it all with explanations that are simple and clear. Murphy
+    covers all the major charts patterns and indicators, including OBV. A complete
+    chapter is devoted to understanding volume and open interest.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Technical Analysis of the Financial Markets** John J. Murphy |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![](../Images/e00f9b0f57a7325646647a118f3ebe9e.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| [![Buy Now](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "Buy Now")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1
+    "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '* * *'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additional Resources
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Stocks & Commodities Magazine Articles
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '**[On-Balance Volume Indicator by Bruce R. Faber](http://stockcharts.com/h-mem/tascredirect.html?artid=\V12\C07\ONBALAN.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V12\C07\ONBALAN.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Jun 1994 - Stocks & Commodities
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[On-Balance Volume by Stuart Evens](http://stockcharts.com/h-mem/tascredirect.html?artid=\V17\C05\036OBV.pdf
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V17\C05\036OBV.pdf")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Apr 1999 - Stocks & Commodities
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Daytrading with On-Balance Volume by D.W. Davies](http://stockcharts.com/h-mem/tascredirect.html?artid=\V22\C01\004DAVE.PDF
+    "http://stockcharts.com/h-mem/tascredirect.html?artid=\V22\C01\004DAVE.PDF")**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Dec 2003 - Stocks & Commodities
+  prefs: []
+  type: TYPE_NORMAL
