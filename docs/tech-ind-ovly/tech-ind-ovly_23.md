@@ -1,4 +1,4 @@
-# Chaikin Oscillator [ChartSchool]
+# Chaikin Oscillator 
 
 ### 目录
 

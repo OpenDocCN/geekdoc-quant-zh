@@ -1,4 +1,4 @@
-# ZigZag [ChartSchool]
+# ZigZag 
 
 ### 目录
 

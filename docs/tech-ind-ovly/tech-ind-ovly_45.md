@@ -1,4 +1,4 @@
-# RRG 相对强度[ChartSchool]
+# RRG 相对强度
 
 ### 目录
 

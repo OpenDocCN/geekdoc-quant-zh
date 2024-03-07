@@ -1,4 +1,4 @@
-# 资金流指数（MFI）[ChartSchool]
+# 资金流指数（MFI）
 
 ### 目录
 

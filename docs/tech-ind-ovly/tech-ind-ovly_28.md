@@ -1,4 +1,4 @@
-# DecisionPoint 价格动量振荡器（PMO）[ChartSchool]
+# DecisionPoint 价格动量振荡器（PMO）
 
 ### 目录
 

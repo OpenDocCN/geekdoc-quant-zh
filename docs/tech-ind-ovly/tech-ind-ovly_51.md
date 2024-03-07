@@ -1,4 +1,4 @@
-# TRIX [ChartSchool]
+# TRIX 
 
 ### 目录
 

@@ -1,4 +1,4 @@
-# MACD-Histogram [ChartSchool]
+# MACD-Histogram 
 
 ### 目录
 

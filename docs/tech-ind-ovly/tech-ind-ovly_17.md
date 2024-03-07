@@ -1,4 +1,4 @@
-# Aroon 振荡器[ChartSchool]
+# Aroon 振荡器
 
 ### 目录
 

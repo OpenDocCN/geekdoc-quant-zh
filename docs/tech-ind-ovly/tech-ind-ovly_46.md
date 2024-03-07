@@ -1,4 +1,4 @@
-# StockCharts 技术排名（SCTR）[ChartSchool]
+# StockCharts 技术排名（SCTR）
 
 ### 目录
 

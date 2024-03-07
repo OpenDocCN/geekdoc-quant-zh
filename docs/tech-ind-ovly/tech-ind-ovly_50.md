@@ -1,4 +1,4 @@
-# StochRSI [ChartSchool]
+# StochRSI 
 
 ### 目录
 
