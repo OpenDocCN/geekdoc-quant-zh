@@ -43,11 +43,11 @@ Highest High = highest high for the look-back period
 
 威廉斯%R的默认设置是14个周期，可以是天、周、月或日内时间框架。14个周期的%R将使用最近的收盘价，过去14个周期内的最高价和最低价。
 
-![威廉斯%R - 电子表格1](../Images/51afcb57b78555587d0b04e2bf973269.jpg "威廉斯%R - 电子表格1")
+![威廉斯%R - 电子表格1](img/51afcb57b78555587d0b04e2bf973269.jpg "威廉斯%R - 电子表格1")
 
 [点击这里下载这个电子表格示例。](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:williams_r:cs-percentr.xls "chart_school:technical_indicators_and_overlays:williams_r:cs-percentr.xls (13 KB)")
 
-![威廉斯%R - 图表1](../Images/e422bdda4a35e63a679d03ff6e1c8b30.jpg "威廉斯%R - 图表1")
+![威廉斯%R - 图表1](img/e422bdda4a35e63a679d03ff6e1c8b30.jpg "威廉斯%R - 图表1")
 
 ## 解释
 
@@ -65,17 +65,17 @@ Highest High = highest high for the look-back period
 
 图表3显示了阿奇煤炭公司（ACI）的14天威廉指标%R经常触及超买和超卖水平。红色虚线标记了超买信号后下跌至-50以下的情况。绿色虚线标记了超卖信号后上涨至-50以上的情况。如上所述，超买并不一定是熊市信号，超卖也不一定是牛市信号。顶部和底部选择者可以在超买或超卖时采取行动，但等待确认动作通常是明智的。在超买信号后下跌至-50以下确认了下跌。在超卖信号后上涨至-50以上确认了上涨。
 
-![威廉指标 - 图表 2](../Images/5a12e340ed89ce4488a03cf12ccb53a3.jpg "威廉指标 - 图表 2")
+![威廉指标 - 图表 2](img/5a12e340ed89ce4488a03cf12ccb53a3.jpg "威廉指标 - 图表 2")
 
 ## 动量失败
 
 未能重新进入超买或超卖区域表明了动量的变化，可能预示着重大价格波动。能够持续上移至-20以上显示出了强势。毕竟，需要买盘压力才能将%R推入超买区域。一旦一项证券通过多次进入超买区域显示出了强势，随后未能超过此水平的失败表明了动量的减弱，可能预示着下跌。
 
-![威廉指标 - 图表 3](../Images/585d3c2879b10d235ab38ab3061382da.jpg "威廉指标 - 图表 3")
+![威廉指标 - 图表 3](img/585d3c2879b10d235ab38ab3061382da.jpg "威廉指标 - 图表 3")
 
 上图显示了思科公司的14天%R。该股票在2月至4月间表现强劲，出现了许多超买信号。即使在4月初跌破-80之后，%R又迅速回升至-20以上，显示出持续的强势。经过几周的超买信号后，%R在5月初暴跌至超卖水平。这次急剧的暴跌显示出强烈的卖压。随后的反弹未能达到-20以下，也未能达到超买区域。这是第二个弱势信号。在跌破-20以下后，跌破-50标志着动量的下降，股票急剧下跌。6月中旬再次在-20以下失败也导致了急剧下跌。
 
-![威廉指标 - 图表 4](../Images/be7846a9f4a14899a4e36eff7425d7c1.jpg "威廉指标 - 图表 4")
+![威廉指标 - 图表 4](img/be7846a9f4a14899a4e36eff7425d7c1.jpg "威廉指标 - 图表 4")
 
 上图显示了TJX公司（TJX）的28天威廉指标%R。图表分析师可以调整回溯期以适应其分析目标。较长的时间框架使指标变得不太敏感。在10月份超买后，指标下跌并在12月两次超卖。1月份的激增将%R推入超买区域，股票突破了通道阻力。这些都是有希望的迹象。在随后的回调中，%R保持在-80以上，并未超卖。这显示了潜在的强势。随后的上移超过-50预示着接下来几个月的急剧上涨。
 
@@ -83,15 +83,15 @@ Highest High = highest high for the look-back period
 
 威廉斯%R是一种动量振荡器，它测量收盘价相对于一定时间内的高低范围的水平。除了上述信号外，图表分析师还可以使用%R来衡量某种证券的六个月趋势。125天的%R大约涵盖了6个月。当%R高于-50时，价格高于其6个月平均值，这与上升趋势一致。当%R低于-50时，读数与下降趋势一致。在这方面，%R可用于帮助定义更大的趋势（六个月）。与所有技术指标一样，重要的是将威廉斯%R与其他技术分析工具结合使用。成交量、[图表模式](/school/doku.php?id=chart_school:chart_analysis:chart_patterns "chart_school:chart_analysis:chart_patterns")和突破可以用来确认或否定威廉斯%R产生的信号。
 
-![威廉斯%R - 图表5](../Images/869f99f54000240efce3365bff4ab23c.jpg "威廉斯%R - 图表5")
+![威廉斯%R - 图表5](img/869f99f54000240efce3365bff4ab23c.jpg "威廉斯%R - 图表5")
 
 ## 使用SharpCharts
 
 威廉斯%R可作为SharpCharts的指标。默认设置为14，但用户可以选择更短的时间框架以产生更敏感的振荡器，或者选择更长的时间框架以产生更不敏感的振荡器。一旦选择，指标可以放置在基础价格图表的上方、下方或后面。单击“高级选项”以添加移动平均线、水平线或另一个指标。可以添加3天的SMA作为信号线。[点击这里查看实时示例](http://stockcharts.com/h-sc/ui?s=QQQQ&p=D&yr=0&mn=6&dy=0&id=p67764551359&listNum=30&a=219822109 "http://stockcharts.com/h-sc/ui?s=QQQQ&p=D&yr=0&mn=6&dy=0&id=p67764551359&listNum=30&a=219822109")。
 
-![威廉斯%R - 图表6](../Images/5aa5b36643c4b574760eeff9ec4c1410.jpg "威廉斯%R - 图表6")
+![威廉斯%R - 图表6](img/5aa5b36643c4b574760eeff9ec4c1410.jpg "威廉斯%R - 图表6")
 
-![威廉斯%R - SharpCharts](../Images/0bf13ab89cb754aa90f8109262e4fcc7.jpg "威廉斯%R - SharpCharts")
+![威廉斯%R - SharpCharts](img/0bf13ab89cb754aa90f8109262e4fcc7.jpg "威廉斯%R - SharpCharts")
 
 ## 建议扫描
 
@@ -133,5 +133,5 @@ Pring的书展示了动量指标的基础知识，涵盖了背离、交叉和其
 
 | **金融市场技术分析** 约翰·J·墨菲 | **马丁·普林格的技术分析解析** 马丁·普林格 |
 | --- | --- |
-| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
-| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| [![](img/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![](img/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |

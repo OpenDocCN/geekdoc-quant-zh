@@ -36,11 +36,11 @@ Aroon-Down = ((25 - Days Since 25-day Low)/25) x 100
 
 ```
 
-![Aroon - 图表 1](../Images/3ab84ab991d5385d78051ec79cb27ba4.jpg "Aroon - 图表 1")
+![Aroon - 图表 1](img/3ab84ab991d5385d78051ec79cb27ba4.jpg "Aroon - 图表 1")
 
 随着新高点或新低点之间经过的时间增加，Aroon 会下降。50 是分界点。因为 12.5 天标记着确切的中点，在日线图上不可能出现恰好为 50 的读数。在其他时间框架上是可能的。在日线图上，Aroon 要么低于 50（48），要么高于 50（52）。高于 50 的读数意味着在过去的 12 天或更短时间内记录了新高点或新低点。这是最近一半的回顾期。低于 50 的读数意味着在过去的 13 天或更长时间内记录了新高点或新低点（（25-13）/25 x 100 = 48）。这是回顾期的后一半。下表显示了 25 天 Aroon-Up 和 25 天 Aroon-Down 的数值范围。
 
-![Aroon - 表格 1](../Images/8612b00403ab9e3c3934c406586ae5cb.jpg "Aroon - 表格 1")
+![Aroon - 表格 1](img/8612b00403ab9e3c3934c406586ae5cb.jpg "Aroon - 表格 1")
 
 ## 解释
 
@@ -52,7 +52,7 @@ Aroon 指标达到 100 表示可能出现新趋势。这可以通过另一个 Ar
 
 新趋势信号有三个阶段。首先，Aroon 线会交叉。其次，Aroon 线会在 50 以上/以下交叉。第三，Aroon 线中的一条将达到 100。例如，上升趋势信号的第一阶段是当 Aroon-Up 移动到 Aroon-Down 之上。这显示新高比新低更近。请记住，Aroon 衡量的是经过的时间，而不是价格。第二阶段是当 Aroon-Up 移动到 50 以上，Aroon-Down 移动到 50 以下。第三阶段是当 Aroon-Up 达到 100，而 Aroon-Down 保持在相对较低水平。第一和第二阶段并不总是按照这个顺序发生。有时 Aroon-Up 会突破 50，然后突破 Aroon-Down。逆向工程上升趋势阶段将给出新兴下降趋势信号。Aroon-Down 突破 Aroon-Up，突破 50，并达到 100。
 
-![Aroon - 图表 2](../Images/ea3beba1b1659579a7ce335a49d2db50.jpg "Aroon - 图表 2")
+![Aroon - 图表 2](img/ea3beba1b1659579a7ce335a49d2db50.jpg "Aroon - 图表 2")
 
 上图显示了 CSX Corp（CSX）的周线和 25 周 Aroon。首先，请注意，随着 Aroon-Down 在 2007 年底（最左侧）下降至 50 以下，下降趋势开始减弱。上升趋势的第一阶段是在 2008 年初 Aroon-Up 移动到 Aroon-Down 之上时发出的（第一个橙色圆圈）。Aroon-Up 继续保持在 50 以上，并在 Aroon-Down 保持在相对较低水平时达到 100。请注意，随着上涨的持续，Aroon-Up 保持接近 100。这种新兴上升趋势信号持续到 2008 年 9 月，当 Aroon-Down 突破 Aroon-Up，超过 50 并激增至 100 时（第二个橙色圆圈）。请注意，随着下降趋势的延伸，Aroon-Down 保持接近 100。这张图上的第三个趋势是在 2009 年 6 月 Aroon-Up 激增至 100 并连续一年以上保持在 50 以上时发出的信号（第三个橙色圆圈）。另外，请注意，Aroon-Down 保持在 50 以下一年以上。
 
@@ -60,11 +60,11 @@ Aroon 指标达到 100 表示可能出现新趋势。这可以通过另一个 Ar
 
 当两条线都低于 50 和/或平行下降时，Aroon 指标会发出巩固信号。一致低于 50 的读数表明平稳交易。对于 25 天 Aroon，低于 50 的读数意味着在 13 天或更长时间内没有记录到 25 天的高点或低点。当没有记录到新高点或新低点时，价格显然是平稳的。同样，当 Aroon-Up 和 Aroon-Down 齐头并进地平行下降，且两条线之间的距离非常小时，通常会形成巩固。这种狭窄的平行下降表明某种交易范围正在形成。第一个突破 50 并达到 100 的 Aroon 指标将触发下一个信号。
 
-![Aroon - 图表 3](../Images/ab449227af3b97ad603c42c6cfb97a72.jpg "Aroon - 图表 3")
+![Aroon - 图表 3](img/ab449227af3b97ad603c42c6cfb97a72.jpg "Aroon - 图表 3")
 
 上图显示了 Omnicom (OMC) 的 Aroon 指标在平行下降中移动至 50 以下。通道的宽度可能较窄，但我们可以在价格图表上看到巩固形成的迹象。Aroon-Up 和 Aroon-Down 都在黄色区域低于 50。随后，Aroon-Up 突破并飙升至 100，这是在突破之前发生的。另一个 Aroon-Up 在突破点再次飙升，进一步确认了巩固结束和上涨开始的信号。
 
-![Aroon - 图表 4](../Images/b3cf47fd93a5a65bcfa27032edb514f7.jpg "Aroon - 图表 4")
+![Aroon - 图表 4](img/b3cf47fd93a5a65bcfa27032edb514f7.jpg "Aroon - 图表 4")
 
 下图显示了 Lifepoint Hospitals (LPNT) 的 25 天 Aroon 指标。五月份，两条线同时下降，呈平行下降趋势。在整个下降过程中，两条线之间的距离大约为 25 点。六月份，Aroon-Up 和 Aroon-Down 趋于平缓，两者在三角形巩固期间都保持在 50 以下约两周时间。Aroon-Down（红色）首先突破 50，正好在价格图表上的三角形突破之前。随着价格突破三角形支撑位，Aroon-Down 达到 100，预示着继续下跌。
 
@@ -76,7 +76,7 @@ Aroon 指标达到 100 表示可能出现新趋势。这可以通过另一个 Ar
 
 Aroon 指标在 SharpCharts 上作为一个指标可用。简单地选择“Aroon”将显示 Aroon-Up 和 Aroon-Down。这些指标可以放置在基础证券的价格图之上、之下或之后。用户可以点击指标右侧的绿色箭头查看高级选项，并在 50 处添加水平线。用户甚至可以将另一个指标应用于 Aroon 指标。**[点击这里](http://stockcharts.com/h-sc/ui?s=DIA&p=D&yr=0&mn=8&dy=0&id=p93531652664&listNum=30&a=191771207 "http://stockcharts.com/h-sc/ui?s=DIA&p=D&yr=0&mn=8&dy=0&id=p93531652664&listNum=30&a=191771207")** 查看带有 Aroon 指标的实时图表。
 
-![Aroon - 图表 5](../Images/5639c1604f4256b51c609e45acd66e8e.jpg "Aroon - 图表 5")
+![Aroon - 图表 5](img/5639c1604f4256b51c609e45acd66e8e.jpg "Aroon - 图表 5")
 
 ## 建议的扫描
 

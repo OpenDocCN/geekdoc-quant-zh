@@ -28,7 +28,7 @@
 
 ## SharpCharts 计算
 
-![图表 1](../Images/413893e028220e95a4f40cb5b44f4221.jpg "图表 1")
+![图表 1](img/413893e028220e95a4f40cb5b44f4221.jpg "图表 1")
 
 涡旋指标（VTX）的计算可以分为三部分。首先，根据最近两个周期的高点和低点计算正向和负向趋势运动。正向趋势运动是当前高点到前一低点的距离。当前高点距离前一低点越远，趋势运动越正向。负向趋势运动是当前低点到前一高点的距离。当前低点距离前一高点越远，趋势运动越负向。然后根据指标设置（通常为14个周期）对这些周期性值进行求和。
 
@@ -60,7 +60,7 @@ Normalize the positive and negative trend movements:
 
 ```
 
-![电子表格](../Images/ecc5ea4c1b5ccf25c226276933fe78e7.jpg "电子表格")
+![电子表格](img/ecc5ea4c1b5ccf25c226276933fe78e7.jpg "电子表格")
 
 上表来自Excel电子表格。[点击此处下载](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:vortex_indicator:cs-vortex.xls "chart_school:technical_indicators_and_overlays:vortex_indicator:cs-vortex.xls (33.5 KB)") 这个电子表格。
 
@@ -72,23 +72,23 @@ Normalize the positive and negative trend movements:
 
 最简单的信号触发是 +VI 和 -VI 的交叉。下面的例子展示了纳斯达克 100 ETF（QQQ）使用周线和 26 期 VTX，大约相当于六个月的时间。在六年半的时间里有超过十二次交叉。黄色区域显示了持续超过六个月的看涨交叉。这就是在强劲上升趋势中发生的情况。在 2008 年下半年还有一个重要的看跌交叉。尽管有很多良好的信号，但也有 whipsaws。这只是事物的本质和指标的一般性质。蓝色圈显示了当两个趋势指标在 1 附近徘徊时和标普 500 整理时的犹豫期。
 
-![图表 2](../Images/e3bf249a03fc6f3a0d9fb4f4b27d06d6.jpg "图表 2")
+![图表 2](img/e3bf249a03fc6f3a0d9fb4f4b27d06d6.jpg "图表 2")
 
 第二个例子展示了 Baxter（BAX）使用日线图和 23 期 VTX，大约涵盖一个月的时间。并非每次交叉都会产生明确的趋势信号。请注意，从十月到十一月初 VTX 在 1 附近的狭窄范围内交易（黄色区域）。这标志着价格形成三角形的整理。在 2012 年初有一些 whipsaws（蓝色圈），然后在年底有一些良好的信号。有时候通过等待移动到 1 以上来确认信号会有所帮助。当 +VM 移动到 1 以上时，看涨交叉进一步得到验证，当 -VM 移动到 1 以上时，看跌交叉得到验证。
 
-![图表 3](../Images/80f3d495d519ad57fd8336e554e3a119.jpg "图表 3")
+![图表 3](img/80f3d495d519ad57fd8336e554e3a119.jpg "图表 3")
 
 ## VM 阈值
 
 交易者可以通过将信号阈值设置在 1 的略高和略低处来减少 whipsaws。一个看涨信号可以分为两部分。首先，向下的趋势运动减弱。其次，向上的趋势运动加强。在一个上升趋势开始之前，+VI 通常会减弱并移动到 .90 以下。在这种向下趋势运动减弱之后，随着 +VI 移动到 1.10 以上完成看涨信号，向上运动加强。这个看涨信号会一直有效，直到被看跌信号抵消。相反的逻辑也可以用来生成看跌信号。首先，向上的趋势运动减弱，移动到 .90 以下。其次，向下的趋势运动加强，移动到 1.10 以上。
 
-![图表 4](../Images/bc3a600fe72897ce44ac1e4efaf6f595.jpg "图表 4")
+![图表 4](img/bc3a600fe72897ce44ac1e4efaf6f595.jpg "图表 4")
 
 上图显示了Microchip Technology使用日线图和23周期VTX。尽管两个振荡器交叉频繁，但在十二个月内只有三个“阈值”信号。首先，在九月初，-VM下跌至0.90以下，几天后+VI上穿1.1。尽管+VM多次下跌至0.90以下，但由于-VI从未上穿1.10，这个看涨信号并未完全逆转。第二个信号是在二月下旬，+VI下跌至0.90以下，-VI在三月初上穿1.1。第三个信号是在六月中旬，-VI下跌至0.90以下，几天后+VI上穿1.1。
 
 缩短回溯期将增加灵敏度，并导致更多的阈值交叉。下图显示了康明斯（CMI）使用日线和14周期VTX。这个指标比23周期版本更敏感（波动性更大）。黄色标记表示看涨信号，橙色标记表示看跌信号。
 
-![图表 5](../Images/072301f30292366d258ffa99f1dce6d7.jpg "图表 5")
+![图表 5](img/072301f30292366d258ffa99f1dce6d7.jpg "图表 5")
 
 请记住，VTX并非作为独立指标设计。图表分析师应该使用技术分析的其他方面来确认VTX，提高交易设置的风险收益比，或得出买卖信号。一月初的看涨VTX信号得到了楔形突破的确认。四月的看跌VTX信号后，CMI形成了一个上升楔形，并在五月初急剧下跌时突破了楔形支撑。VTX提供了警报，价格图表提供了信号。
 
@@ -100,9 +100,9 @@ Normalize the positive and negative trend movements:
 
 涡流指数可作为SharpCharts的指标使用。一旦选择，用户可以将指标放置在基础价格图之上、之下或之后。将指标直接放在价格图后面，突出了相对于基础证券价格走势的波动。用户可以应用“高级选项”添加水平线并设置信号阈值。[点击这里](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p98321339986&a=277125891 "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p98321339986&a=277125891") 查看涡流指标实际运行的示例。
 
-![图表 6](../Images/63b4c2145a55641447698478d165f148.jpg "图表 6")
+![图表 6](img/63b4c2145a55641447698478d165f148.jpg "图表 6")
 
-![图表 6](../Images/788f8ac4f029fb678d70fc71212dbbaf.jpg "图表 6")
+![图表 6](img/788f8ac4f029fb678d70fc71212dbbaf.jpg "图表 6")
 
 ## 建议扫描
 
@@ -138,5 +138,5 @@ AND [Daily Close < Daily SMA(50,Daily Close)]
 
 | **金融市场技术分析** 约翰·J·墨菲 | **马丁·普林解读技术分析** 马丁·普林 |
 | --- | --- |
-| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
-| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| [![](img/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![](img/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |

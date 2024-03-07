@@ -34,7 +34,7 @@
 
 威尔德（Wilder）在他的1978年著作《技术交易系统中的新概念》中介绍了抛物线时间/价格系统。这本书还包括[RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi "chart_school:technical_indicators:relative_strength_index_rsi")、真实波幅（ATR）和方向运动概念（ADX）。尽管是在计算机时代之前开发的，但威尔德的指标经受住了时间的考验，仍然非常受欢迎。
 
-![抛物线 SAR - 图表 1](../Images/0999f08b37d2af289f97278ac09cd137.jpg "抛物线 SAR - 图表 1")
+![抛物线 SAR - 图表 1](img/0999f08b37d2af289f97278ac09cd137.jpg "抛物线 SAR - 图表 1")
 
 ## 计算
 
@@ -57,9 +57,9 @@ The Acceleration Factor is multiplied by the difference between the Extreme Poin
 
 ```
 
-![抛物线 SAR - 计算上升](../Images/0f040fe2c6c2b1a170ec0876a29a69b5.jpg "抛物线 SAR - 计算上升")
+![抛物线 SAR - 计算上升](img/0f040fe2c6c2b1a170ec0876a29a69b5.jpg "抛物线 SAR - 计算上升")
 
-![抛物线 SAR - 图表 2](../Images/dc1ca0f288b799d85b3b4efa3747d20b.jpg "抛物线 SAR - 图表 2")
+![抛物线 SAR - 图表 2](img/dc1ca0f288b799d85b3b4efa3747d20b.jpg "抛物线 SAR - 图表 2")
 
 ```py
 Falling SAR
@@ -78,9 +78,9 @@ The Acceleration Factor is multiplied by the difference between the Prior period
 
 ```
 
-![抛物线 SAR - 计算下降](../Images/01b887a7e9931f3ad7a2908bfd732af6.jpg "抛物线 SAR - 计算下降")
+![抛物线 SAR - 计算下降](img/01b887a7e9931f3ad7a2908bfd732af6.jpg "抛物线 SAR - 计算下降")
 
-![抛物线 SAR - 图表 5](../Images/9baf1242e1aa9f9fab30f82ec4072528.jpg "抛物线 SAR - 图表 5")
+![抛物线 SAR - 图表 5](img/9baf1242e1aa9f9fab30f82ec4072528.jpg "抛物线 SAR - 图表 5")
 
 ## 解释
 
@@ -92,17 +92,17 @@ The Acceleration Factor is multiplied by the difference between the Prior period
 
 **通过增加步长可以增加SAR的灵敏度**。较高的步长将SAR移动靠近价格行动，使得反转更有可能发生。如果步长设置得太高，指标将经常反转。这将产生[鞭挞](/school/doku.php?id=chart_school:glossary_w#whipsaw "chart_school:glossary_w")并且无法捕捉趋势。图表 6 显示了IBM的SAR（.01, .20）。步长为.01，最大步长为.20。图表 7 显示了具有更高步长（.03）的IBM。在图表 7 中，SAR更为敏感，因为有更多的反转。这是因为图表 7 中的步长（.03）高于图表 6 中的步长（.01）。
 
-![拟合停止与反转指标 - 图表 6](../Images/593e36b1fad1a33116de0c0549bf5baa.jpg "拟合停止与反转指标 - 图表 6")
+![拟合停止与反转指标 - 图表 6](img/593e36b1fad1a33116de0c0549bf5baa.jpg "拟合停止与反转指标 - 图表 6")
 
-![拟合停止与反转指标 - 图表 7](../Images/c598324b960e21b14b34cf29157f2422.jpg "拟合停止与反转指标 - 图表 7")
+![拟合停止与反转指标 - 图表 7](img/c598324b960e21b14b34cf29157f2422.jpg "拟合停止与反转指标 - 图表 7")
 
 ## 最大步长
 
 该指标的灵敏度也可以通过最大步长进行调整。虽然最大步长可以影响灵敏度，但步长更为重要，因为它设置了随着趋势发展而增加的增量增长率。此外，请注意，增加步长可以确保在趋势发展时更快地达到最大步长。图表 8 显示了百思买（BBY）的最大步长（.10），低于默认设置（.20）。这种较低的最大步长降低了指标的灵敏度，并产生了较少的反转。请注意，此设置捕捉到了为期两个月的下降趋势和随后为期两个月的上升趋势。图表 9 显示了具有较高最大步长（.20）的BBY。这个更高的数值在二月初和四月初产生了额外的反转。
 
-![抛物线SAR - 图表 8](../Images/18b5acaa9e2b250970e39944013e716e.jpg "抛物线SAR - 图表 8")
+![抛物线SAR - 图表 8](img/18b5acaa9e2b250970e39944013e716e.jpg "抛物线SAR - 图表 8")
 
-![抛物线SAR - 图表 9](../Images/a688735bc3d0544ff42cb0bd9e46fb95.jpg "抛物线SAR - 图表 9")
+![抛物线SAR - 图表 9](img/a688735bc3d0544ff42cb0bd9e46fb95.jpg "抛物线SAR - 图表 9")
 
 ## 结论
 
@@ -112,9 +112,9 @@ The Acceleration Factor is multiplied by the difference between the Prior period
 
 抛物线SAR可以在SharpCharts中作为叠加显示。默认参数为步长为0.02，最大步长为0.20。如上所示，这些参数可以根据个别证券的特性进行更改。下面的示例显示了指标为粉色，价格为黑色/白色，图表网格已移除。这种对比使得更容易将指标与基础证券的价格走势进行比较。点击[这里](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p25997070229&listNum=30&a=202528465 "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p25997070229&listNum=30&a=202528465")查看抛物线SAR的实时示例。
 
-[![抛物线SAR - 图表 10](../Images/4d865a6efe789775c5cf5bcf2bebb1b5.jpg "抛物线SAR - 图表 10")](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p25997070229&listNum=30&a=202528465 "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p25997070229&listNum=30&a=202528465")
+[![抛物线SAR - 图表 10](img/4d865a6efe789775c5cf5bcf2bebb1b5.jpg "抛物线SAR - 图表 10")](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p25997070229&listNum=30&a=202528465 "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p25997070229&listNum=30&a=202528465")
 
-![抛物线SAR - SharpCharts 10](../Images/0cf14b7a8cf25ecfb256426c002d7b44.jpg "抛物线SAR - SharpCharts 10")
+![抛物线SAR - SharpCharts 10](img/0cf14b7a8cf25ecfb256426c002d7b44.jpg "抛物线SAR - SharpCharts 10")
 
 ## 建议扫描
 

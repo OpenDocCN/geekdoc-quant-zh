@@ -39,11 +39,11 @@ RoC = Rate-of-Change
 
 [变动率指标](/school/doku.php?id=chart_school:technical_indicators:rate_of_change_roc_and_momentum "chart_school:technical_indicators:rate_of_change_roc_and_momentum")是一个动量振荡器，它在零线上下振荡。科波克使用了11和14个周期，因为据一个圣公会牧师说，这是悼念所爱之人丧失的平均哀悼期。科波克推测，股市损失的恢复期将类似于这个时间段。
 
-![图表 1](../Images/090124138fd2094e161e31af676fa021.jpg "图表 1")
+![图表 1](img/090124138fd2094e161e31af676fa021.jpg "图表 1")
 
 然后，变动率指标通过加权[移动平均](/school/doku.php?id=chart_school:technical_indicators:moving_averages "chart_school:technical_indicators:moving_averages")进行平滑处理。顾名思义，加权移动平均对最新数据赋予更高的权重，对较旧的数据赋予较低的权重。例如，3期加权移动平均会将第一个数据点乘以1，第二个数据点乘以2，第三个数据点乘以3。然后，这三个数字的总和除以6，即权重之和（1 + 2 + 3），以创建加权平均值。下表显示了从Excel电子表格中的计算。
 
-![电子表格 1](../Images/59dcbc5a0aa62857dbc89eebb338b93d.jpg "电子表格 1")
+![电子表格 1](img/59dcbc5a0aa62857dbc89eebb338b93d.jpg "电子表格 1")
 
 [点击此处下载此电子表格示例。](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:coppock_curve:cs-coppock.xls "chart_school:technical_indicators_and_overlays:coppock_curve:cs-coppock.xls (38.5 KB)")
 
@@ -51,7 +51,7 @@ RoC = Rate-of-Change
 
 使用月度数据，这个指标不会触发很多信号。买入信号在穿越进入正区域时触发，而卖出信号在穿越进入负区域时触发。毫不奇怪，自上世纪80年代末以来只有五次信号。下图显示了最近的四个信号。第一个信号在1988年触发，那是在1987年的崩盘之后。
 
-![图表 2](../Images/4c5c5f83d2a5944c1e38afa4766befe4.jpg "图表 2")
+![图表 2](img/4c5c5f83d2a5944c1e38afa4766befe4.jpg "图表 2")
 
 遵循这两个卖出信号的技术分析师将避开最后两次熊市。2001年2月的卖出信号将避开2000年至2002年的大部分熊市。2008年6月的卖出信号将使投资者在2008年下半年市场暴跌之前退出。这些卖出信号可以简单用于退出股市并转入现金，从而降低市场风险和整体风险。
 
@@ -59,11 +59,11 @@ RoC = Rate-of-Change
 
 如上所述，科波克曲线只是一个平滑的动量振荡器。变动率指标衡量动量，加权移动平均平滑数据。这意味着该指标可以用于任何时间框架。分钟图、日图和周图可以用于适应个人的交易/投资风格和时间跨度。下图显示了在道琼斯工业指数上使用周度数据的科波克曲线。如预期的那样，周图产生了比月度图更多的信号。
 
-![图表 3](../Images/550f7b92341fb33be036374b88e3ba66.jpg "图表 3")
+![图表 3](img/550f7b92341fb33be036374b88e3ba66.jpg "图表 3")
 
 除了不同的时间框架，参数可以调整以使指标更快或更慢。较短的变动率设置将使科波克曲线更敏感和更快，而较长的设置将使其更不敏感和更慢。下图显示了纳斯达克100 ETF（QQQ）和科波克曲线（20,10,10）的日线图。这种设置使科波克曲线稍微不那么敏感，可能更适合日线图。
 
-![图表 4](../Images/44cc79ba8fb3a67960e8960cce634535.jpg "图表 4")
+![图表 4](img/44cc79ba8fb3a67960e8960cce634535.jpg "图表 4")
 
 ## 结论
 
@@ -73,7 +73,7 @@ RoC = Rate-of-Change
 
 科波克曲线可以在图表下方的指标部分找到。用户可以通过更改参数框中的数字来调整设置。然后可以将指标定位在“价格后面”，“主窗口上方”或“主窗口下方”。在将其放在价格后面时更改颜色会有所帮助。图表分析师还可以使用“高级”选项添加移动平均线。这个移动平均线类似于信号线，类似于[MACD](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd "chart_school:technical_indicators:moving_average_convergence_divergence_macd")。
 
-![图表 5](../Images/618f6c1cb1a174722cd65228be635034.jpg "图表 5") ![图表 6](../Images/4b1081f7c788fab96f42991e840e858c.jpg "图表 6")
+![图表 5](img/618f6c1cb1a174722cd65228be635034.jpg "图表 5") ![图表 6](img/4b1081f7c788fab96f42991e840e858c.jpg "图表 6")
 
 ## 建议的扫描
 
@@ -111,5 +111,5 @@ AND [Daily Volume > Daily SMA(50,Daily Volume)]
 
 | **金融市场技术分析** 约翰·J·墨菲 | **马丁·普林解释的技术分析** 马丁·普林 |
 | --- | --- |
-| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
-| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| [![](img/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![](img/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |

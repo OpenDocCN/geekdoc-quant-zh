@@ -54,7 +54,7 @@ Wilder在他的1978年著作《技术交易系统中的新概念》中介绍了�
 
 当前低点减去先前低点大于当前高点减去先前高点时，方向运动是**负数**（减号）。这种所谓的负向方向运动（-DM）等于先前低点减去当前低点，前提是它是正数。负值将简单地输入为零。
 
-![图片](../Images/3339cb9422bd3e637443ef99c926525e.jpg)
+![图片](img/3339cb9422bd3e637443ef99c926525e.jpg)
 
 上图显示了四个方向运动计算示例。第一对显示了强烈的正向方向运动（+DM）的高点之间的巨大正差异。第二对显示了一个外部日，负向方向运动（-DM）占优势。第三对显示了低点之间的巨大差异，形成强烈的负向方向运动（-DM）。最后一对显示了一个内部日，相当于没有方向运动（零）。正向方向运动（+DM）和负向方向运动（-DM）都是负数并恢复为零，因此它们互相抵消。所有内部日都将有零方向运动。
 
@@ -78,11 +78,11 @@ Wilder在他的1978年著作《技术交易系统中的新概念》中介绍了�
 
 1.  经过所有这些步骤，现在是计算平均趋向指数（ADX）线的时候了。第一个ADX值只是DX的14天平均值。随后的ADX值通过将前一个14天的ADX值乘以13，加上最新的DX值，然后将总和除以14来平滑。
 
-![](../Images/0d0dabfcc23db99add7ffcf5182969bd.jpg)
+![](img/0d0dabfcc23db99add7ffcf5182969bd.jpg)
 
 上面是一个包含所有计算的电子表格示例。由于需要大约150个周期来吸收平滑技术，因此存在119天的计算间隙。ADX/DMI爱好者可以[点击此处下载](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:average_directional_index_adx:cs-adx.xls "chart_school:technical_indicators_and_overlays:average_directional_index_adx:cs-adx.xls (343.5 KB)")这个电子表格并查看详细信息。下面的图表显示了使用纳斯达克100ETF（QQQQ）的ADX与+DI和-DI的示例。
 
-![](../Images/784b2ce5a39aaad9f2d73e3fca03b3aa.jpg)
+![](img/784b2ce5a39aaad9f2d73e3fca03b3aa.jpg)
 
 ### Wilder的平滑技术
 
@@ -114,7 +114,7 @@ Subsequent ADX14 = ((Prior ADX14 x 13) + Current DX Value)/14
 
 在最基本的层面上，平均趋向指数（ADX）可用于确定证券是否处于趋势状态。这种判断有助于交易员选择趋势跟踪系统或非趋势跟踪系统。Wilder建议当ADX高于25时存在强劲趋势，当低于20时不存在趋势。20和25之间似乎存在一个灰色区域。如上所述，图表分析师可能需要调整设置以增加灵敏度和信号。由于所有平滑技术的影响，ADX也存在相当大的滞后性。许多技术分析师使用20作为ADX的关键水平。
 
-![](../Images/eb5fabd1028aa4638404dbdfee96dad7.jpg)
+![](img/eb5fabd1028aa4638404dbdfee96dad7.jpg)
 
 上图显示了 Nordstrom（JWN）的50日简单移动平均线和14日平均趋向指数（ADX）。该股票在4月至5月间从强劲上升趋势转为强劲下降趋势，但ADX仍保持在20以上，因为强劲上升趋势迅速转变为强劲下降趋势。该股票在2月和8月形成底部时出现了两个非趋势期。在8月底部形成后，出现了强劲趋势，因为ADX上升到20以上并保持在20以上。
 
@@ -122,11 +122,11 @@ Subsequent ADX14 = ((Prior ADX14 x 13) + Current DX Value)/14
 
 Wilder提出了一个简单的交易系统，使用这些方向运动指标进行交易。第一个要求是ADX交易在25以上。这确保了价格正在趋势。然而，许多交易员使用20作为关键水平。当+DI穿过-DI时，会出现买入信号。Wilder将初始止损设定为信号日的低点。只要这个低点保持，即使+DI再次穿过-DI，信号仍然有效。在放弃信号之前，等待这个低点被突破。如果/当ADX转向上并且趋势加强时，这个多头信号会得到加强。一旦趋势发展并变得有利可图，交易员将不得不加入止损和移动止损，以防趋势持续。当-DI穿过+DI时，会触发卖出信号。卖出信号日的高点成为初始止损。
 
-![](../Images/cb3923d0ab1bf987c95e1c1af48e34c4.jpg)
+![](img/cb3923d0ab1bf987c95e1c1af48e34c4.jpg)
 
 上图显示了 Medco Health Solutions 的三个方向运动指标。请注意，使用 20 而不是 25 来确定 ADX 信号。较低的设置意味着更多可能的信号。绿色虚线表示买入信号，红色虚线表示卖出信号。为了专注于指标信号，Wilder 的初始止损未被纳入。正如图表清楚显示的那样，有大量的 +DI 和 -DI 交叉。一些发生在 ADX 大于 20 时以验证信号。其他发生在无效信号时。与大多数这类系统一样，会有虚假信号、好信号和坏信号。关键始终是要结合技术分析的其他方面。例如，2009 年 9 月的第一组虚假信号发生在一次整理期间。此外，这种整理看起来像一面旗帜，这是在上涨后形成的一种看涨整理。在形成看涨整理的情况下，忽略看跌信号是明智的。2010 年 6 月的买入信号发生在一个由破支撑和 50-62% 回撤区域标记的阻力区附近。在如此接近这一阻力区的情况下忽略买入信号是明智的。
 
-![](../Images/84c145349e142211e786c87d87b753f9.jpg)
+![](img/84c145349e142211e786c87d87b753f9.jpg)
 
 上图显示了 AT&T（T）在 12 个月内出现的三个信号。这三个信号相当不错，前提是要获利并使用移动止损。Wilder 的[拟合停损](/school/doku.php?id=chart_school:technical_indicators:parabolic_sar "chart_school:technical_indicators:parabolic_sar")可以用来设置移动止损。请注意，在 3 月和 7 月买入信号之间没有卖出信号。这是因为当 -DI 在 4 月底超过 +DI 时，ADX 不到 20。
 
@@ -138,9 +138,9 @@ Directional Movement System（方向运动系统）指标的计算复杂，解�
 
 SharpCharts用户可以通过从指标下拉列表中选择平均趋向指数（ADX）来绘制这三个方向运动指标。默认情况下，ADX线为黑色，正向指标（+DI）为绿色，负向指标（-DI）为红色。这样可以轻松识别方向指标的交叉点。虽然ADX可以绘制在主价格图表的上方、下方或后面，但建议绘制在上方或下方，因为涉及到三条线。可以添加水平线来帮助识别ADX的变化。下面的图表示例还显示了50日简单移动平均线和抛物线SAR绘制在价格图表的后面。移动平均线用于过滤信号。只有在交易高于50日[移动平均线](/school/doku.php?id=chart_school:technical_indicators:moving_averages "chart_school:technical_indicators:moving_averages")时才使用买入信号。一旦启动，抛物线SAR可用于设置止损。[点击这里](http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=6&dy=0&id=p00212055984&listNum=30&a=224849203 "http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=6&dy=0&id=p00212055984&listNum=30&a=224849203") 查看ADX的实时示例。
 
-![](../Images/087aa74cee0a8201b012f0e546dff45e.jpg)
+![](img/087aa74cee0a8201b012f0e546dff45e.jpg)
 
-![](../Images/f07ddbee5e38107caeab5b3fe20a8593.jpg)
+![](img/f07ddbee5e38107caeab5b3fe20a8593.jpg)
 
 ## 建议扫描
 

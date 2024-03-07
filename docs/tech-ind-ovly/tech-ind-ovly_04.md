@@ -76,7 +76,7 @@ The default setting is 26 periods, but can be adjusted.
 
 本教程在解释各种图表时将使用英文等效词。下表显示了道琼斯工业指数与一目均衡云图的情况。转换线（蓝色）是最快、最敏感的线。请注意，它最接近价格走势。基准线（红色）落后于更快的转换线，但在很大程度上跟随价格走势。转换线和基准线之间的关系类似于9日移动平均线和26日移动平均线之间的关系。9日线更快，更紧密地跟随价格走势。26日线较慢，落后于9日线。顺便提一下，注意到9和26是用来计算[MACD](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd "chart_school:technical_indicators:moving_average_convergence_divergence_macd")的相同周期。
 
-![图表1 - 一目云图](../Images/bdd79746a4c3180489cb85237f053f56.jpg "图表1 - 一目云图")
+![图表1 - 一目云图](img/bdd79746a4c3180489cb85237f053f56.jpg "图表1 - 一目云图")
 
 ## 分析云端
 
@@ -86,11 +86,11 @@ The default setting is 26 periods, but can be adjusted.
 
 图表2显示了IBM关注上升趋势和云端。首先，请注意IBM从6月到1月处于上升趋势，因为它交易在云端之上。其次，请注意云端在7月、10月初和11月初提供支撑。第三，请注意云端如何提供未来[阻力](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance "chart_school:chart_analysis:support_and_resistance")的预览。**记住，整个云端向前偏移26天。** 这意味着它比最后一个价格点提前26天绘制，以指示未来的支撑或阻力。
 
-![图表2 - 一目云图](../Images/fac386b1c584418089980bfb7544819e.jpg "图表2 - 一目云图")
+![图表2 - 一目云图](img/fac386b1c584418089980bfb7544819e.jpg "图表2 - 一目云图")
 
 图表3显示了波音（BA）关注下降趋势和云端。当波音在6月突破云端支撑时，趋势发生了变化。当主导跨度A（绿色）在7月移动到主导跨度B（红色）之下时，云端从绿色变为红色。云端突破代表了第一个趋势变化信号，而颜色变化代表了第二个趋势变化信号。请注意云端随后如何在8月和1月充当阻力。
 
-![图表3 - 一目云图](../Images/61304952cefc74e631c48cc9a11e20e6.jpg "图表3 - 一目云图")
+![图表3 - 一目云图](img/61304952cefc74e631c48cc9a11e20e6.jpg "图表3 - 一目云图")
 
 ## 趋势和信号
 
@@ -100,21 +100,21 @@ The default setting is 26 periods, but can be adjusted.
 
 图表 4 显示金伯利-克拉克（KMB）在上升趋势中产生了两个看涨信号。首先，趋势向上，因为股票交易在云层上方，而云层是绿色的。转换线在6月底的几天内下跌到基准线以下，以启动设置。当转换线在7月份再次移回基准线上方时，触发了一个看涨交叉信号。第二个信号发生在股票朝着云层[支撑](/school/doku.php?id=chart_school:chart_analysis:support_and_resistance "chart_school:chart_analysis:support_and_resistance")移动时。转换线在9月份下移到基准线以下，以启动设置。当转换线在10月份再次移回基准线上方时，触发了另一个看涨交叉信号。有时很难在价格图表上确定确切的转换线和基准线水平。作为参考，这些数字显示在每个 Sharpchart 的左上角。截至1月8日收盘，转换线为62.62（蓝色），基准线为63.71（红色）。
 
-![图表 6 - 一目云](../Images/75f23a7f8c1b45d9596fa3f4a320d207.jpg "图表 6 - 一目云")
+![图表 6 - 一目云](img/75f23a7f8c1b45d9596fa3f4a320d207.jpg "图表 6 - 一目云")
 
 图表 5 显示 AT&T（T）在下降趋势中产生了一个看跌信号。首先，趋势向下，因为股票交易在云层下方，而云层是红色的。在8月份的横盘之后，转换线移动到基准线上方以启动设置。这并没有持续很久，因为转换线在9月15日再次移回基准线以下，触发了一个看跌信号。
 
-![图表 5 - 一目云](../Images/08e655546f0193f13ff133d21245f342.jpg "图表 5 - 一目云")
+![图表 5 - 一目云](img/08e655546f0193f13ff133d21245f342.jpg "图表 5 - 一目云")
 
 ## 价格-基准线信号
 
 图表 6 显示迪士尼在上升趋势中产生了两个看涨信号。随着股票交易在绿色云层上方，价格下跌到基准线（红色）以下以启动设置。这一举动代表了更大上升趋势中的短期超卖情况。当价格再次上涨到基准线以上时，结束了回调并触发了看涨信号。
 
-![图表 6 - 一目云](../Images/52ddebaf763774112fe5e84ddb3c40a3.jpg "图表 6 - 一目云")
+![图表 6 - 一目云](img/52ddebaf763774112fe5e84ddb3c40a3.jpg "图表 6 - 一目云")
 
 图表 7 显示了DR Horton（DHI）在下降趋势中产生了两个看跌信号。随着股价交易在红色云层以下，价格反弹至基准线（红色）以上以启动设置。这一举动在更大的下降趋势中创造了一个短期超买情况。当价格再次下跌至基准线以下时，反弹结束，触发了看跌信号。
 
-![图表 7 - 一目云](../Images/51d20fcb698fb1c4bffd0f451487fcec.jpg "图表 7 - 一目云")
+![图表 7 - 一目云](img/51d20fcb698fb1c4bffd0f451487fcec.jpg "图表 7 - 一目云")
 
 ## 信号总结
 
@@ -152,9 +152,9 @@ The default setting is 26 periods, but can be adjusted.
 
 通过在“叠加”下拉框中选择它作为指标，SharpCharts 上提供了一种名为一目云的指标。默认设置为转换线为9，基准线为26，领先跨度 B 为52。领先跨度 A 基于转换线和基准线。基准线的数字（26）也用于将云向前移动（26 天）。这些数字可以根据个人的交易和投资风格进行调整。有时在增加基准线时需要向图表添加额外的条形，这也会增加云的前进运动。
 
-![](../Images/9bd54a62eb5c151943fa68cc71c22b01.jpg)
+![](img/9bd54a62eb5c151943fa68cc71c22b01.jpg)
 
-[![图表 8 - 一目云](../Images/8ddae703d19f58f7adbd98a42e637b2e.jpg "图表 8 - 一目云")](http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371 "http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371")
+[![图表 8 - 一目云](img/8ddae703d19f58f7adbd98a42e637b2e.jpg "图表 8 - 一目云")](http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371 "http://stockcharts.com/h-sc/ui?s=IWM&p=D&yr=0&mn=6&dy=0&id=p03667051915&listNum=30&a=193876371")
 
 ## 建议的扫描
 
@@ -192,8 +192,8 @@ AND [Daily Ichimoku Base Line(9,26,52) x Daily Close]
 
 | **一目图** 尼科尔·埃利奥特 |
 | --- |
-| [![](../Images/0f3b7b6868a2ab78a4d698e4336b0a65.jpg)](http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds "http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds") |
-| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds "http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds") |
+| [![](img/0f3b7b6868a2ab78a4d698e4336b0a65.jpg)](http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds "http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds") |
+| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds "http://store.stockcharts.com/products/ichimoku-charts-an-introduction-to-ichimoku-kinko-clouds") |
 
 * * *
 

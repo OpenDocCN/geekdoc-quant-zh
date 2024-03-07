@@ -51,11 +51,11 @@ Current OBV = Previous OBV (no change)
 
 ```
 
-![表1  -  成交量平衡](../Images/8d2d3b0d1ad66223f7819274348f403c.jpg "表1  -  成交量平衡")
+![表1  -  成交量平衡](img/8d2d3b0d1ad66223f7819274348f403c.jpg "表1  -  成交量平衡")
 
 上表中的数据来自沃尔玛（WMT）。成交量数据已四舍五入，并以千为单位显示。换句话说，8200实际上等于820万股。首先，我们必须确定沃尔玛是收盘上涨（+1）还是下跌（-1）。这个数字现在被用作成交量乘数，用于计算正向或负向成交量。最后一列（OBV）形成正向/负向成交量的累计总和。因为OBV必须从某个地方开始，第一个值（8200）只是等于第一个时期的正向/负向成交量。下面的图表显示了沃尔玛的成交量和OBV。
 
-![表1  -  成交量平衡](../Images/7401aa3a9f1a60384446199b914fd426.jpg "表1  -  成交量平衡")
+![表1  -  成交量平衡](img/7401aa3a9f1a60384446199b914fd426.jpg "表1  -  成交量平衡")
 
 ## 解释
 
@@ -69,27 +69,27 @@ OBV的绝对值并不重要。图表分析师应该关注OBV线的特征。首�
 
 星巴克（SBUX）的图表显示，7月份形成了一个[多头背离](/school/doku.php?id=chart_school:glossary_b#bullish_divergence "chart_school:glossary_b")。在价格图表上，SBUX在7月初的时候低于了6月的低点。然而，OBV保持在6月的低点之上，形成了一个多头背离。OBV在SBUX突破阻力之前就已经突破了阻力。这是一个经典的成交量领先价格的案例。SBUX一周后突破了阻力，并继续上涨超过20，获得了30%以上的收益。第二张图显示了在德州仪器（TXN）交易区间内交易时，OBV上升。在交易区间内OBV上升表示积累，这是多头的。
 
-![图表 2  -  成交量平衡](../Images/3c66257c4c1d656de9c3952372f53f85.jpg "图表 2  -  成交量平衡")
+![图表 2  -  成交量平衡](img/3c66257c4c1d656de9c3952372f53f85.jpg "图表 2  -  成交量平衡")
 
-![图表 3  -  成交量平衡](../Images/3b1cf99f5a0393fa0adfde99f624ccb5.jpg "图表 3  -  成交量平衡")
+![图表 3  -  成交量平衡](img/3b1cf99f5a0393fa0adfde99f624ccb5.jpg "图表 3  -  成交量平衡")
 
 梅德特龙（MDT）的图表显示，成交量领先价格下跌的空头背离。蓝色虚线标识了背离期。MDT上涨（从43涨到45），而OBV下降。此外，请注意，OBV在这个背离期间突破了支撑。随着突破2月低点，OBV的上升趋势逆转。另一方面，MDT仍在上涨。最终成交量赢得了胜利，随着MDT跟随成交量下跌，跌至30美元以下。第二张图显示了瓦莱罗能源（VLO）在4月形成空头背离，并在5月确认支撑突破。
 
-![图表 4  -  成交量平衡](../Images/44f968a3528d1665f5b1e438e9041dcb.jpg "图表 4  -  成交量平衡")
+![图表 4  -  成交量平衡](img/44f968a3528d1665f5b1e438e9041dcb.jpg "图表 4  -  成交量平衡")
 
-![图表 5  -  成交量平衡指标](../Images/6dc60f820cd463f1e2cb27a52bce6e91.jpg "图表 5  -  成交量平衡指标")
+![图表 5  -  成交量平衡指标](img/6dc60f820cd463f1e2cb27a52bce6e91.jpg "图表 5  -  成交量平衡指标")
 
 ## 趋势确认
 
 OBV可以用来确认价格趋势、上涨突破或下跌突破。Best Buy（BBY）的图表显示了三个确认信号以及价格趋势的确认。OBV和BBY在12月至1月下跌，在3月至4月上涨，在5月至8月下跌，在9月至10月上涨。OBV的趋势与BBY的趋势相匹配。
 
-![图表 6  -  成交量平衡指标](../Images/de98496a3304efd34075756fbc8765d7.jpg "图表 6  -  成交量平衡指标")
+![图表 6  -  成交量平衡指标](img/de98496a3304efd34075756fbc8765d7.jpg "图表 6  -  成交量平衡指标")
 
 OBV还确认了BBY的趋势反转。注意BBY如何在2月底突破了下降趋势线，而OBV在3月确认了阻力突破。BBY在4月底突破了上升趋势线，而OBV在5月初确认了支撑线突破。BBY在9月初突破了下降趋势线，而OBV在一周后确认了趋势线突破。这些一致的信号表明正成交量和负成交量与价格协调一致。
 
 有时OBV与基础证券步调一致。在这种情况下，OBV确认了基础趋势的强势，无论是上涨还是下跌。Autozone（AZO）的图表显示了价格为黑线，OBV为粉线。从2009年11月至2010年10月，两者都稳步上升。正成交量在整个上涨过程中保持强劲。
 
-![图表 7  -  成交量平衡指标](../Images/69c39979a9df8c350116ab318cf8cd9a.jpg "图表 7  -  成交量平衡指标")
+![图表 7  -  成交量平衡指标](img/69c39979a9df8c350116ab318cf8cd9a.jpg "图表 7  -  成交量平衡指标")
 
 ## 结论
 
@@ -99,9 +99,9 @@ OBV还确认了BBY的趋势反转。注意BBY如何在2月底突破了下降趋�
 
 在SharpCharts中，On Balance Volume（OBV）作为一个指标是可用的。选择后，OBV可以放置在基础证券的价格图之上、之下或之后。将其放在图表之后使得比较OBV和基础证券变得容易。图表分析师还可以通过选择高级选项向OBV添加[移动平均线](/school/doku.php?id=chart_school:technical_indicators:moving_averages "chart_school:technical_indicators:moving_averages")或另一个指标，该选项位于指标位置的右侧。[点击这里](http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p32660999348&listNum=30&a=216754758 "http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p32660999348&listNum=30&a=216754758")查看带有On Balance Volume的实时图表。
 
-![SharpCharts  -  On Balance Volume](../Images/6d9811e81290ada70b6f74573e453189.jpg "SharpCharts  -  On Balance Volume")
+![SharpCharts  -  On Balance Volume](img/6d9811e81290ada70b6f74573e453189.jpg "SharpCharts  -  On Balance Volume")
 
-![SharpCharts  -  On Balance Volume](../Images/1ac18b19be874bdbd1dc3c380c6a802f.jpg "SharpCharts  -  On Balance Volume")
+![SharpCharts  -  On Balance Volume](img/1ac18b19be874bdbd1dc3c380c6a802f.jpg "SharpCharts  -  On Balance Volume")
 
 ## 建议的扫描
 
@@ -149,8 +149,8 @@ AND [Daily OBV < Daily OBV Signal(20)]
 
 | **金融市场技术分析** 约翰·J·墨菲 |
 | --- |
-| [![](../Images/e00f9b0f57a7325646647a118f3ebe9e.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |
-| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |
+| [![](img/e00f9b0f57a7325646647a118f3ebe9e.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |
+| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |
 
 * * *
 

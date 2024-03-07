@@ -44,13 +44,13 @@ Ratio Symbol Low   = Low of First Symbol / Close of Second Symbol
 
 价格相对指标简单地是基础证券除以比较证券。通常，基础证券是一支股票，基准是标普500指数。例如，图表分析师可以使用价格相对指标显示星巴克（SBUX）相对于标普500指数（$SPX）的表现。这只是星巴克的价格除以标普500指数。星巴克属于消费者自由选择行业。图表分析师还可以查看星巴克相对于消费者自由选择SPDR（XLY）的表现，使用适当的[比率符号](http://stockcharts.com/docs/doku.php?id=data#ratio_symbols_relative_strength "http://stockcharts.com/docs/doku.php?id=data#ratio_symbols_relative_strength")（SBUX:XLY）。图表分析师还可以查看板块表现相对于标普500指数（XLY:$SPX）。
 
-![价格相对 - 电子表格 1](../Images/652e553429404caea6d41eec0a33baca.jpg "价格相对 - 电子表格 1")
+![价格相对 - 电子表格 1](img/652e553429404caea6d41eec0a33baca.jpg "价格相对 - 电子表格 1")
 
 [点击这里下载此电子表格示例。](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:price_relative:cs-pricerelative.xls "chart_school:technical_indicators_and_overlays:price_relative:cs-pricerelative.xls (23 KB)")
 
 上表显示了星巴克/标普500价格相对性。第二行中的第一个值为0.0256（30.66/1197.75）。当星巴克的涨幅超过标普500或跌幅低于标普500时，这个比率会增加。当星巴克的涨幅低于标普500或跌幅超过标普500时，这个比率会减少。为了参考，表中还显示了星巴克和标普500的百分比变化。星巴克的百分比变化减去标普500的百分比变化也等于价格相对性的日变化。在第二行中，注意到星巴克下跌了2.66%，而标普500下跌了1.62%。价格相对性下降（-1.04%），因为星巴克的跌幅超过了标普500。第三行显示价格相对性上升，因为星巴克（+0.50%）的涨幅高于标普500（+0.02%）。下图展示了价格相对性的实际情况。
 
-![价格相对性 - 图表 1](../Images/28ad925566edc9c87372ac5abf21f805.jpg "价格相对性 - 图表 1")
+![价格相对性 - 图表 1](img/28ad925566edc9c87372ac5abf21f805.jpg "价格相对性 - 图表 1")
 
 ## 解释
 
@@ -62,7 +62,7 @@ Ratio Symbol Low   = Low of First Symbol / Close of Second Symbol
 
 图表分析师可以应用基本趋势分析或[移动平均线](/school/doku.php?id=chart_school:technical_indicators:moving_averages "chart_school:technical_indicators:moving_averages")来确定价格相对性的方向。与任何价格图表一样，当出现更高的高点和更高的低点时，价格相对性就会呈上升趋势。相反，当出现更低的低点和更低的高点时，价格相对性就会呈下降趋势。图表分析师还可以应用所选的移动平均线。当价格相对性交易在其150日简单移动平均线以下时，可能存在长期下降趋势。另外，当价格相对性交易在其150日简单移动平均线以上时，可能存在长期上升趋势。
 
-![价格相对性 - 图表 2](../Images/d4a23d4173a9f3da488a65930921d4e9.jpg "价格相对性 - 图表 2")
+![价格相对性 - 图表 2](img/d4a23d4173a9f3da488a65930921d4e9.jpg "价格相对性 - 图表 2")
 
 上图显示了惠普（HPQ）的价格相对（HPQ:$SPX）。15天SMA应用于HPQ价格和价格相对。首先，请注意，价格相对在6月中旬突破阻力，标志着上升趋势的开始。在12月期间，价格相对继续表现出更高的高点和更高的低点。价格相对在12月下旬达到顶峰，并在2月下旬形成较低的高点。随后，跌破150天SMA标志着下降趋势的开始和表现不佳期。
 
@@ -70,11 +70,11 @@ Ratio Symbol Low   = Low of First Symbol / Close of Second Symbol
 
 在价格下跌期间，价格相对的[牛市背离](/school/doku.php?id=chart_school:glossary_b#bullish_divergence "chart_school:glossary_b")信号相对强势。在下跌期间表现最佳的股票往往是市场反转时的领导者。下图显示了杜邦（DD）的价格相对（DD:$SPX）。尽管股票从4月下旬下跌到7月初，价格相对却上升，表明在这一下跌过程中相对强势。杜邦的表现比整体市场好。随后，当市场反转并在7月开始上涨时，该股成为领头羊。请注意，价格相对和股票在7月下旬突破阻力（蓝线）。  
 
-![价格相对 - 图表 3](../Images/bc7bbd83703a986ac1f5a5b60f26e951.jpg "价格相对 - 图表 3")
+![价格相对 - 图表 3](img/bc7bbd83703a986ac1f5a5b60f26e951.jpg "价格相对 - 图表 3")
 
 在价格上涨期间，价格相对弱势的[熊市背离](/school/doku.php?id=chart_school:glossary_b#bearish_divergence "chart_school:glossary_b")信号。股票在上涨过程中表现不佳，通常在市场反转时率先下跌。下图显示了万事达卡（MA）的价格相对（MA:$SPX）。在2月初急剧下跌后，股票在4月下旬升至新的反应高点。价格相对没有确认，并形成了一个明显较低的高点，形成了熊市背离。此外，请注意，价格相对在股票从3月第二周上涨到4月下旬时是平的（蓝线）。这些上涨过程中的相对弱势迹象预示着5月份的急剧下跌。
 
-![价格相对 - 图表 4](../Images/924552fccc63461a9fa23d0ffecca853.jpg "价格相对 - 图表 4")
+![价格相对 - 图表 4](img/924552fccc63461a9fa23d0ffecca853.jpg "价格相对 - 图表 4")
 
 ## 结论
 
@@ -88,9 +88,9 @@ Ratio Symbol Low   = Low of First Symbol / Close of Second Symbol
 
 价格相对性可以放置在基础证券的价格图表的上方、下方或后方。将指标放置在“价格后面”可以方便比较这两条线。下图显示了价格相对性（粉色）在价格图表后面的情况。请注意8月的看涨背离和12月的看跌背离。使用“高级选项”可以向价格相对性添加移动平均线或另一个指标。[点击这里查看实时示例](http://stockcharts.com/h-sc/ui?s=XLY&p=D&yr=0&mn=6&dy=0&id=p08051994524&listNum=30&a=220460939 "http://stockcharts.com/h-sc/ui?s=XLY&p=D&yr=0&mn=6&dy=0&id=p08051994524&listNum=30&a=220460939")。
 
-![价格相对性 - 图表 5](../Images/8750fa63f1c6716db84fec380fb89bcb.jpg "价格相对性 - 图表 5")
+![价格相对性 - 图表 5](img/8750fa63f1c6716db84fec380fb89bcb.jpg "价格相对性 - 图表 5")
 
-![价格相对性 - SharpCharts](../Images/a7c258055e692915c66fcdd4347d1438.jpg "价格相对性 - SharpCharts")
+![价格相对性 - SharpCharts](img/a7c258055e692915c66fcdd4347d1438.jpg "价格相对性 - SharpCharts")
 
 ## 进一步研究
 
@@ -100,8 +100,8 @@ Ratio Symbol Low   = Low of First Symbol / Close of Second Symbol
 
 | **金融市场技术分析** 约翰·J·墨菲 | **马丁·普林的技术分析解释** 马丁·普林 |
 | --- | --- |
-| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
-| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| [![](img/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![](img/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
 
 * * *
 

@@ -91,9 +91,9 @@ Current KAMA = Prior KAMA + SC x (Price - Prior KAMA)
 
 下面的图片显示了用于计算KAMA和相应QQQ图表的Excel电子表格的截图。
 
-![KAMA Excel](../Images/441992ab2bda308626f77c5870c65118.jpg "KAMA Excel")
+![KAMA Excel](img/441992ab2bda308626f77c5870c65118.jpg "KAMA Excel")
 
-![KAMA 图表](../Images/7a8955b0c604f97aa6390ce96636ba62.jpg "KAMA Chart")
+![KAMA 图表](img/7a8955b0c604f97aa6390ce96636ba62.jpg "KAMA Chart")
 
 [点击这里下载](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:kaufman_s_adaptive_moving_average:cs-kama.xls "chart_school:technical_indicators_and_overlays:kaufman_s_adaptive_moving_average:cs-kama.xls (32 KB)") 这个电子表格示例。
 
@@ -103,21 +103,21 @@ Current KAMA = Prior KAMA + SC x (Price - Prior KAMA)
 
 首先，KAMA上下交叉表示价格方向变化。与任何移动平均线一样，简单的交叉系统会产生大量信号和大量虚假信号。图表分析师可以通过将价格或时间过滤器应用于交叉来减少虚假信号。可以要求价格保持交叉一定数量的天数，或要求交叉超过KAMA一定百分比。
 
-![KAMA 图表](../Images/27b5366a3fad49ee504fbbf5d0103a8d.jpg "KAMA Chart")
+![KAMA 图表](img/27b5366a3fad49ee504fbbf5d0103a8d.jpg "KAMA Chart")
 
 其次，图表分析师可以利用KAMA的方向来定义证券的整体趋势。这可能需要调整参数以进一步平滑指标。图表分析师可以更改中间参数，即最快的EMA常数，以平滑KAMA并寻找方向变化。只要KAMA下降并形成较低低点，趋势就是向下的。只要KAMA上升并形成较高高点，趋势就是向上的。下面的Kroger示例显示了KAMA（10,5,30）从12月到3月的陡峭上升趋势，以及从5月到8月的较缓上升趋势。
 
-![KAMA 图表](../Images/49e20a05745a02e78b0122448294c476.jpg "KAMA Chart")
+![KAMA 图表](img/49e20a05745a02e78b0122448294c476.jpg "KAMA Chart")
 
 最后，图表分析师可以结合信号和技术。图表分析师可以使用长期KAMA来定义更大的趋势，使用短期KAMA进行交易信号。例如，KAMA（10,5,30）可以用作趋势过滤器，在上升时被视为看涨。一旦看涨，图表分析师可以寻找价格上穿KAMA（10,2,30）时的看涨交叉。下面的示例显示了MMM在长期KAMA上升并在12月、1月和2月出现看涨交叉。长期KAMA在4月转为下跌，并在5月、6月和7月出现看跌交叉。
 
-![KAMA 图表](../Images/96012cd0fb5c720af03617b85b9dd1a5.jpg "KAMA Chart")
+![KAMA 图表](img/96012cd0fb5c720af03617b85b9dd1a5.jpg "KAMA Chart")
 
 ## 使用SharpCharts
 
 KAMA可以作为SharpCharts工作台中的指标叠加显示。一旦选择了默认设置，参数框将自动显示在图表中，图表分析师可以根据自己的分析需求更改这些参数。第一个参数是效率比率，图表分析师应该避免增加这个数字。相反，图表分析师可以减少它以增加灵敏度。希望平滑KAMA以进行长期趋势分析的图表分析师可以逐步增加中间参数。即使差异只有3，KAMA(10,5,30)比KAMA(10,2,30)平滑得多。
 
-[![KAMA图表](../Images/859f469ec594ba39c2a6f640efe2fe84.jpg "KAMA图表")](http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=6&dy=0&id=p71426978293 "http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=6&dy=0&id=p71426978293")
+[![KAMA图表](img/859f469ec594ba39c2a6f640efe2fe84.jpg "KAMA图表")](http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=6&dy=0&id=p71426978293 "http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=6&dy=0&id=p71426978293")
 
 ## 建议扫描
 
@@ -155,8 +155,8 @@ AND [KAMA(10,2,30) crosses Daily Close]
 
 | **交易系统和方法** Perry Kaufman |
 | --- |
-| [![](../Images/b7ad49e1f866a868a5497661e81092f0.jpg)](https://store.stockcharts.com/products/new-trading-systems-and-methods-5th-edition "https://store.stockcharts.com/products/new-trading-systems-and-methods-5th-edition") |
-| [![buynowbuttone.jpg](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "buynowbuttone.jpg")](https://store.stockcharts.com/products/new-trading-systems-and-methods-5th-edition "https://store.stockcharts.com/products/new-trading-systems-and-methods-5th-edition") |
+| [![](img/b7ad49e1f866a868a5497661e81092f0.jpg)](https://store.stockcharts.com/products/new-trading-systems-and-methods-5th-edition "https://store.stockcharts.com/products/new-trading-systems-and-methods-5th-edition") |
+| [![buynowbuttone.jpg](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "buynowbuttone.jpg")](https://store.stockcharts.com/products/new-trading-systems-and-methods-5th-edition "https://store.stockcharts.com/products/new-trading-systems-and-methods-5th-edition") |
 
 ## 其他资源
 

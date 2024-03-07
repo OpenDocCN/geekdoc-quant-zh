@@ -49,7 +49,7 @@ Box Ratio = ((V/100,000,000)/(H - L))
 
 相对较小的高低范围和高成交量将产生较大的分母，这意味着 EMV 值将较小。如果 V/10000000 等于 4，高低范围等于 2，则分母为 2。这意味着价格变动困难，因为在大成交量下高低范围相对较小。
 
-![电子表格](../Images/923efc16fee7603d95555cb8cbc4b00b.jpg "电子表格")
+![电子表格](img/923efc16fee7603d95555cb8cbc4b00b.jpg "电子表格")
 
 [点击这里下载这个电子表格示例。](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:ease_of_movement:cs-easeofmovement.xls "chart_school:technical_indicators_and_overlays:ease_of_movement:cs-easeofmovement.xls (33.5 KB)")
 
@@ -57,21 +57,21 @@ Box Ratio = ((V/100,000,000)/(H - L))
 
 下面的示例显示了纳斯达克100 ETF（QQQ）的 1 期 EMV 在下方指标窗口中。我使用等量柱，因为这些只显示给定期间的高低范围。蓝色箭头显示了两个小的 EMV 值。一个略微为正，另一个略微为负。这两天的成交量都高于平均水平，但高低范围适中甚至较小。这意味着尽管成交量相对较高，但价格难以上涨。
 
-![图表 1](../Images/5504f8ecce8aece6a1f68f5216fdaa78.jpg "图表 1")
+![图表 1](img/5504f8ecce8aece6a1f68f5216fdaa78.jpg "图表 1")
 
 红色箭头显示了一个接近-3的EMV值，这是非常负面的。这是因为成交量低，而高低范围很大。这意味着价格相对轻松下跌，几乎没有买盘或没有买盘压力。绿色箭头显示了一个接近+3的EMV值。同样，成交量低，而高低范围很大。这意味着价格相对轻松上涨，几乎没有卖盘或没有卖盘压力。下面的图表显示了贾比尔电路（JBL）的14期 Ease of Movement 指标。这只是每个周期 EMV 值的 14 期简单[移动平均线](/school/doku.php?id=chart_school:technical_indicators:moving_averages "chart_school:technical_indicators:moving_averages")。
 
-![图表 2](../Images/7a2d59780336200ed696974ccc2745a5.jpg "图表 2")
+![图表 2](img/7a2d59780336200ed696974ccc2745a5.jpg "图表 2")
 
 ## 确认其他信号
 
 Ease of Movement 最适合用来确认其他指标或图表分析。换句话说，它不是一个独立的指标。请记住，公式中的“移动距离”部分是正面/负面的驱动因素。当中点上升时，EMV通常为正值，当中点下降时，EMV通常为负值。这意味着EMV通常会随着基础证券价格的上涨和下跌而上升和下降。这种上升或下降的幅度取决于箱体比率。图表技术分析师可以使用EMV来确认价格图表上的突破或看涨指标信号。相反，进入负值区域可以用来确认价格图表上的突破或看跌指标信号。
 
-![图表 3](../Images/b7b50efa36b9b54b59a83de21d87a27d.jpg "图表 3")
+![图表 3](img/b7b50efa36b9b54b59a83de21d87a27d.jpg "图表 3")
 
 上面的示例显示了Mosaic（MOS）在四月初出现熊市突破和六月中旬的牛市突破。在熊市突破之前，EMV在两个月内恶化，并在三月份跌入负值区域。随着股票在一月至二月上涨，而EMV下降，上涨变得更加困难。MOS在四月初下跌并且EMV再次跌入负值区域时，突破支撑位。在四月和五月大部分时间为负值后，EMV从五月底到六月初改善，并进入正值区域。股票还形成了一个小的反向头肩形态，并突破了50的阻力位。
 
-![图表 4](../Images/dabe39fe926887604c539a45dfd84164.jpg "图表 4")
+![图表 4](img/dabe39fe926887604c539a45dfd84164.jpg "图表 4")
 
 第二个示例展示了Valero Energy（VLO）的EMV信号，由RSI和价格图表确认。从一月到三月中旬，VLO上涨，然后在三月底扭转并突破支撑位。请注意，EMV在二月底突破了其低点，并在三月底深入负值区域。另外，请注意，RSI跌至自一月初以来的最低水平。第二次逆转发生在VLO于七月中旬突破阻力位时。EMV在此突破前开始改善，并在突破时处于坚定的正值状态。[RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi "chart_school:technical_indicators:relative_strength_index_rsi")也通过突破其四月高点和超过55的移动来确认。
 
@@ -83,9 +83,9 @@ Ease of Movement（EMV）将价格方向与成交量结合起来，创建了一�
 
 Ease of Movement（EMV）可以在图表下的“指标”部分找到。用户可以通过更改“参数”框中的数字来调整设置。指标可以放置在“价格后面”、“主窗口上方”或“主窗口下方”。在将其放置在价格后面时，更改颜色会有所帮助。图表分析师还可以使用“高级”指标选项添加移动平均线。
 
-![图表 5](../Images/99d464f621f03e9596d5d50e8d129b95.jpg "图表 5")
+![图表 5](img/99d464f621f03e9596d5d50e8d129b95.jpg "图表 5")
 
-![图表 6](../Images/5b2d14bb19d8a5dc2951b4bd42bd601e.jpg "图表 6")
+![图表 6](img/5b2d14bb19d8a5dc2951b4bd42bd601e.jpg "图表 6")
 
 ## 建议的扫描
 
@@ -119,7 +119,7 @@ AND [0 crosses Daily EMV(14)]
 
 | **成交量利润** 理查德·W·阿姆斯 小学教授 |
 | --- |
-| [![](../Images/f6246cfcfa94391e7a495c6298a5b9fa.jpg)](http://store.stockcharts.com/products/profits-in-volume "http://store.stockcharts.com/products/profits-in-volume") |
-| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/profits-in-volume "http://store.stockcharts.com/products/profits-in-volume") |
+| [![](img/f6246cfcfa94391e7a495c6298a5b9fa.jpg)](http://store.stockcharts.com/products/profits-in-volume "http://store.stockcharts.com/products/profits-in-volume") |
+| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/profits-in-volume "http://store.stockcharts.com/products/profits-in-volume") |
 
 网站：理查德·W·阿姆斯 小学教授拥有一个网站，提供更多关于EquiVolume的信息，包括可下载的电子书：[与EquiVolume交易](http://www.armsinsider.com/pdf/index.asp "http://www.armsinsider.com/pdf/index.asp")。

@@ -44,11 +44,11 @@ Force Index(13) = 13-period EMA of Force Index(1)
 
 三个因素影响力量指数的数值。首先，当当前收盘价高于前一收盘价时，力量指数为正值。当当前收盘价低于前一收盘价时，力量指数为负值。其次，移动的幅度决定了成交量的乘数。较大的移动需要较大的乘数，从而相应地影响力量指数。较小的移动产生较小的乘数，降低了影响力。第三，成交量起着关键作用。大幅度的移动伴随大量成交产生高的力量指数数值。小幅度的移动伴随低成交量产生相对较低的力量指数数值。下表显示了辉瑞（PFE）的力量指数计算。第27行标记了最大的移动（+84美分）和最大的成交量（162,619）。这种组合在表中产生了最大的力量指数值（136,600）。
 
-![表1 - 力量指数](../Images/9c4788762468800e591f64172bc5418a.jpg "表1 - 力量指数")
+![表1 - 力量指数](img/9c4788762468800e591f64172bc5418a.jpg "表1 - 力量指数")
 
 上图展示了力量指数的运作方式。请注意，1周期力量指数在零线上下波动，看起来相当锯齿状。Elder建议使用13周期EMA平滑该指标，以减少正负交叉。图表分析师应该尝试不同的平滑周期，以确定最适合其分析需求的方法。
 
-![图表 1  -  力量指数](../Images/331f37ba3fd3edb0c3e155b1a4b08c6f.jpg "图表 1  -  力量指数")
+![图表 1  -  力量指数](img/331f37ba3fd3edb0c3e155b1a4b08c6f.jpg "图表 1  -  力量指数")
 
 ## 解读
 
@@ -58,7 +58,7 @@ Force Index(13) = 13-period EMA of Force Index(1)
 
 力量指数可用于加强或确定[趋势](/school/doku.php?id=chart_school:chart_analysis:trend_lines "chart_school:chart_analysis:trend_lines")。所讨论的趋势，无论是短期、中期还是长期，都取决于力量指数的参数。虽然默认的力量指数参数为13，但图表分析师可以使用更高的数字进行更平滑或更低的数字进行更少平滑。下图显示了家得宝（Home Depot）的100天力量指数和13天力量指数。请注意，13天力量指数更加波动和锯齿状。100天力量指数更加平滑，且穿过零线的次数较少。在这方面，100天力量指数可用于确定中期或长期趋势。请注意，价格图表上的阻力突破与100天力量指数上的阻力突破相对应。100天力量指数在2月中旬进入正区间并突破了阻力。该指标在整个上升趋势期间保持为正，并在5月中旬转为负。价格图表上6月初的支撑突破得到了力量指数上的支撑突破的确认。
 
-![图表 2  -  力量指数](../Images/a3fa63c34e6f2181f8ac88ec3550c882.jpg "图表 2  -  力量指数")
+![图表 2  -  力量指数](img/a3fa63c34e6f2181f8ac88ec3550c882.jpg "图表 2  -  力量指数")
 
 ## 背离
 
@@ -66,7 +66,7 @@ Force Index(13) = 13-period EMA of Force Index(1)
 
 确认是牛市和熊市背离的重要部分。尽管背离信号表明有些不对劲，但需要指标或价格图表的确认。力量指数进入正区域或价格图表上的阻力突破可以确认牛市背离。力量指数进入负区域或价格图表上的支撑突破可以确认熊市背离。图表分析师还可以使用蜡烛图、移动平均线交叉、图案突破和其他形式的技术分析进行确认。
 
-![图表 3  -  力量指数](../Images/83316043828e15bad30d905ef5e4d703.jpg "图表 3  -  力量指数")
+![图表 3  -  力量指数](img/83316043828e15bad30d905ef5e4d703.jpg "图表 3  -  力量指数")
 
 上图显示了百思买（BBY）的力量指数（39）呈现一系列背离。绿色线显示牛市背离，而红色线显示熊市背离。当力量指数（39）穿过正区域（绿色虚线）时，确认牛市背离。当力量指数（39）穿过负区域（红色虚线）时，确认熊市背离。图表分析师还可以使用价格图表上的趋势线突破进行确认。
 
@@ -78,7 +78,7 @@ Force Index(13) = 13-period EMA of Force Index(1)
 
 关于修正操作有两种思路。交易者可以在修正明显时立即行动，或者在有证据表明修正已结束时行动。让我们看一个使用22天EMA和2天力量指数的例子。请记住，这是设计用来识别更大趋势内非常短暂修正的。下面的图表显示了德州仪器（TXN）的22天EMA在9月中旬开始上升。
 
-![图表 4 - 力量指数](../Images/78bd9f42e29733834512ed4370bbf434.jpg "图表 4 - 力量指数")
+![图表 4 - 力量指数](img/78bd9f42e29733834512ed4370bbf434.jpg "图表 4 - 力量指数")
 
 随着22天EMA上升，交易者在2天力量指数转为负数时寻找非常短期的回撤。交易者可以在力量指数转为负数时行动，或者等待其回到正数区域。在负数时行动可能会提高回报风险比，但修正可能会延长几天。等待力量指数再次转为正数显示出一些可能表明修正已结束的强势。绿色虚线显示了2天力量指数转为负数时的情况。
 
@@ -90,9 +90,9 @@ Force Index(13) = 13-period EMA of Force Index(1)
 
 力度指数可作为SharpCharts的指标。一旦选择，用户可以将指标放置在基础价格图表的上方、下方或后方。将力度指数直接放在价格图表的顶部，可以突出相对于基础证券价格走势的波动。这可以更容易地识别多头和空头背离。技术分析师可以点击“高级选项”添加移动平均线、水平线或另一个指标到力度指数上。
 
-[![图表 5  -  力度指数](../Images/337c5ceeba4fba3122bcac8be953b668.jpg "图表 5  -  力度指数")](http://stockcharts.com/h-sc/ui?s=MSFT&p=D&yr=1&mn=0&dy=0&id=p81333023268&listNum=30&a=219526357 "http://stockcharts.com/h-sc/ui?s=MSFT&p=D&yr=1&mn=0&dy=0&id=p81333023268&listNum=30&a=219526357")
+[![图表 5  -  力度指数](img/337c5ceeba4fba3122bcac8be953b668.jpg "图表 5  -  力度指数")](http://stockcharts.com/h-sc/ui?s=MSFT&p=D&yr=1&mn=0&dy=0&id=p81333023268&listNum=30&a=219526357 "http://stockcharts.com/h-sc/ui?s=MSFT&p=D&yr=1&mn=0&dy=0&id=p81333023268&listNum=30&a=219526357")
 
-![SharpCharts  -  力度指数](../Images/3a417a568f0a13488f1a48e528715220.jpg "SharpCharts  -  力度指数")
+![SharpCharts  -  力度指数](img/3a417a568f0a13488f1a48e528715220.jpg "SharpCharts  -  力度指数")
 
 ## 建议的扫描
 
@@ -130,5 +130,5 @@ AND [Daily CCI(20) > 100]
 
 | **走进我的交易室** 亚历山大·埃尔德 |
 | --- |
-| [![](../Images/8f918f5a5f0fb55e589dcebc337e397d.jpg)](http://store.stockcharts.com/products/come-into-my-trading-room-a-complete-guide-to-trading "http://store.stockcharts.com/products/come-into-my-trading-room-a-complete-guide-to-trading") |
-| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/come-into-my-trading-room-a-complete-guide-to-trading "http://store.stockcharts.com/products/come-into-my-trading-room-a-complete-guide-to-trading") |
+| [![](img/8f918f5a5f0fb55e589dcebc337e397d.jpg)](http://store.stockcharts.com/products/come-into-my-trading-room-a-complete-guide-to-trading "http://store.stockcharts.com/products/come-into-my-trading-room-a-complete-guide-to-trading") |
+| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/come-into-my-trading-room-a-complete-guide-to-trading "http://store.stockcharts.com/products/come-into-my-trading-room-a-complete-guide-to-trading") |

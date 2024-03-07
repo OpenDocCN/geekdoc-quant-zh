@@ -45,15 +45,15 @@ This example is based on closing prices and the default parameter setting (12).
 
 请注意，当收盘价格从一个周期下跌到下一个周期时，成交量为负。当收盘价格从一个周期上涨到下一个周期时，成交量为正。
 
-![VBYP - 电子表格](../Images/a7b7e6498413cfa5ac62ef3cf22c8e9e.jpg "VBYP - 电子表格")
+![VBYP - 电子表格](img/a7b7e6498413cfa5ac62ef3cf22c8e9e.jpg "VBYP - 电子表格")
 
 上面的示例显示了从2010年4月12日到9月15日对纳斯达克100ETF进行的成交量价格计算。在此期间，收盘价格范围从40.32到47.87（47.87 - 40.32 = 7.55）。一百一十个收盘价格（每个交易日一个）从低到高排序，然后分成12个均匀的价格区间（7.55/12 = .6292）。
 
-![VBYP - QQQ 示例](../Images/377febb1d6cc50e6a95df01b33bd4d52.jpg "VBYP - QQQ 示例")
+![VBYP - QQQ 示例](img/377febb1d6cc50e6a95df01b33bd4d52.jpg "VBYP - QQQ 示例")
 
 上图突出显示了前三个价格区间（40.32至40.95，40.96至41.58和41.59至42.21）。从低点（40.32）开始，我们可以添加区间大小（.6292）以创建导致高点的价格区间。只有落在这些区间内的价格才用于特定的成交量价格计算。
 
-![VBYP - QQQ 示例](../Images/c7364dd882253a58fa6f0a00c05e73e8.jpg "VBYP - QQQ 示例")
+![VBYP - QQQ 示例](img/c7364dd882253a58fa6f0a00c05e73e8.jpg "VBYP - QQQ 示例")
 
 成交量价格条代表每个价格区间的总成交量。成交量可以分为正成交量和负成交量。请注意上图中的成交量价格条是红色和绿色的，以区分正成交量和负成交量。
 
@@ -69,23 +69,23 @@ This example is based on closing prices and the default parameter setting (12).
 
 图表分析师还应了解，大的间隙可能会产生等于零的条。这是有道理的，因为当特定价格区域内没有收盘价格时，体积价格等于零。
 
-![VBYP - Gaps](../Images/c531035e7eb831f21a94b463c6f2c9d1.jpg "VBYP - Gaps")
+![VBYP - Gaps](img/c531035e7eb831f21a94b463c6f2c9d1.jpg "VBYP - Gaps")
 
 ## 识别支撑
 
 Netflix（NFLX）的图表显示体积价格法在六月底识别出95-100附近的支撑。请注意，这是最长的条。此外，请注意NFLX正在开始回调，因此我们可以使用体积价格法来估计近期的支撑。第二张图显示了NFLX的图表，黄色区域标记了第一张图中的体积价格支撑。预计95-100区域会有支撑，并且股票在七月底在此处扭转。请注意，八月份的交易量激增，以验证从支撑处的扭转。
 
-![VBYP - NFLX](../Images/fa5175005500d7135a902946a49a371f.jpg "VBYP - NFLX")
+![VBYP - NFLX](img/fa5175005500d7135a902946a49a371f.jpg "VBYP - NFLX")
 
-![VBYP - NFLX](../Images/ba10c8cec010ab1cc2f11134f8bfff93.jpg "VBYP - NFLX")
+![VBYP - NFLX](img/ba10c8cec010ab1cc2f11134f8bfff93.jpg "VBYP - NFLX")
 
 ## 识别阻力
 
 TE Connectivity（TEL）的图表显示体积价格法在八月初识别出26-26.5附近的阻力。请记住，四月份突破此条并不真正是突破，因为当前的体积价格计算从一月延伸到八月初。第二长的条标记了26-26.5区域的当前阻力。TEL正处于决定性时刻，价格接近阻力。第二张图显示了第一张图中的体积价格阻力以及在阻力处的最终失败。
 
-![VBYP - TEL](../Images/2130d976f90ec68d8324add71f53f0ad.jpg "VBYP - TEL")
+![VBYP - TEL](img/2130d976f90ec68d8324add71f53f0ad.jpg "VBYP - TEL")
 
-![VBYP - TEL](../Images/5804c32f6906a46a15cd49e41a9b71a6.jpg "VBYP - TEL")
+![VBYP - TEL](img/5804c32f6906a46a15cd49e41a9b71a6.jpg "VBYP - TEL")
 
 ## 支撑突破
 
@@ -93,9 +93,9 @@ TE Connectivity（TEL）的图表显示体积价格法在八月初识别出26-26
 
 三星（SNDK）图表显示了一个长的成交量价格条，标志着8月中旬39-43区域的支撑。此外，请注意，股票至少在7月初至8月中旬之间围绕42形成了至少三个反应低点。这个支撑（需求）区域清晰可见。第二张图显示SNDK突破了先前确定的成交量价格支撑区域，并伴有高成交量。需求崩溃，供应占据上风，价格急剧下跌。
 
-![VBYP - SNDK](../Images/0aa91b9fa93ceea22c83fa7f0e2d6ab7.jpg "VBYP - SNDK")
+![VBYP - SNDK](img/0aa91b9fa93ceea22c83fa7f0e2d6ab7.jpg "VBYP - SNDK")
 
-![VBYP - SNDK](../Images/b3a4b2475a55417c450e62180edbd46f.jpg "VBYP - SNDK")
+![VBYP - SNDK](img/b3a4b2475a55417c450e62180edbd46f.jpg "VBYP - SNDK")
 
 ## 突破阻力
 
@@ -103,9 +103,9 @@ TE Connectivity（TEL）的图表显示体积价格法在八月初识别出26-26
 
 有时，图表分析师需要结合价格行为和成交量价格来确定支撑区域和阻力区域。麦当劳（MCD）图表显示了一个长条，标志着60至61之间的头顶供应。股票还在61至62之间遇到阻力，4月底和6月中旬的反应高点。至于支撑，第二和第三长的条形图标记了57.5-58.5区域的潜在需求，股票接近5月底的低点。总体而言，随着MCD试图保持在5月底的低点之上，价格图表上可能正在形成一个大型[对称三角形](/school/doku.php?id=chart_school:chart_analysis:chart_patterns:symmetrical_triangle_continuation "chart_school:chart_analysis:chart_patterns:symmetrical_triangle_continuation")。第二张图显示MCD在7月突破阻力，并在8月大幅上涨至新高。
 
-![VBYP - MCD](../Images/4c6e42ead8ec8db11e73229b3aff2287.jpg "VBYP - MCD")
+![VBYP - MCD](img/4c6e42ead8ec8db11e73229b3aff2287.jpg "VBYP - MCD")
 
-![VBYP - MCD](../Images/babbaae97e239a671d01306a6b7a2c42.jpg "VBYP - MCD")
+![VBYP - MCD](img/babbaae97e239a671d01306a6b7a2c42.jpg "VBYP - MCD")
 
 ## 结论
 
@@ -115,4 +115,4 @@ Volume-by-Price最适合用于识别当前或未来的支撑和阻力。当价�
 
 Volume-by-Price可以在SharpCharts的“overlays”部分找到。参数框为空，这意味着使用默认值（12个周期）。图表分析师可以根据所需的详细程度增加或减少默认设置。请记住，Volume-by-Price是基于收盘价的，这意味着高点和低点不包括在内。这就是为什么图表分析师有时可能会看到一个没有Volume-by-Price柱的高点或低点。当“color volume”框未被选中时，Volume-by-Price是单色的，当选中此框时是双色的。图表分析师还可以使用高级指标设置来设置不透明度。下面的示例显示了苹果公司的20根Volume-by-Price柱，彩色成交量和0.3的不透明度。[点击这里](http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=6&dy=0&id=p03412996346&listNum=30&a=209159944 "http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=6&dy=0&id=p03412996346&listNum=30&a=209159944") 查看实时示例。
 
-![VBYP - SharpCharts](../Images/47682eb7a9aa175a9e0b0e21b3d943cf.jpg "VBYP - SharpCharts")
+![VBYP - SharpCharts](img/47682eb7a9aa175a9e0b0e21b3d943cf.jpg "VBYP - SharpCharts")

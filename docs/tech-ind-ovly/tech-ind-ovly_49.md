@@ -52,11 +52,11 @@ Highest High = highest high for the look-back period
 
 默认设置的随机振荡器为14个周期，可以是天、周、月或日内时间框架。14个周期的%K将使用最近的收盘价，过去14个周期内的最高价和最低价。%D是%K的3天简单[移动平均](/school/doku.php?id=chart_school:technical_indicators:moving_averages "chart_school:technical_indicators:moving_averages")。这条线与%K一起绘制，作为信号线或触发线。
 
-![随机指标 - 电子表格 1](../Images/edbf044b998165c21ce3d23c9a0ef7b3.jpg "随机指标 - 电子表格 1")
+![随机指标 - 电子表格 1](img/edbf044b998165c21ce3d23c9a0ef7b3.jpg "随机指标 - 电子表格 1")
 
 [点击这里下载此电子表格示例。](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:stochastic_oscillator:cs-soo.xls "chart_school:technical_indicators_and_overlays:stochastic_oscillator:cs-soo.xls (19 KB)")
 
-![随机指标 - 图表 1](../Images/a0988553f178685a752a2cb61495ffc2.jpg "随机指标 - 图表 1")
+![随机指标 - 图表 1](img/a0988553f178685a752a2cb61495ffc2.jpg "随机指标 - 图表 1")
 
 ## 解释
 
@@ -66,7 +66,7 @@ Highest High = highest high for the look-back period
 
 SharpCharts 上有三个版本的随机指标可用。快速随机指标基于 George Lane 的 %K 和 %D 的原始公式。快速版本中的 %K 看起来相当波动。%D 是 %K 的3日SMA。事实上，Lane 使用 %D 根据多头和空头背离生成买入或卖出信号。Lane 坚称 %D 背离是“唯一会导致你买入或卖出的信号”。因为快速随机指标中的 %D 用于信号，所以引入了慢速随机指标以反映这一重点。慢速随机指标使用3日SMA平滑 %K，这正是快速随机指标中的 %D。注意慢速随机指标中的 %K 等于快速随机指标中的 %D（图表2）。
 
-![随机指标 - 图表2](../Images/43ef6d88eb9893dd076f967fa05a93e3.jpg "随机指标 - 图表2")
+![随机指标 - 图表2](img/43ef6d88eb9893dd076f967fa05a93e3.jpg "随机指标 - 图表2")
 
 快速随机指标：
 
@@ -96,15 +96,15 @@ SharpCharts 上有三个版本的随机指标可用。快速随机指标基于 G
 
 图表 3 显示了雅虎（YHOO）的全随机振荡器（20,5,5）。较长的回望期（20天对比14天）和较长的移动平均线平滑（5对比3）产生了一个不太敏感的振荡器，信号较少。从2009年7月到2010年4月，雅虎的交易区间在14到18之间。这样的交易范围非常适合随机振荡器。低于20的跌破警告超卖条件，可能预示着反弹。高于80的走势警告超买条件，可能预示着下跌。请注意振荡器如何可以超过80并保持在80以上（橙色标记）。同样，振荡器低于20并有时保持在20以下。当指标高于80时，它既是超买的又是强劲的。需要随后下跌至80以下才能信号某种形式的反转或在阻力处失败（红色虚线）。相反，当振荡器低于20时，它既是超卖的又是弱势的。需要上涨至20以上才能显示实际的上升和成功的支撑测试（绿色虚线）。
 
-![随机振荡器 - 图表 3](../Images/be6a72cac37f0c5eefe8d8694f4d0f78.jpg "随机振荡器 - 图表 3")
+![随机振荡器 - 图表 3](img/be6a72cac37f0c5eefe8d8694f4d0f78.jpg "随机振荡器 - 图表 3")
 
 图表 4 显示了 Crown Castle (CCI) 在七月份突破开始上涨趋势。完整随机指标（20,5,5）被用来识别超卖读数。超买读数被忽略，因为更大的趋势是向上的。沿着更大趋势交易可以提高胜算。完整随机指标在九月初和十一月初跌破20。随后回升至20以上的走势信号了价格上涨（绿色虚线）和更大上涨趋势的延续。
 
-![随机指标 - 图表 4](../Images/94b4d95dcc18513dcd86ecc95336365e.jpg "随机指标 - 图表 4")
+![随机指标 - 图表 4](img/94b4d95dcc18513dcd86ecc95336365e.jpg "随机指标 - 图表 4")
 
 图表 5 显示了 Autozone (AZO) 在2009年5月支撑线突破开始下跌趋势。在下跌趋势中，完整随机指标（10,3,3）被用来识别超买读数，预示潜在逆转。由于更大的下跌趋势，超卖读数被忽略。较短的回望期（10与14相比）增加了振荡器对更多超买读数的敏感性。作为参考，完整随机指标（20,5,5）也显示出来。请注意，这个不太敏感的版本在八月、九月和十月并未变为超买。有时需要增加灵敏度以生成信号。
 
-![随机指标 - 图表 5](../Images/4f60486f984802f233d514fdbf69c7ad.jpg "随机指标 - 图表 5")
+![随机指标 - 图表 5](img/4f60486f984802f233d514fdbf69c7ad.jpg "随机指标 - 图表 5")
 
 ## 牛熊背离
 
@@ -114,21 +114,21 @@ SharpCharts 上有三个版本的随机指标可用。快速随机指标基于 G
 
 图表 6 显示了国际游戏科技（IGT）在 2010 年 2 月至 3 月出现了一个牛市背离。请注意股票如何创下新低，但随机振荡器形成了一个较高的低点。确认这个较高低点有三个步骤。第一步是信号线穿越和/或移动回到 20 以上。信号线穿越发生在 %K（黑色）穿过 %D（红色）时。这提供了可能的最早入场点。第二步是移动到 50 以上，这将使价格处于随机范围的上半部分。第三步是价格图表上的阻力突破。请注意随机振荡器在 3 月底上穿 50，并一直保持在 50 以上直到 5 月底。
 
-![随机指标 - 图表 6](../Images/f9c66a249f5e59c317d0addbc14d298d.jpg "随机指标 - 图表 6")
+![随机指标 - 图表 6](img/f9c66a249f5e59c317d0addbc14d298d.jpg "随机指标 - 图表 6")
 
 图表 7 显示了 Kohls（KSS）在 2010 年 4 月出现了一个熊市背离。股票在 4 月初和 4 月底创下了新高，但随机振荡器在 3 月底达到峰值并形成了较低的高点。在这种情况下，信号线穿过并移动到 80 以下并没有提供良好的早期信号，因为 KSS 一直在上涨。随机振荡器在第二个信号时移动到 50 以下，股票在第三个信号时突破了支撑位。正如 KSS 所示，早期信号并不总是清晰简单的。信号线穿越、移动到 80 以下和移动到 20 以上是频繁出现且容易出现误导的。即使 KSS 突破了支撑位，随机振荡器移动到 50 以下，股票反弹至 57 以上，随机振荡器也反弹至 50 以上，然后股票继续急剧下跌。
 
-![随机指标 - 图表 7](../Images/913e794169804c32024d6589b9bbff3f.jpg "随机指标 - 图表 7")
+![随机指标 - 图表 7](img/913e794169804c32024d6589b9bbff3f.jpg "随机指标 - 图表 7")
 
 ## 牛熊设置
 
 乔治·莱恩确定了另一种形式的背离来预测底部或顶部。牛市设置基本上是牛市背离的反向。基础证券形成较低高点，但随机指标形成较高高点。即使股票无法超过先前的高点，随机指标中的较高高点显示了上行动量的增强。接下来的下跌预计将导致可交易的底部。图8显示了2009年6月的网络设备（NTAP）的牛市设置。股票形成了较低高点，而随机指标则形成了较高高点。这个较高高点显示了上行动量的强劲。请记住，这是一个设置，而不是一个信号。该设置预示着不久的将来会有一个可交易的低点。NTAP跌破了其6月低点，随机指标跌破20变为超卖。交易者可以在随机指标上穿过其信号线、超过20或超过50时采取行动。另外，NTAP随后以强劲的走势突破了阻力。
 
-![随机指标 - 图表 8](../Images/7fccae9b26aa80abc74306eee01ddd21.jpg "随机指标 - 图表 8")
+![随机指标 - 图表 8](img/7fccae9b26aa80abc74306eee01ddd21.jpg "随机指标 - 图表 8")
 
 当证券形成较高低点，但随机指标形成较低低点时，就会出现熊市设置。即使股票保持在先前的低点之上，随机指标中的较低低点显示出增加的下行动量。预计下一次上涨将导致一个重要的高点。图9显示了2009年11月摩托罗拉（MOT）的熊市设置。股票在11月底和12月初形成了较高低点，但随机指标却在20以下形成了较低低点。这显示了强劲的下行动量。随后的反弹并没有持续太久，因为股票很快达到了顶峰。请注意，随机指标没有回升至80以上，并在12月中旬回落至其信号线以下。
 
-![随机指标 - 图表 9](../Images/3ad2c8e7cb901c7385207981bf9452dd.jpg "随机指标 - 图表 9")
+![随机指标 - 图表 9](img/3ad2c8e7cb901c7385207981bf9452dd.jpg "随机指标 - 图表 9")
 
 ## 结论
 
@@ -144,9 +144,9 @@ SharpCharts 上有三个版本的随机指标可用。快速随机指标基于 G
 
 如上所述，在SharpCharts上作为指标可用的随机指标有三个版本。默认设置如下：快速随机指标（14,3）、慢速随机指标（14,3）和完整随机指标（14,3,3）。回看期（14）用于基本的%K计算。请记住，快速随机指标中的%K是未平滑的，而慢速随机指标中的%K使用3日简单移动平均进行平滑。快速和慢速随机指标设置（14,3）中的“3”设置了%D的移动平均期。寻求最大灵活性的图表分析师可以简单地选择完整随机指标来设置回看期、%K的平滑因子和%D的移动平均。指标可以放置在实际价格图表的上方、下方或后方。将随机指标放置在价格后面可以让用户轻松地将指标波动与价格波动匹配。[点击这里查看实时示例](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p82180859243&listNum=30&a=201659153 "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p82180859243&listNum=30&a=201659153")。
 
-![随机指标 - 图表 10](../Images/0d677db6645a73b48fac77b013b14a53.jpg "随机指标 - 图表 10")
+![随机指标 - 图表 10](img/0d677db6645a73b48fac77b013b14a53.jpg "随机指标 - 图表 10")
 
-![随机指标 - SharpCharts](../Images/3761fcf544476c52205492714f5c5cdf.jpg "随机指标 - SharpCharts")
+![随机指标 - SharpCharts](img/3761fcf544476c52205492714f5c5cdf.jpg "随机指标 - SharpCharts")
 
 ## 建议的扫描
 
@@ -188,8 +188,8 @@ AND [Daily Slow Stoch %K(14,3) < 80]
 
 | **金融市场技术分析** 约翰·J·墨菲 | **技术分析解析** 马丁·普林 |
 | --- | --- |
-| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
-| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| [![](img/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![](img/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
 
 * * *
 

@@ -48,7 +48,7 @@ PVO 的默认设置为 (12,26,9)，与 MACD 或 PPO 相同。这意味着当 12 
 
 PVO-Histogram 的作用类似于 MACD 和 PPO 直方图。当 PVO 在其信号线（9 天 EMA）上方交易时，PVO-Histogram 为正。当 PVO 低于其信号线时，PVO-Histogram 为负。请注意，PVO 乘以 100，以将小数点移动两位。
 
-![PVO - 图表 1](../Images/b54195ea4b3aa6bfb9b5a5020652ba51.jpg "PVO - 图表 1")
+![PVO - 图表 1](img/b54195ea4b3aa6bfb9b5a5020652ba51.jpg "PVO - 图表 1")
 
 ## 解释
 
@@ -62,11 +62,11 @@ PVO-Histogram 的作用类似于 MACD 和 PPO 直方图。当 PVO 在其信号�
 
 下图显示了Volero（VLO）的PVO(12,26,9)确认了[继续图案](/school/doku.php?id=chart_school:chart_analysis:chart_patterns:flag_pennant_continuation "chart_school:chart_analysis:chart_patterns:flag_pennant_continuation")的突破。随着PVO在8月下降，成交量直到9月中旬才下降。然后PVO转向上升，但直到10月下旬才进入正区域。这意味着12天成交量EMA最终超过了26天EMA，成交量在增加。VLO在第一个PVO交叉时仍然停留在继续图案中，但在第二个PVO交叉时突破了图案阻力。成交量证实了突破，VLO继续上涨。
 
-![PVO - 图表 2](../Images/5db7c11cefa5ac6717d346e778f8ae86.jpg "PVO - 图表 2")
+![PVO - 图表 2](img/5db7c11cefa5ac6717d346e778f8ae86.jpg "PVO - 图表 2")
 
 阿彻丹尼尔斯中部（ADM）的图表显示了PVO确认的支撑和阻力突破。股票在8月初突破了阻力位，同时PVO急剧上升进入正区域。在上涨突破时成交量扩大是看涨的。经过三个月的上涨，股票在跳空和PVO的另一次激增中突破了支撑位。请注意PVO两次激增到20。这意味着12天成交量EMA比26天成交量EMA高约20%。
 
-![PVO - 图表 3](../Images/93399ac4dc2ba9984aa5cbbc6c99a1a9.jpg "PVO - 图表 3")
+![PVO - 图表 3](img/93399ac4dc2ba9984aa5cbbc6c99a1a9.jpg "PVO - 图表 3")
 
 ## 微调PVO
 
@@ -74,7 +74,7 @@ PVO-Histogram 的作用类似于 MACD 和 PPO 直方图。当 PVO 在其信号�
 
 Merck（MRK）的图表显示了带有5日EMA的蓝色和250日EMA的红色的成交量柱。 PVO（1,250）显示在第一个指标窗口中（绿色），而PVO（5,250）显示在较低的指标窗口中（黑色）。 信号线未显示，因为没有输入参数。 PVO（5,250,9）将显示带有9日EMA的PVO作为信号线。
 
-![PVO - 图表 4](../Images/fd428c3cb8aa1e29dcd23584d921fcef.jpg "PVO - 图表 4")
+![PVO - 图表 4](img/fd428c3cb8aa1e29dcd23584d921fcef.jpg "PVO - 图表 4")
 
 从上面的图表中，我们可以看到当一个成交量柱突破250日EMA时（绿色箭头），PVO（1,250）变为正。 当5日成交量EMA移动到250日成交量EMA之上时（蓝色箭头），PVO（5,250）变为正。 正如人们所预期的那样，PVO（1,250）更频繁地穿过零线，速度稍快一点。 基本上，当PVO（1,250）为正时，成交量高于平均水平，为负时低于平均水平。 在高于平均水平的成交量上突破比低于平均水平的更稳健。 支撑突破也是如此。
 
@@ -86,9 +86,9 @@ Merck（MRK）的图表显示了带有5日EMA的蓝色和250日EMA的红色的�
 
 PVO可以设置为证券价格图的上方、下方或后方的指标。 一旦从下拉列表中选择指标，将显示默认参数（12,26,9）。 可以根据下面的示例调整这些参数。 单击“高级选项”以向指标添加移动平均线或水平线。 在下面的示例中，成交量被添加为指标两次，以显示两个移动平均线。 第二个成交量指标被放置在第一个成交量指标的后面（在ind后面），并且EMA设置为250，使用高级选项。 [点击这里查看PVO的实时示例](http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p28625227150&listNum=30&a=217316123 "http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=6&dy=0&id=p28625227150&listNum=30&a=217316123")。
 
-![PVO - 图表 5](../Images/03f663e028d13e2be279d12c217d323e.jpg "PVO - 图表 5")
+![PVO - 图表 5](img/03f663e028d13e2be279d12c217d323e.jpg "PVO - 图表 5")
 
-![PVO - 图表 6](../Images/6fcb0223599ee4eb2bebc7809261a011.jpg "PVO - 图表 6")
+![PVO - 图表 6](img/6fcb0223599ee4eb2bebc7809261a011.jpg "PVO - 图表 6")
 
 ## 建议扫描
 
@@ -128,5 +128,5 @@ AND [Daily PVO Line(12,26,9) crosses 0]
 
 | **金融市场技术分析** 约翰·J·墨菲 |
 | --- |
-| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |
-| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |
+| [![](img/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |
+| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |

@@ -45,7 +45,7 @@ MACD Histogram: MACD - Signal Line
 
 标准MACD是12日指数[移动平均线](/school/doku.php?id=chart_school:technical_indicators:moving_averages "chart_school:technical_indicators:moving_averages")（EMA）减去26日EMA。收盘价用于形成移动平均线，因此MACD。MACD的9日EMA被绘制在旁边，作为一个信号线，用于识别指标的转折点。MACD-Histogram代表MACD和其9日EMA信号线之间的差异。当MACD高于其9日EMA时，直方图为正，当MACD低于其9日EMA时，直方图为负。
 
-![MACD - 示例](../Images/3ce03c762d1297743e8a8026a569b750.jpg "MACD - 示例")
+![MACD - 示例](img/3ce03c762d1297743e8a8026a569b750.jpg "MACD - 示例")
 
 ## 去除的四个步骤
 
@@ -65,7 +65,7 @@ MACD-Histogram是一个指标的指标。事实上，MACD也是一个指标的�
 
 与MACD一样，MACD-Histogram也旨在识别收敛、背离和交叉。然而，MACD-Histogram是测量MACD与其信号线之间的距离。当MACD高于其信号线时，直方图为正值。随着MACD进一步背离其信号线（向上），正值增加。当MACD和其信号线收敛时，正值减少。当MACD穿过零线时，MACD-Histogram为负值。当MACD低于其信号线时，指标为负值。随着MACD进一步背离其信号线（向下），负值增加。相反，当MACD收敛于其信号线时，负值减少。
 
-![](../Images/02bb64289386dab91b16988721b2b986.jpg)
+![](img/02bb64289386dab91b16988721b2b986.jpg)
 
 图表1显示了Darden Restaurants (DRI)的MACD和MACD-Histogram。在9月底发生了一个空头信号线交叉，这使得MACD-Histogram变为负值。在12月初发生了一个多头信号线交叉，这使得MACD-Histogram在该月的其余时间内为正值。随着MACD进一步远离其信号线（绿线），出现了背离期和随着MACD接近其信号线（红线）的收敛期。
 
@@ -73,11 +73,11 @@ MACD-Histogram是一个指标的指标。事实上，MACD也是一个指标的�
 
 MACD-Histogram通过形成牛市和[熊市背离](/school/doku.php?id=chart_school:glossary_b#bearish_divergence "chart_school:glossary_b")来预测MACD中的信号线交叉。这些背离信号表明MACD正在收敛于其信号线，并可能准备交叉。有两种类型的背离：峰谷和斜线。峰谷背离在MACD-Histogram中形成两个峰值或两个谷值。当MACD形成一个较低低点，而MACD-Histogram形成一个较高低点时，就形成了峰谷牛市背离。明确定义的谷值对于峰谷背离的稳健性至关重要。图表2显示了卡特彼勒（Caterpillar）MACD-Histogram中的一个牛市背离。请注意，MACD在6月至7月间走到了一个较低低点，但MACD-Histogram形成了一个较高低点（谷值）。有两个明显的谷值。这种牛市背离预示了7月中旬的多头信号线交叉和一次大涨。 
 
-![MACD-Histogram - 图表2](../Images/ab246bbc508d9cc394d43a23a5b751bf.jpg "MACD-Histogram - 图表2")
+![MACD-Histogram - 图表2](img/ab246bbc508d9cc394d43a23a5b751bf.jpg "MACD-Histogram - 图表2")
 
 图表 3 显示 Aeropostale（ARO）在 2009 年 8 月至 9 月出现了看跌背离。MACD 在 9 月达到新高，但 MACD-Histogram 形成了一个较低的高点。请注意，MACD-Histogram（红线）上有两个明确的峰值（更高），中间有一个低点。随后的看跌信号线交叉预示了股票的急剧下跌。
 
-![MACD-Histogram - 图表 3](../Images/256f789aa3f3eda786387925dc8466ac.jpg "MACD-Histogram - 图表 3")
+![MACD-Histogram - 图表 3](img/256f789aa3f3eda786387925dc8466ac.jpg "MACD-Histogram - 图表 3")
 
 ## 倾斜背离
 
@@ -85,11 +85,11 @@ MACD-Histogram通过形成牛市和[熊市背离](/school/doku.php?id=chart_scho
 
 图表 4 显示波音（Boeing）在 MACD-Histogram 中出现了经典的倾斜背离。在 2009 年 6 月的空头信号线交叉后，MACD 迅速下降。MACD 在 7 月中旬达到新低，但 MACD-Histogram 保持远高于先前的低点。事实上，MACD-Histogram 在 6 月底触底并形成了一种看涨的倾斜背离。粗红线显示了 MACD 与其信号线之间的距离。有时在图表上很难判断距离，因此这些线突出了 6 月 26 日和 7 月 8 日之间的差异。这种倾斜背离预示了 7 月中旬的看涨信号线交叉和股票的急剧上涨。
 
-![MACD-Histogram - 图表 4](../Images/0656008c452b2a376f0abef254989b97.jpg "MACD-Histogram - 图表 4")
+![MACD-Histogram - 图表 4](img/0656008c452b2a376f0abef254989b97.jpg "MACD-Histogram - 图表 4")
 
 图表 5 显示迪士尼（Disney）在 2008 年 5 月出现了看跌的倾斜背离。请注意，MACD 在 5 月 16 日继续达到新高，但 MACD-Histogram 在 5 月 8 日达到峰值并形成了倾斜背离。MACD 的上涨动能减弱，指标移动到其信号线下方，预示股票的急剧下跌。这张图表还显示了 3 月至 4 月间的一个不错的看涨背离。
 
-![MACD-Histogram - 图表 5](../Images/240251697f522a74972a0bb308390ed7.jpg "MACD-Histogram - 图表 5")
+![MACD-Histogram - 图表 5](img/240251697f522a74972a0bb308390ed7.jpg "MACD-Histogram - 图表 5")
 
 ## 结论
 
@@ -101,9 +101,9 @@ MACD 包含 MACD-Histogram，但是 MACD-Histogram 可以作为独立指标显�
 
 [点击此处查看实时图表](http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p59749230423&listNum=30&a=199515976 "http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p59749230423&listNum=30&a=199515976")，展示 MACD-Histogram。
 
-![MACD-Histogram - 图表 6](../Images/f147f387e412e93098fbcbbed505f1ba.jpg "MACD-Histogram - 图表 6")
+![MACD-Histogram - 图表 6](img/f147f387e412e93098fbcbbed505f1ba.jpg "MACD-Histogram - 图表 6")
 
-![MACD - 图表 7](../Images/d0e0483cce2b025663909f8a8430f885.jpg "MACD - 图表 7")
+![MACD - 图表 7](img/d0e0483cce2b025663909f8a8430f885.jpg "MACD - 图表 7")
 
 ## 建议扫描
 
@@ -145,5 +145,5 @@ AND [Daily MACD Line(12,26,9,Daily Close) > 0]
 
 | **技术分析 - 积极投资者的强大工具** 杰拉德·阿普尔 |
 | --- |
-| [![](../Images/a2673256615cb182a677e60a34c2b755.jpg)](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors") |
-| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors") |
+| [![](img/a2673256615cb182a677e60a34c2b755.jpg)](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors") |
+| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors") |

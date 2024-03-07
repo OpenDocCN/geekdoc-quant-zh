@@ -53,11 +53,11 @@ Fourth, divide by the total number of periods (20).
 
 Lambert将常数设定为0.015，以确保大约70%到80%的CCI值落在-100和+100之间。这个百分比还取决于回顾期。较短的CCI（10个周期）将更加[波动](/school/doku.php?id=chart_school:technical_indicators:standard_deviation_volatility "chart_school:technical_indicators:standard_deviation_volatility")，在+100和-100之间的值的百分比较小。相反，较长的CCI（40个周期）将在+100和-100之间的值有更高的百分比。
 
-![CCI- 电子表格](../Images/9c685e4d92befe735a206b838a47effd.jpg "CCI- 电子表格")
+![CCI- 电子表格](img/9c685e4d92befe735a206b838a47effd.jpg "CCI- 电子表格")
 
 点击这里查看在Excel电子表格中计算CCI的[链接](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:commodity_channel_index_cci:cs-cci.xls "chart_school:technical_indicators_and_overlays:commodity_channel_index_cci:cs-cci.xls (64 KB)")。
 
-![CCI  -  图表1](../Images/7d6f9ce0f86f76ed976a31f9483f9b7e.jpg "CCI  -  图表1")
+![CCI  -  图表1](img/7d6f9ce0f86f76ed976a31f9483f9b7e.jpg "CCI  -  图表1")
 
 ## 解释
 
@@ -73,7 +73,7 @@ CCI衡量证券价格变动与其平均价格变动之间的差异。高正读�
 
 下图显示了卡特彼勒（CAT）的20日CCI。在七个月的时间内出现了四个趋势信号。显然，20日CCI不适合用于长期信号。图表分析师需要使用周线或月线图表来获取长期信号。股票在1月11日达到顶峰并开始下跌。CCI在1月22日（8天后）下跌到-100以下，预示着一个持续波动的开始。同样，股票在2月8日触底，CCI在2月17日（6天后）上升到+100以上，预示着一个持续上涨的开始。CCI并不能准确捕捉到顶部或底部，但它可以帮助过滤掉不重要的波动，专注于更大的趋势。
 
-![CCI  -  图表2](../Images/1763c789e7f19c87c31ee52d48305605.jpg "CCI  -  图表2")
+![CCI  -  图表2](img/1763c789e7f19c87c31ee52d48305605.jpg "CCI  -  图表2")
 
 当CAT在6月上涨到60以上时，CCI触发了一个看涨信号。一些交易者可能认为股票已经超买，这些水平下的风险收益比不利。在看涨信号生效的情况下，重点将放在具有良好风险收益比的看涨设置上。请注意，股票在6月底回撤了先前涨幅的约62%，并形成了一个下降旗形态。随后突破旗形趋势线提供了另一个CCI仍处于多头模式的看涨信号。
 
@@ -83,7 +83,7 @@ CCI衡量证券价格变动与其平均价格变动之间的差异。高正读�
 
 对于商品通道指数（CCI），超买或超卖的定义有所不同。±100 可能适用于交易范围，但对于其他情况需要更极端的水平。±200 是一个更难达到的水平，更能代表真正的极端。超买/超卖水平的选择还取决于基础证券的波动性。例如，指数ETF（如SPY）的CCI范围通常比大多数股票（如谷歌）要小。
 
-![CCI  -  图表 3](../Images/e13b282f8d5cca2aca7bcaf2cab818bf.jpg "CCI  -  图表 3")
+![CCI  -  图表 3](img/e13b282f8d5cca2aca7bcaf2cab818bf.jpg "CCI  -  图表 3")
 
 上图显示了谷歌（GOOG）的CCI（20）。使用高级指标选项添加了±200 的水平线。从2010年2月初到10月初，谷歌至少五次超过了±200。红色虚线显示了CCI回落至+200 以下的时刻，绿色虚线显示了CCI回升至-200 以上的时刻。重要的是要等待这些交叉点，以减少趋势延伸时的错误信号。然而，这样的系统并非绝对可靠。请注意，即使CCI在9月中旬超买并下跌至-200 以下后，谷歌仍在不断上涨。
 
@@ -93,7 +93,7 @@ CCI衡量证券价格变动与其平均价格变动之间的差异。高正读�
 
 确认是分歧的关键。虽然分歧反映了动量的变化，可以预示趋势反转，但图表分析师应为CCI或价格图表设定一个确认点。如果CCI或价格图表下破零点，可以确认熊市分歧；相反，如果CCI或价格图表上破零点，可以确认牛市分歧。
 
-![CCI  -  图表 4](../Images/0d83531ea614e45e0ce7613239449687.jpg "CCI  -  图表 4")
+![CCI  -  图表 4](img/0d83531ea614e45e0ce7613239449687.jpg "CCI  -  图表 4")
 
 上图显示了联合包裹服务（UPS）的 40 天 CCI。为了减少波动性，使用了较长的时间框架，40 天而不是 20 天。在七个月的时间内出现了三次相当大的背离，对于仅仅七个月来说实际上是相当多的。首先，UPS 在五月初飙升至新高，但 CCI 未能超过三月的高点，并形成了一个看跌的背离。价格图表上的支撑线突破和 CCI 转入负值领域几天后证实了这一背离。其次，七月初形成了一个看涨的背离，因为股票走低至一个更低的低点，但 CCI 形成了一个更高的低点。这一背离在 CCI 转入正值领域时得到了确认。还要注意，UPS 在七月初迅速填补了六月底的跳空缺口。第三，九月初形成了一个看跌的背离，当 CCI 跌入负值领域时得到了确认。尽管 CCI 确认了这一背离，但价格从未突破支撑线，背离并未导致趋势逆转。并非所有的背离都会产生良好的信号。
 
@@ -105,9 +105,9 @@ CCI 是一种多功能的动量振荡器，可用于识别超买/超卖水平或
 
 CCI 可作为 SharpCharts 指标使用，可以放置在基础证券的价格图表的上方、下方或后方。将 CCI 直接放在价格后面可以方便地比较指标运动与价格运动。默认设置为 20 个周期，但可以根据分析需求进行调整。较短的时间框架使指标更为敏感。较长的时间框架使其不太敏感。会员可以点击“高级选项”旁边的绿色箭头，添加水平线以标记超买或超卖水平。可以通过用逗号分隔数字（200，-200）来添加两条线。[点击这里查看实时示例](http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=8&dy=0&id=p10448180746&listNum=30&a=221403127 "http://stockcharts.com/h-sc/ui?s=SPY&p=D&yr=0&mn=8&dy=0&id=p10448180746&listNum=30&a=221403127")。
 
-![CCI - 图表 5](../Images/62dd4b7f415aa13b5c20ab56a32d063e.jpg "CCI - 图表 5")
+![CCI - 图表 5](img/62dd4b7f415aa13b5c20ab56a32d063e.jpg "CCI - 图表 5")
 
-![CCI - SharpCharts](../Images/22f76e80de0846d80c931e6431e83a6a.jpg "CCI - SharpCharts")
+![CCI - SharpCharts](img/22f76e80de0846d80c931e6431e83a6a.jpg "CCI - SharpCharts")
 
 ## 建议的扫描
 
@@ -147,5 +147,5 @@ Pring通过涵盖背离、交叉和其他信号展示了动量指标的基础知
 
 | **金融市场技术分析** 约翰·J·墨菲 | **马丁·普林格的技术分析解析** 马丁·普林格 |
 | --- | --- |
-| [![](../Images/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![](../Images/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
-| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| [![](img/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![](img/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |

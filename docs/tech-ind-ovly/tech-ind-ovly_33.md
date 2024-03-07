@@ -40,7 +40,7 @@
 
 这里是一个示例图表，其中MACD指标显示在下方面板中：
 
-[![](../Images/9cb2dc1a0d02d7e81394358199a42018.jpg)](http://stockcharts.com/h-sc/ui?s=QQQ&p=D&st=2009-01-01&en=2009-04-03&id=p70644026533&a=206516339 "http://stockcharts.com/h-sc/ui?s=QQQ&p=D&st=2009-01-01&en=2009-04-03&id=p70644026533&a=206516339")
+[![](img/9cb2dc1a0d02d7e81394358199a42018.jpg)](http://stockcharts.com/h-sc/ui?s=QQQ&p=D&st=2009-01-01&en=2009-04-03&id=p70644026533&a=206516339 "http://stockcharts.com/h-sc/ui?s=QQQ&p=D&st=2009-01-01&en=2009-04-03&id=p70644026533&a=206516339")
 
 点击图表查看实时示例。
 
@@ -65,7 +65,7 @@ MACD线是12天的[指数移动平均线](/school/doku.php?id=chart_school:techn
 
 MACD 线在零线上下振荡，也被称为中心线。这些交叉信号表明12天 EMA 已经穿过了26天 EMA。当然，方向取决于移动平均线的方向。正 MACD 表示12天 EMA 高于26天 EMA。随着较短 EMA 进一步偏离较长 EMA，正值增加。**这意味着上涨动能正在增加。** 负 MACD 值表示12天 EMA 低于26天 EMA。随着较短 EMA 进一步偏离较长 EMA，负值增加。**这意味着下行[动能](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#leading_indicators "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")正在增加。**
 
-![](../Images/6470e8080db2c48f6cc0fffa1b79d642.jpg)
+![](img/6470e8080db2c48f6cc0fffa1b79d642.jpg)
 
 在上面的示例中，黄色区域显示了 MACD 线在负值区域，因为12天 EMA 低于26天 EMA。最初的交叉发生在九月底（黑色箭头），随着12天 EMA 进一步偏离26天 EMA，MACD 进一步进入负值区域。橙色区域突出显示了一段正 MACD 值的时期，即12天 EMA 高于26天 EMA。请注意，在此期间 MACD 线保持在1以下（红色虚线）。这意味着12天 EMA 和26天 EMA 之间的距离小于1点，这并不是一个很大的差异。
 
@@ -77,7 +77,7 @@ MACD 线在零线上下振荡，也被称为中心线。这些交叉信号表明
 
 下面的图表显示了IBM及其12日EMA（绿色）、26日EMA（红色）和指标窗口中的12,26,9 MACD。在六个月内有八次信号线交叉：四次上穿和四次下穿。有一些好的信号和一些坏的信号。黄色区域突出显示了MACD线在2以上激增达到正极端的时期。四月和五月出现了两次看跌的信号线交叉，但IBM继续上涨。尽管在激增后上涨动能减缓，但四月至五月的上涨动能仍然强于下行动能。五月的第三次看跌信号线交叉产生了一个良好的信号。
 
-![](../Images/260b097fff49af332eaa75a0d4888e42.jpg)
+![](img/260b097fff49af332eaa75a0d4888e42.jpg)
 
 ## 中轴线交叉
 
@@ -85,15 +85,15 @@ MACD 线在零线上下振荡，也被称为中心线。这些交叉信号表明
 
 中轴线交叉可能持续几天或几个月。这完全取决于趋势的强度。只要有持续的上升趋势，MACD就会保持正数。只要有持续的下降趋势，MACD就会保持负数。下一个图表显示了普尔特房屋（PHM）在九个月内至少有四次中轴线交叉。由于这些中轴线交叉出现时出现了强劲的趋势，所以产生的信号效果很好。
 
-![](../Images/ef9768c2efe25ccc7f8d90fa8266cb74.jpg)
+![](img/ef9768c2efe25ccc7f8d90fa8266cb74.jpg)
 
 下面是康明斯公司（CMI）的图表，显示了五个月内七次中轴线交叉。与普尔特房屋不同，这些信号会导致许多震荡，因为在交叉后没有出现强劲的趋势。
 
-![](../Images/bb6bd2ca07b145df99225c34a8a666fa.jpg)
+![](img/bb6bd2ca07b145df99225c34a8a666fa.jpg)
 
 下一个图表显示了3M（MMM）在2009年3月底出现了一个看涨的中轴线交叉，而在2010年2月初出现了一个看跌的中轴线交叉。这个信号持续了10个月。换句话说，12日EMA在10个月内一直高于26日EMA。这是一个强劲的趋势。
 
-![](../Images/7d8ae0da668d16533117ffb7520a2bb6.jpg)
+![](img/7d8ae0da668d16533117ffb7520a2bb6.jpg)
 
 ## 分歧
 
@@ -101,19 +101,19 @@ MACD 线在零线上下振荡，也被称为中心线。这些交叉信号表明
 
 下图显示了2008年10月至11月间谷歌（GOOG）的看涨分歧。首先，请注意我们使用收盘价来识别分歧。MACD的移动平均线是基于收盘价的，我们也应该考虑证券的收盘价。其次，请注意在10月和11月底，谷歌和其MACD线都反弹时，都有明显的反应低点（低谷）。第三，请注意在11月份，随着谷歌形成更低的低点，MACD形成了更高的低点。MACD在12月初形成了一个看涨分歧，并通过信号线交叉确认了一次反转。谷歌通过突破阻力线确认了一次反转。
 
-![](../Images/6c395a340095fde1f1d9309082940cfb.jpg)
+![](img/6c395a340095fde1f1d9309082940cfb.jpg)
 
 当一项证券记录了更高的高点，而MACD线形成了更低的高点时，就形成了看跌的分歧。证券的更高高点对于上涨趋势是正常的，但MACD的更低高点显示出更少的上涨动量。尽管上涨动量可能较小，但只要MACD是正的，上涨动量仍然超过下跌动量。逐渐减弱的上涨动量有时可能预示着趋势反转或大幅下跌。
 
 在下图中，我们看到Gamestop（GME）从8月至10月出现了一个大的看跌分歧。股票在28以上形成了更高的高点，但MACD线未达到先前的高点，并形成了更低的高点。随后的信号线交叉和MACD的支撑线突破是看跌的。在价格图表上，请注意在11月的回调反弹中，破裂的支撑线变成了阻力（红色虚线）。这次回调提供了第二次卖出或卖空的机会。
 
-![](../Images/bfc211a32cb951ad168c3f5874da1976.jpg)
+![](img/bfc211a32cb951ad168c3f5874da1976.jpg)
 
 分歧应该谨慎对待。在强劲的上涨趋势中，看跌的分歧很常见，而在强劲的下跌趋势中，看涨的分歧经常发生。是的，你没看错。上涨趋势通常以强劲的上涨开始，产生了上涨动量（MACD）的激增。尽管上涨趋势持续，但它的速度变慢，导致MACD从高点下降。上涨动量可能不那么强劲，但只要MACD线在零线以上，上涨动量仍然超过下跌动量。相反，在强劲下跌趋势开始时会发生相反的情况。
 
 下图显示了标普 500 ETF（SPY）从 2009 年 8 月至 11 月出现的四次看跌背离。尽管上涨动量较小，但由于上涨趋势强劲，ETF 仍然继续上涨。请注意 SPY 如何继续保持较高高点和较低低点的系列。请记住，只要 MACD 为正值，上涨动量就比下跌动量强。随着上涨的延伸，其 MACD（动量）可能不那么积极（强劲），但仍然主要为正值。
 
-![](../Images/83e5b1f65e9c877cd1a3c88b597eb9a8.jpg)
+![](img/83e5b1f65e9c877cd1a3c88b597eb9a8.jpg)
 
 ## 结论
 
@@ -129,9 +129,9 @@ MACD 可以设置为在证券价格图上方、下方或后方的指标。将 MA
 
 [点击这里](http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p18754900449&listNum=30&a=199515976 "http://stockcharts.com/h-sc/ui?s=$INDU&p=D&b=5&g=0&id=p18754900449&listNum=30&a=199515976") 查看 MACD 指标的实时图表。
 
-![](../Images/1494f28ca800b8667187ec60de2c6f29.jpg)
+![](img/1494f28ca800b8667187ec60de2c6f29.jpg)
 
-![](../Images/71629e069342fd509cdea8278bfff443.jpg)
+![](img/71629e069342fd509cdea8278bfff443.jpg)
 
 ## 建议的扫描
 
@@ -175,8 +175,8 @@ AND [Daily MACD Line(12,26,9,Daily Close) > 0]
 
 | **技术分析 - 积极投资者的强大工具** 杰拉德·阿普尔 |
 | --- |
-| [![](../Images/a2673256615cb182a677e60a34c2b755.jpg)](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors") |
-| [![buynowbuttone.jpg](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "buynowbuttone.jpg")](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors") |
+| [![](img/a2673256615cb182a677e60a34c2b755.jpg)](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors") |
+| [![buynowbuttone.jpg](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "buynowbuttone.jpg")](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors") |
 
 * * *
 

@@ -50,11 +50,11 @@
 
 资金流乘数在+1和-1之间波动。因此，它是资金流量和积累分布线的关键。当收盘价位于高低范围的上半部时，乘数为正，当位于下半部时为负。这是完全合理的。当价格收于周期范围的上半部时，买盘压力大于卖盘压力（反之亦然）。当乘数为正时，积累分布线上升，当乘数为负时，积累分布线下降。
 
-![图表 1  -  积累分布线](../Images/6059f42a4a2c03fb55b1c8e7ad292058.jpg "图表 1  -  积累分布线")
+![图表 1  -  积累分布线](img/6059f42a4a2c03fb55b1c8e7ad292058.jpg "图表 1  -  积累分布线")
 
 乘数调整了最终进入资金流量的量。除非资金流量乘数处于极端值（+1或-1），否则实际上会减少交易量。当收盘价处于高位时，乘数为+1，当收盘价处于低位时，乘数为-1。当乘数为+1时，所有交易量为正，当乘数为-1时，所有交易量为负。在0.50时，只有一半的交易量转化为该时期的资金流量。下表显示了Research-in-Motion（RIMM）的资金流量乘数、资金流量和累积分布线。请注意，当收盘价强劲时，乘数在0.50和1之间，当收盘价疲弱时，乘数在-0.50和-1之间。
 
-![表格1 - 累积分布线](../Images/bbb5d28a22efb997ac60ab9cf943b0f3.jpg "表格1 - 累积分布线")
+![表格1 - 累积分布线](img/bbb5d28a22efb997ac60ab9cf943b0f3.jpg "表格1 - 累积分布线")
 
 [点击这里](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:accumulation_distribution_line:cs-accum.xls "chart_school:technical_indicators_and_overlays:accumulation_distribution_line:cs-accum.xls (33.5 KB)") 查看Excel电子表格中累积分布线的计算。
 
@@ -66,7 +66,7 @@
 
 累积分布线和平衡成交量（OBV）是基于累积交易量的指标，有时会朝相反方向移动，因为它们的基本公式不同。乔·格兰维尔（Joe Granville）开发了[平衡成交量](/school/doku.php?id=chart_school:technical_indicators:on_balance_volume_obv "chart_school:technical_indicators:on_balance_volume_obv")（OBV）作为正负交易量流的累积度量。当收盘价上涨时，OBV会增加该时期的总交易量，当收盘价下跌时，OBV会减少该时期的总交易量。这些正负交易量流的累积总和形成OBV线。然后可以将该线与基础证券的价格图表进行比较，以寻找背离或确认。
 
-![图表2 - 累积分布线](../Images/06f4000d84a40426a266d54b6920d1be.jpg "图表2 - 累积分布线")
+![图表2 - 累积分布线](img/06f4000d84a40426a266d54b6920d1be.jpg "图表2 - 累积分布线")
 
 如上述公式所示，Chaikin采取了一种不同的方法，完全忽略了从一个时期到下一个时期的变化。相反，积累分布线关注的是收盘价相对于给定时期（日、周、月）的高低范围的水平。根据这个公式，一个证券可能会跳空下跌并且收盘价明显较低，但如果收盘价高于高低范围的中点，积累分布线将上升。上图显示了Clorox（CLX）出现大幅跳空下跌，收盘价接近当天的高低范围顶部。OBV急剧下降，因为收盘价低于前一次收盘价。积累分布线上升，因为收盘价接近当天的高点。
 
@@ -74,7 +74,7 @@
 
 趋势确认是一个相当直接的概念。在积累分布线上升趋势加强了价格图表上的上升趋势，反之亦然。下图显示了自由港麦克莫兰（FCX）和积累分布线在二月至三月上升，四月至六月下降，然后七月至一月上升。积累分布线确认了每一个价格趋势。
 
-![图表 3  -  积累分布线](../Images/edf68ebcd21571cba81beb4bf3323d16.jpg "图表 3  -  积累分布线")
+![图表 3  -  积累分布线](img/edf68ebcd21571cba81beb4bf3323d16.jpg "图表 3  -  积累分布线")
 
 ## 背离
 
@@ -82,11 +82,11 @@
 
 上图显示了 Nordstrom（JWN）的积累分布线。注意当指标放置在价格图表“后面”时，比较价格走势是多么容易。指标（粉色）和价格趋势从二月到六月同步移动。随着指标在七月初触底并开始上升，积累的迹象出现。JWN在八月底创下新低。即使指标显示出买盘压力的迹象，等待价格图表上的看涨催化剂或确认是很重要的。这个催化剂是股票跳空上涨并伴随着大量交易。
 
-![图表 4  -  积累分布线](../Images/ae7322d4649c689187bbb1517239ec7e.jpg "图表 4  -  积累分布线")
+![图表 4  -  积累分布线](img/ae7322d4649c689187bbb1517239ec7e.jpg "图表 4  -  积累分布线")
 
 当价格创新高时，但积累分布线不确认并下降时，形成了一个看跌的背离。这显示了分销或潜在的卖压，可能预示价格图表上的看跌反转。
 
-![图表 5  -  积累分布线](../Images/2008ad33442385f54eb2b1c881ca5052.jpg "图表 5  -  积累分布线")
+![图表 5  -  积累分布线](img/2008ad33442385f54eb2b1c881ca5052.jpg "图表 5  -  积累分布线")
 
 上图显示了西南航空公司（LUV）的累积分布线在价格两个月前达到峰值。该指标不仅达到峰值，而且在三月和四月下降，反映了一些卖压。LUV在价格图表上确认了弱势，并且RSI随后在40以下移动。RSI通常在牛市区（40-80）和熊市区（20-60）交易。[RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi "chart_school:technical_indicators:relative_strength_index_rsi")一直保持在牛市区，直到五月初才进入熊市区。
 
@@ -94,7 +94,7 @@
 
 累积分布线是基于价格和成交量的衍生指标。这使得它至少比基础证券的实际价格远了两步。此外，资金流乘数不考虑期间内价格的变化。因此，不能期望它总是确认价格走势或成功预测出现背离的价格反转。有时价格和指标之间存在脱节。有时累积分布线简单地不起作用。这就是为什么在价格/趋势分析和/或其他指标方面，使用累积分布线以及所有指标至关重要。
 
-![图表6  -  累积分布线](../Images/2125a7954b93a553f6da1308b98b7701.jpg "图表6  -  累积分布线")
+![图表6  -  累积分布线](img/2125a7954b93a553f6da1308b98b7701.jpg "图表6  -  累积分布线")
 
 ## 结论
 
@@ -104,9 +104,9 @@
 
 积聚分布线在SharpCharts中作为一个指标可用。选择后，指标可以放置在基础证券的价格上方、下方或后面。将其“放在价格后面”可以方便与基础证券进行比较。图表分析师还可以通过使用高级选项向指标添加移动平均线。**[点击这里](http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=8&dy=0&id=p93414126571&listNum=30&a=222506084 "http://stockcharts.com/h-sc/ui?s=IBM&p=D&yr=0&mn=8&dy=0&id=p93414126571&listNum=30&a=222506084")** 查看带有积聚分布线的实时图表。
 
-![图表 7  -  积聚分布线](../Images/f805062269290aa87897d6396eb1311b.jpg "图表 7  -  积聚分布线")
+![图表 7  -  积聚分布线](img/f805062269290aa87897d6396eb1311b.jpg "图表 7  -  积聚分布线")
 
-![SharpCharts  -  积聚分布线](../Images/370a6f19ba12a1fbd2a386d6dbbc86fe.jpg "SharpCharts  -  积聚分布线")
+![SharpCharts  -  积聚分布线](img/370a6f19ba12a1fbd2a386d6dbbc86fe.jpg "SharpCharts  -  积聚分布线")
 
 ## 建议扫描
 
@@ -154,5 +154,5 @@ AND [Daily OBV < Daily OBV Signal(20)]
 
 | **《金融市场技术分析》** 约翰·J·墨菲 |
 | --- |
-| [![](../Images/e00f9b0f57a7325646647a118f3ebe9e.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |
-| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |
+| [![](img/e00f9b0f57a7325646647a118f3ebe9e.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |
+| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |

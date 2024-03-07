@@ -38,15 +38,15 @@
 
 1、5、10和15分钟图表的枢轴点使用前一天的最高、最低和收盘价。换句话说，今天的盘内图表的枢轴点将仅基于昨天的最高、最低和收盘价。一旦设置了枢轴点，它们将不会改变，并在整天内保持有效。
 
-![枢轴点 - 图表1](../Images/7340af632f63d7a16d9d588e81bcd18a.jpg "枢轴点 - 图表1")
+![枢轴点 - 图表1](img/7340af632f63d7a16d9d588e81bcd18a.jpg "枢轴点 - 图表1")
 
 30、60和120分钟图表的枢轴点使用前一周的最高、最低和收盘价。这些计算是基于日历周的。一旦周开始，30、60和120分钟图表的枢轴点将在整个周内保持不变。**直到周结束并且可以计算新的枢轴点，它们才会改变。**
 
-![枢轴点 - 图表2](../Images/f30afd69e1c419d1411f744d3bf22f97.jpg "枢轴点 - 图表2")
+![枢轴点 - 图表2](img/f30afd69e1c419d1411f744d3bf22f97.jpg "枢轴点 - 图表2")
 
 每日图表的枢轴点使用前一个月的数据。6月1日的枢轴点将基于5月的最高、最低和收盘价。它们在整个6月保持不变。新的枢轴点将在7月的第一个交易日计算。这些将基于6月的最高、最低和收盘价。
 
-![枢轴点 - 图表3](../Images/f1307519517eaed9943f7edc6e82b43f.jpg "枢轴点 - 图表3")
+![枢轴点 - 图表3](img/f1307519517eaed9943f7edc6e82b43f.jpg "枢轴点 - 图表3")
 
 每周和每月图表的枢轴点使用前一年的数据。
 
@@ -69,7 +69,7 @@ Resistance 2 (R2) = P + (High  -  Low)
 
 下图显示了纳斯达克100 ETF（QQQ）在15分钟图表上的标准 Pivot Points。在6月9日交易开始时，Pivot Point 处于中间位置，阻力水平在上方，支撑水平在下方。这些水平在一天内保持不变。
 
-![Pivot Points  -  图表 4](../Images/ad17543763434c2aee7ef6ea34c715f6.jpg "Pivot Points  -  图表 4")
+![Pivot Points  -  图表 4](img/ad17543763434c2aee7ef6ea34c715f6.jpg "Pivot Points  -  图表 4")
 
 ## 斐波那契 Pivot Points
 
@@ -94,7 +94,7 @@ Resistance 3 (R3) = P + {1 * (High  -  Low)}
 
 下图显示了道琼斯工业平均指数 SPDR（DIA）在15分钟图表上的斐波那契 Pivot Points。R1 和 S1 基于38.2%。R2 和 S2 基于61.8%。R3 和 S3 基于100%。
 
-![Pivot Points  -  图表 5](../Images/e925733240b3aadf2248df1742e43705.jpg "Pivot Points  -  图表 5")
+![Pivot Points  -  图表 5](img/e925733240b3aadf2248df1742e43705.jpg "Pivot Points  -  图表 5")
 
 ## Demark Pivot Points
 
@@ -117,13 +117,13 @@ Resistance 1 (R1) = X/2 - Low
 
 下图显示了罗素2000 ETF（IWM）在15分钟图表上的 Demark Pivot Points。请注意，只有一个阻力（R1）和一个支撑（S1）。Demark Pivot Points 没有多个支撑或阻力水平。
 
-![Pivot Points  -  图表 6](../Images/928b04e318a922cff8e25944b23732c0.jpg "Pivot Points  -  图表 6")
+![Pivot Points  -  图表 6](img/928b04e318a922cff8e25944b23732c0.jpg "Pivot Points  -  图表 6")
 
 ## 设定基调
 
 Pivot Point 为价格走势设定了一般基调。这是标记为 (P) 的一组中间线。突破 Pivot Point 是积极的，显示出力量。请记住，这个 Pivot Point 基于前一时期的数据。它在当前时期被提出作为第一个重要水平。突破 Pivot Point 表明有力量，目标是第一个阻力。突破第一个阻力显示出更多力量，目标是第二个阻力水平。
 
-![Pivot Points  -  图表 7](../Images/c18b966dd0e88dac6656de827f61d945.jpg "Pivot Points  -  图表 7")
+![Pivot Points  -  图表 7](img/c18b966dd0e88dac6656de827f61d945.jpg "Pivot Points  -  图表 7")
 
 相反的情况发生在下行。突破 Pivot Point 表明弱势，目标是第一个支撑水平。突破第一个支撑水平显示出更多弱势，目标是第二个支撑水平。
 
@@ -131,11 +131,11 @@ Pivot Point 为价格走势设定了一般基调。这是标记为 (P) 的一组
 
 基于枢纽点的支撑和阻力水平可以像传统的支撑和阻力水平一样使用。关键是当这些水平发挥作用时密切关注价格走势。如果价格下跌到支撑然后企稳，交易者可以寻找对支撑的成功测试和反弹。通常有助于寻找一个看涨的图表模式或指标信号来确认从支撑处的上升。同样，如果价格上涨到阻力然后停滞，交易者可以寻找在阻力处的失败和下跌。同样，图表分析师应该寻找一个看跌的图表模式或指标信号来确认从阻力处的下降。
 
-![枢纽点 - 图表 8](../Images/4cbb1c5fda781895b5ede3f217bd15f2.jpg "枢纽点 - 图表 8")
+![枢纽点 - 图表 8](img/4cbb1c5fda781895b5ede3f217bd15f2.jpg "枢纽点 - 图表 8")
 
 第二支撑和阻力水平也可以用来识别潜在的超买和超卖情况。突破第二阻力水平将显示出力量，但也会表明一种可能导致回调的超买情况。同样，跌破第二支撑将显示出弱势，但也会暗示一种可能导致反弹的短期超卖状态。
 
-![枢纽点 - 图表 9](../Images/c766087fcdce05932d61a0c4a0d1c9e3.jpg "枢纽点 - 图表 9")
+![枢纽点 - 图表 9](img/c766087fcdce05932d61a0c4a0d1c9e3.jpg "枢纽点 - 图表 9")
 
 ## 结论
 
@@ -145,9 +145,9 @@ Pivot Point 为价格走势设定了一般基调。这是标记为 (P) 的一组
 
 枢纽点可以在 SharpCharts 工作台上作为“覆盖层”找到。标准枢纽点是默认设置，参数框为空。图表分析师可以通过在参数框中放置“F”来应用斐波那契枢纽点，通过在框中放置“D”来应用 Demark 枢纽点。甚至可以同时显示所有三个。[点击这里](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237 "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237") 查看带有所有三个枢纽点的实时图表。然后您可以删除您不想要的那些。
 
-[![枢轴点  -  SPY示例](../Images/5248548a8301aea1cb689fbbcf1f9757.jpg "枢轴点  -  SPY示例")](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237 "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237")
+[![枢轴点  -  SPY示例](img/5248548a8301aea1cb689fbbcf1f9757.jpg "枢轴点  -  SPY示例")](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237 "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237")
 
-![枢轴点 - SharpCharts](../Images/a95df3dd4dd05d885bcc146d39c0d9eb.jpg "枢轴点 - SharpCharts")
+![枢轴点 - SharpCharts](img/a95df3dd4dd05d885bcc146d39c0d9eb.jpg "枢轴点 - SharpCharts")
 
 ## 进一步研究
 
@@ -155,8 +155,8 @@ Pivot Point 为价格走势设定了一般基调。这是标记为 (P) 的一组
 
 | **技术交易战术完全指南** 约翰·珀森 |
 | --- |
-| [![](../Images/c3544022b2f24f16e18c19a16b6207ff.jpg)](http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics "http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics") |
-| [![立即购买](../Images/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics "http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics") |
+| [![](img/c3544022b2f24f16e18c19a16b6207ff.jpg)](http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics "http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics") |
+| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics "http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics") |
 
 * * *
 

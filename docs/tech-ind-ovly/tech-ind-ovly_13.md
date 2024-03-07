@@ -26,7 +26,7 @@
 
 传统VWAP基于tick数据。可以想象，在一天的每一分钟内都会有许多tick（交易）。在活跃时间段内活跃的证券每分钟可以有20-30个tick。在典型股票交易日的390分钟内，许多股票每天的tick数量远远超过5000。每天有超过5000只股票交易，这些tick开始呈指数增长。不用说，tick数据非常耗费资源。
 
-![VWAP - 图表 1](../Images/8d71258545bff6d5b4176905acff1c43.jpg "VWAP - 图表 1")
+![VWAP - 图表 1](img/8d71258545bff6d5b4176905acff1c43.jpg "VWAP - 图表 1")
 
 与基于tick数据的VWAP不同，StockCharts.com提供基于日内周期（1、5、10、15、30或60分钟）的日内VWAP。请注意，由于计算的性质（见下文），VWAP在日常、周常或月常周期中没有定义。
 
@@ -39,21 +39,21 @@ Cumulative(Volume x Typical Price)/Cumulative(Volume)
 
 ```
 
-![VWAP - 电子表格 1](../Images/b95b66afabcb769e415104b71652cec0.jpg "VWAP - 电子表格 1")
+![VWAP - 电子表格 1](img/b95b66afabcb769e415104b71652cec0.jpg "VWAP - 电子表格 1")
 
 上面的示例显示了IBM交易的前30分钟的1分钟VWAP。通过将累积价格-成交量除以累积成交量，产生一个根据成交量调整（加权）的价格水平。第一个VWAP值始终是典型价格，因为分子和分母中的成交量相等。它们在第一次计算中互相抵消。下图显示了IBM的1分钟K线图和VWAP。在交易的前30分钟内，价格从最高的127.36到最低的126.67。实际上，前30分钟非常波动。VWAP的范围从127.21到127.09，并且大部分时间处于这个范围的中间。
 
-![VWAP - 图表 2](../Images/566c94be67f7a73087710b66c5aa0f68.jpg "VWAP - 图表 2")
+![VWAP - 图表 2](img/566c94be67f7a73087710b66c5aa0f68.jpg "VWAP - 图表 2")
 
 ## 特点
 
 像移动平均一样，VWAP滞后于价格，因为它是基于过去数据的平均值。数据越多，滞后越大。到下午3:00，一只股票已经交易了约331分钟。作为一个累积“平均”，这个指标类似于一个330周期的移动平均。这是很多过去的数据。一天结束时的1分钟VWAP值通常与390分钟移动平均的结束值非常接近。这两个移动平均都是基于当天的1分钟柱状图。在收盘时，两者都是基于390分钟的数据（一整天）。然而，在白天无法将390分钟移动平均与VWAP进行比较。中午12:00的390分钟移动平均将包含前一天的数据。而VWAP不会。请记住，VWAP的计算从开盘开始，到收盘结束。到中午12:00已经过去了150分钟的交易时间。因此，中午12:00的VWAP需要与150分钟移动平均进行比较。
 
-![VWAP - 图表 3](../Images/69a39c486c78865e7695c942ad5b22de.jpg "VWAP - 图表 3")
+![VWAP - 图表 3](img/69a39c486c78865e7695c942ad5b22de.jpg "VWAP - 图表 3")
 
 尽管存在滞后，图表分析师可以将VWAP与当前价格进行比较，以确定日内价格的大致方向。它类似于移动平均。一般来说，当价格低于VWAP时，日内价格下跌，当价格高于VWAP时，日内价格上涨。当价格在一天内处于区间时，VWAP将落在当天的高低范围之间。接下来的三个图表展示了VWAP上升、下降和持平的示例。
 
-![VWAP - 图表 4](../Images/afaa7cbbbb3bea3913f335a1c9776f61.jpg "VWAP - 图表 4") ![VWAP - 图表 5](../Images/5897839258c78dd92ec788bfba18f522.jpg "VWAP - 图表 5") ![VWAP - 图表 6](../Images/64cc72c64fb470c1bc7144604770fded.jpg "VWAP - 图表 6")
+![VWAP - 图表 4](img/afaa7cbbbb3bea3913f335a1c9776f61.jpg "VWAP - 图表 4") ![VWAP - 图表 5](img/5897839258c78dd92ec788bfba18f522.jpg "VWAP - 图表 5") ![VWAP - 图表 6](img/64cc72c64fb470c1bc7144604770fded.jpg "VWAP - 图表 6")
 
 ## VWAP的用途
 
@@ -69,6 +69,6 @@ VWAP作为一天价格的参考点。因此，它最适合**盘中分析**。图
 
 成交量加权平均价格（VWAP）可以作为Sharpcharts上的“叠加”指标绘制。输入证券代码后，选择“盘中”时段和“范围”。这可以是1天或“填充图表”。寻找更多细节的图表分析师可以选择“填充图表”。寻找一般水平的图表分析师可以选择1天。VWAP可以绘制超过一天，但随着新的计算周期开始，指标将从其先前的收盘价跳至下一个开盘价的典型价格。此外，请注意VWAP值有时可能会脱离价格图表。价格范围从45.8到47的图表上将显示45.5的VWAP。图表分析师有时需要将范围扩展到整天才能在图表上看到VWAP。VWAP值始终显示在图表的左上角。点击下面的图表查看实时示例。
 
-[![VWAP - Chart 7](../Images/05cf52019c09547855bb5e9d5716994b.jpg "VWAP - Chart 7")](http://stockcharts.com/h-sc/ui?s=INTC&p=1&b=5&g=0&id=p44523558053&listNum=30&a=208264972 "http://stockcharts.com/h-sc/ui?s=INTC&p=1&b=5&g=0&id=p44523558053&listNum=30&a=208264972")
+[![VWAP - Chart 7](img/05cf52019c09547855bb5e9d5716994b.jpg "VWAP - Chart 7")](http://stockcharts.com/h-sc/ui?s=INTC&p=1&b=5&g=0&id=p44523558053&listNum=30&a=208264972 "http://stockcharts.com/h-sc/ui?s=INTC&p=1&b=5&g=0&id=p44523558053&listNum=30&a=208264972")
 
-![VWAP - SharpCharts](../Images/670c45bf78990297dfb991e0f9d3e289.jpg "VWAP - SharpCharts")
+![VWAP - SharpCharts](img/670c45bf78990297dfb991e0f9d3e289.jpg "VWAP - SharpCharts")
