@@ -1,40 +1,40 @@
-# RRG相对强度[ChartSchool]
+# RRG 相对强度[ChartSchool]
 
 ### 目录
 
-+   [RRG相对强度](#rrg_relative_strength)
++   RRG 相对强度
 
-    +   [介绍](#introduction)
+    +   介绍
 
-    +   [标准化](#normalization)
+    +   标准化
 
-    +   [JdK RS-Ratio](#jdk_rs-ratio)
+    +   JdK RS-Ratio
 
-    +   [JdK RS-Momentum](#jdk_rs-momentum)
+    +   JdK RS-Momentum
 
-    +   [周线对比日线](#weekly_versus_daily)
+    +   周线对比日线
 
-    +   [结论](#conclusions)
+    +   结论
 
-    +   [与SharpCharts一起使用](#using_with_sharpcharts)
+    +   与 SharpCharts 一起使用
 
-    +   [常见问题](#frequently_asked_questions)
+    +   常见问题
 
 ## 介绍
 
-RRG相对强度是一对设计用于衡量相对表现和相对表现动量的指标。JdK RS-Ratio是用于衡量一种证券相对于另一种证券的相对表现的指标。它的伴侣，JdK RS-Momentum衡量RS-Ratio的动量，这意味着它衡量相对表现的动量。RS-Ratio和RS-Momentum被用于相对旋转图（RRGs），但这对指标也可以在SharpCharts上绘制。本文将重点介绍RS-Ratio和RS-Momentum作为SharpCharts上的指标。还有另一篇[ChartSchool文章](/school/doku.php?id=chart_school:chart_analysis:rrg_charts "chart_school:chart_analysis:rrg_charts")详细介绍了它们在相对旋转图中的使用。
+RRG 相对强度是一对设计用于衡量相对表现和相对表现动量的指标。JdK RS-Ratio 是用于衡量一种证券相对于另一种证券的相对表现的指标。它的伴侣，JdK RS-Momentum 衡量 RS-Ratio 的动量，这意味着它衡量相对表现的动量。RS-Ratio 和 RS-Momentum 被用于相对旋转图（RRGs），但这对指标也可以在 SharpCharts 上绘制。本文将重点介绍 RS-Ratio 和 RS-Momentum 作为 SharpCharts 上的指标。还有另一篇 ChartSchool 文章详细介绍了它们在相对旋转图中的使用。
 
-***注意:** “相对旋转图™”和“RRG图表™”是[RRG Research](https://www.relativerotationgraphs.com "https://www.relativerotationgraphs.com")的注册商标。*
+***注意:** “相对旋转图™”和“RRG 图表™”是[RRG Research](https://www.relativerotationgraphs.com "https://www.relativerotationgraphs.com")的注册商标。*
 
 ## 标准化
 
-RS-Ratio和RS-Momentum是“标准化”的，这意味着这些指标以相同的计量单位表示，并在相同水平（100）上下波动。这个标准化过程意味着不同证券的RS-Ratio值可以进行比较，只要使用相同的基准。例如，图表分析师可以绘制九个Sector SPDRs的RS-Ratio，并使用S&P 500作为基准。具有最高RS-Ratio的部门将显示最大的相对强度，而具有最低RS-Ratio的部门将显示最大的相对弱势。
+RS-Ratio 和 RS-Momentum 是“标准化”的，这意味着这些指标以相同的计量单位表示，并在相同水平（100）上下波动。这个标准化过程意味着不同证券的 RS-Ratio 值可以进行比较，只要使用相同的基准。例如，图表分析师可以绘制九个 Sector SPDRs 的 RS-Ratio，并使用 S&P 500 作为基准。具有最高 RS-Ratio 的部门将显示最大的相对强度，而具有最低 RS-Ratio 的部门将显示最大的相对弱势。
 
 ## JdK RS-Ratio
 
-RS-Ratio是一种衡量相对表现趋势的指标。类似于价格相对性，RS-Ratio使用比率分析来比较一种证券与另一种证券（通常是基准）的表现。它旨在定义相对表现的趋势并衡量该趋势的强度。
+RS-Ratio 是一种衡量相对表现趋势的指标。类似于价格相对性，RS-Ratio 使用比率分析来比较一种证券与另一种证券（通常是基准）的表现。它旨在定义相对表现的趋势并衡量该趋势的强度。
 
-下图显示了主窗口中的Technology SPDR（XLK），中间窗口中的价格相对性（XLK:$SPX比率）以及底部窗口中的RRG指标。我们将首先关注RS-Ratio（红色）。RS-Momentum（绿色）将在下一节中介绍。
+下图显示了主窗口中的 Technology SPDR（XLK），中间窗口中的价格相对性（XLK:$SPX 比率）以及底部窗口中的 RRG 指标。我们将首先关注 RS-Ratio（红色）。RS-Momentum（绿色）将在下一节中介绍。
 
 ![](img/2a0dc50b78fb0963a6c32a93675df51e.jpg)
 
@@ -68,7 +68,7 @@ RS-Momentum 是一个衡量 RS-Ratio 动量（变化率）的指标。作为一�
 
 ## 周线与日线
 
-与常规柱状图一样，选择的时间范围会影响 RS-Ratio，并导致不同的结论。在下面的示例中，左侧图表显示了标普500指数两个月的日常数据，两个月的趋势是下降的。右侧图表显示了一年的周数据，总体趋势明显向上。黄色阴影区域突出显示了日常图表上显示的两个月数据，以便将这种下降放入透视中。显然，这是长期上升趋势中的短期下降趋势（回撤）。
+与常规柱状图一样，选择的时间范围会影响 RS-Ratio，并导致不同的结论。在下面的示例中，左侧图表显示了标普 500 指数两个月的日常数据，两个月的趋势是下降的。右侧图表显示了一年的周数据，总体趋势明显向上。黄色阴影区域突出显示了日常图表上显示的两个月数据，以便将这种下降放入透视中。显然，这是长期上升趋势中的短期下降趋势（回撤）。
 
 ![](img/b0be3ac4a89fc5eb7a961ac87f75e3f6.jpg)
 
@@ -78,20 +78,20 @@ RS-Momentum 是一个衡量 RS-Ratio 动量（变化率）的指标。作为一�
 
 如果我们假设长期趋势在这里占主导地位，那么我们也可以推断长期相对表现的下降趋势最终将战胜短期相对表现的上升趋势。换句话说，日线图上的相对表现上升趋势只是周线图上的一个小波动，不足以扭转相对表现的更大下降趋势。
 
-与技术分析的所有方面一样，研究不同的时间框架以获得完整的图片是一个非常好的习惯。电信部门在周线图上明显表现不佳，动量为负。RS-Momentum的上升显示了在周线图上负动量的减少，这反映在日线图上，其中RS-Ratio和RS-Momentum移动超过100。
+与技术分析的所有方面一样，研究不同的时间框架以获得完整的图片是一个非常好的习惯。电信部门在周线图上明显表现不佳，动量为负。RS-Momentum 的上升显示了在周线图上负动量的减少，这反映在日线图上，其中 RS-Ratio 和 RS-Momentum 移动超过 100。
 
 ## 结论
 
-RS-Ratio和RS-Momentum为图表分析师提供了一个四方面的方法来衡量相对表现。首先，RS-Ratio根据另一个证券（通常是基准）来衡量相对表现。简单来说，当证券高于100时显示相对强势，低于100时显示相对弱势。其次，RS-Ratio值告诉我们相对强势或相对弱势的程度。值越高于100，相对强势越大。值越低于100，相对弱势越大。第三，图表分析师可以比较RS-Ratio值以确定组内最强的证券。第四，RS-Momentum衡量RS-Ratio的动量，这可以用来预测RS-Ratio的转折点。与所有指标一样，图表分析师应该将相对表现与其他技术工具结合起来，以获得完整的图片。
+RS-Ratio 和 RS-Momentum 为图表分析师提供了一个四方面的方法来衡量相对表现。首先，RS-Ratio 根据另一个证券（通常是基准）来衡量相对表现。简单来说，当证券高于 100 时显示相对强势，低于 100 时显示相对弱势。其次，RS-Ratio 值告诉我们相对强势或相对弱势的程度。值越高于 100，相对强势越大。值越低于 100，相对弱势越大。第三，图表分析师可以比较 RS-Ratio 值以确定组内最强的证券。第四，RS-Momentum 衡量 RS-Ratio 的动量，这可以用来预测 RS-Ratio 的转折点。与所有指标一样，图表分析师应该将相对表现与其他技术工具结合起来，以获得完整的图片。
 
-## 使用SharpCharts
+## 使用 SharpCharts
 
-RS-Ratio和RS-Momentum在SharpCharts中作为指标可用。它们在指标下拉列表中被分组为“RRG相对强度”。一旦选择，用户可以通过在“参数”框中输入其符号来设置基准证券。下面的示例显示了消费者自由支出SPDR（XLY）与标普500作为基准的情况。请记住，任何符号都可以用来衡量相对表现。如果您想比较消费者自由支出SPDR（XLY）与技术SPDR（XLK）的表现，请简单地输入XLK作为参数并单击更新。[点击这里](http://stockcharts.com/h-sc/ui?s=XLY&p=D&yr=0&mn=6&dy=0&id=p07575376366&a=399188908 "http://stockcharts.com/h-sc/ui?s=XLY&p=D&yr=0&mn=6&dy=0&id=p07575376366&a=399188908") 查看RRG相对强度实际运行的实例。
+RS-Ratio 和 RS-Momentum 在 SharpCharts 中作为指标可用。它们在指标下拉列表中被分组为“RRG 相对强度”。一旦选择，用户可以通过在“参数”框中输入其符号来设置基准证券。下面的示例显示了消费者自由支出 SPDR（XLY）与标普 500 作为基准的情况。请记住，任何符号都可以用来衡量相对表现。如果您想比较消费者自由支出 SPDR（XLY）与技术 SPDR（XLK）的表现，请简单地输入 XLK 作为参数并单击更新。[点击这里](http://stockcharts.com/h-sc/ui?s=XLY&p=D&yr=0&mn=6&dy=0&id=p07575376366&a=399188908 "http://stockcharts.com/h-sc/ui?s=XLY&p=D&yr=0&mn=6&dy=0&id=p07575376366&a=399188908") 查看 RRG 相对强度实际运行的实例。
 
 ![](img/cd94b164ca4ebceabb5fce240ff2ccfa.jpg)
 
 ## 常见问题
 
-**问：绘制RRG需要多少数据？**
+**问：绘制 RRG 需要多少数据？**
 
-答：您至少需要大约50个数据点，因此对于每日RRG，您需要超过50天的数据。对于每周RRG，您将需要大约250天的数据。
+答：您至少需要大约 50 个数据点，因此对于每日 RRG，您需要超过 50 天的数据。对于每周 RRG，您将需要大约 250 天的数据。

@@ -2,35 +2,35 @@
 
 ### 目录
 
-+   [MACD-Histogram](#macd-histogram)
++   MACD-Histogram
 
-    +   [介绍](#introduction)
+    +   介绍
 
-    +   [计算](#calculation)
+    +   计算
 
-    +   [去除的四个步骤](#four_steps_removed)
+    +   去除的四个步骤
 
-    +   [解释](#interpretation)
+    +   解释
 
-    +   [峰谷分歧](#peak-trough_divergence)
+    +   峰谷分歧
 
-    +   [倾斜分歧](#slant_divergence)
+    +   倾斜分歧
 
-    +   [结论](#conclusions)
+    +   结论
 
-    +   [与SharpCharts一起使用](#using_with_sharpcharts)
+    +   与 SharpCharts 一起使用
 
-    +   [建议的扫描](#suggested_scans)
+    +   建议的扫描
 
-        +   [MACD-Histogram 转为正数](#macd-histogram_turns_positive)
+        +   MACD-Histogram 转为正数
 
-        +   [MACD-Histogram 转为负数](#macd-histogram_turns_negative)
+        +   MACD-Histogram 转为负数
 
-    +   [进一步研究](#further_study)
+    +   进一步研究
 
 ## 介绍
 
-由Thomas Aspray于1986年开发，MACD-Histogram衡量了MACD与其信号线（MACD的9日EMA）之间的距离。与MACD一样，MACD-Histogram也是一个在零线上下波动的振荡器。Aspray开发了MACD-Histogram来预测MACD中的信号线交叉。因为MACD使用移动平均线，而移动平均线滞后于价格，信号线交叉可能会来得晚，并影响交易的风险收益比。MACD-Histogram中的多头或空头分歧可以提醒图表分析师即将发生的MACD中的信号线交叉。查看我们的[ChartSchool文章](/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd "chart_school:technical_indicators:moving_average_convergence_divergence_macd")了解更多关于MACD的信息。
+由 Thomas Aspray 于 1986 年开发，MACD-Histogram 衡量了 MACD 与其信号线（MACD 的 9 日 EMA）之间的距离。与 MACD 一样，MACD-Histogram 也是一个在零线上下波动的振荡器。Aspray 开发了 MACD-Histogram 来预测 MACD 中的信号线交叉。因为 MACD 使用移动平均线，而移动平均线滞后于价格，信号线交叉可能会来得晚，并影响交易的风险收益比。MACD-Histogram 中的多头或空头分歧可以提醒图表分析师即将发生的 MACD 中的信号线交叉。查看我们的 ChartSchool 文章了解更多关于 MACD 的信息。
 
 ## 计算
 
@@ -43,37 +43,37 @@ MACD Histogram: MACD - Signal Line
 
 ```
 
-标准MACD是12日指数[移动平均线](/school/doku.php?id=chart_school:technical_indicators:moving_averages "chart_school:technical_indicators:moving_averages")（EMA）减去26日EMA。收盘价用于形成移动平均线，因此MACD。MACD的9日EMA被绘制在旁边，作为一个信号线，用于识别指标的转折点。MACD-Histogram代表MACD和其9日EMA信号线之间的差异。当MACD高于其9日EMA时，直方图为正，当MACD低于其9日EMA时，直方图为负。
+标准 MACD 是 12 日指数移动平均线（EMA）减去 26 日 EMA。收盘价用于形成移动平均线，因此 MACD。MACD 的 9 日 EMA 被绘制在旁边，作为一个信号线，用于识别指标的转折点。MACD-Histogram 代表 MACD 和其 9 日 EMA 信号线之间的差异。当 MACD 高于其 9 日 EMA 时，直方图为正，当 MACD 低于其 9 日 EMA 时，直方图为负。
 
 ![MACD - 示例](img/3ce03c762d1297743e8a8026a569b750.jpg "MACD - 示例")
 
 ## 去除的四个步骤
 
-MACD-Histogram是一个指标的指标。事实上，MACD也是一个指标的指标。这意味着MACD-Histogram与基础证券价格相隔四个步骤。换句话说，它是价格的第四导数。
+MACD-Histogram 是一个指标的指标。事实上，MACD 也是一个指标的指标。这意味着 MACD-Histogram 与基础证券价格相隔四个步骤。换句话说，它是价格的第四导数。
 
-+   第一导数：12日EMA和26日EMA
++   第一导数：12 日 EMA 和 26 日 EMA
 
-+   第二导数：MACD（12日EMA减去26日EMA）
++   第二导数：MACD（12 日 EMA 减去 26 日 EMA）
 
-+   第三导数：MACD信号线（MACD的9日EMA）
++   第三导数：MACD 信号线（MACD 的 9 日 EMA）
 
-+   第四导数：MACD-Histogram（MACD减去MACD信号线）
++   第四导数：MACD-Histogram（MACD 减去 MACD 信号线）
 
-该指标的基础是证券的价格。从实际价格到MACD-Histogram需要四个步骤。谈论数据的处理。虽然这不一定是坏事，但图表分析师在分析MACD-Histogram时应牢记这一点。这是一个指标的指标。因此，它旨在预测MACD中的信号，而MACD又旨在识别基础证券价格的变化[动量](/school/doku.php?id=chart_school:technical_indicators:rate_of_change_roc_and_momentum "chart_school:technical_indicators:rate_of_change_roc_and_momentum")。
+该指标的基础是证券的价格。从实际价格到 MACD-Histogram 需要四个步骤。谈论数据的处理。虽然这不一定是坏事，但图表分析师在分析 MACD-Histogram 时应牢记这一点。这是一个指标的指标。因此，它旨在预测 MACD 中的信号，而 MACD 又旨在识别基础证券价格的变化动量。
 
 ## 解释
 
-与MACD一样，MACD-Histogram也旨在识别收敛、背离和交叉。然而，MACD-Histogram是测量MACD与其信号线之间的距离。当MACD高于其信号线时，直方图为正值。随着MACD进一步背离其信号线（向上），正值增加。当MACD和其信号线收敛时，正值减少。当MACD穿过零线时，MACD-Histogram为负值。当MACD低于其信号线时，指标为负值。随着MACD进一步背离其信号线（向下），负值增加。相反，当MACD收敛于其信号线时，负值减少。
+与 MACD 一样，MACD-Histogram 也旨在识别收敛、背离和交叉。然而，MACD-Histogram 是测量 MACD 与其信号线之间的距离。当 MACD 高于其信号线时，直方图为正值。随着 MACD 进一步背离其信号线（向上），正值增加。当 MACD 和其信号线收敛时，正值减少。当 MACD 穿过零线时，MACD-Histogram 为负值。当 MACD 低于其信号线时，指标为负值。随着 MACD 进一步背离其信号线（向下），负值增加。相反，当 MACD 收敛于其信号线时，负值减少。
 
 ![](img/02bb64289386dab91b16988721b2b986.jpg)
 
-图表1显示了Darden Restaurants (DRI)的MACD和MACD-Histogram。在9月底发生了一个空头信号线交叉，这使得MACD-Histogram变为负值。在12月初发生了一个多头信号线交叉，这使得MACD-Histogram在该月的其余时间内为正值。随着MACD进一步远离其信号线（绿线），出现了背离期和随着MACD接近其信号线（红线）的收敛期。
+图表 1 显示了 Darden Restaurants (DRI)的 MACD 和 MACD-Histogram。在 9 月底发生了一个空头信号线交叉，这使得 MACD-Histogram 变为负值。在 12 月初发生了一个多头信号线交叉，这使得 MACD-Histogram 在该月的其余时间内为正值。随着 MACD 进一步远离其信号线（绿线），出现了背离期和随着 MACD 接近其信号线（红线）的收敛期。
 
 ## 峰谷背离
 
-MACD-Histogram通过形成牛市和[熊市背离](/school/doku.php?id=chart_school:glossary_b#bearish_divergence "chart_school:glossary_b")来预测MACD中的信号线交叉。这些背离信号表明MACD正在收敛于其信号线，并可能准备交叉。有两种类型的背离：峰谷和斜线。峰谷背离在MACD-Histogram中形成两个峰值或两个谷值。当MACD形成一个较低低点，而MACD-Histogram形成一个较高低点时，就形成了峰谷牛市背离。明确定义的谷值对于峰谷背离的稳健性至关重要。图表2显示了卡特彼勒（Caterpillar）MACD-Histogram中的一个牛市背离。请注意，MACD在6月至7月间走到了一个较低低点，但MACD-Histogram形成了一个较高低点（谷值）。有两个明显的谷值。这种牛市背离预示了7月中旬的多头信号线交叉和一次大涨。 
+MACD-Histogram 通过形成牛市和熊市背离来预测 MACD 中的信号线交叉。这些背离信号表明 MACD 正在收敛于其信号线，并可能准备交叉。有两种类型的背离：峰谷和斜线。峰谷背离在 MACD-Histogram 中形成两个峰值或两个谷值。当 MACD 形成一个较低低点，而 MACD-Histogram 形成一个较高低点时，就形成了峰谷牛市背离。明确定义的谷值对于峰谷背离的稳健性至关重要。图表 2 显示了卡特彼勒（Caterpillar）MACD-Histogram 中的一个牛市背离。请注意，MACD 在 6 月至 7 月间走到了一个较低低点，但 MACD-Histogram 形成了一个较高低点（谷值）。有两个明显的谷值。这种牛市背离预示了 7 月中旬的多头信号线交叉和一次大涨。 
 
-![MACD-Histogram - 图表2](img/ab246bbc508d9cc394d43a23a5b751bf.jpg "MACD-Histogram - 图表2")
+![MACD-Histogram - 图表 2](img/ab246bbc508d9cc394d43a23a5b751bf.jpg "MACD-Histogram - 图表 2")
 
 图表 3 显示 Aeropostale（ARO）在 2009 年 8 月至 9 月出现了看跌背离。MACD 在 9 月达到新高，但 MACD-Histogram 形成了一个较低的高点。请注意，MACD-Histogram（红线）上有两个明确的峰值（更高），中间有一个低点。随后的看跌信号线交叉预示了股票的急剧下跌。
 
@@ -137,13 +137,13 @@ AND [Daily MACD Hist(12,26,9,Daily Close) < 0]
 AND [Daily MACD Line(12,26,9,Daily Close) > 0]
 ```
 
-欲了解有关MACD-Histogram扫描的语法，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#macd_histogram_macd_hist "http://stockcharts.com/docs/doku.php?id=scans:indicators#macd_histogram_macd_hist")。
+欲了解有关 MACD-Histogram 扫描的语法，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#macd_histogram_macd_hist "http://stockcharts.com/docs/doku.php?id=scans:indicators#macd_histogram_macd_hist")。
 
 ## 进一步学习
 
-技术分析 - 积极投资者的强大工具提供了一套完整的市场预测课程，由MACD的创始人编写。短期、中期和长期策略均有详细解释，其中许多包含MACD。
+技术分析 - 积极投资者的强大工具提供了一套完整的市场预测课程，由 MACD 的创始人编写。短期、中期和长期策略均有详细解释，其中许多包含 MACD。
 
 | **技术分析 - 积极投资者的强大工具** 杰拉德·阿普尔 |
 | --- |
-| [![](img/a2673256615cb182a677e60a34c2b755.jpg)](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors") |
-| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors") |
+| ![](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors") |
+| ![立即购买](http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors "http://store.stockcharts.com/products/technical-analysis-power-tools-for-active-investors") |

@@ -2,31 +2,31 @@
 
 ### 目录
 
-+   [去趋势价格振荡器（DPO）](#detrended_price_oscillator_dpo)
++   去趋势价格振荡器（DPO）
 
-    +   [介绍](#introduction)
+    +   介绍
 
-    +   [计算](#calculation)
+    +   计算
 
-    +   [位移移动平均线](#displaced_moving_average)
+    +   位移移动平均线
 
-    +   [DPO衡量什么？](#what_does_dpo_measure)
+    +   DPO 衡量什么？
 
-    +   [使用DPO](#using_dpo)
+    +   使用 DPO
 
-    +   [位移还是不位移](#to_shift_or_not_to_shift)
+    +   位移还是不位移
 
-    +   [结论](#conclusions)
+    +   结论
 
-    +   [与SharpCharts一起使用](#using_with_sharpcharts)
+    +   与 SharpCharts 一起使用
 
-    +   [建议的扫描](#suggested_scans)
+    +   建议的扫描
 
-    +   [进一步研究](#further_study)
+    +   进一步研究
 
 ## 介绍
 
-去趋势价格振荡器（DPO）是一种设计用于去除价格趋势并更容易识别周期的指标。DPO不延伸到最后一个日期，因为它是基于一个位移的移动平均线。然而，与最近的对齐并不是问题，因为DPO不是动量振荡器。相反，DPO用于识别周期的高点/低点并估计周期长度。
+去趋势价格振荡器（DPO）是一种设计用于去除价格趋势并更容易识别周期的指标。DPO 不延伸到最后一个日期，因为它是基于一个位移的移动平均线。然而，与最近的对齐并不是问题，因为 DPO 不是动量振荡器。相反，DPO 用于识别周期的高点/低点并估计周期长度。
 
 ## 计算
 
@@ -44,17 +44,17 @@ in the middle of this look-back period. In short, DPO(20) equals price
 
 ## 位移移动平均线
 
-移动平均线的位移实际上使移动平均线居中。考虑一个20日简单[移动平均线](/school/doku.php?id=chart_school:technical_indicators:moving_averages "chart_school:technical_indicators:moving_averages")向左偏移11天。在移动平均线前面有10天，在移动平均线上有1天，在移动平均线后面有9天。实际上，这个移动平均线处于其回顾期的中间。计算中使用的价格大约一半在右侧，一半在左侧。图表 1显示了标普500 ETF（SPY）的20日SMA（绿色虚线）和向左偏移11天的20日SMA（粉色线）。结束值相同（106.84），但粉色移动平均线结束于10月27日，绿色移动平均线结束于11月11日，这是图表上的最后日期。另外，请注意“居中”的移动平均线（粉色线）更接近实际价格走势。
+移动平均线的位移实际上使移动平均线居中。考虑一个 20 日简单移动平均线向左偏移 11 天。在移动平均线前面有 10 天，在移动平均线上有 1 天，在移动平均线后面有 9 天。实际上，这个移动平均线处于其回顾期的中间。计算中使用的价格大约一半在右侧，一半在左侧。图表 1 显示了标普 500 ETF（SPY）的 20 日 SMA（绿色虚线）和向左偏移 11 天的 20 日 SMA（粉色线）。结束值相同（106.84），但粉色移动平均线结束于 10 月 27 日，绿色移动平均线结束于 11 月 11 日，这是图表上的最后日期。另外，请注意“居中”的移动平均线（粉色线）更接近实际价格走势。
 
 ![图表 1](img/8419e6c154fd8618f4c8a5b69608bd6f.jpg "图表 1")
 
-## DPO衡量什么？
+## DPO 衡量什么？
 
-去趋势价格振荡器（DPO）衡量过去价格和移动平均线之间的差异。请记住，DPO本身是向左位移的。随着价格在移动平均线上下移动，指标在零线上下振荡。图表 2显示了标普500 ETF（SPY），其中包含一个向左位移 -11 天的20日移动平均线。指标窗口中显示了20日DPO。请注意，当价格高于移动平均线时，DPO为正，当价格低于移动平均线时，DPO为负。
+去趋势价格振荡器（DPO）衡量过去价格和移动平均线之间的差异。请记住，DPO 本身是向左位移的。随着价格在移动平均线上下移动，指标在零线上下振荡。图表 2 显示了标普 500 ETF（SPY），其中包含一个向左位移 -11 天的 20 日移动平均线。指标窗口中显示了 20 日 DPO。请注意，当价格高于移动平均线时，DPO 为正，当价格低于移动平均线时，DPO 为负。
 
 ![图表 2](img/ddda0101523677d0228d0be781a5ac45.jpg "图表 2")
 
-## 使用DPO
+## 使用 DPO
 
 尽管这个指标看起来像是一个经典的振荡器，但它并不是为动量信号而设计的。位移移动平均线设置在过去，这就是为什么 DPO 显示在过去的原因。即使有了这种位移，DPO 的峰值和谷值也可以用来估计周期长度。DPO 滤除了较长的趋势，专注于较短的周期。图 3 显示了纳斯达克 100 ETF（QQQQ）的 DPO（20）在指标窗口中。通过观察峰值和谷值，我们可以看到一个 20 天的周期，低点分别在九月初、十月初、十一月初和十二月初。这些低点之间大约相隔 20 天。一月初的周期被错过了。
 
@@ -76,17 +76,17 @@ in the middle of this look-back period. In short, DPO(20) equals price
 
 ## 使用 SharpCharts
 
-去趋势价格振荡器（DPO）可以在SharpCharts的指标列表中找到。默认参数为20个周期，但可以根据需要进行调整以找到周期。用户还可以添加另一个逗号分隔的参数。逗号加上一个正数会将指标向右移动。 DPO可以放置在价格图表的上方、下方或后面。[点击这里](http://stockcharts.com/h-sc/ui?s=SPY&p=D&b=5&g=0&id=p14005429311&listNum=30&a=191188211 "http://stockcharts.com/h-sc/ui?s=SPY&p=D&b=5&g=0&id=p14005429311&listNum=30&a=191188211") 查看去趋势价格振荡器的实时示例。
+去趋势价格振荡器（DPO）可以在 SharpCharts 的指标列表中找到。默认参数为 20 个周期，但可以根据需要进行调整以找到周期。用户还可以添加另一个逗号分隔的参数。逗号加上一个正数会将指标向右移动。 DPO 可以放置在价格图表的上方、下方或后面。[点击这里](http://stockcharts.com/h-sc/ui?s=SPY&p=D&b=5&g=0&id=p14005429311&listNum=30&a=191188211 "http://stockcharts.com/h-sc/ui?s=SPY&p=D&b=5&g=0&id=p14005429311&listNum=30&a=191188211") 查看去趋势价格振荡器的实时示例。
 
 ![图表 6](img/9edbeafb366991f09334999d5d3c547c.jpg "图表 6")
 
 ## 建议扫描
 
-去趋势价格振荡器不适合用于扫描，因为该指标基于偏移移动平均线。20天的DPO对应于11天前的价格，这对于扫描来说并不实用。DPO还基于绝对水平，这使得它难以进行比较。一支股价为100美元的股票的DPO范围将比一支股价为20美元的股票宽得多。谷歌在一月初的股价约为590美元，DPO约为21。英特尔在一月初的股价约为20.5美元，DPO约为0.20，这要低得多。DPO较低是因为英特尔的股价远低于谷歌。
+去趋势价格振荡器不适合用于扫描，因为该指标基于偏移移动平均线。20 天的 DPO 对应于 11 天前的价格，这对于扫描来说并不实用。DPO 还基于绝对水平，这使得它难以进行比较。一支股价为 100 美元的股票的 DPO 范围将比一支股价为 20 美元的股票宽得多。谷歌在一月初的股价约为 590 美元，DPO 约为 21。英特尔在一月初的股价约为 20.5 美元，DPO 约为 0.20，这要低得多。DPO 较低是因为英特尔的股价远低于谷歌。
 
 ## 进一步研究
 
 | **技术分析** 查尔斯·柯克帕特里克 & 朱莉·R·达尔奎斯特 |
 | --- |
-| [![](img/a24d1a5e5526382bfdec0424da3adce6.jpg)](http://store.stockcharts.com/products/technical-analysis-the-complete-resource-for-financial-market-technicians-2nd-edition "http://store.stockcharts.com/products/technical-analysis-the-complete-resource-for-financial-market-technicians-2nd-edition") |
-| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-the-complete-resource-for-financial-market-technicians-2nd-edition "http://store.stockcharts.com/products/technical-analysis-the-complete-resource-for-financial-market-technicians-2nd-edition") |
+| ![](http://store.stockcharts.com/products/technical-analysis-the-complete-resource-for-financial-market-technicians-2nd-edition "http://store.stockcharts.com/products/technical-analysis-the-complete-resource-for-financial-market-technicians-2nd-edition") |
+| ![立即购买](http://store.stockcharts.com/products/technical-analysis-the-complete-resource-for-financial-market-technicians-2nd-edition "http://store.stockcharts.com/products/technical-analysis-the-complete-resource-for-financial-market-technicians-2nd-edition") |

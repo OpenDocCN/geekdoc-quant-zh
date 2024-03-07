@@ -2,29 +2,29 @@
 
 ### 目录
 
-+   [Aroon](#aroon)
++   Aroon
 
-    +   [介绍](#introduction)
+    +   介绍
 
-    +   [计算](#calculation)
+    +   计算
 
-    +   [解释](#interpretation)
+    +   解释
 
-    +   [新趋势出现](#new_trend_emerging)
+    +   新趋势出现
 
-    +   [整理期](#consolidation_period)
+    +   整理期
 
-    +   [结论](#conclusions)
+    +   结论
 
-    +   [使用 SharpCharts](#using_with_sharpcharts)
+    +   使用 SharpCharts
 
-    +   [建议扫描](#suggested_scans)
+    +   建议扫描
 
-        +   [Aroon-Up 和 Aroon-Down 低于 20](#aroon-up_and_aroon-down_are_below_20)
+        +   Aroon-Up 和 Aroon-Down 低于 20
 
 ## 介绍
 
-由 Tushar Chande 在 1995 年开发，Aroon 是一个指标系统，用于确定股票是否处于趋势状态以及趋势强度如何。“Aroon” 在梵文中意为“黎明的第一缕光”。Chande 选择这个名字是因为这些指标旨在揭示新趋势的开始。Aroon 指标衡量自价格记录 x 天高点或低点以来的周期数。有两个独立的指标：Aroon-Up 和 Aroon-Down。25 天 Aroon-Up 衡量自 25 天高点以来的天数。25 天 Aroon-Down 衡量自 25 天低点以来的天数。在这个意义上，Aroon 指标与典型的[动量振荡器](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")有很大不同，后者侧重于价格相对于时间。Aroon 是独特的，因为它侧重于时间相对于价格。图表分析师可以使用 Aroon 指标来发现新兴趋势，识别整理期，定义修正期，并预测逆转。
+由 Tushar Chande 在 1995 年开发，Aroon 是一个指标系统，用于确定股票是否处于趋势状态以及趋势强度如何。“Aroon” 在梵文中意为“黎明的第一缕光”。Chande 选择这个名字是因为这些指标旨在揭示新趋势的开始。Aroon 指标衡量自价格记录 x 天高点或低点以来的周期数。有两个独立的指标：Aroon-Up 和 Aroon-Down。25 天 Aroon-Up 衡量自 25 天高点以来的天数。25 天 Aroon-Down 衡量自 25 天低点以来的天数。在这个意义上，Aroon 指标与典型的动量振荡器有很大不同，后者侧重于价格相对于时间。Aroon 是独特的，因为它侧重于时间相对于价格。图表分析师可以使用 Aroon 指标来发现新兴趋势，识别整理期，定义修正期，并预测逆转。
 
 ## 计算
 
@@ -70,7 +70,7 @@ Aroon 指标达到 100 表示可能出现新趋势。这可以通过另一个 Ar
 
 ## 结论
 
-**Aroon-Up 和 Aroon-Down 是互补指标，分别衡量新 x 天高点和低点之间经过的时间。** 它们一起显示，以便图表分析师可以轻松识别两者中更强的，并确定趋势偏好。 Aroon-Up 的激增伴随着 Aroon-Down 的下降，表明***上升趋势***的出现。相反，Aroon-Down 的激增伴随着 Aroon-Up 的下降，表明***下降趋势***的开始。当两者以平行方式下降或保持在低水平（低于 30）时，就会出现整理。图表分析师可以使用 Aroon 指标来确定某个证券是处于趋势还是横盘交易，然后使用其他指标生成适当的信号。例如，图表分析师可能使用[动量振荡器](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")来识别超卖水平，当 25 周 Aroon 表明长期趋势向上时。
+**Aroon-Up 和 Aroon-Down 是互补指标，分别衡量新 x 天高点和低点之间经过的时间。** 它们一起显示，以便图表分析师可以轻松识别两者中更强的，并确定趋势偏好。 Aroon-Up 的激增伴随着 Aroon-Down 的下降，表明***上升趋势***的出现。相反，Aroon-Down 的激增伴随着 Aroon-Up 的下降，表明***下降趋势***的开始。当两者以平行方式下降或保持在低水平（低于 30）时，就会出现整理。图表分析师可以使用 Aroon 指标来确定某个证券是处于趋势还是横盘交易，然后使用其他指标生成适当的信号。例如，图表分析师可能使用动量振荡器来识别超卖水平，当 25 周 Aroon 表明长期趋势向上时。
 
 ## 使用 SharpCharts
 

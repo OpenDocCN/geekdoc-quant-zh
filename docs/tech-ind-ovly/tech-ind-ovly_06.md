@@ -2,43 +2,43 @@
 
 ### 目录
 
-+   [凯尔特纳通道](#keltner_channels)
++   凯尔特纳通道
 
-    +   [介绍](#introduction)
+    +   介绍
 
-    +   [计算](#calculation)
+    +   计算
 
-    +   [解释](#interpretation)
+    +   解释
 
-    +   [与布林带对比](#versus_bollinger_bands)
+    +   与布林带对比
 
-    +   [上升趋势](#uptrend)
+    +   上升趋势
 
-    +   [下降趋势](#downtrend)
+    +   下降趋势
 
-    +   [平稳趋势](#flat_trend)
+    +   平稳趋势
 
-    +   [结论](#conclusions)
+    +   结论
 
-    +   [使用SharpCharts](#using_with_sharpcharts)
+    +   使用 SharpCharts
 
-    +   [建议扫描](#suggested_scans)
+    +   建议扫描
 
-        +   [牛市凯尔特纳通道突破后的超卖](#oversold_after_bullish_keltner_channel_breakout)
+        +   牛市凯尔特纳通道突破后的超卖
 
-        +   [熊市凯尔特纳通道突破后的超买](#overbought_after_bearish_keltner_channel_breakout)
+        +   熊市凯尔特纳通道突破后的超买
 
-    +   [进一步研究](#further_study)
+    +   进一步研究
 
-    +   [额外资源](#additional_resources)
+    +   额外资源
 
-        +   [股票与商品杂志文章](#stocks_commodities_magazine_articles)
+        +   股票与商品杂志文章
 
 ## 介绍
 
-凯尔特纳通道是基于波动率的信封，设置在指数移动平均线的上方和下方。这个指标类似于布林带，布林带使用标准差来设定带。凯尔特纳通道不使用标准差，而是使用[真实波幅（ATR）](/school/doku.php?id=chart_school:technical_indicators:average_true_range_atr "chart_school:technical_indicators:average_true_range_atr")来设定通道距离。通常情况下，通道设置在20日EMA的两个真实波幅值的上方和下方。指数移动平均线决定方向，真实波幅设定通道宽度。**凯尔特纳通道是一种趋势跟踪指标，用于识别通道突破和通道方向的逆转。** 当趋势平稳时，通道也可以用来识别超买和超卖水平。
+凯尔特纳通道是基于波动率的信封，设置在指数移动平均线的上方和下方。这个指标类似于布林带，布林带使用标准差来设定带。凯尔特纳通道不使用标准差，而是使用真实波幅（ATR）来设定通道距离。通常情况下，通道设置在 20 日 EMA 的两个真实波幅值的上方和下方。指数移动平均线决定方向，真实波幅设定通道宽度。**凯尔特纳通道是一种趋势跟踪指标，用于识别通道突破和通道方向的逆转。** 当趋势平稳时，通道也可以用来识别超买和超卖水平。
 
-在他1960年的著作《如何在商品市场赚钱》中，切斯特·凯尔特纳介绍了“十日移动平均交易规则”，被认为是凯尔特纳通道的原始版本。这个原始版本以典型价格的10日简单移动平均（{(H+L+C)/3)}）作为中线。高低范围的10日简单移动平均被加减以设定上下通道线。琳达·布拉德福德·拉什克在1980年代介绍了凯尔特纳通道的更新版本。与布林带类似，这个新版本使用基于波动率的指标——真实波幅（ATR），来设定通道宽度。StockCharts.com使用这个更新版本的凯尔特纳通道。
+在他 1960 年的著作《如何在商品市场赚钱》中，切斯特·凯尔特纳介绍了“十日移动平均交易规则”，被认为是凯尔特纳通道的原始版本。这个原始版本以典型价格的 10 日简单移动平均（{(H+L+C)/3)}）作为中线。高低范围的 10 日简单移动平均被加减以设定上下通道线。琳达·布拉德福德·拉什克在 1980 年代介绍了凯尔特纳通道的更新版本。与布林带类似，这个新版本使用基于波动率的指标——真实波幅（ATR），来设定通道宽度。StockCharts.com 使用这个更新版本的凯尔特纳通道。
 
 ## 计算
 
@@ -63,23 +63,23 @@ Lower Channel Line: 20-day EMA - (2 x ATR(10))
 
 基于通道、波段和包络线的指标旨在涵盖大部分价格行为。因此，超出或低于通道线的走势值得关注，因为这种情况相对较少见。趋势通常始于某个方向的强劲走势。突破上通道线显示出非凡的力量，而跌破下通道线则显示出非凡的弱势。这种强劲的走势可能预示着一种趋势的结束和另一种趋势的开始。
 
-以指数[移动平均线](/school/doku.php?id=chart_school:technical_indicators:moving_averages "chart_school:technical_indicators:moving_averages")为基础，Keltner 通道是一种趋势跟踪指标。与移动平均线和趋势跟踪指标一样，Keltner 通道滞后于价格走势。移动平均线的方向决定了通道的方向。通道向下移动时通常存在下降趋势，而通道向上移动时存在上升趋势。当通道横向移动时，趋势是平的。
+以指数移动平均线为基础，Keltner 通道是一种趋势跟踪指标。与移动平均线和趋势跟踪指标一样，Keltner 通道滞后于价格走势。移动平均线的方向决定了通道的方向。通道向下移动时通常存在下降趋势，而通道向上移动时存在上升趋势。当通道横向移动时，趋势是平的。
 
 通道上升并突破上升趋势线可能预示着上升趋势的开始。通道下降并突破下降趋势线可能预示着下降趋势的开始。有时，在通道突破后强劲的趋势并没有形成，价格在通道线之间波动。这种交易范围以相对平坦的移动平均线为特征。然后可以利用通道边界来识别超买和超卖水平以进行交易。
 
 ## 与布林带相比
 
-Keltner通道和布林带之间有两个区别。首先，Keltner通道比[布林带](/school/doku.php?id=chart_school:technical_indicators:bollinger_bands "chart_school:technical_indicators:bollinger_bands")更平滑，因为布林带的宽度基于标准偏差，比真实波幅（ATR）更不稳定。许多人认为这是一个优点，因为它创造了一个更为恒定的宽度。这使得Keltner通道非常适合趋势跟踪和趋势识别。其次，Keltner通道还使用指数移动平均线，比布林带中使用的简单移动平均线更敏感。下图显示了Keltner通道（蓝色）、布林带（粉色）、真实波幅（10）、标准偏差（10）和标准偏差（20）进行比较。请注意Keltner通道比布林带更平滑。另外，请注意标准偏差的范围比真实波幅（ATR）大。
+Keltner 通道和布林带之间有两个区别。首先，Keltner 通道比布林带更平滑，因为布林带的宽度基于标准偏差，比真实波幅（ATR）更不稳定。许多人认为这是一个优点，因为它创造了一个更为恒定的宽度。这使得 Keltner 通道非常适合趋势跟踪和趋势识别。其次，Keltner 通道还使用指数移动平均线，比布林带中使用的简单移动平均线更敏感。下图显示了 Keltner 通道（蓝色）、布林带（粉色）、真实波幅（10）、标准偏差（10）和标准偏差（20）进行比较。请注意 Keltner 通道比布林带更平滑。另外，请注意标准偏差的范围比真实波幅（ATR）大。
 
-![Keltner通道 - 图表7](img/ca93c4c5d8beae79af176467aef09fc2.jpg "Keltner通道 - 图表7")
+![Keltner 通道 - 图表 7](img/ca93c4c5d8beae79af176467aef09fc2.jpg "Keltner 通道 - 图表 7")
 
 ## 上升趋势
 
-下图显示了阿彻丹尼尔斯中部（ADM）在Keltner通道上升并股价突破上通道线时开始上升趋势。ADM在4月至5月明显处于下降趋势，因为价格继续穿过下通道。6月份价格强劲上涨，超过了上通道，通道转向上方开始新的上升趋势。请注意，7月初和7月底价格在下通道线上方保持。
+下图显示了阿彻丹尼尔斯中部（ADM）在 Keltner 通道上升并股价突破上通道线时开始上升趋势。ADM 在 4 月至 5 月明显处于下降趋势，因为价格继续穿过下通道。6 月份价格强劲上涨，超过了上通道，通道转向上方开始新的上升趋势。请注意，7 月初和 7 月底价格在下通道线上方保持。
 
-![Keltner通道 - 图表1](img/01fbaa07316ea0f4ce07e1bba0fbabf5.jpg "Keltner通道 - 图表1")
+![Keltner 通道 - 图表 1](img/01fbaa07316ea0f4ce07e1bba0fbabf5.jpg "Keltner 通道 - 图表 1")
 
-即使建立了新的上升趋势，通常也明智地等待回调或更好的入场点以改善回报风险比。然后可以使用动量振荡器或其他指标来定义超卖读数。本图显示了[StochRSI](/school/doku.php?id=chart_school:technical_indicators:stochrsi "chart_school:technical_indicators:stochrsi")之一，这是更敏感的动量振荡器，在上升趋势期间至少三次跌破0.20以变为超卖。随后再次上穿0.20标志着上升趋势的恢复。
+即使建立了新的上升趋势，通常也明智地等待回调或更好的入场点以改善回报风险比。然后可以使用动量振荡器或其他指标来定义超卖读数。本图显示了 StochRSI 之一，这是更敏感的动量振荡器，在上升趋势期间至少三次跌破 0.20 以变为超卖。随后再次上穿 0.20 标志着上升趋势的恢复。
 
 ## 下降趋势
 
@@ -87,7 +87,7 @@ Keltner通道和布林带之间有两个区别。首先，Keltner通道比[布�
 
 ![Keltner 通道 - 图表 3](img/d03eb5ad9e774534442819545e015c71.jpg "Keltner 通道 - 图表 3")
 
-以 10 期[商品通道指数（CCI）](/school/doku.php?id=chart_school:technical_indicators:commodity_channel_index_cci "chart_school:technical_indicators:commodity_channel_index_cci")作为动量振荡器，用于识别短期超买条件。超过 100 的移动被视为超买。随后回落至 100 以下信号着下跌趋势的恢复。这个信号一直有效直到九月。这些失败的信号表明可能发生趋势变化，随后通过突破上通道线得到确认。
+以 10 期商品通道指数（CCI）作为动量振荡器，用于识别短期超买条件。超过 100 的移动被视为超买。随后回落至 100 以下信号着下跌趋势的恢复。这个信号一直有效直到九月。这些失败的信号表明可能发生趋势变化，随后通过突破上通道线得到确认。
 
 ## 平稳趋势
 
@@ -103,11 +103,11 @@ Keltner通道和布林带之间有两个区别。首先，Keltner通道比[布�
 
 ## 结论
 
-**凯尔特纳通道是一种趋势跟踪指标，旨在识别潜在趋势。** 趋势识别占据了大部分战斗。趋势可以是上升、下降或平稳的。使用上述方法，交易员和投资者可以识别趋势以建立交易偏好。在上升趋势中偏好看涨交易，在下降趋势中偏好看跌交易。平稳趋势需要更灵活的方法，因为价格往往在上轨线处顶峰，在下轨线处低谷。与所有分析技术一样，凯尔特纳通道应与其他指标和分析一起使用。[动量指标](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#momentum_oscillators "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators") 是对趋势跟踪凯尔特纳通道的良好补充。
+**凯尔特纳通道是一种趋势跟踪指标，旨在识别潜在趋势。** 趋势识别占据了大部分战斗。趋势可以是上升、下降或平稳的。使用上述方法，交易员和投资者可以识别趋势以建立交易偏好。在上升趋势中偏好看涨交易，在下降趋势中偏好看跌交易。平稳趋势需要更灵活的方法，因为价格往往在上轨线处顶峰，在下轨线处低谷。与所有分析技术一样，凯尔特纳通道应与其他指标和分析一起使用。动量指标 是对趋势跟踪凯尔特纳通道的良好补充。
 
-## 使用SharpCharts
+## 使用 SharpCharts
 
-凯尔特纳通道可以在SharpCharts中作为价格叠加显示。与移动平均线一样，凯尔特纳通道应该显示在价格图上方。在从下拉框中选择指标后，参数窗口中将显示默认设置（20,2.0,10）。第一个数字（20）设置指数移动平均线的周期。第二个数字（2.0）是ATR倍数。第三个数字（10）是真实波幅（ATR）的周期数。这些默认参数将通道设置为20日EMA的2个ATR值之上/之下。用户可以根据自己的图表需求更改参数。[点击这里](http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2010-02-03&en=2010-10-09&id=p15714633106&listNum=30&a=211776022 "http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2010-02-03&en=2010-10-09&id=p15714633106&listNum=30&a=211776022") 查看实时示例。
+凯尔特纳通道可以在 SharpCharts 中作为价格叠加显示。与移动平均线一样，凯尔特纳通道应该显示在价格图上方。在从下拉框中选择指标后，参数窗口中将显示默认设置（20,2.0,10）。第一个数字（20）设置指数移动平均线的周期。第二个数字（2.0）是 ATR 倍数。第三个数字（10）是真实波幅（ATR）的周期数。这些默认参数将通道设置为 20 日 EMA 的 2 个 ATR 值之上/之下。用户可以根据自己的图表需求更改参数。[点击这里](http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2010-02-03&en=2010-10-09&id=p15714633106&listNum=30&a=211776022 "http://stockcharts.com/h-sc/ui?s=SPY&p=D&st=2010-02-03&en=2010-10-09&id=p15714633106&listNum=30&a=211776022") 查看实时示例。
 
 ![凯尔特纳通道 - SharpCharts](img/c744403df12b068be894339eaeba9044.jpg "凯尔特纳通道 - SharpCharts")
 
@@ -115,7 +115,7 @@ Keltner通道和布林带之间有两个区别。首先，Keltner通道比[布�
 
 ### 在牛市凯尔特纳通道突破后超卖
 
-这个扫描器寻找在20天前突破其上轨凯尔特纳通道的股票，以确认或建立上升趋势。当前的10周期CCI低于-100，表明短期超卖状态。
+这个扫描器寻找在 20 天前突破其上轨凯尔特纳通道的股票，以确认或建立上升趋势。当前的 10 周期 CCI 低于-100，表明短期超卖状态。
 
 ```py
 [type = stock] AND [country = US] 
@@ -127,7 +127,7 @@ AND [Daily CCI(10) < -100]
 
 ### 在熊市凯尔特纳通道突破后超买
 
-这个扫描器寻找在20天前突破其下轨凯尔特纳通道的股票，以确认或建立下降趋势。当前的10周期CCI高于+100，表明短期超买状态。
+这个扫描器寻找在 20 天前突破其下轨凯尔特纳通道的股票，以确认或建立下降趋势。当前的 10 周期 CCI 高于+100，表明短期超买状态。
 
 ```py
 [type = stock] AND [country = US] 
@@ -143,8 +143,8 @@ AND [Daily CCI(10) > 100]
 
 | **趋势交易谋生** 托马斯·卡尔 | **趋势跟踪** 迈克尔·科维尔 |
 | --- | --- |
-| [![](img/fd7b150db3a8ea902f5f22b5f07cc54f.jpg)](http://store.stockcharts.com/products/trend-trading-for-a-living "http://store.stockcharts.com/products/trend-trading-for-a-living") | [![](img/24dae431dd127df01c0a553f30ece02c.jpg)](http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets "http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets") |
-| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/trend-trading-for-a-living "http://store.stockcharts.com/products/trend-trading-for-a-living") | [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets "http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets") |
+| ![](http://store.stockcharts.com/products/trend-trading-for-a-living "http://store.stockcharts.com/products/trend-trading-for-a-living") | ![](http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets "http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets") |
+| ![立即购买](http://store.stockcharts.com/products/trend-trading-for-a-living "http://store.stockcharts.com/products/trend-trading-for-a-living") | ![立即购买](http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets "http://store.stockcharts.com/products/trend-following-updated-edition-learn-to-make-millions-in-up-or-down-markets") |
 
 * * *
 
@@ -154,4 +154,4 @@ AND [Daily CCI(10) > 100]
 
 **[Keltner Channel by Stuart Evens](http://stockcharts.com/h-mem/tascredirect.html?artid=\V17\C12\095KELT.pdf "http://stockcharts.com/h-mem/tascredirect.html?artid=\V17\C12\095KELT.pdf")**
 
-1999年11月
+1999 年 11 月

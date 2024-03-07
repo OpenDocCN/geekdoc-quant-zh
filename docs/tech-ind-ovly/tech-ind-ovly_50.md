@@ -2,35 +2,35 @@
 
 ### 目录
 
-+   [StochRSI](#stochrsi)
++   StochRSI
 
-    +   [介绍](#introduction)
+    +   介绍
 
-    +   [计算](#calculation)
+    +   计算
 
-    +   [解释](#interpretation)
+    +   解释
 
-    +   [超买/超卖](#overbought_oversold)
+    +   超买/超卖
 
-    +   [趋势识别](#trend_identification)
+    +   趋势识别
 
-    +   [结论](#conclusion)
+    +   结论
 
-    +   [与SharpCharts一起使用](#using_with_sharpcharts)
+    +   与 SharpCharts 一起使用
 
-    +   [建议的扫描](#suggested_scans)
+    +   建议的扫描
 
-        +   [中期上升趋势中的超卖StochRSI](#oversold_stochrsi_in_medium-term_uptrend)
+        +   中期上升趋势中的超卖 StochRSI
 
-        +   [中期下降趋势中的超买StochRSI](#overbought_stochrsi_within_a_medium-term_downtrend)
+        +   中期下降趋势中的超买 StochRSI
 
-    +   [进一步研究](#further_study)
+    +   进一步研究
 
 ## 介绍
 
-由图沙尔·钱德和斯坦利·克罗尔开发的StochRSI是一个[振荡器](/school/doku.php?id=chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators#oscillator_types "chart_school:technical_indicators:introduction_to_technical_indicators_and_oscillators")，它测量RSI相对于其一定时间段内的高低范围的水平。StochRSI将随机指标公式应用于RSI值，而不是价格值。这使其成为指标的指标。结果是一个在0和1之间波动的振荡器。
+由图沙尔·钱德和斯坦利·克罗尔开发的 StochRSI 是一个振荡器，它测量 RSI 相对于其一定时间段内的高低范围的水平。StochRSI 将随机指标公式应用于 RSI 值，而不是价格值。这使其成为指标的指标。结果是一个在 0 和 1 之间波动的振荡器。
 
-在他们1994年的书籍《*新技术交易者*》中，钱德和克罗尔解释说，RSI可以在长时间内在80和20之间振荡，而不会达到极端水平。请注意，用于超买和超卖的是80和20，而不是更传统的70和30。基于RSI的超买或超卖读数进入股票的交易者可能会发现自己不断地处于观望状态。钱德和克罗尔开发了StochRSI以增加灵敏度并产生更多的超买/超卖信号。
+在他们 1994 年的书籍《*新技术交易者*》中，钱德和克罗尔解释说，RSI 可以在长时间内在 80 和 20 之间振荡，而不会达到极端水平。请注意，用于超买和超卖的是 80 和 20，而不是更传统的 70 和 30。基于 RSI 的超买或超卖读数进入股票的交易者可能会发现自己不断地处于观望状态。钱德和克罗尔开发了 StochRSI 以增加灵敏度并产生更多的超买/超卖信号。
 
 ## 计算
 
@@ -39,21 +39,21 @@ StochRSI = (RSI - Lowest Low RSI) / (Highest High RSI - Lowest Low RSI)
 
 ```
 
-StochRSI测量RSI相对于其一定周期内的高/低范围的价值。用于计算StochRSI的周期数在公式中转移到RSI。例如，14天StochRSI将使用当前的14天RSI值和14天RSI的高低范围。
+StochRSI 测量 RSI 相对于其一定周期内的高/低范围的价值。用于计算 StochRSI 的周期数在公式中转移到 RSI。例如，14 天 StochRSI 将使用当前的 14 天 RSI 值和 14 天 RSI 的高低范围。
 
-+   当RSI在14天内处于最低点时，14天StochRSI等于0。
++   当 RSI 在 14 天内处于最低点时，14 天 StochRSI 等于 0。
 
-+   当RSI在14天内达到最高点时，14天StochRSI等于1。
++   当 RSI 在 14 天内达到最高点时，14 天 StochRSI 等于 1。
 
-+   当RSI处于其14天高低范围的中间时，14天StochRSI等于0.5。
++   当 RSI 处于其 14 天高低范围的中间时，14 天 StochRSI 等于 0.5。
 
-+   当RSI接近其14天高低范围的低点时，14天StochRSI等于0.2。
++   当 RSI 接近其 14 天高低范围的低点时，14 天 StochRSI 等于 0.2。
 
-+   当RSI接近其14天高低范围的高点时，14天StochRSI等于0.80。
++   当 RSI 接近其 14 天高低范围的高点时，14 天 StochRSI 等于 0.80。
 
 ![RSI - Spreadsheet 1](img/83b6cba9d8a97382016677172d47ad98.jpg "RSI - Spreadsheet 1")
 
-[点击这里查看一个Excel电子表格](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:stochrsi:cs-stochrsi.xls "chart_school:technical_indicators_and_overlays:stochrsi:cs-stochrsi.xls (18.5 KB)")，展示了StochRSI计算的开始。
+点击这里查看一个 Excel 电子表格")，展示了 StochRSI 计算的开始。
 
 ## 解释
 
@@ -85,25 +85,25 @@ StochRSI 是一个相当波动的振荡器，经常出现超买和超卖情况�
 
 ![StochRSI - 图表 5](img/40ea01fccb7ccba2d6768a1bcb6b58c2.jpg "StochRSI - 图表 5")
 
-图表6显示了雅虎的StochRSI发出的一个熊市信号，但并没有立即生效。10日StochRSI的5日SMA在10月第二周下跌至0.50以下，将动量转为熊市。雅虎突破支撑线以确认，但这一突破并没有持续，因为股价几天后飙升至18美元。随后的迅速恢复并回升至17美元以上形成了一个熊市陷阱。尽管雅虎股价飙升，但10日StochRSI的5日SMA仍然低于0.50，动量没有确认。随后超过17.50美元的间隙被证明是一次耗竭间隙，因为雅虎在阻力位（18美元）受阻，填补了间隙，再次突破支撑线并在11月急剧下跌。谈论波动性。
+图表 6 显示了雅虎的 StochRSI 发出的一个熊市信号，但并没有立即生效。10 日 StochRSI 的 5 日 SMA 在 10 月第二周下跌至 0.50 以下，将动量转为熊市。雅虎突破支撑线以确认，但这一突破并没有持续，因为股价几天后飙升至 18 美元。随后的迅速恢复并回升至 17 美元以上形成了一个熊市陷阱。尽管雅虎股价飙升，但 10 日 StochRSI 的 5 日 SMA 仍然低于 0.50，动量没有确认。随后超过 17.50 美元的间隙被证明是一次耗竭间隙，因为雅虎在阻力位（18 美元）受阻，填补了间隙，再次突破支撑线并在 11 月急剧下跌。谈论波动性。
 
 ![StochRSI - 图表 6](img/7e2db67035caa76527c4ab377c9f5989.jpg "StochRSI - 图表 6")
 
 ## 结论
 
-StochRSI就像是强化版的RSI。RSI产生相对较少的信号，而StochRSI大幅增加了信号数量。会有更多的超买/超卖读数，更多的中线交叉，更多的好信号和坏信号。速度是有代价的。这意味着重要的是将StochRSI与技术分析的其他方面结合起来进行确认。上面的示例使用间隙、支撑/阻力突破和价格模式来确认StochRSI信号。图表分析师还可以使用其他互补指标，如累积/派发线或成交量平衡线。这些基于成交量的指标不会与动量振荡器重叠。图表分析师还应该尝试不同的设置，并在真实世界中使用StochRSI之前学习StochRSI的微妙之处。
+StochRSI 就像是强化版的 RSI。RSI 产生相对较少的信号，而 StochRSI 大幅增加了信号数量。会有更多的超买/超卖读数，更多的中线交叉，更多的好信号和坏信号。速度是有代价的。这意味着重要的是将 StochRSI 与技术分析的其他方面结合起来进行确认。上面的示例使用间隙、支撑/阻力突破和价格模式来确认 StochRSI 信号。图表分析师还可以使用其他互补指标，如累积/派发线或成交量平衡线。这些基于成交量的指标不会与动量振荡器重叠。图表分析师还应该尝试不同的设置，并在真实世界中使用 StochRSI 之前学习 StochRSI 的微妙之处。
 
-## 使用SharpCharts
+## 使用 SharpCharts
 
-StochRSI指标可以使用SharpCharts工具作为指标进行绘制。 “参数”值指定了计算中使用的周期数（默认为14）。指标可以设置在基础价格图之上、之下或之后。可以通过点击高级选项箭头（绿色）并添加叠加来应用移动平均线。[点击这里](http://stockcharts.com/h-sc/ui?s=QQQ&p=D&yr=0&mn=5&dy=0&id=p80628063848&listNum=30&a=203042536 "http://stockcharts.com/h-sc/ui?s=QQQ&p=D&yr=0&mn=5&dy=0&id=p80628063848&listNum=30&a=203042536") 查看StochRSI的实时示例。
+StochRSI 指标可以使用 SharpCharts 工具作为指标进行绘制。 “参数”值指定了计算中使用的周期数（默认为 14）。指标可以设置在基础价格图之上、之下或之后。可以通过点击高级选项箭头（绿色）并添加叠加来应用移动平均线。[点击这里](http://stockcharts.com/h-sc/ui?s=QQQ&p=D&yr=0&mn=5&dy=0&id=p80628063848&listNum=30&a=203042536 "http://stockcharts.com/h-sc/ui?s=QQQ&p=D&yr=0&mn=5&dy=0&id=p80628063848&listNum=30&a=203042536") 查看 StochRSI 的实时示例。
 
 ![StochRSI - SharpCharts](img/6905798c23cbc7d7321a62468586ebf5.jpg "StochRSI - SharpCharts")
 
 ## 建议的扫描
 
-### 中期上涨趋势中的超卖StochRSI
+### 中期上涨趋势中的超卖 StochRSI
 
-这个扫描从过去三个月内平均价格大于$10且平均成交量大于40,000的股票开始。第一个筛选器通过查找10日SMA大于60日SMA的股票来选择中期上涨趋势中的证券。然后，通过查找交易价格低于其10日SMA且StochRSI(14)低于0.10的股票来选择短期超卖的股票。这个扫描通常会返回许多股票，可能需要进一步细化。
+这个扫描从过去三个月内平均价格大于$10 且平均成交量大于 40,000 的股票开始。第一个筛选器通过查找 10 日 SMA 大于 60 日 SMA 的股票来选择中期上涨趋势中的证券。然后，通过查找交易价格低于其 10 日 SMA 且 StochRSI(14)低于 0.10 的股票来选择短期超卖的股票。这个扫描通常会返回许多股票，可能需要进一步细化。
 
 ```py
 [type = stock] AND [country = US] 
@@ -115,9 +115,9 @@ AND [Daily Stoch RSI(14) < 0.1]
 AND [Daily Close < Daily SMA(10,Daily Close)]
 ```
 
-### 中期下跌趋势中的超买StochRSI
+### 中期下跌趋势中的超买 StochRSI
 
-这个扫描从过去三个月平均价格超过$10且平均交易量大于40,000的股票开始。第一个筛选器通过查找10日SMA小于60日SMA的证券来选择处于中期下跌趋势中的证券。然后，屏幕选择短期超买的股票，通过查找那些交易价格高于它们的10日SMA且StochRSI(14)高于0.90的股票。这个扫描通常会返回许多股票，可能需要进一步细化。
+这个扫描从过去三个月平均价格超过$10 且平均交易量大于 40,000 的股票开始。第一个筛选器通过查找 10 日 SMA 小于 60 日 SMA 的证券来选择处于中期下跌趋势中的证券。然后，屏幕选择短期超买的股票，通过查找那些交易价格高于它们的 10 日 SMA 且 StochRSI(14)高于 0.90 的股票。这个扫描通常会返回许多股票，可能需要进一步细化。
 
 ```py
 [type = stock] AND [country = US] 
@@ -129,13 +129,13 @@ AND [Daily Stoch RSI(14) > 0.9]
 AND [Daily Close > Daily SMA(10,Daily Close)]
 ```
 
-欲了解有关StochRSI扫描的语法的更多详细信息，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#stochastic_rsi_stoch_rsi "http://stockcharts.com/docs/doku.php?id=scans:indicators#stochastic_rsi_stoch_rsi")在支持中心中。
+欲了解有关 StochRSI 扫描的语法的更多详细信息，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#stochastic_rsi_stoch_rsi "http://stockcharts.com/docs/doku.php?id=scans:indicators#stochastic_rsi_stoch_rsi")在支持中心中。
 
 ## 进一步研究
 
-布朗将RSI带入新的层次，包括牛市和熊市范围，正面和负面反转，以及基于RSI的预测。一些安德鲁·卡德韦尔的方法，她的RSI导师，也在这本书中得到解释和完善。
+布朗将 RSI 带入新的层次，包括牛市和熊市范围，正面和负面反转，以及基于 RSI 的预测。一些安德鲁·卡德韦尔的方法，她的 RSI 导师，也在这本书中得到解释和完善。
 
 | **专业交易技术分析** 康斯坦斯·布朗 |
 | --- |
-| [![](img/68e1d0b6e06443cb595baa528172bcd0.jpg)](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional") |
-| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional") |
+| ![](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional") |
+| ![立即购买](http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional "http://store.stockcharts.com/products/technical-analysis-for-the-trading-professional") |

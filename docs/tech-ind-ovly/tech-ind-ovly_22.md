@@ -2,41 +2,41 @@
 
 ### 目录
 
-+   [查金资金流量](#chaikin_money_flow)
++   查金资金流量
 
-    +   [介绍](#introduction)
+    +   介绍
 
-    +   [计算](#calculation)
+    +   计算
 
-    +   [解释](#interpretation)
+    +   解释
 
-    +   [买入/卖出压力](#buying_selling_pressure)
+    +   买入/卖出压力
 
-    +   [计算特点](#calculation_quirk)
+    +   计算特点
 
-    +   [结论](#conclusions)
+    +   结论
 
-    +   [与SharpCharts一起使用](#using_with_sharpcharts)
+    +   与 SharpCharts 一起使用
 
-    +   [建议的扫描](#suggested_scans)
+    +   建议的扫描
 
-        +   [查金资金流量转为正值且RSI移动超过50](#chaikin_money_flow_turns_positive_and_rsi_moves_above_50)
+        +   查金资金流量转为正值且 RSI 移动超过 50
 
-        +   [查金资金流量转为负值且RSI移动低于45](#chaikin_money_flow_turns_negative_and_rsi_moves_below_45)
+        +   查金资金流量转为负值且 RSI 移动低于 45
 
-    +   [进一步研究](#further_study)
+    +   进一步研究
 
-    +   [其他资源](#additional_resources)
+    +   其他资源
 
-        +   [股票与商品杂志文章](#stocks_commodities_magazine_articles)
+        +   股票与商品杂志文章
 
 ## 介绍
 
-由马克·查金（Marc Chaikin）开发，查金资金流量（Chaikin Money Flow）衡量了特定时期内的资金流量量。资金流量量构成了积累分布线的基础。查金资金流量不是资金流量量的累积总和，而是简单地对特定回顾期内的资金流量量进行求和，通常为20或21天。所得指标像振荡器一样在零线上下波动。图表分析师根据查金资金流量的绝对水平权衡买入或卖出压力的平衡。图表分析师还可以寻找在零线上方或下方的交叉点，以识别资金流动的变化。
+由马克·查金（Marc Chaikin）开发，查金资金流量（Chaikin Money Flow）衡量了特定时期内的资金流量量。资金流量量构成了积累分布线的基础。查金资金流量不是资金流量量的累积总和，而是简单地对特定回顾期内的资金流量量进行求和，通常为 20 或 21 天。所得指标像振荡器一样在零线上下波动。图表分析师根据查金资金流量的绝对水平权衡买入或卖出压力的平衡。图表分析师还可以寻找在零线上方或下方的交叉点，以识别资金流动的变化。
 
 ## 计算
 
-计算查金资金流量（CMF）有四个步骤。下面的示例基于20个时期。首先，计算每个时期的资金流量乘数。其次，将此值乘以该时期的交易量，以找到资金流量量。第三，对20个时期的资金流量量进行求和，并除以20个时期的交易量总和。
+计算查金资金流量（CMF）有四个步骤。下面的示例基于 20 个时期。首先，计算每个时期的资金流量乘数。其次，将此值乘以该时期的交易量，以找到资金流量量。第三，对 20 个时期的资金流量量进行求和，并除以 20 个时期的交易量总和。
 
 ```py
 
@@ -48,11 +48,11 @@
 
 ```
 
-每个时期的资金流量量取决于资金流量乘数。当收盘价位于该时期最高-最低范围的上半部时，该乘数为正；当收盘价位于下半部时，该乘数为负。当收盘价等于最高价时，乘数为1；当收盘价等于最低价时，乘数为-1。通过这种方式，乘数调整了最终进入资金流量量的量。除非资金流量乘数处于极端值（+1或-1），否则实际上会减少交易量。
+每个时期的资金流量量取决于资金流量乘数。当收盘价位于该时期最高-最低范围的上半部时，该乘数为正；当收盘价位于下半部时，该乘数为负。当收盘价等于最高价时，乘数为 1；当收盘价等于最低价时，乘数为-1。通过这种方式，乘数调整了最终进入资金流量量的量。除非资金流量乘数处于极端值（+1 或-1），否则实际上会减少交易量。
 
-![图表1 - 查金资金流量](img/4f96a964b17239a0eb9ab8287749a875.jpg "图表1 - 查金资金流量")
+![图表 1 - 查金资金流量](img/4f96a964b17239a0eb9ab8287749a875.jpg "图表 1 - 查金资金流量")
 
-上表显示了使用 Research in Motion（RIMM）的每日数据的一些示例。请注意，当股票在 1 月 5 日收盘时，乘数接近 +1。当股票在 1 月 18 日收盘时，乘数下降到 -0.97。当股票在 12 月 29 日收盘时，乘数接近零（-0.07），股票收于其高低范围的中点附近。[点击这里](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:chaikin_money_flow_cmf:cs-cmf.xls "chart_school:technical_indicators_and_overlays:chaikin_money_flow_cmf:cs-cmf.xls (33 KB)") 查看 Excel 电子表格中 Chaikin Money Flow 的计算示例。
+上表显示了使用 Research in Motion（RIMM）的每日数据的一些示例。请注意，当股票在 1 月 5 日收盘时，乘数接近 +1。当股票在 1 月 18 日收盘时，乘数下降到 -0.97。当股票在 12 月 29 日收盘时，乘数接近零（-0.07），股票收于其高低范围的中点附近。点击这里") 查看 Excel 电子表格中 Chaikin Money Flow 的计算示例。
 
 ## 解释
 
@@ -86,17 +86,17 @@ Chaikin Money Flow 中的资金流乘数关注收盘价相对于给定期间（�
 
 ![图表 5  -  Chaikin Money Flow](img/f8c8017066653f851b4cb536e3f37936.jpg "图表 5  -  Chaikin Money Flow")
 
-当一只证券跳空上涨并且收盘接近当天的低点时，相反的情况可能发生。下图显示了Travelers（TRV）在当天跳空上涨并收盘超过1%。尽管有这一跳升，但收盘接近当天的低点，这导致了一个接近-1的资金流乘数。因此，几乎所有的交易量都被计为负资金流，Chaikin Money Flow 下降了。
+当一只证券跳空上涨并且收盘接近当天的低点时，相反的情况可能发生。下图显示了 Travelers（TRV）在当天跳空上涨并收盘超过 1%。尽管有这一跳升，但收盘接近当天的低点，这导致了一个接近-1 的资金流乘数。因此，几乎所有的交易量都被计为负资金流，Chaikin Money Flow 下降了。
 
 ![Chart 6  -  Chaikin Money Flow](img/fe882824fad9da1afa3ad218abd98050.jpg "Chart 6  -  Chaikin Money Flow")
 
 ## 结论
 
-Chaikin Money Flow 是一种振荡器，用于衡量一段时间内的买入和卖出压力。在最基本的情况下，当CMF为正时，资金流向看涨，当为负时看跌。寻找更快资金流向变化的图表分析师可以寻找看涨和看跌的背离。不过要小心。即使存在看涨背离，卖出压力仍然占优势。这种看涨背离只是显示了较少的卖出压力。要指示实际的买入压力，需要进入正区域。作为资金流振荡器，CMF可以与纯价格振荡器一起使用，例如MACD或[RSI](/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi "chart_school:technical_indicators:relative_strength_index_rsi")。与所有指标一样，Chaikin Money Flow 不应作为独立指标使用。马克·查金还开发了[积聚分配线](/school/doku.php?id=chart_school:technical_indicators:accumulation_distribution_line "chart_school:technical_indicators:accumulation_distribution_line")和[查金振荡器](/school/doku.php?id=chart_school:technical_indicators:chaikin_oscillator "chart_school:technical_indicators:chaikin_oscillator")。
+Chaikin Money Flow 是一种振荡器，用于衡量一段时间内的买入和卖出压力。在最基本的情况下，当 CMF 为正时，资金流向看涨，当为负时看跌。寻找更快资金流向变化的图表分析师可以寻找看涨和看跌的背离。不过要小心。即使存在看涨背离，卖出压力仍然占优势。这种看涨背离只是显示了较少的卖出压力。要指示实际的买入压力，需要进入正区域。作为资金流振荡器，CMF 可以与纯价格振荡器一起使用，例如 MACD 或 RSI。与所有指标一样，Chaikin Money Flow 不应作为独立指标使用。马克·查金还开发了积聚分配线和查金振荡器。
 
 ## 使用 SharpCharts
 
-Chaikin Money Flow 可以设置为主窗口上方或下方的指标。由于它以区域格式显示，因此不适合放置在证券价格图后面。一旦从下拉列表中选择指标，就会出现默认参数（20）。这些参数可以调整以增加或减少灵敏度。用户可以点击“高级选项”添加水平线、移动平均线或其他叠加。图表分析师甚至可以在其他指标上方绘制第二个更长的Chaikin Money Flow指标。重叠期显示了两个不同期间的资金流强劲。[点击这里查看实时示例](http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=8&dy=0&id=p77394964602&listNum=30&a=223019825 "http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=8&dy=0&id=p77394964602&listNum=30&a=223019825")。
+Chaikin Money Flow 可以设置为主窗口上方或下方的指标。由于它以区域格式显示，因此不适合放置在证券价格图后面。一旦从下拉列表中选择指标，就会出现默认参数（20）。这些参数可以调整以增加或减少灵敏度。用户可以点击“高级选项”添加水平线、移动平均线或其他叠加。图表分析师甚至可以在其他指标上方绘制第二个更长的 Chaikin Money Flow 指标。重叠期显示了两个不同期间的资金流强劲。[点击这里查看实时示例](http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=8&dy=0&id=p77394964602&listNum=30&a=223019825 "http://stockcharts.com/h-sc/ui?s=AAPL&p=D&yr=0&mn=8&dy=0&id=p77394964602&listNum=30&a=223019825")。
 
 ![Chart 7  -  Chaikin Money Flow](img/b48cb1392a499fc33cf3ba27363f8ed6.jpg "Chart 7  -  Chaikin Money Flow")
 
@@ -106,7 +106,7 @@ Chaikin Money Flow 可以设置为主窗口上方或下方的指标。由于它�
 
 ### Chaikin Money Flow 转为正值，RSI 上升至 50 以上
 
-这个扫描从股价至少为$10且过去60天日均交易量为100,000的股票开始。当查金货币流指标进入正区时，会识别出积累和买入压力。当相对强弱指标（RSI）上穿50，即其中线时，价格动量得到确认。这个扫描旨在作为进一步分析和尽职调查的起点。
+这个扫描从股价至少为$10 且过去 60 天日均交易量为 100,000 的股票开始。当查金货币流指标进入正区时，会识别出积累和买入压力。当相对强弱指标（RSI）上穿 50，即其中线时，价格动量得到确认。这个扫描旨在作为进一步分析和尽职调查的起点。
 
 ```py
 [type = stock] AND [country = US] 
@@ -117,9 +117,9 @@ AND [Daily CMF(20) crosses 0]
 AND [Daily RSI(14,Daily Close) crosses 50]
 ```
 
-### 查金货币流指标转为负值，RSI下穿45
+### 查金货币流指标转为负值，RSI 下穿 45
 
-这个扫描从股价至少为$10且过去60天日均交易量为100,000的股票开始。当查金货币流指标进入负区时，会识别出分销和卖出压力。当相对强弱指标（RSI）下穿50，即其中线时，价格动量得到确认。这个扫描旨在作为进一步分析和尽职调查的起点。
+这个扫描从股价至少为$10 且过去 60 天日均交易量为 100,000 的股票开始。当查金货币流指标进入负区时，会识别出分销和卖出压力。当相对强弱指标（RSI）下穿 50，即其中线时，价格动量得到确认。这个扫描旨在作为进一步分析和尽职调查的起点。
 
 ```py
 [type = stock] AND [country = US] 
@@ -132,7 +132,7 @@ AND [50 crosses Daily RSI(14,Daily Close)]
 
 有关查金货币流扫描的语法详细信息，请参阅我们支持中心的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#chaikin_money_flow_cmf "http://stockcharts.com/docs/doku.php?id=scans:indicators#chaikin_money_flow_cmf")。
 
-**注意**：出于扫描目的，交易日内的日交易量数据是不完整的。在运行基于交易量的指标（如CMF）的扫描时，请确保基于“上次市场收盘价”。其他基于交易量的指标的示例包括积累/分布指标、成交量平衡指标和PVO。
+**注意**：出于扫描目的，交易日内的日交易量数据是不完整的。在运行基于交易量的指标（如 CMF）的扫描时，请确保基于“上次市场收盘价”。其他基于交易量的指标的示例包括积累/分布指标、成交量平衡指标和 PVO。
 
 ## 进一步研究
 
@@ -140,8 +140,8 @@ AND [50 crosses Daily RSI(14,Daily Close)]
 
 | **金融市场技术分析** 约翰·J·墨菲 |
 | --- |
-| [![](img/e00f9b0f57a7325646647a118f3ebe9e.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |
-| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |
+| ![](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |
+| ![立即购买](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") |
 
 * * *
 
@@ -151,8 +151,8 @@ AND [50 crosses Daily RSI(14,Daily Close)]
 
 **[查金货币流指标（作者：克里斯托弗·纳尔库齐）](http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C08\072CHA.pdf "http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C08\072CHA.pdf")**
 
-2000年7月 - 股票与商品
+2000 年 7 月 - 股票与商品
 
 **[比较七种货币流指标（作者：马科斯·卡特萨诺斯）](http://stockcharts.com/h-mem/tascredirect.html?artid=\V29\C07\110KATS.pdf "http://stockcharts.com/h-mem/tascredirect.html?artid=\V29\C07\110KATS.pdf")**
 
-2011年6月 - 股票与商品
+2011 年 6 月 - 股票与商品

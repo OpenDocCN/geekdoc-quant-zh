@@ -2,39 +2,39 @@
 
 ### 目录
 
-+   [涡旋指标](#vortex_indicator)
++   涡旋指标
 
-    +   [SharpCharts 计算](#sharpcharts_calculation)
+    +   SharpCharts 计算
 
-    +   [解释](#interpretation)
+    +   解释
 
-    +   [VM 交叉](#vm_crossovers)
+    +   VM 交叉
 
-    +   [VM 阈值](#vm_thresholds)
+    +   VM 阈值
 
-    +   [结论](#conclusions)
+    +   结论
 
-    +   [与 SharpCharts 一起使用](#using_with_sharpcharts)
+    +   与 SharpCharts 一起使用
 
-    +   [建议的扫描](#suggested_scans)
+    +   建议的扫描
 
-        +   [整体上升趋势，+VI 上穿 -VI](#overall_uptrend_with_vi_crossing_above_-vi)
+        +   整体上升趋势，+VI 上穿 -VI
 
-        +   [整体下降趋势，-VI 上穿 +VI](#overall_downtrend_with_-vi_crossing_above_vi)
+        +   整体下降趋势，-VI 上穿 +VI
 
-    +   [进一步研究](#further_study)
+    +   进一步研究
 
-由Etienne Botes和Douglas Siepman开发的涡旋指标由两个捕捉正向和负向趋势运动的振荡器组成。在创建这一指标时，Botes和Seipman借鉴了Welles Wilder和被认为是内爆技术之父的维克托·绍伯格的工作。尽管公式相当复杂，但该指标非常容易理解和解释。当正向趋势指标上穿负向趋势指标或关键水平时，将触发看涨信号。当负向趋势指标上穿正向趋势指标或关键水平时，将触发看跌信号。涡旋指标始终在这些水平之上或之下，这意味着它始终具有明确的看涨或看跌偏向。
+由 Etienne Botes 和 Douglas Siepman 开发的涡旋指标由两个捕捉正向和负向趋势运动的振荡器组成。在创建这一指标时，Botes 和 Seipman 借鉴了 Welles Wilder 和被认为是内爆技术之父的维克托·绍伯格的工作。尽管公式相当复杂，但该指标非常容易理解和解释。当正向趋势指标上穿负向趋势指标或关键水平时，将触发看涨信号。当负向趋势指标上穿正向趋势指标或关键水平时，将触发看跌信号。涡旋指标始终在这些水平之上或之下，这意味着它始终具有明确的看涨或看跌偏向。
 
 ## SharpCharts 计算
 
 ![图表 1](img/413893e028220e95a4f40cb5b44f4221.jpg "图表 1")
 
-涡旋指标（VTX）的计算可以分为三部分。首先，根据最近两个周期的高点和低点计算正向和负向趋势运动。正向趋势运动是当前高点到前一低点的距离。当前高点距离前一低点越远，趋势运动越正向。负向趋势运动是当前低点到前一高点的距离。当前低点距离前一高点越远，趋势运动越负向。然后根据指标设置（通常为14个周期）对这些周期性值进行求和。
+涡旋指标（VTX）的计算可以分为三部分。首先，根据最近两个周期的高点和低点计算正向和负向趋势运动。正向趋势运动是当前高点到前一低点的距离。当前高点距离前一低点越远，趋势运动越正向。负向趋势运动是当前低点到前一高点的距离。当前低点距离前一高点越远，趋势运动越负向。然后根据指标设置（通常为 14 个周期）对这些周期性值进行求和。
 
-第二部分涉及真实波幅，由Welles Wilder创建。该指标使用当前高点、当前低点和前一收盘价来衡量波动性。详情请参见下面的公式框。
+第二部分涉及真实波幅，由 Welles Wilder 创建。该指标使用当前高点、当前低点和前一收盘价来衡量波动性。详情请参见下面的公式框。
 
-第三部分通过将正负趋势运动除以真实波幅来进行标准化。实际上，涡旋指标显示了经过波动调整的正向趋势运动和负向趋势运动。最终结果产生了两个在1之上/之下振荡的指标。
+第三部分通过将正负趋势运动除以真实波幅来进行标准化。实际上，涡旋指标显示了经过波动调整的正向趋势运动和负向趋势运动。最终结果产生了两个在 1 之上/之下振荡的指标。
 
 ```py
 Positive and negative trend movement:
@@ -62,7 +62,7 @@ Normalize the positive and negative trend movements:
 
 ![电子表格](img/ecc5ea4c1b5ccf25c226276933fe78e7.jpg "电子表格")
 
-上表来自Excel电子表格。[点击此处下载](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:vortex_indicator:cs-vortex.xls "chart_school:technical_indicators_and_overlays:vortex_indicator:cs-vortex.xls (33.5 KB)") 这个电子表格。
+上表来自 Excel 电子表格。点击此处下载") 这个电子表格。
 
 ## 解释
 
@@ -84,21 +84,21 @@ Normalize the positive and negative trend movements:
 
 ![图表 4](img/bc3a600fe72897ce44ac1e4efaf6f595.jpg "图表 4")
 
-上图显示了Microchip Technology使用日线图和23周期VTX。尽管两个振荡器交叉频繁，但在十二个月内只有三个“阈值”信号。首先，在九月初，-VM下跌至0.90以下，几天后+VI上穿1.1。尽管+VM多次下跌至0.90以下，但由于-VI从未上穿1.10，这个看涨信号并未完全逆转。第二个信号是在二月下旬，+VI下跌至0.90以下，-VI在三月初上穿1.1。第三个信号是在六月中旬，-VI下跌至0.90以下，几天后+VI上穿1.1。
+上图显示了 Microchip Technology 使用日线图和 23 周期 VTX。尽管两个振荡器交叉频繁，但在十二个月内只有三个“阈值”信号。首先，在九月初，-VM 下跌至 0.90 以下，几天后+VI 上穿 1.1。尽管+VM 多次下跌至 0.90 以下，但由于-VI 从未上穿 1.10，这个看涨信号并未完全逆转。第二个信号是在二月下旬，+VI 下跌至 0.90 以下，-VI 在三月初上穿 1.1。第三个信号是在六月中旬，-VI 下跌至 0.90 以下，几天后+VI 上穿 1.1。
 
-缩短回溯期将增加灵敏度，并导致更多的阈值交叉。下图显示了康明斯（CMI）使用日线和14周期VTX。这个指标比23周期版本更敏感（波动性更大）。黄色标记表示看涨信号，橙色标记表示看跌信号。
+缩短回溯期将增加灵敏度，并导致更多的阈值交叉。下图显示了康明斯（CMI）使用日线和 14 周期 VTX。这个指标比 23 周期版本更敏感（波动性更大）。黄色标记表示看涨信号，橙色标记表示看跌信号。
 
 ![图表 5](img/072301f30292366d258ffa99f1dce6d7.jpg "图表 5")
 
-请记住，VTX并非作为独立指标设计。图表分析师应该使用技术分析的其他方面来确认VTX，提高交易设置的风险收益比，或得出买卖信号。一月初的看涨VTX信号得到了楔形突破的确认。四月的看跌VTX信号后，CMI形成了一个上升楔形，并在五月初急剧下跌时突破了楔形支撑。VTX提供了警报，价格图表提供了信号。
+请记住，VTX 并非作为独立指标设计。图表分析师应该使用技术分析的其他方面来确认 VTX，提高交易设置的风险收益比，或得出买卖信号。一月初的看涨 VTX 信号得到了楔形突破的确认。四月的看跌 VTX 信号后，CMI 形成了一个上升楔形，并在五月初急剧下跌时突破了楔形支撑。VTX 提供了警报，价格图表提供了信号。
 
 ## 结论
 
-涡流指标是一种独特的方向指标，提供清晰的信号并定义整体趋势。与所有技术分析工具和指标一样，涡流指标可以应用于各种证券和不同时间框架。例如，VTX可以应用于周线和月线图表以定义更大的趋势，然后应用于日线图表以在该趋势内生成信号。使用日线图表，图表分析师可以在周线图表上的VTX指示上升趋势时专注于看涨信号。相反，当日线图表上的VTX处于熊市模式时，图表分析师可以专注于看跌信号。
+涡流指标是一种独特的方向指标，提供清晰的信号并定义整体趋势。与所有技术分析工具和指标一样，涡流指标可以应用于各种证券和不同时间框架。例如，VTX 可以应用于周线和月线图表以定义更大的趋势，然后应用于日线图表以在该趋势内生成信号。使用日线图表，图表分析师可以在周线图表上的 VTX 指示上升趋势时专注于看涨信号。相反，当日线图表上的 VTX 处于熊市模式时，图表分析师可以专注于看跌信号。
 
-## 使用SharpCharts
+## 使用 SharpCharts
 
-涡流指数可作为SharpCharts的指标使用。一旦选择，用户可以将指标放置在基础价格图之上、之下或之后。将指标直接放在价格图后面，突出了相对于基础证券价格走势的波动。用户可以应用“高级选项”添加水平线并设置信号阈值。[点击这里](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p98321339986&a=277125891 "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p98321339986&a=277125891") 查看涡流指标实际运行的示例。
+涡流指数可作为 SharpCharts 的指标使用。一旦选择，用户可以将指标放置在基础价格图之上、之下或之后。将指标直接放在价格图后面，突出了相对于基础证券价格走势的波动。用户可以应用“高级选项”添加水平线并设置信号阈值。[点击这里](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p98321339986&a=277125891 "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p98321339986&a=277125891") 查看涡流指标实际运行的示例。
 
 ![图表 6](img/63b4c2145a55641447698478d165f148.jpg "图表 6")
 
@@ -106,9 +106,9 @@ Normalize the positive and negative trend movements:
 
 ## 建议扫描
 
-### 总体上升趋势，+VI穿过-VI
+### 总体上升趋势，+VI 穿过-VI
 
-这个扫描从平均每日交易量为100,000股且平均收盘价高于10的股票开始。当交易高于50日SMA时存在上升趋势。当+VI穿过-VI时出现买入信号。
+这个扫描从平均每日交易量为 100,000 股且平均收盘价高于 10 的股票开始。当交易高于 50 日 SMA 时存在上升趋势。当+VI 穿过-VI 时出现买入信号。
 
 ```py
 [type = stock] AND [country = US] 
@@ -119,9 +119,9 @@ AND [Daily VTX Plus(14) x Daily VTX Minus(14)]
 AND [Daily Close > Daily SMA(50,Daily Close)]
 ```
 
-### 总体下降趋势，-VI穿过+VI
+### 总体下降趋势，-VI 穿过+VI
 
-这个扫描从平均每日交易量为100,000股且平均收盘价高于10的股票开始。当交易低于50日SMA时存在下降趋势。当-VI穿过+VI时出现卖出信号。
+这个扫描从平均每日交易量为 100,000 股且平均收盘价高于 10 的股票开始。当交易低于 50 日 SMA 时存在下降趋势。当-VI 穿过+VI 时出现卖出信号。
 
 ```py
 [type = stock] AND [country = US] 
@@ -138,5 +138,5 @@ AND [Daily Close < Daily SMA(50,Daily Close)]
 
 | **金融市场技术分析** 约翰·J·墨菲 | **马丁·普林解读技术分析** 马丁·普林 |
 | --- | --- |
-| [![](img/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![](img/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
-| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| ![](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | ![](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| ![立即购买](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | ![立即购买](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |

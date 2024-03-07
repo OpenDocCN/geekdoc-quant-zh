@@ -2,37 +2,37 @@
 
 ### 目录
 
-+   [真实强度指数（TSI）](#true_strength_index_tsi)
++   真实强度指数（TSI）
 
-    +   [计算](#calculation)
+    +   计算
 
-    +   [解释](#interpretation)
+    +   解释
 
-    +   [中线交叉](#center_line_crossover)
+    +   中线交叉
 
-    +   [趋势线](#trend_lines)
+    +   趋势线
 
-    +   [超买/超卖](#overbought_oversold)
+    +   超买/超卖
 
-    +   [信号线交叉](#signal_line_crossovers)
+    +   信号线交叉
 
-    +   [结论](#conclusions)
+    +   结论
 
-    +   [在SharpCharts中使用](#using_with_sharpcharts)
+    +   在 SharpCharts 中使用
 
-    +   [建议的扫描](#suggested_scans)
+    +   建议的扫描
 
-        +   [多头TSI信号线交叉](#bullish_tsi_signal_line_cross)
+        +   多头 TSI 信号线交叉
 
-        +   [空头TSI信号线交叉](#bearish_tsi_signal_line_cross)
+        +   空头 TSI 信号线交叉
 
-    +   [进一步研究](#further_study)
+    +   进一步研究
 
-由威廉·布劳（William Blau）开发并在《股票与商品杂志》（Stocks & Commodities Magazine）中介绍的真实强度指数（TSI）是基于价格变化的双重平滑的动量振荡器。尽管需要进行几个步骤来计算，但该指标实际上非常直观。通过平滑价格变化，TSI捕捉价格行动的起伏，形成一条更稳定的线，过滤掉噪音。与大多数动量振荡器一样，技术分析师可以从超买/超卖读数、中线交叉、多头/空头背离和信号线交叉中得出信号。
+由威廉·布劳（William Blau）开发并在《股票与商品杂志》（Stocks & Commodities Magazine）中介绍的真实强度指数（TSI）是基于价格变化的双重平滑的动量振荡器。尽管需要进行几个步骤来计算，但该指标实际上非常直观。通过平滑价格变化，TSI 捕捉价格行动的起伏，形成一条更稳定的线，过滤掉噪音。与大多数动量振荡器一样，技术分析师可以从超买/超卖读数、中线交叉、多头/空头背离和信号线交叉中得出信号。
 
 ## 计算
 
-真实强度指数（TSI）可以分为三部分：双重平滑价格变化、双重平滑绝对价格变化和TSI公式。首先，计算一个周期到下一个周期的价格变化。其次，计算这种价格变化的25周期EMA。第三，计算这个25周期EMA的13周期EMA以创建双重平滑。绝对价格变化也使用相同的双重平滑技术。在这些初始计算之后，将双重平滑价格变化除以绝对双重平滑价格变化，并乘以100以将小数点移动两位。
+真实强度指数（TSI）可以分为三部分：双重平滑价格变化、双重平滑绝对价格变化和 TSI 公式。首先，计算一个周期到下一个周期的价格变化。其次，计算这种价格变化的 25 周期 EMA。第三，计算这个 25 周期 EMA 的 13 周期 EMA 以创建双重平滑。绝对价格变化也使用相同的双重平滑技术。在这些初始计算之后，将双重平滑价格变化除以绝对双重平滑价格变化，并乘以 100 以将小数点移动两位。
 
 ![图表 1](img/af49ce62de72393fa4ac88806b1506e8.jpg "图表 1")
 
@@ -53,27 +53,27 @@ TSI = 100 x (Double Smoothed PC / Double Smoothed Absolute PC)
 
 ```
 
-第一部分，即双重平滑价格变化，为TSI设定了正面或负面的基调。当双重平滑价格变化为负时，指标为负，当为正时，指标为正。双重平滑绝对价格变化对指标进行了标准化，并限制了随后振荡器的范围。换句话说，该指标衡量了双重平滑价格变化相对于双重平滑绝对价格变化的情况。一连串的大幅正价格变化导致相对较高的正读数，因为这表示强劲的上行动量。一连串的大幅负价格变化将TSI推入深度负值区域。
+第一部分，即双重平滑价格变化，为 TSI 设定了正面或负面的基调。当双重平滑价格变化为负时，指标为负，当为正时，指标为正。双重平滑绝对价格变化对指标进行了标准化，并限制了随后振荡器的范围。换句话说，该指标衡量了双重平滑价格变化相对于双重平滑绝对价格变化的情况。一连串的大幅正价格变化导致相对较高的正读数，因为这表示强劲的上行动量。一连串的大幅负价格变化将 TSI 推入深度负值区域。
 
 ![电子表格](img/67ed19dfb3a7046f43b7006d84a5d63e.jpg "电子表格")
 
-上表来自Excel电子表格。请注意，计算中使用了[指数移动平均线](/school/doku.php?id=chart_school:technical_indicators:moving_averages "chart_school:technical_indicators:moving_averages")。这些从简单移动平均线开始，然后使用乘数进行计算，这意味着需要额外的历史数据来达到真实值。[点击这里下载此电子表格示例](/school/lib/exe/fetch.php?media=chart_school:technical_indicators_and_overlays:true_strength_index:cs-tsi.xls "chart_school:technical_indicators_and_overlays:true_strength_index:cs-tsi.xls (213 KB)")，并在家里尝试。
+上表来自 Excel 电子表格。请注意，计算中使用了指数移动平均线。这些从简单移动平均线开始，然后使用乘数进行计算，这意味着需要额外的历史数据来达到真实值。点击这里下载此电子表格示例")，并在家里尝试。
 
 ## 解释
 
-真实强度指数（TSI）是一个在正负区间波动的振荡器。与许多动量振荡器一样，中线定义了总体偏向。当TSI为正时，多头具有动量优势，当TSI为负时，空头具有优势。与MACD一样，可以应用信号线来识别上升和下降。然而，信号线的交叉频繁，需要进一步结合其他技术进行过滤。图表分析师还可以寻找牛市和熊市背离来预测趋势反转；但是，请记住，在强势趋势中，背离可能会误导。
+真实强度指数（TSI）是一个在正负区间波动的振荡器。与许多动量振荡器一样，中线定义了总体偏向。当 TSI 为正时，多头具有动量优势，当 TSI 为负时，空头具有优势。与 MACD 一样，可以应用信号线来识别上升和下降。然而，信号线的交叉频繁，需要进一步结合其他技术进行过滤。图表分析师还可以寻找牛市和熊市背离来预测趋势反转；但是，请记住，在强势趋势中，背离可能会误导。
 
-TSI在某种程度上是独特的，因为它很好地跟踪了基础价格。换句话说，振荡器可以捕捉价格朝一个方向持续移动的情况。振荡器中的峰值和谷值通常与价格中的峰值和谷值相匹配。在这方面，图表分析师可以使用TSI绘制趋势线并标记支撑/阻力水平。然后可以利用线的突破来生成信号。
+TSI 在某种程度上是独特的，因为它很好地跟踪了基础价格。换句话说，振荡器可以捕捉价格朝一个方向持续移动的情况。振荡器中的峰值和谷值通常与价格中的峰值和谷值相匹配。在这方面，图表分析师可以使用 TSI 绘制趋势线并标记支撑/阻力水平。然后可以利用线的突破来生成信号。
 
 ## 中线交叉
 
-中线交叉是最纯粹的信号。当TSI高于零时，价格变化的双重平滑动量为正，当TSI低于零时为负。当TSI为正时，价格通常上涨，当TSI为负时，价格通常下跌。下面的例子显示了耐克（NKE）在2011年9月转为看涨，因为TSI进入了正区域（绿线）。随着上涨趋势延伸至2012年春季，股票保持看涨。当TSI转为负数并且股票跌破支撑时，耐克转为看跌。
+中线交叉是最纯粹的信号。当 TSI 高于零时，价格变化的双重平滑动量为正，当 TSI 低于零时为负。当 TSI 为正时，价格通常上涨，当 TSI 为负时，价格通常下跌。下面的例子显示了耐克（NKE）在 2011 年 9 月转为看涨，因为 TSI 进入了正区域（绿线）。随着上涨趋势延伸至 2012 年春季，股票保持看涨。当 TSI 转为负数并且股票跌破支撑时，耐克转为看跌。
 
 ![图表 2](img/a8a126b97a26c1b91ed2dc469e0931f2.jpg "图表 2")
 
 ## 趋势线
 
-TSI经常产生支撑和阻力水平，图表分析师可以用来识别突破或跌破。下面的例子显示了花旗集团（C）的TSI在三月份建立了支撑位。该指标在四月初跌破支撑，这一跌破预示着五月份的显著下跌。TSI随后在六月反弹，并形成七月的平整整理。这种整理类似于下降旗形态，TSI在七月底突破了趋势线。这一突破预示着进一步的强势到八月份。
+TSI 经常产生支撑和阻力水平，图表分析师可以用来识别突破或跌破。下面的例子显示了花旗集团（C）的 TSI 在三月份建立了支撑位。该指标在四月初跌破支撑，这一跌破预示着五月份的显著下跌。TSI 随后在六月反弹，并形成七月的平整整理。这种整理类似于下降旗形态，TSI 在七月底突破了趋势线。这一突破预示着进一步的强势到八月份。
 
 ![图表 3](img/91bdaa57cb8ccc8058058acc22a97488.jpg "图表 3")
 
@@ -93,11 +93,11 @@ TSI 设置中的最后一个参数是信号线，它只是 TSI 的指数移动�
 
 ## 结论
 
-真实强度指数（TSI）是一种基于双重平滑价格变化的独特指标。价格变化代表了动量的真实形式。通过两个指数移动平均线的双重平滑，降低了噪音，并产生了一个相当好地跟踪价格的振荡器。除了通常的振荡器信号外，图表分析师通常可以直接在TSI上绘制趋势线、支撑线和阻力线。然后可以利用这些线来生成基于突破和跌破的信号。与所有指标一样，TSI信号应该与其他指标和分析技术一起确认。
+真实强度指数（TSI）是一种基于双重平滑价格变化的独特指标。价格变化代表了动量的真实形式。通过两个指数移动平均线的双重平滑，降低了噪音，并产生了一个相当好地跟踪价格的振荡器。除了通常的振荡器信号外，图表分析师通常可以直接在 TSI 上绘制趋势线、支撑线和阻力线。然后可以利用这些线来生成基于突破和跌破的信号。与所有指标一样，TSI 信号应该与其他指标和分析技术一起确认。
 
-## 使用SharpCharts
+## 使用 SharpCharts
 
-真实强度指数（TSI）可作为SharpCharts的指标使用。一旦选择，用户可以将指标放置在基础价格图的上方、下方或后方。将TSI直接放在价格图后面，突出了相对于基础证券价格走势的波动。用户可以应用“高级选项”添加水平线以设置超买和超卖水平。调整参数框中的数字将更改设置。[点击这里](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p28704616394&a=276577901 "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p28704616394&a=276577901")查看TSI实际运行的实时示例。
+真实强度指数（TSI）可作为 SharpCharts 的指标使用。一旦选择，用户可以将指标放置在基础价格图的上方、下方或后方。将 TSI 直接放在价格图后面，突出了相对于基础证券价格走势的波动。用户可以应用“高级选项”添加水平线以设置超买和超卖水平。调整参数框中的数字将更改设置。[点击这里](http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p28704616394&a=276577901 "http://stockcharts.com/h-sc/ui?s=$COMPQ&p=D&yr=0&mn=6&dy=0&id=p28704616394&a=276577901")查看 TSI 实际运行的实时示例。
 
 ![图表 6](img/6f820f9a1b626cab77c7810cb9ecbb19.jpg "图表 6")
 
@@ -105,9 +105,9 @@ TSI 设置中的最后一个参数是信号线，它只是 TSI 的指数移动�
 
 ## 建议扫描
 
-### 多头TSI信号线穿越
+### 多头 TSI 信号线穿越
 
-这个扫描显示了TSI处于正值领域的股票。当TSI穿过其信号线时，将触发一个多头信号。
+这个扫描显示了 TSI 处于正值领域的股票。当 TSI 穿过其信号线时，将触发一个多头信号。
 
 ```py
 [type = stock] AND [country = US] 
@@ -119,9 +119,9 @@ AND [TSI(40,20,10) x TSI Signal(40,20,10)]
 
 ```
 
-### 空头TSI信号线穿越
+### 空头 TSI 信号线穿越
 
-这个扫描显示了TSI处于负值领域的股票。当TSI穿过其信号线时，将触发一个空头信号。
+这个扫描显示了 TSI 处于负值领域的股票。当 TSI 穿过其信号线时，将触发一个空头信号。
 
 ```py
 [type = stock] AND [country = US] 
@@ -132,7 +132,7 @@ AND [TSI(40,20,10) < 0]
 AND [TSI Signal(40,20,10) x TSI(40,20,10)]
 ```
 
-欲了解有关TSI扫描的语法细节，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#true_strength_index "http://stockcharts.com/docs/doku.php?id=scans:indicators#true_strength_index")在支持中心。
+欲了解有关 TSI 扫描的语法细节，请参阅我们的[扫描指标参考](http://stockcharts.com/docs/doku.php?id=scans:indicators#true_strength_index "http://stockcharts.com/docs/doku.php?id=scans:indicators#true_strength_index")在支持中心。
 
 ## 进一步研究
 
@@ -140,5 +140,5 @@ AND [TSI Signal(40,20,10) x TSI(40,20,10)]
 
 | **金融市场技术分析** 约翰·J·墨菲 | **马丁·普林解读技术分析** 马丁·普林 |
 | --- | --- |
-| [![](img/d9fb5f53997f0c87918070e360d1437d.jpg)](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![](img/907bb9e1dca336b6bedb79166d8efb0e.jpg)](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
-| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| ![](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | ![](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |
+| ![立即购买](http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1 "http://store.stockcharts.com/products/technical-analysis-of-the-financial-markets-1") | ![立即购买](http://store.stockcharts.com/products/technical-analysis-explained-4th-edition "http://store.stockcharts.com/products/technical-analysis-explained-4th-edition") |

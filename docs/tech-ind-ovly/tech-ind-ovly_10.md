@@ -2,51 +2,51 @@
 
 ### 目录
 
-+   [枢轴点](#pivot_points)
++   枢轴点
 
-    +   [介绍](#introduction)
+    +   介绍
 
-    +   [时间框架](#timeframes)
+    +   时间框架
 
-    +   [标准枢轴点](#standard_pivot_points)
+    +   标准枢轴点
 
-    +   [斐波那契枢轴点](#fibonacci_pivot_points)
+    +   斐波那契枢轴点
 
-    +   [Demark枢轴点](#demark_pivot_points)
+    +   Demark 枢轴点
 
-    +   [设定基调](#setting_the_tone)
+    +   设定基调
 
-    +   [支撑和阻力](#support_and_resistance)
+    +   支撑和阻力
 
-    +   [结论](#conclusions)
+    +   结论
 
-    +   [与SharpCharts一起使用](#using_with_sharpcharts)
+    +   与 SharpCharts 一起使用
 
-    +   [进一步研究](#further_study)
+    +   进一步研究
 
-    +   [额外资源](#additional_resources)
+    +   额外资源
 
-        +   [股票与商品杂志文章](#stocks_commodities_magazine_articles)
+        +   股票与商品杂志文章
 
 ## 介绍
 
-**枢轴点是图表分析师可以用来确定方向运动和潜在支撑/阻力水平的重要水平。** 枢轴点使用先前时期的最高、最低和收盘价来估计未来的支撑和阻力水平。在这方面，枢轴点是预测性或领先指标。至少有五种不同版本的枢轴点。本文将重点介绍标准枢轴点、Demark枢轴点和斐波那契枢轴点。
+**枢轴点是图表分析师可以用来确定方向运动和潜在支撑/阻力水平的重要水平。** 枢轴点使用先前时期的最高、最低和收盘价来估计未来的支撑和阻力水平。在这方面，枢轴点是预测性或领先指标。至少有五种不同版本的枢轴点。本文将重点介绍标准枢轴点、Demark 枢轴点和斐波那契枢轴点。
 
-枢轴点最初是由地板交易员用来设定关键水平的。地板交易员是最初的日间交易员。他们在一个快节奏的环境中进行短期关注的交易。在交易日开始时，地板交易员会查看前一天的最高、最低和收盘价，以计算当天的枢轴点。以此枢轴点为基础，进一步的计算用于设定支撑1、支撑2、阻力1和阻力2。这些水平将在整天交易中用于辅助他们的交易。
+枢轴点最初是由地板交易员用来设定关键水平的。地板交易员是最初的日间交易员。他们在一个快节奏的环境中进行短期关注的交易。在交易日开始时，地板交易员会查看前一天的最高、最低和收盘价，以计算当天的枢轴点。以此枢轴点为基础，进一步的计算用于设定支撑 1、支撑 2、阻力 1 和阻力 2。这些水平将在整天交易中用于辅助他们的交易。
 
 ## 时间框架
 
-1、5、10和15分钟图表的枢轴点使用前一天的最高、最低和收盘价。换句话说，今天的盘内图表的枢轴点将仅基于昨天的最高、最低和收盘价。一旦设置了枢轴点，它们将不会改变，并在整天内保持有效。
+1、5、10 和 15 分钟图表的枢轴点使用前一天的最高、最低和收盘价。换句话说，今天的盘内图表的枢轴点将仅基于昨天的最高、最低和收盘价。一旦设置了枢轴点，它们将不会改变，并在整天内保持有效。
 
-![枢轴点 - 图表1](img/7340af632f63d7a16d9d588e81bcd18a.jpg "枢轴点 - 图表1")
+![枢轴点 - 图表 1](img/7340af632f63d7a16d9d588e81bcd18a.jpg "枢轴点 - 图表 1")
 
-30、60和120分钟图表的枢轴点使用前一周的最高、最低和收盘价。这些计算是基于日历周的。一旦周开始，30、60和120分钟图表的枢轴点将在整个周内保持不变。**直到周结束并且可以计算新的枢轴点，它们才会改变。**
+30、60 和 120 分钟图表的枢轴点使用前一周的最高、最低和收盘价。这些计算是基于日历周的。一旦周开始，30、60 和 120 分钟图表的枢轴点将在整个周内保持不变。**直到周结束并且可以计算新的枢轴点，它们才会改变。**
 
-![枢轴点 - 图表2](img/f30afd69e1c419d1411f744d3bf22f97.jpg "枢轴点 - 图表2")
+![枢轴点 - 图表 2](img/f30afd69e1c419d1411f744d3bf22f97.jpg "枢轴点 - 图表 2")
 
-每日图表的枢轴点使用前一个月的数据。6月1日的枢轴点将基于5月的最高、最低和收盘价。它们在整个6月保持不变。新的枢轴点将在7月的第一个交易日计算。这些将基于6月的最高、最低和收盘价。
+每日图表的枢轴点使用前一个月的数据。6 月 1 日的枢轴点将基于 5 月的最高、最低和收盘价。它们在整个 6 月保持不变。新的枢轴点将在 7 月的第一个交易日计算。这些将基于 6 月的最高、最低和收盘价。
 
-![枢轴点 - 图表3](img/f1307519517eaed9943f7edc6e82b43f.jpg "枢轴点 - 图表3")
+![枢轴点 - 图表 3](img/f1307519517eaed9943f7edc6e82b43f.jpg "枢轴点 - 图表 3")
 
 每周和每月图表的枢轴点使用前一年的数据。
 
@@ -67,7 +67,7 @@ Resistance 2 (R2) = P + (High  -  Low)
 
 ```
 
-下图显示了纳斯达克100 ETF（QQQ）在15分钟图表上的标准 Pivot Points。在6月9日交易开始时，Pivot Point 处于中间位置，阻力水平在上方，支撑水平在下方。这些水平在一天内保持不变。
+下图显示了纳斯达克 100 ETF（QQQ）在 15 分钟图表上的标准 Pivot Points。在 6 月 9 日交易开始时，Pivot Point 处于中间位置，阻力水平在上方，支撑水平在下方。这些水平在一天内保持不变。
 
 ![Pivot Points  -  图表 4](img/ad17543763434c2aee7ef6ea34c715f6.jpg "Pivot Points  -  图表 4")
 
@@ -92,7 +92,7 @@ Resistance 3 (R3) = P + {1 * (High  -  Low)}
 
 ```
 
-下图显示了道琼斯工业平均指数 SPDR（DIA）在15分钟图表上的斐波那契 Pivot Points。R1 和 S1 基于38.2%。R2 和 S2 基于61.8%。R3 和 S3 基于100%。
+下图显示了道琼斯工业平均指数 SPDR（DIA）在 15 分钟图表上的斐波那契 Pivot Points。R1 和 S1 基于 38.2%。R2 和 S2 基于 61.8%。R3 和 S3 基于 100%。
 
 ![Pivot Points  -  图表 5](img/e925733240b3aadf2248df1742e43705.jpg "Pivot Points  -  图表 5")
 
@@ -115,7 +115,7 @@ Resistance 1 (R1) = X/2 - Low
 
 ```
 
-下图显示了罗素2000 ETF（IWM）在15分钟图表上的 Demark Pivot Points。请注意，只有一个阻力（R1）和一个支撑（S1）。Demark Pivot Points 没有多个支撑或阻力水平。
+下图显示了罗素 2000 ETF（IWM）在 15 分钟图表上的 Demark Pivot Points。请注意，只有一个阻力（R1）和一个支撑（S1）。Demark Pivot Points 没有多个支撑或阻力水平。
 
 ![Pivot Points  -  图表 6](img/928b04e318a922cff8e25944b23732c0.jpg "Pivot Points  -  图表 6")
 
@@ -139,24 +139,24 @@ Pivot Point 为价格走势设定了一般基调。这是标记为 (P) 的一组
 
 ## 结论
 
-**枢纽点为图表分析师提供了一种确定价格走势然后设定支撑和阻力水平的方法。** 它通常从枢纽点的交叉开始。有时市场在枢纽点之上或之下开始。支撑和阻力在交叉后发挥作用。虽然最初是为地板交易者设计的，但枢纽点背后的概念可以应用于各种时间框架。与所有指标一样，重要的是用技术分析的其他方面来确认枢纽点信号。一个看跌的蜡烛图反转模式可以确认在第二阻力处的反转。超卖的相对强弱指标可以确认在第二支撑处的超卖情况。MACD的上升可以用来确认成功的支撑测试。最后，有时第二或第三支撑/阻力水平在图表上看不到。这仅仅是因为它们的水平超过了右侧的价格刻度。换句话说，它们在图表之外。
+**枢纽点为图表分析师提供了一种确定价格走势然后设定支撑和阻力水平的方法。** 它通常从枢纽点的交叉开始。有时市场在枢纽点之上或之下开始。支撑和阻力在交叉后发挥作用。虽然最初是为地板交易者设计的，但枢纽点背后的概念可以应用于各种时间框架。与所有指标一样，重要的是用技术分析的其他方面来确认枢纽点信号。一个看跌的蜡烛图反转模式可以确认在第二阻力处的反转。超卖的相对强弱指标可以确认在第二支撑处的超卖情况。MACD 的上升可以用来确认成功的支撑测试。最后，有时第二或第三支撑/阻力水平在图表上看不到。这仅仅是因为它们的水平超过了右侧的价格刻度。换句话说，它们在图表之外。
 
 ## 使用 SharpCharts
 
 枢纽点可以在 SharpCharts 工作台上作为“覆盖层”找到。标准枢纽点是默认设置，参数框为空。图表分析师可以通过在参数框中放置“F”来应用斐波那契枢纽点，通过在框中放置“D”来应用 Demark 枢纽点。甚至可以同时显示所有三个。[点击这里](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237 "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237") 查看带有所有三个枢纽点的实时图表。然后您可以删除您不想要的那些。
 
-[![枢轴点  -  SPY示例](img/5248548a8301aea1cb689fbbcf1f9757.jpg "枢轴点  -  SPY示例")](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237 "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237")
+![枢轴点  -  SPY 示例](http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237 "http://stockcharts.com/h-sc/ui?s=$SPX&p=D&b=5&g=0&id=p75918574596&listNum=30&a=236469237")
 
 ![枢轴点 - SharpCharts](img/a95df3dd4dd05d885bcc146d39c0d9eb.jpg "枢轴点 - SharpCharts")
 
 ## 进一步研究
 
-本书专门有一整章介绍如何使用标准枢轴点进行交易。Person向图表分析师展示如何将枢轴点支撑和阻力水平与技术分析的其他方面结合起来，生成买入和卖出信号。
+本书专门有一整章介绍如何使用标准枢轴点进行交易。Person 向图表分析师展示如何将枢轴点支撑和阻力水平与技术分析的其他方面结合起来，生成买入和卖出信号。
 
 | **技术交易战术完全指南** 约翰·珀森 |
 | --- |
-| [![](img/c3544022b2f24f16e18c19a16b6207ff.jpg)](http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics "http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics") |
-| [![立即购买](img/1c93f62bf2e6d9151c2861b04ef09d52.jpg "立即购买")](http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics "http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics") |
+| ![](http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics "http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics") |
+| ![立即购买](http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics "http://store.stockcharts.com/products/a-complete-guide-to-technical-trading-tactics") |
 
 * * *
 
@@ -164,10 +164,10 @@ Pivot Point 为价格走势设定了一般基调。这是标记为 (P) 的一组
 
 ### 股票与商品杂志文章
 
-**[John Devcic撰写的利用枢轴点预测逆转](http://stockcharts.com/h-mem/tascredirect.html?artid=\V24\C03\054DEVC.pdf "http://stockcharts.com/h-mem/tascredirect.html?artid=\V24\C03\054DEVC.pdf")**
+**[John Devcic 撰写的利用枢轴点预测逆转](http://stockcharts.com/h-mem/tascredirect.html?artid=\V24\C03\054DEVC.pdf "http://stockcharts.com/h-mem/tascredirect.html?artid=\V24\C03\054DEVC.pdf")**
 
-2006年2月 - 股票与商品 V. 24:3 (72-73)
+2006 年 2 月 - 股票与商品 V. 24:3 (72-73)
 
-**[Jayanthi Gopalakrishnan撰写的枢轴点文章](http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C02\010PIV.pdf "http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C02\010PIV.pdf")**
+**[Jayanthi Gopalakrishnan 撰写的枢轴点文章](http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C02\010PIV.pdf "http://stockcharts.com/h-mem/tascredirect.html?artid=\V18\C02\010PIV.pdf")**
 
-2000年1月 - 股票与商品 V. 18:2 (16-22)
+2000 年 1 月 - 股票与商品 V. 18:2 (16-22)
