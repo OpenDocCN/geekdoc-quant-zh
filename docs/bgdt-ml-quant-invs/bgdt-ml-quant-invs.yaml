@@ -9434,22 +9434,26 @@
   id: totrans-1193
   prefs: []
   type: TYPE_NORMAL
+  zh: 遵循古老的量化格言“垃圾进，垃圾出”，我们尽可能地对特征施加一些结构。
 - en: 'In the same fashion, we impose some structure in the labels by sequentially:'
   id: totrans-1194
   prefs: []
   type: TYPE_NORMAL
+  zh: 以同样的方式，我们通过顺序进行一些结构：
 - en: 1. Resorting to one-year (1Y) performance, which is enough for having a certain
     degree of causality between the nature of the features in the datasets and the
     tenor of the labels.
   id: totrans-1195
   prefs: []
   type: TYPE_NORMAL
+  zh: 1. 回到一年（1Y）的表现，这足以在数据集的特征性质和标签的趋势之间建立一定程度的因果关系。
 - en: 2. Normalizing according to the sector of each stock. An alternative would be
     to use dummy sector variables in the features, but the purpose is much clearer
     by putting the right structure on the labels.
   id: totrans-1196
   prefs: []
   type: TYPE_NORMAL
+  zh: 2. 根据每支股票的部门进行归一化。另一种方法是在特征中使用虚拟部门变量，但通过将正确的结构放在标签上，目的更加明确。
 - en: '3. Getting rid of the outliers in the labels: stocks outside the (5th; 95th)
     percentile of their sector-neutral performance are excluded for the training.
     Our goal here is to imply as much causality for the features with the labels.
@@ -9459,16 +9463,19 @@
   id: totrans-1197
   prefs: []
   type: TYPE_NORMAL
+  zh: 3. 摆脱标签中的异常值：超出其部门中性表现（第5；95）百分位数的股票被排除在培训之外。我们在这里的目标是尽可能地将特征与标签联系起来。例如，我们摆脱了被并购的股票或被涉及欺诈会计丑闻的股票，因为我们希望标签真正与特征相关联。
 - en: 4. Processing only the remaining top and bottom quintiles of the filtered stocks.
   id: totrans-1198
   prefs: []
   type: TYPE_NORMAL
+  zh: 4. 仅处理筛选后股票的剩余顶部和底部五分位数。
 - en: We want to approximate a function for the top and bottom parts of the cross-section.
     By doing so, we hope to have a clear hierarchical representation of sector under/outperforming
     stocks.
   id: totrans-1199
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们希望对横截面的顶部和底部部分的函数进行近似。通过这样做，我们希望对表现良好/不良好的股票有一个清晰的分层表示。
 - en: 'We define Yi1 as the probability of a stock i to outperform its sector S over
     a one-year-ahead period. Accordingly, Yi0 = 1 − Yi1 will be the probability of
     a stock i to underperform its sector after one year. Yi1 serves as the primary
@@ -9477,29 +9484,36 @@
   id: totrans-1200
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们定义 Yi1 为股票 i 在一年后的一段时间内表现优于其部门 S 的概率。因此，Yi0 = 1 − Yi1 将是股票 i 在一年后表现不及其部门的概率。Yi1
+    作为我们分类任务的主要输入。我们在算法中处理的标签如下：
 - en: Guida522195 c07.tex V1 - 10/26/2018 7:25pm Page 135
   id: totrans-1201
   prefs: []
   type: TYPE_NORMAL
+  zh: Guida522195 c07.tex V1 - 10/26/2018 7:25pm Page 135
 - en: $$y^{i}=\left\{\begin{array}{l l}{{1\ i f\ Y_{0}^{i}\geq0.5}}\\ {{0\ i f\ Y_{0}^{i}<0.5}}\end{array}\right.$$
   id: totrans-1202
   prefs: []
   type: TYPE_NORMAL
+  zh: $$y^{i}=\left\{\begin{array}{l l}{{1\ i f\ Y_{0}^{i}\geq0.5}}\\ {{0\ i f\ Y_{0}^{i}<0.5}}\end{array}\right.$$
 - en: Hence, this variable tracks whether or not the corresponding stock is likely
     to
   id: totrans-1203
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，这个变量跟踪相应的股票是否有可能
 - en: outperform. In the next subsection, we focus on the explanatory variables that
     we rely on to predict yi.
   id: totrans-1204
   prefs: []
   type: TYPE_NORMAL
+  zh: 表现良好。在下一小节中，我们将重点关注我们依赖于来预测 yi 的解释变量。
 - en: 7.3.3 Variables/Features Used
   id: totrans-1205
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 7.3.3 使用的变量/特征
 - en: In our model, we aim to predict, each month, the probability of a stock outperforming
     its sector using extreme gradient boosted trees. Since we want to sequentially
     create weak learners (individual trees) and use the residuals (badly classified
@@ -9510,6 +9524,7 @@
   id: totrans-1206
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们的模型中，我们旨在使用极端梯度增强树每个月预测一只股票在其部门表现优于的概率。由于我们想要顺序地创建弱学习器（单独的树），并且使用残差（错误分类的标签）进行下一轮，我们将使用数据集中的所有特征。在使用树进行ML预测的情况下，高度相关的变量不会干扰模型。大量高度相关的变量将为算法提供更多自由度，以确定每个单一变量的增值。
 - en: In order to assess the potential level of correlation between the features datasets
     we computed a hierarchical clustering for the rank correlation of the features.
     As depicted in Figure 7.2, we can identify different groups of metrics that represent
@@ -9517,6 +9532,7 @@
   id: totrans-1207
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了评估特征数据集之间的潜在相关性水平，我们计算了特征的等级相关性的分层聚类。如图7.2所示，我们可以确定代表信号族的不同指标组。
 - en: For instance, the left rectangle in Figure 7.2 shows the metrics based on valuation
     ratios, from simple earnings yield and book-to-price metrics to more rules-based
     composite metrics, imposing more conditionality depending on the nature of the
@@ -10490,99 +10506,123 @@
   id: totrans-1353
   prefs: []
   type: TYPE_NORMAL
+  zh: 费舍尔（Fischer, T.）和克劳斯（Krauss, C.）（2018）。利用长短期记忆网络进行金融市场预测的深度学习。*欧洲运营研究杂志* 270：654––669。
 - en: 'Freund, Y. and Schapire, R.E. (1997). A decision-theoretic generalization of
     on-line learning and an application to boosting. *Journal of Computer and System
     Sciences* 55 (1): 119–139.'
   id: totrans-1354
   prefs: []
   type: TYPE_NORMAL
+  zh: 弗洛因德（Freund, Y.）和施皮尔（Schapire, R.E.）（1997）。在线学习的决策理论概括及其在增强中的应用。*计算机与系统科学杂志*
+    55（1）：119–139。
 - en: 'Friedman, J., Hastie, T., and Tibshirani, R. (2000). Additive logistic regression:
     a statistical view of boosting (with discussion and a rejoinder by the authors).
     *Annals of Statistics* 28 (2):'
   id: totrans-1355
   prefs: []
   type: TYPE_NORMAL
+  zh: 弗里德曼（Friedman, J.）、哈斯蒂（Hastie, T.）、蒂布什拉尼（Tibshirani, R.）（2000）。加法逻辑回归：对提升的统计视角（附讨论和作者的答辩）。*统计年鉴*
+    28（2）：
 - en: 337–407.
   id: totrans-1356
   prefs: []
   type: TYPE_NORMAL
+  zh: 337–407。
 - en: 'Friedman, J. (2001). Greedy function approximation: a gradient boosting machine.
     *Annals of* Statistics 1189–1232.'
   id: totrans-1357
   prefs: []
   type: TYPE_NORMAL
+  zh: 弗里德曼（Friedman, J.）（2001）。贪婪函数近似：梯度提升机。*统计年鉴* 1189–1232。
 - en: Friedman, J., Hastie, T., and Tibshirani, R. (2009). *The Elements of Statistical
     Learning*, 2e.
   id: totrans-1358
   prefs: []
   type: TYPE_NORMAL
+  zh: 弗里德曼（Friedman, J.）、哈斯蒂（Hastie, T.）、蒂布什拉尼（Tibshirani, R.）（2009）。*统计学习的要素*，第2版。
 - en: Springer.
   id: totrans-1359
   prefs: []
   type: TYPE_NORMAL
+  zh: 斯普林格。
 - en: 'Green, J., Hand, J.R., and Zhang, X.F. (2013). The supraview of return predictive
     signals. *Review* of Accounting Studies 18 (3): 692–730.'
   id: totrans-1360
   prefs: []
   type: TYPE_NORMAL
+  zh: 格林（Green, J.）、汉德（Hand, J.R.）和张（Zhang, X.F.）（2013）。收益预测信号的超级视图。*会计研究评论* 18（3）：692–730。
 - en: 'Harvey, C.R., Liu, Y., and Zhu, H. (2016). . . . and the cross-section of expected
     returns. *Review* of Financial Studies 29 (1): 5–68.'
   id: totrans-1361
   prefs: []
   type: TYPE_NORMAL
+  zh: 哈维（Harvey, C.R.）、刘（Liu, Y.）、朱（Zhu, H.）（2016）。 . . . 以及预期收益的横截面。*金融研究评论* 29（1）：5–68。
 - en: 'Ilmanen, A. (2011). *Expected Returns: An Investor''s Guide to Harvesting Market
     Rewards*.'
   id: totrans-1362
   prefs: []
   type: TYPE_NORMAL
+  zh: 伊尔曼（Ilmanen, A.）（2011）。*预期收益：投资者收获市场回报的指南*。
 - en: Wiley.
   id: totrans-1363
   prefs: []
   type: TYPE_NORMAL
+  zh: 约翰·威利。
 - en: 'Jegadeesh, N. and Titman, S. (1993). Returns to buying winners and selling
     losers: implications for stock market efficiency. *Journal of Finance* 48 (1):
     65–91.'
   id: totrans-1364
   prefs: []
   type: TYPE_NORMAL
+  zh: 杰加迪什（Jegadeesh, N.）和提特曼（Titman, S.）（1993）。买赢家和卖输家的回报：对股票市场效率的影响。*金融杂志* 48（1）：65–91。
 - en: 'Jegadeesh, N. and Titman, S. (2001). Profitability of momentum strategies:
     an evaluation of alternative explanations. *Journal of Finance* 56 (2): 699–720.'
   id: totrans-1365
   prefs: []
   type: TYPE_NORMAL
+  zh: 杰加迪什（Jegadeesh, N.）和提特曼（Titman, S.）（2001）。动量策略的盈利能力：替代解释的评估。*金融杂志* 56（2）：699–720。
 - en: 'Kahn, R.N. and Lemmon, M. (2016). The asset manager''s dilemma: how smart beta
     is disrupting the investment management industry. *Financial Analysts Journal*
     72 (1): 15–20.'
   id: totrans-1366
   prefs: []
   type: TYPE_NORMAL
+  zh: 卡恩（Kahn, R.N.）和莱蒙（Lemmon, M.）（2016）。资产管理者的困境：智能贝塔如何颠覆投资管理行业。*金融分析师杂志* 72（1）：15–20。
 - en: 'Krauss, C., Do, X.A., and Huck, N. (2017). Deep neural networks, gradient-boosted
     trees, random forests: statistical arbitrage on the S&P 500. *European Journal
     of Operational Research* 259 (2): 689–702.'
   id: totrans-1367
   prefs: []
   type: TYPE_NORMAL
+  zh: 克劳斯（Krauss, C.）、多（Do, X.A.）和赫克（Huck, N.）（2017）。深度神经网络、梯度提升树、随机森林：标准普尔500指数上的统计套利。*欧洲运营研究杂志*
+    259（2）：689–702。
 - en: McLean, R.D. and Pontiff, J. (2016). Does academic research destroy stock return
     predictability?
   id: totrans-1368
   prefs: []
   type: TYPE_NORMAL
+  zh: 麦克莱恩（McLean, R.D.）和庞蒂夫（Pontiff, J.）（2016）。学术研究是否破坏了股票回报的可预测性？
 - en: 'Journal of Finance 71 (1): 5–32.'
   id: totrans-1369
   prefs: []
   type: TYPE_NORMAL
+  zh: 金融杂志 71（1）：5–32。
 - en: 'Nair, B.B., Kumar, P.S., Sakthivel, N.R., and Vipin, U. (2017). Clustering
     stock price time series data to generate stock trading recommendations: an empirical
     study. Expert Systems with Applications 70: 20–36.'
   id: totrans-1370
   prefs: []
   type: TYPE_NORMAL
+  zh: 尼尔（Nair, B.B.）、库马尔（Kumar, P.S.）、萨克西维尔（Sakthivel, N.R.）和维平（Vipin, U.）（2017）。聚类股价时间序列数据以生成股票交易建议：一项实证研究。专家系统与应用
+    70：20–36。
 - en: 'Patel, J., Shah, S., Thakkar, P., and Kotecha, K. (2015). Predicting stock
     and stock price index movement using trend deterministic data preparation and
     machine learning techniques. Expert Systems with Applications 42 (1): 259–268.'
   id: totrans-1371
   prefs: []
   type: TYPE_NORMAL
+  zh: 帕特尔（Patel, J.）、沙阿（Shah, S.）、萨卡尔（Thakkar, P.）和科特查（Kotecha, K.）（2015）。利用趋势确定性数据准备和机器学习技术预测股票和股价指数的运动。专家系统与应用
+    42（1）：259–268。
 - en: 'Schapire, R.E. (1990). The strength of weak learnability. *Machine Learning*
     5 (2): 197–227. Subrahmanyam, A. (2010). The cross-section of expected stock returns:
     what have we learnt from the past twenty-five years of research? *European Financial
@@ -10590,29 +10630,36 @@
   id: totrans-1372
   prefs: []
   type: TYPE_NORMAL
+  zh: 施皮尔（Schapire, R.E.）（1990）。弱可学习性的强度。*机器学习* 5（2）：197–227。史巴拉曼扬（Subrahmanyam, A.）（2010）。预期股票收益的横截面：我们从过去二十五年的研究中学到了什么？*欧洲金融管理*
+    16（1）：27–42。
 - en: 'Van Dijk, M.A. (2011). Is size dead? A review of the size effect in equity
     returns. *Journal of* Banking & Finance 35 (12): 3263–3274.'
   id: totrans-1373
   prefs: []
   type: TYPE_NORMAL
+  zh: 范·迪克（Van Dijk, M.A.）（2011）。尺寸已经过时了吗？对股票回报尺寸效应的审视。*银行与金融杂志* 35（12）：3263–3274。
 - en: CHAPTER 8
   id: totrans-1374
   prefs: []
   type: TYPE_NORMAL
+  zh: 第8章
 - en: A Social Media Analysis Of Corporate Culture
   id: totrans-1375
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 企业文化的社交媒体分析
 - en: Andy Moniz
   id: totrans-1376
   prefs: []
   type: TYPE_NORMAL
+  zh: 安迪·莫尼兹（Andy Moniz）
 - en: 8.1 Introduction
   id: totrans-1377
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 8.1 导言
 - en: In today's globalized, service-based economy, many firms derive substantial
     value from their intangible assets. Examples include corporate reputation, brand
     value, innovative efficiency (Chan et al. 2001), human capital (Edmans 2011) and
@@ -11145,72 +11192,103 @@
   id: totrans-1442
   prefs: []
   type: TYPE_NORMAL
+  zh: '|--------------------------------------------------------------------------------------------------------------|------------|------------|------------|------------|-----------|----------|------------|--------|---------|--------|'
 - en: '| Region                                                                                                       |
     2008       | 2009       | 2010       | 2011       | 2012      | 2013     | 2014       |
     2015   | Total   | total  |'
   id: totrans-1443
   prefs: []
   type: TYPE_TB
+  zh: '| 区域                                                                                                         |
+    2008       | 2009       | 2010       | 2011       | 2012      | 2013     | 2014       |
+    2015   | 总计    | 总计   |'
 - en: '| Asia                                                                                                         |
     189        | 285        | 926        | 1330       | 6311      | 6264     | 7798       |
     2551   | 25.654  | 6%     |'
   id: totrans-1444
   prefs: []
   type: TYPE_TB
+  zh: '| 亚洲                                                                                                         |
+    189        | 285        | 926        | 1330       | 6311      | 6264     | 7798       |
+    2551   | 25.654  | 6%     |'
 - en: '| Europe                                                                                                       |
     307        | 257        | 796        | 435        | 1196      | 1849     | 2949       |
     1619   | 9,40 K  | 2%     |'
   id: totrans-1445
   prefs: []
   type: TYPE_TB
+  zh: '| 欧洲                                                                                                         |
+    307        | 257        | 796        | 435        | 1196      | 1849     | 2949       |
+    1619   | 9,40 K  | 2%     |'
 - en: '| North                                                                                                        |
     13 139     | 10 136     | 15 637     | 18 068     | 30 100    | 45 821   | 71
     444     | 25.698 | 230 043 | 55%    |'
   id: totrans-1446
   prefs: []
   type: TYPE_TB
+  zh: '| 北部                                                                                                         |
+    13 139     | 10 136     | 15 637     | 18 068     | 30 100    | 45 821   | 71
+    444     | 25.698 | 230 043 | 55%    |'
 - en: '| America                                                                                                      |            |            |            |            |           |          |            |        |         |        |'
   id: totrans-1447
   prefs: []
   type: TYPE_TB
+  zh: '| 美洲                                                                                                         |            |            |            |            |           |          |            |        |         |        |'
 - en: '| Other                                                                                                        |
     40         | 53         | 97         | 130        | 632       | 751      | 967        |
     429    | 3099    | 1%     |'
   id: totrans-1448
   prefs: []
   type: TYPE_TB
+  zh: '| 其他                                                                                                         |
+    40         | 53         | 97         | 130        | 632       | 751      | 967        |
+    429    | 3099    | 1%     |'
 - en: '| Anonymous                                                                                                    |
     1537       | 5001       | 11 760     | 13 798     | 20 931    | 25 552   | 46
     429     | 24 433 | 149.441 | 36%    |'
   id: totrans-1449
   prefs: []
   type: TYPE_TB
+  zh: '| 匿名                                                                                                         |
+    1537       | 5001       | 11 760     | 13 798     | 20 931    | 25 552   | 46
+    429     | 24 433 | 149.441 | 36%    |'
 - en: '| Total                                                                                                        |
     15 212     | 15 732     | 29 216     | 33 761     | 59 170    | 80 237   | 129
     587    | 54 730 | 417 645 |        |'
   id: totrans-1450
   prefs: []
   type: TYPE_TB
+  zh: '| 总计                                                                                                         |
+    15 212     | 15 732     | 29 216     | 33 761     | 59 170    | 80 237   | 129
+    587    | 54 730 | 417 645 |        |'
 - en: '| % of Total                                                                                                   |
     3.6%       | 3.8%       | 7.0%       | 8.1%       | 14.2%     | 19.2%    | 31.0%      |
     13.1%  | 100.0%  | 100.0% |'
   id: totrans-1451
   prefs: []
   type: TYPE_TB
+  zh: '| 总计的百分比                                                                                                |
+    3.6%       | 3.8%       | 7.0%       | 8.1%       | 14.2%     | 19.2%    | 31.0%      |
+    13.1%  | 100.0%  | 100.0% |'
 - en: '| Panel B: Overview of the dataset by employment statusb                                                       |            |            |            |            |           |          |            |        |         |        |'
   id: totrans-1452
   prefs: []
   type: TYPE_TB
+  zh: '| 面板 B：按就业状态b对数据集的概览                                                                             |            |            |            |            |           |          |            |        |         |        |'
 - en: '| Full-time                                                                                                    |
     Part-time  | Current    | Former     | Total      |           |          |            |        |         |        |'
   id: totrans-1453
   prefs: []
   type: TYPE_TB
+  zh: '| 全职                                                                                                         |
+    兼职       | 现任       | 前任       | 总计       |           |          |            |        |         |        |'
 - en: '| Region                                                                                                       |
     employee   | employee   | Anonymous  | Total      | employee  | employee | reviews    |        |         |        |'
   id: totrans-1454
   prefs: []
   type: TYPE_TB
+  zh: '| 区域                                                                                                         |
+    员工       | 员工       | 匿名       | 总计       | 员工      | 员工     | 评论       |        |         |        |'
 - en: '| Asia ex Japan                                                                                                |
     18 954     | 224        | 6276       | 25 454     | 17.228    | 8.226    | 25.454     |        |         |        |'
   id: totrans-1455
@@ -13298,22 +13376,26 @@
   id: totrans-1731
   prefs: []
   type: TYPE_NORMAL
+  zh: Marquis, C. and Toffel, M. (2012). 企业何时在绿色环保中洗白？企业能见度、公民社会审查和环境披露。《哈佛商学院讨论文件》，12–43，22页。
 - en: 'McDonnell, M.H. and King, B. (2013). Keeping up appearances reputational threat
     and impression management after social movement boycotts. *Administrative Science
     Quarterly* 58 (3):'
   id: totrans-1732
   prefs: []
   type: TYPE_NORMAL
+  zh: McDonnell, M.H. and King, B. (2013). 维持表面形象：社会运动抵制后的声誉威胁和形象管理。《管理科学季刊》，58（3）：
 - en: 387–419.
   id: totrans-1733
   prefs: []
   type: TYPE_NORMAL
+  zh: 387–419。
 - en: 'O''Reilly, C., Chatman, J., and Caldwell, D. (1991). People and organizational
     culture: a profile comparison approach to assessing person-organization fit. The
     Academy of Management Journal, 34: 487–516.'
   id: totrans-1734
   prefs: []
   type: TYPE_NORMAL
+  zh: O'Reilly, C., Chatman, J., and Caldwell, D. (1991). 人与组织文化：评估人-组织适应性的个人档案比较方法。《管理学院学报》，34：487–516。
 - en: 'Pang, B. and Lee, L. (2004). A Sentimental Education: Sentiment Analysis using
     Subjectivity Summarization based on Minimum Cuts, 42nd Annual Meeting of the Association
     for Computational Linguistics (ACL 2004), 271–280, Association for Computational
@@ -13321,96 +13403,116 @@
   id: totrans-1735
   prefs: []
   type: TYPE_NORMAL
+  zh: Pang, B. and Lee, L. (2004). 一种感性教育：基于最小割的主观性摘要的情感分析，第42届计算语言学协会年会（ACL 2004），271–280，计算语言学协会。
 - en: 'Petersen, M. (2009). Estimating standard errors in finance panel data sets:
     comparing approaches.'
   id: totrans-1736
   prefs: []
   type: TYPE_NORMAL
+  zh: Petersen, M. (2009). 估计金融面板数据集的标准误差：比较方法。
 - en: 'Review of Financial Studies, 22: 435–480.'
   id: totrans-1737
   prefs: []
   type: TYPE_NORMAL
+  zh: 金融研究评论，22：435–480。
 - en: 'Pinder, C.C. (1998). *Work Motivation in Organizational Behavior*. Upper Saddle
     River, NJ:'
   id: totrans-1738
   prefs: []
   type: TYPE_NORMAL
+  zh: Pinder, C.C. (1998). *组织行为中的工作动机*。新泽西州上塞德尔河：
 - en: Prentice-Hall.
   id: totrans-1739
   prefs: []
   type: TYPE_NORMAL
+  zh: 普林斯顿大学出版社。
 - en: 'Popadak, J. (2013). A Corporate Culture Channel: How Increased Shareholder
     Governance Reduces Firm Value. Duke University Working Paper.'
   id: totrans-1740
   prefs: []
   type: TYPE_NORMAL
+  zh: Popadak, J. (2013). 企业文化频道：增加股东治理如何降低公司价值。杜克大学工作文件。
 - en: 'Statman, M. and Glushkov, D. (2009). The wages of social responsibility. Financial
     Analysts Journal, 65: 33–46.'
   id: totrans-1741
   prefs: []
   type: TYPE_NORMAL
+  zh: Statman, M. and Glushkov, D. (2009). 社会责任的报酬。《金融分析师杂志》，65：33–46。
 - en: 'Stone, P., Dumphy, D.C., Smith, M.S., and Ogilvie, D.M. (1966). The General
     Inquirer:'
   id: totrans-1742
   prefs: []
   type: TYPE_NORMAL
+  zh: Stone, P., Dumphy, D.C., Smith, M.S., and Ogilvie, D.M. (1966). 普通探究者：
 - en: A Computer Approach to Content Analysis. The MIT Press.
   id: totrans-1743
   prefs: []
   type: TYPE_NORMAL
+  zh: 内容分析的计算机方法。麻省理工学院出版社。
 - en: 'Tetlock, P.C., Saar-Tsechansky, M., and Macskassy, S. (2008). More than words:
     quantifying language to measure firms'' fundamentals. *Journal of Finance,* 63:
     1437–1467.'
   id: totrans-1744
   prefs: []
   type: TYPE_NORMAL
+  zh: Tetlock, P.C., Saar-Tsechansky, M., and Macskassy, S. (2008). 不只是言辞：量化语言以衡量公司的基本面。《金融学杂志》，63：1437–1467。
 - en: 'Triandis, H.C., Bontempo, R., Villareal, M.J. et al. (1988). Individualism
     and collectivism:'
   id: totrans-1745
   prefs: []
   type: TYPE_NORMAL
+  zh: Triandis, H.C., Bontempo, R., Villareal, M.J.等（1988）。 个人主义和集体主义：
 - en: 'cross-cultural perspectives on self-ingroup relationships. *Journal of Personality
     and Social* Psychology 54: 323–338.'
   id: totrans-1746
   prefs: []
   type: TYPE_NORMAL
+  zh: 跨文化视角下的自我-内群关系。*个性与社会*心理学 54：323–338。
 - en: Verwijmeren, P. and Derwall, J. (2010). Employee well-being, firm leverage,
     and bankruptcy risk.
   id: totrans-1747
   prefs: []
   type: TYPE_NORMAL
+  zh: Verwijmeren, P. and Derwall, J. (2010). 员工幸福感、公司杠杆率和破产风险。
 - en: Journal of Banking and Finance, 34(5), 956–964.
   id: totrans-1748
   prefs: []
   type: TYPE_NORMAL
+  zh: 《银行与金融学杂志》，34（5），956–964。
 - en: 'Waddock, S.A. and Graves, S.B. (1997). The corporate social performance- financial
     performance link. *Strategic Management Journal* 18 (4): 303–319.'
   id: totrans-1749
   prefs: []
   type: TYPE_NORMAL
+  zh: Waddock, S.A. and Graves, S.B. (1997). 企业社会绩效与财务绩效的关联。*战略管理期刊* 18（4）：303–319。
 - en: 'Wierzbicka, A. (1995). Emotion and facial expression: a semantic perspective.
     *Culture* Psychology, 1 (2): 227–258.'
   id: totrans-1750
   prefs: []
   type: TYPE_NORMAL
+  zh: Wierzbicka, A. (1995). 情感与面部表情：语义视角。*文化*心理学，1（2）：227–258。
 - en: CHAPTER 9
   id: totrans-1751
   prefs: []
   type: TYPE_NORMAL
+  zh: 第9章
 - en: Machine Learning And Event Detection For Trading Energy Futures
   id: totrans-1752
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 机器学习与交易能源期货的事件检测
 - en: Peter Hafez and Francesco Lautizi
   id: totrans-1753
   prefs: []
   type: TYPE_NORMAL
+  zh: 彼得·哈菲兹和弗朗切斯科·劳蒂齐
 - en: 9.1 Introduction
   id: totrans-1754
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 9.1 简介
 - en: The commodity futures spectrum is an integral part of today's financial markets.
     Specifically, energy-related ones like crude oil, gasoline and natural gas, among
     many more, all react to the ebbs and flows of supply and demand. These commodities
@@ -13507,44 +13609,55 @@
   id: totrans-1767
   prefs: []
   type: TYPE_TB
+  zh: '| 命中率                           | 51.1%                    | 53.9%   | 47.5%
+    |'
 - en: '| 38.3%                             | 18.0%                    | 62.2%   |       |'
   id: totrans-1768
   prefs: []
   type: TYPE_TB
+  zh: '| 38.3%                            | 18.0%                    | 62.2%   |       |'
 - en: '| Max drawdown Per-trade            | 3.88                     | 8.82    |
     −1.97 |'
   id: totrans-1769
   prefs: []
   type: TYPE_TB
+  zh: '| 最大单笔回撤                      | 3.88                     | 8.82    | −1.97
+    |'
 - en: '| return (bps)                      |                          |         |       |'
   id: totrans-1770
   prefs: []
   type: TYPE_TB
+  zh: '| 回报（基点）                      |                          |         |       |'
 - en: '| Number of                         | 2740                     | 1929    |
     811   |'
   id: totrans-1771
   prefs: []
   type: TYPE_TB
+  zh: '| 数量                             | 2740                     | 1929    | 811   |'
 - en: '| trades                            |                          |         |       |'
   id: totrans-1772
   prefs: []
   type: TYPE_TB
+  zh: '| 交易次数                          |                          |         |       |'
 - en: The *high-vol* and *low-vol* strategies trade only during these regimes while
     the *ensemble* strategy trades irrespective of the regime. The out-of-sample period
     is January 2015 to December 2017.
   id: totrans-1773
   prefs: []
   type: TYPE_NORMAL
+  zh: '*高波动率*和*低波动率*策略仅在这些情况下进行交易，而*整合*策略则不考虑情况而进行交易。 验证期间是2015年1月至2017年12月。'
 - en: 'Source: RavenPack, January 2018.'
   id: totrans-1774
   prefs: []
   type: TYPE_NORMAL
+  zh: 来源：RavenPack，2018年1月。
 - en: regression, provides a way to improve performance and at the same time reduces
     the risk associated to model selection. Moreover, we demonstrate how return predictability
     at the basket level can be enhanced by conditioning on volatility regimes.
   id: totrans-1775
   prefs: []
   type: TYPE_NORMAL
+  zh: 回归提供了一种提高性能并同时降低模型选择相关风险的方法。此外，我们还演示了如何通过对波动率情况进行条件处理来增强篮子水平的回报可预测性。
 - en: The study is organized as follows. Section 9.2 discloses the different data
     sources used, in particular how the input variables from RPA 1.0 are constructed.
     Section 9.3 describes the modelling framework, which is based on five machine
@@ -13552,20 +13665,24 @@
   id: totrans-1776
   prefs: []
   type: TYPE_NORMAL
+  zh: 该研究组织如下。第9.2节披露了所使用的不同数据源，特别是如何构建来自RPA 1.0的输入变量。第9.3节描述了建模框架，该框架基于五种机器学习算法。
 - en: Section 9.4 compares the performance of the various models introduced in Section
     9.3.
   id: totrans-1777
   prefs: []
   type: TYPE_NORMAL
+  zh: 第9.4节比较了第9.3节介绍的各种模型的性能。
 - en: Section 9.5 presents the general conclusions.
   id: totrans-1778
   prefs: []
   type: TYPE_NORMAL
+  zh: 第9.5节提出了一般结论。
 - en: 9.2 Data Description
   id: totrans-1779
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 9.2 数据描述
 - en: By using NLP techniques, RavenPack transforms large unstructured datasets, such
     as traditional news and social media, into structured and machine readable granular
     data and indicators that can be included in quantitative models, allowing investors
@@ -13576,6 +13693,7 @@
   id: totrans-1780
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过使用NLP技术，RavenPack将大型非结构化数据集，如传统新闻和社交媒体，转化为结构化和机器可读的细粒度数据和指标，这些数据和指标可以包含在定量模型中，允许投资者识别新闻中的实体，并将这些实体链接到最有可能影响资产价格的可行事件。每个事件还得到各种分析指标的支持，包括情绪、新颖性（事件相似度天数2）和相关性（事件相关性3）。
 - en: '2Event Similarity Days: a granular number with up to five decimal places which
     indicates the number of days since a similar event was detected over the last
     365 days. Values range between 0.00 000 and 365 inclusive. A value of 365 means
@@ -13584,11 +13702,14 @@
   id: totrans-1781
   prefs: []
   type: TYPE_NORMAL
+  zh: 2事件相似度天数：一个精确到五位小数的粒度数字，指示自上次在过去365天内检测到类似事件以来的天数。值范围在0.00 000和365之间，包括365。值365表示最近的类似故事可能发生在365天或更早之前。值0.00
+    000表示发生了具有完全相同时间戳的相似故事。
 - en: '3Event Relevance: an integer between 0 and 100 that reflects the relevance
     of the event in the story.'
   id: totrans-1782
   prefs: []
   type: TYPE_NORMAL
+  zh: 事件相关性：反映故事中事件相关性的介于0和100之间的整数。
 - en: An event relevance score is assigned for records relating to an event, where
     related records can be identified by having the same EVENT_SIMILARITY_KEY within
     a story. The score is based on the earliest mention and frequency of the event
@@ -13597,15 +13718,18 @@
   id: totrans-1783
   prefs: []
   type: TYPE_NORMAL
+  zh: 为与事件相关的记录分配事件相关性分数，其中可以通过在故事中具有相同的事件相似性键来识别相关记录。分数基于事件匹配的最早提及和频率。在同一段落中对事件的额外提及会增加分数，直到该段落的最大分数。
 - en: To create the strategies, we consider all commodity-related news stories from
     RPA
   id: totrans-1784
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了创建策略，我们考虑来自RPA的所有与商品相关的新闻报道
 - en: spanning a period of nearly 13 years, from January 2005 to December 2017.
   id: totrans-1785
   prefs: []
   type: TYPE_NORMAL
+  zh: 横跨近13年的时间，从2005年1月到2017年12月。
 - en: Some mild restrictions are imposed on the dataset related to event detection
     and novelty. In particular, it is required that a news story can be matched with
     an event from the RavenPack event taxonomy. Furthermore, only events with Event
@@ -13624,6 +13748,8 @@
   id: totrans-1786
   prefs: []
   type: TYPE_NORMAL
+  zh: 对数据集施加了一些与事件检测和新颖性相关的温和限制。特别是，需要将新闻报道与RavenPack事件分类法中的事件相匹配。此外，只允许事件相似性天数（ESD）≥1的事件，以便在日内基础上移除重复的新闻事件。与最近有关股票的内部研究相反（Hafez
+    and Koefoed 2017a,b; Hafez and Guerrero-Colón 2016; Hafez and Lautizi 2016），我们没有将事件相关性信号（ERS）作为条件，因为在这种情况下，更强的每事件可预测性与较低的事件频率之间的权衡不利于我们。相反，我们直接在特征构建中使用它，如下文第9.3.1.4节所详述。通过施加这些限制，我们只能使用RPA中的部分可用事件类别。特别是，在我们的回测期间，我们发现了110个具有至少一个记录事件的独特事件类别5，涵盖了我们的商品范围内所有的事件类别。原油是我们所有商品中最普遍的，有103个独特的事件类别，而平均商品只有34个类别。
 - en: Out of the 89 commodities covered by RavenPack, we select some of the most traded
     related to energy. The basket contains four commodities, with crude oil and natural
     gas being the most prominent. Table 9.2 provides an overview of the commodities
@@ -13631,6 +13757,7 @@
   id: totrans-1787
   prefs: []
   type: TYPE_NORMAL
+  zh: 在RavenPack涵盖的89种大宗商品中，我们选择了一些与能源相关的最常交易的商品。该篮子包含四种商品，原油和天然气是最突出的。表9.2提供了我们研究中商品的概览。
 - en: Given the sheer number of event categories available in RPAs, the dimensionality
     of the matrix of independent variables becomes large - even with the restrictions
     mentioned above. Put differently, we are facing the well-known curse of dimensionality
@@ -13642,50 +13769,66 @@
   id: totrans-1788
   prefs: []
   type: TYPE_NORMAL
+  zh: 鉴于RPAs中提供的事件类别数量庞大，即使有上述限制，独立变量矩阵的维度也会变得很大。换句话说，我们面临着维度诅咒（Donoho 2000），这使得在没有特征选择的情况下，传统的OLS回归因过度拟合而变得不切实际。在之前的研究中（Hafez
+    and Koefoed 2017a,b），我们曾依赖OLS来使用RavenPack的事件情感评分模拟股票回报，但鉴于我们面临的维度以及各种事件类别之间可能存在的非线性关系，我们转而...
 - en: '| Days with events   | 25th    | 75th       |        |            |     |    |    |     |'
   id: totrans-1789
   prefs: []
   type: TYPE_TB
+  zh: '| 有事件发生的天数   | 第25位    | 第75位       |        |            |     |    |    |     |'
 - en: '|--------------------|---------|------------|--------|------------|-----|----|----|-----|'
   id: totrans-1790
   prefs: []
   type: TYPE_NORMAL
+  zh: '|--------------------|---------|------------|--------|------------|-----|----|----|-----|'
 - en: '| (%)                | Mean    | percentile | Median | percentile | Max |    |    |     |'
   id: totrans-1791
   prefs: []
   type: TYPE_TB
+  zh: '| （%）                | 平均值    | 百分位数 | 中位数 | 百分位数 | 最大值 |    |    |     |'
 - en: '| Events per day     |         |            |        |            |     |    |    |     |'
   id: totrans-1792
   prefs: []
   type: TYPE_TB
+  zh: '| 每日事件数     |         |            |        |            |     |    |    |     |'
 - en: '| Days with events   |         |            |        |            |     |    |    |     |'
   id: totrans-1793
   prefs: []
   type: TYPE_TB
+  zh: '| 有事件发生的天数   |         |            |        |            |     |    |    |     |'
 - en: '| Commodity          | Events  |            |        |            |     |    |    |     |'
   id: totrans-1794
   prefs: []
   type: TYPE_TB
+  zh: '| 大宗商品          | 事件数  |            |        |            |     |    |    |     |'
 - en: '| Crude oil          | 316 959 | 4 721      | 99.4   | 67         | 22  | 53
     | 94 | 480 |'
   id: totrans-1795
   prefs: []
   type: TYPE_TB
+  zh: '| 原油          | 316 959 | 4 721      | 99.4   | 67         | 22  | 53 | 94
+    | 480 |'
 - en: '| Gasoline           | 48 838  | 4 407      | 92.8   | 11         | 3   | 7  |
     15 | 147 |'
   id: totrans-1796
   prefs: []
   type: TYPE_TB
+  zh: '| 汽油           | 48 838  | 4 407      | 92.8   | 11         | 3   | 7  | 15
+    | 147 |'
 - en: '| Heating oil        | 6 865   | 3 085      | 65     | 2          | 1   | 2  |
     3  | 46  |'
   id: totrans-1797
   prefs: []
   type: TYPE_TB
+  zh: '| 供暖油        | 6 865   | 3 085      | 65     | 2          | 1   | 2  | 3  |
+    46  |'
 - en: '| Natural gas        | 64 932  | 4 594      | 96.8   | 14         | 6   | 12
     | 19 | 99  |'
   id: totrans-1798
   prefs: []
   type: TYPE_TB
+  zh: '| 天然气        | 64 932  | 4 594      | 96.8   | 14         | 6   | 12 | 19 |
+    99  |'
 - en: Summary statistics for four energy commodities from January 2005 to December
     2017. The numbers are based on the time-shifted data, see Section 9.2.1.
   id: totrans-1799
@@ -13913,6 +14056,8 @@
   id: totrans-1829
   prefs: []
   type: TYPE_NORMAL
+  zh: 换句话说，如果我们在日期 t 和商品 n 的给定事件类别中至少检测到一个新闻故事，则该变量将从 0 转换为 ERS。这意味着新闻故事的权重是基于它们的
+    ERS 进行加权 - 因此给予事件显著特征的新闻故事更高的重要性，例如在标题中突出显示的事件。
 - en: In order for a given event category to be included in the modelling of the commodities
     basket, we require at least 50 days with one or more events across the in-sample
     dataset. This requirement is not optimized and is simply introduced to remove
@@ -13921,6 +14066,7 @@
   id: totrans-1830
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了使给定事件类别包含在商品篮子的建模中，我们需要在样本内数据集中至少有 50 天存在一个或多个事件。此要求没有经过优化，只是为了从考虑中移除非常不频繁的事件类别。此外，我们根据需要删除完全相关的独立变量。
 - en: Finally, we perform feature selection based on the *in-sample* data by requiring
     that there is an absolute correlation of at least 0.5% between each feature and
     our target variable. This results in a reduction of the number of features of
@@ -13929,17 +14075,21 @@
   id: totrans-1831
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，我们根据样本内数据执行特征选择，要求每个特征与目标变量之间的绝对相关性至少为 0.5%。这导致特征数量的减少在样本外年份之间为 37% 到 45%，意味着我们剩下了
+    34–37 个预测因子。
 - en: During preliminary research we found that imposing this restriction on the features
     improved speed and, importantly, in-sample robustness of the five machine learning
     algorithms.8
   id: totrans-1832
   prefs: []
   type: TYPE_NORMAL
+  zh: 在初步研究中，我们发现对特征施加这一限制提高了五种机器学习算法的速度，并且在样本内鲁棒性方面也很重要。
 - en: 9.4 Performance
   id: totrans-1833
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 性能
 - en: All strategies in our study use portfolio weights derived from the predicted
     returns of the models presented in Section 9.3. The sign of a predicted return
     determines the direction of the trade, while the relative size of the predicted
@@ -13949,11 +14099,14 @@
   id: totrans-1834
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们研究中的所有策略都使用从第 9.3 节呈现的模型的预测收益率派生的组合权重。预测收益的符号确定交易方向，而预测收益的相对大小确定组合权重。给定日的预测收益向量被归一化以确保总暴露为
+    1。而净暴露则可以在 -1 到 1 之间变化。所有报告的结果均不包括交易成本。
 - en: 9.4.1 Model Portfolios
   id: totrans-1835
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 模型投资组合
 - en: Table 9.3 shows a set of in-sample performance statistics9 for our five ML models
     across the commodities basket - resulting in five different portfolios.10 Overall,
     we find positive performance, with some rather big discrepancies across the models.
@@ -13964,58 +14117,72 @@
   id: totrans-1836
   prefs: []
   type: TYPE_NORMAL
+  zh: 表 9.3 显示了我们五个 ML 模型在商品篮子中的样本内表现统计数据，从而产生了五个不同的投资组合。总体而言，我们发现有积极的表现，而各模型之间存在相当大的差异。特别是，我们注意到线性模型在所有指标上的表现都不如所有非线性模型，唯一的例外是随机森林（RF）。特别是，梯度增强树（GBN）和人工神经网络（ANN）是样本内表现最佳的模型，其
+    IR 分别为 2.40 和 2.39。
 - en: Having shown the in-sample performance, in Table 9.4 we present the out-ofsample
     results. We find the RF model to be the best performer as it delivers an IR of
     0.85
   id: totrans-1837
   prefs: []
   type: TYPE_NORMAL
+  zh: 在展示了样本内表现之后，在表 9.4 中我们呈现了样本外结果。我们发现 RF 模型是最佳表现者，因为它提供了 0.85 的 IR。
 - en: 9.4.2 Variable Importance
   id: totrans-1838
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 变量重要性
 - en: Statistics ELNET KNN ANN RF GBN
   id: totrans-1839
   prefs: []
   type: TYPE_NORMAL
+  zh: 统计数据 ELNET KNN ANN RF GBN
 - en: Ann. return 17.6% 19.9% 34.6% 7.3% **37.3%** Ann. volatility 15.6% **14.3%**
     14.5% 15.1% 15.5%
   id: totrans-1840
   prefs: []
   type: TYPE_NORMAL
+  zh: 年度收益率 17.6% 19.9% 34.6% 7.3% **37.3%** 年度波动率 15.6% **14.3%** 14.5% 15.1% 15.5%
 - en: IR 1.13 1.39 2.39 0.48 **2.40**
   id: totrans-1841
   prefs: []
   type: TYPE_NORMAL
+  zh: IR 1.13 1.39 2.39 0.48 **2.40**
 - en: Hit ratio 53.5% 54.5% **57.8%** 51.7% 56.0%
   id: totrans-1842
   prefs: []
   type: TYPE_NORMAL
+  zh: 命中率 53.5% 54.5% **57.8%** 51.7% 56.0%
 - en: Max drawdown 22.4% 17.2% **16.34%** 35.9% 17.9%
   id: totrans-1843
   prefs: []
   type: TYPE_NORMAL
+  zh: 最大回撤 22.4% 17.2% **16.34%** 35.9% 17.9%
 - en: Statistics ELNET KNN ANN RF GBN
   id: totrans-1844
   prefs: []
   type: TYPE_NORMAL
+  zh: 统计数据 ELNET KNN ANN RF GBN
 - en: Ann. return 8.5% 11.7% 4.0% **13.1%** 12.3%
   id: totrans-1845
   prefs: []
   type: TYPE_NORMAL
+  zh: 年度收益率 8.5% 11.7% 4.0% **13.1%** 12.3%
 - en: Ann. volatility 15.8% **14.1%** 14.7% 15.4% 16.2%
   id: totrans-1846
   prefs: []
   type: TYPE_NORMAL
+  zh: 年度波动率 15.8% **14.1%** 14.7% 15.4% 16.2%
 - en: IR 0.54 0.83 0.27 **0.85** 0.76 Hit ratio 51.4% 51.7% 50.6% **52.6%** 51.3%
   id: totrans-1847
   prefs: []
   type: TYPE_NORMAL
+  zh: IR 0.54 0.83 0.27 **0.85** 0.76 命中率 51.4% 51.7% 50.6% **52.6%** 51.3%
 - en: Max drawdown 36.2% **19.1%** 45.1% 30.7% 23.6%
   id: totrans-1848
   prefs: []
   type: TYPE_NORMAL
+  zh: 最大回撤 36.2% **19.1%** 45.1% 30.7% 23.6%
 - en: 'For each statistic, the bolded number is the best among the five models. Source:
     RavenPack, January 2018. For each statistic, the bolded number is the best among
     the five models.'
@@ -14114,6 +14281,7 @@
   id: totrans-1861
   prefs: []
   type: TYPE_NORMAL
+  zh: 对最重要变量的分析提供了一个合理的图景。特别是，我们发现与库存相关的类别是最重要的之一，例如库存下降-商品。库存相关的新闻似乎在推动价格方面发挥着重要作用，因为前十大变量中有三个属于这种事件类型。
 - en: Moreover, we also find supply-related news to have a relevant role on price
     dynamics, as news related to resource discoveries, pointing to more supply of
     a commodity in the future, or spills, pointing to a decrease in the supply, also
@@ -14121,11 +14289,13 @@
   id: totrans-1862
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，我们还发现与供应相关的新闻在价格动态中发挥着重要作用，例如与资源发现相关的新闻，指向未来某种商品的供应量增加，或者泄漏事件，指向供应减少，也被证明是未来价格的前十大预测因素之一。
 - en: 9.4.3 Ensemble Portfolio
   id: totrans-1863
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 9.4.3 集合投资组合
 - en: 'In Section 9.4.1 we demonstrated that the energy basket provides overall positive
     returns - both in absolute terms and on a risk-adjusted basis. However, with five
     models to choose from, the question becomes, which one to select? A valid approach
@@ -14135,38 +14305,48 @@
   id: totrans-1864
   prefs: []
   type: TYPE_NORMAL
+  zh: 在第 9.4.1 节中，我们证明了能源篮子提供了总体上的正收益 - 无论是绝对收益还是风险调整后的收益。然而，有了五个模型可供选择，问题就变成了，选择哪一个？一个有效的方法是每年选择前一年表现最好的模型。然而，我们已经表明，依靠模型选择的样本内证据可能导致样本外表现不佳：ANN
+    模型在样本内
 - en: '| Statistics   | ELNET   | KNN   | ANN   | RF    | GBN   | Ensemble   |'
   id: totrans-1865
   prefs: []
   type: TYPE_TB
+  zh: '| 统计 | ELNET | KNN | ANN | RF | GBN | 集合 |'
 - en: '|--------------|---------|-------|-------|-------|-------|------------|'
   id: totrans-1866
   prefs: []
   type: TYPE_NORMAL
+  zh: '|--------------|---------|-------|-------|-------|-------|------------|'
 - en: '| Ann. ret.    | 8.5%    | 11.7% | 4.0%  | 13.1% | 12.3% | 9.8%       |'
   id: totrans-1867
   prefs: []
   type: TYPE_TB
+  zh: '| 公告收益率 | 8.5% | 11.7% | 4.0% | 13.1% | 12.3% | 9.8% |'
 - en: '| Ann. vol.    | 15.8%   | 14.1% | 14.7% | 15.4% | 16.2% | 15.0%      |'
   id: totrans-1868
   prefs: []
   type: TYPE_TB
+  zh: '| 公告波动率 | 15.8% | 14.1% | 14.7% | 15.4% | 16.2% | 15.0% |'
 - en: '| IR           | 0.54    | 0.83  | 0.27  | 0.85  | 0.76  | 0.65       |'
   id: totrans-1869
   prefs: []
   type: TYPE_TB
+  zh: '| 信息比率 | 0.54 | 0.83 | 0.27 | 0.85 | 0.76 | 0.65 |'
 - en: '| Hit ratio    | 51.4%   | 51.7% | 50.6% | 52.6% | 51.3% | 51.1%      |'
   id: totrans-1870
   prefs: []
   type: TYPE_TB
+  zh: '| 命中率 | 51.4% | 51.7% | 50.6% | 52.6% | 51.3% | 51.1% |'
 - en: '| Max DD       | 36.2%   | 19.1% | 45.1% | 30.7% | 23.6% | 38.3%      |'
   id: totrans-1871
   prefs: []
   type: TYPE_TB
+  zh: '| 最大回撤 | 36.2% | 19.1% | 45.1% | 30.7% | 23.6% | 38.3% |'
 - en: 'Source: RavenPack, January 2018.'
   id: totrans-1872
   prefs: []
   type: TYPE_NORMAL
+  zh: 出处：RavenPack，2018 年 1 月。
 - en: IR comparable to the best model - had we chosen this model, this would have
     resulted in the worst out-of-sample performance. An alternative approach is to
     implement an ensemble (Breiman 1994; Mendes-Moreira et al. 2012) strategy whereby
@@ -14177,6 +14357,8 @@
   id: totrans-1873
   prefs: []
   type: TYPE_NORMAL
+  zh: '与最佳模型相当的信息比率 - 如果我们选择了这个模型，这将导致最差的样本外表现。另一种方法是实施一个*集合*（Breiman 1994; Mendes-Moreira
+    等，2012）策略，通过均等权重组合所有五个模型的预测收益 - 从而对哪个模型最好持中立态度。在表 9.5 中，我们重复了我们的能源篮子的绩效统计数据，并为*集合*策略添加了一个额外的列。 '
 - en: By combining the five models, we generate an IR of 0.65 with an annualized return
     of 9.8%. Without any prior knowledge about which of the five models perform best,
     we are able to construct an *ensemble* which is competitive in terms of returns
@@ -14188,19 +14370,24 @@
   id: totrans-1874
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过将五个模型结合起来，我们产生了一个信息比率为 0.65，年化收益率为 9.8%。在没有任何关于这五个模型哪个表现最好的先验知识的情况下，我们能够构建一个竞争力强的*集合*，无论是在绝对收益还是风险调整后的收益方面，都是竞争力强的，并且允许通过模型选择大大降低与模型选择相关的风险，从而降低潜在的过度拟合风险。这突显了为什么*集合*方法尽管依赖于混合模型篮子，但也可以是强大的表现者；在这个特定案例中，我们实现了一个信息比率为
+    0.65，尽管给出了 40%
 - en: weight to models with relatively poor performance (ELNET and ANN).
   id: totrans-1875
   prefs: []
   type: TYPE_NORMAL
+  zh: 对相对表现较差的模型（ELNET 和 ANN）进行加权。
 - en: Since 2015, the *ensemble* basket has yielded a total cumulative return of 29.3%.
   id: totrans-1876
   prefs: []
   type: TYPE_NORMAL
+  zh: 自 2015 年以来，*集合*篮子的累计总收益率为 29.3%。
 - en: In comparison, the equivalent long-only daily-rebalanced benchmark portfolio
     has yielded total returns of −9.0% with an IR of −0.11.
   id: totrans-1877
   prefs: []
   type: TYPE_NORMAL
+  zh: 相比之下，等价的每日重新平衡的多头投资基准组合产生了−9.0%的总回报，IR为−0.11。
 - en: Analyzing the time series of returns, we note the high correlation between our
     best models (RF and KNN) and the *ensemble*, underlining once again the competitiveness
     of the model-agnostic *ensemble* approach. Meanwhile, the correlation between
@@ -14216,15 +14403,19 @@
   id: totrans-1878
   prefs: []
   type: TYPE_NORMAL
+  zh: 分析回报的时间序列，我们注意到我们最佳模型（RF和KNN）与*集合*之间的高相关性，再次强调了与模型无关的*集合*方法的竞争力。同时，*集合*与仅多头篮子之间的相关性为负。在图9.2中，我们绘制了*集合*策略相对于仅多头篮子的累积回报曲线。总的来说，*集合*策略在样本外表现得相当不错，尽管清楚地表明在期间的前半段表现更好，当时全球能源商品普遍暴跌。这表明自2016年中以来可能发生了制度转变
+    - 自那时以来，商品的交易一直波澜不惊 - *集合*模型很难完全捕捉到这一点。在第9.4.5节中，我们将更详细地研究这一点。
 - en: '![179_image_0.png](179_image_0.png)'
   id: totrans-1879
   prefs: []
   type: TYPE_IMG
+  zh: '![179_image_0.png](179_image_0.png)'
 - en: 9.4.4 Ensemble Portfolio - Marginal Contributions
   id: totrans-1880
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 9.4.4 集合投资组合 - 边际贡献
 - en: Having determined that our *ensemble* approach offers a simple yet well-performing
     method for combining our models, in this section we evaluate the performance contribution
     of each commodity to the overall portfolio. In Figure 9.3 we show the dependency
@@ -14235,6 +14426,7 @@
   id: totrans-1881
   prefs: []
   type: TYPE_NORMAL
+  zh: '确定了我们的*集合*方法提供了一种简单而性能良好的方法来组合我们的模型之后，在本节中，我们评估了每种商品对整体投资组合的绩效贡献。在图9.3中，我们展示了投资组合对任何单一商品的依赖性，逐个地排除一个商品以捕捉每种商品的边际贡献时的IR。x轴上的标签参考了从篮子中排除的商品。  '
 - en: By systematically removing one asset at a time from the basket we achieve IRs
     of 0.16–0.69 and annualized returns of 2.9–10.9%. Remarkably, the removal of natural
     gas hurts the portfolio the most, with the IR declining to 0.16, this commodity
@@ -14242,6 +14434,7 @@
   id: totrans-1882
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过逐个从篮子中系统地移除一个资产，我们实现了0.16–0.69的IR和2.9–10.9%的年化回报率。值得注意的是，天然气的移除对投资组合的影响最大，IR下降到0.16，这种商品对投资组合绩效的贡献最大。
 - en: These results also suggest that there may be additional performance to be had
     by modelling each commodity individually, but such a step drastically reduces
     the number of non-zero entries in the explanatory variables, resulting in fewer
@@ -14251,21 +14444,25 @@
   id: totrans-1883
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些结果还表明，通过单独对每种商品建模，可能还可以获得额外的绩效，但是这样一步会大大减少解释变量中的非零条目数量，导致特征更少，可能也会导致更多的偏倚估计。出于这个原因，我们选择了一起对所有四种商品进行建模，这意味着我们假设新闻类别对整个篮子具有相同的影响。
 - en: 9.4.5 Regime Detection In The Ensemble Portfolio
   id: totrans-1884
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 9.4.5 集合投资组合中的制度检测
 - en: Up until now, we have traded all signals generated by our models. While such
     an approach is attractive from a signal diversification point of view, it may
     still be
   id: totrans-1885
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止，我们已经交易了我们的模型生成的所有信号。虽然从信号多样化的角度来看，这种方法很有吸引力，但可能仍然存在
 - en: '![180_image_0.png](180_image_0.png)'
   id: totrans-1886
   prefs: []
   type: TYPE_IMG
+  zh: '![180_image_0.png](180_image_0.png)'
 - en: interesting to evaluate whether our signals perform particularly well during
     certain time periods. For example, volatile market regimes may provide more trading
     opportunities through stronger signals.13 Conversely, quiet markets may allow
@@ -14278,6 +14475,7 @@
   id: totrans-1887
   prefs: []
   type: TYPE_NORMAL
+  zh: 有趣的是评估我们的信号在某些时间段表现特别好。例如，波动性较大的市场制度可能通过更强的信号提供更多的交易机会。相反，安静的市场可能使基本消息对日常回报产生更明显的影响，而不会被嘈杂的波动所掩盖。通过跨越所有制度进行交易，就像在第9.4.3节中的*合集*方法一样，我们可能无法利用任何制度依赖性。换句话说，通过限制我们自己的交易子集，我们可能能够提高每笔交易回报，同时减少总体交易和与之相关的成本。
 - en: We seek to determine whether there are certain regimes in which the portfolio
     performance is particularly strong. Concretely, we illustrate this approach by
     creating various portfolios which only trade the underlying commodities when certain
@@ -14285,6 +14483,7 @@
   id: totrans-1888
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们试图确定是否存在某些制度，使得投资组合表现特别强劲。具体地，我们通过创建仅在满足与实现波动率相关的特定要求时交易基础商品的各种投资组合来说明这种方法。
 - en: We implement this by testing a volatility filter based on (i) the 1-day lagged
     21-day volatility being above its annual average, or (ii) the 1-day lagged 10-day
     volatility being above its 21-day equivalent. In other words, is volatility high
@@ -14294,67 +14493,81 @@
   id: totrans-1889
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们通过测试基于以下条件的波动率过滤器来实现这一点：(i) 1日滞后的21日波动率是否高于其年度平均水平，或(ii) 1日滞后的10日波动率是否高于其21日等价水平。换句话说，波动率相对于过去12个月是高的还是上升的？当至少满足其中一个条件时，我们处于*高*波动率环境中，否则我们处于低波动率环境中。
 - en: In Table 9.6 we present results of conditioning the *ensemble* portfolio from
     Table 9.5 on the two volatility regimes (*high-vol/low-vol*). As can be observed,
     by
   id: totrans-1890
   prefs: []
   type: TYPE_NORMAL
+  zh: 在表格9.6中，我们呈现了对表格9.5中的*合集*组合进行条件化的结果，条件是两个波动率制度(*高波动率/低波动率*)。正如所观察到的那样，通过
 - en: '| Statistics             | In-sample   | Out-of-sample   |         |       |'
   id: totrans-1891
   prefs: []
   type: TYPE_TB
+  zh: '| 统计              | 样本内   | 样本外   |         |       |'
 - en: '|------------------------|-------------|-----------------|---------|-------|'
   id: totrans-1892
   prefs: []
   type: TYPE_NORMAL
+  zh: '|------------------------|-------------|-----------------|---------|-------|'
 - en: '| High-vol               | Low-vol     | High-vol        | Low-vol |       |'
   id: totrans-1893
   prefs: []
   type: TYPE_TB
+  zh: '| 高波动率               | 低波动率     | 高波动率        | 低波动率 |       |'
 - en: '| Ann. return            | 20.12%      | 14.05%          | 21.3%   | −3.0%
     |'
   id: totrans-1894
   prefs: []
   type: TYPE_TB
+  zh: '| 年度回报            | 20.12%      | 14.05%          | 21.3%   | −3.0% |'
 - en: '| Ann. volatility        | 16.3%       | 15.5%           | 16.9%   | 15.3%
     |'
   id: totrans-1895
   prefs: []
   type: TYPE_TB
+  zh: '| 年度波动率        | 16.3%       | 15.5%           | 16.9%   | 15.3% |'
 - en: '| IR                     | 1.23        | 0.91            | 1.27    | −0.20
     |'
   id: totrans-1896
   prefs: []
   type: TYPE_TB
+  zh: '| 信息比率               | 1.23        | 0.91            | 1.27    | −0.20 |'
 - en: '| Hit ratio              | 55.3%       | 54.6%           | 53.9%   | 47.5%
     |'
   id: totrans-1897
   prefs: []
   type: TYPE_TB
+  zh: '| 命中率              | 55.3%       | 54.6%           | 53.9%   | 47.5% |'
 - en: '| Max drawdown           | 35.2%       | 25.1%           | 18.0%   | 62.2%
     |'
   id: totrans-1898
   prefs: []
   type: TYPE_TB
+  zh: '| 最大回撤            | 35.2%       | 25.1%           | 18.0%   | 62.2% |'
 - en: '| Per-trade return (bps) | 8.59        | 8.74            | 8.82    | −1.97
     |'
   id: totrans-1899
   prefs: []
   type: TYPE_TB
+  zh: '| 每笔交易回报（基点） | 8.59        | 8.74            | 8.82    | −1.97 |'
 - en: '| Number of trades       | 6262        | 3043            | 1929    | 811   |'
   id: totrans-1900
   prefs: []
   type: TYPE_TB
+  zh: '| 交易次数               | 6262        | 3043            | 1929    | 811   |'
 - en: The *high-vol* and *low-vol* strategies trade only during periods of high/low
     volatility. The *ensemble* strategy trades irrespective of the volatility regime.
   id: totrans-1901
   prefs: []
   type: TYPE_NORMAL
+  zh: '*高波动率*和*低波动率*策略仅在高/低波动率期间进行交易。*合集*策略则不考虑波动率制度。'
 - en: 'Source: RavenPack, January 2018.'
   id: totrans-1902
   prefs: []
   type: TYPE_NORMAL
+  zh: 来源：RavenPack，2018年1月。
 - en: conditioning on the volatility regime, we are able to find discrepancies in
     performance. In particular, we notice that over the in-sample period, the *high-vol*
     signal outperformed the low-vol one. Although both regimes provide positive returns,
@@ -14364,6 +14577,7 @@
   id: totrans-1903
   prefs: []
   type: TYPE_NORMAL
+  zh: 在波动性制度上进行条件化，我们能够发现性能上的差异。特别是，我们注意到在样本内期间，*高波动率*信号优于低波动率信号。尽管两个制度都提供正回报，但在训练期内，这一观察引发了一个问题，即在交易信号时是否能够通过避免在*低波动率*制度下获得更好的样本外表现。
 - en: Looking at the out-of-sample performance confirms this intuition, as we find
     that periods of *high* volatility yield considerably higher returns, both in absolute
     and in risk-adjusted terms. In particular, the out-of-sample period yields an
@@ -14376,6 +14590,8 @@
   id: totrans-1904
   prefs: []
   type: TYPE_NORMAL
+  zh: 查看样本外表现可以证实这种直觉，我们发现高波动率期间的回报要高得多，无论是绝对还是风险调整后的。特别是，样本外期间与低波动率制度相比，高波动率制度的 IR
+    为 1.27，年化回报率为 21.3%，而低波动率制度的 IR 为 -0.20，年化回报率为 -3.0%。图 9.4 进一步支持了这一差异，我们在图中显示，高波动率策略在整个样本期间内一贯产生优异的回报，特别是在样本外期间的下半段，低波动率策略表现出负面回报。
 - en: In Figure 9.5 we compare the profiles of the out-of-sample cumulative returns
     from the *ensemble* and *high-vol* strategies. In particular, we show that the
     *high-vol* strategy not only yields higher returns but also has the advantage
@@ -14390,6 +14606,9 @@
   id: totrans-1905
   prefs: []
   type: TYPE_NORMAL
+  zh: 在图 9.5 中，我们比较了 *集成* 和 *高波动率* 策略的样本外累积回报的曲线。特别是，我们展示了 *高波动率* 策略不仅产生了更高的回报，而且还具有更为稳健的优势，在样本外期间的大部分时间内都经历了正向趋势。具体来说，高波动率策略提供了更一致的表现，避免了大部分负向趋势，这主要是由于
+    *集成* 在 2017 年大部分时间内所显示的低波动率信号导致的。此外，尽管 *高波动率* 策略的交易次数比 *集成* 少（1929 vs 2740），但通过观察到的每笔交易回报的提升，这一点得到了更好的补偿。通过只交易高波动率信号，我们能够将每笔交易回报与
+    *集成* 相比翻了一番，从 3.38 个基点增加到 8.82 个基点。
 - en: The *ensemble* method is a good starting point for developing a trading portfolio,
     but the results in Table 9.5 and Figures 9.4 and 9.5 underline that it fails to
     fully take into account potential regime shifts seen in the market. This is not
@@ -14401,22 +14620,28 @@
   id: totrans-1906
   prefs: []
   type: TYPE_NORMAL
+  zh: '*集成* 方法是开发交易投资组合的一个很好的起点，但是表 9.5 和图 9.4 和 9.5 中的结果强调了它未能充分考虑到市场中可能出现的潜在制度转变。这并不奇怪，因为我们的
+    *集成* 模型仅包括基于是否触发了雷文帕克事件类别的事件相关性调整的虚拟变量 - 而且仅为一天。更复杂的模型可以包括诸如滞后类别触发、新闻量、情绪或新颖性过滤器，甚至市场数据，例如资产波动性和回报等信息。'
 - en: (Hafez and Lautizi 2017).
   id: totrans-1907
   prefs: []
   type: TYPE_NORMAL
+  zh: (Hafez 和 Lautizi 2017)。
 - en: '![182_image_0.png](182_image_0.png)'
   id: totrans-1908
   prefs: []
   type: TYPE_IMG
+  zh: '![182_image_0.png](182_image_0.png)'
 - en: '![182_image_1.png](182_image_1.png)'
   id: totrans-1909
   prefs: []
   type: TYPE_IMG
+  zh: '![182_image_1.png](182_image_1.png)'
 - en: 'Source: RavenPack, January 2018.'
   id: totrans-1910
   prefs: []
   type: TYPE_NORMAL
+  zh: 来源：RavenPack，2018 年 1 月。
 - en: Moreover, looking at the dynamics of cumulative returns over the full sample,
     we notice that they seem to be affected by seasonality. Preliminary research based
     on splitting the signals into spring–summer vs autumn–winter15 showed that the
@@ -14427,16 +14652,19 @@
   id: totrans-1911
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，通过观察整个样本期间的累积回报动态，我们注意到它们似乎受季节性影响。基于将信号分为春季 - 夏季 vs 秋季 - 冬季的初步研究显示，后者产生了显著更高的回报，这证实了我们关于季节性的直觉。这样的证据与我们的预测模型在寒冷月份预期和实际商品需求的激增时运作更好的假设一致。
 - en: Trying to exploit seasonality to further improve performance is yet another
     interesting direction to investigate in future research.
   id: totrans-1912
   prefs: []
   type: TYPE_NORMAL
+  zh: 试图利用季节性进一步提高绩效是未来研究中值得探索的另一个有趣方向。
 - en: 9.5 Conclusion
   id: totrans-1913
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 9.5 结论
 - en: In this study we set out to evaluate the performance of commodity futures using
     commodity-related news stories captured in RPAs and a suite of five well-known
     machine learning models. We create an energy commodity basket, which contains
@@ -14444,6 +14672,7 @@
   id: totrans-1914
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这项研究中，我们旨在评估使用RPAs捕获的与商品相关的新闻故事以及五种知名机器学习模型的绩效。我们创建了一个能源商品篮子，其中包含四种商品期货，包括原油和天然气。
 - en: We illustrate how the five machine learning models stack up against each other.
     An RF model is the top performer with an IR of 0.85, followed the KNN and the
     GBN. With our linear model (ELNET) among the worst-performing models, our results
@@ -14453,6 +14682,8 @@
   id: totrans-1915
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们说明了五种机器学习模型如何相互比较。RF模型是表现最佳的模型，IR为0.85，其次是KNN和GBN。由于我们的线性模型（ELNET）是表现最差的模型之一，我们的结果表明，其他模型带来的增加的复杂性
+    - 从能够检测到非线性包括交互项 - 明显增加了下一天收益的预测能力。
 - en: Nevertheless, by including all these machine learning techniques, we proceed
     to demonstrate how the implementation of a simple *ensemble* strategy, whereby
     we equally weight all model predictions for the basket, produces robust results.
@@ -14466,6 +14697,8 @@
   id: totrans-1916
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，通过包含所有这些机器学习技术，我们继续展示如何实施一种简单的*整合*策略，即我们平等权衡篮子中所有模型的预测，产生稳健的结果。采取*整合*方法的好处是通过对个别模型的聚合降低偏差和方差
+    - 并且在于不关心什么是最佳个别模型。*整合*方法产生了0.65的IR，年化回报率为9.8%，每笔交易回报率为3.88个基点。我们还说明了如何随着商品组合进入投资组合的比例而变化的集合篮子。具体而言，我们展示了当我们系统地逐一从每个篮子中删除一个商品时，IR如何变化。
 - en: Finally, we demonstrate how volatility regimes impact the performance of our
     basket. In particular, by imposing trading restrictions on our *ensemble* basket,
     we show how both risk-adjusted and per-trade returns can be improved while lowering
@@ -14476,6 +14709,7 @@
   id: totrans-1917
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，我们演示了波动率制度如何影响我们篮子的表现。特别是，通过对我们的*整合*篮子施加交易限制，我们展示了如何在降低交易次数和成本的同时提高风险调整和每笔交易回报，通过整合未在*整合*策略中使用的信息。特别是，我们强调了仅在高波动率制度下进行交易的策略如何导致IR为1.27，同时将每笔交易回报翻了一番。
 - en: Exploratory analysis shows that our predictive signals are potentially more
     profitable during autumn–winter months, which suggests that further research in
     how to model and take advantage of such seasonality in the predictive models represents
@@ -14483,6 +14717,7 @@
   id: totrans-1918
   prefs: []
   type: TYPE_NORMAL
+  zh: 探索性分析表明，我们的预测信号在秋季至冬季月份可能更具盈利潜力，这表明在如何对这种季节性进行建模和利用方面进行进一步研究，是进一步增强这些策略的一个有趣方向。
 - en: The event taxonomy in RPAs has capabilities for commodities trading well beyond
     those investigated in the present study. While we have taken advantage of RPA's
     capability to detect commodity-related news stories at the event category level,
@@ -14490,6 +14725,7 @@
   id: totrans-1919
   prefs: []
   type: TYPE_NORMAL
+  zh: RPAs中的事件分类法在商品交易方面具有远远超出本研究调查范围的能力。虽然我们已经利用了RPA在事件类别水平上检测与商品相关的新闻故事的能力，我们
 - en: disregarded other types of potentially impactful news, for example about the
     global economy, as well as metrics such as the Event Sentiment Score, which we
     used extensively earlier in our research on equities. Lastly, the framework presented
@@ -14499,106 +14735,129 @@
   id: totrans-1920
   prefs: []
   type: TYPE_NORMAL
+  zh: 忽视了其他类型的潜在有影响力的新闻，比如全球经济，以及我们在股票研究中广泛使用的事件情绪评分等指标。最后，这里提出的框架可以很容易地修改或扩展，以包括其他主要受宏观经济影响的资产类别，例如股票指数期货、债券期货和货币。16
 - en: References
   id: totrans-1921
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 参考文献
 - en: Altman, N.S. (1992). An introduction to Kernel and nearest-neighbor nonparametric
     regression.
   id: totrans-1922
   prefs: []
   type: TYPE_NORMAL
+  zh: Altman, N.S. (1992)。核心和最近邻非参数回归简介。
 - en: 'The American Statistician 46 (3): 175–185.'
   id: totrans-1923
   prefs: []
   type: TYPE_NORMAL
+  zh: 《美国统计学家》46(3)：175–185。
 - en: Brandt, M.W. and Gao, L. (2016). *Macro Fundamentals or Geopolitical Events?
     A Textual Analysis of News Events for Crude Oil*. Duke University/University of
     Luxembourg.
   id: totrans-1924
   prefs: []
   type: TYPE_NORMAL
+  zh: Brandt, M.W. 和 Gao, L. (2016)。*宏观基本面还是地缘政治事件？原油新闻事件的文本分析*。杜克大学/卢森堡大学。
 - en: 'Breiman, L. (1994). Stacked regressions. *Machine Learning* 24 (1): 49–64.'
   id: totrans-1925
   prefs: []
   type: TYPE_NORMAL
+  zh: Breiman, L. (1994)。叠加回归。《机器学习》24(1)：49–64。
 - en: 'Breiman, L. (2001). Random forests. *Machine Learning* 45 (1): 5–32.'
   id: totrans-1926
   prefs: []
   type: TYPE_NORMAL
+  zh: Breiman, L. (2001)。随机森林。《机器学习》45(1)：5–32。
 - en: 'Donoho, D.L. (2000). *High-Dimensional Data Analysis: The Curses and Blessings
     of Dimensionality*. Stanford University, Department of Statistics.'
   id: totrans-1927
   prefs: []
   type: TYPE_NORMAL
+  zh: Donoho, D.L. (2000)。*高维数据分析：维度的诅咒与祝福*。斯坦福大学，统计系。
 - en: 'Friedman, J., Hastie, T., and Tibshirani, R. (2000). Additive logistic regression:
     a statistical view of boosting. *The Annals of Statistics* 28 (2): 337–407.'
   id: totrans-1928
   prefs: []
   type: TYPE_NORMAL
+  zh: Friedman, J.、Hastie, T. 和 Tibshirani, R. (2000)。加法逻辑回归：提升的统计视角。《统计学年鉴》28(2)：337–407。
 - en: Hafez, P. and Guerrero-Colón, J.A. (2016). *Earnings Sentiment Consistently
     Outperforms Consensus*. RavenPack Quantitative Research.
   id: totrans-1929
   prefs: []
   type: TYPE_NORMAL
+  zh: Hafez, P. 和 Guerrero-Colón, J.A. (2016)。*收益情绪一直优于共识*。RavenPack 量化研究。
 - en: Hafez, P. and Koefoed, M. (2017a). *Introducing RavenPack Analytics for Equities*.
     RavenPack Quantitative Research.
   id: totrans-1930
   prefs: []
   type: TYPE_NORMAL
+  zh: Hafez, P. 和 Koefoed, M. (2017a)。*介绍 RavenPack 股票分析*。RavenPack 量化研究。
 - en: Hafez, P. and Koefoed, M. (2017b). *A Multi-Topic Approach to Building Quant
     Models*. RavenPack Quantitative Research.
   id: totrans-1931
   prefs: []
   type: TYPE_NORMAL
+  zh: Hafez, P. 和 Koefoed, M. (2017b)。*建立量化模型的多主题方法*。RavenPack 量化研究。
 - en: Hafez, P. and Lautizi, F. (2016). Achieve High Capacity Strategies Trading Economically-Linked
     Companies. RavenPack Quantitative Research.
   id: totrans-1932
   prefs: []
   type: TYPE_NORMAL
+  zh: Hafez, P. 和 Lautizi, F. (2016)。实现高容量策略交易经济联系公司。RavenPack 量化研究。
 - en: Hafez, P. and Lautizi, F. (2017). *Abnormal Media Attention Impacts Stock Returns*.
     RavenPack Quantitative Research.
   id: totrans-1933
   prefs: []
   type: TYPE_NORMAL
+  zh: Hafez, P. 和 Lautizi, F. (2017)。*异常的媒体关注影响股票回报*。RavenPack 量化研究。
 - en: Hastie, T., Tibshirani, R., and Friedman, J. (2009). *The Elements of Statistical
     Learning*, 2e.
   id: totrans-1934
   prefs: []
   type: TYPE_NORMAL
+  zh: Hastie, T.、Tibshirani, R. 和 Friedman, J. (2009)。《统计学习的要素》，第二版。
 - en: Springer Series in Statistics, chapter 11.
   id: totrans-1935
   prefs: []
   type: TYPE_NORMAL
+  zh: 统计学系列，第11章。
 - en: 'Mendes-Moreira, J., Soares, C., Jorge, A.M., and de Sousa, J.F. (2012). Ensemble
     approaches for regression: a survey. *ACM Computing Surveys* 45 (1): Article 10.'
   id: totrans-1936
   prefs: []
   type: TYPE_NORMAL
+  zh: Mendes-Moreira, J.、Soares, C.、Jorge, A.M. 和 de Sousa, J.F. (2012)。回归的集成方法：一项调查。《ACM
+    计算调查》45(1)：Article 10。
 - en: Zou, H. and Hastie, T. (2005). Regularization and variable selection via the
     elastic net. *Journal* of the Royal Statistical Society, 67(2), *301–320*.
   id: totrans-1937
   prefs: []
   type: TYPE_NORMAL
+  zh: Zou, H. 和 Hastie, T. (2005)。通过弹性网络进行正则化和变量选择。《皇家统计学会杂志》，67(2)，*301–320*。
 - en: CHAPTER 10
   id: totrans-1938
   prefs: []
   type: TYPE_NORMAL
+  zh: 第10章
 - en: Natural Language Processing Of Financial News
   id: totrans-1939
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 金融新闻的自然语言处理
 - en: M. Berkan Sesen, Yazann Romahi and Victor Li
   id: totrans-1940
   prefs: []
   type: TYPE_NORMAL
+  zh: M. Berkan Sesen, Yazann Romahi 和 Victor Li
 - en: 10.1 Introduction
   id: totrans-1941
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 10.1 引言
 - en: News has always been a key factor in investment decisions. It is well established
     that company-specific, macroeconomic and political news strongly influence the
     financial markets. As technology advances and the market participants become more
@@ -14610,6 +14869,8 @@
   id: totrans-1942
   prefs: []
   type: TYPE_NORMAL
+  zh: 新闻一直是投资决策的关键因素。众所周知，公司特定、宏观经济和政治新闻都会对金融市场产生强烈影响。随着技术的进步和市场参与者之间联系的加强，新闻的数量和频率正在迅速增长。事实上，过去两年创造的数据量比人类历史上前
+    5000 年还要多。据估计，仅在 2017 年，我们创造的数据量就超过了整个人类历史上的数量（Landro 2016）。其中相当大的一部分来自新闻来源，使得人工处理所有与新闻相关的信息几乎不可能。
 - en: This burgeoning abundance of news data, combined with significant developments
     in machine learning (ML), brought to the fore the application of natural language
     processing (NLP) in finance. NLP is a subfield of artificial intelligence concerned
@@ -14620,6 +14881,8 @@
   id: totrans-1943
   prefs: []
   type: TYPE_NORMAL
+  zh: 新闻数据的激增，加上机器学习（ML）的重大发展，使自然语言处理（NLP）在金融领域得到了应用。NLP 是人工智能的一个子领域，涉及编程计算机以处理自然语言语料库以获得有用的见解。NLP
+    在许多学科中以各种形式呈现，具有各种别名，包括（但不限于）文本分析、文本挖掘、计算语言学和内容分析（Loughran 和 McDonald 2016）。
 - en: The efficient utilization of news data in finance requires identifying relevant
     news in a timely and efficient manner. Major news can have a significant impact
     on the market and investor sentiment, resulting in dynamic shifts in the risk
@@ -14630,6 +14893,8 @@
   id: totrans-1944
   prefs: []
   type: TYPE_NORMAL
+  zh: 在金融中有效利用新闻数据需要及时高效地识别相关新闻。主要新闻可能会对市场和投资者情绪产生重大影响，导致投资宇宙的风险特性动态变化（Mitra 和 Mitra
+    2011）。为了做出明智及时的决策，投资者越来越依赖于程序化解决方案，帮助他们实时提取、处理和解释大量新闻数据。
 - en: Effective NLP models that react to news data are highly sought after, not only
     for asset management and trading but also for risk controls. In finance, NLP is
     commonly used in monitoring, filtering and sentiment analysis of news articles.
@@ -14639,6 +14904,7 @@
   id: totrans-1945
   prefs: []
   type: TYPE_NORMAL
+  zh: 对新闻数据做出反应的有效 NLP 模型非常受欢迎，不仅用于资产管理和交易，还用于风险控制。在金融领域，NLP 通常用于新闻文章的监控、过滤和情感分析。在资产管理的背景下，这些技术可以作为知识提炼工具，使投资组合经理不再被阅读所有已发表的材料的负担所拖累，并允许他们更有选择地关注注意力。
 - en: In this chapter, we look at various aspects of financial news data, contemporary
     academic research on NLP applied to finance and how the industry utilizes these
     methods to gain a competitive edge. We begin our discussion by introducing different
@@ -14648,6 +14914,8 @@
   id: totrans-1946
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论金融新闻数据的各个方面，以及现代学术研究中应用于金融的自然语言处理，并介绍行业如何利用这些方法获得竞争优势。我们将从第 10.2 节介绍新闻数据的不同来源开始我们的讨论。接着，在第
+    10.3 节，我们将回顾现有文献和实际应用中自然语言处理解决金融中不同问题的情况。
 - en: In Section 10.4, we provide a brief summary of the common analytical steps involved
     in NLP analyses, such as preprocessing textual data, feature representation techniques
     for words, and finally getting the inference required from the model and evaluating
@@ -14729,11 +14997,13 @@
   id: totrans-1956
   prefs: []
   type: TYPE_NORMAL
+  zh: 预定的新闻事件示例包括货币政策委员会公告或公司盈利公告。未预定的，即事件驱动的新闻可以是并购公告或业务重组。预定新闻发布的优点是市场参与者准备及时消化和对这些新闻做出反应。由于消费者需求，预定的新闻项目通常以结构化或半结构化格式提供。相比之下，事件驱动的新闻嘈杂，需要对通常是非结构化的文本数据进行持续监控和处理。
 - en: 10.2.3 Social Media
   id: totrans-1957
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 10.2.3 社交媒体
 - en: With news from social media services, the barrier for entry and consequentially
     the signal to noise ratio is low. Social media sources can include tweets, blogs
     and personal posts. Despite the high level of noise and the lack of verification
@@ -14745,6 +15015,7 @@
   id: totrans-1958
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过社交媒体服务获得的新闻，进入门槛以及因此产生的信号噪声比率都很低。社交媒体来源可以包括推文、博客和个人帖子。尽管噪声水平高，缺乏验证和编辑，但由于新闻在网上提供的速度非常快，社交媒体仍然可以作为宝贵的信息来源。事实上，最值得注意的信息传播范式转变发生在社交媒体平台的到来，这些平台使个人以及企业能够即时发布他们对（市场）事件的反应。
 - en: There are many arguments in favour of and against the use of social media. One
     of the arguments in favour is that blog posts or tweets allow one to tap into
     the 'Wisdom of Crowds', which refers to the phenomenon that the aggregation of
@@ -14758,6 +15029,7 @@
   id: totrans-1959
   prefs: []
   type: TYPE_NORMAL
+  zh: 有很多支持和反对使用社交媒体的论点。其中一项支持的论点是，博客文章或推文可以让人们利用“群体智慧”，这是指许多个体提供的信息的聚合往往会产生比任何单个群体成员所做出的预测更好的现象（Bartov等人2017年）。然而，社交媒体帖子可能缺乏可信度，因为大多数提供者没有机制来核实所分享的信息或激励高质量的信息。来自发达国家同期政治选举的轶事证据表明，社交媒体帖子中的信息可能是有意误导的，以服务于发布者自己的议程。
 - en: The use of social media is also gaining popularity for disseminating company
     information as an alternative to primary information providers. In April 2013,
     the SEC approved the use of posts and tweets to communicate corporate announcements
@@ -14766,6 +15038,7 @@
   id: totrans-1960
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用社交媒体作为替代主要信息提供者传播公司信息的做法也越来越受欢迎。2013年4月，证监会批准了使用帖子和推文来传达公司盈利等企业公告。Jung等人（2015年）发现，截至2015年，大约有一半的标准普尔公司
 - en: 1500 firms had either a corporate Twitter account or a Facebook page. It has
     later been reported that firms use social media channels such as Twitter to interact
     with investors in order to attenuate the negative price reactions to consumer
@@ -14773,6 +15046,7 @@
   id: totrans-1961
   prefs: []
   type: TYPE_NORMAL
+  zh: 1500家公司要么有公司Twitter账号，要么有Facebook页面。后来有报道称，公司利用Twitter等社交媒体渠道与投资者互动，以减弱消费产品召回所引起的负面价格反应（Lee等人2015年）。
 - en: NLP models that are built to process and pick up patterns from news are all
     trained using historical data. News data can usually be accessed via subscription
     to the news stream and/or the database of third-party vendors like Bloomberg,
@@ -14783,6 +15057,8 @@
   id: totrans-1962
   prefs: []
   type: TYPE_NORMAL
+  zh: 用于处理新闻并从中提取模式的NLP模型都是使用历史数据训练的。新闻数据通常可以通过订阅新闻流和/或像彭博、汤姆森路透或RavenPack这样的第三方供应商的数据库来访问。另一种常见的方法，更多地被个人投资者使用，是通过网络爬虫来提取有关历史新闻的文本以及元数据，例如来自Rich
+    Site Summary（RSS）源或新闻提供者或监管机构公开的存档。
 - en: Regardless of the categorization, all news items need to be translated into
     a machine readable format by applying a series of transformations. The news articles
     are always timestamped, and in most cases, tagged by the publisher with relevant
@@ -14793,11 +15069,13 @@
   id: totrans-1963
   prefs: []
   type: TYPE_NORMAL
+  zh: 无论如何分类，所有新闻项目都需要通过一系列转换转换为机器可读格式。新闻文章始终带有时间戳，并且在大多数情况下，由发布者标记为相关主题、标记甚至有时甚至是情绪得分。这种元数据有助于处理信息。在讨论自然语言处理（NLP）和对原始文本输入数据应用的常见顺序步骤之前，下一节我们将重点关注NLP在金融中的实际应用。
 - en: 10.3 Practical Applications
   id: totrans-1964
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 10.3 实际应用
 - en: In this section we provide a review of contemporary academic research and industrial
     applications of NLP in finance. One of the seminal studies in NLP applied to financial
     news data was carried out by Niederhoffer (1971). The author investigated the
@@ -14808,12 +15086,14 @@
   id: totrans-1965
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本节中，我们将回顾NLP在金融领域的当代学术研究和工业应用。Niederhoffer（1971年）进行的一项关于应用NLP于金融新闻数据的开创性研究之一。作者调查了《纽约时报》的头条新闻与股价走势的广泛关系，其中头条新闻是从报纸的专栏中手动提取出来的。研究报告称，股价的大幅波动更有可能跟随宏观经济新闻。
 - en: However, the particular category of the news item did not add information on
     the future price movements. Since then, the roles of computers and statistical
     inference in the field have become gradually more prominent.
   id: totrans-1966
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，新闻项目的特定类别并未增加有关未来价格变动的信息。此后，计算机和统计推断在该领域的作用逐渐变得更加突出。
 - en: Today, NLP research in finance focuses on a broad range of topics, from those
     that involve trading and investment decisions to market making and risk systems.
     There a growing number of industrial applications and academic studies that apply
@@ -14824,11 +15104,13 @@
   id: totrans-1967
   prefs: []
   type: TYPE_NORMAL
+  zh: 今天，金融领域的NLP研究涵盖了广泛的主题，从涉及交易和投资决策到市场制造和风险系统的主题。有越来越多的工业应用和学术研究在金融新闻分析中应用NLP。然而，由于明显的知识产权和商业秘密问题，相对较少的工业报告描述了这些技术在金融公司中的专有用途，因此很少公开。
 - en: 10.3.1 Trading And Investment
   id: totrans-1968
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 10.3.1 交易和投资
 - en: One of the most common application areas of NLP in finance is in systematic
     trading and investment, which have seen dramatic growth in the past decade and
     continue to grow rapidly in many venues where equities, futures, options and foreign
@@ -14840,6 +15122,7 @@
   id: totrans-1969
   prefs: []
   type: TYPE_NORMAL
+  zh: NLP在金融领域最常见的应用领域之一是系统性交易和投资，在过去的十年中，这些领域取得了显著增长，并在许多股票、期货、期权和外汇交易的场所继续快速增长。市场参与者将NLP视为通过分析新闻数据来利用预测模式获得竞争优势的众多方法之一。基本原理与投资者可能如何暗示地应用他们对过去市场在类似条件下的行为的知识来预测在当前环境下接下来可能发生的事情高度类似。
 - en: News is considered to be an 'information event' that influences the market microstructure,
     impacting price formation, volatility and the liquidity of a particular security
     or market (Mitra et al. 2015). While the methodologies applied are theoretically
@@ -14847,6 +15130,7 @@
   id: totrans-1970
   prefs: []
   type: TYPE_NORMAL
+  zh: 新闻被认为是影响市场微观结构的“信息事件”，影响价格形成、波动性和特定证券或市场的流动性（Mitra等人，2015年）。虽然理论上应用的方法是与领域无关的，但在交易和投资中的自然语言处理分析在股票领域最为发展。
 - en: The sources of information that researchers tap into for this purpose vary by
     application. Processing SEC filings is quite popular due to the relative ease
     of extracting data from the EDGAR database, as we have discussed in Section 10.2.
@@ -14864,6 +15148,7 @@
   id: totrans-1971
   prefs: []
   type: TYPE_NORMAL
+  zh: 研究人员为此目的而利用的信息来源因应用而异。由于从EDGAR数据库中提取数据相对容易，因此处理SEC文件是非常流行的，正如我们在10.2节中讨论的那样。在2011年的文献调查中，Li（2010）报告称，对公司文件的大多数研究集中在披露的语气或复杂性以及其对收益或股价的影响方面。在Bodnaruk等人（2015）的一项示例研究中，作者们试图通过评估10-K披露中的语气来预测流动性事件，以向股东传达他们的担忧。作者们计算了专有一组限制性词语的频率，例如“义务”、“减值”、“施加”，以衡量10-K文件的语气。他们报告称，“限制性词语的百分比具有非常重要的经济影响。例如，限制性词语数量的一个标准差增加将使股利遗漏的可能性增加10.32%，并将使股利增加的概率减少6.46%”（Bodnaruk等人，2015年）。
 - en: Product prospectuses may serve a similar purpose for predicting returns. Using
     a large sample of initial public offerings (IPOs) during the period 1996–2005,
     Hanley and Hoberg (2010) examine how the tone of the IPO prospectuses impact pricing
@@ -14877,11 +15162,13 @@
   id: totrans-1972
   prefs: []
   type: TYPE_NORMAL
+  zh: 产品说明书可能用于预测收益。汉利和霍伯格（2010）利用1996年至2005年期间大量首次公开发行（IPO）的样本，研究了IPO说明书语气对定价和首日回报的影响。作者将说明书文本分解为标准和信息组件，并发现信息含量较低的说明书会降低定价准确性，因为它暗示了更多依赖投资者在配售书建立期间定价的情况，并导致报价的变化增加以及更高的初始回报。与此相关的一系列研究是情感分析，在流行度不断增长的情况下，值得我们在报道中单独设置一个子部分。
 - en: 10.3.2 Sentiment Analysis
   id: totrans-1973
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 10.3.2 情感分析
 - en: Sentiment analysis aims to analyze the opinion that a body of text conveys on
     a particular subject or entity. In the financial domain, the primary motivation
     behind most sentiment analysis tasks is to relate these opinions to the directionality
@@ -14891,6 +15178,7 @@
   id: totrans-1974
   prefs: []
   type: TYPE_NORMAL
+  zh: 情感分析旨在分析一段文本传达对特定主题或实体的观点。在金融领域，大多数情感分析任务背后的主要动机是将这些观点与未来证券收益的方向联系起来。这与监测新闻报道程度以预测交易量和价格波动的自然语言处理应用形成了对比，后者可以说是更简单的任务。
 - en: Despite its current popularity in the financial domain, the seminal study in
     sentiment analysis actually focused on movie reviews to train an algorithm that
     detects sentiment in text (Lee et al. 2002). Compared with movie reviews, which
@@ -14900,11 +15188,13 @@
   id: totrans-1975
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管情绪分析在金融领域目前很受欢迎，但情绪分析的开创性研究实际上集中在电影评论上，以训练一个能够检测文本情感的算法（Lee et al. 2002）。与电影评论相比，金融新闻的情感提取是一项更加困难的任务，因为增加了噪音和涉及的上下文信息的不确定性。
 - en: In general, sentiment can be modelled as a binary classification of 'positive'
     versus
   id: totrans-1976
   prefs: []
   type: TYPE_NORMAL
+  zh: 通常情况下，情绪可以被建模为二元分类的“积极”对比
 - en: '''negative'' or as an ordinal score that specifies how positive or negative
     an article is. As a supervised learning exercise, sentiment analysis may involve
     manually labelling a training dataset with different sentiment categories/scores
@@ -14916,6 +15206,8 @@
   id: totrans-1977
   prefs: []
   type: TYPE_NORMAL
+  zh: '''negative'' 或作为指定文章积极或消极程度的序数得分。作为一项监督学习练习，情绪分析可能涉及手动将训练数据集标记为不同的情绪类别/分数，然后将这些数据输入到分类或回归算法中。这是一项劳动密集型的工作，可能会受到标记者主观性的负面影响，并且在存在多个注释者的情况下容易出现标记者之间的不一致。事实上，Loughran
+    和 McDonald (2016) 表明金融新闻很容易被错误分类。'
 - en: An alternative to manual labelling is to compile a 'word list' that associates
     words with distinct sentiments. Using such a list, a researcher can count the
     number of words associated with a particular sentiment, whereby a higher proportion
@@ -14927,6 +15219,8 @@
   id: totrans-1978
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个手动标记的替代方法是编制一个将单词与不同情绪相关联的“单词列表”。使用这样的列表，研究人员可以计算与特定情绪相关联的单词的数量，其中新闻文章中悲观词汇比例较高表明负面情绪。虽然
+    NLP 从业者可以选择编制和使用他们自己的专有单词列表，但也存在一些公开可用的列表，如亨利单词列表（Henry 2008），该列表是为金融文本编制的。有了这样的公开可用的单词列表，更容易复制其他研究人员的分析。
 - en: Finally, a more principled approach that removes researcher subjectivity from
     sentiment labelling is to associate the news articles with returns over a prediction
     horizon from the time of the news publication. An example of this is the Reuters
@@ -14937,12 +15231,16 @@
   id: totrans-1979
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，一种更有原则的方法是将研究人员的主观性从情绪标记中删除，即将新闻文章与从新闻发布时间开始的预测时段内的回报相关联。一个例子是路透社新闻范围事件指数（NEIs）(Lo
+    2008)，它们被构造为对资产回报和（实现的）波动率具有“预测”能力。NEI的最佳权重是通过将单词（主题）频率对抗一天中的资产回报进行回归来确定的。
 - en: One of the most prominent applications of sentiment analysis in finance is the
     Reuters NewsScope Sentiment Engine (Reuters 2015), which classifies company-specific
     news according to positive, neutral or negative sentiment. Groß-Klußman and Hautsch
   id: totrans-1980
   prefs: []
   type: TYPE_NORMAL
+  zh: 情绪分析在金融领域最突出的应用之一是路透社新闻范围情感引擎（Reuters 2015），该引擎根据正面、中性或负面情感对公司特定新闻进行分类。Groß-Klußman
+    和 Hautsch
 - en: (2011) investigated to what extent high-frequency movements in returns, volatility
     and liquidity can be explained by the intraday unscheduled news arrivals reported
     by the Reuters NewsScope. The authors concluded that while sentiment labels have
@@ -14952,6 +15250,7 @@
   id: totrans-1981
   prefs: []
   type: TYPE_NORMAL
+  zh: (2011) 调查了高频率的回报、波动率和流动性在多大程度上可以通过路透社新闻报道的一天中未安排的新闻到达来解释。作者得出的结论是，尽管情绪标签对未来价格趋势有一定的可预测性，但新闻到达周围波动率和买卖价差的显著增加使简单基于情绪的交易策略无利可图。
 - en: In a separate study, Heston and Sinha (2017) explored the predictability of
     individual stock returns using sentiment data extracted from the Thomson Reuters
     NewsScope between 2003 and 2010. They report that news sentiment on a particular
@@ -14964,6 +15263,9 @@
   id: totrans-1982
   prefs: []
   type: TYPE_NORMAL
+  zh: 在一项独立研究中，Heston 和 Sinha (2017) 探索了使用 Thomson Reuters NewsScope 从 2003 年到 2010
+    年提取的情感数据预测个别股票回报率的可预测性。他们报告称，特定交易日的新闻情感与随后 1-2 天的股票回报率呈正相关。他们指出，这种预测时间范围的长度严重依赖于投资组合形成程序。同样，Das
+    和 Chen (2007) 得出结论，情感分析在摩根斯坦利高科技 (MSH) 指数水平上提供了一定的解释能力。然而，自相关使得难以确定关系的经验性质。
 - en: In addition to the use of mainstream news, there is an increasing body of research
     focusing on sentiment analysis of social media. An example is Bollen et al. (2011)
     who investigate whether measurements of collective mood states derived from large-scale
@@ -14976,6 +15278,9 @@
   id: totrans-1983
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了使用主流新闻外，越来越多的研究关注社交媒体的情感分析。Bollen 等人 (2011) 的一个例子，他们调查了是否从大规模 Twitter 资料中派生的集体情绪状态测量与随时间变化的道琼斯工业平均指数
+    (DJIA) 的值相关。为了捕捉情绪状态，他们使用 Opinion Finder 和 Google-Profile of Mood States (GPOMS)，前者衡量正面
+    vs 负面情绪，后者以六个维度 (冷静、警觉、确信、活力、友善和快乐) 对情绪进行分类。作者报告称，一些 GPOMS 情绪状态与 DJIA 的变化相匹配。
 - en: values that occur 3–4 days later, while the Opinion Finder mood states seem
     to carry no predictive information. It is also worthwhile to mention that while
     some GPOMS mood states have lagged correlations with DJIA values, the authors
@@ -14984,6 +15289,8 @@
   id: totrans-1984
   prefs: []
   type: TYPE_NORMAL
+  zh: 出现在 3-4 天后的值，而 Opinion Finder 情绪状态似乎不具有预测信息。值得一提的是，尽管一些 GPOMS 情绪状态与 DJIA 值具有滞后相关性，但作者警告称这并不保证公众情绪状态与
+    DJIA 值之间存在因果关系。
 - en: Studies that aim to extract sentiment from primary source news are also common
     place. Huang et al. (2014) use a Naïve Bayes (NB) approach to predict the sentiment
     contained in over 350 000 analyst reports issued for the S&P 500 firms during
@@ -14995,6 +15302,8 @@
   id: totrans-1985
   prefs: []
   type: TYPE_NORMAL
+  zh: 从一手资料中提取情感的研究也很常见。Huang 等人 (2014) 使用朴素贝叶斯 (NB) 方法预测了 S&P 500 公司在 1995 年至 2008
+    年期间发布的 35 万份分析师报告中包含的情感。他们将超过 2700 万个句子从分析师报告中归类为正面、负面或中性情感，并聚合句子级别的意见来确定整体报告情感。他们报告称，投资者对负面文本的反应比对正面文本更强烈，这表明分析师在传播坏消息方面尤为重要。
 - en: The common challenges associated with sentiment analysis in finance include
     the difficulty in extracting a consistent sentiment, the need to determine which
     securities a particular news item refers to (and to what extent), and filtering
@@ -15002,6 +15311,7 @@
   id: totrans-1986
   prefs: []
   type: TYPE_NORMAL
+  zh: 在金融领域进行情感分析所面临的常见挑战包括提取一致情感的困难、确定特定新闻涉及的证券（以及程度）以及过滤新颖的文章。
 - en: those that have been recycled. It is worth mentioning that sentiment analysis
     abounds with data availability and bias issues as well. Moniz et al. (2009) report
     that the volume of news data available for companies depends heavily on their
@@ -15016,6 +15326,9 @@
   id: totrans-1987
   prefs: []
   type: TYPE_NORMAL
+  zh: 已经被回收利用的那些。 值得一提的是，情感分析充斥着数据可用性和偏见问题。 Moniz等人（2009年）报告称，公司可获得的新闻数据量严重依赖于其规模，以至于标普大型欧洲股票指数中规模最大的五分之一的公司占据了所有新闻报道的40％，而规模最小的五分之一仅占5％。
+    除了缺乏市值较小的公司的数据外，一些研究发现，所谓的积极新闻的数量要比消极新闻的数量更多（Das和Chen，2007年）。 相比之下，个别股票价格对负面新闻的反应要比对积极新闻的反应更强烈（Tetlock，2007年）。
+    因此，了解伴随情感分析的常见陷阱是明智的。
 - en: Another methodological challenge with sentiment analysis is the unintentional
     overfitting of the inference algorithm by the NLP practitioner lured by attaining
     improved results and constantly tweaking model parameterization to this end. This
@@ -15028,6 +15341,8 @@
   id: totrans-1988
   prefs: []
   type: TYPE_NORMAL
+  zh: 情感分析面临的另一个方法论挑战是NLP从业者无意中通过诱人的改善结果并不断调整模型参数化而过度拟合推理算法。 这表现在模型过于专门针对训练期间的特殊情况，从而无法很好地推广到新数据。
+    虽然可以认为这是关于应用于金融时间序列的机器学习的更一般性缺陷，但在情感分析中更加突出，因为情感评分和标记涉及的复杂性和自由度更多。
 - en: Finally, as a rule of thumb, following a sentiment analysis exercise the results
     should be examined to verify that the informational 'edge' captured is indeed
     due to the news source and not driven by auto-correlation or concurrent information
@@ -15038,11 +15353,14 @@
   id: totrans-1989
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，作为经验法则，在进行情感分析练习之后，应该检查结果，以验证所捕获的信息“优势”是否确实是由新闻来源产生的，而不是由自相关或其他市场信号的同时信息驱动的。
+    换句话说，应该确认基于情感的预测（例如价格）是否增加了预测市场信号本身的过去价值中不包含的信息。 我们在第10.4.4节中讨论了一些常用的评估指标，以达到这个目的。
 - en: 10.3.3 Market Making
   id: totrans-1990
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 10.3.3 做市商
 - en: Market makers are liquidity providers in financial instruments aiming to make
     a profit on the spread. In a quote-driven market, market makers provide bid and
     ask prices. In an order-driven market, limit orders provide liquidity. In the
@@ -15056,6 +15374,8 @@
   id: totrans-1991
   prefs: []
   type: TYPE_NORMAL
+  zh: 做市商是金融工具中的流动性提供者，旨在通过差价获利。 在报价驱动的市场中，做市商提供买入和卖出价格。 在订单驱动的市场中，限价订单提供流动性。 在做市商的背景下，新闻数据可以用来更新经纪商对交易量、市场深度和波动性的估计，以便扭曲价格并调整买卖价差。
+    做市商希望通过扩大其买卖价差来补偿在重大市场事件发生时暴露于市场的风险。 正如前一节中讨论的，这些事件可以是预定的货币政策公告或未预定的新闻发布，这些事件可能引发相关工具的波动或交易量的激增。
 - en: As we have mentioned, unscheduled news items usually require more time to process
     the meaning of the announcement and formulate appropriate actions. During such
     periods of contemplation, market makers are usually more cautious to trade and
@@ -15066,15 +15386,18 @@
   id: totrans-1992
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们所提到的，不可预期的新闻项目通常需要更多时间来处理公告的含义并制定适当的行动。在这种沉思的时期，市场制造商通常更加谨慎地交易，流动性枯竭。Groß-Klußman和Hautsch（2011）报告称，新闻发布会对买卖价差产生显著影响，但不一定影响市场深度。市场制造商主要通过修订报价而不是订单量来对新闻做出反应。
 - en: This is very much in line with the asymmetric information-based market microstructure
     theory where specialists aim to overcompensate for possible information asymmetries
   id: totrans-1993
   prefs: []
   type: TYPE_NORMAL
+  zh: 这与基于不对称信息的市场微观结构理论非常一致，专家旨在过度弥补可能存在的信息不对称性
 - en: (Mitra et al. 2015).
   id: totrans-1994
   prefs: []
   type: TYPE_NORMAL
+  zh: (Mitra等人 2015)。
 - en: Von Beschwitz et al. (2013) study how providers of media analytics affect the
     market microstructure and, in particular, how their existence affects the stock
     market's reaction to news. They find that providers of media analytics, such as
@@ -15086,11 +15409,13 @@
   id: totrans-1995
   prefs: []
   type: TYPE_NORMAL
+  zh: Von Beschwitz等人（2013）研究了媒体分析提供商如何影响市场微观结构，特别是它们的存在如何影响股票市场对新闻的反应。他们发现，如果一篇文章在RavenPack中得到一致的报道，那么股价和交易量对新闻的调整速度更快。市场暂时对错误的信息作出反应，但随后很快恢复。因此，对市场制造商来说，消化这种类型的信息并根据财经新闻发布情况进行相应定位非常重要。
 - en: 10.3.4 Risk Systems
   id: totrans-1996
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 10.3.4 风险系统
 - en: NLP applications in finance are also used in risk management. As markets grow
     and become more complex, risk management tools evolve to serve more challenging
     demands. Major news events can have a significant impact on the market environment
@@ -15101,6 +15426,7 @@
   id: totrans-1997
   prefs: []
   type: TYPE_NORMAL
+  zh: 金融中的NLP应用也用于风险管理。随着市场的成长和变得更加复杂，风险管理工具不断发展以满足更具挑战性的需求。重大新闻事件可能对市场环境和投资者情绪产生重大影响，从而导致交易证券的风险结构和风险特征发生快速变化。NLP在风险管理中以各种方式使用，从检测和管理事件风险到增强欺诈和内幕交易检测。
 - en: Event risk can be described as the uncertainty posed by unscheduled news that
     causes major market moves over short time intervals. Often cited but rarely managed,
     event risk has largely been consigned to qualitative judgement and manager discretion
@@ -15116,6 +15442,7 @@
   id: totrans-1998
   prefs: []
   type: TYPE_NORMAL
+  zh: 事件风险可以描述为由不可预期的新闻引起的在短时间间隔内导致主要市场波动的不确定性。尽管经常被引用但很少被管理，由于难以量化文本新闻（Healy和Lo 2011），事件风险在很大程度上被归类为定性判断和经理自由裁量权。金融风险中NLP的常见用途之一是作为交易执行算法的熔断器。我们已经讨论过，主要市场事件通常会导致市场制造商提高买卖价差。作为交易的交易对手，资产管理公司和专有交易商可以通过在交易证券上发布“实质性”和“新颖”的新闻时暂时停止当前行动来做出反应。Brown（2011）报告称，将新闻分析用作自动交易策略中的“熔断器”和“狼检测”系统可以帮助增强此类策略的稳健性和可靠性。
 - en: In a similar vein, it may at times be wise to exclude securities that are associated
     with speculative market news from the investment universe. Such speculative news
     events are usually followed by price fluctuations and volatility spikes that constitute
@@ -15126,6 +15453,8 @@
   id: totrans-1999
   prefs: []
   type: TYPE_NORMAL
+  zh: 类似地，有时排除与投资宇宙相关的投机市场新闻的证券可能是明智的。这类投机性新闻事件通常会引发价格波动和波动性飙升，构成不可分散的，即特异性的风险。在第
+    10.5 节中，我们提供了一个真实的 NLP 应用，旨在准确区分与并购相关的新闻文章标题和不相关的标题，以减少并购公告造成的特异性风险。
 - en: Another application field for NLP in financial risk management is outlier detection
     to identify anomalous activity and fraudulent reports. Purda and Skillicorn (2015)
     analyze 10-K filings to distinguish between fraudulent and truthful reports based
@@ -15140,6 +15469,8 @@
   id: totrans-2000
   prefs: []
   type: TYPE_NORMAL
+  zh: NLP 在金融风险管理中的另一个应用领域是异常检测，以识别异常活动和欺诈性报告。Purda 和 Skillicorn（2015）分析 10-K 报告，以区分基于报告中管理层讨论和分析部分所使用的语言的欺诈性和真实性报告。他们的方法论在于识别一些报告与同一公司发布的报告之间的显著偏差，突出了使用公司自身作为控制对象的效力。在异常检测方面的类似研究也可能在检测不规律模式时受到欢迎。除了讨论的用例外，NLP
+    还可以用于改进内部财务报告，并及时更新关键事项，特别是合规方面。对元数据进行文本分析和内容的‘理解’使人能够高效地跟踪
 - en: changes to regulatory requirements and determine compliance-related costs (LaPlanter
     and Coleman 2017). As such, NLP can significantly reduce the manual processing
     required to ensure regulatory and legal compliance and can facilitate communications
@@ -15147,6 +15478,7 @@
   id: totrans-2001
   prefs: []
   type: TYPE_NORMAL
+  zh: 法规要求的变化和确定与合规相关的成本（LaPlanter 和 Coleman，2017）。因此，NLP 可以显著减少确保法规和法律合规所需的手动处理，并且可以通过从不同业务线聚合相关数据来促进与监管机构的沟通。
 - en: It is important to note that textual analysis of financial news items can also
     have its unintended consequences. The improved speed that NLP provides us to respond
     to news also increases the requirement that the response be the right one. Responding
@@ -15159,11 +15491,15 @@
   id: totrans-2002
   prefs: []
   type: TYPE_NORMAL
+  zh: 需要注意的是，对财经新闻进行文本分析也可能带来意想不到的后果。NLP 带来的提速也增加了对正确回应新闻的要求。快速但错误地回应可能会带来危险。例如，2013
+    年 4 月，一条关于白宫爆炸的误导性推文引发了一次微型闪崩，结果有些人迅速将责任归咎于算法。同年晚些时候，汤姆逊路透因为将经济数据发布的几秒钟提前出售给高频交易公司而受到指责（von
+    Beschwitz 等，2013）。在接下来的部分中，我们将专注于 NLP 的技术方面。
 - en: 10.4 Natural Language Processing
   id: totrans-2003
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 10.4 自然语言处理
 - en: As we have already established, NLP is a subfield of artificial intelligence
     concerned with programming computers to process textual data in order to gain
     useful insights. It transcends many disciplines in various guises and names, such
@@ -15176,6 +15512,7 @@
   id: totrans-2004
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们已经确定的，NLP是人工智能的一个子领域，关注于编程计算机以处理文本数据以获得有用的见解。它以多种形式和名称跨越许多学科，如文本分析，文本挖掘，计算语言学和内容分析。前一节涵盖的所有NLP应用都需要经过一些共同的顺序步骤，例如对文本数据进行预处理以及在将其输入统计推断算法之前将单词表示为预测特征。在本节中，我们将更详细地看一下所有NLP任务中都需要的这些常见步骤。
 - en: Naturally, any statistical analysis begins with collecting data. For NLP applications
     in finance, different methods used to gather data include subscribing to the news
     feeds of primary information providers like Reuters or Bloomberg, or web-crawling
@@ -15185,6 +15522,7 @@
   id: totrans-2005
   prefs: []
   type: TYPE_NORMAL
+  zh: 自然地，任何统计分析都始于数据收集。对于金融中的NLP应用，用于收集数据的不同方法包括订阅主要信息提供者的新闻源，如路透社或彭博社，或使用自定义脚本进行Web爬取以提取文本数据以及有关历史新闻的元数据，例如从RSS源，或从新闻提供者或监管机构的公开可用档案中提取。
 - en: Once the data is collected, the NLP practitioner will need to first preprocess
     and clean the data and reduce noise where possible. After preprocessing, it is
     important to choose a feature representation method suitable for the data and
@@ -15195,6 +15533,7 @@
   id: totrans-2006
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦数据被收集，NLP从业者将需要首先对数据进行预处理和清理，并尽可能减少噪音。预处理后，选择适合数据和手头任务的特征表示方法非常重要。一旦单词被转换为预测特征，它们就可以被馈送到统计推断算法中以提取有用的见解。图10.1说明了这种常见的NLP流水线，这在很大程度上与包括在一般机器学习分析中的步骤重叠。
 - en: In the next four sections, we will discuss the sequential steps depicted in
     Figure 10.1 in slightly more detail. We intentionally keep our coverage conceptual
     and aim to give a flavour of these commonly used steps rather than offering a
@@ -15202,11 +15541,13 @@
   id: totrans-2007
   prefs: []
   type: TYPE_NORMAL
+  zh: 在接下来的四节中，我们将稍微详细地讨论图10.1中描绘的顺序步骤。我们有意保持我们的覆盖范围概念化，并旨在给出这些常用步骤的风格而不是提供彻底的技术讨论。
 - en: 10.4.1 Preprocessing Textual Data
   id: totrans-2008
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 10.4.1 文本数据预处理
 - en: Financial news data is most notably distinguished from quantitative market data
     by its imprecision. In order to feed news data into the computer, we need to transform
     a collection of characters into a format that captures the information conveyed
@@ -15214,10 +15555,12 @@
   id: totrans-2009
   prefs: []
   type: TYPE_NORMAL
+  zh: 金融新闻数据最显著的特点是其不精确性。为了将新闻数据输入计算机，我们需要将一系列字符转换为以捕捉传达的信息为特征的格式
 - en: '![194_image_0.png](194_image_0.png)'
   id: totrans-2010
   prefs: []
   type: TYPE_IMG
+  zh: '![194_image_0.png](194_image_0.png)'
 - en: an unambiguous and precise manner. Below we present some of the most common
     preprocessing and transformation steps applied to textual data. For a more thorough
     coverage of the preprocessing steps discussed in this section, the reader is referred
@@ -15225,6 +15568,7 @@
   id: totrans-2011
   prefs: []
   type: TYPE_NORMAL
+  zh: 以一种明确和精确的方式。下面我们介绍一些应用于文本数据的最常见的预处理和转换步骤。有关本节讨论的预处理步骤的更全面覆盖，读者可以参考Manning等人（2009）。
 - en: 10.4.1.1 Tokenization The first step in most NLP applications is usually to
     tokenize the raw text data, which breaks it up into units called tokens by locating
     word boundaries. However, tokens do not have to be just words; they can be numbers
@@ -15235,6 +15579,7 @@
   id: totrans-2012
   prefs: []
   type: TYPE_NORMAL
+  zh: 10.4.1.1 分词 在大多数NLP应用中，通常首先对原始文本数据进行分词处理，这将通过定位单词边界来将其分解为称为标记的单位。然而，标记不必只是单词；它们可以是数字或标点符号。事实上，分词可能会与去除标点和停用词（极为常见的对NLP任务可能毫无价值的词）捆绑在一起。确定这些停用词显然是一项特定于语言的练习，并且可能涉及不同的子阶段，具体取决于语料库的语言。
 - en: 10.4.1.2 Vocabulary While it is certainly possible to model text as a collection
     of letters, most NLP approaches consider words as the atomic units that serve
     as the predictive features. Vocabulary in the context of NLP refers to the set
@@ -15246,6 +15591,7 @@
   id: totrans-2013
   prefs: []
   type: TYPE_NORMAL
+  zh: 10.4.1.2 词汇表 虽然将文本建模为字母集合是完全可能的，但大多数NLP方法将单词视为作为预测特征的原子单位。在NLP的背景下，词汇表是指出现在待处理语料库中的不同单词集合。限制词汇表的一种常见方式是通过词频，只保留出现频率较高的单词。这导致较不频繁出现的单词被捆绑到一个通用的单词索引中，也可以视为应用特定的停用词移除过程。
 - en: One of the simplest, yet powerful, approaches to NLP is facilitated by targeting
     a few specific words or phrases among others in a given text. Due to ambiguity,
     an excessively large vocabulary is usually more prone to error when compared with
@@ -15256,6 +15602,7 @@
   id: totrans-2014
   prefs: []
   type: TYPE_NORMAL
+  zh: NLP（自然语言处理）中最简单但又强大的方法之一是通过针对给定文本中的少数特定词语或短语进行处理。由于歧义性，过大的词汇量通常比专注于较少明确的词语或短语的测试更容易出错。一种可能的解决方案是在我们的词汇表中省略或捆绑货币金额、数字和URL等标记，因为它们的个体表示会大大扩展词汇表的大小。
 - en: The less frequently encountered words usually include proper nouns, like individual
     or organization names, and limiting the vocabulary size can potentially help with
     regularization, where any company or country name is bundled into a generic index,
@@ -15267,6 +15614,7 @@
   id: totrans-2015
   prefs: []
   type: TYPE_NORMAL
+  zh: 较少遇到的单词通常包括专有名词，如个人或组织名称，限制词汇表的大小可能有助于正则化，其中任何公司或国家名称都被捆绑到一个通用的索引中，从而可能消除偏见。减少词汇表大小类似于机器学习术语中的特征选择。这是机器学习中非常活跃的研究领域，存在比频率更加有原则的技术，如互信息和增益比，用于评分所捕获的不同特征的类别判别信息。
 - en: 10.4.1.3 Part-of-Speech Tagging Part-of-speech (PoS) tagging is the process
     of assigning a token to its grammatical category, e.g. verb, noun, etc., in order
     to understand its role within the sentence. PoS taggers are specialized computer
@@ -15279,12 +15627,14 @@
   id: totrans-2016
   prefs: []
   type: TYPE_NORMAL
+  zh: 10.4.1.3 词性标注 词性标注是将标记分配给其语法类别（例如动词、名词等）的过程，以便了解其在句子中的角色。词性标注器是专门的计算机程序，其接受一个单词序列（即一个句子）作为输入，并提供一个元组列表作为输出，其中每个单词与相关标签相关联。词性标注的一个示例实用性是，如果我们想要根据它们的标签为单词指定不同的权重，重点放在具有高强调的文本段落上，例如在形容词和副词周围的区域。例如，作为情感分析五分类器集成框架的一部分，Das和Chen
 - en: (2007) use an adjective–adverb-based classifier that assumes phrases that use
     adjectives or adverbs contain much of the sentiment and therefore 'deserve' a
     greater weight in word count-based feature representations.
   id: totrans-2017
   prefs: []
   type: TYPE_NORMAL
+  zh: （2007）使用了一个基于形容词和副词的分类器，假设使用形容词或副词的短语包含了大部分情感，因此在基于单词计数的特征表示中‘应该’给予更大的权重。
 - en: 10.4.1.4 Stemming and Lemmatization Both stemming and lemmatization are used
     to reduce words from their derived grammatical forms to their base forms. While
     for most English words stemming and lemmatization generate the same word, the
@@ -15299,17 +15649,20 @@
   id: totrans-2018
   prefs: []
   type: TYPE_NORMAL
+  zh: 10.4.1.4 词干提取和词形还原 词干提取和词形还原都用于将单词从其派生的语法形式减少到其基本形式。虽然对于大多数英语单词，词干提取和词形还原会生成相同的单词，但两者并不相同。词干提取通常在不了解上下文的情况下操作单个单词，并使用一个粗糙的启发式过程，删除派生词缀，希望将单词简化为其词干。相比之下，词形还原旨在以更有原则的方式实现这一点，使用词汇表和单词的形态分析来返回单词的基本形式或字典形式，也称为其词形（Manning等人，2009年）。与词干提取不同，词形还原不仅处理基本的词变化，如单数与复数，还处理诸如将'car'与'automobile'匹配等同义词。
 - en: '''automobile''. Also lemmatization usually requires a PoS tagger beforehand
     to provide the contextual information that it needs to map the words to the appropriate
     lemmas.'
   id: totrans-2019
   prefs: []
   type: TYPE_NORMAL
+  zh: '''automobile''。此外，词形还通常需要先使用词性标注器来提供上下文信息，以便将单词映射到适当的词形。'
 - en: 10.4.2 Representation Of Words As Features
   id: totrans-2020
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 10.4.2 单词的特征表示
 - en: The vast majority of news data is created for human consumption and as such
     is stored in an unstructured format, such as news feed articles, PDF reports,
     social media posts and audio files, which cannot be readily processed by computers.
@@ -15319,6 +15672,7 @@
   id: totrans-2021
   prefs: []
   type: TYPE_NORMAL
+  zh: 绝大多数新闻数据是为人类消费而创建的，因此以无结构的格式存储，例如新闻订阅文章、PDF报告、社交媒体帖子和音频文件，计算机无法直接处理这些数据。在前一节讨论的预处理步骤之后，为了将信息内容传达给统计推理算法，预处理的标记需要转换为预测特征。
 - en: The most commonly used feature representation technique in NLP is the bag-of-words
     model, according to which a document is encoded as an (unordered) set of its words,
     disregarding grammar and word order but retaining multiplicity. After the text
@@ -15328,12 +15682,14 @@
   id: totrans-2022
   prefs: []
   type: TYPE_NORMAL
+  zh: 在自然语言处理中最常用的特征表示技术是词袋模型，根据这个模型，一个文档被编码为其单词的（无序的）集合，忽略语法和单词顺序，但保留了多重性。文本转换为‘词袋’之后，可以计算各种度量来生成预测特征。由词袋模型生成的最常见度量是词项频率，在前一节中已经讨论过。
 - en: In a term frequency representation, all words are assumed to be independent
     and the text is collapsed down to a term-document matrix consisting of rows that
     represent individual words and columns that provide the word counts per document.
   id: totrans-2023
   prefs: []
   type: TYPE_NORMAL
+  zh: 在词项频率表示中，所有单词都被假定为相互独立的，文本被折叠成一个术语-文档矩阵，其中行表示单个单词，列提供每个文档的单词计数。
 - en: This approach has various shortcomings. To begin with, it does not retain the
     order in which words appear and therefore loses context. Consider the Coca-Cola
     Company's 2017 Q3 earnings report headlined 'Net Revenues Down 15%, Driven by
@@ -15344,6 +15700,7 @@
   id: totrans-2024
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种方法存在各种缺点。首先，它不保留单词出现的顺序，因此失去了上下文。考虑可口可乐公司2017年第三季度财报的标题为“净收入下降15％，由于18点重组的阻力下滑；有机收入（非GAAP）增长4％，由价格/混合影响驱动”（可口可乐公司，2017年）。即使在像这样的小文本中，词项频率表示也无法确定什么是‘下降’，什么‘增长’以及由哪个因素驱动。
 - en: Representation of a word's meaning based on its neighbouring words is one of
     the most common extensions beyond the simple bag-of-words approach. N-gram models
     fall under this category, partially addressing the lack of context by storing
@@ -15356,6 +15713,7 @@
   id: totrans-2025
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于相邻单词的词义表示是简单词袋方法之外最常见的扩展之一。N-gram模型属于这一类，部分解决了上下文缺失的问题，通过存储相邻出现的单词序列。因此，例如，一个两个词的n-gram模型，即bigram模型，将文本解析为一组连续的对。这显然有助于捕获单词的共现情况。理论上，通过更大的n，模型可以存储更多的上下文信息。然而，实际上大多数NLP应用程序仅限于bigrams或最好的trigrams，因为全面的n-gram方法可能由于计算和时间限制而具有挑战性。
 - en: Another shortcoming of term frequencies is that common words like pronouns or
     prepositions are almost always the terms with highest frequency in the text, which
     does not necessarily mean that the corresponding word is more important. To address
@@ -15367,6 +15725,8 @@
   id: totrans-2026
   prefs: []
   type: TYPE_NORMAL
+  zh: 词频的另一个缺点是常见词，如代词或介词，几乎总是文本中频率最高的词，这并不一定意味着相应的词更重要。为了解决这个问题，最流行的一种方式是通过文档频率的倒数对词进行加权，即词频-逆文档频率（tf-idf）。Tf-idf是NLP中最流行的词加权方案之一，旨在反映一个词对语料库中文档的重要性（Aizawa
+    2003）。
 - en: An additional dimension across which we should look at feature representation
     in NLP is how the features are encoded. Much of the earlier NLP work encodes words
     as discrete atomic symbols, that is if we have a vocabulary that contains both
@@ -15378,6 +15738,7 @@
   id: totrans-2027
   prefs: []
   type: TYPE_NORMAL
+  zh: 在NLP中，我们应该跨越另一个维度来看待特征表示的方式，即特征是如何编码的。较早的NLP工作大部分将单词编码为离散的原子符号，即如果我们的词汇表中包含'buy'和'acquire'作为不同的词，'acquire'可能被表示为ID-102，'buy'为ID-052。这种编号完全是任意的，并不提供关于这些单个符号之间明显存在的关系的有用信息给学习算法。这意味着模型无法利用其所学到的知识。
 - en: '''buy'' when it is processing a news article that contains ''acquire''. In
     machine learning, this type of feature representation, where categorical features
     are encoded as unique ids, is referred to as ''one-hot-encoding'' and leads to
@@ -15386,6 +15747,7 @@
   id: totrans-2028
   prefs: []
   type: TYPE_NORMAL
+  zh: 在处理包含'acquire'的新闻文章时，'buy'会被识别为购买。在机器学习中，这种特征表示方式，即将分类特征编码为唯一的ID，被称为'one-hot-encoding'，导致数据稀疏性。这意味着我们可能需要更多的数据才能成功训练统计模型。
 - en: Using distributed representations can overcome some of these obstacles. A distributed
     representation, also known as a vector space model, or vector embedding, represents
     words in a continuous vector space where semantically similar words are grouped
@@ -15396,6 +15758,7 @@
   id: totrans-2029
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用分布式表示可以克服一些这些障碍。分布式表示，也称为向量空间模型或向量嵌入，将单词表示为连续的向量空间，其中语义上相似的单词被聚集在一起。回到我们的'acquire'和'buy'的例子，在分布式表示设置中，这两个词在训练后会被映射到向量空间中的附近坐标。因此，遇到这两个看似不同的预测特征的算法可以感知到它们确实密切相关。
 - en: The different approaches that leverage distributed representations can be divided
     into two categories. The first is coined count-based methods (e.g. latent semantic
     analysis (LSA)), which quantify the co-occurrence frequencies of words with other
@@ -15406,6 +15769,7 @@
   id: totrans-2030
   prefs: []
   type: TYPE_NORMAL
+  zh: 利用分布式表示的不同方法可以分为两类。第一类被称为基于计数的方法（例如潜在语义分析（LSA）），它量化了大文本中单词与其他单词的共现频率，并将这些统计映射到每个不同单词的密集向量。第二类是所谓的预测方法，通过迭代更新单词的向量坐标，以更准确地预测单词来训练。
 - en: neighbours. The end result from both models is the same as that of count-based
     models, a set of dense embedding vectors for each distinct word in the vocabulary
     (Tensorflow 2017). The distributed representations, computed using such predictive
@@ -15415,6 +15779,8 @@
   id: totrans-2031
   prefs: []
   type: TYPE_NORMAL
+  zh: 邻居们。两个模型的最终结果与基于计数的模型相同，即词汇表中每个不同单词的一组密集嵌入向量（Tensorflow 2017）。使用这些预测模型计算得到的分布式表示特别有趣，因为向量空间明确地编码了许多语言规律和模式。令人惊讶的是，许多这些模式可以被表示为线性翻译（Mikolov等人
+    2013年）。
 - en: Transfer learning is another recently popular topic that goes hand in hand with
     distributed representations in NLP. The concept has been around for decades and
     refers to the improvement of learning in a new task through the transfer of knowledge
@@ -15425,6 +15791,7 @@
   id: totrans-2032
   prefs: []
   type: TYPE_NORMAL
+  zh: 迁移学习是近年来与NLP中的分布式表示紧密相关的另一个热门话题。这个概念已经存在了几十年，指的是通过从已经学习过的类似领域中的相关任务转移知识，改进在新任务中的学习。在NLP中，知识的转移通常是指重复使用在非常大的语料库上训练过的单词的分布式表示，以应用于更小的、小众的领域。这允许NLP
 - en: practitioner to leverage the semantic information and linguistic patterns captured
     by large-scale studies in their own domain-specific application instead of having
     to rely on what is usually a more niche and limited dataset to relearn the same
@@ -15432,6 +15799,7 @@
   id: totrans-2033
   prefs: []
   type: TYPE_NORMAL
+  zh: 实践者可以利用大规模研究捕获的语义信息和语言模式，应用于自己领域特定的应用，而不必依赖于通常更为小众和有限的数据集来重新学习相同的信息。
 - en: In Section 10.5, we will provide a real-life NLP application used by one of
     the leading asset management firms that uses vector embeddings trained on millions
     of news articles, and apply these to the particular domain of M&A. Among the more
@@ -15440,11 +15808,14 @@
   id: totrans-2034
   prefs: []
   type: TYPE_NORMAL
+  zh: 在第10.5节中，我们将提供一个由一家领先的资产管理公司使用的真实NLP应用示例，该公司使用在数百万篇新闻文章上训练的向量嵌入，并将其应用于M&A的特定领域。其中较常用的预训练向量表示包括Google的Word2Vec（Tensorflow
+    2017）和斯坦福大学的GloVe（Pennington等人2014）。
 - en: While it is not possible to quantify the entire information content of a collection
     of words, the overall goal of feature representation is to maximize this amount.
   id: totrans-2035
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然无法量化一组词的整个信息内容，但特征表示的总体目标是最大化这个量。
 - en: Language is inherently complex and relies not only on the letters and symbols
     that constitute text but also on the human brain's ability to understand connotation
     and context. Hence, developing NLP tools that capture all of the intricacies of
@@ -15455,11 +15826,13 @@
   id: totrans-2036
   prefs: []
   type: TYPE_NORMAL
+  zh: 语言本质上是复杂的，不仅依赖于构成文本的字母和符号，还依赖于人类大脑理解内涵和上下文的能力。因此，随着我们从基于语法的方法转向考虑上下文和语义关联的方法，开发能够捕捉人类交流所有复杂性的自然语言处理工具变得越来越困难。重要的是要意识到，例如，假设单词是独立单元的方法会损失多少上下文。
 - en: 10.4.3 Inference
   id: totrans-2037
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 推理
 - en: Like all other artificial intelligence tasks, the inference generated by an
     NLP application usually needs to be translated into a decision in order to be
     actionable. This natural flow from inference to decision and action is given in
@@ -15674,6 +16047,9 @@
   id: totrans-2059
   prefs: []
   type: TYPE_NORMAL
+  zh: 在时间维度上评估结果的有效性也是至关重要的。当将新闻项目建模为时间序列时，推断的形式是点事件。在回归应用中，在宣布诸如价格、运行波动率等市场数据与这些点事件之间的因果关系之前，验证这种关系的
+    Granger 因果性是很重要的。Granger 因果性是一种假设检验，用于确定一个时间序列是否有助于预测另一个。根据 Granger 因果性，如果时间序列
+    x1 中的信号“Granger 导致”时间序列 x2 中的信号，那么 x1 的过去值应该包含有助于预测 x2 的信息，这些信息超出了仅包含 x2 的过去值的信息。
 - en: For unsupervised learning, the variation in the different algorithms means that
     each technique warrants a different method of evaluating performance. Even different
     clustering techniques do not have well-established common performance metrics
@@ -15686,17 +16062,21 @@
   id: totrans-2060
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于无监督学习，不同算法的变化意味着每种技术都需要不同的性能评估方法。即使是不同的聚类技术之间也没有建立起常见的性能指标。对于 k-means 聚类任务，一种常用的指标是“簇内平方残差和”（也称为惯性），而对于层次聚类，更常用的是“轮廓系数”。对于我们在前一节中讨论过的诸如
+    LSA 和 LDA 之类的主题模型，存在着评估潜在空间的各种指标，如单词插入和主题插入。
 - en: '10.4.5 Example Use Case: Filtering Merger Arbitrage News'
   id: totrans-2061
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 10.4.5 示例用例：过滤合并套利新闻
 - en: In this section we will look at a real-life example of NLP applied to classify
     financial news, specifically to determine whether a news article is related to
     M&A activity.
   id: totrans-2062
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本节中，我们将看一个 NLP 应用于对金融新闻进行分类的实际例子，具体来说是确定一篇新闻文章是否与 M&A 活动相关。
 - en: Merger arbitrage is a well-established investment strategy. In simple terms
     it is a risky bet initiated on the merger announcement date by an investor who
     chooses to bet that the merger will complete. While the profitability of M&A strategies
@@ -15708,6 +16088,8 @@
   id: totrans-2063
   prefs: []
   type: TYPE_NORMAL
+  zh: 合并套利是一种成熟的投资策略。简单来说，这是一种在合并公告日期由投资者发起的风险赌注，他们选择打赌合并将完成。尽管 M&A 策略的盈利能力随着时间的推移而降低，但即使仅基于公开信息（Jetley
+    和 Ji 2010）也仍然可以从这些策略中捕获相当大的风险溢价。传统上，M&A 策略被机构投资者如对冲基金所使用，但随着交易所交易基金（ETF）和共同基金的兴起，它们也越来越受到零售投资者的青睐。
 - en: We have discussed that the efficient utilization of news data in finance requires
     identifying relevant news in a timely and efficient manner. In this context, relevance
     can be with respect to a particular topic, such as mergers, restructurings, tender
@@ -15720,26 +16102,32 @@
   id: totrans-2064
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们已经讨论过，在金融领域高效利用新闻数据需要及时而有效地识别相关新闻。在这种情况下，相关性可以是针对特定主题的，比如合并、重组、要约收购、股东回购或其他资本结构调整。媒体在
+    M&A 交易中的作用已经得到了深入研究。媒体报道可能会影响潜在的有声誉风险的收购公司放弃正在进行中的交易（Liu 和 McConnell 2013）。媒体可能会发布关于吸引报纸读者的公司的投机性并购传闻，这些传闻可能会扭曲价格并导致回报波动。
 - en: (Ahern and Sosyura 2015).
   id: totrans-2065
   prefs: []
   type: TYPE_NORMAL
+  zh: （Ahern 和 Sosyura 2015）。
 - en: Despite its popularity, the characterization of news flows in merger arbitrage
     has received relatively limited attention in the literature. Among the NLP studies
     focused on M&A, several investigate predicting the media-implied completion probability.
   id: totrans-2066
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管其受欢迎程度，但在并购套利中，新闻流的特征化在文献中受到了相对较少的关注。在专注于并购套利的自然语言处理研究中，有几篇研究了预测媒体暗示的完成概率。
 - en: Buehlmaier and Zechner (2014) use a simple Naïve Bayes methodology to analyze
     determinants of merger deal completion on a large sample of merger announcements.
   id: totrans-2067
   prefs: []
   type: TYPE_NORMAL
+  zh: Buehlmaier 和 Zechner（2014）使用简单的朴素贝叶斯方法分析了大量并购公告的完成决定因素。
 - en: They find that M&A-related financial news moves slowly, taking several days
     to be
   id: totrans-2068
   prefs: []
   type: TYPE_NORMAL
+  zh: 他们发现与并购相关的财经新闻传播速度较慢，需要数天的时间才能够
 - en: fully priced in. A simple M&A strategy, which is reinforced by financial news
     content, increases risk-adjusted returns by more than 12 percentage points. More
     recently, the same authors find that merger arbitrage becomes significantly more
@@ -15748,10 +16136,12 @@
   id: totrans-2069
   prefs: []
   type: TYPE_NORMAL
+  zh: 充分定价了。一种简单的并购策略，通过财经新闻内容的支持，将风险调整后的回报率提高了超过 12 个百分点。最近，同一作者发现，如果使用财经新闻来过滤掉完成概率低的交易，那么并购套利的盈利能力将显著提高
 - en: (Buehlmaier and Zechner 2017).
   id: totrans-2070
   prefs: []
   type: TYPE_NORMAL
+  zh: （Buehlmaier 和 Zechner 2017）。
 - en: As exemplified by existing research, it is in general to the investment manager's
     advantage to keep abreast of media coverage that concerns not only new but also
     existing M&A deals. To this end, we investigate the efficacy of a systematic NLP
@@ -15760,6 +16150,7 @@
   id: totrans-2071
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如现有研究所示范的那样，投资经理随时关注不仅关于新的而且关于现有并购交易的媒体报道对其有利。为此，我们调查了一种系统的自然语言处理方法的有效性，该方法旨在准确区分与并购相关的新闻文章标题
 - en: from those that are not. This is achieved by training a supervised learning
     algorithm that can pick up the class-discriminative patterns in news articles
     that were manually labelled as M&A related or unrelated. Our end goal is to utilize
@@ -15771,11 +16162,14 @@
   id: totrans-2072
   prefs: []
   type: TYPE_NORMAL
+  zh: 从那些不相关的新闻中分离出来。这是通过训练一个监督学习算法实现的，该算法能够捕捉到新闻文章中的类别区分模式，这些文章是手动标记为与并购相关或不相关的。我们的最终目标是利用这个自然语言处理模型，即
+    NewsFilter，来推断之前未见的文章是否属于前者还是后者。这被用来及时对官方的并购公告进行行动，以提交套利交易，并从其他股票策略中过滤出与并购交易相关的股票，以减少特异风险。
 - en: 10.5 Data And Methodology
   id: totrans-2073
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 10.5 数据与方法
 - en: Our dataset consisted of 13 000 news headlines retrieved from formal news sources,
     such as Bloomberg, between January 2017 and June 2017. These headlines were manually
     labelled as either 'Related' or 'Unrelated' to merger arbitrage by portfolio managers
@@ -15785,6 +16179,8 @@
   id: totrans-2074
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的数据集包括从 2017 年 1 月至 2017 年 6 月之间从正式新闻来源（如彭博社）检索到的 13,000 条新闻标题。这些标题由一家领先资产管理公司的投资组合经理手动标记为与并购套利相关或不相关。在手动标记结束时，约
+    31% 的数据集被标记为与并购套利相关，其余的被标记为与并购套利不相关。
 - en: We have used relevance tags provided by the date vendor to ascertain which tickers
     a particular news headline concerns. In general, it is quite common for a news
     article to mention multiple companies with varying degrees of emphasis within
@@ -15795,6 +16191,7 @@
   id: totrans-2075
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们使用日期供应商提供的相关标签来确定特定新闻标题涉及哪些股票代码。一般来说，一篇新闻文章可能提及多家公司，其强调程度不同，并且大多数新闻提供商为新闻项目指定相关度分数，量化一篇特定文章关于某个特定公司的程度。在并购领域，由于提到的代码主要是目标公司和收购方，因此相对较少存在歧义。
 - en: Our NLP analysis pipeline consisted of the common steps already discussed in
     Section 10.4. We first preprocessed the manually labelled data to reduce noise
     and transform the input to be machine readable. To this end, the textual news
@@ -15972,84 +16369,114 @@
   id: totrans-2096
   prefs: []
   type: TYPE_NORMAL
+  zh: 第xv行提供了一个集成分类器的预测结果，该分类器对测试集中每篇新闻文章所列行iii和xiv之间的所有传统分类器进行多数表决。 如文献中常报告的那样，集成分类器
 - en: TABLE 10.1 Fivefold cross validated predictive performance results for the NewsFilter
     sample
   id: totrans-2097
   prefs: []
   type: TYPE_NORMAL
+  zh: TABLE 10.1 五折交叉验证的新闻样本预测性能结果
 - en: dataset
   id: totrans-2098
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据集
 - en: '| dataset                                                                                                       |
     Accuracy                    | AUPRC       | AUROC       |             |'
   id: totrans-2099
   prefs: []
   type: TYPE_TB
+  zh: '| 数据集                                                                                                        |
+    准确率                      | AUPRC       | AUROC       |             |'
 - en: '|---------------------------------------------------------------------------------------------------------------|-----------------------------|-------------|-------------|-------------|'
   id: totrans-2100
   prefs: []
   type: TYPE_NORMAL
+  zh: '|---------------------------------------------------------------------------------------------------------------|-----------------------------|-------------|-------------|-------------|'
 - en: '| i                                                                                                             |
     Random Predictor            | 0.498±0.005 | 0.488±0.006 | 0.497±0.005 |'
   id: totrans-2101
   prefs: []
   type: TYPE_TB
+  zh: '| i                                                                                                             |
+    随机预测器                 | 0.498±0.005 | 0.488±0.006 | 0.497±0.005 |'
 - en: '| ii                                                                                                            |
     Prior Predictor             | 0.56±0.01   | 0.421±0.014 | 0.493±0.012 |'
   id: totrans-2102
   prefs: []
   type: TYPE_TB
+  zh: '| ii                                                                                                            |
+    先验预测器                 | 0.56±0.01   | 0.421±0.014 | 0.493±0.012 |'
 - en: '| iii                                                                                                           |
     k-NN                        | 0.793±0.005 | 0.707±0.01  | 0.724±0.003 |'
   id: totrans-2103
   prefs: []
   type: TYPE_TB
+  zh: '| iii                                                                                                           |
+    k-NN                        | 0.793±0.005 | 0.707±0.01  | 0.724±0.003 |'
 - en: '| iv                                                                                                            |
     Nearest Centroid            | 0.793±0.005 | 0.74±0.011  | 0.785±0.007 |'
   id: totrans-2104
   prefs: []
   type: TYPE_TB
+  zh: '| iv                                                                                                            |
+    最近的质心                 | 0.793±0.005 | 0.74±0.011  | 0.785±0.007 |'
 - en: '| v                                                                                                             |
     Sparse Bernoulli NB         | 0.808±0.011 | 0.733±0.008 | 0.756±0.012 |'
   id: totrans-2105
   prefs: []
   type: TYPE_TB
+  zh: '| v                                                                                                             |
+    稀疏伯努利朴素贝叶斯       | 0.808±0.011 | 0.733±0.008 | 0.756±0.012 |'
 - en: '| vi                                                                                                            |
     Sparse Multinomial NB       | 0.812±0.01  | 0.746±0.01  | 0.779±0.012 |'
   id: totrans-2106
   prefs: []
   type: TYPE_TB
+  zh: '| vi                                                                                                            |
+    稀疏多项式朴素贝叶斯       | 0.812±0.01  | 0.746±0.01  | 0.779±0.012 |'
 - en: '| vii                                                                                                           |
     Passive-Aggressive          | 0.833±0.009 | 0.778±0.007 | 0.812±0.008 |'
   id: totrans-2107
   prefs: []
   type: TYPE_TB
+  zh: '| vii                                                                                                           |
+    被动式学习                  | 0.833±0.009 | 0.778±0.007 | 0.812±0.008 |'
 - en: '| viii                                                                                                          |
     Perceptron                  | 0.829±0.009 | 0.774±0.009 | 0.81±0.01   |'
   id: totrans-2108
   prefs: []
   type: TYPE_TB
+  zh: '| viii                                                                                                          |
+    感知器                      | 0.829±0.009 | 0.774±0.009 | 0.81±0.01   |'
 - en: '| ix                                                                                                            |
     Random Forest               | 0.851±0.005 | 0.797±0.009 | 0.812±0.007 |'
   id: totrans-2109
   prefs: []
   type: TYPE_TB
+  zh: '| ix                                                                                                            |
+    随机森林                   | 0.851±0.005 | 0.797±0.009 | 0.812±0.007 |'
 - en: '| x                                                                                                             |
     SVM L1                      | 0.854±0.005 | 0.803±0.008 | 0.83±0.004  |'
   id: totrans-2110
   prefs: []
   type: TYPE_TB
+  zh: '| x                                                                                                             |
+    SVM L1                      | 0.854±0.005 | 0.803±0.008 | 0.83±0.004  |'
 - en: '| xi                                                                                                            |
     SVM L2                      | 0.858±0.006 | 0.808±0.006 | 0.832±0.006 |'
   id: totrans-2111
   prefs: []
   type: TYPE_TB
+  zh: '| xi                                                                                                            |
+    SVM L2                      | 0.858±0.006 | 0.808±0.006 | 0.832±0.006 |'
 - en: '| xii                                                                                                           |
     Linear SVM with L-1 feature | 0.855±0.006 | 0.804±0.009 | 0.829±0.007 |'
   id: totrans-2112
   prefs: []
   type: TYPE_TB
+  zh: '| xii                                                                                                           |
+    使用L-1特征的线性SVM       | 0.855±0.006 | 0.804±0.009 | 0.829±0.007 |'
 - en: '| selection                                                                                                     |                             |             |             |             |'
   id: totrans-2113
   prefs: []
