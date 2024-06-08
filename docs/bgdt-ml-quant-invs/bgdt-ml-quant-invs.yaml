@@ -22959,6 +22959,7 @@
   id: totrans-3080
   prefs: []
   type: TYPE_NORMAL
+  zh: 当使用 BPTT 计算梯度时，错误向后流动。
 - en: Because the same weights are used at each time step in an RNN, its gradients
     depend on the same set of weights, which causes the gradients to either grow without
     bound or vanish (Goodfellow et al. 2016; Hochreiter and Schmidhuber 1997; Pascanu
@@ -22969,12 +22970,16 @@
   id: totrans-3081
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为在 RNN 中每个时间步使用相同的权重，所以它的梯度依赖于相同的权重集，这会导致梯度要么无限增长，要么消失（Goodfellow 等人 2016；Hochreiter
+    和 Schmidhuber 1997；Pascanu 等人 2013）。在第一种情况下，权重会振荡；在第二种情况下，学习长时间滞后需要花费很长时间（Hochreiter
+    和 Schmidhuber 1997）。在梯度爆炸的情况下，有一种被称为裁剪梯度的解决方案（Pascanu 等人。
 - en: 2013), given by the procedure below, where ∧g is the gradient,  is a threshold
     and L is the loss function. But the vanishing gradient problem did not seem to
     have a solution.
   id: totrans-3082
   prefs: []
   type: TYPE_NORMAL
+  zh: 2013），由以下过程给出，其中 ∧g 是梯度， 是阈值，而 L 是损失函数。但是消失梯度问题似乎没有解决方案。
 - en: To solve this problem, Hochreiter and Schmidhuber (1997) introduced the LSTM
     network, similar to the RNN but where the hidden units are replaced by memory
     cells. The LSTM is an elegant solution to the vanishing and exploding gradients
@@ -22985,34 +22990,44 @@
   id: totrans-3083
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了解决这个问题，Hochreiter 和 Schmidhuber（1997）引入了 LSTM 网络，类似于 RNN，但其中隐藏单元被记忆单元替换。LSTM
+    是对 RNN 中遇到的梯度消失和爆炸的优雅解决方案。LSTM 中的隐藏单元（图 13.3）是一个结构，它保存一个内部状态，并且有一个恒定权重的递归连接，使得梯度可以多次传递而不会爆炸或消失（Lipton
+    等人 n.d.）。
 - en: Algorithm 1 Gradient clipping
   id: totrans-3084
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法 1 梯度裁剪
 - en: ̂g ← L
   id: totrans-3085
   prefs: []
   type: TYPE_NORMAL
+  zh: ̂g ← L
 - en: if ||̂g || ≥  then
   id: totrans-3086
   prefs: []
   type: TYPE_NORMAL
+  zh: if ||̂g || ≥  then
 - en: ̂g ←
   id: totrans-3087
   prefs: []
   type: TYPE_NORMAL
+  zh: ̂g ←
 - en: '||̂g ||'
   id: totrans-3088
   prefs: []
   type: TYPE_NORMAL
+  zh: '||̂g ||'
 - en: ̂g end if
   id: totrans-3089
   prefs: []
   type: TYPE_NORMAL
+  zh: ̂g end if
 - en: '![264_image_0.png](264_image_0.png)'
   id: totrans-3090
   prefs: []
   type: TYPE_IMG
+  zh: '![264_image_0.png](264_image_0.png)'
 - en: 'The LSTM network is a set of subnets with recurrent connections, known as memory
     blocks. Each block contains one or more self-connected memory cells and three
     multiplicative units known as the input, output and forget gates, which respectively
@@ -23027,12 +23042,16 @@
   id: totrans-3091
   prefs: []
   type: TYPE_NORMAL
+  zh: LSTM 网络是一组具有递归连接的子网，称为内存块。每个块包含一个或多个自连接内存单元和三个乘法单元，称为输入、输出和遗忘门，它们分别支持单元的读取、写入和重置操作（Graves
+    2012）。门控单元控制梯度通过内存单元的流动，当关闭它们时，允许梯度在不变化的情况下无限传递，使得 LSTM 适用于学习长时间依赖性，从而克服了 RNN
+    遇到的梯度消失问题。我们更详细地描述 LSTM 单元的内部工作。内存单元由输入节点、输入门、内部状态、遗忘门和输出门组成。内存单元中的组件如下：
 - en: '- The input node takes the activation from both the input layer, xt, and the
     hidden state ht−1 at time t−1. The input is then fed to an activation function,
     either a tanh or a sigmoid.'
   id: totrans-3092
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 输入节点从输入层 xt 和时间 t−1 处的隐藏状态 ht−1 中获取激活。然后将输入馈送到激活函数中，可以是 tanh 或 sigmoid。'
 - en: '- The input gate uses a sigmoidal unit that get its input from the current
     data xt and the hidden units at time step t−1. The input gate multiplies the value
     of the input node and because it is a sigmoid unit with range between zero and
@@ -23040,6 +23059,8 @@
   id: totrans-3093
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 输入门使用一个 sigmoid 单元，它从当前数据 xt 和时间步 t−1 处的隐藏单元获取输入。输入门将输入节点的值相乘，并且因为它是一个范围在零和一之间的
+    sigmoid 单元，它可以控制它所乘的信号的流动。'
 - en: '- The internal state has a self-recurrent connection with unit weight, also
     called the constant error carousel in Hochreiter and Schmidhuber (1997), and is
     given by s t = gt ⊙ it +ft ⊙ st−1. The Hadamard product denotes element-wise product
@@ -23047,6 +23068,8 @@
   id: totrans-3094
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 内部状态与单位权重具有自回归连接，也称为 Hochreiter 和 Schmidhuber（1997）中的常量错误旋转木马，并且由 s t = gt
+    ⊙ it +ft ⊙ st−1 给出。Hadamard 乘积表示逐元素乘积，ft 是遗忘门（见下文）。'
 - en: '- The forget gate, ft, was not part of the original model for the LSTM but
     was introduced by Gers et al. (2000). The forget gate multiplies the internal
     state at time step t−1 and in that way can get rid of all the contents in the
@@ -23950,81 +23973,112 @@
   id: totrans-3218
   prefs: []
   type: TYPE_NORMAL
+  zh: '|-------------------------------------------------------------------------------------------------------------|----------------------------------|--------------|----------------|'
 - en: '| Stock                                                                                                       |
     HR                               | Avg Ret %(L) | Avg Ret %(L/S) |'
   id: totrans-3219
   prefs: []
   type: TYPE_TB
+  zh: '| 股票                                                                                                        |
+    HR                               | Avg Ret %(L) | Avg Ret %(L/S) |'
 - en: '| Portfolio 1                                                                                                 |
     0.63                             | 0.18         | 0.27           |'
   id: totrans-3220
   prefs: []
   type: TYPE_TB
+  zh: '| 投资组合 1                                                                                                   |
+    0.63                             | 0.18         | 0.27           |'
 - en: '| Portfolio 2                                                                                                 |
     0.63                             | 0.18         | 0.27           |'
   id: totrans-3221
   prefs: []
   type: TYPE_TB
+  zh: '| 投资组合 2                                                                                                   |
+    0.63                             | 0.18         | 0.27           |'
 - en: '| AAPL                                                                                                        |
     0.63                             | 0.24         | 0.32           |'
   id: totrans-3222
   prefs: []
   type: TYPE_TB
+  zh: '| AAPL                                                                                                        |
+    0.63                             | 0.24         | 0.32           |'
 - en: '| MSFT                                                                                                        |
     0.71                             | 0.29         | 0.45           |'
   id: totrans-3223
   prefs: []
   type: TYPE_TB
+  zh: '| MSFT                                                                                                        |
+    0.71                             | 0.29         | 0.45           |'
 - en: '| FB                                                                                                          |
     0.71                             | 0.31         | 0.42           |'
   id: totrans-3224
   prefs: []
   type: TYPE_TB
+  zh: '| FB                                                                                                          |
+    0.71                             | 0.31         | 0.42           |'
 - en: '| AMZN                                                                                                        |
     0.69                             | 0.27         | 0.41           |'
   id: totrans-3225
   prefs: []
   type: TYPE_TB
+  zh: '| AMZN                                                                                                        |
+    0.69                             | 0.27         | 0.41           |'
 - en: '| JNJ                                                                                                         |
     0.65                             | 0.12         | 0.19           |'
   id: totrans-3226
   prefs: []
   type: TYPE_TB
+  zh: '| JNJ                                                                                                         |
+    0.65                             | 0.12         | 0.19           |'
 - en: '| BRK/B                                                                                                       |
     0.70                             | 0.19         | 0.31           |'
   id: totrans-3227
   prefs: []
   type: TYPE_TB
+  zh: '| BRK/B                                                                                                       |
+    0.70                             | 0.19         | 0.31           |'
 - en: '| JPM                                                                                                         |
     0.62                             | 0.22         | 0.38           |'
   id: totrans-3228
   prefs: []
   type: TYPE_TB
+  zh: '| JPM                                                                                                         |
+    0.62                             | 0.22         | 0.38           |'
 - en: '| XOM                                                                                                         |
     0.70                             | 0.11         | 0.25           |'
   id: totrans-3229
   prefs: []
   type: TYPE_TB
+  zh: '| XOM                                                                                                         |
+    0.70                             | 0.11         | 0.25           |'
 - en: '| GOOGL                                                                                                       |
     0.72                             | 0.31         | 0.50           |'
   id: totrans-3230
   prefs: []
   type: TYPE_TB
+  zh: '| GOOGL                                                                                                       |
+    0.72                             | 0.31         | 0.50           |'
 - en: '| GOOG                                                                                                        |
     0.75                             | 0.32         | 0.52           |'
   id: totrans-3231
   prefs: []
   type: TYPE_TB
+  zh: '| GOOG                                                                                                        |
+    0.75                             | 0.32         | 0.52           |'
 - en: '| BAC                                                                                                         |
     0.70                             | 0.30         | 0.55           |'
   id: totrans-3232
   prefs: []
   type: TYPE_TB
+  zh: '| BAC                                                                                                         |
+    0.70                             | 0.30         | 0.55           |'
 - en: '| PG                                                                                                          |
     0.60                             | 0.60         | 0.90           |'
   id: totrans-3233
   prefs: []
   type: TYPE_TB
+  zh: '| PG                                                                                                          |
+    0.60                             | 0.60         | 0.90           |'
 - en: '| T                                                                                                           |
     0.61                             | 0.80         | 0.22           |'
   id: totrans-3234
@@ -24379,11 +24433,14 @@
   id: totrans-3285
   prefs: []
   type: TYPE_TB
+  zh: '| SVM (10)                                                                                                   |
+    0.55 | 0.11           | 0.14             |'
 - en: '| The table shows the HR and the daily average returns for each model; all
     computations are performed on the |      |                |                  |'
   id: totrans-3286
   prefs: []
   type: TYPE_TB
+  zh: '| 表格显示了每个模型的 HR 和每日平均回报；所有计算都是在 |      |                |                  |'
 - en: The table shows the HR and the daily average returns for each model; all computations
     are performed on the out-of-sample live dataset. The number in parentheses in
     the model name indicates the look-back length of the return series, i.e. trading
@@ -24391,6 +24448,7 @@
   id: totrans-3287
   prefs: []
   type: TYPE_NORMAL
+  zh: 表格显示了每个模型的 HR 和每日平均回报；所有计算都是在样本外的实时数据集上进行的。模型名称中括号中的数字表示回报序列的回顾长度，即交易日数。
 - en: The results of the baseline experiment are shown in Table 13.3. We can see from
     the results that the LSTM improves its performance in the HR and the average daily
     returns in both the long and long-short portfolios. For the SVM, the opposite
@@ -24402,6 +24460,9 @@
   id: totrans-3288
   prefs: []
   type: TYPE_NORMAL
+  zh: 基准实验的结果如表 13.3 所示。从结果可以看出，LSTM 在 HR 和每日平均回报上的表现都有所提升，无论是长期还是长短期投资组合。对于 SVM 来说，情况正好相反，即只有考虑最近的历史数据时，SVM
+    与 LSTM 相比才可比拟。我们使用的历史数据越多，SVM 在所有指标中的表现就越差，无论是长期还是长短期投资组合的 HR 和每日平均回报。这表明，随着我们向后看的时间窗口变长，SVM
+    对训练数据的过度拟合程度越来越严重，而 LSTM 保持稳健。
 - en: 13.7.3.2.3 Results in Different Market Regimes To validate our results for this
     experiment, we performed another experiment on portfolio 1. This time, instead
     of using all 50 stocks as input and output for the model, we picked 40 stocks.
@@ -24414,55 +24475,77 @@
   id: totrans-3289
   prefs: []
   type: TYPE_NORMAL
+  zh: 13.7.3.2.3 不同市场环境下的结果为了验证此实验的结果，我们在投资组合 1 上进行了另一个实验。这一次，我们不是使用全部 50 只股票作为模型的输入和输出，而是挑选了
+    40 只股票。与之前一样，在此投资组合中加入了标准普尔 500、石油和黄金的回报序列。数据分为训练集 66%、验证集（1）11%、验证集（2）11%、实时数据集
+    11%。用于此投资组合的股票列在表 13.4 中，结果显示在表 13.5 中。请注意，投资组合的表现（夏普比率）在金融危机前期（2005-2008 年）达到了顶峰，但在危机期间出现下滑，尽管仍有
 - en: '| AAPL                                                    | MSFT US   | AMZN
     US Equity   | JNJ US   |'
   id: totrans-3290
   prefs: []
   type: TYPE_TB
+  zh: '| AAPL                                                    | MSFT US   | AMZN
+    US Equity   | JNJ US   |'
 - en: '|---------------------------------------------------------|-----------|------------------|----------|'
   id: totrans-3291
   prefs: []
   type: TYPE_NORMAL
+  zh: '|---------------------------------------------------------|-----------|------------------|----------|'
 - en: '| BRK/B                                                   | JPM       | XOM              |
     BAC      |'
   id: totrans-3292
   prefs: []
   type: TYPE_TB
+  zh: '| BRK/B                                                   | JPM       | XOM              |
+    BAC      |'
 - en: '| PG                                                      | T         | WFC              |
     GE       |'
   id: totrans-3293
   prefs: []
   type: TYPE_TB
+  zh: '| PG                                                      | T         | WFC              |
+    GE       |'
 - en: '| CVX                                                     | PFE       | VZ               |
     CMCSA    |'
   id: totrans-3294
   prefs: []
   type: TYPE_TB
+  zh: '| CVX                                                     | PFE       | VZ               |
+    CMCSA    |'
 - en: '| UNH                                                     | C         | HD               |
     KO       |'
   id: totrans-3295
   prefs: []
   type: TYPE_TB
+  zh: '| UNH                                                     | C         | HD               |
+    KO       |'
 - en: '| MRK                                                     | PEP       | INTC             |
     CSCO     |'
   id: totrans-3296
   prefs: []
   type: TYPE_TB
+  zh: '| MRK                                                     | PEP       | INTC             |
+    CSCO     |'
 - en: '| ORCL                                                    | DWDP      | DIS              |
     BA       |'
   id: totrans-3297
   prefs: []
   type: TYPE_TB
+  zh: '| ORCL                                                    | DWDP      | DIS              |
+    BA       |'
 - en: '| AMGN                                                    | MCD       | IBM              |
     MO       |'
   id: totrans-3298
   prefs: []
   type: TYPE_TB
+  zh: '| AMGN                                                    | MCD       | IBM              |
+    MO       |'
 - en: '| MMM                                                     | WMT       | MDT              |
     GILD     |'
   id: totrans-3299
   prefs: []
   type: TYPE_TB
+  zh: '| MMM                                                     | WMT       | MDT              |
+    GILD     |'
 - en: '| CELG                                                    | HON       | BMY              |
     ABT      |'
   id: totrans-3300
@@ -25618,6 +25701,9 @@
   id: totrans-3467
   prefs: []
   type: TYPE_NORMAL
+  zh: Yazann Romahi，博士，特许金融分析师（CFA），董事总经理，是一家美国大型资产管理公司的首席投资官，专注于发展公司的因子式特许经营业务，涵盖替代贝塔和战略性贝塔。
+    在此之前，他是研究和量化策略主管，负责建立反映全球多资产解决方案投资组合的广泛资产配置的量化模型。 Yazann 曾在剑桥大学金融研究中心担任研究分析师，并为多家金融机构提供咨询服务，包括先锋资产管理、普华永道和汇丰银行。
+    Yazann 在剑桥大学获得计算金融/人工智能博士学位，并持有特许金融分析师资格。
 - en: Victor Li, PhD, CFA, executive director, is Head of Equity and Alternative Beta
     Research and a portfolio manager at a major US asset manager. Victor's primary
     focus includes management of the research agenda, as well as model development
@@ -25629,15 +25715,19 @@
   id: totrans-3468
   prefs: []
   type: TYPE_NORMAL
+  zh: Victor Li，博士，特许金融分析师（CFA），执行董事，是一家美国大型资产管理公司的股权和替代性贝塔研究负责人兼投资组合经理。 Victor 的主要职责包括管理研究议程，以及为量化贝塔产品套件开发模型和投资组合管理。
+    Victor 毕业于伦敦帝国理工学院，获得通信与信号处理博士学位，并曾担任全职研究助理。 Victor 在曼彻斯特大学获得了通信工程硕士学位，并且是特许金融分析师。
 - en: charter holder.
   id: totrans-3469
   prefs: []
   type: TYPE_NORMAL
+  zh: 特许持有人。
 - en: Chapter 11
   id: totrans-3470
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 第11章
 - en: Joel Guglietta is Macro Quantitative Portfolio Manager of Graticule Asset Management
     in Hong Kong, managing a multi-assets hedge funds using machine learning algorithms.
     Prior to that Joel was a macro quantitative strategist and portfolio manager for
@@ -25645,6 +25735,8 @@
   id: totrans-3471
   prefs: []
   type: TYPE_NORMAL
+  zh: Joel Guglietta 是 Graticule Asset Management 在香港的宏观量化投资组合经理，使用机器学习算法管理多元资产对冲基金。
+    在此之前，Joel 是亚洲和澳大利亚的对冲基金和投资银行的宏观量化策略师和投资组合经理（Brevan Howard、BTIM、汇丰银行）。
 - en: for more than 12 years. His expertise is in quantitative models for asset allocation,
     portfolio construction and management using a wide range of techniques, including
     machine learning techniques and genetic algorithms. Joel is currently a PhD candidate
@@ -25653,11 +25745,14 @@
   id: totrans-3472
   prefs: []
   type: TYPE_NORMAL
+  zh: 超过12年的工作经验。 他的专长是使用各种技术进行资产配置、投资组合构建和管理的量化模型，包括机器学习技术和遗传算法。 Joel 目前是 GREQAM（由法国国家科学研究中心、巴黎高等社会科学研究院和中央理工学院共同管理的研究单位）的博士候选人。
+    他曾是亚洲许多深度学习和机器学习活动的演讲者。
 - en: Chapter 12
   id: totrans-3473
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 第12章
 - en: Gordon Ritter completed his PhD in Mathematical Physics at Harvard University
     in 2007, where his published work ranged across the fields of quantum computation,
     quantum field theory, differential geometry and abstract algebra. Prior to Harvard
@@ -25725,6 +25820,8 @@
   id: totrans-3478
   prefs: []
   type: TYPE_NORMAL
+  zh: 他的学术合作包括 2013 年在哥伦比亚大学金融与经济学系的访问学者，2010 年在弗里堡大学数学系，以及在印第安纳大学、ESADE 和 CAIA 的演讲，还有包括
+    2017 年和 2010 年的 Quant Summit USA 等行业研讨会。
 - en: Gilberto Batres-Estrada is a senior data scientist at Webstep in Stockholm,
     Sweden, where he works as a consultant developing machine learning and deep learning
     algorithms for Webstep's clients. He develops algorithms in the areas of computer
@@ -25735,17 +25832,21 @@
   id: totrans-3479
   prefs: []
   type: TYPE_NORMAL
+  zh: Gilberto Batres-Estrada 是瑞典斯德哥尔摩 Webstep 公司的高级数据科学家，他在那里担任顾问，为 Webstep 的客户开发机器学习和深度学习算法。他在计算机视觉、目标检测、自然语言处理和金融领域开发算法，为金融、电信、交通等行业的客户提供服务。在此之前，Gilberto
+    曾在瑞典哥德堡的 Assa Bay Capital 公司开发交易算法。他有超过
 - en: nine years of experience in IT working for a semi-government organization in
     Sweden.
   id: totrans-3480
   prefs: []
   type: TYPE_NORMAL
+  zh: 在瑞典半官方机构工作的 IT 经验已达九年。
 - en: Gilberto holds both an MSc in Theoretical Physics from Stockholm university
     and an MSc in Engineering from KTH Royal Institute of Technology in Stockholm,
     with a specialization in applied mathematics and statistics.
   id: totrans-3481
   prefs: []
   type: TYPE_NORMAL
+  zh: Gilberto 拥有瑞典斯德哥尔摩大学理论物理学硕士学位和瑞典皇家理工学院工程学硕士学位，专攻应用数学和统计学。
 - en: Aymeric Moulin is a graduate student at Columbia University in the IEOR department
     where he is majoring in Operations Research. He studied theoretical mathematics
     and physics in classes préparatoires in France and completed a Bachelor of Science
@@ -25754,9 +25855,11 @@
   id: totrans-3482
   prefs: []
   type: TYPE_NORMAL
+  zh: Aymeric Moulin 是哥伦比亚大学IEOR系的研究生，在那里主修运筹学。他在法国的预备班学习理论数学和物理，并在CentraleSupélec工程学院获得理学学士学位，即将获得硕士学位。
 - en: He has spent the past few years focusing on deep learning and reinforcement
     learning applications to financial markets. He is currently an intern at JP Morgan
     in Global Equities.
   id: totrans-3483
   prefs: []
   type: TYPE_NORMAL
+  zh: 过去几年，他一直专注于将深度学习和强化学习应用于金融市场。他目前在 JP Morgan 全球股票部门担任实习生。
