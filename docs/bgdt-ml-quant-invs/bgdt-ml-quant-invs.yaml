@@ -19344,6 +19344,7 @@
   id: totrans-2522
   prefs: []
   type: TYPE_NORMAL
+  zh: 其中 ∈ (0,1) 被称为步长参数。步长参数不必是常数，事实上可以随着每个时间步长而变化。收敛证明通常需要这样做；据推测，生成奖励的MDP具有一些无法通过更好的学习来消除的不可避免的过程噪声，因此TD误差的方差永远不会趋于零。因此，t必须对于大时间步长t趋于零。
 - en: Assuming that all state-action pairs continue to be updated, and assuming a
     variant of the usual stochastic approximation conditions on the sequence of step-size
     parameters (see (12.10) below), the Q-learning algorithm has been shown to converge
@@ -19351,6 +19352,7 @@
   id: totrans-2523
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设所有状态-动作对都继续更新，并假设在一系列步长参数的变体上满足通常的随机逼近条件（见下文的（12.10）），已经证明Q学习算法以概率1收敛到q*。
 - en: In many problems of interest, either the state space, or the action space, or
     both are most naturally modelled as continuous spaces (i.e. sub-spaces of Rd for
     some appropriate dimension d). In such a case, one cannot directly use the algorithm
@@ -19359,6 +19361,7 @@
   id: totrans-2524
   prefs: []
   type: TYPE_NORMAL
+  zh: 在许多感兴趣的问题中，状态空间、行动空间或两者都最自然地建模为连续空间（即适当维度d的Rd的子空间）。在这种情况下，无法直接使用上述算法。此外，上述收敛结果没有以任何明显的方式泛化。
 - en: Many recent studies (for example, Mnih et al. (2015)) have proposed replacing
     the Q-matrix in the above algorithm with a deep neural network. Unlike a lookup
     table, a neural network has a vector of associated parameters, sometimes called
@@ -19367,12 +19370,14 @@
   id: totrans-2525
   prefs: []
   type: TYPE_NORMAL
+  zh: 许多最近的研究（例如，Mnih等人（2015））提出用深度神经网络替换上述算法中的Q矩阵。与查找表不同，神经网络具有一组关联参数，有时称为*权重*。然后我们可以将Q函数写成Q(s,a;)，强调其参数依赖性。
 - en: Instead of iteratively updating values in a table, we will iteratively update
     the parameters, , so that the network learns to compute better estimates of state-action
     values.
   id: totrans-2526
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将不再在表中迭代更新值，而是迭代更新参数，，使得网络学会计算状态-动作值的更好估计。
 - en: Although neural networks are general function approximators, depending on the
     structure of the truly-optimal Q-function q*, it may be the case that a neural
     network learns very slowly, both in terms of the CPU time needed to train and
@@ -19383,6 +19388,8 @@
   id: totrans-2527
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然神经网络是一般的函数逼近器，但根据真正的最优Q函数q*的结构，可能是神经网络学习速度非常慢，无论是在训练所需的CPU时间方面，还是在有效样本使用方面（定义为需要达到可接受结果所需的较低样本数）。网络拓扑结构和各种选择（如激活函数和优化器（Kingma和Ba
+    2014））在训练时间和有效样本使用方面都非常重要。
 - en: In some problems, the use of simpler function-approximators (such as ensembles
     of regression trees) to represent the unknown function Q(s,a;) may lead to much
     faster training time and much more efficient sample use. This is especially true
@@ -19391,6 +19398,7 @@
   id: totrans-2528
   prefs: []
   type: TYPE_NORMAL
+  zh: 在某些问题中，使用更简单的函数逼近器（例如回归树集合）来表示未知函数Q(s,a;)可能会导致更快的训练时间和更有效的样本使用。当q*可以被简单的函数形式（如局部线性形式）很好地逼近时，尤其如此。
 - en: The observant reader will have noticed the similarity of the Q-learning update
     procedure to stochastic gradient descent. This fruitful connection was noted and
     exploited by Baird III and Moore (1999), who reformulate several different learning
@@ -19398,16 +19406,19 @@
   id: totrans-2529
   prefs: []
   type: TYPE_NORMAL
+  zh: 机敏的读者会注意到Q学习更新过程与随机梯度下降的相似性。这种有益的联系是由Baird III和Moore（1999）注意到并利用的，他们将几种不同的学习过程重新阐述为随机梯度下降的特例。
 - en: The convergence of stochastic gradient descent has been studied extensively
     in the stochastic approximation literature (Bottou 2012). Convergence results
     typically require learning rates satisfying the conditions
   id: totrans-2530
   prefs: []
   type: TYPE_NORMAL
+  zh: 随机梯度下降的收敛性在随机逼近文献中已经得到了广泛的研究（Bottou 2012）。收敛结果通常要求满足条件的学习率
 - en: Guida522195 c12.tex V1 - 10/26/2018 7:10am Page 231
   id: totrans-2531
   prefs: []
   type: TYPE_NORMAL
+  zh: Guida522195 c12.tex V1 - 10/26/2018 7:10am Page 231
 - en: $$\sum_{t}\alpha_{t}^{2}<\infty\,\mathrm{and}\,\,\sum_{t}\alpha_{t}=\infty$$
   id: totrans-2532
   prefs: []
