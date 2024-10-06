@@ -1,3836 +1,5481 @@
 - en: '**Index**'
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: '**索引**'
 - en: Absolute return attribution method
+  id: totrans-1
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 绝对收益归因方法
 - en: Accounting data
+  id: totrans-2
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 会计数据
 - en: Accuracy
+  id: totrans-3
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 准确性
 - en: binary classification problems and
+  id: totrans-4
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 二分类问题中的
 - en: measurement of
+  id: totrans-5
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 测量
 - en: AdaBoost implementation
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: AdaBoost 实现
 - en: Adaptable I/O System (ADIOS)
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 可适应 I/O 系统（ADIOS）
 - en: Alternative data
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 替代数据
 - en: Amihud's lambda
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 阿米胡德的 lambda
 - en: Analytics
+  id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分析
 - en: Annualized Sharpe ratio
+  id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 年化夏普比率
 - en: Annualized turnover, in backtesting
+  id: totrans-12
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 年化周转率，在回测中
 - en: Asset allocation
+  id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 资产配置
 - en: classical areas of mathematics used in
+  id: totrans-14
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数学经典领域中的应用
 - en: covariance matrix in
+  id: totrans-15
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 协方差矩阵
 - en: diversification in
+  id: totrans-16
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 多样化中的
 - en: Markowitz's approach to
+  id: totrans-17
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 马科维茨的方法
 - en: Monte Carlo simulations for
+  id: totrans-18
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 蒙特卡罗模拟
 - en: numerical example of
+  id: totrans-19
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数值示例中的
 - en: practical problems in
+  id: totrans-20
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 实际问题中的
 - en: quasi-diagonalization in
+  id: totrans-21
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 准对角化中的
 - en: recursive bisection in
+  id: totrans-22
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 递归二分法中的
 - en: risk-based. *See also* Risk-based asset allocation approaches
+  id: totrans-23
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 基于风险的。*另见* 基于风险的资产配置方法
 - en: tree clustering approaches to
+  id: totrans-24
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 树状聚类方法
 - en: Attribution
+  id: totrans-25
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 归因
 - en: Augmented Dickey-Fuller (ADF) test. *See also* Supremum augmented Dickey-Fuller
     (SADF) test
+  id: totrans-26
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 增强型迪基-福勒（ADF）检验。*另见* 极大值增强型迪基-福勒（SADF）检验
 - en: Average holding period, in backtesting
+  id: totrans-27
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 平均持有期，在回测中
 - en: Average slippage per turnover
+  id: totrans-28
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 每周转平均滑点
 - en: Backfilled data
+  id: totrans-29
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回填数据
 - en: Backtesters
+  id: totrans-30
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回测者
 - en: Backtesting
+  id: totrans-31
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回测
 - en: bet sizing in
+  id: totrans-32
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投注规模中的
 - en: common errors in
+  id: totrans-33
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 常见错误在
 - en: combinatorial purged cross-validation (CPCV) method in
+  id: totrans-34
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 组合清理交叉验证（CPCV）方法中的
 - en: cross-validation (CV) for
+  id: totrans-35
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交叉验证（CV）用于
 - en: customization of
+  id: totrans-36
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 自定义
 - en: definition of
+  id: totrans-37
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 定义
 - en: “false discovery” probability and
+  id: totrans-38
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: “虚假发现”概率和
 - en: flawless completion as daunting task in
+  id: totrans-39
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 无瑕疵完成作为艰巨任务中的
 - en: general recommendations on
+  id: totrans-40
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 一般建议关于
 - en: machine learning asset allocation and
+  id: totrans-41
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 机器学习资产配置和
 - en: purpose of
+  id: totrans-42
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 目的
 - en: as research tool
+  id: totrans-43
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 作为研究工具
 - en: strategy risk and
+  id: totrans-44
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略风险和
 - en: strategy selection in
+  id: totrans-45
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略选择中的
 - en: synthetic data in
+  id: totrans-46
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 合成数据中的
 - en: uses of results of
+  id: totrans-47
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 结果的使用
 - en: walk-forward (WF) method of
+  id: totrans-48
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 前进走法（WF）方法的
 - en: Backtest overfitting
+  id: totrans-49
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回测过拟合
 - en: backtesters’ evaluation of probability of
+  id: totrans-50
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回测者对概率的评估
 - en: bagging to reduce
+  id: totrans-51
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 通过装袋减少
 - en: combinatorial purged cross-validation (CPCV) method for
+  id: totrans-52
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 组合清理交叉验证（CPCV）方法用于
 - en: concerns about risk of
+  id: totrans-53
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 关于风险的关注
 - en: cross-validation (CV) method and
+  id: totrans-54
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交叉验证（CV）方法和
 - en: decision trees and proneness to
+  id: totrans-55
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 决策树及其易感性
 - en: definition of
+  id: totrans-56
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 定义
 - en: discretionary portfolio managers (PMs) and
+  id: totrans-57
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 自主投资组合经理（PMs）和
 - en: estimating extent of
+  id: totrans-58
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 估算范围的
 - en: features stacking to reduce
+  id: totrans-59
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 特征堆叠以减少
 - en: general recommendations on
+  id: totrans-60
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 一般建议关于
 - en: historical simulations in trading rules and
+  id: totrans-61
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 历史模拟在交易规则中的
 - en: hyper-parameter tuning and
+  id: totrans-62
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 超参数调优和
 - en: need for skepticism
+  id: totrans-63
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 需要保持怀疑态度
 - en: optimal trading rule (OTR) framework for
+  id: totrans-64
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最优交易规则（OTR）框架用于
 - en: probability of. *See* Probability of backtest overfitting (PBO)
+  id: totrans-65
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 概率的。*见* 回测过拟合的概率（PBO）
 - en: random forest (RF) method to reduce
+  id: totrans-66
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 随机森林（RF）方法以减少
 - en: selection bias and
+  id: totrans-67
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择偏差和
 - en: support vector machines (SVMs) and
+  id: totrans-68
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 支持向量机（SVMs）和
 - en: trading rules and
+  id: totrans-69
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交易规则和
 - en: walk-forward (WF) method and
+  id: totrans-70
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 前进走法（WF）方法和
 - en: Backtest statistics
+  id: totrans-71
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回测统计
 - en: classification measurements in
+  id: totrans-72
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分类测量中的
 - en: drawdown (DD) and time under water (TuW) in
+  id: totrans-73
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回撤（DD）和水下时间（TuW）中的
 - en: efficiency measurements in
+  id: totrans-74
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 效率测量中的
 - en: general description of
+  id: totrans-75
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 一般描述
 - en: holding period estimator in
+  id: totrans-76
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 持有期估算器中的
 - en: implementation shortfall in
+  id: totrans-77
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 实施短缺中的
 - en: performance attribution and
+  id: totrans-78
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 性能归因和
 - en: performance measurements in
+  id: totrans-79
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 性能测量中的
 - en: returns concentration in
+  id: totrans-80
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 收益集中度
 - en: runs in
+  id: totrans-81
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 运行中的
 - en: run measurements in
+  id: totrans-82
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 运行测量中的
 - en: time-weighted rate of returns (TWRR) in
+  id: totrans-83
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 时间加权收益率（TWRR）中的
 - en: timing of bets from series of target positions in
+  id: totrans-84
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 从一系列目标位置中下注的时机
 - en: types of
+  id: totrans-85
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 类型的
 - en: Bagging
+  id: totrans-86
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 装袋
 - en: accuracy improvement using
+  id: totrans-87
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用准确性改进
 - en: boosting compared with
+  id: totrans-88
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与提升相比
 - en: leakage reduction using
+  id: totrans-89
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用泄露减少的
 - en: observation redundancy and
+  id: totrans-90
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 观察冗余和
 - en: overfitting reduction and
+  id: totrans-91
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 过拟合减少和
 - en: random forest (RF) method compared with
+  id: totrans-92
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 随机森林（RF）方法与
 - en: scalability using
+  id: totrans-93
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用可扩展性
 - en: variance reduction using
+  id: totrans-94
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用方差减少的
 - en: Bars (table rows)
+  id: totrans-95
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 条（表格行）
 - en: categories of
+  id: totrans-96
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 种类的
 - en: dollar bars
+  id: totrans-97
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 美元条
 - en: dollar imbalance bars
+  id: totrans-98
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 美元失衡条
 - en: dollar runs bars
+  id: totrans-99
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 美元运行条
 - en: information-driven bars
+  id: totrans-100
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 信息驱动条
 - en: standard bars
+  id: totrans-101
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 标准条
 - en: tick bars
+  id: totrans-102
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 逐笔条
 - en: tick imbalance bars
+  id: totrans-103
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 逐笔失衡条
 - en: tick runs bars
+  id: totrans-104
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 逐笔运行条
 - en: time bars
+  id: totrans-105
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 时间条
 - en: volume bars
+  id: totrans-106
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 体积条
 - en: volume imbalance bars
+  id: totrans-107
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 体积失衡条
 - en: volume runs bars
+  id: totrans-108
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 体积运行条
 - en: Becker-Parkinson volatility algorithm
+  id: totrans-109
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 贝克-帕金森波动性算法
 - en: Bet sizing
+  id: totrans-110
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投注规模
 - en: average active bets approach in
+  id: totrans-111
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 平均主动投注方法在
 - en: bet concurrency calculation in
+  id: totrans-112
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投注并发计算中的
 - en: budgeting approach to
+  id: totrans-113
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 预算方法
 - en: dynamic bet sizes and limit prices in
+  id: totrans-114
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 动态投注规模和限价中的
 - en: holding periods and
+  id: totrans-115
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 持有期和
 - en: investment strategies and
+  id: totrans-116
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投资策略和
 - en: meta-labeling approach to
+  id: totrans-117
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 元标签方法
 - en: performance attribution and
+  id: totrans-118
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 表现归因和
 - en: predicted probabilities and
+  id: totrans-119
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 预测概率和
 - en: runs and increase in
+  id: totrans-120
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 运行和增加
 - en: size discretization in
+  id: totrans-121
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 尺寸离散化在
 - en: strategy-independent approaches to
+  id: totrans-122
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与策略无关的方法
 - en: strategy's capacity and
+  id: totrans-123
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略的容量和
 - en: Bet timing, deriving
+  id: totrans-124
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投注时机，推导
 - en: Betting frequency
+  id: totrans-125
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投注频率
 - en: backtesting and
+  id: totrans-126
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回测和
 - en: computing
+  id: totrans-127
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 计算
 - en: implied precision computation and
+  id: totrans-128
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 隐含精度计算和
 - en: investment strategy with trade-off between precision and
+  id: totrans-129
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投资策略在精度与
 - en: strategy risk and
+  id: totrans-130
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略风险和
 - en: targeting Sharpe ratio for
+  id: totrans-131
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 针对夏普比率的目标
 - en: trade size and
+  id: totrans-132
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交易规模和
 - en: Bias
+  id: totrans-133
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 偏差
 - en: Bid-ask spread estimator
+  id: totrans-134
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 买卖差价估算器
 - en: Bid wanted in competition (BWIC)
+  id: totrans-135
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 竞争中的出价请求（BWIC）
 - en: big data analysis
+  id: totrans-136
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 大数据分析
 - en: Bloomberg
+  id: totrans-137
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 彭博社
 - en: Boosting
+  id: totrans-138
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 提升
 - en: AdaBoost implementation of
+  id: totrans-139
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: AdaBoost 实现中
 - en: bagging compared with
+  id: totrans-140
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与装袋比较
 - en: implementation of
+  id: totrans-141
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 实施
 - en: main advantage of
+  id: totrans-142
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 的主要优势在于
 - en: variance and bias reduction using
+  id: totrans-143
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用方差和偏差减少
 - en: Bootstrap aggregation. *See* Bagging
+  id: totrans-144
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Bootstrap 聚合。*见* 装袋
 - en: Bootstraps, sequential
+  id: totrans-145
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Bootstrap，顺序
 - en: Box-Jenkins analysis
+  id: totrans-146
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Box-Jenkins 分析之间的权衡
 - en: Broker fees per turnover
+  id: totrans-147
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 每次周转的经纪费
 - en: Brown-Durbin-Evans CUSUM test
+  id: totrans-148
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Brown-Durbin-Evans CUSUM 检验
 - en: Cancellation rates
+  id: totrans-149
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 取消率
 - en: Capacity, in backtesting
+  id: totrans-150
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回测中的容量
 - en: Chow-type Dickey-Fuller test
+  id: totrans-151
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Chow 型 Dickey-Fuller 检验
 - en: Chu-Stinchcombe-White CUSUM test
+  id: totrans-152
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Chu-Stinchcombe-White CUSUM 检验
 - en: Classification models
+  id: totrans-153
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分类模型
 - en: Classification problems
+  id: totrans-154
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分类问题
 - en: class weights for underrepresented labels in
+  id: totrans-155
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 针对缺乏代表性标签的类别权重在
 - en: generating synthetic dataset for
+  id: totrans-156
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 生成合成数据集用于
 - en: meta-labeling and
+  id: totrans-157
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 元标记和
 - en: Classification statistics
+  id: totrans-158
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分类统计
 - en: Class weights
+  id: totrans-159
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 类别权重
 - en: decision trees using
+  id: totrans-160
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用决策树
 - en: functionality for handling
+  id: totrans-161
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 处理的功能
 - en: underrepresented label correction using
+  id: totrans-162
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用未代表标签校正
 - en: Cloud systems
+  id: totrans-163
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 云系统
 - en: Combinatorially symmetric cross-validation (CSCV) method
+  id: totrans-164
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 组合对称交叉验证（CSCV）方法
 - en: Combinatorial purged cross-validation (CPCV) method
+  id: totrans-165
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 组合清理交叉验证（CPCV）方法
 - en: algorithm steps in
+  id: totrans-166
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 算法步骤在
 - en: backtest overfitting and
+  id: totrans-167
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回测过拟合和
 - en: combinatorial splits in
+  id: totrans-168
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 组合分裂在
 - en: definition of
+  id: totrans-169
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 定义为
 - en: examples of
+  id: totrans-170
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 示例
 - en: Compressed markets
+  id: totrans-171
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 压缩市场
 - en: Computational Intelligence and Forecasting Technologies (CIFT) project
+  id: totrans-172
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 计算智能与预测技术（CIFT）项目
 - en: Adaptable I/O System (ADIOS) and
+  id: totrans-173
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 可适应输入/输出系统（ADIOS）和
 - en: business applications developed by
+  id: totrans-174
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 由开发的商业应用
 - en: Flash Crash of 2010 response and
+  id: totrans-175
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 2010年闪电崩盘的响应和
 - en: mission of
+  id: totrans-176
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使命在于
 - en: Conditional augmented Dickey-Fuller (CADF) test
+  id: totrans-177
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 条件增强 Dickey-Fuller（CADF）检验
 - en: Correlation to underlying, in backtesting
+  id: totrans-178
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与基础资产的相关性，在回测中
 - en: Corwin-Schultz algorithm
+  id: totrans-179
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Corwin-Schultz 算法
 - en: Critical Line Algorithm (CLA)
+  id: totrans-180
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 临界线算法（CLA）
 - en: description of
+  id: totrans-181
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 描述
 - en: Markowitz's development of
+  id: totrans-182
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 马科维茨的开发
 - en: Monte Carlo simulations using
+  id: totrans-183
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用蒙特卡罗模拟
 - en: numerical example with
+  id: totrans-184
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 带有
 - en: open-source implementation of
+  id: totrans-185
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 开源实现的
 - en: practical problems with
+  id: totrans-186
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 实际问题与
 - en: Cross-entropy loss (log loss) scoring
+  id: totrans-187
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交叉熵损失（对数损失）评分
 - en: Cross-validation (CV)
+  id: totrans-188
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交叉验证（CV）
 - en: backtesting through
+  id: totrans-189
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 通过回测
 - en: combinatorial purged cross-validation (CPCV) method in
+  id: totrans-190
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 组合清理交叉验证（CPCV）方法在
 - en: embargo on training observations in
+  id: totrans-191
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 对训练观察的禁令在
 - en: failures in finance using
+  id: totrans-192
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用中的金融失败
 - en: goal of
+  id: totrans-193
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 目标在于
 - en: hyper-parameter tuning with
+  id: totrans-194
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 超参数调优与
 - en: k-fold
+  id: totrans-195
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: k 折
 - en: leakage in
+  id: totrans-196
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 漏泄在
 - en: model development and
+  id: totrans-197
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 模型开发和
 - en: overlapping training observations in
+  id: totrans-198
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 重叠训练观察的数值示例在
 - en: purpose of
+  id: totrans-199
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 目的在于
 - en: purging process in training set for leakage reduction in
+  id: totrans-200
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 为减少泄漏而进行的训练集清理过程
 - en: sklearn bugs in
+  id: totrans-201
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: sklearn 中的 bug
 - en: CUSUM filter
+  id: totrans-202
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: CUSUM 过滤器
 - en: CUSUM tests
+  id: totrans-203
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: CUSUM 检验
 - en: CV. *See* Cross-validation
+  id: totrans-204
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: CV。*见* 交叉验证
 - en: Data analysis
+  id: totrans-205
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数据分析
 - en: financial data structures and
+  id: totrans-206
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 财务数据结构和
 - en: fractionally differentiated features and
+  id: totrans-207
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分数微分特征和
 - en: labeling and
+  id: totrans-208
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 标记和
 - en: sample weights and
+  id: totrans-209
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 样本权重和
 - en: Data curators
+  id: totrans-210
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数据策展人
 - en: Data mining and data snooping
+  id: totrans-211
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数据挖掘与数据窥探
 - en: Decision trees
+  id: totrans-212
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 决策树
 - en: Decompressed markets
+  id: totrans-213
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 解压缩市场
 - en: Deflated Sharpe ratio (DSR)
+  id: totrans-214
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 通胀调整夏普比率（DSR）
 - en: Deployment team
+  id: totrans-215
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 部署团队
 - en: Dickey-Fuller test
+  id: totrans-216
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Dickey-Fuller 检验
 - en: Chow type
+  id: totrans-217
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Chow 类型
 - en: supremum augmented (SADF)
+  id: totrans-218
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 超极大值增强（SADF）
 - en: Discretionary portfolio managers (PMs)
+  id: totrans-219
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 自主投资组合管理者（PMs）
 - en: Discretization of bet size
+  id: totrans-220
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 赌注规模的离散化
 - en: Diversification
+  id: totrans-221
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 多样化
 - en: Dollar bars
+  id: totrans-222
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 美元条
 - en: Dollar imbalance bars (DIBs)
+  id: totrans-223
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 美元不平衡条（DIBs）
 - en: Dollar performance per turnover
+  id: totrans-224
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 每次周转的美元表现
 - en: Dollar runs bars (DRBs)
+  id: totrans-225
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 美元运行条（DRBs）
 - en: Downsampling
+  id: totrans-226
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 下采样
 - en: Drawdown (DD)
+  id: totrans-227
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回撤（DD）
 - en: definition of
+  id: totrans-228
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 定义为
 - en: deriving
+  id: totrans-229
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 推导
 - en: example of
+  id: totrans-230
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 的示例
 - en: run measurements using
+  id: totrans-231
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用运行测量
 - en: Dynamic bet sizes
+  id: totrans-232
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 动态赌注规模
 - en: Econometrics
+  id: totrans-233
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 计量经济学
 - en: financial Big Data analysis and
+  id: totrans-234
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 财务大数据分析和
 - en: financial machine learning versus
+  id: totrans-235
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 财务机器学习与
 - en: HRP approach compared with
+  id: totrans-236
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: HRP 方法与
 - en: investment strategies based in
+  id: totrans-237
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 基于的投资策略
 - en: paradigms used in
+  id: totrans-238
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用的范式
 - en: substitution effects and
+  id: totrans-239
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 替代效应和
 - en: trading rules and
+  id: totrans-240
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交易规则和
 - en: Efficiency measurements
+  id: totrans-241
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 效率测量
 - en: annualized Sharpe ratio and
+  id: totrans-242
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 年化夏普比率和
 - en: deflated Sharpe ratio (DSR) and
+  id: totrans-243
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 通货膨胀调整后的夏普比率（DSR）
 - en: information ratio and
+  id: totrans-244
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 信息比率和
 - en: probabilistic Sharpe ratio (PSR) and
+  id: totrans-245
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 概率夏普比率（PSR）和
 - en: Sharpe ratio (SR) definition in
+  id: totrans-246
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 夏普比率（SR）定义
 - en: Efficient frontier
+  id: totrans-247
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 有效前沿
 - en: Electricity consumption analysis
+  id: totrans-248
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 电力消耗分析
 - en: Engle-Granger analysis
+  id: totrans-249
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Engle-Granger分析
 - en: Ensemble methods
+  id: totrans-250
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 集成方法
 - en: boosting and
+  id: totrans-251
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 提升和
 - en: bootstrap aggregation (bagging) and
+  id: totrans-252
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 自助聚合（集成）和
 - en: random forest (RF) method and
+  id: totrans-253
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 随机森林（RF）方法和
 - en: Entropy features
+  id: totrans-254
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 熵特征
 - en: encoding schemes in estimates of
+  id: totrans-255
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 编码方案在估计中的
 - en: financial applications of
+  id: totrans-256
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 金融应用
 - en: generalized mean and
+  id: totrans-257
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 广义均值和
 - en: Lempel-Ziv (LZ) estimator in
+  id: totrans-258
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Lempel-Ziv（LZ）估计器
 - en: maximum likelihood estimator in
+  id: totrans-259
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最大似然估计器
 - en: Shannon's approach to
+  id: totrans-260
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 香农的方法
 - en: ETF trick
+  id: totrans-261
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ETF技巧
 - en: Event-based sampling
+  id: totrans-262
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 基于事件的采样
 - en: Excess returns, in information ratio
+  id: totrans-263
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 信息比率中的超额收益
 - en: Execution costs
+  id: totrans-264
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 执行成本
 - en: Expanding window method
+  id: totrans-265
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 扩展窗口方法
 - en: Explosiveness tests
+  id: totrans-266
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 爆发性测试
 - en: Chow-type Dickey-Fuller test
+  id: totrans-267
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Chow型Dickey-Fuller检验
 - en: supremum augmented Dickey-Fuller (SADF) test
+  id: totrans-268
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 超极大增强Dickey-Fuller（SADF）检验
 - en: Factory plan
+  id: totrans-269
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 工厂计划
 - en: Feature analysts
+  id: totrans-270
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 特征分析师
 - en: Feature importance
+  id: totrans-271
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 特征重要性
 - en: features stacking approach to
+  id: totrans-272
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 特征堆叠方法
 - en: importance of
+  id: totrans-273
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 重要性
 - en: mean decrease accuracy (MDA) and
+  id: totrans-274
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 平均减少准确度（MDA）和
 - en: mean decrease impurity (MDI) and
+  id: totrans-275
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 平均减少杂质（MDI）和
 - en: orthogonal features and
+  id: totrans-276
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 正交特征和
 - en: parallelized approach to
+  id: totrans-277
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 并行化方法
 - en: plotting function for
+  id: totrans-278
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 绘图功能
 - en: random forest (RF) method and
+  id: totrans-279
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 随机森林（RF）方法和
 - en: as research tool
+  id: totrans-280
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 作为研究工具
 - en: single feature importance (SFI) and
+  id: totrans-281
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 单特征重要性（SFI）和
 - en: synthetic data experiments with
+  id: totrans-282
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 合成数据实验
 - en: weighted Kendall's tau computation in
+  id: totrans-283
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 加权Kendall's tau计算
 - en: without substitution effects
+  id: totrans-284
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 无替代效应
 - en: with substitution effects
+  id: totrans-285
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 带替代效应
 - en: Features stacking importance
+  id: totrans-286
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 特征堆叠的重要性
 - en: Filter trading strategy
+  id: totrans-287
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 过滤交易策略
 - en: Finance
+  id: totrans-288
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 金融
 - en: algorithmization of
+  id: totrans-289
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 算法化
 - en: human investors’ abilities in
+  id: totrans-290
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 人类投资者在
 - en: purpose and role of
+  id: totrans-291
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 目的和角色
 - en: usefulness of ML algorithms in
+  id: totrans-292
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 机器学习算法的实用性
 - en: Financial data
+  id: totrans-293
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 财务数据
 - en: alternative
+  id: totrans-294
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 替代方案
 - en: analytics and
+  id: totrans-295
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分析和
 - en: essential types of
+  id: totrans-296
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 关键类型的
 - en: fundamental
+  id: totrans-297
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 基础
 - en: market
+  id: totrans-298
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 市场
 - en: Financial data structures
+  id: totrans-299
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 财务数据结构
 - en: bars (table rows) in
+  id: totrans-300
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 条（表行）
 - en: multi-product series in
+  id: totrans-301
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 多产品系列中的
 - en: sampling features in
+  id: totrans-302
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 采样特征
 - en: unstructured, raw data as starting point for
+  id: totrans-303
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 非结构化、原始数据作为起点
 - en: Financial Information eXchange (FIX) messages
+  id: totrans-304
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 金融信息交换（FIX）消息
 - en: Financial machine learning
+  id: totrans-305
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 金融机器学习
 - en: econometrics versus
+  id: totrans-306
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 计量经济学与
 - en: prejudices about use of
+  id: totrans-307
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 对使用的偏见
 - en: standard machine learning separate from
+  id: totrans-308
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 标准机器学习与
 - en: Financial machine learning projects
+  id: totrans-309
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 金融机器学习项目
 - en: reasons for failure of
+  id: totrans-310
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 失败的原因
 - en: structure by strategy component in
+  id: totrans-311
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 按策略组件结构
 - en: Fixed-time horizon labeling method
+  id: totrans-312
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 固定时间范围标签方法
 - en: Fixed-width window fracdiff (FFD) method
+  id: totrans-313
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 固定宽度窗口分数差分（FFD）方法
 - en: Flash crashes
+  id: totrans-314
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 闪电崩盘
 - en: class weights for predicting
+  id: totrans-315
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 用于预测的类别权重
 - en: “early warning” indicators in
+  id: totrans-316
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: “预警”指标
 - en: high performance computing (HPC) tools and
+  id: totrans-317
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 高性能计算（HPC）工具和
 - en: signs of emerging illiquidity events and
+  id: totrans-318
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 新兴流动性危机迹象和
 - en: Flash Crash of 2010
+  id: totrans-319
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 2010年闪电崩盘
 - en: F1 scores
+  id: totrans-320
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: F1分数
 - en: measurement of
+  id: totrans-321
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 测量
 - en: meta-labeling and
+  id: totrans-322
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 元标签和
 - en: Fractional differentiation
+  id: totrans-323
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分数微分
 - en: data transformation method for stationarity in
+  id: totrans-324
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 稳定性的数据转换方法
 - en: earlier methods of
+  id: totrans-325
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 早期方法
 - en: expanding window method for
+  id: totrans-326
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 扩展窗口方法
 - en: fixed-width window fracdiff (FFD) method for
+  id: totrans-327
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 固定宽度窗口分数差分（FFD）方法
 - en: maximum memory preservation in
+  id: totrans-328
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最大记忆保存
 - en: Frequency. *See* Betting frequency
+  id: totrans-329
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 频率。*见*投注频率
 - en: Fundamental data
+  id: totrans-330
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 基本数据
 - en: Fusion collaboration project
+  id: totrans-331
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 融合合作项目
 - en: Futures
+  id: totrans-332
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 期货
 - en: dollar bars and
+  id: totrans-333
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 美元条和
 - en: ETF trick with
+  id: totrans-334
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交易所交易基金（ETF）技巧
 - en: non-negative rolled price series and
+  id: totrans-335
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 非负滚动价格序列和
 - en: single futures roll method with
+  id: totrans-336
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 单期货滚动方法
 - en: volume bars and
+  id: totrans-337
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 成交量条和
 - en: Gaps series, in single future roll method
+  id: totrans-338
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 差距序列，在单一未来滚动方法中
 - en: Global Investment Performance Standards (GIPS)
+  id: totrans-339
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 全球投资绩效标准（GIPS）
 - en: Graph theory
+  id: totrans-340
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 图论
 - en: Grid search cross-validation
+  id: totrans-341
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 网格搜索交叉验证
 - en: Hasbrouck's lambda
+  id: totrans-342
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Hasbrouck的lambda
 - en: Hedging weights
+  id: totrans-343
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 对冲权重
 - en: Herfindahl-Hirschman Index (HHI) concentration
+  id: totrans-344
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Herfindahl-Hirschman指数（HHI）集中度
 - en: HHI indexes
+  id: totrans-345
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: HHI指数
 - en: on negative returns
+  id: totrans-346
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 负收益
 - en: on positive returns
+  id: totrans-347
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 正收益
 - en: on time between bets
+  id: totrans-348
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 下注间的时间
 - en: Hierarchical Data Format 5 (HDF5)
+  id: totrans-349
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 层次数据格式5（HDF5）
 - en: Hierarchical Risk Parity (HRP) approach
+  id: totrans-350
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 层次风险平价（HRP）方法
 - en: econometric regression compared with
+  id: totrans-351
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 计量经济回归相比
 - en: full implementation of
+  id: totrans-352
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 完整实现
 - en: Monte Carlo simulations using
+  id: totrans-353
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用蒙特卡罗模拟
 - en: numerical example of
+  id: totrans-354
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 的数值示例
 - en: practical application of
+  id: totrans-355
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 的实际应用
 - en: quasi-diagonalization in
+  id: totrans-356
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 准对角化
 - en: recursive bisection in
+  id: totrans-357
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 递归二分法
 - en: standard approaches compared with
+  id: totrans-358
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与标准方法的比较
 - en: traditional risk parity approach compared with
+  id: totrans-359
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与传统风险平价方法的比较
 - en: tree clustering approaches to
+  id: totrans-360
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 树聚类方法
 - en: High-frequency trading
+  id: totrans-361
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 高频交易
 - en: High-low volatility estimator
+  id: totrans-362
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 高低波动估计器
 - en: High-performance computing (HPC)
+  id: totrans-363
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 高性能计算（HPC）
 - en: ADIOS and
+  id: totrans-364
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ADIOS和
 - en: atoms and molecules in parallelization and
+  id: totrans-365
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 并行化中的原子和分子
 - en: CIFT business applications and
+  id: totrans-366
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: CIFT商业应用和
 - en: cloud systems compared with
+  id: totrans-367
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与云系统的比较
 - en: combinatorial optimization and
+  id: totrans-368
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 组合优化和
 - en: electricity consumption analysis using
+  id: totrans-369
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用电力消费分析
 - en: Flash Crash of 2010 response and
+  id: totrans-370
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 2010年闪崩响应和
 - en: fusion collaboration project using
+  id: totrans-371
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用融合协作项目
 - en: global dynamic optimal trajectory and
+  id: totrans-372
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 全球动态最优轨迹和
 - en: hardware for
+  id: totrans-373
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 硬件用于
 - en: integer optimization approach and
+  id: totrans-374
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 整数优化方法和
 - en: multiprocessing and
+  id: totrans-375
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 多进程和
 - en: objective function and
+  id: totrans-376
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 目标函数和
 - en: pattern-finding capability in
+  id: totrans-377
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 模式发现能力
 - en: software for
+  id: totrans-378
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 软件用于
 - en: streaming data analysis using
+  id: totrans-379
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用流数据分析
 - en: supernova hunting using
+  id: totrans-380
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用超新星狩猎
 - en: use cases for
+  id: totrans-381
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 用例
 - en: vectorization and
+  id: totrans-382
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 向量化和
 - en: Holding periods
+  id: totrans-383
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 持有期
 - en: backtesting and
+  id: totrans-384
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回测和
 - en: bet sizing and
+  id: totrans-385
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投注规模和
 - en: estimating in strategy
+  id: totrans-386
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略中的估计
 - en: optimal trading rule (OTR) algorithm with
+  id: totrans-387
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最优交易规则（OTR）算法与
 - en: triple-period labeling method and
+  id: totrans-388
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 三期标记方法和
 - en: Hyper-parameter tuning
+  id: totrans-389
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 超参数调优
 - en: grid search cross-validation and
+  id: totrans-390
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 网格搜索交叉验证和
 - en: log loss scoring used with
+  id: totrans-391
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用对数损失评分
 - en: randomized search cross-validation and
+  id: totrans-392
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 随机搜索交叉验证和
 - en: Implementation shortfall statistics
+  id: totrans-393
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 实现短缺统计
 - en: Implied betting frequency
+  id: totrans-394
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 隐含投注频率
 - en: Implied precision computation
+  id: totrans-395
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 隐含精度计算
 - en: Indicator matrix
+  id: totrans-396
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 指标矩阵
 - en: Information-driven bars (table rows)
+  id: totrans-397
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 信息驱动条（表行）
 - en: dollar imbalance bars
+  id: totrans-398
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 美元不平衡条
 - en: dollar runs bars
+  id: totrans-399
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 美元运行条
 - en: purpose of
+  id: totrans-400
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 目的
 - en: tick imbalance bars
+  id: totrans-401
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: tick不平衡条
 - en: tick runs bars
+  id: totrans-402
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: tick运行条
 - en: volume imbalance bars
+  id: totrans-403
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 体积不平衡条
 - en: volume runs bars
+  id: totrans-404
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 体积运行条
 - en: Information ratio
+  id: totrans-405
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 信息比率
 - en: Inverse-Variance Portfolio (IVP)
+  id: totrans-406
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 逆方差投资组合（IVP）
 - en: asset allocation numerical example of
+  id: totrans-407
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 资产配置数值示例
 - en: Monte Carlo simulations using
+  id: totrans-408
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用蒙特卡罗模拟
 - en: Investment strategies
+  id: totrans-409
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投资策略
 - en: algorithmization of
+  id: totrans-410
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 的算法化
 - en: bet sizing in
+  id: totrans-411
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投注规模
 - en: evolution of
+  id: totrans-412
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 发展的
 - en: exit conditions in
+  id: totrans-413
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 退出条件
 - en: human investors’ abilities and
+  id: totrans-414
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 人类投资者的能力
 - en: log loss scoring used with hyper-parameter tuning in
+  id: totrans-415
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用超参数调优的对数损失评分
 - en: profit-taking and stop-loss limits in
+  id: totrans-416
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 盈利和止损限制
 - en: risk in. *See* Strategy risk
+  id: totrans-417
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 风险在。*见* 策略风险
 - en: structural breaks and
+  id: totrans-418
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 结构性变化
 - en: trade-off between precision and frequency in
+  id: totrans-419
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 精度与频率之间的权衡
 - en: trading rules and algorithms in
+  id: totrans-420
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交易规则和算法
 - en: Investment strategy failure probability
+  id: totrans-421
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投资策略失败概率
 - en: algorithm in
+  id: totrans-422
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 算法
 - en: implementation of algorithm in
+  id: totrans-423
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 算法的实现
 - en: probabilistic Sharpe ratio (PSR) similarity to
+  id: totrans-424
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 概率夏普比率（PSR）相似性
 - en: strategy risk and
+  id: totrans-425
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略风险和
 - en: K-fold cross-validation (CV)
+  id: totrans-426
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: K折交叉验证（CV）
 - en: description of
+  id: totrans-427
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 描述
 - en: embargo on training observations in
+  id: totrans-428
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 对训练观察的禁令
 - en: leakage in
+  id: totrans-429
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 泄漏
 - en: mean decrease accuracy (MDA) feature with
+  id: totrans-430
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 均值减少准确性（MDA）特征与
 - en: overlapping training observations in
+  id: totrans-431
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 重叠训练观察
 - en: purging process in training set for leakage reduction in
+  id: totrans-432
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 训练集中的清理过程以减少泄漏
 - en: when used
+  id: totrans-433
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用时
 - en: Kyle's lambda
+  id: totrans-434
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 凯尔的λ
 - en: Labeling
+  id: totrans-435
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 标记
 - en: daily volatility at intraday estimation for
+  id: totrans-436
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在日内估计中的日常波动性
 - en: dropping unnecessary or under-populated labels in
+  id: totrans-437
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 丢弃不必要或人口不足的标签
 - en: fixed-time horizon labeling method for
+  id: totrans-438
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 固定时间范围标记方法
 - en: learning side and size in
+  id: totrans-439
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 学习侧和规模
 - en: meta-labeling and
+  id: totrans-440
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 元标记和
 - en: quantamental approach using
+  id: totrans-441
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用量化方法
 - en: triple-barrier labeling method for
+  id: totrans-442
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 三重障碍标记方法
 - en: Labels
+  id: totrans-443
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 标签
 - en: average uniqueness over lifespan of
+  id: totrans-444
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 生命周期的平均独特性
 - en: class weights for underrepresented labels
+  id: totrans-445
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 针对不足代表性标签的类别权重
 - en: estimating uniqueness of
+  id: totrans-446
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 估计独特性
 - en: Lawrence Berkeley National Laboratory (LBNL, Berkeley Lab)
+  id: totrans-447
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 劳伦斯伯克利国家实验室（LBNL, Berkeley Lab）
 - en: Leakage, and cross-validation (CV)
+  id: totrans-448
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 泄漏与交叉验证（CV）
 - en: Leakage reduction
+  id: totrans-449
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 泄漏减少
 - en: bagging for
+  id: totrans-450
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 用于袋装
 - en: purging process in training set for
+  id: totrans-451
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 训练集中的清理过程
 - en: sequential bootstraps for
+  id: totrans-452
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 连续自助法
 - en: walk-forward timefolds method for
+  id: totrans-453
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 向前滚动时间折叠方法
 - en: Lempel-Ziv (LZ) estimator
+  id: totrans-454
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Lempel-Ziv（LZ）估计器
 - en: Leverage, in backtesting
+  id: totrans-455
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 杠杆作用，在回测中
 - en: Limit prices, in bet sizing
+  id: totrans-456
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投注规模中的限价
 - en: Log loss scoring, in hyper-parameter tuning
+  id: totrans-457
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在超参数调优中的对数损失评分
 - en: Log-uniform distribution
+  id: totrans-458
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 对数均匀分布
 - en: Look-ahead bias
+  id: totrans-459
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 前瞻偏差
 - en: Machine learning (ML)
+  id: totrans-460
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 机器学习 (ML)
 - en: finance and
+  id: totrans-461
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 金融和
 - en: financial machine learning separate from
+  id: totrans-462
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 金融机器学习与
 - en: HRP approach using
+  id: totrans-463
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用 HRP 方法
 - en: human investors and
+  id: totrans-464
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 人类投资者和
 - en: prejudices about use of
+  id: totrans-465
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 关于使用的偏见
 - en: Machine learning asset allocation. *See also* Hierarchical Risk Parity (HRP)
     approach
+  id: totrans-466
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 机器学习资产配置。*另见* 分层风险平价 (HRP) 方法
 - en: Monte Carlo simulations for
+  id: totrans-467
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 蒙特卡洛模拟用于
 - en: numerical example of
+  id: totrans-468
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数值示例中
 - en: quasi-diagonalization in
+  id: totrans-469
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 准对角化在
 - en: recursive bisection in
+  id: totrans-470
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 递归二分法在
 - en: tree clustering approaches to
+  id: totrans-471
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 树聚类方法中
 - en: Market data
+  id: totrans-472
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 市场数据
 - en: Markowitz, Harry
+  id: totrans-473
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 哈里·马科维茨
 - en: Maximum dollar position size, in backtesting
+  id: totrans-474
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最大美元头寸规模，在回测中
 - en: Maximum likelihood estimator, in entropy
+  id: totrans-475
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最大似然估计，在熵中
 - en: Mean decrease accuracy (MDA) feature importance
+  id: totrans-476
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 均值减少准确性 (MDA) 特征重要性
 - en: computed on synthetic dataset
+  id: totrans-477
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在合成数据集上计算
 - en: considerations in working with
+  id: totrans-478
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与之合作的考虑
 - en: implementation of
+  id: totrans-479
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 实施
 - en: single feature importance (SFI) and
+  id: totrans-480
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 单一特征重要性 (SFI) 和
 - en: Mean decrease impurity (MDI) feature importance
+  id: totrans-481
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 均值减少不纯度 (MDI) 特征重要性
 - en: computed on synthetic dataset
+  id: totrans-482
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在合成数据集上计算
 - en: considerations in working with
+  id: totrans-483
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与之合作的考虑
 - en: implementation of
+  id: totrans-484
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 实施
 - en: single feature importance (SFI) and
+  id: totrans-485
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 单一特征重要性 (SFI) 和
 - en: Message Passing Interface (MPI)
+  id: totrans-486
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 消息传递接口 (MPI)
 - en: Meta-labeling
+  id: totrans-487
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 元标记
 - en: bet sizing using
+  id: totrans-488
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用投注规模
 - en: code enhancements for
+  id: totrans-489
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 代码增强用于
 - en: description of
+  id: totrans-490
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 描述
 - en: dropping unnecessary or under-populated labels in
+  id: totrans-491
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在中丢弃不必要或人口不足的标签
 - en: how to use
+  id: totrans-492
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如何使用
 - en: quantamental approach using
+  id: totrans-493
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 量化方法使用
 - en: Meta-strategy paradigm
+  id: totrans-494
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 元策略范式
 - en: Microstructural features
+  id: totrans-495
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 微观结构特征
 - en: alternative features of
+  id: totrans-496
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 替代特征的
 - en: Amihud's lambda and
+  id: totrans-497
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 阿米胡德的λ和
 - en: bid-ask spread estimator (Corwin-Schultz algorithm) and
+  id: totrans-498
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 买卖差价估计器（科温-舒尔茨算法）和
 - en: Hasbrouck's lambda and
+  id: totrans-499
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 哈斯布鲁克的λ和
 - en: high-low volatility estimator and
+  id: totrans-500
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 高低波动估计器和
 - en: Kyle's lambda and
+  id: totrans-501
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 凯尔的λ和
 - en: microstructural information definition and
+  id: totrans-502
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 微观结构信息定义和
 - en: probability of informed trading and
+  id: totrans-503
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 信息交易的概率和
 - en: Roll model and
+  id: totrans-504
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 滚动模型和
 - en: sequential trade models and
+  id: totrans-505
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 顺序交易模型和
 - en: strategic trade models and
+  id: totrans-506
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 战略贸易模型和
 - en: tick rule and
+  id: totrans-507
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 逐笔规则和
 - en: volume-synchronized probability of informed trading (VPIN) and
+  id: totrans-508
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 成交量同步的信息交易概率 (VPIN) 和
 - en: Mixture of Gaussians (EF3M)
+  id: totrans-509
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 高斯混合 (EF3M)
 - en: Model development
+  id: totrans-510
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 模型开发
 - en: cross-validation (CV) for
+  id: totrans-511
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交叉验证 (CV) 用于
 - en: overfitting reduction and
+  id: totrans-512
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 过拟合减少和
 - en: single feature importance method and
+  id: totrans-513
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 单一特征重要性方法和
 - en: Modelling
+  id: totrans-514
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 建模
 - en: applications of entropy to
+  id: totrans-515
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 熵的应用于
 - en: backtesting in
+  id: totrans-516
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回测中
 - en: cross-validation in
+  id: totrans-517
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交叉验证在
 - en: econometrics and
+  id: totrans-518
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 计量经济学和
 - en: ensemble methods in
+  id: totrans-519
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 集成方法在
 - en: entropy features in
+  id: totrans-520
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 熵特征中
 - en: feature importance in
+  id: totrans-521
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 特征重要性在
 - en: hyper-parameter tuning with cross-validation in
+  id: totrans-522
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 超参数调整与交叉验证在
 - en: market microstructure theories and
+  id: totrans-523
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 市场微观结构理论和
 - en: three sources of errors in
+  id: totrans-524
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 三种误差来源在
 - en: Monte Carlo simulations
+  id: totrans-525
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 蒙特卡洛模拟
 - en: machine learning asset allocation and
+  id: totrans-526
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 机器学习资产配置中和
 - en: sequential bootstraps evaluation using
+  id: totrans-527
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用顺序自助法评估
 - en: Multi-product series
+  id: totrans-528
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 多产品系列
 - en: ETF trick for
+  id: totrans-529
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 为 ETF 技巧
 - en: PCA weights for
+  id: totrans-530
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: PCA 权重用于
 - en: single future roll in
+  id: totrans-531
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 单一期货滚动在
 - en: National laboratories
+  id: totrans-532
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 国家实验室
 - en: Negative (neg) log loss scores
+  id: totrans-533
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 负对数损失分数
 - en: hyper-parameter tuning using
+  id: totrans-534
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用超参数调整
 - en: measurement of
+  id: totrans-535
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 测量
 - en: Noise, causes of
+  id: totrans-536
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 噪声，成因
 - en: Non-negative rolled price series
+  id: totrans-537
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 非负滚动价格序列
 - en: Optimal trading rule (OTR) framework
+  id: totrans-538
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最优交易规则 (OTR) 框架
 - en: algorithm steps in
+  id: totrans-539
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 算法步骤在
 - en: cases with negative long-run equilibrium in
+  id: totrans-540
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 负长期均衡的案例在
 - en: cases with positive long-run equilibrium in
+  id: totrans-541
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 正长期均衡的案例在
 - en: cases with zero long-run equilibrium in
+  id: totrans-542
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 负长期均衡的案例在
 - en: experimental results using simulation in
+  id: totrans-543
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用模拟的实验结果在
 - en: implementation of
+  id: totrans-544
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 实施
 - en: overfitting and
+  id: totrans-545
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 过拟合和
 - en: profit-taking and stop-loss limits in
+  id: totrans-546
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 盈利了结和止损限制在
 - en: synthetic data for determination of
+  id: totrans-547
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 合成数据用于确定
 - en: Options markets
+  id: totrans-548
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 期权市场
 - en: Ornstein-Uhlenbeck (O-U) process
+  id: totrans-549
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 奥恩斯坦-乌伦贝克 (O-U) 过程
 - en: Orthogonal features
+  id: totrans-550
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 正交特征
 - en: benefits of
+  id: totrans-551
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 的好处
 - en: computation of
+  id: totrans-552
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 计算
 - en: implementation of
+  id: totrans-553
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 实施
 - en: Outliers, in quantitative investing
+  id: totrans-554
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 异常值，在量化投资中
 - en: Overfitting. *See* Backtest overfitting
+  id: totrans-555
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 过拟合。*参见* 回测过拟合
 - en: Parallelized feature importance
+  id: totrans-556
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 并行特征重要性
 - en: PCA (*see* Principal components analysis)
+  id: totrans-557
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 主成分分析 (*见* 主成分分析)
 - en: Performance attribution
+  id: totrans-558
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 绩效归因
 - en: Plotting function for feature importance
+  id: totrans-559
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 特征重要性的绘图函数
 - en: PnL (mark-to-market profits and losses)
+  id: totrans-560
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 盈亏 (按市值计的利润和损失)
 - en: ETF trick and
+  id: totrans-561
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ETF技巧和
 - en: performance attribution using
+  id: totrans-562
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用绩效归因
 - en: as performance measurement
+  id: totrans-563
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 作为绩效测量
 - en: rolled prices for simulating
+  id: totrans-564
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 用于模拟的滚动价格
 - en: PnL from long positions
+  id: totrans-565
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 来自多头头寸的盈亏
 - en: Portfolio construction. *See also* Hierarchical Risk Parity (HRP) approach
+  id: totrans-566
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投资组合构建。*另见* 分层风险平价（HRP）方法
 - en: classical areas of mathematics used in
+  id: totrans-567
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数学的经典领域在
 - en: covariance matrix in
+  id: totrans-568
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 协方差矩阵在
 - en: diversification in
+  id: totrans-569
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 多样化在
 - en: entropy and concentration in
+  id: totrans-570
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 熵与集中度在
 - en: Markowitz's approach to
+  id: totrans-571
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 马科维茨的方法
 - en: Monte Carlo simulations for
+  id: totrans-572
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 蒙特卡罗模拟用于
 - en: numerical example of
+  id: totrans-573
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数值示例的
 - en: practical problems in
+  id: totrans-574
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 实际问题在
 - en: tree clustering approaches to
+  id: totrans-575
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 树聚类方法用于
 - en: Portfolio oversight
+  id: totrans-576
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投资组合监督
 - en: Portfolio risk. *See also* Hierarchical Risk Parity (HRP) approach; Risk; Strategy
     risk
+  id: totrans-577
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投资组合风险。*另见* 分层风险平价（HRP）方法；风险；策略风险
 - en: portfolio decisions based on
+  id: totrans-578
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 基于投资组合决策的相似性
 - en: probability of strategy failure and
+  id: totrans-579
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略失败的概率和
 - en: strategy risk differentiated from
+  id: totrans-580
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略风险与
 - en: Portfolio turnover costs
+  id: totrans-581
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投资组合周转成本中
 - en: Precision
+  id: totrans-582
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 精度
 - en: binary classification problems and
+  id: totrans-583
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 二分类问题和
 - en: investment strategy with trade-off between frequency and
+  id: totrans-584
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在频率与
 - en: measurement of
+  id: totrans-585
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 测量的
 - en: Predicted probabilities, in bet sizing
+  id: totrans-586
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 预测概率，在下注大小中
 - en: Principal components analysis (PCA)
+  id: totrans-587
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 主成分分析（PCA）
 - en: hedging weights using
+  id: totrans-588
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用对冲权重
 - en: linear substitution effects and
+  id: totrans-589
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 线性替代效应和
 - en: Probabilistic Sharpe ratio (PSR)
+  id: totrans-590
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 概率夏普比率（PSR）
 - en: calculation of
+  id: totrans-591
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 的计算
 - en: as efficiency statistic
+  id: totrans-592
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 作为效率统计
 - en: probability of strategy failure, similarity to
+  id: totrans-593
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略失败的概率，类似于
 - en: Probability of backtest overfitting (PBO)
+  id: totrans-594
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回测过拟合概率（PBO）
 - en: backtest overfitting evaluation using
+  id: totrans-595
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回测过拟合评估使用
 - en: combinatorially symmetric cross-validation (CSCV) method for
+  id: totrans-596
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 组合对称交叉验证（CSCV）方法用于
 - en: strategy selection based on estimation of
+  id: totrans-597
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 基于估计的策略选择
 - en: Probability of informed trading (PIN)
+  id: totrans-598
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 知情交易的概率（PIN）
 - en: Probability of strategy failure
+  id: totrans-599
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略失败的概率
 - en: algorithm in
+  id: totrans-600
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 算法在
 - en: implementation of algorithm in
+  id: totrans-601
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 算法实现中的
 - en: probabilistic Sharpe ratio (PSR), similarity to
+  id: totrans-602
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 概率夏普比率（PSR），与
 - en: strategy risk and
+  id: totrans-603
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略风险和
 - en: Profit-taking, and investment strategy exit
+  id: totrans-604
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 盈利和投资策略退出
 - en: Profit-taking limits
+  id: totrans-605
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 盈利限制
 - en: asymmetric payoff dilemma and
+  id: totrans-606
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 不对称收益困境和
 - en: cases with negative long-run equilibrium and
+  id: totrans-607
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 存在负的长期均衡的案例和
 - en: cases with positive long-run equilibrium and
+  id: totrans-608
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 存在正的长期均衡的情况下和
 - en: cases with zero long-run equilibrium and
+  id: totrans-609
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在长期均衡为零的情况下和
 - en: daily volatility at intraday estimation points computation and
+  id: totrans-610
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 日内波动性在日内估计点计算中的应用和
 - en: investment strategies using
+  id: totrans-611
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用的投资策略
 - en: learning side and size and
+  id: totrans-612
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 学习侧与规模和
 - en: optimal trading rule (OTR) algorithm for
+  id: totrans-613
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最优交易规则（OTR）算法用于
 - en: strategy risk and
+  id: totrans-614
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略风险和
 - en: triple-barrier labeling method for
+  id: totrans-615
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 三重障碍标签方法中的应用
 - en: Purged K-fold cross-validation (CV)
+  id: totrans-616
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 清除K折交叉验证（CV）
 - en: grid search cross-validation and
+  id: totrans-617
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 网格搜索交叉验证和
 - en: hyper-parameter tuning with
+  id: totrans-618
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 超参数调优与
 - en: implementation of
+  id: totrans-619
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 的实现
 - en: randomized search cross-validation and
+  id: totrans-620
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 随机搜索交叉验证和
 - en: Python
+  id: totrans-621
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Python
 - en: Quantamental approach
+  id: totrans-622
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 定量分析方法中使用
 - en: Quantamental funds
+  id: totrans-623
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 定量基金中
 - en: Quantitative investing
+  id: totrans-624
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 定量投资
 - en: backtest overfitting in
+  id: totrans-625
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回测过拟合问题在
 - en: failure rate in
+  id: totrans-626
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 失败率在
 - en: meta-strategy paradigm in
+  id: totrans-627
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 元策略范式中
 - en: quantamental approach in
+  id: totrans-628
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 定量分析方法在
 - en: seven sins of
+  id: totrans-629
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 七宗罪的
 - en: Quantum computing
+  id: totrans-630
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 量子计算
 - en: Random forest (RF) method
+  id: totrans-631
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 随机森林（RF）方法中
 - en: alternative ways of setting up
+  id: totrans-632
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 替代设置方式中的投资策略
 - en: bagging compared with
+  id: totrans-633
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 包装与比较
 - en: bet sizing using
+  id: totrans-634
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用下注大小
 - en: Randomized search cross-validation
+  id: totrans-635
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 随机搜索交叉验证
 - en: Recall
+  id: totrans-636
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 召回率
 - en: binary classification problems and
+  id: totrans-637
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 二分类问题和
 - en: measurement of
+  id: totrans-638
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 测量
 - en: Reinstated value
+  id: totrans-639
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 重新确立的价值
 - en: Return attribution method
+  id: totrans-640
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 收益归因方法
 - en: Return on execution costs
+  id: totrans-641
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 执行成本的回报
 - en: Returns concentration
+  id: totrans-642
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回报集中度
 - en: RF. *See* Random forest (RF) method
+  id: totrans-643
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 随机森林（RF）。*见* 随机森林（RF）方法
 - en: Right-tail unit-root tests
+  id: totrans-644
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 右尾单位根检验
 - en: Risk. *See also* Hierarchical Risk Parity (HRP) approach; Strategy risk
+  id: totrans-645
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 风险。*另见* 分层风险平价（HRP）方法；策略风险
 - en: backtest statistics for uncovering
+  id: totrans-646
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回测统计用于揭示
 - en: entropy application to portfolio concentration and
+  id: totrans-647
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 熵在投资组合集中度中的应用和
 - en: liquidity and
+  id: totrans-648
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 流动性和
 - en: ML algorithms for monitoring
+  id: totrans-649
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 监控的机器学习算法
 - en: PCA weights and
+  id: totrans-650
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: PCA权重和
 - en: portfolio oversight and
+  id: totrans-651
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投资组合监督和
 - en: profit taking and stop-loss limits and
+  id: totrans-652
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 盈利和止损限制和
 - en: structural breaks and
+  id: totrans-653
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 结构性突变和
 - en: walk-forward (WF) approach and
+  id: totrans-654
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 滚动前进（WF）方法和
 - en: Risk-based asset allocation approaches
+  id: totrans-655
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 基于风险的资产配置方法
 - en: HRP approach comparisons in
+  id: totrans-656
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: HRP方法比较在
 - en: structural breaks and
+  id: totrans-657
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 结构性突变和
 - en: Risk parity. *See also* Hierarchical Risk Parity (HRP) approach
+  id: totrans-658
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 风险平价。*另见* 分层风险平价（HRP）方法
 - en: HRP approach compared with traditional approach to
+  id: totrans-659
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: HRP方法与传统方法相比
 - en: Rolled prices
+  id: totrans-660
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 滚动价格
 - en: Roll model
+  id: totrans-661
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 滚动模型区分开
 - en: Sample weights
+  id: totrans-662
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 样本权重
 - en: average uniqueness of labels over lifespan and
+  id: totrans-663
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 生命周期内标签的平均独特性和
 - en: bagging classifiers and uniqueness and
+  id: totrans-664
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 装袋分类器及其独特性和
 - en: indicator matrix for
+  id: totrans-665
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 指标矩阵用于
 - en: mean decrease accuracy (MDA) feature importance with
+  id: totrans-666
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 平均减少准确性（MDA）特征重要性与
 - en: number of concurrent labels and
+  id: totrans-667
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 同时标签数量和
 - en: overlapping outcomes and
+  id: totrans-668
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 重叠结果和
 - en: return attribution method and
+  id: totrans-669
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回报归因方法和
 - en: sequential bootstrap and
+  id: totrans-670
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 顺序自助法和
 - en: time-decay factors and
+  id: totrans-671
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 时间衰减因素和
 - en: Sampling features
+  id: totrans-672
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 采样特征
 - en: downsampling and
+  id: totrans-673
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 降采样和
 - en: event-based sampling and
+  id: totrans-674
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 基于事件的采样和
 - en: Scalability
+  id: totrans-675
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 可扩展性
 - en: bagging for
+  id: totrans-676
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 装袋用于
 - en: sample size in ML algorithms and
+  id: totrans-677
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ML 算法中的样本大小和
 - en: Scikit-learn (sklearn)
+  id: totrans-678
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Scikit-learn（sklearn）
 - en: class weights in
+  id: totrans-679
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 类别权重在
 - en: cross-validation (CV) bugs in
+  id: totrans-680
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交叉验证（CV）中的错误
 - en: grid search cross-validation in
+  id: totrans-681
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 网格搜索交叉验证在
 - en: labels and bug in
+  id: totrans-682
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 标签和错误在
 - en: mean decrease impurity (MDI) and
+  id: totrans-683
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 平均减少不纯度（MDI）和
 - en: neg log loss as scoring statistic and bug in
+  id: totrans-684
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 负对数损失作为评分统计及错误在
 - en: observation redundancy and bagging classifiers in
+  id: totrans-685
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 观察冗余及装袋分类器在
 - en: random forest (RF) overfitting and
+  id: totrans-686
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 随机森林（RF）过拟合和
 - en: support vector machine (SVM) implementation in
+  id: totrans-687
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 支持向量机（SVM）实施在
 - en: synthetic dataset generation in
+  id: totrans-688
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 合成数据集生成中的差异
 - en: walk-forward timefolds method in
+  id: totrans-689
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 滚动前行时间折叠法中的
 - en: Selection bias
+  id: totrans-690
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择偏见
 - en: Sequential bootstraps
+  id: totrans-691
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 顺序自助法
 - en: description of
+  id: totrans-692
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 描述
 - en: implementation of
+  id: totrans-693
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 实施
 - en: leakage reduction using
+  id: totrans-694
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用泄漏减少
 - en: Monte Carlo experiments evaluating
+  id: totrans-695
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 蒙特卡罗实验评估
 - en: numerical example of
+  id: totrans-696
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数值示例
 - en: Shannon, Claude
+  id: totrans-697
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 香农，克劳德
 - en: Sharpe ratio (SR) in efficiency measurements
+  id: totrans-698
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 夏普比率（SR）在效率测量中的
 - en: annualized
+  id: totrans-699
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 年化
 - en: definition of
+  id: totrans-700
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 定义
 - en: deflated (DSR)
+  id: totrans-701
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 缩减（DSR）
 - en: information ratio and
+  id: totrans-702
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 信息比率和
 - en: probabilistic (PSR)
+  id: totrans-703
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 概率性（PSR）
 - en: purpose of
+  id: totrans-704
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 的目的
 - en: targeting, for various betting frequencies
+  id: totrans-705
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 针对各种投注频率的目标
 - en: Shorting, in quantitative investing
+  id: totrans-706
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在量化投资中的卖空
 - en: Signal order flows
+  id: totrans-707
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 信号顺序流
 - en: Simulations, overfitting of
+  id: totrans-708
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 仿真，过拟合的
 - en: Single feature importance (SFI)
+  id: totrans-709
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 单特征重要性（SFI）
 - en: Single future roll
+  id: totrans-710
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 单期滚动
 - en: Sklearn. *See* Scikit-learn
+  id: totrans-711
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Sklearn。*见* Scikit-learn
 - en: Stacked feature importance
+  id: totrans-712
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 堆叠特征重要性
 - en: Standard bars (table rows)
+  id: totrans-713
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 标准条（表行）
 - en: dollar bars
+  id: totrans-714
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 美元条
 - en: purpose of
+  id: totrans-715
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 的目的
 - en: tick bars
+  id: totrans-716
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Tick 条
 - en: time bars
+  id: totrans-717
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 时间条
 - en: volume bars
+  id: totrans-718
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 成交量条
 - en: Stationarity
+  id: totrans-719
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 平稳性
 - en: data transformation method to ensure
+  id: totrans-720
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数据转换方法以确保
 - en: fractional differentiation applied to
+  id: totrans-721
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 应用分数微分于
 - en: fractional differentiation implementation methods for
+  id: totrans-722
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分数微分实施方法用于
 - en: integer transformation for
+  id: totrans-723
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 整数变换用于
 - en: maximum memory preservation for
+  id: totrans-724
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最大内存保留用于
 - en: memory loss dilemma and
+  id: totrans-725
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 内存丧失困境和
 - en: Stop-loss, and investment strategy exit
+  id: totrans-726
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 止损及投资策略退出
 - en: Stop-loss limits
+  id: totrans-727
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 止损限制
 - en: asymmetric payoff dilemma and
+  id: totrans-728
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 不对称收益困境和
 - en: cases with negative long-run equilibrium and
+  id: totrans-729
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 具有负长期均衡的案例和
 - en: cases with positive long-run equilibrium and
+  id: totrans-730
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 具有正长期均衡的案例和
 - en: cases with zero long-run equilibrium and
+  id: totrans-731
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 具有零长期均衡的案例和
 - en: daily volatility computation and
+  id: totrans-732
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 每日波动性计算和
 - en: fixed-time horizon labeling method and
+  id: totrans-733
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 固定时间视野标签法和
 - en: investment strategies using
+  id: totrans-734
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用的投资策略
 - en: learning side and size and
+  id: totrans-735
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 学习侧和规模及
 - en: optimal trading rule (OTR) algorithm for
+  id: totrans-736
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最佳交易规则（OTR）算法用于
 - en: strategy risk and
+  id: totrans-737
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略风险和
 - en: triple-barrier labeling method for
+  id: totrans-738
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 三重障碍标签法用于
 - en: Storytelling
+  id: totrans-739
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 叙事
 - en: Strategists
+  id: totrans-740
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略师
 - en: Strategy risk
+  id: totrans-741
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略风险
 - en: asymmetric payouts and
+  id: totrans-742
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 不对称支付和
 - en: calculating
+  id: totrans-743
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 计算
 - en: implied betting frequency and
+  id: totrans-744
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 隐含投注频率和
 - en: implied precision and
+  id: totrans-745
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 隐含精度和
 - en: investment strategies and understanding of
+  id: totrans-746
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投资策略及其理解
 - en: portfolio risk differentiated from
+  id: totrans-747
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投资组合风险与
 - en: probabilistic Sharpe ratio (PSR) similarity to
+  id: totrans-748
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 概率性夏普比率（PSR）与
 - en: strategy failure probability and
+  id: totrans-749
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 策略失败概率和
 - en: symmetric payouts and
+  id: totrans-750
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 对称支付和
 - en: Structural breaks
+  id: totrans-751
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 结构性断裂
 - en: CUSUM tests in
+  id: totrans-752
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: CUSUM 测试中
 - en: explosiveness tests in
+  id: totrans-753
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 爆炸性测试在
 - en: sub- and super-martingale tests in
+  id: totrans-754
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 次和超马丁戈尔测试在
 - en: types of tests in
+  id: totrans-755
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 测试类型在
 - en: Sub- and super-martingale tests
+  id: totrans-756
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 次和超马丁戈尔测试
 - en: Supernova research
+  id: totrans-757
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 超新星研究
 - en: Support vector machines (SVMs)
+  id: totrans-758
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 支持向量机（SVMs）
 - en: Supremum augmented Dickey-Fuller (SADF) test
+  id: totrans-759
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最大化增广迪基-福勒（SADF）测试
 - en: conditional ADF
+  id: totrans-760
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 条件 ADF
 - en: implementation of
+  id: totrans-761
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 实施
 - en: quantile ADF
+  id: totrans-762
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分位数 ADF
 - en: Survivorship bias
+  id: totrans-763
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 幸存者偏见
 - en: SymPy Live
+  id: totrans-764
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: SymPy Live
 - en: Synthetic data
+  id: totrans-765
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 合成数据
 - en: backtesting using
+  id: totrans-766
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用回测
 - en: experimental results using simulation combinations with
+  id: totrans-767
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用模拟组合的实验结果
 - en: optimal trading rule (OTR) framework using
+  id: totrans-768
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用的最佳交易规则（OTR）框架
 - en: Tick bars
+  id: totrans-769
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Tick 条
 - en: Tick imbalance bars (TIBs)
+  id: totrans-770
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Tick 失衡条（TIBs）
 - en: Tick rule
+  id: totrans-771
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Tick 规则
 - en: Tick runs bars (TRBs)
+  id: totrans-772
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Tick 运行条（TRBs）
 - en: Time bars
+  id: totrans-773
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 时间条
 - en: description of
+  id: totrans-774
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 描述
 - en: fixed-time horizon labeling method using
+  id: totrans-775
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用的固定时间视野标签法
 - en: Time-decay factors, and sample weights
+  id: totrans-776
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 时间衰减因子和样本权重
 - en: Time period, in backtesting
+  id: totrans-777
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回测中的时间周期
 - en: Time series
+  id: totrans-778
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 时间序列
 - en: fractional differentiation applied to
+  id: totrans-779
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 应用于
 - en: integer transformation for stationarity in
+  id: totrans-780
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 平稳性下的整数变换
 - en: stationarity vs. memory loss dilemma in
+  id: totrans-781
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 平稳性与记忆丧失困境
 - en: Time under water (TuW)
+  id: totrans-782
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 水下时间 (TuW)
 - en: definition of
+  id: totrans-783
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 的定义
 - en: deriving
+  id: totrans-784
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 推导
 - en: example of
+  id: totrans-785
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 的示例
 - en: run measurements using
+  id: totrans-786
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用的运行测量
 - en: Time-weighted average price (TWAP)
+  id: totrans-787
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 时间加权平均价格 (TWAP)
 - en: Time-weighted rate of returns (TWRR)
+  id: totrans-788
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 时间加权回报率 (TWRR)
 - en: Trading rules
+  id: totrans-789
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交易规则
 - en: investment strategies and algorithms in
+  id: totrans-790
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 投资策略和算法在
 - en: optimal trading rule (OTR) framework for
+  id: totrans-791
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最优交易规则 (OTR) 框架
 - en: overfitting in
+  id: totrans-792
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 过拟合
 - en: Transaction costs, in quantitative investing
+  id: totrans-793
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交易成本，在量化投资中
 - en: Tree clustering approaches, in asset allocation
+  id: totrans-794
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 树状聚类方法，在资产配置中
 - en: Triple-barrier labeling method
+  id: totrans-795
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 三重障碍标签方法
 - en: Turnover costs
+  id: totrans-796
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 周转成本
 - en: Variance
+  id: totrans-797
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 方差
 - en: boosting to reduce
+  id: totrans-798
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 提升以减少
 - en: causes of
+  id: totrans-799
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 的原因
 - en: ensemble methods to reduce
+  id: totrans-800
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 集成方法以减少
 - en: random forest (RF) method for
+  id: totrans-801
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 随机森林 (RF) 方法用于
 - en: Vectorization
+  id: totrans-802
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 向量化
 - en: Volume bars
+  id: totrans-803
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 量柱
 - en: Volume imbalance bars (VIBs)
+  id: totrans-804
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 量失衡柱 (VIBs)
 - en: Volume runs bars (VRBs)
+  id: totrans-805
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 量运行柱 (VRBs)
 - en: Volume-synchronized probability of informed trading (VPIN)
+  id: totrans-806
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 量化交易的同步概率 (VPIN)
 - en: Walk-forward (WF) method
+  id: totrans-807
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 向前滚动 (WF) 方法
 - en: backtesting using
+  id: totrans-808
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用回测
 - en: overfitting in
+  id: totrans-809
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 过拟合
 - en: pitfalls of
+  id: totrans-810
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 的陷阱
 - en: Sharpe ratio estimation in
+  id: totrans-811
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 夏普比率估计在
 - en: two key advantages of
+  id: totrans-812
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 两个关键优势
 - en: Walk-forward timefolds method
+  id: totrans-813
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 向前滚动时间折叠方法
 - en: Weighted Kendall's tau
+  id: totrans-814
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 加权肯德尔tau
 - en: Weights. *See* Class weights; Sample weights
+  id: totrans-815
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 权重。*参见* 类别权重；样本权重
 - en: '**WILEY END USER LICENSE AGREEMENT**'
+  id: totrans-816
   prefs: []
   type: TYPE_NORMAL
+  zh: '**WILEY最终用户许可协议**'
 - en: Go to [www.wiley.com/go/eula](http://www.wiley.com/go/eula) to access Wiley’s
     ebook EULA.
+  id: totrans-817
   prefs: []
   type: TYPE_NORMAL
+  zh: 前往 [www.wiley.com/go/eula](http://www.wiley.com/go/eula) 访问Wiley的电子书EULA。
 - en: '**Table of Contents**'
+  id: totrans-818
   prefs: []
   type: TYPE_NORMAL
+  zh: '**目录**'
 - en: '[About the Author](text00000.html#filepos0000068138)'
+  id: totrans-819
   prefs: []
   type: TYPE_NORMAL
+  zh: '[关于作者](text00000.html#filepos0000068138)'
 - en: '[PREAMBLE](text00000.html#filepos0000070128)'
+  id: totrans-820
   prefs: []
   type: TYPE_NORMAL
+  zh: '[序言](text00000.html#filepos0000070128)'
 - en: '[Chapter 1 Financial Machine Learning as a Distinct Subject](text00000.html#filepos0000070518)'
+  id: totrans-821
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第1章 金融机器学习作为一个独特的学科](text00000.html#filepos0000070518)'
 - en: '[1.1 Motivation](text00000.html#filepos0000070783)'
+  id: totrans-822
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3839,7 +5484,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[1.1 动机](text00000.html#filepos0000070783)'
 - en: '[1.2 The Main Reason Financial Machine Learning Projects Usually Fail](text00000.html#filepos0000074463)'
+  id: totrans-823
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3848,7 +5495,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[1.2 金融机器学习项目通常失败的主要原因](text00000.html#filepos0000074463)'
 - en: '[1.3 Book Structure](text00000.html#filepos0000079805)'
+  id: totrans-824
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3857,7 +5506,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[1.3 书籍结构](text00000.html#filepos0000079805)'
 - en: '[1.4 Target Audience](text00000.html#filepos0000121449)'
+  id: totrans-825
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3866,7 +5517,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[1.4 目标受众](text00000.html#filepos0000121449)'
 - en: '[1.5 Requisites](text00000.html#filepos0000123483)'
+  id: totrans-826
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3875,7 +5528,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[1.5 必要条件](text00000.html#filepos0000123483)'
 - en: '[1.6 FAQs](text00000.html#filepos0000124825)'
+  id: totrans-827
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3884,7 +5539,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[1.6 常见问题解答](text00000.html#filepos0000124825)'
 - en: '[1.7 Acknowledgments](text00000.html#filepos0000140518)'
+  id: totrans-828
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3893,7 +5550,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[1.7 致谢](text00000.html#filepos0000140518)'
 - en: '[Exercises](text00000.html#filepos0000143111)'
+  id: totrans-829
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3902,7 +5561,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[练习](text00000.html#filepos0000143111)'
 - en: '[References](text00000.html#filepos0000147831)'
+  id: totrans-830
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3911,7 +5572,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00000.html#filepos0000147831)'
 - en: '[Bibliography](text00000.html#filepos0000149431)'
+  id: totrans-831
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3920,7 +5583,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考书目](text00000.html#filepos0000149431)'
 - en: '[Notes](text00000.html#filepos0000152288)'
+  id: totrans-832
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3929,15 +5594,21 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[注释](text00000.html#filepos0000152288)'
 - en: '[PART 1 DATA ANALYSIS](text00000.html#filepos0000153144)'
+  id: totrans-833
   prefs: []
   type: TYPE_NORMAL
+  zh: '[第1部分 数据分析](text00000.html#filepos0000153144)'
 - en: '[Chapter 2 Financial Data Structures](text00000.html#filepos0000153985)'
+  id: totrans-834
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第2章 金融数据结构](text00000.html#filepos0000153985)'
 - en: '[2.1 Motivation](text00000.html#filepos0000154227)'
+  id: totrans-835
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3946,7 +5617,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[2.1 动机](text00000.html#filepos0000154227)'
 - en: '[2.2 Essential Types of Financial Data](text00000.html#filepos0000154883)'
+  id: totrans-836
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3955,7 +5628,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[2.2 重要的金融数据类型](text00000.html#filepos0000154883)'
 - en: '[2.3 Bars](text00000.html#filepos0000165027)'
+  id: totrans-837
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3964,7 +5639,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[2.3 柱](text00000.html#filepos0000165027)'
 - en: '[2.4 Dealing with Multi-Product Series](text00000.html#filepos0000193959)'
+  id: totrans-838
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3973,7 +5650,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[2.4 处理多产品系列](text00000.html#filepos0000193959)'
 - en: '[2.5 Sampling Features](text00000.html#filepos0000213591)'
+  id: totrans-839
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3982,7 +5661,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[2.5 采样特征](text00000.html#filepos0000213591)'
 - en: '[Exercises](text00000.html#filepos0000222705)'
+  id: totrans-840
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -3991,7 +5672,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[练习](text00000.html#filepos0000222705)'
 - en: '[References](text00000.html#filepos0000227013)'
+  id: totrans-841
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4000,12 +5683,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00000.html#filepos0000227013)'
 - en: '[Chapter 3 Labeling](text00000.html#filepos0000229506)'
+  id: totrans-842
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第3章 标签](text00000.html#filepos0000229506)'
 - en: '[3.1 Motivation](text00000.html#filepos0000229731)'
+  id: totrans-843
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4014,7 +5701,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[3.1 动机](text00000.html#filepos0000229731)'
 - en: '[3.2 The Fixed-Time Horizon Method](text00000.html#filepos0000230568)'
+  id: totrans-844
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4023,7 +5712,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[3.2 固定时间视野方法](text00000.html#filepos0000230568)'
 - en: '[3.3 Computing Dynamic Thresholds](text00000.html#filepos0000235552)'
+  id: totrans-845
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4032,7 +5723,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[3.3 计算动态阈值](text00000.html#filepos0000235552)'
 - en: '[3.4 The Triple-Barrier Method](text00000.html#filepos0000237025)'
+  id: totrans-846
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4041,7 +5734,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[3.4 三重障碍方法](text00000.html#filepos0000237025)'
 - en: '[3.5 Learning Side and Size](text00001.html#filepos0000244731)'
+  id: totrans-847
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4050,7 +5745,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[3.5 学习侧面和大小](text00001.html#filepos0000244731)'
 - en: '[3.6 Meta-Labeling](text00001.html#filepos0000250934)'
+  id: totrans-848
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4059,7 +5756,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[3.6 元标签](text00001.html#filepos0000250934)'
 - en: '[3.7 How to Use Meta-Labeling](text00001.html#filepos0000254530)'
+  id: totrans-849
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4068,7 +5767,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[3.7 如何使用元标签](text00001.html#filepos0000254530)'
 - en: '[3.8 The Quantamental Way](text00001.html#filepos0000259348)'
+  id: totrans-850
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4077,7 +5778,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[3.8 量化方法](text00001.html#filepos0000259348)'
 - en: '[3.9 Dropping Unnecessary Labels](text00001.html#filepos0000262810)'
+  id: totrans-851
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4086,7 +5789,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[3.9 删除不必要的标签](text00001.html#filepos0000262810)'
 - en: '[Exercises](text00001.html#filepos0000264704)'
+  id: totrans-852
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4095,7 +5800,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[练习](text00001.html#filepos0000264704)'
 - en: '[Bibliography](text00001.html#filepos0000268469)'
+  id: totrans-853
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4104,7 +5811,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[书目](text00001.html#filepos0000268469)'
 - en: '[Note](text00001.html#filepos0000278857)'
+  id: totrans-854
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4113,12 +5822,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[注意事项](text00001.html#filepos0000278857)'
 - en: '[Chapter 4 Sample Weights](text00001.html#filepos0000279229)'
+  id: totrans-855
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第4章 样本权重](text00001.html#filepos0000279229)'
 - en: '[4.1 Motivation](text00001.html#filepos0000279460)'
+  id: totrans-856
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4127,7 +5840,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[4.1 动机](text00001.html#filepos0000279460)'
 - en: '[4.2 Overlapping Outcomes](text00001.html#filepos0000280322)'
+  id: totrans-857
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4136,7 +5851,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[4.2 重叠结果](text00001.html#filepos0000280322)'
 - en: '[4.3 Number of Concurrent Labels](text00001.html#filepos0000286034)'
+  id: totrans-858
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4145,7 +5862,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[4.3 同时标签数量](text00001.html#filepos0000286034)'
 - en: '[4.4 Average Uniqueness of a Label](text00001.html#filepos0000289143)'
+  id: totrans-859
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4154,7 +5873,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[4.4 标签的平均唯一性](text00001.html#filepos0000289143)'
 - en: '[4.5 Bagging Classifiers and Uniqueness](text00001.html#filepos0000292458)'
+  id: totrans-860
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4163,7 +5884,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[4.5 集成分类器与唯一性](text00001.html#filepos0000292458)'
 - en: '[4.6 Return Attribution](text00001.html#filepos0000311001)'
+  id: totrans-861
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4172,7 +5895,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[4.6 收益归因](text00001.html#filepos0000311001)'
 - en: '[4.7 Time Decay](text00001.html#filepos0000313775)'
+  id: totrans-862
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4181,7 +5906,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[4.7 时间衰减](text00001.html#filepos0000313775)'
 - en: '[4.8 Class Weights](text00001.html#filepos0000318480)'
+  id: totrans-863
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4190,7 +5917,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[4.8 类别权重](text00001.html#filepos0000318480)'
 - en: '[Exercises](text00001.html#filepos0000321336)'
+  id: totrans-864
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4199,7 +5928,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[练习](text00001.html#filepos0000321336)'
 - en: '[References](text00001.html#filepos0000325853)'
+  id: totrans-865
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4208,7 +5939,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00001.html#filepos0000325853)'
 - en: '[Bibliography](text00001.html#filepos0000326690)'
+  id: totrans-866
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4217,12 +5950,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[书目](text00001.html#filepos0000326690)'
 - en: '[Chapter 5 Fractionally Differentiated Features](text00001.html#filepos0000329259)'
+  id: totrans-867
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第5章 分数差分特征](text00001.html#filepos0000329259)'
 - en: '[5.1 Motivation](text00001.html#filepos0000329512)'
+  id: totrans-868
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4231,7 +5968,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[5.1 动机](text00001.html#filepos0000329512)'
 - en: '[5.2 The Stationarity vs. Memory Dilemma](text00001.html#filepos0000330658)'
+  id: totrans-869
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4240,7 +5979,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[5.2 稳定性与记忆困境](text00001.html#filepos0000330658)'
 - en: '[5.3 Literature Review](text00001.html#filepos0000333813)'
+  id: totrans-870
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4249,7 +5990,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[5.3 文献综述](text00001.html#filepos0000333813)'
 - en: '[5.4 The Method](text00001.html#filepos0000335994)'
+  id: totrans-871
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4258,7 +6001,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[5.4 方法](text00001.html#filepos0000335994)'
 - en: '[5.5 Implementation](text00001.html#filepos0000345623)'
+  id: totrans-872
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4267,7 +6012,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[5.5 实现](text00001.html#filepos0000345623)'
 - en: '[5.6 Stationarity with Maximum Memory Preservation](text00001.html#filepos0000354132)'
+  id: totrans-873
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4276,7 +6023,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[5.6 最大记忆保持的平稳性](text00001.html#filepos0000354132)'
 - en: '[5.7 Conclusion](text00001.html#filepos0000359851)'
+  id: totrans-874
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4285,7 +6034,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[5.7 结论](text00001.html#filepos0000359851)'
 - en: '[Exercises](text00001.html#filepos0000361715)'
+  id: totrans-875
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4294,7 +6045,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[练习](text00001.html#filepos0000361715)'
 - en: '[References](text00001.html#filepos0000367476)'
+  id: totrans-876
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4303,7 +6056,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00001.html#filepos0000367476)'
 - en: '[Bibliography](text00001.html#filepos0000368610)'
+  id: totrans-877
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4312,15 +6067,21 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[书目](text00001.html#filepos0000368610)'
 - en: '[PART 2 MODELLING](text00001.html#filepos0000370348)'
+  id: totrans-878
   prefs: []
   type: TYPE_NORMAL
+  zh: '[第二部分 建模](text00001.html#filepos0000370348)'
 - en: '[Chapter 6 Ensemble Methods](text00001.html#filepos0000371207)'
+  id: totrans-879
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第6章 集成方法](text00001.html#filepos0000371207)'
 - en: '[6.1 Motivation](text00001.html#filepos0000371440)'
+  id: totrans-880
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4329,7 +6090,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[6.1 动机](text00001.html#filepos0000371440)'
 - en: '[6.2 The Three Sources of Errors](text00001.html#filepos0000372131)'
+  id: totrans-881
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4338,7 +6101,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[6.2 三种错误来源](text00001.html#filepos0000372131)'
 - en: '[6.3 Bootstrap Aggregation](text00001.html#filepos0000375734)'
+  id: totrans-882
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4347,7 +6112,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[6.3 自助聚合](text00001.html#filepos0000375734)'
 - en: '[6.4 Random Forest](text00001.html#filepos0000386869)'
+  id: totrans-883
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4356,7 +6123,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[6.4 随机森林](text00001.html#filepos0000386869)'
 - en: '[6.5 Boosting](text00001.html#filepos0000392033)'
+  id: totrans-884
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4365,7 +6134,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[6.5 提升](text00001.html#filepos0000392033)'
 - en: '[6.6 Bagging vs. Boosting in Finance](text00001.html#filepos0000393930)'
+  id: totrans-885
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4374,7 +6145,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[6.6 金融中的集成法与提升法](text00001.html#filepos0000393930)'
 - en: '[6.7 Bagging for Scalability](text00001.html#filepos0000395477)'
+  id: totrans-886
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4383,7 +6156,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[6.7 可扩展性中的集成法](text00001.html#filepos0000395477)'
 - en: '[Exercises](text00001.html#filepos0000397874)'
+  id: totrans-887
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4392,7 +6167,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[练习](text00001.html#filepos0000397874)'
 - en: '[References](text00001.html#filepos0000400644)'
+  id: totrans-888
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4401,7 +6178,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00001.html#filepos0000400644)'
 - en: '[Bibliography](text00001.html#filepos0000401555)'
+  id: totrans-889
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4410,7 +6189,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[书目](text00001.html#filepos0000401555)'
 - en: '[Notes](text00001.html#filepos0000402540)'
+  id: totrans-890
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4419,12 +6200,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[备注](text00001.html#filepos0000402540)'
 - en: '[Chapter 7 Cross-Validation in Finance](text00001.html#filepos0000404229)'
+  id: totrans-891
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第7章 金融中的交叉验证](text00001.html#filepos0000404229)'
 - en: '[7.1 Motivation](text00001.html#filepos0000404473)'
+  id: totrans-892
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4433,7 +6218,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[7.1 动机](text00001.html#filepos0000404473)'
 - en: '[7.2 The Goal of Cross-Validation](text00001.html#filepos0000405116)'
+  id: totrans-893
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4442,7 +6229,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[7.2 交叉验证的目标](text00001.html#filepos0000405116)'
 - en: '[7.3 Why K-Fold CV Fails in Finance](text00001.html#filepos0000408213)'
+  id: totrans-894
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4451,7 +6240,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[7.3 为什么K折交叉验证在金融中失败](text00001.html#filepos0000408213)'
 - en: '[7.4 A Solution: Purged K-Fold CV](text00001.html#filepos0000414858)'
+  id: totrans-895
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4460,7 +6251,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[7.4 解决方案：清除K折交叉验证](text00001.html#filepos0000414858)'
 - en: '[7.5 Bugs in Sklearn''s Cross-Validation](text00001.html#filepos0000426899)'
+  id: totrans-896
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4469,7 +6262,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[7.5 Sklearn交叉验证中的错误](text00001.html#filepos0000426899)'
 - en: '[Exercises](text00001.html#filepos0000428942)'
+  id: totrans-897
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4478,7 +6273,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[练习](text00001.html#filepos0000428942)'
 - en: '[Bibliography](text00001.html#filepos0000432718)'
+  id: totrans-898
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4487,12 +6284,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[书目](text00001.html#filepos0000432718)'
 - en: '[Chapter 8 Feature Importance](text00001.html#filepos0000434781)'
+  id: totrans-899
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第8章 特征重要性](text00001.html#filepos0000434781)'
 - en: '[8.1 Motivation](text00001.html#filepos0000435016)'
+  id: totrans-900
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4501,7 +6302,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[8.1 动机](text00001.html#filepos0000435016)'
 - en: '[8.2 The Importance of Feature Importance](text00001.html#filepos0000436227)'
+  id: totrans-901
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4510,7 +6313,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[8.2 特征重要性的重要性](text00001.html#filepos0000436227)'
 - en: '[8.3 Feature Importance with Substitution Effects](text00001.html#filepos0000439835)'
+  id: totrans-902
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4519,7 +6324,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[8.3 具有替代效应的特征重要性](text00001.html#filepos0000439835)'
 - en: '[8.4 Feature Importance without Substitution Effects](text00001.html#filepos0000447153)'
+  id: totrans-903
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4528,7 +6335,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[8.4 无替代效应的特征重要性](text00001.html#filepos0000447153)'
 - en: '[8.5 Parallelized vs. Stacked Feature Importance](text00001.html#filepos0000458286)'
+  id: totrans-904
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4537,7 +6346,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[8.5 并行化与堆叠特征重要性](text00001.html#filepos0000458286)'
 - en: '[8.6 Experiments with Synthetic Data](text00001.html#filepos0000462771)'
+  id: totrans-905
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4546,7 +6357,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[8.6 使用合成数据的实验](text00001.html#filepos0000462771)'
 - en: '[Exercises](text00001.html#filepos0000469145)'
+  id: totrans-906
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4555,7 +6368,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[练习](text00001.html#filepos0000469145)'
 - en: '[References](text00001.html#filepos0000473916)'
+  id: totrans-907
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4564,7 +6379,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00001.html#filepos0000473916)'
 - en: '[Note](text00001.html#filepos0000475873)'
+  id: totrans-908
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4573,12 +6390,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[注释](text00001.html#filepos0000475873)'
 - en: '[Chapter 9 Hyper-Parameter Tuning with Cross-Validation](text00001.html#filepos0000476302)'
+  id: totrans-909
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第9章 使用交叉验证的超参数调优](text00001.html#filepos0000476302)'
 - en: '[9.1 Motivation](text00001.html#filepos0000476563)'
+  id: totrans-910
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4587,7 +6408,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[9.1 动机](text00001.html#filepos0000476563)'
 - en: '[9.2 Grid Search Cross-Validation](text00001.html#filepos0000477372)'
+  id: totrans-911
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4596,7 +6419,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[9.2 网格搜索交叉验证](text00001.html#filepos0000477372)'
 - en: '[9.3 Randomized Search Cross-Validation](text00001.html#filepos0000482285)'
+  id: totrans-912
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4605,7 +6430,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[9.3 随机搜索交叉验证](text00001.html#filepos0000482285)'
 - en: '[9.4 Scoring and Hyper-parameter Tuning](text00002.html#filepos0000487673)'
+  id: totrans-913
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4614,7 +6441,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[9.4 评分和超参数调优](text00002.html#filepos0000487673)'
 - en: '[Exercises](text00002.html#filepos0000492944)'
+  id: totrans-914
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4623,7 +6452,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[练习](text00002.html#filepos0000492944)'
 - en: '[References](text00002.html#filepos0000498144)'
+  id: totrans-915
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4632,7 +6463,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00002.html#filepos0000498144)'
 - en: '[Bibliography](text00002.html#filepos0000498771)'
+  id: totrans-916
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4641,7 +6474,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00002.html#filepos0000498771)'
 - en: '[Notes](text00002.html#filepos0000501204)'
+  id: totrans-917
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4650,15 +6485,21 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[笔记](text00002.html#filepos0000501204)'
 - en: '[PART 3 BACKTESTING](text00002.html#filepos0000502254)'
+  id: totrans-918
   prefs: []
   type: TYPE_NORMAL
+  zh: '[第三部分 回测](text00002.html#filepos0000502254)'
 - en: '[Chapter 10 Bet Sizing](text00002.html#filepos0000503563)'
+  id: totrans-919
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第10章 投注大小](text00002.html#filepos0000503563)'
 - en: '[10.1 Motivation](text00002.html#filepos0000503791)'
+  id: totrans-920
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4667,7 +6508,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[10.1 动机](text00002.html#filepos0000503791)'
 - en: '[10.2 Strategy-Independent Bet Sizing Approaches](text00002.html#filepos0000504483)'
+  id: totrans-921
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4676,7 +6519,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[10.2 独立于策略的投注大小方法](text00002.html#filepos0000504483)'
 - en: '[10.3 Bet Sizing from Predicted Probabilities](text00002.html#filepos0000511123)'
+  id: totrans-922
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4685,7 +6530,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[10.3 从预测概率中确定投注大小](text00002.html#filepos0000511123)'
 - en: '[10.4 Averaging Active Bets](text00002.html#filepos0000515184)'
+  id: totrans-923
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4694,7 +6541,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[10.4 平均活跃投注](text00002.html#filepos0000515184)'
 - en: '[10.5 Size Discretization](text00002.html#filepos0000516129)'
+  id: totrans-924
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4703,7 +6552,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[10.5 大小离散化](text00002.html#filepos0000516129)'
 - en: '[10.6 Dynamic Bet Sizes and Limit Prices](text00002.html#filepos0000517478)'
+  id: totrans-925
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4712,7 +6563,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[10.6 动态投注大小和限制价格](text00002.html#filepos0000517478)'
 - en: '[Exercises](text00002.html#filepos0000528797)'
+  id: totrans-926
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4721,7 +6574,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[练习](text00002.html#filepos0000528797)'
 - en: '[References](text00002.html#filepos0000534486)'
+  id: totrans-927
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4730,7 +6585,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00002.html#filepos0000534486)'
 - en: '[Bibliography](text00002.html#filepos0000535154)'
+  id: totrans-928
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4739,7 +6596,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00002.html#filepos0000535154)'
 - en: '[Notes](text00002.html#filepos0000536036)'
+  id: totrans-929
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4748,12 +6607,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[笔记](text00002.html#filepos0000536036)'
 - en: '[Chapter 11 The Dangers of Backtesting](text00002.html#filepos0000536917)'
+  id: totrans-930
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第11章 回测的危险](text00002.html#filepos0000536917)'
 - en: '[11.1 Motivation](text00002.html#filepos0000537161)'
+  id: totrans-931
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4762,7 +6625,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[11.1 动机](text00002.html#filepos0000537161)'
 - en: '[11.2 Mission Impossible: The Flawless Backtest](text00002.html#filepos0000538378)'
+  id: totrans-932
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4771,7 +6636,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[11.2 不可能的任务：完美回测](text00002.html#filepos0000538378)'
 - en: '[11.3 Even If Your Backtest Is Flawless, It Is Probably Wrong](text00002.html#filepos0000542210)'
+  id: totrans-933
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4780,7 +6647,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[11.3 即使你的回测完美，它也可能是错误的](text00002.html#filepos0000542210)'
 - en: '[11.4 Backtesting Is Not a Research Tool](text00002.html#filepos0000543781)'
+  id: totrans-934
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4789,7 +6658,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[11.4 回测不是研究工具](text00002.html#filepos0000543781)'
 - en: '[11.5 A Few General Recommendations](text00002.html#filepos0000546295)'
+  id: totrans-935
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4798,7 +6669,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[11.5 一些一般建议](text00002.html#filepos0000546295)'
 - en: '[11.6 Strategy Selection](text00002.html#filepos0000550515)'
+  id: totrans-936
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4807,7 +6680,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[11.6 策略选择](text00002.html#filepos0000550515)'
 - en: '[Exercises](text00002.html#filepos0000561842)'
+  id: totrans-937
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4816,7 +6691,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[练习](text00002.html#filepos0000561842)'
 - en: '[References](text00002.html#filepos0000563893)'
+  id: totrans-938
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4825,7 +6702,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00002.html#filepos0000563893)'
 - en: '[Bibliography](text00002.html#filepos0000567031)'
+  id: totrans-939
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4834,7 +6713,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00002.html#filepos0000567031)'
 - en: '[Note](text00002.html#filepos0000575507)'
+  id: totrans-940
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4843,12 +6724,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[注释](text00002.html#filepos0000575507)'
 - en: '[Chapter 12 Backtesting through Cross-Validation](text00002.html#filepos0000576018)'
+  id: totrans-941
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第12章 通过交叉验证进行回测](text00002.html#filepos0000576018)'
 - en: '[12.1 Motivation](text00002.html#filepos0000576272)'
+  id: totrans-942
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4857,7 +6742,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[12.1 动机](text00002.html#filepos0000576272)'
 - en: '[12.2 The Walk-Forward Method](text00002.html#filepos0000577230)'
+  id: totrans-943
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4866,7 +6753,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[12.2 向前滚动法](text00002.html#filepos0000577230)'
 - en: '[12.3 The Cross-Validation Method](text00002.html#filepos0000581868)'
+  id: totrans-944
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4875,7 +6764,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[12.3 交叉验证法](text00002.html#filepos0000581868)'
 - en: '[12.4 The Combinatorial Purged Cross-Validation Method](text00002.html#filepos0000585069)'
+  id: totrans-945
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4884,7 +6775,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[12.4 组合清除交叉验证法](text00002.html#filepos0000585069)'
 - en: '[12.5 How Combinatorial Purged Cross-Validation Addresses Backtest Overfitting](text00002.html#filepos0000596425)'
+  id: totrans-946
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4893,7 +6786,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[12.5 组合清除交叉验证如何解决回测过拟合](text00002.html#filepos0000596425)'
 - en: '[Exercises](text00002.html#filepos0000604305)'
+  id: totrans-947
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4902,7 +6797,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[习题](text00002.html#filepos0000604305)'
 - en: '[References](text00002.html#filepos0000607704)'
+  id: totrans-948
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4911,12 +6808,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00002.html#filepos0000607704)'
 - en: '[Chapter 13 Backtesting on Synthetic Data](text00002.html#filepos0000609384)'
+  id: totrans-949
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第13章 对合成数据的回测](text00002.html#filepos0000609384)'
 - en: '[13.1 Motivation](text00002.html#filepos0000609631)'
+  id: totrans-950
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4925,7 +6826,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[13.1 动机](text00002.html#filepos0000609631)'
 - en: '[13.2 Trading Rules](text00002.html#filepos0000610409)'
+  id: totrans-951
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4934,7 +6837,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[13.2 交易规则](text00002.html#filepos0000610409)'
 - en: '[13.3 The Problem](text00002.html#filepos0000613748)'
+  id: totrans-952
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4943,7 +6848,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[13.3 问题](text00002.html#filepos0000613748)'
 - en: '[13.4 Our Framework](text00002.html#filepos0000623154)'
+  id: totrans-953
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4952,7 +6859,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[13.4 我们的框架](text00002.html#filepos0000623154)'
 - en: '[13.5 Numerical Determination of Optimal Trading Rules](text00002.html#filepos0000627390)'
+  id: totrans-954
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4961,7 +6870,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[13.5 最优交易规则的数值确定](text00002.html#filepos0000627390)'
 - en: '[13.6 Experimental Results](text00002.html#filepos0000636545)'
+  id: totrans-955
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4970,7 +6881,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[13.6 实验结果](text00002.html#filepos0000636545)'
 - en: '[13.7 Conclusion](text00002.html#filepos0000673037)'
+  id: totrans-956
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4979,7 +6892,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[13.7 结论](text00002.html#filepos0000673037)'
 - en: '[Exercises](text00002.html#filepos0000675326)'
+  id: totrans-957
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4988,7 +6903,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[习题](text00002.html#filepos0000675326)'
 - en: '[References](text00002.html#filepos0000678781)'
+  id: totrans-958
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -4997,7 +6914,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00002.html#filepos0000678781)'
 - en: '[Notes](text00002.html#filepos0000681006)'
+  id: totrans-959
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5006,12 +6925,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[笔记](text00002.html#filepos0000681006)'
 - en: '[Chapter 14 Backtest Statistics](text00002.html#filepos0000682127)'
+  id: totrans-960
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第14章 回测统计](text00002.html#filepos0000682127)'
 - en: '[14.1 Motivation](text00002.html#filepos0000682364)'
+  id: totrans-961
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5020,7 +6943,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[14.1 动机](text00002.html#filepos0000682364)'
 - en: '[14.2 Types of Backtest Statistics](text00002.html#filepos0000683413)'
+  id: totrans-962
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5029,7 +6954,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[14.2 回测统计的类型](text00002.html#filepos0000683413)'
 - en: '[14.3 General Characteristics](text00002.html#filepos0000684034)'
+  id: totrans-963
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5038,7 +6965,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[14.3 一般特征](text00002.html#filepos0000684034)'
 - en: '[14.4 Performance](text00002.html#filepos0000689407)'
+  id: totrans-964
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5047,7 +6976,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[14.4 绩效](text00002.html#filepos0000689407)'
 - en: '[14.5 Runs](text00002.html#filepos0000695945)'
+  id: totrans-965
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5056,7 +6987,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[14.5 跑次](text00002.html#filepos0000695945)'
 - en: '[14.6 Implementation Shortfall](text00002.html#filepos0000704198)'
+  id: totrans-966
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5065,7 +6998,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[14.6 实施短缺](text00002.html#filepos0000704198)'
 - en: '[14.7 Efficiency](text00002.html#filepos0000705735)'
+  id: totrans-967
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5074,7 +7009,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[14.7 效率](text00002.html#filepos0000705735)'
 - en: '[14.8 Classification Scores](text00002.html#filepos0000715741)'
+  id: totrans-968
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5083,7 +7020,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[14.8 分类得分](text00002.html#filepos0000715741)'
 - en: '[14.9 Attribution](text00002.html#filepos0000723836)'
+  id: totrans-969
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5092,7 +7031,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[14.9 归因](text00002.html#filepos0000723836)'
 - en: '[Exercises](text00002.html#filepos0000726720)'
+  id: totrans-970
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5101,7 +7042,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[习题](text00002.html#filepos0000726720)'
 - en: '[References](text00002.html#filepos0000731196)'
+  id: totrans-971
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5110,7 +7053,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00002.html#filepos0000731196)'
 - en: '[Bibliography](text00003.html#filepos0000733327)'
+  id: totrans-972
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5119,7 +7064,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考书目](text00003.html#filepos0000733327)'
 - en: '[Notes](text00003.html#filepos0000740485)'
+  id: totrans-973
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5128,12 +7075,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[笔记](text00003.html#filepos0000740485)'
 - en: '[Chapter 15 Understanding Strategy Risk](text00003.html#filepos0000741410)'
+  id: totrans-974
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第15章 理解策略风险](text00003.html#filepos0000741410)'
 - en: '[15.1 Motivation](text00003.html#filepos0000741655)'
+  id: totrans-975
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5142,7 +7093,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[15.1 动机](text00003.html#filepos0000741655)'
 - en: '[15.2 Symmetric Payouts](text00003.html#filepos0000742743)'
+  id: totrans-976
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5151,7 +7104,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[15.2 对称支付](text00003.html#filepos0000742743)'
 - en: '[15.3 Asymmetric Payouts](text00003.html#filepos0000749241)'
+  id: totrans-977
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5160,7 +7115,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[15.3 非对称支付](text00003.html#filepos0000749241)'
 - en: '[15.4 The Probability of Strategy Failure](text00003.html#filepos0000759813)'
+  id: totrans-978
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5169,7 +7126,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[15.4 策略失败的概率](text00003.html#filepos0000759813)'
 - en: '[Exercises](text00003.html#filepos0000768696)'
+  id: totrans-979
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5178,7 +7137,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[习题](text00003.html#filepos0000768696)'
 - en: '[References](text00003.html#filepos0000773392)'
+  id: totrans-980
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5187,12 +7148,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00003.html#filepos0000773392)'
 - en: '[Chapter 16 Machine Learning Asset Allocation](text00003.html#filepos0000774986)'
+  id: totrans-981
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第16章 机器学习资产配置](text00003.html#filepos0000774986)'
 - en: '[16.1 Motivation](text00003.html#filepos0000775237)'
+  id: totrans-982
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5201,7 +7166,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[16.1 动机](text00003.html#filepos0000775237)'
 - en: '[16.2 The Problem with Convex Portfolio Optimization](text00003.html#filepos0000776692)'
+  id: totrans-983
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5210,7 +7177,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[16.2 凸性投资组合优化的问题](text00003.html#filepos0000776692)'
 - en: '[16.3 Markowitz''s Curse](text00003.html#filepos0000779564)'
+  id: totrans-984
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5219,7 +7188,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[16.3 马科维茨的诅咒](text00003.html#filepos0000779564)'
 - en: '[16.4 From Geometric to Hierarchical Relationships](text00003.html#filepos0000782378)'
+  id: totrans-985
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5228,7 +7199,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[16.4 从几何关系到层次关系](text00003.html#filepos0000782378)'
 - en: '[16.5 A Numerical Example](text00003.html#filepos0000807661)'
+  id: totrans-986
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5237,7 +7210,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[16.5 数值示例](text00003.html#filepos0000807661)'
 - en: '[16.6 Out-of-Sample Monte Carlo Simulations](text00003.html#filepos0000818590)'
+  id: totrans-987
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5246,7 +7221,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[16.6 超出样本的蒙特卡罗模拟](text00003.html#filepos0000818590)'
 - en: '[16.7 Further Research](text00003.html#filepos0000824738)'
+  id: totrans-988
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5255,7 +7232,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[16.7 进一步研究](text00003.html#filepos0000824738)'
 - en: '[16.8 Conclusion](text00003.html#filepos0000828570)'
+  id: totrans-989
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5264,7 +7243,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[16.8 结论](text00003.html#filepos0000828570)'
 - en: '[APPENDICES](text00003.html#filepos0000831910)'
+  id: totrans-990
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5273,7 +7254,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[附录](text00003.html#filepos0000831910)'
 - en: '[16.A.1 Correlation-based Metric](text00003.html#filepos0000832025)'
+  id: totrans-991
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5282,7 +7265,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[16.A.1 基于相关性的指标](text00003.html#filepos0000832025)'
 - en: '[16.A.2 Inverse Variance Allocation](text00003.html#filepos0000835480)'
+  id: totrans-992
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5291,7 +7276,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[16.A.2 逆方差分配](text00003.html#filepos0000835480)'
 - en: '[16.A.3 Reproducing the Numerical Example](text00003.html#filepos0000836832)'
+  id: totrans-993
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5300,7 +7287,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[16.A.3 复制数值示例](text00003.html#filepos0000836832)'
 - en: '[16.A.4 Reproducing the Monte Carlo Experiment](text00003.html#filepos0000838327)'
+  id: totrans-994
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5309,7 +7298,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[16.A.4 复制蒙特卡罗实验](text00003.html#filepos0000838327)'
 - en: '[Exercises](text00003.html#filepos0000839659)'
+  id: totrans-995
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5318,7 +7309,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[习题](text00003.html#filepos0000839659)'
 - en: '[References](text00003.html#filepos0000843310)'
+  id: totrans-996
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5327,7 +7320,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00003.html#filepos0000843310)'
 - en: '[Notes](text00003.html#filepos0000848703)'
+  id: totrans-997
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5336,15 +7331,21 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[注释](text00003.html#filepos0000848703)'
 - en: '[PART 4 USEFUL FINANCIAL FEATURES](text00003.html#filepos0000849866)'
+  id: totrans-998
   prefs: []
   type: TYPE_NORMAL
+  zh: '[第4部分 有用的金融特征](text00003.html#filepos0000849866)'
 - en: '[Chapter 17 Structural Breaks](text00003.html#filepos0000850574)'
+  id: totrans-999
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第17章 结构性断裂](text00003.html#filepos0000850574)'
 - en: '[17.1 Motivation](text00003.html#filepos0000850809)'
+  id: totrans-1000
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5353,7 +7354,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[17.1 动机](text00003.html#filepos0000850809)'
 - en: '[17.2 Types of Structural Break Tests](text00003.html#filepos0000852108)'
+  id: totrans-1001
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5362,7 +7365,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[17.2 结构性断裂测试类型](text00003.html#filepos0000852108)'
 - en: '[17.3 CUSUM Tests](text00003.html#filepos0000853372)'
+  id: totrans-1002
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5371,7 +7376,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[17.3 CUSUM 测试](text00003.html#filepos0000853372)'
 - en: '[17.4 Explosiveness Tests](text00003.html#filepos0000860239)'
+  id: totrans-1003
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5380,7 +7387,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[17.4 爆炸性测试](text00003.html#filepos0000860239)'
 - en: '[Exercises](text00003.html#filepos0000895025)'
+  id: totrans-1004
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5389,7 +7398,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[习题](text00003.html#filepos0000895025)'
 - en: '[References](text00003.html#filepos0000898694)'
+  id: totrans-1005
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5398,12 +7409,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00003.html#filepos0000898694)'
 - en: '[Chapter 18 Entropy Features](text00003.html#filepos0000901244)'
+  id: totrans-1006
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第18章 熵特征](text00003.html#filepos0000901244)'
 - en: '[18.1 Motivation](text00003.html#filepos0000901478)'
+  id: totrans-1007
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5412,7 +7427,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[18.1 动机](text00003.html#filepos0000901478)'
 - en: '[18.2 Shannon''s Entropy](text00003.html#filepos0000902479)'
+  id: totrans-1008
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5421,7 +7438,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[18.2 香农熵](text00003.html#filepos0000902479)'
 - en: '[18.3 The Plug-in (or Maximum Likelihood) Estimator](text00003.html#filepos0000907003)'
+  id: totrans-1009
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5430,7 +7449,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[18.3 插值（或最大似然）估计器](text00003.html#filepos0000907003)'
 - en: '[18.4 Lempel-Ziv Estimators](text00003.html#filepos0000910957)'
+  id: totrans-1010
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5439,7 +7460,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[18.4 兰佩尔-齐夫估计器](text00003.html#filepos0000910957)'
 - en: '[18.5 Encoding Schemes](text00003.html#filepos0000922307)'
+  id: totrans-1011
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5448,7 +7471,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[18.5 编码方案](text00003.html#filepos0000922307)'
 - en: '[18.6 Entropy of a Gaussian Process](text00003.html#filepos0000927410)'
+  id: totrans-1012
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5457,7 +7482,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[18.6 高斯过程的熵](text00003.html#filepos0000927410)'
 - en: '[18.7 Entropy and the Generalized Mean](text00003.html#filepos0000929817)'
+  id: totrans-1013
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5466,7 +7493,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[18.7 熵与广义均值](text00003.html#filepos0000929817)'
 - en: '[18.8 A Few Financial Applications of Entropy](text00003.html#filepos0000937381)'
+  id: totrans-1014
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5475,7 +7504,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[18.8 熵的几个金融应用](text00003.html#filepos0000937381)'
 - en: '[Exercises](text00003.html#filepos0000951076)'
+  id: totrans-1015
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5484,7 +7515,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[习题](text00003.html#filepos0000951076)'
 - en: '[References](text00003.html#filepos0000957166)'
+  id: totrans-1016
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5493,7 +7526,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00003.html#filepos0000957166)'
 - en: '[Bibliography](text00003.html#filepos0000961991)'
+  id: totrans-1017
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5502,7 +7537,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[书目](text00003.html#filepos0000961991)'
 - en: '[Note](text00003.html#filepos0000963140)'
+  id: totrans-1018
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5511,12 +7548,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[注](text00003.html#filepos0000963140)'
 - en: '[Chapter 19 Microstructural Features](text00003.html#filepos0000963505)'
+  id: totrans-1019
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第19章 微观结构特征](text00003.html#filepos0000963505)'
 - en: '[19.1 Motivation](text00003.html#filepos0000963747)'
+  id: totrans-1020
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5525,7 +7566,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[19.1 动机](text00003.html#filepos0000963747)'
 - en: '[19.2 Review of the Literature](text00003.html#filepos0000964629)'
+  id: totrans-1021
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5534,7 +7577,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[19.2 文献综述](text00003.html#filepos0000964629)'
 - en: '[19.3 First Generation: Price Sequences](text00004.html#filepos0000966533)'
+  id: totrans-1022
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5543,7 +7588,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[19.3 第一代：价格序列](text00004.html#filepos0000966533)'
 - en: '[19.4 Second Generation: Strategic Trade Models](text00004.html#filepos0000980046)'
+  id: totrans-1023
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5552,7 +7599,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[19.4 第二代：战略贸易模型](text00004.html#filepos0000980046)'
 - en: '[19.5 Third Generation: Sequential Trade Models](text00004.html#filepos0000992251)'
+  id: totrans-1024
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5561,7 +7610,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[19.5 第三代：顺序贸易模型](text00004.html#filepos0000992251)'
 - en: '[19.6 Additional Features from Microstructural Datasets](text00004.html#filepos0001000562)'
+  id: totrans-1025
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5570,7 +7621,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[19.6 微观结构数据集中的额外特征](text00004.html#filepos0001000562)'
 - en: '[19.7 What Is Microstructural Information?](text00004.html#filepos0001010555)'
+  id: totrans-1026
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5579,7 +7632,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[19.7 什么是微观结构信息？](text00004.html#filepos0001010555)'
 - en: '[Exercises](text00004.html#filepos0001016132)'
+  id: totrans-1027
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5588,7 +7643,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[习题](text00004.html#filepos0001016132)'
 - en: '[References](text00004.html#filepos0001024369)'
+  id: totrans-1028
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5597,15 +7654,21 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00004.html#filepos0001024369)'
 - en: '[PART 5 HIGH-PERFORMANCE COMPUTING RECIPES](text00004.html#filepos0001033677)'
+  id: totrans-1029
   prefs: []
   type: TYPE_NORMAL
+  zh: '[第5部分 高性能计算配方](text00004.html#filepos0001033677)'
 - en: '[Chapter 20 Multiprocessing and Vectorization](text00004.html#filepos0001034475)'
+  id: totrans-1030
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第20章 多处理与向量化](text00004.html#filepos0001034475)'
 - en: '[20.1 Motivation](text00004.html#filepos0001034726)'
+  id: totrans-1031
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5614,7 +7677,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[20.1 动机](text00004.html#filepos0001034726)'
 - en: '[20.2 Vectorization Example](text00004.html#filepos0001035757)'
+  id: totrans-1032
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5623,7 +7688,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[20.2 向量化示例](text00004.html#filepos0001035757)'
 - en: '[20.3 Single-Thread vs. Multithreading vs. Multiprocessing](text00004.html#filepos0001037784)'
+  id: totrans-1033
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5632,7 +7699,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[20.3 单线程与多线程与多处理](text00004.html#filepos0001037784)'
 - en: '[20.4 Atoms and Molecules](text00004.html#filepos0001041072)'
+  id: totrans-1034
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5641,7 +7710,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[20.4 原子与分子](text00004.html#filepos0001041072)'
 - en: '[20.5 Multiprocessing Engines](text00004.html#filepos0001051513)'
+  id: totrans-1035
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5650,7 +7721,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[20.5 多处理引擎](text00004.html#filepos0001051513)'
 - en: '[20.6 Multiprocessing Example](text00004.html#filepos0001063528)'
+  id: totrans-1036
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5659,7 +7732,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[20.6 多处理示例](text00004.html#filepos0001063528)'
 - en: '[Exercises](text00004.html#filepos0001069003)'
+  id: totrans-1037
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5668,7 +7743,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[习题](text00004.html#filepos0001069003)'
 - en: '[Reference](text00004.html#filepos0001071440)'
+  id: totrans-1038
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5677,7 +7754,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考](text00004.html#filepos0001071440)'
 - en: '[Bibliography](text00004.html#filepos0001071768)'
+  id: totrans-1039
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5686,7 +7765,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[书目](text00004.html#filepos0001071768)'
 - en: '[Notes](text00004.html#filepos0001073018)'
+  id: totrans-1040
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5695,12 +7776,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[注释](text00004.html#filepos0001073018)'
 - en: '[Chapter 21 Brute Force and Quantum Computers](text00004.html#filepos0001074501)'
+  id: totrans-1041
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第21章 粗暴计算与量子计算机](text00004.html#filepos0001074501)'
 - en: '[21.1 Motivation](text00004.html#filepos0001074752)'
+  id: totrans-1042
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5709,7 +7794,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[21.1 动机](text00004.html#filepos0001074752)'
 - en: '[21.2 Combinatorial Optimization](text00004.html#filepos0001075635)'
+  id: totrans-1043
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5718,7 +7805,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[21.2 组合优化](text00004.html#filepos0001075635)'
 - en: '[21.3 The Objective Function](text00004.html#filepos0001078039)'
+  id: totrans-1044
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5727,7 +7816,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[21.3 目标函数](text00004.html#filepos0001078039)'
 - en: '[21.4 The Problem](text00004.html#filepos0001081801)'
+  id: totrans-1045
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5736,7 +7827,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[21.4 问题](text00004.html#filepos0001081801)'
 - en: '[21.5 An Integer Optimization Approach](text00004.html#filepos0001083348)'
+  id: totrans-1046
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5745,7 +7838,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[21.5 整数优化方法](text00004.html#filepos0001083348)'
 - en: '[21.6 A Numerical Example](text00004.html#filepos0001091530)'
+  id: totrans-1047
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5754,7 +7849,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[21.6 数值示例](text00004.html#filepos0001091530)'
 - en: '[Exercises](text00004.html#filepos0001094307)'
+  id: totrans-1048
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5763,7 +7860,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[练习](text00004.html#filepos0001094307)'
 - en: '[References](text00004.html#filepos0001097918)'
+  id: totrans-1049
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5772,12 +7871,16 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00004.html#filepos0001097918)'
 - en: '[Chapter 22 High-Performance Computational Intelligence and Forecasting Technologies](text00004.html#filepos0001099298)'
+  id: totrans-1050
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[第22章 高性能计算智能与预测技术](text00004.html#filepos0001099298)'
 - en: '[22.1 Motivation](text00004.html#filepos0001099723)'
+  id: totrans-1051
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5786,7 +7889,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[22.1 动机](text00004.html#filepos0001099723)'
 - en: '[22.2 Regulatory Response to the Flash Crash of 2010](text00004.html#filepos0001101136)'
+  id: totrans-1052
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5795,7 +7900,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[22.2 对2010年闪电崩盘的监管响应](text00004.html#filepos0001101136)'
 - en: '[22.3 Background](text00004.html#filepos0001102867)'
+  id: totrans-1053
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5804,7 +7911,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[22.3 背景](text00004.html#filepos0001102867)'
 - en: '[22.4 HPC Hardware](text00004.html#filepos0001108331)'
+  id: totrans-1054
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5813,7 +7922,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[22.4 高性能计算硬件](text00004.html#filepos0001108331)'
 - en: '[22.5 HPC Software](text00004.html#filepos0001117874)'
+  id: totrans-1055
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5822,7 +7933,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[22.5 高性能计算软件](text00004.html#filepos0001117874)'
 - en: '[22.6 Use Cases](text00004.html#filepos0001126185)'
+  id: totrans-1056
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5831,7 +7944,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[22.6 用例](text00004.html#filepos0001126185)'
 - en: '[22.7 Summary and Call for Participation](text00004.html#filepos0001154614)'
+  id: totrans-1057
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5840,7 +7955,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[22.7 总结与参与呼吁](text00004.html#filepos0001154614)'
 - en: '[22.8 Acknowledgments](text00004.html#filepos0001158907)'
+  id: totrans-1058
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5849,7 +7966,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[22.8 感谢](text00004.html#filepos0001158907)'
 - en: '[References](text00004.html#filepos0001159700)'
+  id: totrans-1059
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5858,7 +7977,9 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[参考文献](text00004.html#filepos0001159700)'
 - en: '[Notes](text00004.html#filepos0001169042)'
+  id: totrans-1060
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -5867,9 +7988,14 @@
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[备注](text00004.html#filepos0001169042)'
 - en: '[Index](text00004.html#filepos0001170766)'
+  id: totrans-1061
   prefs: []
   type: TYPE_NORMAL
+  zh: '[索引](text00004.html#filepos0001170766)'
 - en: '[EULA](text00005.html#filepos0001245663)'
+  id: totrans-1062
   prefs: []
   type: TYPE_NORMAL
+  zh: '[最终用户许可协议](text00005.html#filepos0001245663)'
