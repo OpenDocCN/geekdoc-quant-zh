@@ -1,0 +1,3767 @@
+- en: '**9.4 Scoring and Hyper-parameter Tuning**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Snippets 9.1 and 9.3 set `scoring=‘f1’` for meta-labeling applications. For
+    other applications, they set `scoring=‘neg_log_loss’` rather than the standard
+    `scoring=‘accuracy’` . Although accuracy has a more intuitive interpretation,
+    I suggest that you use `neg_log_loss` when you are tuning hyper-parameters for
+    an investment strategy. Let me explain my reasoning.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suppose that your ML investment strategy predicts that you should buy a security,
+    with high probability. You will enter a large long position, as a function of
+    the strategy's confidence. If the prediction was erroneous, and the market sells
+    off instead, you will lose a lot of money. And yet, accuracy accounts equally
+    for an erroneous buy prediction with high probability and for an erroneous buy
+    prediction with low probability. Moreover, accuracy can offset a miss with high
+    probability with a hit with low probability.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Investment strategies profit from predicting the right label with high confidence.
+    Gains from good predictions with low confidence will not suffice to offset the
+    losses from bad predictions with high confidence. For this reason, accuracy does
+    not provide a realistic scoring of the classifier''s performance. Conversely,
+    log loss ^([3](text00002.html#filepos0000501946)) (aka cross-entropy loss) computes
+    the log-likelihood of the classifier given the true label, which takes predictions’
+    probabilities into account. Log loss can be estimated as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00409.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*p [*n* , *k*]* is the probability associated with prediction *n* of label
+    *k.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Y* is a 1-of-*K* binary indicator matrix, such that *y [*n* , *k*]* = 1 when
+    observation *n* was assigned label *k* out of *K* possible labels, and 0 otherwise.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Suppose that a classifier predicts two 1s, where the true labels are 1 and 0\.
+    The first prediction is a hit and the second prediction is a miss, thus accuracy
+    is 50%. [Figure 9.2](text00002.html#filepos0000491183) plots the cross-entropy
+    loss when these predictions come from probabilities ranging [0.5, 0.9]. One can
+    observe that on the right side of the figure, log loss is large due to misses
+    with high probability, even though the accuracy is 50% in all cases.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00411.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 9.2**](text00002.html#filepos0000490708) Log loss as a function of
+    predicted probabilities of hit and miss'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'There is a second reason to prefer cross-entropy loss over accuracy. CV scores
+    a classifier by applying sample weights (see Chapter 7, Section 7.5). As you may
+    recall from Chapter 4, observation weights were determined as a function of the
+    observation''s absolute return. The implication is that sample weighted cross-entropy
+    loss estimates the classifier''s performance in terms of variables involved in
+    a PnL (mark-to-market profit and losses) calculation: It uses the correct label
+    for the side, probability for the position size, and sample weight for the observation''s
+    return/outcome. That is the right ML performance metric for hyper-parameter tuning
+    of financial applications, not accuracy.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'When we use log loss as a scoring statistic, we often prefer to change its
+    sign, hence referring to “neg log loss *.* ” The reason for this change is cosmetic,
+    driven by intuition: A high neg log loss value is preferred to a low neg log loss
+    value, just as with accuracy. Keep in mind this sklearn bug when you use `neg_log_loss`
+    : [https://github.com/scikit-learn/scikit-learn/issues/9144](https://github.com/scikit-learn/scikit-learn/issues/9144)
+    . To circumvent this bug, you should use the `cvScore` function presented in Chapter
+    7.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Exercises**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using the function `getTestData` from Chapter 8, form a synthetic dataset of
+    10,000 observations with 10 features, where 5 are informative and 5 are noise.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Use `GridSearchCV` on 10-fold CV to find the `C` , `gamma` optimal hyper-parameters
+    on a SVC with RBF kernel, where `param_grid = {'C':[1E-2,1E-1,1,10,100],'gamma':[1E-2,1E-1,1,10,100]}`
+    and the scoring function is `neg_log_loss` .
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: How many nodes are there in the grid?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: How many fits did it take to find the optimal solution?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: How long did it take to find this solution?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: How can you access the optimal result?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What is the CV score of the optimal parameter combination?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: How can you pass sample weights to the SVC?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Using the same dataset from exercise 1,
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Use `RandomizedSearchCV` on 10-fold CV to find the `C` , `gamma` optimal hyper-parameters
+    on an SVC with RBF kernel, where `param_distributions = {‘C’:logUniform(a = 1E-2,b =
+    1E2),‘gamma’:logUniform(a = 1E-2,b = 1E2)},n_iter = 25` and `neg_log_loss` is
+    the scoring function.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: How long did it take to find this solution?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Is the optimal parameter combination similar to the one found in exercise 1?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What is the CV score of the optimal parameter combination? How does it compare
+    to the CV score from exercise 1?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: From exercise 1,
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Compute the Sharpe ratio of the resulting in-sample forecasts, from point 1.a
+    (see Chapter 14 for a definition of Sharpe ratio).
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Repeat point 1.a, this time with `accuracy` as the scoring function. Compute
+    the in-sample forecasts derived from the hyper-tuned parameters.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What scoring method leads to higher (in-sample) Sharpe ratio?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: From exercise 2,
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Compute the Sharpe ratio of the resulting in-sample forecasts, from point 2.a.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Repeat point 2.a, this time with `accuracy` as the scoring function. Compute
+    the in-sample forecasts derived from the hyper-tuned parameters.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What scoring method leads to higher (in-sample) Sharpe ratio?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Read the definition of log loss, *L* [ *Y* , *P* ].
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Why is the scoring function `neg_log_loss` defined as the negative log loss,
+    − *L* [*Y* , *P* ]?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What would be the outcome of maximizing the log loss, rather than the negative
+    log loss?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Consider an investment strategy that sizes its bets equally, regardless of the
+    forecast's confidence. In this case, what is a more appropriate scoring function
+    for hyper-parameter tuning, accuracy or cross-entropy loss?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '**References**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Bergstra, J., R. Bardenet, Y. Bengio, and B. Kegl (2011): “Algorithms for hyper-parameter
+    optimization.” *Advances in Neural Information Processing Systems* , pp. 2546–2554.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bergstra, J. and Y. Bengio (2012): “Random search for hyper-parameter optimization.”
+    *Journal of Machine Learning Research* , Vol. 13, pp. 281–305.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Bibliography**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Chapelle, O., V. Vapnik, O. Bousquet, and S. Mukherjee (2002): “Choosing multiple
+    parameters for support vector machines.” *Machine Learning* , Vol. 46, pp. 131–159.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Chuong, B., C. Foo, and A. Ng (2008): “Efficient multiple hyperparameter learning
+    for log-linear models.” *Advances in Neural Information Processing Systems* ,
+    Vol. 20\. Available at [http://ai.stanford.edu/∼chuongdo/papers/learn_reg.pdf](http://ai.stanford.edu/~chuongdo/papers/learn_reg.pdf)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Gorissen, D., K. Crombecq, I. Couckuyt, P. Demeester, and T. Dhaene (2010):
+    “A surrogate modeling and adaptive sampling toolbox for computer based design.”
+    *Journal of Machine Learning Research* , Vol. 11, pp. 2051–2055.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hsu, C., C. Chang, and C. Lin (2010): “A practical guide to support vector
+    classification.” Technical report, National Taiwan University.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hutter, F., H. Hoos, and K. Leyton-Brown (2011): “Sequential model-based optimization
+    for general algorithm configuration.” Proceedings of the 5th international conference
+    on Learning and Intelligent Optimization, pp. 507–523.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Larsen, J., L. Hansen, C. Svarer, and M. Ohlsson (1996): “Design and regularization
+    of neural networks: The optimal use of a validation set.” Proceedings of the 1996
+    IEEE Signal Processing Society Workshop.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Maclaurin, D., D. Duvenaud, and R. Adams (2015): “Gradient-based hyperparameter
+    optimization through reversible learning.” Working paper. Available at [https://arxiv.org/abs/1502.03492](https://arxiv.org/abs/1502.03492)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Martinez-Cantin, R. (2014): “BayesOpt: A Bayesian optimization library for
+    nonlinear optimization, experimental design and bandits.” *Journal of Machine
+    Learning Research* , Vol. 15, pp. 3915–3919.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Notes**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([1](text00001.html#filepos0000484050))     [http://scikit-learn.org/stable/modules/metrics.html.](http://scikit-learn.org/stable/modules/metrics.html.)
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([2](text00001.html#filepos0000484671))     [http://scikit-learn.org/stable/auto_examples/svm/plot_rbf_parameters.html.](http://scikit-learn.org/stable/auto_examples/svm/plot_rbf_parameters.html.)
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([3](text00002.html#filepos0000489345))     [http://scikit-learn.org/stable/modules/model_evaluation.html#log-loss](http://scikit-learn.org/stable/modules/model_evaluation.html#log-loss)
+    .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**PART 3**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Backtesting**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Chapter 10 Bet Sizing](text00002.html#filepos0000503563)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Chapter 11 The Dangers of Backtesting](text00002.html#filepos0000536917)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Chapter 12 Backtesting through Cross-Validation](text00002.html#filepos0000576018)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Chapter 13 Backtesting on Synthetic Data](text00002.html#filepos0000609384)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Chapter 14 Backtest Statistics](text00002.html#filepos0000682127)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Chapter 15 Understanding Strategy Risk](text00003.html#filepos0000741410)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Chapter 16 Machine Learning Asset Allocation](text00003.html#filepos0000774986)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**CHAPTER 10**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Bet Sizing**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**10.1 Motivation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are fascinating parallels between strategy games and investing. Some of
+    the best portfolio managers I have worked with are excellent poker players, perhaps
+    more so than chess players. One reason is bet sizing, for which Texas Hold'em
+    provides a great analogue and training ground. Your ML algorithm can achieve high
+    accuracy, but if you do not size your bets properly, your investment strategy
+    will inevitably lose money. In this chapter we will review a few approaches to
+    size bets from ML predictions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**10.2 Strategy-Independent Bet Sizing Approaches**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consider two strategies on the same instrument. Let *m [*i* , *t*]* ∈ [ − 1,
+    1] be the bet size of strategy *i* at time *t* , where *m [*i* , *t*]* = −1 indicates
+    a full short position and *m [*i* , *t*]* = 1 indicates a full long position.
+    Suppose that one strategy produced a sequence of bet sizes [ *m [1, 1]* , *m [1,
+    2]* , *m [1, 3]* ] = [.5, 1, 0], as the market price followed a sequence [ *p
+    [1]* , *p [2]* , *p [3]* ] = [1, .5, 1.25], where *p [*t*]* is the price at time
+    *t.* The other strategy produced a sequence [ *m [2, 1]* , *m [2, 2]* , *m [2,
+    3]* ] = [1, .5, 0], as it was forced to reduce its bet size once the market moved
+    against the initial full position. Both strategies produced forecasts that turned
+    out to be correct (the price increased by 25% between *p [1]* and *p [3]* ), however
+    the first strategy made money (0.5) while the second strategy lost money (−.125).
+  prefs: []
+  type: TYPE_NORMAL
+- en: We would prefer to size positions in such way that we reserve some cash for
+    the possibility that the trading signal strengthens before it weakens. One option
+    is to compute the series *c [*t*]* = *c [*t* , *l*]* − *c [*t* , *s*]* , where
+    *c [*t* , *l*]* is the number of concurrent long bets at time *t* , and *c [*t*
+    , *s*]* is the number of concurrent short bets at time *t.* This bet concurrency
+    is derived, for each side, similarly to how we computed label concurrency in Chapter
+    4 (recall the `t1` object, with overlapping time spans). We fit a mixture of two
+    Gaussians on { *c [*t*]* }, applying a method like the one described in López
+    de Prado and Foreman [2014]. Then, the bet size is derived as
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00413.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where *F* [ *x* ] is the CDF of the fitted mixture of two Gaussians for a value
+    *x* . For example, we could size the bet as 0.9 when the probability of observing
+    a signal of greater value is only 0.1\. The stronger the signal, the smaller the
+    probability that the signal becomes even stronger, hence the greater the bet size.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A second solution is to follow a budgeting approach. We compute the maximum
+    number (or some other quantile) of concurrent long bets, ![](Image00417.jpg) ,
+    and the maximum number of concurrent short bets, ![](Image00420.jpg) . Then we
+    derive the bet size as ![](Image00422.jpg) , where *c [*t*  ,  *l*] * is the number
+    of concurrent long bets at time *t* , and *c [*t*  ,  *s*] * is the number of
+    concurrent short bets at time *t.* The goal is that the maximum position is not
+    reached before the last concurrent signal is triggered.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'A third approach is to apply meta-labeling, as we explained in Chapter 3\.
+    We fit a classifier, such as an SVC or RF, to determine the probability of misclassification,
+    and use that probability to derive the bet size. ^([1](text00002.html#filepos0000536150))
+    This approach has a couple of advantages: First, the ML algorithm that decides
+    the bet sizes is independent of the primary model, allowing for the incorporation
+    of features predictive of false positives (see Chapter 3). Second, the predicted
+    probability can be directly translated into bet size. Let us see how.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**10.3 Bet Sizing from Predicted Probabilities**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let us denote *p* [ *x* ] the probability that label *x* takes place. For two
+    possible outcomes, *x* ∈ { − 1, 1}, we would like to test the null hypothesis
+    ![](Image00424.jpg) . We compute the test statistic ![](Image00426.jpg) , with
+    *z* ∈ ( − ∞, +∞) and where *Z* represents the standard Normal distribution. We
+    derive the bet size as *m* = 2 *Z* [ *z* ] − 1, where *m* ∈ [ − 1, 1] and *Z*
+    [.] is the CDF of *Z* .
+  prefs: []
+  type: TYPE_NORMAL
+- en: For more than two possible outcomes, we follow a one-versus-rest method. Let
+    *X* = { − 1, …, 0, …, 1} be various labels associated with bet sizes, and *x*
+    ∈ *X* the predicted label. In other words, the label is identified by the bet
+    size associated with it. For each label *i* = 1, …, || *X* ||, we estimate a probability
+    *p [*i*]* , with ![](Image00429.jpg) *.* We define ![](Image00431.jpg) as the
+    probability of *x* , and we would like to test for ![](Image00433.jpg) . ^([  2  ](text00002.html#filepos0000536731))
+    We compute the test statistic ![](Image00434.jpg) , with *z* ∈ [0., . + ∞). We
+    derive the bet size as ![](Image00000.jpg) , where *m* ∈ [ − 1, 1] and *Z* [ *z*
+    ] regulates the size for a prediction *x* (where the side is implied by *x* ).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 10.1](text00002.html#filepos0000514747) plots the bet size as a function
+    of test statistic. Snippet 10.1 implements the translation from probabilities
+    to bet size. It handles the possibility that the prediction comes from a meta-labeling
+    estimator, as well from a standard labeling estimator. In step #2, it also averages
+    active bets, and discretizes the final value, which we will explain in the following
+    sections.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00399.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 10.1**](text00002.html#filepos0000514124) Bet size from predicted
+    probabilities'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 10.1 FROM PROBABILITIES TO BET SIZE**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00465.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**10.4 Averaging Active Bets**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Every bet is associated with a holding period, spanning from the time it originated
+    to the time the first barrier is touched, `t1` (see Chapter 3). One possible approach
+    is to override an old bet as a new bet arrives; however, that is likely to lead
+    to excessive turnover. A more sensible approach is to average all sizes across
+    all bets still active at a given point in time. Snippet 10.2 illustrates one possible
+    implementation of this idea.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 10.2 BETS ARE AVERAGED AS LONG AS THEY ARE STILL ACTIVE**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00544.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**10.5 Size Discretization**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Averaging reduces some of the excess turnover, but still it is likely that small
+    trades will be triggered with every prediction. As this jitter would cause unnecessary
+    overtrading, I suggest you discretize the bet size as ![](Image00014.jpg) , where
+    *d* ∈ (0, ..1] determines the degree of discretization.  [ Figure 10.2 ](text00002.html#filepos0000517025)
+    illustrates the discretization of the bet size. Snippet 10.3 implements this notion.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00724.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 10.2**](text00002.html#filepos0000516715) Discretization of the bet
+    size, d = 0.2'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 10.3 SIZE DISCRETIZATION TO PREVENT OVERTRADING**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00120.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**10.6 Dynamic Bet Sizes and Limit Prices**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Recall the triple-barrier labeling method presented in Chapter 3\. Bar *i* is
+    formed at time *t [*i* , 0]* , at which point we forecast the first barrier that
+    will be touched. That prediction implies a forecasted price, ![](Image00023.jpg)
+    , consistent with the barriers’ settings. In the period elapsed until the outcome
+    takes place, *t* ∈ [ *t [*i*  , 0] * , *t [*i*  , 1] * ], the price *p [*t*] *
+    fluctuates and additional forecasts may be formed, ![](Image00156.jpg) , where
+    *j* ∈ [ *i* + 1, *I* ] and *t [*j*  , 0] * ≤ *t [*i*  , 1] * . In Sections 10.4
+    and 10.5 we discussed methods for averaging the active bets and discretizing the
+    bet size as new forecasts are formed. In this section we will introduce an approach
+    to adjust bet sizes as market price *p [*t*] * and forecast price *f [*i*] * fluctuate.
+    In the process, we will derive the order's limit price.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let *q [*t*]* be the current position, *Q* the maximum absolute position size,
+    and ![](Image00028.jpg) the target position size associated with forecast *f [*i*]
+    * , such that
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00193.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](Image00210.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where *m* [ω, *x* ] is the bet size, *x* = *f [*i*]* − *p [*t*]* is the divergence
+    between the current market price and the forecast, ω is a coefficient that regulates
+    the width of the sigmoid function, and Int[ *x* ] is the integer value of *x*
+    . Note that for a real-valued price divergence *x* , − 1 < *m* [ω, *x* ] < 1,
+    the integer value ![](Image00231.jpg) is bounded ![](Image00249.jpg) .
+  prefs: []
+  type: TYPE_NORMAL
+- en: The target position size ![](Image00044.jpg) can be dynamically adjusted as
+    *p [*t*] * changes. In particular, as *p [*t*] * → *f [*i*] * we get ![](Image00285.jpg)
+    , because the algorithm wants to realize the gains. This implies a breakeven limit
+    price ![](Image00303.jpg) for the order size ![](Image00053.jpg) , to avoid realizing
+    losses. In particular,
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00339.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where *L* [ *f [*i*]* , ω, *m* ] is the inverse function of *m* [ω, *f [*i*]*
+    − *p [*t*]* ] with respect to *p [*t*]* ,
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00361.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: We do not need to worry about the case *m ²* = 1, because ![](Image00380.jpg)
+    *.* Since this function is monotonic, the algorithm cannot realize losses as *p
+    [*t*] * → *f [*i*] * .
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let us calibrate ω. Given a user-defined pair ( *x* , *m* *), such that *x*
+    = *f [*i*]* − *p [*t*]* and *m* * = *m* [ω, *x* ], the inverse function of *m*
+    [ω, *x* ] with respect to ω is
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00396.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Snippet 10.4 implements the algorithm that computes the dynamic position size
+    and limit prices as a function of *p [*t*]* and *f [*i*]* . First, we calibrate
+    the sigmoid function, so that it returns a bet size of *m* * = .95 for a price
+    divergence of *x* = 10 *.* Second, we compute the target position ![](Image00412.jpg)
+    for a maximum position *Q* = 100, *f [*i*] * = 115 and *p [*t*] * = 100 *.* If
+    you try *f [*i*] * = 110, you will get ![](Image00427.jpg) , consistent with the
+    calibration of ω. Third, the limit price for this order of size ![](Image00441.jpg)
+    is *p [*t*] * < 112.3657 < *f [*i*] * , which is between the current price and
+    the forecasted price.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 10.4 DYNAMIC POSITION SIZE AND LIMIT PRICE**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00451.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: 'As an alternative to the sigmoid function, we could have used a power function
+    ![](Image00081.jpg) , where ω ≥ 0, *x* ∈ [ − 1, 1], which results in ![](Image00104.jpg)
+    . This alternative presents the advantages that:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00489.jpg) .'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Curvature can be directly manipulated through ω.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: For ω > 1, the function goes from concave to convex, rather than the other way
+    around, hence the function is almost flat around the inflexion point.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: We leave the derivation of the equations for a power function as an exercise.
+    [Figure 10.3](text00002.html#filepos0000528355) plots the bet sizes (y-axis) as
+    a function of price divergence *f* − *p [*t*]* (x-axis) for both the sigmoid and
+    power functions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00090.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 10.3**](text00002.html#filepos0000527844) *f* [*x* ] = *sgn* [*x*
+    ]|*x* | ² (concave to convex) and *f* [*x* ] = *x* (.1 + *x ²* ) ^(− .5) (convex
+    to concave)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Exercises**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using the formulation in Section 10.3, plot the bet size ( *m* ) as a function
+    of the maximum predicted probability ( ![](Image00520.jpg) when || *X* || = 2,
+    3, …, 10.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Draw 10,000 random numbers from a uniform distribution with bounds *U* [.5,
+    1.].
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Compute the bet sizes *m* for ||*X* || = 2*.*
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Assign 10,000 consecutive calendar days to the bet sizes.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Draw 10,000 random numbers from a uniform distribution with bounds *U* [1, 25].
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Form a pandas series indexed by the dates in 2.b, and with values equal to the
+    index shifted forward the number of days in 2.c. This is a `t1` object similar
+    to the ones we used in Chapter 3.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute the resulting average active bets, following Section 10.4.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Using the `t1` object from exercise 2.d:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Determine the maximum number of concurrent long bets, ![](Image00096.jpg) .
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Determine the maximum number of concurrent short bets, ![](Image00563.jpg) .
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Derive the bet size as ![](Image00105.jpg) , where *c [*t*  ,  *l*] * is the
+    number of concurrent long bets at time *t* , and *c [*t*  ,  *s*] * is the number
+    of concurrent short bets at time *t.*
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Using the `t1` object from exercise 2.d:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Compute the series *c [*t*]* = *c [*t* , *l*]* − *c [*t* , *s*]* , where *c
+    [*t* , *l*]* is the number of concurrent long bets at time *t* , and *c [*t* ,
+    *s*]* is the number of concurrent short bets at time *t.*
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Fit a mixture of two Gaussians on {*c [*t*]* }. You may want to use the method
+    described in López de Prado and Foreman [2014].
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Derive the bet size as ![](Image00107.jpg) , where *F* [*x* ] is the CDF of
+    the fitted mixture of two Gaussians for a value *x* .
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Explain how this series {*m [*t*]* } differ from the bet size series computed
+    in exercise 3.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Repeat exercise 1, where you discretize *m* with a `stepSize=.01` , `stepSize=.05`
+    , and `stepSize=.1` .
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Rewrite the equations in Section 10.6, so that the bet size is determined by
+    a power function rather than a sigmoid function.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Modify Snippet 10.4 so that it implements the equations you derived in exercise 6.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '**References**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. and M. Foreman (2014): “A mixture of Gaussians approach
+    to mathematical portfolio oversight: The EF3M algorithm.” *Quantitative Finance*
+    , Vol. 14, No. 5, pp. 913–930.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Wu, T., C. Lin and R. Weng (2004): “Probability estimates for multi-class classification
+    by pairwise coupling.” *Journal of Machine Learning Research* , Vol. 5, pp. 975–1005.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Bibliography**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Allwein, E., R. Schapire, and Y. Singer (2001): “Reducing multiclass to binary:
+    A unifying approach for margin classifiers.” *Journal of Machine Learning Research*
+    , Vol. 1, pp. 113–141.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hastie, T. and R. Tibshirani (1998): “Classification by pairwise coupling.”
+    *The Annals of Statistics* , Vol. 26, No. 1, pp. 451–471.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Refregier, P. and F. Vallet (1991): “Probabilistic approach for multiclass
+    classification with neural networks.” Proceedings of International Conference
+    on Artificial Networks, pp. 1003–1007.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Notes**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([1](text00002.html#filepos0000510669))    The references section lists a number
+    of articles that explain how these probabilities are derived. Usually these probabilities
+    incorporate information about the goodness of the fit, or confidence in the prediction.
+    See Wu et al. [2004], and visit [http://scikit-learn.org/stable/modules/svm.html#scores-and-probabilities](http://scikit-learn.org/stable/modules/svm.html#scores-and-probabilities)
+    .
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([2](text00002.html#filepos0000513399))    Uncertainty is absolute when all
+    outcomes are equally likely.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**CHAPTER 11**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**The Dangers of Backtesting**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**11.1 Motivation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Backtesting is one of the most essential, and yet least understood, techniques
+    in the quant arsenal. A common misunderstanding is to think of backtesting as
+    a research tool. Researching and backtesting is like drinking and driving. Do
+    not research under the influence of a backtest. Most backtests published in journals
+    are flawed, as the result of selection bias on multiple tests (Bailey, Borwein,
+    López de Prado, and Zhu [2014]; Harvey et al. [2016]). A full book could be written
+    listing all the different errors people make while backtesting. I may be the academic
+    author with the largest number of journal articles on backtesting ^([1](text00002.html#filepos0000575620))
+    and investment performance metrics, and still I do not feel I would have the stamina
+    to compile all the different errors I have seen over the past 20 years. This chapter
+    is not a crash course on backtesting, but a short list of some of the common errors
+    that even seasoned professionals make.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**11.2 Mission Impossible: The Flawless Backtest**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In its narrowest definition, a backtest is a historical simulation of how a
+    strategy would have performed should it have been run over a past period of time.
+    As such, it is a hypothetical, and by no means an experiment. At a physics laboratory,
+    like Berkeley Lab, we can repeat an experiment while controlling for environmental
+    variables, in order to deduce a precise cause-effect relationship. In contrast,
+    a backtest is *not* an experiment, and it does not prove anything. A backtest
+    guarantees nothing, not even achieving that Sharpe ratio if we could travel back
+    in time in our retrofitted DeLorean DMC-12 (Bailey and López de Prado [2012]).
+    Random draws would have been different. The past would not repeat itself.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'What is the point of a backtest then? It is a sanity check on a number of variables,
+    including bet sizing, turnover, resilience to costs, and behavior under a given
+    scenario. A good backtest can be extremely helpful, but backtesting well is extremely
+    hard. In 2014 a team of quants at Deutsche Bank, led by Yin Luo, published a study
+    under the title “Seven Sins of Quantitative Investing” (Luo et al. [2014]). It
+    is a very graphic and accessible piece that I would advise everyone in this business
+    to read carefully. In it, this team mentions the usual suspects:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Survivorship bias:** Using as investment universe the current one, hence
+    ignoring that some companies went bankrupt and securities were delisted along
+    the way.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Look-ahead bias:** Using information that was not public at the moment the
+    simulated decision would have been made. Be certain about the timestamp for each
+    data point. Take into account release dates, distribution delays, and backfill
+    corrections.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Storytelling:** Making up a story *ex-post* to justify some random pattern.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Data mining and data snooping:** Training the model on the testing set.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Transaction costs:** Simulating transaction costs is hard because the only
+    way to be certain about that cost would have been to interact with the trading
+    book (i.e., to do the actual trade).'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Outliers:** Basing a strategy on a few extreme outcomes that may never happen
+    again as observed in the past.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Shorting:** Taking a short position on cash products requires finding a lender.
+    The cost of lending and the amount available is generally unknown, and depends
+    on relations, inventory, relative demand, etc.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: These are just a few basic errors that most papers published in journals make
+    routinely. Other common errors include computing performance using a non-standard
+    method (Chapter 14); ignoring hidden risks; focusing only on returns while ignoring
+    other metrics; confusing correlation with causation; selecting an unrepresentative
+    time period; failing to expect the unexpected; ignoring the existence of stop-out
+    limits or margin calls; ignoring funding costs; and forgetting practical aspects
+    (Sarfati [2015]). There are many more, but really, there is no point in listing
+    them, because of the title of the next section.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**11.3 Even If Your Backtest Is Flawless, It Is Probably Wrong**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Congratulations! Your backtest is flawless in the sense that everyone can reproduce
+    your results, and your assumptions are so conservative that not even your boss
+    could object to them. You have paid for every trade more than double what anyone
+    could possibly ask. You have executed hours after the information was known by
+    half the globe, at a ridiculously low volume participation rate. Despite all these
+    egregious costs, your backtest still makes a lot of money. Yet, this flawless
+    backtest is probably wrong. Why? Because only an expert can produce a flawless
+    backtest. Becoming an expert means that you have run tens of thousands of backtests
+    over the years. In conclusion, this is not the first backtest you produce, so
+    we need to account for the possibility that this is a false discovery, a statistical
+    fluke that inevitably comes up after you run multiple tests on the same dataset.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The maddening thing about backtesting is that, the better you become at it,
+    the more likely false discoveries will pop up. Beginners fall for the seven sins
+    of Luo et al. [2014] (there are more, but who's counting?). Professionals may
+    produce flawless backtests, and will still fall for multiple testing, selection
+    bias, or backtest overfitting (Bailey and López de Prado [2014b]).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**11.4 Backtesting Is Not a Research Tool**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Chapter 8 discussed substitution effects, joint effects, masking, MDI, MDA,
+    SFI, parallelized features, stacked features, etc. Even if some features are very
+    important, it does not mean that they can be monetized through an investment strategy.
+    Conversely, there are plenty of strategies that will appear to be profitable even
+    though they are based on irrelevant features. Feature importance is a true research
+    tool, because it helps us understand the nature of the patterns uncovered by the
+    ML algorithm, regardless of their monetization. Critically, feature importance
+    is derived *ex-ante* , before the historical performance is simulated.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In contrast, a backtest is not a research tool. It provides us with very little
+    insight into the reason why a particular strategy would have made money. Just
+    as a lottery winner may feel he has done something to deserve his luck, there
+    is always some *ex-post* story (Luo's sin number three). Authors claim to have
+    found hundreds of “alphas” and “factors,” and there is always some convoluted
+    explanation for them. Instead, what they have found are the lottery tickets that
+    won the last game. The winner has cashed out, and those numbers are useless for
+    the next round. If you would not pay extra for those lottery tickets, why would
+    you care about those hundreds of alphas? Those authors never tell us about all
+    the tickets that were sold, that is, the millions of simulations it took to find
+    these “lucky” alphas.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The purpose of a backtest is to discard bad models, not to improve them. Adjusting
+    your model based on the backtest results is a waste of time . . . and it''s dangerous.
+    Invest your time and effort in getting all the components right, as we''ve discussed
+    elsewhere in the book: structured data, labeling, weighting, ensembles, cross-validation,
+    feature importance, bet sizing, etc. By the time you are backtesting, it is too
+    late. Never backtest until your model has been fully specified. If the backtest
+    fails, start all over. If you do that, the chances of finding a false discovery
+    will drop substantially, but still they will not be zero.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**11.5 A Few General Recommendations**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Backtest overfitting can be defined as selection bias on multiple backtests.
+    Backtest overfitting takes place when a strategy is developed to perform well
+    on a backtest, by monetizing random historical patterns. Because those random
+    patterns are unlikely to occur again in the future, the strategy so developed
+    will fail. Every backtested strategy is overfit to some extent as a result of
+    “selection bias”: The only backtests that most people share are those that portray
+    supposedly winning investment strategies.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: How to address backtest overfitting is arguably the most fundamental question
+    in quantitative finance. Why? Because if there was an easy answer to this question,
+    investment firms would achieve high performance with certainty, as they would
+    invest only in winning backtests. Journals would assess with confidence whether
+    a strategy may be a false positive. Finance could become a true science in the
+    Popperian and Lakatosian sense (López de Prado [2017]). What makes backtest overfitting
+    so hard to assess is that the probability of false positives changes with every
+    new test conducted on the same dataset, and that information is either unknown
+    by the researcher or not shared with investors or referees. While there is no
+    easy way to prevent overfitting, a number of steps can help reduce its presence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Develop models for entire asset classes or investment universes, rather than
+    for specific securities (Chapter 8). Investors diversify, hence they do not make
+    mistake *X* only on security *Y.* If you find mistake *X* only on security *Y*
+    , no matter how apparently profitable, it is likely a false discovery.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Apply bagging (Chapter 6) as a means to both prevent overfitting and reduce
+    the variance of the forecasting error. If bagging deteriorates the performance
+    of a strategy, it was likely overfit to a small number of observations or outliers.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Do not backtest until all your research is complete (Chapters 1–10).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Record every backtest conducted on a dataset so that the probability of backtest
+    overfitting may be estimated on the final selected result (see Bailey, Borwein,
+    López de Prado, and Zhu [2017a] and Chapter 14), and the Sharpe ratio may be properly
+    deflated by the number of trials carried out (Bailey and López de Prado [2014b]).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Simulate scenarios rather than history (Chapter 12). A standard backtest is
+    a historical simulation, which can be easily overfit. History is just the random
+    path that was realized, and it could have been entirely different. Your strategy
+    should be profitable under a wide range of scenarios, not just the anecdotal historical
+    path. It is harder to overfit the outcome of thousands of “what if” scenarios.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If the backtest fails to identify a profitable strategy, start from scratch.
+    Resist the temptation of reusing those results. Follow the Second Law of Backtesting.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**SNIPPET 11.1 MARCOS’ SECOND LAW OF BACKTESTING**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: “Backtesting while researching is like drinking and driving. Do not research
+    under the influence of a backtest.”
+  prefs:
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Marcos López de Prado *Advances in Financial Machine Learning* (2018)
+  prefs:
+  - PREF_BQ
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '**11.6 Strategy Selection**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In Chapter 7 we discussed how the presence of serial conditionality in labels
+    defeats standard k-fold cross-validation, because the random sampling will spatter
+    redundant observations into both the training and testing sets. We must find a
+    different (true out-of-sample) validation procedure: a procedure that evaluates
+    our model on the observations least likely to be correlated/redundant to those
+    used to train the model. See Arlot and Celisse [2010] for a survey.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Scikit-learn has implemented a walk-forward timefolds method. ² Under this approach,
+    testing moves forward (in the time direction) with the goal of preventing leakage.
+    This is consistent with the way historical backtests (and trading) are done. However,
+    in the presence of long-range serial dependence, testing one observation away
+    from the end of the training set may not suffice to avoid informational leakage.
+    We will retake this point in Chapter 12, Section 12.2.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One disadvantage of the walk-forward method is that it can be easily overfit.
+    The reason is that without random sampling, there is a single path of testing
+    that can be repeated over and over until a false positive appears. Like in standard
+    CV, some randomization is needed to avoid this sort of performance targeting or
+    backtest optimization, while avoiding the leakage of examples correlated to the
+    training set into the testing set. Next, we will introduce a CV method for strategy
+    selection, based on the estimation of the probability of backtest overfitting
+    (PBO). We leave for Chapter 12 an explanation of CV methods for backtesting.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Bailey et al. [2017a] estimate the PBO through the combinatorially symmetric
+    cross-validation (CSCV) method. Schematically, this procedure works as follows.
+  prefs: []
+  type: TYPE_NORMAL
+- en: First, we form a matrix *M* by collecting the performance series from the *N*
+    trials. In particular, each column *n* = 1, …, *N* represents a vector of PnL
+    (mark-to-market profits and losses) over *t* = 1, …, *T* observations associated
+    with a particular model configuration tried by the researcher. *M* is therefore
+    a real-valued matrix of order ( *TxN* ). The only conditions we impose are that
+    (1) *M* is a true matrix, that is, with the same number of rows for each column,
+    where observations are synchronous for every row across the *N* trials, and (2)
+    the performance evaluation metric used to choose the “optimal” strategy can be
+    estimated on subsamples of each column. For example, if that metric is the Sharpe
+    ratio, we assume that the IID Normal distribution assumption can be held on various
+    slices of the reported performance. If different model configurations trade with
+    different frequencies, observations are aggregated (downsampled) to match a common
+    index *t* = 1, …, *T* .
+  prefs: []
+  type: TYPE_NORMAL
+- en: Second, we partition *M* across rows, into an even number *S* of disjoint submatrices
+    of equal dimensions. Each of these submatrices *M [*s*]* , with *s* = 1, …, *S*
+    , is of order ![](Image00630.jpg) .
+  prefs: []
+  type: TYPE_NORMAL
+- en: Third, we form all combinations *C [*S*]* of *M [*s*]* , taken in groups of
+    size ![](Image00226.jpg) . This gives a total number of combinations
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00229.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: For instance, if *S = 16* , we will form 12,780 combinations. Each combination
+    *c* ∈ *C [*S*]* is composed of ![](Image00232.jpg) submatrices *M [*s*] * .
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Fourth, for each combination *c* ∈ *C [*S*]* , we:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Form the *training set J* , by joining the ![](Image00236.jpg) submatrices *M
+    [*s*] * that constitute *c. J* is a matrix of order ![](Image00239.jpg) .
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Form the *testing set* ![](Image00242.jpg) , as the complement of *J* in *M.*
+    In other words, ![](Image00245.jpg) is the ![](Image00247.jpg) matrix formed by
+    all rows of *M* that are not part of *J.*
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Form a vector *R* of performance statistics of order *N* , where the *n* -th
+    item of *R* reports the performance associated with the *n* -th column of *J*
+    (the training set).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Determine the element *n* * such that ![](Image00250.jpg) , ∀*n* = 1, …, *N*
+    . In other words, ![](Image00252.jpg) .
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Form a vector ![](Image00256.jpg) of performance statistics of order *N* , where
+    the *n* -th item of ![](Image00260.jpg) reports the performance associated with
+    the *n* -th column of ![](Image00264.jpg) (the testing set).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Determine the relative rank of ![](Image00267.jpg) within ![](Image00680.jpg)
+    . We denote this relative rank as ![](Image00271.jpg) , where ![](Image00274.jpg)
+    . This is the relative rank of the out-of-sample (OOS) performance associated
+    with the trial chosen in-sample (IS). If the strategy optimization procedure does
+    not overfit, we should observe that ![](Image00275.jpg) systematically outperforms
+    ![](Image00279.jpg) (OOS), just as ![](Image00282.jpg) outperformed *R* (IS).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Define the logit ![](Image00286.jpg) . This presents the property that λ [*c*]
+    = 0 when ![](Image00289.jpg) coincides with the median of ![](Image00293.jpg)
+    . High logit values imply a consistency between IS and OOS performance, which
+    indicates a low level of backtest overfitting.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Fifth, compute the distribution of ranks OOS by collecting all the λ [*c*] ,
+    for *c* ∈ *C [*S*]* . The probability distribution function *f* (λ) is then estimated
+    as the relative frequency at which λ occurred across all *C [*S*]* , with ![](Image00295.jpg)
+    *.* Finally, the PBO is estimated as ![](Image00298.jpg) , as that is the probability
+    associated with IS optimal strategies that underperform OOS.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The x-axis of [Figure 11.1](text00002.html#filepos0000560950) shows the Sharpe
+    ratio IS from the best strategy selected. The y-axis shows the Sharpe ratio OOS
+    for that same best strategy selected. As it can be appreciated, there is a strong
+    and persistent performance decay, caused by backtest overfitting. Applying the
+    above algorithm, we can derive the PBO associated with this strategy selection
+    process, as displayed in [Figure 11.2](text00002.html#filepos0000561260) .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00301.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 11.1**](text00002.html#filepos0000560257) Best Sharpe ratio in-sample
+    (SR IS) vs Sharpe ratio out-of-sample (SR OOS)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00304.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 11.2**](text00002.html#filepos0000560724) Probability of backtest
+    overfitting derived from the distribution of logits'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The observations in each subset preserve the original time sequence. The random
+    sampling is done on the relatively uncorrelated subsets, rather than on the observations.
+    See Bailey et al. [2017a] for an experimental analysis of the accuracy of this
+    methodology.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Exercises**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: An analyst fits an RF classifier where some of the features include seasonally
+    adjusted employment data. He aligns with January data the seasonally adjusted
+    value of January, etc. What “sin” has he committed?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: An analyst develops an ML algorithm where he generates a signal using closing
+    prices, and executed at close. What's the sin?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: There is a 98.51% correlation between total revenue generated by arcades and
+    computer science doctorates awarded in the United States. As the number of doctorates
+    is expected to grow, should we invest in arcades companies? If not, what's the
+    sin?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: The *Wall Street Journal* has reported that September is the only month of the
+    year that has negative average stock returns, looking back 20, 50, and 100 years.
+    Should we sell stocks at the end of August? If not, what's the sin?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: We download P/E ratios from Bloomberg, rank stocks every month, sell the top
+    quartile, and buy the long quartile. Performance is amazing. What's the sin?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '**References**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Arlot, S. and A. Celisse (2010): “A survey of cross-validation procedures for
+    model selection.” *Statistics Surveys* , Vol. 4, pp. 40–79.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D., J. Borwein, M. López de Prado, and J. Zhu (2014): “Pseudo-mathematics
+    and financial charlatanism: The effects of backtest overfitting on out-of-sample
+    performance.” *Notices of the American Mathematical Society* , Vol. 61, No. 5
+    (May), pp. 458–471\. Available at [https://ssrn.com/abstract=2308659](https://ssrn.com/abstract=2308659)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D., J. Borwein, M. López de Prado, and J. Zhu (2017a): “The probability
+    of backtest overfitting.” *Journal of Computational Finance* , Vol. 20, No. 4,
+    pp. 39–70\. Available at [http://ssrn.com/abstract=2326253](http://ssrn.com/abstract=2326253)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D. and M. López de Prado (2012): “The Sharpe ratio efficient frontier.”
+    *Journal of Risk* , Vol. 15, No. 2 (Winter). Available at [https://ssrn.com/abstract=1821643](https://ssrn.com/abstract=1821643)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D. and M. López de Prado (2014b): “The deflated Sharpe ratio: Correcting
+    for selection bias, backtest overfitting and non-normality.” *Journal of Portfolio
+    Management* , Vol. 40, No. 5, pp. 94–107\. Available at [https://ssrn.com/abstract=2460551](https://ssrn.com/abstract=2460551)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Harvey, C., Y. Liu, and H. Zhu (2016): “. . . and the cross-section of expected
+    returns.” *Review of Financial Studies* , Vol. 29, No. 1, pp. 5–68.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2017): “Finance as an industrial science.” *Journal of
+    Portfolio Management* , Vol. 43, No. 4, pp. 5–9\. Available at [http://www.iijournals.com/doi/pdfplus/10.3905/jpm
+    .2017.43.4.005](http://www.iijournals.com/doi/pdfplus/10.3905/jpm.2017.43.4.005)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Luo, Y., M. Alvarez, S. Wang, J. Jussa, A. Wang, and G. Rohal (2014): “Seven
+    sins of quantitative investing.” White paper, Deutsche Bank Markets Research,
+    September 8.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Sarfati, O. (2015): “Backtesting: A practitioner''s guide to assessing strategies
+    and avoiding pitfalls.” Citi Equity Derivatives. CBOE 2015 Risk Management Conference.
+    Available at [https://www.cboe.com/rmc/2015/olivier-pdf-Backtesting-Full.pdf](https://www.cboe.com/rmc/2015/olivier-pdf-Backtesting-Full.pdf)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Bibliography**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Bailey, D., J. Borwein, and M. López de Prado (2016): “Stock portfolio design
+    and backtest overfitting.” *Journal of Investment Management* , Vol. 15, No. 1,
+    pp. 1–13\. Available at [https://ssrn.com/abstract=2739335](https://ssrn.com/abstract=2739335)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D., J. Borwein, M. López de Prado, A. Salehipour, and J. Zhu (2016):
+    “Backtest overfitting in financial markets.” *Automated Trader* , Vol. 39\. Available
+    at [https://ssrn.com/abstract=2731886](https://ssrn.com/abstract=2731886) .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D., J. Borwein, M. López de Prado, and J. Zhu (2017b): “Mathematical
+    appendices to: ‘The probability of backtest overfitting.’” *Journal of Computational
+    Finance (Risk Journals)* , Vol. 20, No. 4\. Available at [https://ssrn.com/abstract=2568435](https://ssrn.com/abstract=2568435)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D., J. Borwein, A. Salehipour, and M. López de Prado (2017): “Evaluation
+    and ranking of market forecasters.” *Journal of Investment Management* , forthcoming.
+    Available at [https://ssrn.com/abstract=2944853](https://ssrn.com/abstract=2944853)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D., J. Borwein, A. Salehipour, M. López de Prado, and J. Zhu (2015):
+    “Online tools for demonstration of backtest overfitting.” Working paper. Available
+    at [https://ssrn.com/abstract=2597421](https://ssrn.com/abstract=2597421) .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D., S. Ger, M. López de Prado, A. Sim and, K. Wu (2016): “Statistical
+    overfitting and backtest performance.” In *Risk-Based and Factor Investing* ,
+    Quantitative Finance Elsevier. Available at [ttps://ssrn.com/abstract=2507040](https://ssrn.com/abstract=2507040)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D. and M. López de Prado (2014a): “Stop-outs under serial correlation
+    and ‘the triple penance rule.’” *Journal of Risk* , Vol. 18, No. 2, pp. 61–93\.
+    Available at [https://ssrn.com/ abstract=2201302](https://ssrn.com/abstract=2201302)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D. and M. López de Prado (2015): “Mathematical appendices to: ‘Stop-outs
+    under serial correlation.’” *Journal of Risk* , Vol. 18, No. 2\. Available at
+    [https://ssrn.com/abstract=2511599](https://ssrn.com/abstract=2511599) .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D., M. López de Prado, and E. del Pozo (2013): “The strategy approval
+    decision: A Sharpe ratio indifference curve approach.” *Algorithmic Finance* ,
+    Vol. 2, No. 1, pp. 99–109\. Available at [https://ssrn.com/abstract=2003638](https://ssrn.com/abstract=2003638)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Carr, P. and M. López de Prado (2014): “Determining optimal trading rules without
+    backtesting.” Working paper. Available at [https://ssrn.com/abstract=2658641](https://ssrn.com/abstract=2658641)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2012a): “Portfolio oversight: An evolutionary approach.”
+    Lecture at Cornell University. Available at [https://ssrn.com/abstract=2172468](https://ssrn.com/abstract=2172468)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2012b): “The sharp razor: Performance evaluation with non-normal
+    returns.” Lecture at Cornell University. Available at [https://ssrn.com/abstract=2150879](https://ssrn.com/abstract=2150879)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2013): “What to look for in a backtest.” Lecture at Cornell
+    University. Available at [https://ssrn.com/abstract=2308682](https://ssrn.com/abstract=2308682)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2014a): “Optimal trading rules without backtesting.” Lecture
+    at Cornell University. Available at [https://ssrn.com/abstract=2502613](https://ssrn.com/abstract=2502613)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2014b): “Deflating the Sharpe ratio.” Lecture at Cornell
+    University. Available at [https://ssrn.com/abstract=2465675](https://ssrn.com/abstract=2465675)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2015a): “Quantitative meta-strategies.” *Practical Applications,
+    Institutional Investor Journals* , Vol. 2, No. 3, pp. 1–3\. Available at [https://ssrn.com/abstract=2547325](https://ssrn.com/abstract=2547325)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2015b): “The Future of empirical finance.” *Journal of
+    Portfolio Management* , Vol. 41, No. 4, pp. 140–144\. Available at [https://ssrn.com/abstract=2609734](https://ssrn.com/abstract=2609734)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2015c): “Backtesting.” Lecture at Cornell University. Available
+    at [https://ssrn. com/abstract=2606462](https://ssrn.com/abstract=2606462) .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2015d): “Recent trends in empirical finance.” *Journal
+    of Portfolio Management* , Vol. 41, No. 4, pp. 29–33\. Available at [https://ssrn.com/abstract=2638760](https://ssrn.com/abstract=2638760)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2015e): “Why most empirical discoveries in finance are
+    likely wrong, and what can be done about it.” Lecture at University of Pennsylvania.
+    Available at [https://ssrn.com/ abstract=2599105](https://ssrn.com/abstract=2599105)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2015f): “Advances in quantitative meta-strategies.” Lecture
+    at Cornell University. Available at [https://ssrn.com/abstract=2604812](https://ssrn.com/abstract=2604812)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2016): “Building diversified portfolios that outperform
+    out-of-sample.” *Journal of Portfolio Management* , Vol. 42, No. 4, pp. 59–69\.
+    Available at [https://ssrn.com/ abstract=2708678](https://ssrn.com/abstract=2708678)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. and M. Foreman (2014): “A mixture of Gaussians approach
+    to mathematical portfolio oversight: The EF3M algorithm.” *Quantitative Finance*
+    , Vol. 14, No. 5, pp. 913–930\. Available at [https://ssrn.com/abstract=1931734](https://ssrn.com/abstract=1931734)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. and A. Peijan (2004): “Measuring loss potential of hedge
+    fund strategies.” *Journal of Alternative Investments* , Vol. 7, No. 1, pp. 7–31,
+    Summer 2004\. Available at [https://ssrn.com/abstract=641702](https://ssrn.com/abstract=641702)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M., R. Vince, and J. Zhu (2015): “Risk adjusted growth portfolio
+    in a finite investment horizon.” Lecture at Cornell University. Available at [https://ssrn.com/abstract=2624329](https://ssrn.com/abstract=2624329)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Note**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([1](text00002.html#filepos0000537944))     [http://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=434076](http://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=434076)
+    ; [http://www.QuantResearch.org/](http://www.QuantResearch.org/) .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**CHAPTER 12**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Backtesting through Cross-Validation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**12.1 Motivation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'A backtest evaluates out-of-sample the performance of an investment strategy
+    using past observations. These past observations can be used in two ways: (1)
+    in a narrow sense, to simulate the historical performance of an investment strategy,
+    as if it had been run in the past; and (2) in a broader sense, to simulate scenarios
+    that did not happen in the past. The first (narrow) approach, also known as walk-forward,
+    is so prevalent that, in fact, the term “backtest” has become a *de facto* synonym
+    for “historical simulation.” The second (broader) approach is far less known,
+    and in this chapter we will introduce some novel ways to carry it out. Each approach
+    has its pros and cons, and each should be given careful consideration.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**12.2 The Walk-Forward Method**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The most common backtest method in the literature is the walk-forward (WF) approach.
+    WF is a historical simulation of how the strategy would have performed in past.
+    Each strategy decision is based on observations that predate that decision. As
+    we saw in Chapter 11, carrying out a flawless WF simulation is a daunting task
+    that requires extreme knowledge of the data sources, market microstructure, risk
+    management, performance measurement standards (e.g., GIPS), multiple testing methods,
+    experimental mathematics, etc. Unfortunately, there is no generic recipe to conduct
+    a backtest. To be accurate and representative, each backtest must be customized
+    to evaluate the assumptions of a particular strategy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'WF enjoys two key advantages: (1) WF has a clear historical interpretation.
+    Its performance can be reconciled with paper trading. (2) History is a filtration;
+    hence, using trailing data guarantees that the testing set is out-of-sample (no
+    leakage), as long as purging has been properly implemented (see Chapter 7, Section
+    7.4.1). It is a common mistake to find leakage in WF backtests, where `t1.index`
+    falls within the training set, but `t1.values` fall within the testing set (see
+    Chapter 3). Embargoing is not needed in WF backtests, because the training set
+    always predates the testing set.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**12.2.1 Pitfalls of the Walk-Forward Method**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'WF suffers from three major disadvantages: First, a single scenario is tested
+    (the historical path), which can be easily overfit (Bailey et al. [2014]). Second,
+    WF is not necessarily representative of future performance, as results can be
+    biased by the particular sequence of datapoints. Proponents of the WF method typically
+    argue that predicting the past would lead to overly optimistic performance estimates.
+    And yet, very often fitting an outperforming model on the reversed sequence of
+    observations will lead to an underperforming WF backtest. The truth is, it is
+    as easy to overfit a walk-forward backtest as to overfit a walk-backward backtest,
+    and the fact that changing the sequence of observations yields inconsistent outcomes
+    is evidence of that overfitting. If proponents of WF were right, we should observe
+    that walk-backwards backtests systematically outperform their walk-forward counterparts.
+    That is not the case, hence the main argument in favor of WF is rather weak.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: To make this second disadvantage clearer, suppose an equity strategy that is
+    backtested with a WF on S&P 500 data, starting January 1, 2007\. Until March 15,
+    2009, the mix of rallies and sell-offs will train the strategy to be market neutral,
+    with low confidence on every position. After that, the long rally will dominate
+    the dataset, and by January 1, 2017, buy forecasts will prevail over sell forecasts.
+    The performance would be very different had we played the information backwards,
+    from January 1, 2017 to January 1, 2007 (a long rally followed by a sharp sell-off).
+    By exploiting a particular sequence, a strategy selected by WF may set us up for
+    a debacle.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The third disadvantage of WF is that the initial decisions are made on a smaller
+    portion of the total sample. Even if a warm-up period is set, most of the information
+    is used by only a small portion of the decisions. Consider a strategy with a warm-up
+    period that uses *t [0]* observations out of *T.* This strategy makes half of
+    its decisions ![](Image00307.jpg) on an average number of datapoints,
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00311.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: which is only a ![](Image00314.jpg) fraction of the observations. Although this
+    problem is attenuated by increasing the warm-up period, doing so also reduces
+    the length of the backtest.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**12.3 The Cross-Validation Method**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Investors often ask how a strategy would perform if subjected to a stress scenario
+    as unforeseeable as the 2008 crisis, or the dot-com bubble, or the taper tantrum,
+    or the China scare of 2015–2016, etc. One way to answer is to split the observations
+    into two sets, one with the period we wish to test (testing set), and one with
+    the rest (training set). For example, a classifier would be trained on the period
+    January 1, 2009–January 1, 2017, then tested on the period January 1, 2008–December
+    31, 2008\. The performance we will obtain for 2008 is not historically accurate,
+    since the classifier was trained on data that was only available after 2008\.
+    But historical accuracy was not the goal of the test. The objective of the test
+    was to subject a strategy *ignorant* of 2008 to a stress scenario such as 2008.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The goal of backtesting through cross-validation (CV) is not to derive historically
+    accurate performance, but to infer future performance from a number of out-of-sample
+    scenarios. For each period of the backtest, we simulate the performance of a classifier
+    that knew everything except for that period.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Advantages**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The test is not the result of a particular (historical) scenario. In fact, CV
+    tests *k* alternative scenarios, of which only one corresponds with the historical
+    sequence.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Every decision is made on sets of equal size. This makes outcomes comparable
+    across periods, in terms of the amount of information used to make those decisions.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Every observation is part of one and only one testing set. There is no warm-up
+    subset, thereby achieving the longest possible out-of-sample simulation.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Disadvantages**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Like WF, a single backtest path is simulated (although not the historical one).
+    There is one and only one forecast generated per observation.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: CV has no clear historical interpretation. The output does not simulate how
+    the strategy would have performed in the past, but how it may perform *in the
+    future* under various stress scenarios (a useful result in its own right).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Because the training set does not trail the testing set, leakage is possible.
+    Extreme care must be taken to avoid leaking testing information into the training
+    set. See Chapter 7 for a discussion on how purging and embargoing can help prevent
+    informational leakage in the context of CV.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**12.4 The Combinatorial Purged Cross-Validation Method**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this section I will present a new method, which addresses the main drawback
+    of the WF and CV methods, namely that those schemes test a single path. I call
+    it the “combinatorial purged cross-validation” (CPCV) method. Given a number φ
+    of backtest paths targeted by the researcher, CPCV generates the precise number
+    of combinations of training/testing sets needed to generate those paths, while
+    purging training observations that contain leaked information.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**12.4.1 Combinatorial Splits**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consider *T* observations partitioned into *N* groups without shuffling, where
+    groups *n* = 1, …, *N* − 1 are of size ⌊ *T* / *N* ⌋, the *N* th group is of size
+    *T* − ⌊ *T* / *N* ⌋( *N* − 1), and ⌊.⌋ is the floor or integer function. For a
+    testing set of size *k* groups, the number of possible training/testing splits
+    is
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00317.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Since each combination involves *k* tested groups, the total number of tested
+    groups is ![](Image00320.jpg) . And since we have computed all possible combinations,
+    these tested groups are uniformly distributed across all *N* (each group belongs
+    to the same number of training and testing sets). The implication is that from
+    *k* -sized testing sets on *N* groups we can backtest a total number of paths
+    φ[ *N* , *k* ],
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00323.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Figure 12.1](text00002.html#filepos0000588582) illustrates the composition
+    of train/test splits for *N* = 6 and *k* = 2 *.* There are ![](Image00326.jpg)
+    splits, indexed as *S1, … ,S15.* For each split, the figure marks with a cross
+    ( *x* ) the groups included in the testing set, and leaves unmarked the groups
+    that form the training set. Each group forms part of φ[6, 2] = 5 testing sets,
+    therefore this train/test split scheme allows us to compute 5 backtest paths.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00330.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 12.1**](text00002.html#filepos0000587653) Paths generated for ***φ***
+    [6, 2] = 5'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 12.2](text00002.html#filepos0000590228) shows the assignment of each
+    tested group to one backtest path. For example, path 1 is the result of combining
+    the forecasts from ( *G* 1, *S* 1), ( *G* 2, *S* 1), ( *G* 3, *S* 2), ( *G* 4,
+    *S* 3), ( *G* 5, *S* 4) and ( *G* 6, *S* 5). Path 2 is the result of combining
+    forecasts from ( *G* 1, *S* 2), ( *G* 2, *S* 6), ( *G* 3, *S* 6), ( *G* 4, *S*
+    7), ( *G* 5, *S* 8) and ( *G* 6, *S* 9), and so on.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00332.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 12.2**](text00002.html#filepos0000588747) Assignment of testing groups
+    to each of the 5 paths'
+  prefs: []
+  type: TYPE_NORMAL
+- en: These paths are generated by training the classifier on a portion θ = 1 − *k*
+    / *N* of the data for each combination. Although it is theoretically possible
+    to train on a portion θ < 1/2, in practice we will assume that *k* ≤ *N* /2 *.*
+    The portion of data in the training set θ increases with *N* → *T* but it decreases
+    with *k* → *N* /2 *.* The number of paths φ[ *N* , *k* ] increases with *N* →
+    *T* and with *k* → *N* /2 *.* In the limit, the largest number of paths is achieved
+    by setting *N* = *T* and *k* = *N* /2 = *T* /2, at the expense of training the
+    classifier on only half of the data for each combination (θ = 1/2).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**12.4.2 The Combinatorial Purged Cross-Validation Backtesting Algorithm**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In Chapter 7 we introduced the concepts of purging and embargoing in the context
+    of CV. We will now use these concepts for backtesting through CV. The CPCV backtesting
+    algorithm proceeds as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Partition *T* observations into *N* groups without shuffling, where groups *n*
+    = 1, …, *N* − 1 are of size ⌊*T* /*N* ⌋, and the *N* th group is of size *T* −
+    ⌊*T* /*N* ⌋(*N* − 1).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute all possible training/testing splits, where for each split *N* − *k*
+    groups constitute the training set and *k* groups constitute the testing set.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: For any pair of labels (*y [*i*]* , *y [*j*]* ), where *y [*i*]* belongs to
+    the training set and *y [*j*]* belongs to the testing set, apply the `PurgedKFold`
+    class to purge *y [*i*]* if *y [*i*]* spans over a period used to determine label
+    *y [*j*]* . This class will also apply an embargo, should some testing samples
+    predate some training samples.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Fit classifiers on the ![](Image00519.jpg) training sets, and produce forecasts
+    on the respective ![](Image00523.jpg) testing sets.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute the φ[*N* , *k* ] backtest paths. You can calculate one Sharpe ratio
+    from each path, and from that derive the empirical distribution of the strategy's
+    Sharpe ratio (rather than a single Sharpe ratio, like WF or CV).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**12.4.3 A Few Examples**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: For *k* = 1, we will obtain φ[ *N* , 1] = 1 path, in which case CPCV reduces
+    to CV. Thus, CPCV can be understood as a generalization of CV for *k* > 1 *.*
+  prefs: []
+  type: TYPE_NORMAL
+- en: For *k* = 2, we will obtain φ[ *N* , 2] = *N* − 1 paths. This is a particularly
+    interesting case, because while training the classifier on a large portion of
+    the data, θ = 1 − 2/ *N* , we can generate almost as many backtest paths as the
+    number of groups, *N* − 1 *.* An easy rule of thumb is to partition the data into
+    *N* = φ + 1 groups, where φ is the number of paths we target, and then form ![](Image00367.jpg)
+    combinations. In the limit, we can assign one group per observation, *N* = *T*
+    , and generate φ[ *T* , 2] = *T* − 1 paths, while training the classifier on a
+    portion θ = 1 − 2/ *T* of the data per combination.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If even more paths are needed, we can increase *k* → *N* /2, but as explained
+    earlier that will come at the cost of using a smaller portion of the dataset for
+    training. In practice, *k* = 2 is often enough to generate the needed φ paths,
+    by setting *N* = φ + 1 ≤ *T* .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**12.5 How Combinatorial Purged Cross-Validation Addresses Backtest Overfitting**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given a sample of IID random variables, *x [*i*]* ∼ *Z* , *i* = 1, …, *I* ,
+    where *Z* is the standard normal distribution, the expected maximum of that sample
+    can be approximated as
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00346.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where *Z ^(− 1)* [.] is the inverse of the CDF of *Z* , γ ≈ 0.5772156649⋅⋅⋅
+    is the Euler-Mascheroni constant, and *I* ≫ 1 (see Bailey et al. [2014] for a
+    proof). Now suppose that a researcher backtests *I* strategies on an instrument
+    that behaves like a martingale, with Sharpe ratios { *y [*i*]* } [*i* = 1, …,
+    *I*] , E[ *y [*i*]* ] = 0, σ ² [ *y [*i*]* ] > 0, and ![](Image00432.jpg) . Even
+    though the true Sharpe ratio is zero, we expect to find one strategy with a Sharpe
+    ratio of
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00536.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'WF backtests exhibit high variance, σ[ *y [*i*]* ] ≫ 0, for at least one reason:
+    A large portion of the decisions are based on a small portion of the dataset.
+    A few observations will have a large weight on the Sharpe ratio. Using a warm-up
+    period will reduce the backtest length, which may contribute to making the variance
+    even higher. WF''s high variance leads to false discoveries, because researchers
+    will select the backtest with the maximum *estimated* Sharpe ratio, even if the
+    *true* Sharpe ratio is zero. That is the reason it is imperative to control for
+    the number of trials *(I)* in the context of WF backtesting. Without this information,
+    it is not possible to determine the Family-Wise Error Rate (FWER), False Discovery
+    Rate (FDR), Probability of Backtest Overfitting (PBO, see Chapter 11) or similar
+    model assessment statistic.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: CV backtests (Section 12.3) address that source of variance by training each
+    classifier on equal and large portions of the dataset. Although CV leads to fewer
+    false discoveries than WF, both approaches still estimate the Sharpe ratio from
+    a single path for a strategy *i* , *y [*i*]* , and that estimation may be highly
+    volatile. In contrast, CPCV derives the distribution of Sharpe ratios from a large
+    number of paths, *j* = 1, …, φ, with mean E[{ *y [*i* , *j*]* } [*j* = 1, …, φ]
+    ] = μ [*i*] and variance σ ² [{ *y [*i* , *j*]* } [*j* = 1, …, φ] ] = σ ² [*i*]
+    . The variance of the sample mean of CPCV paths is
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00594.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where σ ² [*i*] is the variance of the Sharpe ratios across paths for strategy
+    *i* , and ![](Image00832.jpg) is the average off-diagonal correlation among {
+    *y [*i*  ,  *j*] * } [*j*  = 1, …, φ] . CPCV leads to fewer false discoveries
+    than CV and WF, because ![](Image00763.jpg) implies that the variance of the sample
+    mean is lower than the variance of the sample,
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00552.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: The more uncorrelated the paths are, ![](Image00555.jpg) , the lower CPCV's
+    variance will be, and in the limit CPCV will report the true Sharpe ratio E[ *y
+    [*i*] * ] with zero variance, ![](Image00845.jpg) *.* There will not be selection
+    bias, because the strategy selected out of *i* = 1, …, *I* will be the one with
+    the highest *true* Sharpe ratio.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Of course, we know that zero variance is unachievable, since φ has an upper
+    bound, ![](Image00006.jpg) . Still, for a large enough number of paths φ, CPCV
+    could make the variance of the backtest so small as to make the probability of
+    a false discovery negligible.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In Chapter 11, we argued that backtest overfitting may be the most important
+    open problem in all of mathematical finance. Let us see how CPCV helps address
+    this problem in practice. Suppose that a researcher submits a strategy to a journal,
+    supported by an overfit WF backtest, selected from a large number of undisclosed
+    trials. The journal could ask the researcher to repeat his experiments using a
+    CPCV for a given *N* and *k* . Because the researcher did not know in advance
+    the number and characteristics of the paths to be backtested, his overfitting
+    efforts will be easily defeated. The paper will be rejected or withdrawn from
+    consideration. Hopefully CPCV will be used to reduce the number of false discoveries
+    published in journals and elsewhere.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Exercises**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suppose that you develop a momentum strategy on a futures contract, where the
+    forecast is based on an AR(1) process. You backtest this strategy using the WF
+    method, and the Sharpe ratio is 1.5\. You then repeat the backtest on the reversed
+    series and achieve a Sharpe ratio of –1.5\. What would be the mathematical grounds
+    for disregarding the second result, if any?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: You develop a mean-reverting strategy on a futures contract. Your WF backtest
+    achieves a Sharpe ratio of 1.5\. You increase the length of the warm-up period,
+    and the Sharpe ratio drops to 0.7\. You go ahead and present only the result with
+    the higher Sharpe ratio, arguing that a strategy with a shorter warm-up is more
+    realistic. Is this selection bias?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Your strategy achieves a Sharpe ratio of 1.5 on a WF backtest, but a Sharpe
+    ratio of 0.7 on a CV backtest. You go ahead and present only the result with the
+    higher Sharpe ratio, arguing that the WF backtest is historically accurate, while
+    the CV backtest is a scenario simulation, or an inferential exercise. Is this
+    selection bias?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Your strategy produces 100,000 forecasts over time. You would like to derive
+    the CPCV distribution of Sharpe ratios by generating 1,000 paths. What are the
+    possible combinations of parameters ( *N* , *k* ) that will allow you to achieve
+    that?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: You discover a strategy that achieves a Sharpe ratio of 1.5 in a WF backtest.
+    You write a paper explaining the theory that would justify such result, and submit
+    it to an academic journal. The editor replies that one referee has requested you
+    repeat your backtest using a CPCV method with *N* = 100 and *k* = 2, including
+    your code and full datasets. You follow these instructions, and the mean Sharpe
+    ratio is –1 with a standard deviation of 0.5\. Furious, you do not reply, but
+    instead withdraw your submission, and resubmit in a different journal of higher
+    impact factor. After 6 months, your paper is accepted. You appease your conscience
+    thinking that, if the discovery is false, it is the journal's fault for not having
+    requested a CPCV test. You think, “It cannot be unethical, since it is permitted,
+    and everybody does it.” What are the arguments, scientific or ethical, to justify
+    your actions?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '**References**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Bailey, D. and M. López de Prado (2012): “The Sharpe ratio efficient frontier.”
+    *Journal of Risk* , Vol. 15, No. 2 (Winter). Available at [https://ssrn.com/abstract=1821643](https://ssrn.com/abstract=1821643)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D. and M. López de Prado (2014): “The deflated Sharpe ratio: Correcting
+    for selection bias, backtest overfitting and non-normality.” *Journal of Portfolio
+    Management* , Vol. 40, No. 5, pp. 94–107\. Available at [https://ssrn.com/abstract=2460551.](https://ssrn.com/abstract=2460551.)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D., J. Borwein, M. López de Prado, and J. Zhu (2014): “Pseudo-mathematics
+    and financial charlatanism: The effects of backtest overfitting on out-of-sample
+    performance.” *Notices of the American Mathematical Society* , Vol. 61, No. 5,
+    pp. 458–471\. Available at [http://ssrn.com/abstract=2308659](http://ssrn.com/abstract=2308659)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D., J. Borwein, M. López de Prado, and J. Zhu (2017): “The probability
+    of backtest overfitting.” *Journal of Computational Finance* , Vol. 20, No. 4,
+    pp. 39–70\. Available at [https://ssrn.com/abstract=2326253](https://ssrn.com/abstract=2326253)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**CHAPTER 13**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Backtesting on Synthetic Data**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**13.1 Motivation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this chapter we will study an alternative backtesting method, which uses
+    history to generate a synthetic dataset with statistical characteristics estimated
+    from the observed data. This will allow us to backtest a strategy on a large number
+    of unseen, synthetic testing sets, hence reducing the likelihood that the strategy
+    has been fit to a particular set of datapoints. ^([1](text00002.html#filepos0000681120))
+    This is a very extensive subject, and in order to reach some depth we will focus
+    on the backtesting of trading rules.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**13.2 Trading Rules**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Investment strategies can be defined as algorithms that postulate the existence
+    of a market inefficiency. Some strategies rely on econometric models to predict
+    prices, using macroeconomic variables such as GDP or inflation; other strategies
+    use fundamental and accounting information to price securities, or search for
+    arbitrage-like opportunities in the pricing of derivatives products, etc. For
+    instance, suppose that financial intermediaries tend to sell off-the-run bonds
+    two days before U.S. Treasury auctions, in order to raise the cash needed for
+    buying the new “paper.” One could monetize on that knowledge by selling off-the-run
+    bonds three days before auctions. But how? Each investment strategy requires an
+    implementation tactic, often referred to as “trading rules.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are dozens of hedge fund styles, each running dozens of unique investment
+    strategies. While strategies can be very heterogeneous in nature, tactics are
+    relatively homogeneous. Trading rules provide the algorithm that must be followed
+    to enter and exit a position. For example, a position will be entered when the
+    strategy's signal reaches a certain value. Conditions for exiting a position are
+    often defined through thresholds for profit-taking and stop-losses. These entry
+    and exit rules rely on parameters that are usually calibrated via historical simulations.
+    This practice leads to the problem of *backtest overfitting* , because these parameters
+    target specific observations in-sample, to the point that the investment strategy
+    is so attached to the past that it becomes unfit for the future.
+  prefs: []
+  type: TYPE_NORMAL
+- en: An important clarification is that we are interested in the exit corridor conditions
+    that maximize performance. In other words, the position already exists, and the
+    question is how to exit it optimally. This is the dilemma often faced by execution
+    traders, and it should not be mistaken with the determination of entry and exit
+    thresholds for investing in a security. For a study of that alternative question,
+    see, for example, Bertram [2009].
+  prefs: []
+  type: TYPE_NORMAL
+- en: Bailey et al. [2014, 2017] discuss the problem of backtest overfitting, and
+    provide methods to determine to what extent a simulated performance may be inflated
+    due to overfitting. While assessing the probability of backtest overfitting is
+    a useful tool to discard superfluous investment strategies, it would be better
+    to avoid the risk of overfitting, at least in the context of calibrating a trading
+    rule. In theory this could be accomplished by deriving the optimal parameters
+    for the trading rule directly from the stochastic process that generates the data,
+    rather than engaging in historical simulations. This is the approach we take in
+    this chapter. Using the entire historical sample, we will characterize the stochastic
+    process that generates the observed stream of returns, and derive the optimal
+    values for the trading rule's parameters without requiring a historical simulation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**13.3 The Problem**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suppose an investment strategy *S* invests in *i* = 1, … *I* opportunities or
+    bets. At each opportunity *i* , *S* takes a position of *m [*i*]* units of security
+    *X* , where *m [*i*]* ∈ ( − ∞, ∞). The transaction that entered such opportunity
+    was priced at a value *m [*i*] P [*i* , 0]* , where *P [*i* , 0]* is the average
+    price per unit at which the *m [*i*]* securities were transacted. As other market
+    participants transact security *X* , we can mark-to-market (MtM) the value of
+    that opportunity *i* after *t* observed transactions as *m [*i*] P [*i* , *t*]*
+    . This represents the value of opportunity *i* if it were liquidated at the price
+    observed in the market after *t* transactions. Accordingly, we can compute the
+    MtM profit/loss of opportunity *i* after *t* transactions as π [*i* , *t*] = *m
+    [*i*]* ( *P [*i* , *t*]* − *P [*i* , 0]* ).
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'A standard trading rule provides the logic for exiting opportunity *i* at *t*
+    = *T [*i*]* . This occurs as soon as one of two conditions is verified:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00025.jpg) , where ![](Image00571.jpg) is the profit-taking threshold.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](Image00062.jpg) , where ![](Image00080.jpg) is the stop-loss threshold.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: These thresholds are equivalent to the horizontal barriers we discussed in the
+    context of meta-labelling (Chapter 3). Because ![](Image00582.jpg) , one and only
+    one of the two exit conditions can trigger the exit from opportunity *i.* Assuming
+    that opportunity *i* can be exited at *T [*i*] * , its final profit/loss is ![](Image00585.jpg)
+    . At the onset of each opportunity, the goal is to realize an expected profit
+    ![](Image00588.jpg) , where ![](Image00593.jpg) is the forecasted price and *P
+    [*i*  , 0] * is the entry level of opportunity *i.*
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Definition 1: Trading Rule:** A trading rule for strategy *S* is defined
+    by the set of parameters ![](Image00597.jpg) .'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: 'One way to calibrate (by brute force) the trading rule is to:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Define a set of alternative values of *R* , Ω: ={*R* }.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Simulate historically (backtest) the performance of *S* under alternative values
+    of *R* ∈ Ω.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select the optimal *R* *.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'More formally:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[(13.1)](text00002.html#filepos0000619992) ![](Image00600.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: where E[.] and σ[.] are respectively the expected value and standard deviation
+    of ![](Image00604.jpg) , conditional on trading rule *R* , over *i* = 1, … *I*
+    . In other words, equation (  [ 13.1 ](text00002.html#filepos0000619385) ) maximizes
+    the Sharpe ratio of *S* on *I* opportunities over the space of alternative trading
+    rules *R* (see Bailey and López de Prado [2012] for a definition and analysis
+    of the Sharpe ratio). Because we count with two variables to maximize *SR [*R*]
+    * over a sample of size *I* , it is easy to overfit *R.* A trivial overfit occurs
+    when a pair ![](Image00608.jpg) targets a few outliers. Bailey et al. [2017] provide
+    a rigorous definition of backtest overfitting, which can be applied to our study
+    of trading rules as follows.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Definition 2: Overfit Trading Rule:** *R* * is overfit if ![](Image00612.jpg)
+    , where *j* = *I* + 1, … *J* and Me [Ω] [.] is the median.'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Intuitively, an optimal in-sample (IS, *i* ∈ [1, *I* ]) trading rule *R* * is
+    overfit when it is expected to underperform the median of alternative trading
+    rules *R* ∈ Ω out-of-sample (OOS, *j* ∈ [ *I* + 1, *J* ]). This is essentially
+    the same definition we used in chapter 11 to derive PBO. Bailey et al. [2014]
+    argue that it is hard not to overfit a backtest, particularly when there are free
+    variables able to target specific observations IS, or the number of elements in
+    Ω is large. A trading rule introduces such free variables, because *R* * can be
+    determined independently from *S.* The outcome is that the backtest profits from
+    random noise IS, making *R* * unfit for OOS opportunities. Those same authors
+    show that overfitting leads to negative performance OOS when Δπ [*i* , *t*] exhibits
+    serial dependence. While PBO provides a useful method to evaluate to what extent
+    a backtest has been overfit, it would be convenient to avoid this problem in the
+    first place. ^([2](text00002.html#filepos0000681367)) To that aim we dedicate
+    the following section.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**13.4 Our Framework**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Until now we have not characterized the stochastic process from which observations
+    π [*i* , *t*] are drawn. We are interested in finding an optimal trading rule
+    (OTR) for those scenarios where overfitting would be most damaging, such as when
+    π [*i* , *t*] exhibits serial correlation. In particular, suppose a discrete Ornstein-Uhlenbeck
+    (O-U) process on prices
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[(13.2)](text00002.html#filepos0000625431) ![](Image00647.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: such that the random shocks are IID distributed ϵ [*i* , *t*] ∼ *N* (0, 1).
+    The seed value for this process is *P [*i* , 0]* , the level targeted by opportunity
+    *i* is ![](Image00721.jpg) , and φ determines the speed at which *P [*i*  , 0]
+    * converges towards ![](Image00811.jpg) . Because π [*i*  ,  *t*] = *m [*i*] *
+    ( *P [*i*  ,  *t*] * − *P [*i*  , 0] * ), equation (  [ 13.2 ](text00002.html#filepos0000623869)
+    ) implies that the performance of opportunity *i* is characterized by the process
+  prefs: []
+  type: TYPE_NORMAL
+- en: (13.3)![](Image00051.jpg)
+  prefs: []
+  type: TYPE_NORMAL
+- en: From the proof to Proposition 4 in Bailey and López de Prado [2013], it can
+    be shown that the distribution of the process specified in equation ( [13.2](text00002.html#filepos0000623869)
+    ) is Gaussian with parameters
+  prefs: []
+  type: TYPE_NORMAL
+- en: (13.4)![](Image00142.jpg)
+  prefs: []
+  type: TYPE_NORMAL
+- en: and a necessary and sufficient condition for its stationarity is that φ ∈ (
+    − 1, 1). Given a set of input parameters {σ, φ} and initial conditions ![](Image00237.jpg)
+    associated with opportunity *i* , is there an OTR ![](Image00327.jpg) ? Similarly,
+    should strategy *S* predict a profit target ![](Image00416.jpg) , can we compute
+    the optimal stop-loss ![](Image00481.jpg) given the input values {σ, φ}? If the
+    answer to these questions is affirmative, no backtest would be needed in order
+    to determine *R* *, thus avoiding the problem of overfitting the trading rule.
+    In the next section we will show how to answer these questions experimentally.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**13.5 Numerical Determination of Optimal Trading Rules**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the previous section we used an O-U specification to characterize the stochastic
+    process generating the returns of strategy *S.* In this section we will present
+    a procedure to numerically derive the OTR for any specification in general, and
+    the O-U specification in particular.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**13.5.1 The Algorithm**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The algorithm consists of five sequential steps.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Step 1** : We estimate the input parameters {σ, φ}, by linearizing equation
+    ( [13.2](text00002.html#filepos0000623869) ) as:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[(13.5)](text00002.html#filepos0000628993) ![](Image00691.jpg)'
+  prefs:
+  - PREF_IND
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: 'We can then form vectors *X* and *Y* by sequencing opportunities:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: (13.6)![](Image00670.jpg)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Applying OLS on equation ( [13.5](text00002.html#filepos0000628479) ), we can
+    estimate the original O-U parameters as,
+  prefs: []
+  type: TYPE_NORMAL
+- en: (13.7)![](Image00748.jpg)
+  prefs: []
+  type: TYPE_NORMAL
+- en: where cov[ ·, ·] is the covariance operator.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Step 2** : We construct a mesh of stop-loss and profit-taking pairs, ![](Image00842.jpg)
+    . For example, a Cartesian product of ![](Image00079.jpg) and ![](Image00168.jpg)
+    give us 20 × 20 nodes, each constituting an alternative trading rule *R* ∈ Ω.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Step 3** : We generate a large number of paths (e.g., 100,000) for π [*i*
+    , *t*] applying our estimates ![](Image00265.jpg) . As seed values, we use the
+    observed initial conditions ![](Image00354.jpg) associated with an opportunity
+    *i.* Because a position cannot be held for an unlimited period of time, we can
+    impose a maximum holding period (e.g., 100 observations) at which point the position
+    is exited even though ![](Image00437.jpg) . This maximum holding period is equivalent
+    to the vertical bar of the triple-barrier method (Chapter 3). ^([  3  ](text00002.html#filepos0000681646))'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Step 4** : We apply the 100,000 paths generated in Step 3 on each node of
+    the 20 × 20 mesh ![](Image00500.jpg) generated in Step 2\. For each node, we apply
+    the stop-loss and profit-taking logic, giving us 100,000 values of ![](Image00837.jpg)
+    . Likewise, for each node we compute the Sharpe ratio associated with that trading
+    rule as described in equation ( [13.1](text00002.html#filepos0000619385) ). See
+    Bailey and López de Prado [2012] for a study of the confidence interval of the
+    Sharpe ratio estimator. This result can be used in three different ways: Step
+    5a, Step 5b and Step 5c).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Step 5a** : We determine the pair ![](Image00686.jpg) within the mesh of
+    trading rules that is optimal, given the input parameters ![](Image00774.jpg)
+    and the observed initial conditions ![](Image00011.jpg) .'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Step 5b** : If strategy *S* provides a profit target ![](Image00027.jpg)
+    for a particular opportunity *i* , we can use that information in conjunction
+    with the results in Step 4 to determine the optimal stop-loss, ![](Image00463.jpg)
+    .'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Step 5c** : If the trader has a maximum stop-loss ![](Image00052.jpg) imposed
+    by the fund''s management for opportunity *i* , we can use that information in
+    conjunction with the results in Step 4 to determine the optimal profit-taking
+    ![](Image00482.jpg) within the range of stop-losses ![](Image00075.jpg) .'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Bailey and López de Prado [2013] prove that the half-life of the process in
+    equation ( [13.2](text00002.html#filepos0000623869) ) is ![](Image00521.jpg) ,
+    with the requirement that φ ∈ (0, 1). From that result, we can determine the value
+    of φ associated with a certain half-life τ as ![](Image00631.jpg) .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**13.5.2 Implementation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Snippet 13.1 provides an implementation in Python of the experiments conducted
+    in this chapter. Function `main` produces a Cartesian product of parameters ![](Image00707.jpg)
+    , which characterize the stochastic process from equation ( [ 13.5 ](text00002.html#filepos0000628479)
+    ). Without loss of generality, in all simulations we have used σ = 1\. Then, for
+    each pair ![](Image00799.jpg) , function `batch` computes the Sharpe ratios associated
+    with various trading rules.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 13.1 PYTHON CODE FOR THE DETERMINATION OF OPTIMAL TRADING RULES**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00033.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Snippet 13.2 computes a 20 × 20 mesh of Sharpe ratios, one for each trading
+    rule ![](Image00126.jpg) , given a pair of parameters ![](Image00217.jpg) . There
+    is a vertical barrier, as the maximum holding period is set at 100 ( `maxHP = 100`
+    ). We have fixed *P [*i*  , 0] * = 0, since it is the distance ![](Image00309.jpg)
+    in equation ( [ 13.5 ](text00002.html#filepos0000628479) ) that drives the convergence,
+    not particular absolute price levels. Once the first out of three barriers is
+    touched, the exit price is stored, and the next iteration starts. After all iterations
+    are completed (1E5), the Sharpe ratio can be computed for that pair ![](Image00131.jpg)
+    , and the algorithm moves to the next pair. When all pairs of trading rules have
+    been processed, results are reported back to `main` . This algorithm can be parallelized,
+    similar to what we did for the triple-barrier method in Chapter 3\. We leave that
+    task as an exercise.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 13.2 PYTHON CODE FOR THE DETERMINATION OF OPTIMAL TRADING RULES**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00469.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**13.6 Experimental Results**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Table 13.1](text00002.html#filepos0000637238) lists the combinations analyzed
+    in this study. Although different values for these input parameters would render
+    different numerical results, the combinations applied allow us to analyze the
+    most general cases. Column “Forecast” refers to ![](Image00632.jpg) ; column “Half-Life”
+    refers to τ; column “Sigma” refers to σ; column “maxHP” stands for maximum holding
+    period.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**Table 13.1**](text00002.html#filepos0000636644) **Input Parameter Combinations
+    Used in the Simulations**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Figure** | **Forecast** | **Half-Life** | **Sigma** | **maxHP** |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.1 | 0       | 5       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.2 | 0       | 10       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.3 | 0       | 25       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.4 | 0       | 50       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.5 | 0       | 100       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.6 | 5       | 5       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.7 | 5       | 10       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.8 | 5       | 25       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.9 | 5       | 50       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.10 | 5       | 100       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.11 | 10       | 5       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.12 | 10       | 10       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.13 | 10       | 25       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.14 | 10       | 50       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.15 | 10       | 100       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.16 |  − 5       | 5       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.17 |  − 5       | 10       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.18 |  − 5       | 25       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.19 |  − 5       | 50       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.20 |  − 5       | 100       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.21 |  − 10       | 5       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.22 |  − 10       | 10       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.23 |  − 10       | 25       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.24 |  − 10       | 50       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 16.25 |  − 10       | 100       | 1       | 100       |'
+  prefs: []
+  type: TYPE_TB
+- en: In the following figures, we have plotted the non-annualized Sharpe ratios that
+    result from various combinations of profit-taking and stop-loss exit conditions.
+    We have omitted the negative sign in the y-axis (stop-losses) for simplicity.
+    Sharpe ratios are represented in grayscale (lighter indicating better performance;
+    darker indicating worse performance), in a format known as a heat-map. Performance
+    ( ![](Image00652.jpg) ) is computed per unit held ( *m [*i*] * = 1), since other
+    values of *m [*i*] * would simply re-scale performance, with no impact on the
+    Sharpe ratio. Transaction costs can be easily added, but for educational purposes
+    it is better to plot results without them, so that you can appreciate the symmetry
+    of the functions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**13.6.1 Cases with Zero Long-Run Equilibrium**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Cases with zero long-run equilibrium are consistent with the business of market-makers,
+    who provide liquidity under the assumption that price deviations from current
+    levels will correct themselves over time. The smaller τ, the smaller is the autoregressive
+    coefficient ( ![](Image00726.jpg) ). A small autoregressive coefficient in conjunction
+    with a zero expected profit has the effect that most of the pairs ![](Image00817.jpg)
+    deliver a zero performance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 13.1](text00002.html#filepos0000656032) shows the heat-map for the
+    parameter combination ![](Image00057.jpg) . The half-life is so small that performance
+    is maximized in a narrow range of combinations of small profit-taking with large
+    stop-losses. In other words, the optimal trading rule is to hold an inventory
+    long enough until a small profit arises, even at the expense of experiencing some
+    5-fold or 7-fold unrealized losses. Sharpe ratios are high, reaching levels of
+    around 3.2\. This is in fact what many market-makers do in practice, and is consistent
+    with the “asymmetric payoff dilemma” described in Easley et al. [2011]. The worst
+    possible trading rule in this setting would be to combine a short stop-loss with
+    a large profit-taking threshold, a situation that market-makers avoid in practice.
+    Performance is closest to neutral in the diagonal of the mesh, where profit-taking
+    and stop-losses are symmetric. You should keep this result in mind when labeling
+    observations using the triple-barrier method (Chapter 3).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00149.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.1**](text00002.html#filepos0000654709) Heat-map for ![](Image00243.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 13.2](text00002.html#filepos0000656993) shows that, if we increase
+    τ from 5 to 10, the areas of highest and lowest performance spread over the mesh
+    of pairs ![](Image00333.jpg) , while the Sharpe ratios decrease. This is because,
+    as the half-life increases, so does the magnitude of the autoregressive coefficient
+    (recall that ![](Image00689.jpg) ), thus bringing the process closer to a random
+    walk.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00778.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.2**](text00002.html#filepos0000656231) Heat-map for ![](Image00015.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In [Figure 13.3](text00002.html#filepos0000657941) , τ = 25, which again spreads
+    the areas of highest and lowest performance while reducing the Sharpe ratio. [Figure
+    13.4](text00002.html#filepos0000658257) (τ = 50) and [Figure 13.5](text00002.html#filepos0000658573)
+    (τ = 100) continue that progression. Eventually, as φ → 1, there are no recognizable
+    areas where performance can be maximized.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00108.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.3**](text00002.html#filepos0000657254) Heat-map for ![](Image00198.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00290.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.4**](text00002.html#filepos0000657466) Heat-map for ![](Image00384.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00454.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.5**](text00002.html#filepos0000657585) Heat-map for ![](Image00516.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Calibrating a trading rule on a random walk through historical simulations
+    would lead to backtest overfitting, because one random combination of profit-taking
+    and stop-loss that happened to maximize Sharpe ratio would be selected. This is
+    why backtesting of synthetic data is so important: to avoid choosing a strategy
+    because some statistical fluke took place in the past (a single random path).
+    Our procedure prevents overfitting by recognizing that performance exhibits no
+    consistent pattern, indicating that there is no optimal trading rule.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**13.6.2 Cases with Positive Long-Run Equilibrium**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Cases with positive long-run equilibrium are consistent with the business of
+    a position-taker, such as a hedge-fund or asset manager. [Figure 13.6](text00002.html#filepos0000660487)
+    shows the results for the parameter combination ![](Image00636.jpg) . Because
+    positions tend to make money, the optimal profit-taking is higher than in the
+    previous cases, centered around 6, with stop-losses that range between 4 and 10\.
+    The region of the optimal trading rule takes a characteristic rectangular shape,
+    as a result of combining a wide stop-loss range with a narrower profit-taking
+    range. Performance is highest across all experiments, with Sharpe ratios of around
+    12.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00710.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.6**](text00002.html#filepos0000659701) Heat-map for ![](Image00802.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In [Figure 13.7](text00002.html#filepos0000661506) , we have increased the half-life
+    from τ = 5 to τ = 10 *.* Now the optimal performance is achieved at a profit-taking
+    centered around 5, with stop-losses that range between 7 and 10\. The range of
+    optimal profit-taking is wider, while the range of optimal stop-losses narrows,
+    shaping the former rectangular area closer to a square. Again, a larger half-life
+    brings the process closer to a random walk, and therefore performance is now relatively
+    lower than before, with Sharpe ratios of around 9.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00573.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.7**](text00002.html#filepos0000660748) Heat-map for ![](Image00129.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In [Figure 13.8](text00002.html#filepos0000662374) , we have made τ = 25 *.*
+    The optimal profit-taking is now centered around 3, while the optimal stop-losses
+    range between 9 and 10\. The previous squared area of optimal performance has
+    given way to a semi-circle of small profit-taking with large stop-loss thresholds.
+    Again we see a deterioration of performance, with Sharpe ratios of 2.7.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00222.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.8**](text00002.html#filepos0000661767) Heat-map for ![](Image00192.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In [Figure 13.9](text00002.html#filepos0000663316) , the half-life is raised
+    to τ = 50 *.* As a result, the region of optimal performance spreads, while Sharpe
+    ratios continue to fall to 0.8\. This is the same effect we observed in the case
+    of zero long-run equilibrium (Section 13.6.1), with the difference that because
+    now ![](Image00404.jpg) , there is no symmetric area of worst performance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00472.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.9**](text00002.html#filepos0000662635) Heat-map for ![](Image00553.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In [Figure 13.10](text00002.html#filepos0000663985) , we appreciate that τ =
+    100 leads to the natural conclusion of the trend described above. The process
+    is now so close to a random walk that the maximum Sharpe ratio is a mere 0.32.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00655.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.10**](text00002.html#filepos0000663577) Heat-map for ![](Image00731.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: We can observe a similar pattern in [Figures 13.11](text00002.html#filepos0000664707)
+    through 13.15, where ![](Image00823.jpg) and τ is progressively increased from
+    5 to 10, 25, 50, and 100, respectively.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00061.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.11**](text00002.html#filepos0000664280) Heat-map for ![](Image00288.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00708.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 13.12** Heat-map for ![](Image00312.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00729.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 13.13** Heat-map for ![](Image00488.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00583.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 13.14** Heat-map for ![](Image00675.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00578.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 13.15** Heat-map for ![](Image00219.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**13.6.3 Cases with Negative Long-Run Equilibrium**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A rational market participant would not initiate a position under the assumption
+    that a loss is the expected outcome. However, if a trader recognizes that losses
+    are the expected outcome of a pre-existing position, she still needs a strategy
+    to stop-out that position while minimizing such losses.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We have obtained [Figure 13.16](text00002.html#filepos0000668111) as a result
+    of applying parameters ![](Image00086.jpg) . If we compare [ Figure 13.16 ](text00002.html#filepos0000668111)
+    with [ Figure 13.6 ](text00002.html#filepos0000660487) , it appears as if one
+    is a rotated complementary of the other. [ Figure 13.6 ](text00002.html#filepos0000660487)
+    resembles a rotated photographic negative of [ Figure 13.16 ](text00002.html#filepos0000668111)
+    . The reason is that the profit in [ Figure 13.6 ](text00002.html#filepos0000660487)
+    is translated into a loss in [ Figure 13.16 ](text00002.html#filepos0000668111)
+    , and the loss in [ Figure 13.6 ](text00002.html#filepos0000660487) is translated
+    into a profit in [ Figure 13.16 ](text00002.html#filepos0000668111) . One case
+    is a reverse image of the other, just as a gambler's loss is the house's gain.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00785.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.16**](text00002.html#filepos0000666628) Heat-map for ![](Image00270.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: As expected, Sharpe ratios are negative, with a worst performance region centered
+    around the stop-loss of 6, and profit-taking thresholds that range between 4 and
+    10\. Now the rectangular shape does not correspond to a region of best performance,
+    but to a region of worst performance, with Sharpe ratios of around −12.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In [Figure 13.17](text00002.html#filepos0000669207) , τ = 10, and now the proximity
+    to a random walk plays in our favor. The region of worst performance spreads out,
+    and the rectangular area becomes a square. Performance becomes less negative,
+    with Sharpe ratios of about −9.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00362.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.17**](text00002.html#filepos0000668755) Heat-map for ![](Image00713.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This familiar progression can be appreciated in [Figures 13.18](text00002.html#filepos0000670124)
+    , [13.19](text00002.html#filepos0000670441) , and [13.20](text00002.html#filepos0000670758)
+    , as τ is raised to 25, 50, and 100\. Again, as the process approaches a random
+    walk, performance flattens and optimizing the trading rule becomes a backtest-overfitting
+    exercise.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00166.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.18**](text00002.html#filepos0000669514) Heat-map for ![](Image00042.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00133.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.19**](text00002.html#filepos0000669622) Heat-map for ![](Image00227.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00318.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.20**](text00002.html#filepos0000669726) Heat-map for ![](Image00408.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figures 13.21](text00002.html#filepos0000671514) through 13.25 repeat the
+    same process for ![](Image00475.jpg) and τ that is progressively increased from
+    5 to 10, 25, 50, and 100\. The same pattern, a rotated complementary to the case
+    of positive long-run equilibrium, arises.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00558.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 13.21**](text00002.html#filepos0000670958) Heat-map for ![](Image00659.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00736.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 13.22** Heat-map for ![](Image00829.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00066.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 13.23** Heat-map for ![](Image00157.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00251.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 13.24** Heat-map for ![](Image00340.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00428.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 13.25** Heat-map for ![](Image00491.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**13.7 Conclusion**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this chapter we have shown how to determine experimentally the optimal trading
+    strategy associated with prices following a discrete O-U process. Because the
+    derivation of such trading strategy is not the result of a historical simulation,
+    our procedure avoids the risks associated with overfitting the backtest to a single
+    path. Instead, the optimal trading rule is derived from the characteristics of
+    the underlying stochastic process that drives prices. The same approach can be
+    applied to processes other than O-U, and we have focused on this particular process
+    only for educational purposes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'While we do not derive the closed-form solution to the optimal trading strategies
+    problem in this chapter, our experimental results seem to support the following
+    OTR conjecture:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Conjecture:** Given a financial instrument''s price characterized by a discrete
+    O-U process, there is a unique optimal trading rule in terms of a combination
+    of profit-taking and stop-loss that maximizes the rule''s Sharpe ratio.'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: 'Given that these optimal trading rules can be derived numerically within a
+    few seconds, there is little practical incentive to obtain a closed-form solution.
+    As it is becoming more common in mathematical research, the experimental analysis
+    of a conjecture can help us achieve a goal even in the absence of a proof. It
+    could take years if not decades to prove the above conjecture, and yet all experiments
+    conducted so far confirm it empirically. Let me put it this way: The probability
+    that this conjecture is false is negligible relative to the probability that you
+    will overfit your trading rule by disregarding the conjecture. Hence, the rational
+    course of action is to assume that the conjecture is right, and determine the
+    OTR through synthetic data. In the worst case, the trading rule will be suboptimal,
+    but still it will almost surely outperform an overfit trading rule.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Exercises**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Suppose you are an execution trader. A client calls you with an order to cover
+    a short position she entered at a price of 100\. She gives you two exit conditions:
+    profit-taking at 90 and stop-loss at 105.'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Assuming the client believes the price follows an O-U process, are these levels
+    reasonable? For what parameters?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Can you think of an alternative stochastic process under which these levels
+    make sense?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Fit the time series of dollar bars of E-mini S&P 500 futures to an O-U process.
+    Given those parameters:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Produce a heat-map of Sharpe ratios for various profit-taking and stop-loss
+    levels.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What is the OTR?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Repeat exercise 2, this time on a time series of dollar bars of
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: 10-year U.S. Treasure Notes futures
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: WTI Crude Oil futures
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Are the results significantly different? Does this justify having execution
+    traders specialized by product?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Repeat exercise 2 after splitting the time series into two parts:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: The first time series ends on 3/15/2009.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The second time series starts on 3/16/2009.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Are the OTRs significantly different?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: How long do you estimate it would take to derive OTRs on the 100 most liquid
+    futures contracts worldwide? Considering the results from exercise 4, how often
+    do you think you may have to re-calibrate the OTRs? Does it make sense to pre-compute
+    this data?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Parallelize Snippets 13.1 and 13.2 using the `mpEngine` module described in
+    Chapter 20.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '**References**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Bailey, D. and M. López de Prado (2012): “The Sharpe ratio efficient frontier.”
+    *Journal of Risk* , Vol. 15, No. 2, pp. 3–44\. Available at [http://ssrn.com/abstract=1821643](http://ssrn.com/abstract=1821643)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D. and M. López de Prado (2013): “Drawdown-based stop-outs and the
+    triple penance rule.” *Journal of Risk* , Vol. 18, No. 2, pp. 61–93\. Available
+    at [http://ssrn.com/abstract=2201302](http://ssrn.com/abstract=2201302) .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D., J. Borwein, M. López de Prado, and J. Zhu (2014): “Pseudo-mathematics
+    and financial charlatanism: The effects of backtest overfitting on out-of-sample
+    performance.” *Notices of the American Mathematical Society* , 61(5), pp. 458–471\.
+    Available at [http://ssrn.com/ abstract=2308659](http://ssrn.com/abstract=2308659)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D., J. Borwein, M. López de Prado, and J. Zhu (2017): “The probability
+    of backtest overfitting.” *Journal of Computational Finance* , Vol. 20, No. 4,
+    pp. 39–70\. Available at [http://ssrn.com/abstract=2326253](http://ssrn.com/abstract=2326253)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bertram, W. (2009): “Analytic solutions for optimal statistical arbitrage trading.”
+    Working paper. Available at [http://ssrn.com/abstract=1505073](http://ssrn.com/abstract=1505073)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Easley, D., M. Lopez de Prado, and M. O''Hara (2011): “The exchange of flow-toxicity.”
+    *Journal of Trading* , Vol. 6, No. 2, pp. 8–13\. Available at [http://ssrn.com/abstract=1748633](http://ssrn.com/abstract=1748633)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Notes**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([1](text00002.html#filepos0000610150))    I would like to thank Professor
+    Peter Carr (New York University) for his contributions to this chapter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([2](text00002.html#filepos0000622966))    The strategy may still be the result
+    of backtest overfitting, but at least the trading rule would not have contributed
+    to that problem.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([3](text00002.html#filepos0000630739))    The trading rule *R* could be characterized
+    as a function of the three barriers, instead of the horizontal ones. That change
+    would have no impact on the procedure. It would merely add one more dimension
+    to the mesh (20 × 20 × 20). In this chapter we do not consider that setting, because
+    it would make the visualization of the method less intuitive.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**CHAPTER 14**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Backtest Statistics**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**14.1 Motivation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In the previous chapters, we have studied three backtesting paradigms: First,
+    historical simulations (the walk-forward method, Chapters 11 and 12). Second,
+    scenario simulations (CV and CPCV methods, Chapter 12). Third, simulations on
+    synthetic data (Chapter 13). Regardless of the backtesting paradigm you choose,
+    you need to report the results according to a series of statistics that investors
+    will use to compare and judge your strategy against competitors. In this chapter
+    we will discuss some of the most commonly used performance evaluation statistics.
+    Some of these statistics are included in the Global Investment Performance Standards
+    (GIPS), ^([1](text00003.html#filepos0000740599)) however a comprehensive analysis
+    of performance requires metrics specific to the ML strategies under scrutiny.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**14.2 Types of Backtest Statistics**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Backtest statistics comprise metrics used by investors to assess and compare
+    various investment strategies. They should help us uncover potentially problematic
+    aspects of the strategy, such as substantial asymmetric risks or low capacity.
+    Overall, they can be categorized into general characteristics, performance, runs/drawdowns,
+    implementation shortfall, return/risk efficiency, classification scores, and attribution.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**14.3 General Characteristics**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The following statistics inform us about the general characteristics of the
+    backtest:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Time range:** Time range specifies the start and end dates. The period used
+    to test the strategy should be sufficiently long to include a comprehensive number
+    of regimes (Bailey and López de Prado [2012]).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Average AUM:** This is the average dollar value of the assets under management.
+    For the purpose of computing this average, the dollar value of long and short
+    positions is considered to be a positive real number.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Capacity:** A strategy''s capacity can be measured as the highest AUM that
+    delivers a target risk-adjusted performance. A minimum AUM is needed to ensure
+    proper bet sizing (Chapter 10) and risk diversification (Chapter 16). Beyond that
+    minimum AUM, performance will decay as AUM increases, due to higher transaction
+    costs and lower turnover.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Leverage:** Leverage measures the amount of borrowing needed to achieve the
+    reported performance. If leverage takes place, costs must be assigned to it. One
+    way to measure leverage is as the ratio of average dollar position size to average
+    AUM.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Maximum dollar position size:** Maximum dollar position size informs us whether
+    the strategy at times took dollar positions that greatly exceeded the average
+    AUM. In general we will prefer strategies that take maximum dollar positions close
+    to the average AUM, indicating that they do not rely on the occurrence of extreme
+    events (possibly outliers).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Ratio of longs:** The ratio of longs show what proportion of the bets involved
+    long positions. In long-short, market neutral strategies, ideally this value is
+    close to 0.5\. If not, the strategy may have a position bias, or the backtested
+    period may be too short and unrepresentative of future market conditions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Frequency of bets:** The frequency of bets is the number of bets per year
+    in the backtest. A sequence of positions on the same side is considered part of
+    the same bet. A bet ends when the position is flattened or flipped to the opposite
+    side. The number of bets is always smaller than the number of trades. A trade
+    count would overestimate the number of independent opportunities discovered by
+    the strategy.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Average holding period:** The average holding period is the average number
+    of days a bet is held. High-frequency strategies may hold a position for a fraction
+    of seconds, whereas low frequency strategies may hold a position for months or
+    even years. Short holding periods may limit the capacity of the strategy. The
+    holding period is related but different to the frequency of bets. For example,
+    a strategy may place bets on a monthly basis, around the release of nonfarm payrolls
+    data, where each bet is held for only a few minutes.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Annualized turnover:** Annualized turnover measures the ratio of the average
+    dollar amount traded per year to the average annual AUM. High turnover may occur
+    even with a low number of bets, as the strategy may require constant tuning of
+    the position. High turnover may also occur with a low number of trades, if every
+    trade involves flipping the position between maximum long and maximum short.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Correlation to underlying:** This is the correlation between strategy returns
+    and the returns of the underlying investment universe. When the correlation is
+    significantly positive or negative, the strategy is essentially holding or short-selling
+    the investment universe, without adding much value.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Snippet 14.1 lists an algorithm that derives the timestamps of flattening or
+    flipping trades from a pandas series of target positions ( `tPos` ). This gives
+    us the number of bets that have taken place.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 14.1 DERIVING THE TIMING OF BETS FROM A SERIES OF TARGET POSITIONS**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00369.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Snippet 14.2 illustrates the implementation of an algorithm that estimates the
+    average holding period of a strategy, given a pandas series of target positions
+    ( `tPos` ).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 14.2 IMPLEMENTATION OF A HOLDING PERIOD ESTIMATOR**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00676.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**14.4 Performance**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Performance statistics are dollar and returns numbers without risk adjustments.
+    Some useful performance measurements include:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**PnL:** The total amount of dollars (or the equivalent in the currency of
+    denomination) generated over the entirety of the backtest, including liquidation
+    costs from the terminal position.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**PnL from long positions:** The portion of the PnL dollars that was generated
+    exclusively by long positions. This is an interesting value for assessing the
+    bias of long-short, market neutral strategies.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Annualized rate of return:** The time-weighted average annual rate of total
+    return, including dividends, coupons, costs, etc.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Hit ratio:** The fraction of bets that resulted in a positive PnL.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Average return from hits:** The average return from bets that generated a
+    profit.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Average return from misses:** The average return from bets that generated
+    a loss.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**14.4.1 Time-Weighted Rate of Return**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Total return is the rate of return from realized and unrealized gains and losses,
+    including accrued interest, paid coupons, and dividends for the measurement period.
+    GIPS rules calculate time-weighted rate of returns (TWRR), adjusted for external
+    cash flows (CFA Institute [2010]). Periodic and sub-periodic returns are geometrically
+    linked. For periods beginning on or after January 1, 2005, GIPS rules mandate
+    calculating portfolio returns that adjust for daily-weighted external cash flows.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We can compute the TWRR by determining the value of the portfolio at the time
+    of each external cash flow. ^([2](text00003.html#filepos0000740874)) The TWRR
+    for portfolio *i* between subperiods [ *t* − 1, *t* ] is denoted *r [*i* , *t*]*
+    , with equations
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00757.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where
+  prefs: []
+  type: TYPE_NORMAL
+- en: π [*i* , *t*] is the mark-to-market (MtM) profit or loss for portfolio *i* at
+    time *t.*
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*K [*i* , *t*]* is the market value of the assets under management by portfolio
+    *i* through subperiod *t.* The purpose of including the max{.} term is to fund
+    additional purchases (ramp-up).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*A [*j* , *t*]* is the interest accrued or dividend paid by one unit of instrument
+    *j* at time *t.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*P [*j* , *t*]* is the clean price of security *j* at time *t.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: θ [*i* , *j* , *t*] are the holdings of portfolio *i* on security *j* at time
+    *t.*
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](Image00852.jpg) is the dirty price of security *j* at time *t.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](Image00089.jpg) is the average transacted clean price of portfolio *i*
+    on security *j* over subperiod *t.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](Image00177.jpg) is the average transacted dirty price of portfolio *i*
+    on security *j* over subperiod *t.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Cash inflows are assumed to occur at the beginning of the day, and cash outflows
+    are assumed to occur at the end of the day. These sub-period returns are then
+    linked geometrically as
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00273.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: The variable φ [*i* , *T*] can be understood as the performance of one dollar
+    invested in portfolio *i* over its entire life, *t* = 1, …, *T* . Finally, the
+    annualized rate of return of portfolio *i* is
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00368.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where *y [*i*]* is the number of years elapsed between *r [*i* , 1]* and *r
+    [*i* , *T*]* .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**14.5 Runs**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Investment strategies rarely generate returns drawn from an IID process. In
+    the absence of this property, strategy returns series exhibit frequent runs. Runs
+    are uninterrupted sequences of returns of the same sign. Consequently, runs increase
+    downside risk, which needs to be evaluated with proper metrics.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**14.5.1 Returns Concentration**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Given a time series of returns from bets, { *r [*t*]* } [*t* = 1, …, *T*] ,
+    we compute two weight series, *w ^−* and *w ^+* :'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00444.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Inspired by the Herfindahl-Hirschman Index (HHI), for || *w ^+* || > 1, where
+    ||.|| is the size of the vector, we define the concentration of positive returns
+    as
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00510.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: and the equivalent for concentration of negative returns, for || *w ^−* || >
+    1, as
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00616.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'From Jensen''s inequality, we know that E[ *r ^+ [*t*]* ] ² ≤ E[( *r [*t*]
+    ^+* ) ² ]. And because ![](Image00694.jpg) , we deduce that E[ *r ^+ [   *t*   ]
+    * ] ² ≤ E[( *r [*t*] ^(  +  ) * ) ² ] ≤ E[ *r ^+ [   *t*   ] * ] ² || *r ^+ *
+    ||, with an equivalent boundary on negative bet returns. These definitions have
+    a few interesting properties:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 0 ≤ *h ^+* ≤ 1
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*h ^+* = 0⇔*w ^+ [*t*]* = ||*w ^+* || ^(− 1) , ∀*t* (uniform returns)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](Image00784.jpg) (only one non-zero return)'
+  prefs:
+  - PREF_OL
+  type: TYPE_IMG
+- en: 'It is easy to derive a similar expression for the concentration of bets across
+    months, *h* [ *t* ]. Snippet 14.3 implements these concepts. Ideally, we are interested
+    in strategies where *bets* ’ returns exhibit:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: high Sharpe ratio
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: high number of bets per year, ||*r ^+* || + ||*r ^−* || = *T*
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: high hit ratio (relatively low ||*r ^−* ||)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: low *h ^+* (no right fat-tail)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: low *h ^−* (no left fat-tail)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: low *h* [*t* ] (bets are not concentrated in time)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**SNIPPET 14.3 ALGORITHM FOR DERIVING HHI CONCENTRATION**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00021.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**14.5.2 Drawdown and Time under Water**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Intuitively, a drawdown (DD) is the maximum loss suffered by an investment between
+    two consecutive high-watermarks (HWMs). The time under water (TuW) is the time
+    elapsed between an HWM and the moment the PnL exceeds the previous maximum PnL.
+    These concepts are best understood by reading Snippet 14.4\. This code derives
+    both DD and TuW series from either (1) the series of returns ( `dollars = False`
+    ) or; (2) the series of dollar performance ( `dollar = True` ). [Figure 14.1](text00002.html#filepos0000702619)
+    provides an example of DD and TuW.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00113.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 14.1**](text00002.html#filepos0000702359) Examples of drawdown (DD)
+    and time under water + (TuW)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 14.4 DERIVING THE SEQUENCE OF DD AND TuW**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00204.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**14.5.3 Runs Statistics for Performance Evaluation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Some useful measurements of runs statistics include:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**HHI index on positive returns:** This is `getHHI(ret[ret > = 0])` in Snippet 14.3.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**HHI index on negative returns:** This is `getHHI(ret[ret < 0])` in Snippet 14.3.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**HHI index on time between bets:** This is `getHHI(ret.groupby` `(pd.TimeGrouper
+    (freq = ''M'')).count())` in Snippet 14.3.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**95-percentile DD:** This is the 95th percentile of the DD series derived
+    by Snippet 14.4.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**95-percentile TuW:** This is the 95th percentile of the TuW series derived
+    by Snippet 14.4.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**14.6 Implementation Shortfall**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Investment strategies often fail due to wrong assumptions regarding execution
+    costs. Some important measurements of this include:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Broker fees per turnover:** These are the fees paid to the broker for turning
+    the portfolio over, including exchange fees.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Average slippage per turnover:** These are execution costs, excluding broker
+    fees, involved in one portfolio turnover. For example, it includes the loss caused
+    by buying a security at a fill-price higher than the mid-price at the moment the
+    order was sent to the execution broker.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Dollar performance per turnover:** This is the ratio between dollar performance
+    (including brokerage fees and slippage costs) and total portfolio turnovers. It
+    signifies how much costlier the execution could become before the strategy breaks
+    even.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Return on execution costs:** This is the ratio between dollar performance
+    (including brokerage fees and slippage costs) and total execution costs. It should
+    be a large multiple, to ensure that the strategy will survive worse-than-expected
+    execution.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**14.7 Efficiency**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Until now, all performance statistics considered profits, losses, and costs.
+    In this section, we account for the risks involved in achieving those results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**14.7.1 The Sharpe Ratio**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suppose that a strategy's excess returns (in excess of the risk-free rate),
+    { *r [*t*]* } [*t* = 1, …, *T*] , are IID Gaussian with mean μ and variance σ
+    ² . The Sharpe ratio (SR) is defined as
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00297.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: The purpose of SR is to evaluate the skills of a particular strategy or investor.
+    Since μ, σ are usually unknown, the true SR value cannot be known for certain.
+    The inevitable consequence is that Sharpe ratio calculations may be the subject
+    of substantial estimation errors.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**14.7.2 The Probabilistic Sharpe Ratio**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The probabilistic Sharpe ratio (PSR) provides an adjusted estimate of SR, by
+    removing the inflationary effect caused by short series with skewed and/or fat-tailed
+    returns. Given a user-defined benchmark ^([3](text00003.html#filepos0000741194))
+    Sharpe ratio ( *SR* *) and an observed Sharpe ratio ![](Image00531.jpg) , PSR
+    estimates the probability that ![](Image00738.jpg) is greater than a hypothetical
+    *SR* *. Following Bailey and López de Prado [2012], PSR can be estimated as
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00834.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where *Z* [.] is the cumulative distribution function (CDF) of the standard
+    Normal distribution, *T* is the number of observed returns, ![](Image00070.jpg)
+    is the skewness of the returns, and ![](Image00822.jpg) is the kurtosis of the
+    returns ( ![](Image00253.jpg) for Gaussian returns). For a given *SR* *, ![](Image00358.jpg)
+    increases with greater ![](Image00776.jpg) (in the original sampling frequency,
+    i.e. non-annualized), or longer track records ( *T* ), or positively skewed returns
+    ( ![](Image00493.jpg) ), but it decreases with fatter tails ( ![](Image00592.jpg)
+    ).  [ Figure 14.2 ](text00002.html#filepos0000710176) plots ![](Image00679.jpg)
+    for ![](Image00761.jpg) , ![](Image00001.jpg) and *SR* * = 1.0 as a function of
+    ![](Image00094.jpg) and *T.*
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00182.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 14.2**](text00002.html#filepos0000709465) PSR as a function of skewness
+    and sample length'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**14.7.3 The Deflated Sharpe Ratio**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The deflated Sharpe ratio (DSR) is a PSR where the rejection threshold is adjusted
+    to reflect the multiplicity of trials. Following Bailey and López de Prado [2014],
+    DSR can be estimated as ![](Image00277.jpg) , where the benchmark Sharpe ratio,
+    *SR* *, is no longer user-defined. Instead, *SR* * is estimated as
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00372.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where ![](Image00448.jpg) is the variance across the trials’ estimated SR, *N*
+    is the number of independent trials, *Z* [.] is the CDF of the standard Normal
+    distribution, γ is the Euler-Mascheroni constant, and *n* = 1, …, *N* .  [ Figure
+    14.3 ](text00002.html#filepos0000712035) plots *SR* * as a function of ![](Image00515.jpg)
+    and *N* .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00622.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 14.3**](text00002.html#filepos0000711602) *SR* * as a function of
+    ![](Image00699.jpg) and *N*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The rationale behind DSR is the following: Given a set of SR estimates, ![](Image00789.jpg)
+    , its expected maximum is greater than zero, even if the true SR is zero. Under
+    the null hypothesis that the actual Sharpe ratio is zero, *H [0] * : *SR* = 0,
+    we know that the expected maximum ![](Image00506.jpg) can be estimated as the
+    *SR* *. Indeed, *SR* * increases quickly as more independent trials are attempted
+    ( *N* ), or the trials involve a greater variance ![](Image00117.jpg) . From this
+    knowledge we derive the third law of backtesting.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 14.5 MARCOS’ THIRD LAW OF BACKTESTING. MOST DISCOVERIES IN FINANCE
+    ARE FALSE BECAUSE OF ITS VIOLATION**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: “Every backtest result must be reported in conjunction with all the trials involved
+    in its production. Absent that information, it is impossible to assess the backtest's
+    ‘false discovery’ probability.”
+  prefs:
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Marcos López de Prado
+  prefs:
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: ''
+  prefs:
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '*Advances in Financial Machine Learning* (2018)'
+  prefs:
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '**14.7.4 Efficiency Statistics**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Useful efficiency statistics include:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Annualized Sharpe ratio:** This is the SR value, annualized by a factor ![](Image00208.jpg)
+    , where *a* is the average number of returns observed per year. This common annualization
+    method relies on the assumption that returns are IID.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Information ratio:** This is the SR equivalent of a portfolio that measures
+    its performance relative to a benchmark. It is the annualized ratio between the
+    average excess return and the tracking error. The excess return is measured as
+    the portfolio''s return in excess of the benchmark''s return. The tracking error
+    is estimated as the standard deviation of the excess returns.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Probabilistic Sharpe ratio:** PSR corrects SR for inflationary effects caused
+    by non-Normal returns or track record length. It should exceed 0.95, for the standard
+    significance level of 5%. It can be computed on absolute or relative returns.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Deflated Sharpe ratio:** DSR corrects SR for inflationary effects caused
+    by non-Normal returns, track record length, and multiple testing/selection bias.
+    It should exceed 0.95, for the standard significance level of 5%. It can be computed
+    on absolute or relative returns.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**14.8 Classification Scores**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In the context of meta-labeling strategies (Chapter 3, Section 3.6), it is
+    useful to understand the performance of the ML overlay algorithm in isolation.
+    Remember that the primary algorithm identifies opportunities, and the secondary
+    (overlay) algorithm decides whether to pursue them or pass. A few useful statistics
+    include:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Accuracy:** Accuracy is the fraction of opportunities correctly labeled by
+    the overlay algorithm,'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](Image00727.jpg)'
+  prefs:
+  - PREF_IND
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_IMG
+- en: where TP is the number of true positives, TN is the number of true negatives,
+    FP is the number of false positives, and FN is the number of false negatives.
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '**Precision:** Precision is the fraction of true positives among the predicted
+    positives,'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](Image00393.jpg)'
+  prefs:
+  - PREF_IND
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**Recall:** Recall is the fraction of true positives among the positives,'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](Image00458.jpg)'
+  prefs:
+  - PREF_IND
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**F1** : Accuracy may not be an adequate classification score for meta-labeling
+    applications. Suppose that, after you apply meta-labeling, there are many more
+    negative cases (label ‘0’) than positive cases (label ‘1’). Under that scenario,
+    a classifier that predicts every case to be negative will achieve high accuracy,
+    even though recall=0 and precision is undefined. The F1 score corrects for that
+    flaw, by assessing the classifier in terms of the (equally weighted) harmonic
+    mean of precision and recall,'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](Image00538.jpg)'
+  prefs:
+  - PREF_IND
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_IMG
+- en: As a side note, consider the unusual scenario where, after applying meta-labeling,
+    there are many more positive cases than negative cases. A classifier that predicts
+    all cases to be positive will achieve TN=0 and FN=0, hence accuracy=precision
+    and recall=1\. Accuracy will be high, and F1 will not be smaller than accuracy,
+    even though the classifier is not able to discriminate between the observed samples.
+    One solution would be to switch the definitions of positive and negative cases,
+    so that negative cases are predominant, and then score with F1.
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '**Negative log-loss:** Negative log-loss was introduced in Chapter 9, Section
+    9.4, in the context of hyper-parameter tuning. Please refer to that section for
+    details. The key conceptual difference between accuracy and negative log-loss
+    is that negative log-loss takes into account not only whether our predictions
+    were correct or not, but the probability of those predictions as well.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: See Chapter 3, Section 3.7 for a visual representation of precision, recall,
+    and accuracy. [Table 14.1](text00002.html#filepos0000719725) characterizes the
+    four degenerate cases of binary classification. As you can see, the F1 score is
+    not defined in two of those cases. For this reason, when Scikit-learn is asked
+    to compute F1 on a sample with no observed 1s or with no predicted 1s, it will
+    print a warning ( `UndefinedMetricWarning` ), and set the F1 value to 0.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**Table 14.1**](text00002.html#filepos0000719253) **The Four Degenerate Cases
+    of Binary Classification**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Condition** | **Collapse** | **Accuracy** | **Precision** | **Recall**
+    | **F1** |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Observed all 1s | TN=FP=0 | =recall | 1 | [0,1] | [0,1] |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Observed all 0s | TP=FN=0 | [0,1] | 0 | NaN | NaN |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Predicted all 1s | TN=FN=0 | =precision | [0,1] | 1 | [0,1] |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Predicted all 0s | TP=FP=0 | [0,1] | NaN | 0 | NaN |'
+  prefs: []
+  type: TYPE_TB
+- en: When all observed values are positive (label ‘1’), there are no true negatives
+    or false positives, thus precision is 1, recall is a positive real number between
+    0 and 1 (inclusive), and accuracy equals recall. Then, ![](Image00646.jpg) .
+  prefs: []
+  type: TYPE_NORMAL
+- en: When all predicted values are positive (label ‘1’), there are no true negatives
+    or false negatives, thus precision is a positive real number between 0 and 1 (inclusive),
+    recall is 1, and accuracy equals precision. Then, ![](Image00719.jpg) .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**14.9 Attribution**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The purpose of performance attribution is to decompose the PnL in terms of
+    risk classes. For example, a corporate bond portfolio manager typically wants
+    to understand how much of its performance comes from his exposure to the following
+    risks classes: duration, credit, liquidity, economic sector, currency, sovereign,
+    issuer, etc. Did his duration bets pay off? What credit segments does he excel
+    at? Or should he focus on his issuer selection skills?'
+  prefs: []
+  type: TYPE_NORMAL
+- en: These risks are not orthogonal, so there is always an overlap between them.
+    For example, highly liquid bonds tend to have short durations and high credit
+    rating, and are normally issued by large entities with large amounts outstanding,
+    in U.S. dollars. As a result, the sum of the attributed PnLs will not match the
+    total PnL, but at least we will be able to compute the Sharpe ratio (or information
+    ratio) per risk class. Perhaps the most popular example of this approach is Barra's
+    multi-factor method. See Barra [1998, 2013] and Zhang and Rachev [2004] for details.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Of equal interest is to attribute PnL across categories within each class.
+    For example, the duration class could be split between short duration (less than
+    5 years), medium duration (between 5 and 10 years), and long duration (in excess
+    of 10 years). This PnL attribution can be accomplished as follows: First, to avoid
+    the overlapping problem we referred to earlier, we need to make sure that each
+    member of the investment universe belongs to one and only one category of each
+    risk class at any point in time. In other words, for each risk class, we split
+    the entire investment universe into disjoint partitions. Second, for each risk
+    class, we form one index per risk category. For example, we will compute the performance
+    of an index of short duration bonds, another index of medium duration bonds, and
+    another index of long duration bonds. The weightings for each index are the re-scaled
+    weights of our investment portfolio, so that each index''s weightings add up to
+    one. Third, we repeat the second step, but this time we form those risk category
+    indices using the weights from the investment universe (e.g., Markit iBoxx Investment
+    Grade), again re-scaled so that each index''s weightings add up to one. Fourth,
+    we compute the performance metrics we discussed earlier in the chapter on each
+    of these indices’ returns and excess returns. For the sake of clarity, in this
+    context the excess return of a short duration index is the return using (re-scaled)
+    portfolio weightings (step 2) minus the return using (re-scaled) universe weightings
+    (step 3).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Exercises**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A strategy exhibits a high turnover, high leverage, and high number of bets,
+    with a short holding period, low return on execution costs, and a high Sharpe
+    ratio. Is it likely to have large capacity? What kind of strategy do you think
+    it is?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: On the dollar bars dataset for E-mini S&P 500 futures, compute
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: HHI index on positive returns.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: HHI index on negative returns.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: HHI index on time between bars.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The 95-percentile DD.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The 95-percentile TuW.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Annualized average return.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Average returns from hits (positive returns).
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Average return from misses (negative returns).
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Annualized SR.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Information ratio, where the benchmark is the risk-free rate.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: PSR.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: DSR, where we assume there were 100 trials, and the variance of the trials’
+    SR was 0.5.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Consider a strategy that is long one futures contract on even years, and is
+    short one futures contract on odd years.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Repeat the calculations from exercise 2.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What is the correlation to the underlying?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The results from a 2-year backtest are that monthly returns have a mean of 3.6%,
+    and a standard deviation of 0.079%.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: What is the SR?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What is the annualized SR?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Following on exercise 1:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: The returns have a skewness of 0 and a kurtosis of 3\. What is the PSR?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The returns have a skewness of -2.448 and a kurtosis of 10.164\. What is the
+    PSR?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What would be the PSR from 2.b, if the backtest had been for a length of 3 years?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: A 5-year backtest has an annualized SR of 2.5, computed on daily returns. The
+    skewness is -3 and the kurtosis is 10.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: What is the PSR?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In order to find that best result, 100 trials were conducted. The variance of
+    the Sharpe ratios on those trials is 0.5\. What is the DSR?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**References**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Bailey, D. and M. López de Prado (2012): “The Sharpe ratio efficient frontier.”
+    *Journal of Risk* , Vol. 15, No. 2, pp. 3–44.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bailey, D. and M. López de Prado (2014): “The deflated Sharpe ratio: Correcting
+    for selection bias, backtest overfitting and non-normality.” *Journal of Portfolio
+    Management* , Vol. 40, No. 5\. Available at [https://ssrn.com/abstract=2460551](https://ssrn.com/abstract=2460551)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Barra (1998): *Risk Model Handbook: U.S. Equities* , 1st ed. Barra. Available
+    at [http://www.alacra.com/alacra/help/barra_handbook_US.pdf](http://www.alacra.com/alacra/help/barra_handbook_US.pdf)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Barra (2013): *MSCI BARRA Factor Indexes Methodology* , 1st ed. MSCI Barra.
+    Available at [https://www.msci.com/eqb/methodology/meth_docs/MSCI_Barra_Factor%20Indices_Methodology_Nov13.pdf](https://www.msci.com/eqb/methodology/meth_docs/MSCI_Barra_Factor%20Indices_Methodology_Nov13.pdf)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'CFA Institute (2010): “Global investment performance standards.” CFA Institute,
+    Vol. 2010, No. 4, February. Available at [https://www.gipsstandards.org/.](https://www.gipsstandards.org/.)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Zhang, Y. and S. Rachev (2004): “Risk attribution and portfolio performance
+    measurement—An overview.” Working paper, University of California, Santa Barbara.
+    Available at [http:// citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.318.7169](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.318.7169)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL

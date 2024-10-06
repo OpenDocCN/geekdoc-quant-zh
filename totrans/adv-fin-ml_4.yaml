@@ -1,0 +1,3485 @@
+- en: '**19.3 First Generation: Price Sequences**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first generation of microstructural models concerned themselves with estimating
+    the bid-ask spread and volatility as proxies for illiquidity. They did so with
+    limited data and without imposing a strategic or sequential structure to the trading
+    process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.3.1 The Tick Rule**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In a double auction book, quotes are placed for selling a security at various
+    price levels (offers) or for buying a security at various price levels (bids).
+    Offer prices always exceed bid prices, because otherwise there would be an instant
+    match. A trade occurs whenever a buyer matches an offer, or a seller matches a
+    bid. Every trade has a buyer and a seller, but only one side initiates the trade.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The tick rule is an algorithm used to determine a trade''s aggressor side.
+    A buy-initiated trade is labeled “1”, and a sell-initiated trade is labeled “-1”,
+    according to this logic:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00839.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where *p [*t*]* is the price of the trade indexed by *t* = 1, …, *T* , and *b
+    [0]* is arbitrarily set to 1\. A number of studies have determined that the tick
+    rule achieves high classification accuracy, despite its relative simplicity (Aitken
+    and Frino [1996]). Competing classification methods include Lee and Ready [1991]
+    and Easley et al. [2016].
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Transformations of the { *b [*t*]* } series can result in informative features.
+    Such transformations include: (1) Kalman Filters on its future expected value,
+    E [*t*] [ *b [*t* + 1]* ]; (2) structural breaks on such predictions (Chapter
+    17), (3) entropy of the { *b [*t*]* } sequence (Chapter 18); (4) t-values from
+    Wald-Wolfowitz''s tests of runs on { *b [*t*]* }; (5) fractional differentiation
+    of the cumulative { *b [*t*]* } series, ![](Image00648.jpg) (Chapter 5); etc.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.3.2 The Roll Model**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Roll [1984] was one of the first models to propose an explanation for the effective
+    bid-ask spread at which a security trades. This is useful in that bid-ask spreads
+    are a function of liquidity, hence Roll's model can be seen as an early attempt
+    to measure the liquidity of a security. Consider a mid-price series { *m [*t*]*
+    }, where prices follow a Random Walk with no drift,
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00375.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: hence price changes Δ *m [*t*]* = *m [*t*]* − *m [*t* − 1]* are independently
+    and identically drawn from a Normal distribution
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00262.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'These assumptions are, of course, against all empirical observations, which
+    suggest that financial time series have a drift, they are heteroscedastic, exhibit
+    serial dependency, and their returns distribution is non-Normal. But with a proper
+    sampling procedure, as we saw in Chapter 2, these assumptions may not be too unrealistic.
+    The observed prices, { *p [*t*]* }, are the result of sequential trading against
+    the bid-ask spread:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00259.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'where *c* is half the bid-ask spread, and *b [*t*]* ∈ { − 1, 1} is the aggressor
+    side. The Roll model assumes that buys and sells are equally likely, ![](Image00435.jpg)
+    , serially independent, E[ *b [*t*] b [*t*  − 1] * ] = 0, and independent from
+    the noise, E[ *b [*t*] u [*t*] * ] = 0 *.* Given these assumptions, Roll derives
+    the values of *c* and σ ² [   *u*   ] as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00498.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](Image00702.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: resulting in ![](Image00684.jpg) and σ ² [   *u*   ] = σ ² [Δ *p [*t*] * ] +
+    2σ[Δ *p [*t*] * , Δ *p [*t*  − 1] * ]. In conclusion, the bid-ask spread is a
+    function of the serial covariance of price changes, and the true (unobserved)
+    price's noise, excluding microstructural noise, is a function of the observed
+    noise and the serial covariance of price changes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The reader may question the need for Roll's model nowadays, when datasets include
+    bid-ask prices at multiple book levels. One reason the Roll model is still in
+    use, despite its limitations, is that it offers a relatively direct way to determine
+    the *effective* bid-ask spread of securities that are either rarely traded, or
+    where the published quotes are not representative of the levels at which market
+    makers’ are willing to provide liquidity (e.g., corporate, municipal, and agency
+    bonds). Using Roll's estimates, we can derive informative features regarding the
+    market's liquidity conditions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.3.3 High-Low Volatility Estimator**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Beckers [1983] shows that volatility estimators based on high-low prices are
+    more accurate than the standard estimators of volatility based on closing prices.
+    Parkinson [1980] derives that, for continuously observed prices following a geometric
+    Brownian motion,
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00770.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](Image00008.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where *k [1]* = 4log[2], ![](Image00102.jpg) , *H [*t*] * is the high price
+    for bar *t* , and *L [*t*] * is the low price for bar *t.* Then the volatility
+    feature σ [*HL*] can be robustly estimated based on observed high-low prices.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.3.4 Corwin and Schultz**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Building on the work of Beckers [1983], Corwin and Schultz [2012] introduce
+    a bid-ask spread estimator from high and low prices. The estimator is based on
+    two principles: First, high prices are almost always matched against the offer,
+    and low prices are almost always matched against the bid. The ratio of high-to-low
+    prices reflects fundamental volatility as well as the bid-ask spread. Second,
+    the component of the high-to-low price ratio that is due to volatility increases
+    proportionately with the time elapsed between two observations.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Corwin and Schultz show that the spread, as a percentage of price, can be estimated
+    as
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00189.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00283.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](Image00091.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](Image00161.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: and *H [*t* − 1, *t*]* is the high price over 2 bars ( *t* − 1 and *t* ), whereas
+    *L [*t* − 1, *t*]* is the low price over 2 bars ( *t* − 1 and *t* ). Because α
+    [*t*] < 0⇒ *S [*t*]* < 0, the authors recommend setting negative alphas to 0 (see
+    Corwin and Schultz [2012], p. 727). Snippet 19.1 implements this algorithm. The
+    `corwinSchultz` function receives two arguments, a series dataframe with columns
+    ( `High` , `Low` ), and an integer value `sl` that defines the sample length used
+    to estimate β [*t*] .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 19.1 IMPLEMENTATION OF THE CORWIN-SCHULTZ ALGORITHM**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00114.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Note that volatility does not appear in the final Corwin-Schultz equations.
+    The reason is that volatility has been replaced by its high/low estimator. As
+    a byproduct of this model, we can derive the Becker-Parkinson volatility as shown
+    in Snippet 19.2.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 19.2 ESTIMATING VOLATILITY FOR HIGH-LOW PRICES**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00056.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: This procedure is particularly helpful in the corporate bond market, where there
+    is no centralized order book, and trades occur through bids wanted in competition
+    (BWIC). The resulting feature, bid-ask spread *S* , can be estimated recursively
+    over a rolling window, and values can be smoothed using a Kalman filter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.4 Second Generation: Strategic Trade Models**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Second generation microstructural models focus on understanding and measuring
+    illiquidity. Illiquidity is an important informative feature in financial ML models,
+    because it is a risk that has an associated premium. These models have a stronger
+    theoretical foundation than first-generation models, in that they explain trading
+    as the strategic interaction between informed and uninformed traders. In doing
+    so, they pay attention to signed volume and order flow imbalance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Most of these features are estimated through regressions. In practice, I have
+    observed that the t-values associated with these microstructural estimates are
+    more informative than the (mean) estimates themselves. Although the literature
+    does not mention this observation, there is a good argument for preferring features
+    based on t-values over features based on mean values: t-values are re-scaled by
+    the standard deviation of the estimation error, which incorporates another dimension
+    of information absent in mean estimates.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.4.1 Kyle''s Lambda**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Kyle [1985] introduced the following strategic trade model. Consider a risky
+    asset with terminal value *v* ∼ *N* [ *p [0]* , Σ [0] ], as well as two traders:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A noise trader who trades a quantity *u* = *N* [0, σ ² [*u*] ], independent
+    of *v* .
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: An informed trader who knows *v* and demands a quantity *x* , through a market
+    order.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The market maker observes the total order flow *y* = *x* + *u* , and sets a
+    price *p* accordingly. In this model, market makers cannot distinguish between
+    orders from noise traders and informed traders. They adjust prices as a function
+    of the order flow imbalance, as that may indicate the presence of an informed
+    trader. Hence, there is a positive relationship between price change and order
+    flow imbalance, which is called market impact.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The informed trader conjectures that the market maker has a linear price adjustment
+    function, *p* = λ *y* + μ, where λ is an inverse measure of liquidity. The informed
+    trader's profits are π = ( *v* − *p* ) *x* , which are maximized at ![](Image00139.jpg)
+    , with second order condition λ > 0.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Conversely, the market maker conjectures that the informed trader''s demand
+    is a linear function of *v* : *x* = α + β *v* , which implies ![](Image00221.jpg)
+    and ![](Image00287.jpg) . Note that lower liquidity means higher λ, which means
+    lower demand from the informed trader.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Kyle argues that the market maker must find an equilibrium between profit maximization
+    and market efficiency, and that under the above linear functions, the only possible
+    solution occurs when
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00421.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](Image00180.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](Image00623.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](Image00673.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Finally, the informed trader's expected profit can be rewritten as
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00751.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'The implication is that the informed trader has three sources of profit:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The security's mispricing.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The variance of the noise trader's net order flow. The higher the noise, the
+    easier the informed trader can conceal his intentions.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The reciprocal of the terminal security's variance. The lower the volatility,
+    the easier to monetize the mispricing.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: In Kyle's model, the variable λ captures price impact. Illiquidity increases
+    with uncertainty about *v* and decreases with the amount of noise. As a feature,
+    it can be estimated by fitting the regression
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00846.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where { *p [*t*]* } is the time series of prices, { *b [*t*]* } is the time
+    series of aggressor flags, { *V [*t*]* } is the time series of traded volumes,
+    and hence { *b [*t*] V [*t*]* } is the time series of signed volume or net order
+    flow. [Figure 19.1](text00004.html#filepos0000987148) plots the histogram of Kyle's
+    lambdas estimated on the E-mini S&P 500 futures series.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00663.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 19.1**](text00004.html#filepos0000986833) Kyle''s Lambdas Computed
+    on E-mini S&P 500 Futures'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.4.2 Amihud''s Lambda**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Amihud [2002] studies the positive relationship between absolute returns and
+    illiquidity. In particular, he computes the daily price response associated with
+    one dollar of trading volume, and argues its value is a proxy of price impact.
+    One possible implementation of this idea is
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00171.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where *B [τ]* is the set of trades included in bar τ, ![](Image00459.jpg) is
+    the closing price of bar τ, and *p [*t*] V [*t*] * is the dollar volume involved
+    in trade *t* ∈ *B [τ] * . Despite its apparent simplicity, Hasbrouck [2009] found
+    that daily Amihud's lambda estimates exhibit a high rank correlation to intraday
+    estimates of effective spread.  [ Figure 19.2 ](text00004.html#filepos0000989018)
+    plots the histogram of Amihud's lambdas estimated on the E-mini S&P 500 futures
+    series.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00357.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 19.2**](text00004.html#filepos0000988701) Amihud''s lambdas estimated
+    on E-mini S&P 500 futures'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.4.3 Hasbrouck''s Lambda**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Hasbrouck [2009] follows up on Kyle's and Amihud's ideas, and applies them to
+    estimating the price impact coefficient based on trade-and-quote (TAQ) data. He
+    uses a Gibbs sampler to produce a Bayesian estimation of the regression specification
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00439.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where *B [*i* , τ]* is the set of trades included in bar τ for security *i*
+    , with *i* = 1, …, *I* , ![](Image00502.jpg) is the closing price of bar τ for
+    security *i* , *b [*i*  ,  *t*] * ∈ { − 1, 1} indicates whether trade *t* ∈ *B
+    [*i*  , τ] * was buy-initiated or sell-initiated; and *p [*i*  ,  *t*] V [*i*  ,  *t*]
+    * is the dollar volume involved in trade *t* ∈ *B [*i*  , τ] * . We can then estimate
+    λ [*i*] for every security *i* , and use it as a feature that approximates the
+    effective cost of trading (market impact).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consistent with most of the literature, Hasbrouck recommends 5-minute time-bars
+    for sampling ticks. However, for the reasons discussed in Chapter 2, better results
+    can be achieved through stochastic sampling methods that are synchronized with
+    market activity. [Figure 19.3](text00004.html#filepos0000992042) plots the histogram
+    of Hasbrouck's lambdas estimated on the E-mini S&P 500 futures series.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00605.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 19.3**](text00004.html#filepos0000991690) Hasbrouck''s lambdas estimated
+    on E-mini S&P 500 futures'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.5 Third Generation: Sequential Trade Models**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: As we have seen in the previous section, strategic trade models feature a single
+    informed trader who can trade at multiple times. In this section we will discuss
+    an alternative kind of model, where randomly selected traders arrive at the market
+    sequentially and independently.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Since their appearance, sequential trade models have become very popular among
+    market makers. One reason is, they incorporate the sources of uncertainty faced
+    by liquidity providers, namely the probability that an informational event has
+    taken place, the probability that such event is negative, the arrival rate of
+    noise traders, and the arrival rate of informed traders. With those variables,
+    market makers must update quotes dynamically, and manage their inventories.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.5.1 Probability of Information-based Trading**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Easley et al. [1996] use trade data to determine the probability of information-based
+    trading (PIN) of individual securities. This microstructure model views trading
+    as a game between market makers and position takers that is repeated over multiple
+    trading periods.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Denote a security's price as *S* , with present value *S [0]* . However, once
+    a certain amount of new information has been incorporated into the price, *S*
+    will be either *S [*B*]* (bad news) or *S [*G*]* (good news). There is a probability
+    α that new information will arrive within the timeframe of the analysis, a probability
+    δ that the news will be bad, and a probability (1 − δ) that the news will be good.
+    These authors prove that the expected value of the security's price can then be
+    computed at time *t* as
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00687.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Following a Poisson distribution, informed traders arrive at a rate μ, and uninformed
+    traders arrive at a rate ε. Then, in order to avoid losses from informed traders,
+    market makers reach breakeven at a bid level *B [*t*]* ,
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00743.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: and the breakeven ask level *A [*t*]* at time *t* must be,
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00013.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: It follows that the breakeven bid-ask spread is determined as
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00106.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: For the standard case when ![](Image00195.jpg) , we obtain
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00796.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: This equation tells us that the critical factor that determines the price range
+    at which market makers provide liquidity is
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00382.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: The subscript *t* indicates that the probabilities α and δ are estimated at
+    that point in time. The authors apply a Bayesian updating process to incorporate
+    information after each trade arrives to the market.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In order to determine the value *PIN [*t*]* , we must estimate four non-observable
+    parameters, namely {α, δ, μ, ε}. A maximum-likelihood approach is to fit a mixture
+    of three Poisson distributions,
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00816.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where *V ^(*B*)* is the volume traded against the ask (buy-initiated trades),
+    and *V ^(*S*)* is the volume traded against the bid (sell-initiated trades).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.5.2 Volume-Synchronized Probability of Informed Trading**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Easley et al. [2008] proved that
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00524.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: and in particular, for a sufficiently large μ,
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00634.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Easley et al. [2011] proposed a high-frequency estimate of PIN, which they named
+    volume-synchronized probability of informed trading (VPIN). This procedure adopts
+    a *volume clock* , which synchronizes the data sampling with market activity,
+    as captured by volume (see Chapter 2). We can then estimate
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00497.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where *V ^(*B*) [τ]* is the sum of volumes from buy-initiated trades within
+    volume bar τ, *V ^(*S*) [τ]* is the sum of volumes from sell-initiated trades
+    within volume bar τ, and *n* is the number of bars used to produce this estimate.
+    Because all volume bars are of the same size, *V* , we know that by construction
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00683.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Hence, PIN can be estimated in high-frequency as
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00036.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'For additional details and case studies of VPIN, see Easley et al. [2013].
+    Using linear regressions, Andersen and Bondarenko [2013] concluded that VPIN is
+    not a good predictor of volatility. However, a number of studies have found that
+    VPIN indeed has predictive power: Abad and Yague [2012], Bethel et al. [2012],
+    Cheung et al. [2015], Kim et al. [2014], Song et al. [2014], Van Ness et al. [2017],
+    and Wei et al. [2013], to cite a few. In any case, linear regression is a technique
+    that was already known to 18th-century mathematicians (Stigler [1981]), and economists
+    should not be surprised when it fails to recognize complex non-linear patterns
+    in 21st-century financial markets.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.6 Additional Features from Microstructural Datasets**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The features we have studied in Sections 19.3 to 19.5 were suggested by market
+    microstructure theory. In addition, we should consider alternative features that,
+    although not suggested by the theory, we suspect carry important information about
+    the way market participants operate, and their future intentions. In doing so,
+    we will harness the power of ML algorithms, which can learn how to use these features
+    without being specifically directed by theory.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.6.1 Distibution of Order Sizes**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Easley et al. [2016] study the frequency of trades per trade size, and find
+    that trades with round sizes are abnormally frequent. For example, the frequency
+    rates quickly decay as a function of trade size, with the exception of round trade
+    sizes {5, 10, 20, 25, 50, 100, 200, …}. These authors attribute this phenomenon
+    to so-called “mouse” or “GUI” traders, that is, human traders who send orders
+    by clicking buttons on a GUI (Graphical User Interface). In the case of the E-mini
+    S&P 500, for example, size 10 is 2.9 times more frequent than size 9; size 50
+    is 10.9 times more likely than size 49; size 100 is 16.8 times more frequent than
+    size 99; size 200 is 27.2 times more likely than size 199; size 250 is 32.5 times
+    more frequent than size 249; size 500 is 57.1 times more frequent than size 499\.
+    Such patterns are not typical of “silicon traders,” who usually are programmed
+    to randomize trades to disguise their footprint in markets.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A useful feature may be to determine the normal frequency of round-sized trades,
+    and monitor deviations from that expected value. The ML algorithm could, for example,
+    determine if a larger-than-usual proportion of round-sized trades is associated
+    with trends, as human traders tend to bet with a fundamental view, belief, or
+    conviction. Conversely, a lower-than-usual proportion of round-sized trades may
+    increase the likelihood that prices will move sideways, as silicon traders do
+    not typically hold long-term views.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.6.2 Cancellation Rates, Limit Orders, Market Orders**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Eisler et al. [2012] study the impact of market orders, limit orders, and quote
+    cancellations. These authors find that small stocks respond differently than large
+    stocks to these events. They conclude that measuring these magnitudes is relevant
+    to model the dynamics of the bid-ask spread.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Easley et al. [2012] also argue that large quote cancellation rates may be
+    indicative of low liquidity, as participants are publishing quotes that do not
+    intend to get filled. They discuss four categories of predatory algorithms:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Quote stuffers:** They engage in “latency arbitrage.” Their strategy involves
+    overwhelming an exchange with messages, with the sole intention of slowing down
+    competing algorithms, which are forced to parse messages that only the originators
+    know can be ignored.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Quote danglers:** This strategy sends quotes that force a squeezed trader
+    to chase a price against her interests. O''Hara [2011] presents evidence of their
+    disruptive activities.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Liquidity squeezers:** When a distressed large investor is forced to unwind
+    her position, predatory algorithms trade in the same direction, draining as much
+    liquidity as possible. As a result, prices overshoot and they make a profit (Carlin
+    et al. [2007]).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Pack hunters:** Predators hunting independently become aware of one another''s
+    activities, and form a pack in order to maximize the chances of triggering a cascading
+    effect (Donefer [2010], Fabozzi et al. [2011], Jarrow and Protter [2011]). NANEX
+    [2011] shows what appears to be pack hunters forcing a stop loss. Although their
+    individual actions are too small to raise the regulator''s suspicion, their collective
+    action may be market-manipulative. When that is the case, it is very hard to prove
+    their collusion, since they coordinate in a decentralized, spontaneous manner.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: These predatory algorithms utilize quote cancellations and various order types
+    in an attempt to adversely select market makers. They leave different signatures
+    in the trading record, and measuring the rates of quote cancellation, limit orders,
+    and market orders can be the basis for useful features, informative of their intentions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.6.3 Time-Weighted Average Price Execution Algorithms**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Easley et al. [2012] demonstrate how to recognize the presence of execution
+    algorithms that target a particular time-weighted average price (TWAP). A TWAP
+    algorithm is an algorithm that slices a large order into small ones, which are
+    submitted at regular time intervals, in an attempt to achieve a pre-defined time-weighted
+    average price. These authors take a sample of E-mini S&P 500 futures trades between
+    November 7, 2010, and November 7, 2011\. They divide the day into 24 hours, and
+    for every hour, they add the volume traded at each second, irrespective of the
+    minute. Then they plot these aggregate volumes as a surface where the x-axis is
+    assigned to volume per second, the y-axis is assigned to hour of the day, and
+    the z-axis is assigned to the aggregate volume. This analysis allows us to see
+    the distribution of volume within each minute as the day passes, and search for
+    low-frequency traders executing their massive orders on a chronological time-space.
+    The largest concentrations of volume within a minute tend to occur during the
+    first few seconds, for almost every hour of the day. This is particularly true
+    at 00:00–01:00 GMT (around the open of Asian markets), 05:00–09:00 GMT (around
+    the open of U.K. and European equities), 13:00–15:00 GMT (around the open of U.S.
+    equities), and 20:00–21:00 GMT (around the close of U.S. equities).
+  prefs: []
+  type: TYPE_NORMAL
+- en: A useful ML feature may be to evaluate the order imbalance at the beginning
+    of every minute, and determine whether there is a persistent component. This can
+    then be used to front-run large institutional investors, while the larger portion
+    of their TWAP order is still pending.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.6.4 Options Markets**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Muravyev et al. [2013] use microstructural information from U.S. stocks and
+    options to study events where the two markets disagree. They characterize such
+    disagreement by deriving the underlying bid-ask range implied by the put-call
+    parity quotes and comparing it to the actual bid-ask range of the stock. They
+    conclude that disagreements tend to be resolved in favor of stock quotes, meaning
+    that option *quotes* do not contain economically significant information. At the
+    same time, they do find that option *trades* contain information not included
+    in the stock price. These findings will not come as a surprise to portfolio managers
+    used to trade relatively illiquid products, including stock options. Quotes can
+    remain irrational for prolonged periods of time, even as sparse prices are informative.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Cremers and Weinbaum [2010] find that stocks with relatively expensive calls
+    (stocks with both a high volatility spread and a high change in the volatility
+    spread) outperform stocks with relatively expensive puts (stocks with both a low
+    volatility spread and a low change in the volatility spread) by 50 basis points
+    per week. This degree of predictability is larger when option liquidity is high
+    and stock liquidity is low.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In line with these observations, useful features can be extracted from computing
+    the put-call implied stock price, derived from option trades. Futures prices only
+    represent mean or expected future values. But option prices allow us to derive
+    the entire distribution of outcomes being priced. An ML algorithm can search for
+    patterns across the Greek letters quoted at various strikes and expiration dates.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.6.5 Serial Correlation of Signed Order Flow**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Toth et al. [2011] study the signed order flow of London Stock Exchange stocks,
+    and find that order signs are positively autocorrelated for many days. They attribute
+    this observation to two candidate explanations: Herding and order splitting. They
+    conclude that on timescales of less than a few hours, the persistence of order
+    flow is overwhelmingly due to splitting rather than herding.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given that market microstructure theory attributes the persistency of order
+    flow imbalance to the presence of informed traders, it makes sense to measure
+    the strength of such persistency through the serial correlation of the signed
+    volumes. Such a feature would be complementary to the features we studied in Section
+    19.5.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**19.7 What Is Microstructural Information?**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let me conclude this chapter by addressing what I consider to be a major flaw
+    in the market microstructure literature. Most articles and books on this subject
+    study asymmetric information, and how strategic agents utilize it to profit from
+    market makers. But how is information exactly defined in the context of trading?
+    Unfortunately, there is no widely accepted definition of information in a microstructural
+    sense, and the literature uses this concept in a surprisingly loose, rather informal
+    way (López de Prado [2017]). This section proposes a proper definition of information,
+    founded on signal processing, that can be applied to microstructural studies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consider a features matrix *X* = { *X [*t*]* } [*t* = 1, …, *T*] that contains
+    information typically used by market makers to determine whether they should provide
+    liquidity at a particular level, or cancel their passive quotes. For example,
+    the columns could be all of the features discussed in this chapter, like VPIN,
+    Kyle's lambda, cancellation rates, etc. Matrix *X* has one row for each decision
+    point. For example, a market maker may reconsider the decision to either provide
+    liquidity or pull out of the market every time 10,000 contracts are traded, or
+    whenever there is a significant change in prices (recall sampling methods in Chapter
+    2), etc. First, we derive an array *y* = { *y [*t*]* } [*t* = 1, …, *T*] that
+    assigns a label 1 to an observation that resulted in a market-making profit, and
+    labels as 0 an observation that resulted in a market-making loss (see Chapter
+    3 for labeling methods). Second, we fit a classifier on the training set ( *X*
+    , *y* ). Third, as new out-of-sample observations arrive τ > *T* , we use the
+    fit classifier to predict the label ![](Image00438.jpg) . Fourth, we derive the
+    cross-entropy loss of these predictions, *L [τ] * , as described in Chapter 9,
+    Section 9.4\. Fifth, we fit a kernel density estimator (KDE) on the array of negative
+    cross-entropy losses, { − *L [*t*] * } [*t*  =  *T*  + 1, …, τ] , to derive its
+    cumulative distribution function, *F.* Sixth, we estimate the microstructural
+    information at time *t* as φ [τ] = *F* [ − *L [τ] * ], where φ [τ] ∈ (0, 1).
+  prefs: []
+  type: TYPE_NORMAL
+- en: This microstructural information can be understood as the complexity faced by
+    market makers’ decision models. Under normal market conditions, market makers
+    produce *informed forecasts* with low cross-entropy loss, and are able to profit
+    from providing liquidity to position takers. However, in the presence of (asymmetrically)
+    informed traders, market makers produce *uninformed forecasts* , as measured by
+    high cross-entropy loss, and they are adversely selected. In other words, microstructural
+    information can only be defined and measured relative to the predictive power
+    of market makers. The implication is that {φ [τ] } should become an important
+    feature in your financial ML toolkit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consider the events of the flash crash of May 6, 2010\. Market makers wrongly
+    predicted that their passive quotes sitting on the bid could be filled and sold
+    back at a higher level. The crash was not caused by a single inaccurate prediction,
+    but by the accumulation of thousands of prediction errors (Easley et al. [2011]).
+    If market makers had monitored the rising cross-entropy loss of their predictions,
+    they would have recognized the presence of informed traders and the dangerously
+    rising probability of adverse selection. That would have allowed them to widen
+    the bid-ask spread to levels that would have stopped the order flow imbalance,
+    as sellers would no longer have been willing to sell at those discounts. Instead,
+    market makers kept providing liquidity to sellers at exceedingly generous levels,
+    until eventually they were forced to stop-out, triggering a liquidity crisis that
+    shocked markets, regulators, and academics for months and years.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Exercises**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: From a time series of E-mini S&P 500 futures tick data,
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Apply the tick rule to derive the series of trade signs.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compare to the aggressor's side, as provided by the CME (FIX tag 5797). What
+    is the accuracy of the tick rule?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select the cases where FIX tag 5797 disagrees with the tick rule.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Can you see anything distinct that would explain the disagreement?
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Are these disagreements associated with large price jumps? Or high cancelation
+    rates? Or thin quoted sizes?
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Are these disagreements more likely to occur during periods of high or low market
+    activity?
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute the Roll model on the time series of E-mini S&P 500 futures tick data.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: What are the estimated values of σ ² [*u*] and *c* ?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Knowing that this contract is one of the most liquid products in the world,
+    and that it trades at the tightest possible bid-ask spread, are these values in
+    line with your expectations?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Compute the high-low volatility estimator ( Section19.3.3.) on E-mini S&P 500
+    futures:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Using weekly values, how does this differ from the standard deviation of close-to-close
+    returns?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Using daily values, how does this differ from the standard deviation of close-to-close
+    returns?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Using dollar bars, for an average of 50 bars per day, how does this differ from
+    the standard deviation of close-to-close returns?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Apply the Corwin-Schultz estimator to a daily series of E-mini S&P 500 futures.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: What is the expected bid-ask spread?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What is the implied volatility?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Are these estimates consistent with the earlier results, from exercises 2 and
+    3?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Compute Kyle''s lambda from:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: tick data.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: a time series of dollar bars on E-mini S&P 500 futures, where
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*b [*t*]* is the volume-weighted average of the trade signs.'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*V [*t*]* is the sum of the volumes in that bar.'
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Δ*p [*t*]* is the change in price between two consecutive bars.
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Repeat exercise 5, this time applying Hasbrouck's lambda. Are results consistent?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Repeat exercise 5, this time applying Amihud's lambda. Are results consistent?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Form a time series of volume bars on E-mini S&P 500 futures,
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Compute the series of VPIN on May 6, 2010 (flash crash).
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Plot the series of VPIN and prices. What do you see?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute the distribution of order sizes for E-mini S&P 500 futures
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Over the entire period.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: For May 6, 2010.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Conduct a Kolmogorov-Smirnov test on both distributions. Are they significantly
+    different, at a 95% confidence level?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute a time series of daily quote cancellations rates, and the portion of
+    market orders, on the E-mini S&P 500 futures dataset.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: What is the correlation between these two series? Is it statistically significant?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What is the correlation between the two series and daily volatility? Is this
+    what you expected?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'On the E-mini S&P 500 futures tick data:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Compute the distribution of volume executed within the first 5 seconds of every
+    minute.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute the distribution of volume executed every minute.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute the Kolmogorov-Smirnov test on both distributions. Are they significantly
+    different, at a 95% confidence level?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'On the E-mini S&P 500 futures tick data:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Compute the first-order serial correlation of signed volumes.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Is it statistically significant, at a 95% confidence level?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**References**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Abad, D. and J. Yague (2012): “From PIN to VPIN.” *The Spanish Review of Financial
+    Economics* , Vol. 10, No. 2, pp.74-83.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Aitken, M. and A. Frino (1996): “The accuracy of the tick test: Evidence from
+    the Australian Stock Exchange.” *Journal of Banking and Finance* , Vol. 20, pp.
+    1715–1729.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Amihud, Y. and H. Mendelson (1987): “Trading mechanisms and stock returns:
+    An empirical investigation.” *Journal of Finance* , Vol. 42, pp. 533–553.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Amihud, Y. (2002): “Illiquidity and stock returns: Cross-section and time-series
+    effects.” *Journal of Financial Markets* , Vol. 5, pp. 31–56.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Andersen, T. and O. Bondarenko (2013): “VPIN and the Flash Crash.” *Journal
+    of Financial Markets* , Vol. 17, pp.1-46.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Beckers, S. (1983): “Variances of security price returns based on high, low,
+    and closing prices.” *Journal of Business* , Vol. 56, pp. 97–112.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bethel, E. W., Leinweber. D., Rubel, O., and K. Wu (2012): “Federal market
+    information technology in the post–flash crash era: Roles for supercomputing.”
+    *Journal of Trading* , Vol. 7, No. 2, pp. 9–25.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Carlin, B., M. Sousa Lobo, and S. Viswanathan (2005): “Episodic liquidity crises.
+    Cooperative and predatory trading.” *Journal of Finance* , Vol. 42, No. 5 (October),
+    pp. 2235–2274.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Cheung, W., R. Chou, A. Lei (2015): “Exchange-traded barrier option and VPIN.”
+    *Journal of Futures Markets* , Vol. 35, No. 6, pp. 561-581.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Corwin, S. and P. Schultz (2012): “A simple way to estimate bid-ask spreads
+    from daily high and low prices.” *Journal of Finance* , Vol. 67, No. 2, pp. 719–760.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Cremers, M. and D. Weinbaum (2010): “Deviations from put-call parity and stock
+    return predictability.” *Journal of Financial and Quantitative Analysis* , Vol.
+    45, No. 2 (April), pp. 335–367.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Donefer, B. (2010): “Algos gone wild. Risk in the world of automated trading
+    strategies.” *Journal of Trading* , Vol. 5, pp. 31–34.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Easley, D., N. Kiefer, M. O''Hara, and J. Paperman (1996): “Liquidity, information,
+    and infrequently traded stocks.” *Journal of Finance* , Vol. 51, No. 4, pp. 1405–1436.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Easley, D., R. Engle, M. O''Hara, and L. Wu (2008): “Time-varying arrival rates
+    of informed and uninformed traders.” *Journal of Financial Econometrics* , Vol.
+    6, No. 2, pp. 171–207.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Easley, D., M. López de Prado, and M. O''Hara (2011): “The microstructure of
+    the flash crash.” *Journal of Portfolio Management* , Vol. 37, No. 2 (Winter),
+    pp. 118–128.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Easley, D., M. López de Prado, and M. O''Hara (2012a): “Flow toxicity and liquidity
+    in a high frequency world.” *Review of Financial Studies* , Vol. 25, No. 5, pp.
+    1457–1493.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Easley, D., M. López de Prado, and M. O''Hara (2012b): “The volume clock: Insights
+    into the high frequency paradigm.” *Journal of Portfolio Management* , Vol. 39,
+    No. 1, pp. 19–29.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Easley, D., M. López de Prado, and M. O''Hara (2013): *High-Frequency Trading:
+    New Realities for Traders, Markets and Regulators* , 1st ed. Risk Books.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Easley, D., M. López de Prado, and M. O''Hara (2016): “Discerning information
+    from trade data.” *Journal of Financial Economics* , Vol. 120, No. 2, pp. 269–286.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Eisler, Z., J. Bouchaud, and J. Kockelkoren (2012): “The impact of order book
+    events: Market orders, limit orders and cancellations.” *Quantitative Finance*
+    , Vol. 12, No. 9, pp. 1395–1419.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Fabozzi, F., S. Focardi, and C. Jonas (2011): “High-frequency trading. Methodologies
+    and market impact.” *Review of Futures Markets* , Vol. 19, pp. 7–38.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hasbrouck, J. (2007): *Empirical Market Microstructure* , 1st ed. Oxford University
+    Press.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hasbrouck, J. (2009): “Trading costs and returns for US equities: Estimating
+    effective costs from daily data.” *Journal of Finance* , Vol. 64, No. 3, pp. 1445–1477.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Jarrow, R. and P. Protter (2011): “A dysfunctional role of high frequency trading
+    in electronic markets.” *International Journal of Theoretical and Applied Finance*
+    , Vol. 15, No. 3.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Kim, C., T. Perry, and M. Dhatt (2014): “Informed trading and price discovery
+    around the clock.” *Journal of Alternative Investments* , Vol 17, No. 2, pp. 68-81.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Kyle, A. (1985): “Continuous auctions and insider trading.” *Econometrica*
+    , Vol. 53, pp. 1315–1336.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Lee, C. and M. Ready (1991): “Inferring trade direction from intraday data.”
+    *Journal of Finance* , Vol. 46, pp. 733–746.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2017): “Mathematics and economics: A reality check.” *Journal
+    of Portfolio Management* , Vol. 43, No. 1, pp. 5–8.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Muravyev, D., N. Pearson, and J. Broussard (2013): “Is there price discovery
+    in equity options?” *Journal of Financial Economics* , Vol. 107, No. 2, pp. 259–283.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'NANEX (2011): “Strange days: June 8, 2011—NatGas Algo.” NANEX blog. Available
+    at [www.nanex.net/StrangeDays/06082011.html](http://www.nanex.net/StrangeDays/06082011.html)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'O''Hara, M. (1995): *Market Microstructure* , 1st ed. Blackwell, Oxford.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'O''Hara, M. (2011): “What is a quote?” *Journal of Trading* , Vol. 5, No. 2
+    (Spring), pp. 10–15.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Parkinson, M. (1980): “The extreme value method for estimating the variance
+    of the rate of return.” *Journal of Business* , Vol. 53, pp. 61–65.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Patzelt, F. and J. Bouchaud (2017): “Universal scaling and nonlinearity of
+    aggregate price impact in financial markets.” Working paper. Available at [https://arxiv.org/abs/1706.04163.](https://arxiv.org/abs/1706.04163.)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Roll, R. (1984): “A simple implicit measure of the effective bid-ask spread
+    in an efficient market.” *Journal of Finance* , Vol. 39, pp. 1127–1139.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Stigler, Stephen M. (1981): “Gauss and the invention of least squares.” *Annals
+    of Statistics* , Vol. 9, No. 3, pp. 465–474.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Song, J, K. Wu and H. Simon (2014): “Parameter analysis of the VPIN (volume
+    synchronized probability of informed trading) metric.” In Zopounidis, C., ed.,
+    *Quantitative Financial Risk Management: Theory and Practice* , 1 ^(st) ed. Wiley.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Toth, B., I. Palit, F. Lillo, and J. Farmer (2011): “Why is order flow so persistent?”
+    Working paper. Available at [https://arxiv.org/abs/1108.1632.](https://arxiv.org/abs/1108.1632.)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Van Ness, B., R. Van Ness, and S. Yildiz (2017): “The role of HFTs in order
+    flow toxicity and stock price variance, and predicting changes in HFTs’ liquidity
+    provisions.” *Journal of Economics and Finance* , Vol. 41, No. 4, pp. 739–762.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Wei, W., D. Gerace, and A. Frino (2013): “Informed trading, flow toxicity and
+    the impact on intraday trading factors.” *Australasian Accounting Business and
+    Finance Journal* , Vol. 7, No. 2, pp. 3–24.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**PART 5**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**High-Performance Computing Recipes**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Chapter 20 Multiprocessing and Vectorization](text00004.html#filepos0001034475)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Chapter 21 Brute Force and Quantum Computers](text00004.html#filepos0001074501)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Chapter 22 High-Performance Computational Intelligence and Forecasting Technologies](text00004.html#filepos0001099298)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**CHAPTER 20**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Multiprocessing and Vectorization**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**20.1 Motivation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Multiprocessing is essential to ML. ML algorithms are computationally intensive,
+    and they will require an efficient use of all your CPUs, servers, and clusters.
+    For this reason, most of the functions presented throughout this book were designed
+    for asynchronous multiprocessing. For example, we have made frequent use of a
+    mysterious function called `mpPandasObj` , without ever defining it. In this chapter
+    we will explain what this function does. Furthermore, we will study in detail
+    how to develop multiprocessing engines. The structure of the programs presented
+    in this chapter is agnostic to the hardware architecture used to execute them,
+    whether we employ the cores of a single server or cores distributed across multiple
+    interconnected servers (e.g., in a high-performance computing cluster or a cloud).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**20.2 Vectorization Example**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Vectorization, also known as array programming, is the simplest example of parallelization,
+    whereby an operation is applied at once to the entire set of values. As a minimal
+    example, suppose that you need to do a brute search through a 3-dimensional space,
+    with 2 nodes per dimension. The un-vectorized implementation of that Cartesian
+    product will look something like Snippet 20.1\. How would this code look if you
+    had to search through 100 dimensions, or if the number of dimensions was defined
+    by the user during runtime?
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 20.1 UN-VECTORIZED CARTESIAN PRODUCT**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00730.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: 'A vectorized solution would replace all explicit iterators (e.g., `For. . .loops`
+    ) with matrix algebra operations or compiled iterators or generators. Snippet 20.2
+    implements the vectorized version of Snippet 20.1\. The vectorized version is
+    preferable for four reasons: (1) slow nested `For. . .loops` are replaced with
+    fast iterators; (2) the code infers the dimensionality of the mesh from the dimensionality
+    of `dict0` ; (3) we could run 100 dimensions without having to modify the code,
+    or need 100 `For. . .loops` ; and (4) under the hood, Python can run operations
+    in C or C + + .'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 20.2 VECTORIZED CARTESIAN PRODUCT**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00313.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**20.3 Single-Thread vs. Multithreading vs. Multiprocessing**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A modern computer has multiple CPU sockets. Each CPU has many cores (processors),
+    and each core has several threads. Multithreading is the technique by which several
+    applications are run in parallel on two or more threads under the same core. One
+    advantage of multithreading is that, because the applications share the same core,
+    they share the same memory space. That introduces the risk that several applications
+    may write on the same memory space at the same time. To prevent that from happening,
+    the Global Interpreter Lock (GIL) assigns write access to one thread per core
+    at a time. Under the GIL, Python's multithreading is limited to one thread per
+    processor. For this reason, Python achieves parallelism through multiprocessing
+    rather than through actual multithreading. Processors do not share the same memory
+    space, hence multiprocessing does not risk writing to the same memory space; however,
+    that also makes it harder to share objects between processes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Python functions implemented for running on a single-thread will use only a
+    fraction of a modern computer's, server's, or cluster's power. Let us see an example
+    of how a simple task can be run inefficiently when implemented for single-thread
+    execution. Snippet 20.3 finds the earliest time 10,000 Gaussian processes of length
+    1,000 touch a symmetric double barrier of width 50 times the standard deviation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 20.3 SINGLE-THREAD IMPLEMENTATION OF A ONE-TOUCH DOUBLE BARRIER**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00364.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Compare this implementation with Snippet 20.4\. Now the code splits the previous
+    problem into 24 tasks, one per processor. The tasks are then run asynchronously
+    in parallel, using 24 processors. If you run the same code on a cluster with 5000
+    CPUs, the elapsed time will be about 1/5000 of the single-thread implementation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 20.4 MULTIPROCESSING IMPLEMENTATION OF A ONE-TOUCH DOUBLE BARRIER**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00825.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Moreover, you could implement the same code to multiprocess a vectorized function,
+    as we did with function `applyPtSlOnT1` in Chapter 3, where parallel processes
+    execute subroutines that include vectorized pandas objects. In this way, you will
+    achieve two levels of parallelization at once. But why stop there? You could achieve
+    three levels of parallelization at once by running multiprocessed instances of
+    vectorized code in an HPC cluster, where each node in the cluster provides the
+    third level of parallelization. In the next sections, we will explain how multiprocessing
+    works.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**20.4 Atoms and Molecules**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: When preparing jobs for parallelization, it is useful to distinguish between
+    atoms and molecules. Atoms are indivisible tasks. Rather than carrying out all
+    these tasks sequentially in a single thread, we want to group them into molecules,
+    which can be processed in parallel using multiple processors. Each molecule is
+    a subset of atoms that will be processed sequentially, by a callback function,
+    using a single thread. Parallelization takes place at the molecular level.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**20.4.1 Linear Partitions**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The simplest way to form molecules is to partition a list of atoms in subsets
+    of equal size, where the number of subsets is the minimum between the number of
+    processors and the number of atoms. For *N* subsets we need to find the *N + 1*
+    indices that enclose the partitions. This logic is demonstrated in Snippet 20.5.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 20.5 THE** `**LINPARTS**` **FUNCTION**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00255.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: It is common to encounter operations that involve two nested loops. For example,
+    computing a SADF series (Chapter 17), evaluating multiple barrier touches (Chapter
+    3), or computing a covariance matrix on misaligned series. In these situations,
+    a linear partition of the atomic tasks would be inefficient, because some processors
+    would have to solve a much larger number of operations than others, and the calculation
+    time will depend on the heaviest molecule. A partial solution is to partition
+    the atomic tasks in a number of jobs that is a multiple of the number of processors,
+    then front-load the jobs queue with the heavy molecules. In this way, the light
+    molecules will be assigned to processors that have completed the heavy molecules
+    first, keeping all CPUs busy until the job queue is depleted. In the next section,
+    we will discuss a more complete solution. [Figure 20.1](text00004.html#filepos0001043753)
+    plots a linear partition of 20 atomic tasks of equal complexity into 6 molecules.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00085.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 20.1**](text00004.html#filepos0001043446) A linear partition of 20
+    atomic tasks into 6 molecules'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**20.4.2 Two-Nested Loops Partitions**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consider two nested loops, where the outer loop iterates *i* = 1, …, *N* and
+    the inner loop iterates *j* = 1, …, *i* . We can order these atomic tasks {( *i*
+    , *j* )|1 ≤ *j* ≤ *i* , *i* = 1, …, *N* } as a *lower* triangular matrix (including
+    the main diagonal). This entails ![](Image00321.jpg) operations, where ![](Image00700.jpg)
+    are off-diagonal and *N* are diagonal. We would like to parallelize these tasks
+    by partitioning the atomic tasks into *M* subsets of rows, { *S [*m*] * } [*m*  =
+    1, …,  *M*] , each composed of approximately ![](Image00302.jpg) tasks. The following
+    algorithm determines the rows that constitute each subset (a molecule).
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first subset, *S [1]* , is composed of the first *r [1]* rows, that is,
+    *S [1]* = {1, …, *r [1]* }, for a total number of items ![](Image00442.jpg) .
+    Then, *r [1] * must satisfy the condition ![](Image00505.jpg) . Solving for *r
+    [1] * , we obtain the positive root
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00611.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: The second subset contains rows *S [2]* = { *r [1]* + 1, …, *r [2]* }, for a
+    total number of items ![](Image00351.jpg) . Then, *r [2] * must satisfy the condition
+    ![](Image00780.jpg) . Solving for *r [2] * , we obtain the positive root
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00017.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: We can repeat the same argument for a future subset *S [*m*]* = { *r [*m* −
+    1]* + 1, …, *r [*m*]* }, with a total number of items ![](Image00110.jpg) . Then,
+    *r [*m*] * must satisfy the condition ![](Image00201.jpg) . Solving for *r [*m*]
+    * , we obtain the positive root
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00294.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: And it is easy to see that *r [*m*]* reduces to *r [1]* where *r [*m* − 1]*
+    = *r [0]* = 0 *.* Because row numbers are positive integers, the above results
+    are rounded to the nearest natural number. This may mean that some partitions’
+    sizes may deviate slightly from the ![](Image00386.jpg) target. Snippet 20.6 implements
+    this logic.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 20.6 THE** `**NESTEDPARTS**` **FUNCTION**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00018.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: If the outer loop iterates *i* = 1, …, *N* and the inner loop iterates *j* =
+    *i* , …, *N* , we can order these atomic tasks {( *i* , *j* )|1 ≤ *i* ≤ *j* .,
+    *j* = 1, …, *N* } as an *upper* triangular matrix (including the main diagonal).
+    In this case, the argument `upperTriang = True` must be passed to function `nestedParts`
+    . For the curious reader, this is a special case of the bin packing problem. [Figure
+    20.2](text00004.html#filepos0001051311) plots a two-nested loops partition of
+    atoms of increasing complexity into molecules. Each of the resulting 6 molecules
+    involves a similar amount of work, even though some atomic tasks are up to 20
+    times harder than others.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00844.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 20.2**](text00004.html#filepos0001050863) A two-nested loops partition
+    of atoms into molecules'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**20.5 Multiprocessing Engines**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It would be a mistake to write a parallelization wrapper for each multiprocessed
+    function. Instead, we should develop a library that can parallelize unknown functions,
+    regardless of their arguments and output structure. That is the goal of a multiprocessing
+    engine. In this section, we will study one such engine, and once you understand
+    the logic, you will be ready to develop your own, including all sorts of customized
+    properties.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**20.5.1 Preparing the Jobs**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In previous chapters we have made frequent use of the `mpPandasObj` . That
+    function receives six arguments, of which four are optional:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`func` : A callback function, which will be executed in parallel'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`pdObj` : A tuple containing:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The name of the argument used to pass molecules to the callback function
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: A list of indivisible tasks (atoms), which will be grouped into molecules
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`numThreads` : The number of threads that will be used in parallel (one processor
+    per thread)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`mpBatches` : Number of parallel batches (jobs per core)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`linMols` : Whether partitions will be linear or double-nested'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`kargs` : Keyword arguments needed by `func`'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Snippet 20.7 lists how `mpPandasObj` works. First, atoms are grouped into molecules,
+    using `linParts` (equal number of atoms per molecule) or `nestedParts` (atoms
+    distributed in a lower-triangular structure). When `mpBatches` is greater than
+    1, there will be more molecules than cores. Suppose that we divide a task into
+    10 molecules, where molecule 1 takes twice as long as the rest. If we run this
+    process in 10 cores, 9 of the cores will be idle half of the runtime, waiting
+    for the first core to process molecule 1\. Alternatively, we could set `mpBatches =10`
+    so as to divide that task in 100 molecules. In doing so, every core will receive
+    equal workload, even though the first 10 molecules take as much time as the next
+    20 molecules. In this example, the run with `mpBatches =10` will take half of
+    the time consumed by `mpBatches =1` .
+  prefs: []
+  type: TYPE_NORMAL
+- en: Second, we form a list of jobs. A job is a dictionary containing all the information
+    needed to process a molecule, that is, the callback function, its keyword arguments,
+    and the subset of atoms that form the molecule. Third, we will process the jobs
+    sequentially if `numThreads = =1` (see Snippet 20.8), and in parallel otherwise
+    (see Section 20.5.2). The reason that we want the option to run jobs sequentially
+    is for debugging purposes. It is not easy to catch a bug when programs are run
+    in multiple processors. ^([1](text00004.html#filepos0001073132)) Once the code
+    is debugged, we will want to use `numThreads > 1` . Fourth, we stitch together
+    the output from every molecule into a single list, series, or dataframe.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 20.7 THE** `**MPPANDASOBJ**` **, USED AT VARIOUS POINTS IN THE BOOK**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00639.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: In Section 20.5.2 we will see the multiprocessing counterpart to function `processJobs_`
+    of Snippet 20.8.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 20.8 SINGLE-THREAD EXECUTION, FOR DEBUGGING**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00712.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**20.5.2 Asynchronous Calls**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Python has a parallelization library called `multiprocessing` . This library
+    is the basis for multiprocessing engines such as `joblib` , ^([2](text00004.html#filepos0001073443))
+    which is the engine used by many `sklearn` algorithms. ^([3](text00004.html#filepos0001073702))
+    Snippet 20.9 illustrates how to do an asynchronous call to Python's `multiprocessing`
+    library. The `reportProgress` function keeps us informed about the percentage
+    of jobs completed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 20.9 EXAMPLE OF ASYNCHRONOUS CALL TO PYTHON''S MULTIPROCESSING LIBRARY**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00805.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**20.5.3 Unwrapping the Callback**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In Snippet 20.9, the instruction `pool.imap_unordered()` parallelized `expandCall`
+    , by running each item in `jobs` (a molecule) in a single thread. Snippet 20.10
+    lists `expandCall` , which unwraps the items (atoms) in the job (molecule), and
+    executes the callback function. This little function is the trick at the core
+    of the multiprocessing engine: It transforms a dictionary into a task. Once you
+    understand the role it plays, you will be able to develop your own engines.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 20.10 PASSING THE JOB (MOLECULE) TO THE CALLBACK FUNCTION**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00040.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**20.5.4 Pickle/Unpickle Objects**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Multiprocessing must pickle methods in order to assign them to different processors.
+    The problem is, bound methods are not pickable. ^([4](text00004.html#filepos0001074097))
+    The work around is to add functionality to your engine, that tells the library
+    how to deal with this kind of objects. Snippet 20.11 contains the instructions
+    that should be listed at the top of your multiprocessing engine library. If you
+    are curious about the precise reason this piece of code is needed, you may want
+    to read Ascher et al. [2005], Section 7.5.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 20.11 PLACE THIS CODE AT THE BEGINNING OF YOUR ENGINE**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00132.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**20.5.5 Output Reduction**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suppose that you divide a task into 24 molecules, with the goal that the engine
+    assigns each molecule to one available core. Function `processJobs` in Snippet
+    20.9 will capture the 24 outputs and store them in a list. This approach is effective
+    in problems that do not involve large outputs. If the outputs must be combined
+    into a single output, first we will wait until the last molecule is completed,
+    and then we will process the items in the list. The latency added by this post-processing
+    should not be significant, as long as the outputs are small in size and number.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'However, when the outputs consume a lot of RAM, and they need to be combined
+    into a single output, storing all those outputs in a list may cause a memory error.
+    It would be better to perform the output reduction operation on the fly, as the
+    results are returned asynchronously by `func` , rather than waiting for the last
+    molecule to be completed. We can address this concern by improving processJobs.
+    In particular, we are going to pass three additional arguments that determine
+    how the molecular outputs must be *reduced* into a single output. Snippet 20.12
+    lists an enhanced version of `processJobs` , which contains three new arguments:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`redux` : This is a callback to the function that carries out the reduction.
+    For example, `redux = pd.DataFrame.add` , if output dataframes ought to be summed
+    up.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`reduxArgs` : This is a dictionary that contains the keyword arguments that
+    must be passed to `redux` (if any). For example, if `redux = pd.DataFrame.join`
+    , then a possibility is `reduxArgs = {‘how’:‘outer’}` .'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`reduxInPlace` : A boolean, indicating whether the `redux` operation should
+    happen *in-place* or not. For example, `redux = dict.update` and `redux = list.append`
+    require `reduxInPlace = True` , since appending a list and updating a dictionary
+    are both in-place operations.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**SNIPPET 20.12 ENHANCING** `**PROCESSJOBS**` **TO PERFORM ON-THE-FLY OUTPUT
+    REDUCTION**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00225.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Now that `processJobsRedux` knows what to do with the outputs, we can also enhance
+    `mpPandasObj` from Snippet 20.7\. In Snippet 20.13, the new function `mpJobList`
+    passes the three output reduction arguments to `processJobsRedux` . This eliminates
+    the need to process an outputed list, as `mpPandasObj` did, hence saving memory
+    and time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 20.13 ENHANCING** `**MPPANDASOBJ**` **TO PERFORM ON-THE-FLY OUTPUT
+    REDUCTION**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00316.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**20.6 Multiprocessing Example**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'What we have presented so far in this chapter can be used to speed-up, by several
+    orders of magnitude, many lengthy and large-scale mathematical operations. In
+    this section we will illustrate an additional motivation for multiprocessing:
+    memory management.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suppose that you have conducted a spectral decomposition of a covariance matrix
+    of the form *Z* ' *Z* , as we did in Chapter 8, Section 8.4.2, where *Z* has size
+    *TxN* . This has resulted in an eigenvectors matrix *W* and an eigenvalues matrix
+    Λ, such that *Z* ' *ZW* = *W* Λ. Now you would like to derive the orthogonal principal
+    components that explain a user-defined portion of the total variance, 0 ≤ τ ≤
+    1\. In order to do that, we compute ![](Image00407.jpg) , where ![](Image00474.jpg)
+    contains the first *M* ≤ *N* columns of *W* , such that ![](Image00556.jpg) .
+    The computation of ![](Image00658.jpg) can be parallelized by noting that
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00341.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where *Z [*b*]* is a sparse *TxN* matrix with only *TxN [*b*]* items (the rest
+    are empty), ![](Image00827.jpg) is a *NxM* matrix with only *N [*b*] xM* items
+    (the rest are empty), and ![](Image00064.jpg) . This sparsity is created by dividing
+    the set of columns into a partition of *B* subsets of columns, and loading into
+    *Z [*b*] * only the *b* th subset of the columns. This notion of sparsity may
+    sound a bit complicated at first, however Snippet 20.14 demonstrates how pandas
+    allows us to implement it in a seamless way. Function `getPCs` receives ![](Image00155.jpg)
+    through the argument `eVec` . The argument `molecules` contains a subset of the
+    file names in `fileNames` , where each file represents *Z [*b*] * . The key concept
+    to grasp is that we compute the dot product of a *Z [*b*] * with the slice of
+    the rows of ![](Image00248.jpg) defined by the columns in *Z [*b*] * , and that
+    molecular results are aggregated on the fly ( `redux = pd.DataFrame.add` ).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 20.14 PRINCIPAL COMPONENTS FOR A SUBSET OF THE COLUMNS**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00197.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: 'This approach presents two advantages: First, because `getPCs` loads dataframes
+    *Z [*b*]* sequentially, for a sufficiently large *B* , the RAM is not exhausted.
+    Second, `mpJobList` executes the molecules in parallel, hence speeding up the
+    calculations.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In real life ML applications, we often encounter datasets where *Z* contains
+    billions of datapoints. As this example demonstrates, parallelization is not only
+    beneficial in terms of reducing run time. Many problems could not be solved without
+    parallelization, as a matter of memory limitations, even if we were willing to
+    wait longer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Exercises**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Run Snippets 20.1 and 20.2 with `timeit` . Repeat 10 batches of 100 executions.
+    What is the minimum elapsed time for each snippet?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: The instructions in Snippet 20.2 are very useful for unit testing, brute force
+    searches, and scenario analysis. Can you remember where else in the book have
+    you seen them? Where else could they have been used?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Adjust Snippet 20.4 to form molecules using a two-nested loops scheme, rather
+    than a linear scheme.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: 'Compare with `timeit` :'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Snippet 20.4, by repeating 10 batches of 100 executions. What is the minimum
+    elapsed time for each snippet?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Modify Snippet 20.4 (from exercise 3), by repeating 10 batches of 100 executions.
+    What is the minimum elapsed time for each snippet?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Simplify Snippet 20.4 by using `mpPandasObj` .
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Modify `mpPandasObj` to handle the possibility of forming molecules using a
+    two-nested loops scheme with an upper triangular structure.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '**Reference**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Ascher, D., A. Ravenscroft, and A. Martelli (2005): *Python Cookbook* , 2nd
+    ed. O''Reilly Media.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Bibliography**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Gorelick, M. and I. Ozsvald (2008): *High Performance Python* , 1st ed. O''Reilly
+    Media.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2017): “Supercomputing for finance: A gentle introduction.”
+    Lecture materials, Cornell University. Available at [https://ssrn.com/abstract=2907803.](https://ssrn.com/abstract=2907803.)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'McKinney, W. (2012): *Python for Data Analysis* , 1st ed. O''Reilly Media.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Palach, J. (2008): *Parallel Programming with Python* , 1st ed. Packt Publishing.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Summerfield, M. (2013): *Python in Practice: Create Better Programs Using Concurrency,
+    Libraries, and Patterns* , 1st ed. Addison-Wesley.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Zaccone, G. (2015): *Python Parallel Programming Cookbook* , 1st ed. Packt
+    Publishing.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Notes**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([1](text00004.html#filepos0001055345))    *Heisenbugs* , named after Heisenberg's
+    uncertainty principle, describe bugs that change their behavior when scrutinized.
+    Multiprocessing bugs are a prime example.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([2](text00004.html#filepos0001056787))     [https://pypi.python.org/pypi/joblib](https://pypi.python.org/pypi/joblib)
+    .
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([3](text00004.html#filepos0001056984))     [http://scikit-learn.org/stable/developers/performance.html#multi-core-parallelism-using-joblib-parallel](http://scikit-learn.org/stable/developers/performance.html#multi-core-parallelism-using-joblib-parallel)
+    .
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([4](text00004.html#filepos0001058995))     [http://stackoverflow.com/questions/1816958/cant-pickle-type-instancemethod-when-using-pythons-multiprocessing-pool-ma](http://stackoverflow.com/questions/1816958/cant-pickle-type-instancemethod-when-using-pythons-multiprocessing-pool-ma)
+    .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**CHAPTER 21**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Brute Force and Quantum Computers**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**21.1 Motivation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Discrete mathematics appears naturally in multiple ML problems, including hierarchical
+    clustering, grid searches, decisions based on thresholds, and integer optimization.
+    Sometimes, these problems do not have a known analytical (closed-form) solution,
+    or even a heuristic to approximate it, and our only hope is to search for it through
+    brute force. In this chapter, we will study how a financial problem, intractable
+    to modern supercomputers, can be reformulated as an integer optimization problem.
+    Such a representation makes it amenable to quantum computers. From this example
+    the reader can infer how to translate his particular financial ML intractable
+    problem into a quantum brute force search.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**21.2 Combinatorial Optimization**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Combinatorial optimization problems can be described as problems where there
+    is a finite number of feasible solutions, which result from combining the discrete
+    values of a finite number of variables. As the number of feasible combinations
+    grows, an exhaustive search becomes impractical. The traveling salesman problem
+    is an example of a combinatorial optimization problem that is known to be NP hard
+    (Woeginger [2003]), that is, the category of problems that are at least as hard
+    as the hardest problems solvable is nondeterministic polynomial time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What makes an exhaustive search impractical is that standard computers evaluate
+    and store the feasible solutions sequentially. But what if we could evaluate and
+    store all feasible solutions at once? That is the goal of quantum computers. Whereas
+    the bits of a standard computer can only adopt one of two possible states ({0,
+    1}) at once, quantum computers rely on qubits, which are memory elements that
+    may hold a *linear superposition* of both states. In theory, quantum computers
+    can accomplish this thanks to quantum mechanical phenomena. In some implementations,
+    qubits can support currents flowing in two directions at once, hence providing
+    the desired superposition. This linear superposition property is what makes quantum
+    computers ideally suited for solving NP-hard combinatorial optimization problems.
+    See Williams [2010] for a general treatise on the capabilities of quantum computers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The best way to understand this approach is through a particular example. We
+    will now see how a dynamic portfolio optimization problem subject to generic transaction
+    cost functions can be represented as a combinatorial optimization problem, tractable
+    to quantum computers. Unlike Garleanu and Pedersen [2012], we will not assume
+    that the returns are drawn from an IID Gaussian distribution. This problem is
+    particularly relevant to large asset managers, as the costs from excessive turnover
+    and implementation shortfall may critically erode the profitability of their investment
+    strategies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**21.3 The Objective Function**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consider a set on assets *X* = { *x [*i*]* }, *i* = 1, …, *N* , with returns
+    following a multivariate Normal distribution at each time horizon *h* = 1, …,
+    *H* , with varying mean and variance. We will assume that the returns are multivariate
+    Normal, time-independent, however not identically distributed through time. We
+    define a trading trajectory as an *NxH* matrix ω that determines the proportion
+    of capital allocated to each of the *N* assets over each of the *H* horizons.
+    At a particular horizon *h* = 1, …, *H* , we have a forecasted mean μ [*h*] ,
+    a forecasted variance *V [*h*]* and a forecasted transaction cost function τ [*h*]
+    [ω]. This means that, given a trading trajectory ω, we can compute a vector of
+    expected investment returns *r* , as
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00164.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'where τ[ω] can adopt any functional form. Without loss of generality, consider
+    the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00598.jpg)'
+  prefs:
+  - PREF_UL
+  type: TYPE_IMG
+- en: '![](Image00148.jpg) , for *h* = 2, …, *H*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: ω* [*n*] is the initial allocation to instrument n, *n* = 1, …, *N*
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: τ[ω] is an *Hx1* vector of transaction costs. In words, the transaction costs
+    associated with each asset are the sum of the square roots of the changes in capital
+    allocations, re-scaled by an asset-specific factor *C [*h*]* = { *c [*n* , *h*]*
+    } [*n* = 1, …, *N*] that changes with *h.* Thus, *C [*h*]* is an *Nx1* vector
+    that determines the relative transaction cost across assets.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Sharpe Ratio (Chapter 14) associated with *r* can be computed as (μ [*h*]
+    being net of the risk-free rate)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00626.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**21.4 The Problem**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: We would like to compute the optimal trading trajectory that solves the problem
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00214.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'This problem attempts to compute a global dynamic optimum, in contrast to the
+    static optimum derived by mean-variance optimizers (see Chapter 16). Note that
+    non-continuous transaction costs are embedded in *r* . Compared to standard portfolio
+    optimization applications, this is not a convex (quadratic) programming problem
+    for at least three reasons: (1) Returns are not identically distributed, because
+    μ [*h*] and *V [*h*]* change with *h.* (2) Transaction costs τ [*h*] [ω] are non-continuous
+    and changing with *h.* (3) The objective function *SR* [ *r* ] is not convex.
+    Next, we will show how to calculate solutions without making use of any analytical
+    property of the objective function (hence the generalized nature of this approach).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**21.5 An Integer Optimization Approach**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The generality of this problem makes it intractable to standard convex optimization
+    techniques. Our solution strategy is to discretize it so that it becomes amenable
+    to integer optimization. This in turn allows us to use quantum computing technology
+    to find the optimal solution.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**21.5.1 Pigeonhole Partitions**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suppose that we count the number of ways that *K* units of capital can be allocated
+    among *N* assets, where we assume *K* > *N* . This is equivalent to finding the
+    number of non-negative integer solutions to *x [1]* + … + *x [*N*]* = *K* , which
+    has the nice combinatorial solution ![](Image00735.jpg) . This bears a similarity
+    to the classic integer partitioning problem in number theory for which Hardy and
+    Ramanujan (and later, Rademacher) proved an asymptotic expression (see Johansson
+    [2012]). While order does not matter in the partition problem, order is very relevant
+    to the problem we have at hand. For example, if *K* = 6 and *N* = 3, partitions
+    (1, 2, 3) and (3, 2, 1) must be treated as different (obviously (2, 2, 2) does
+    not need to be permutated).  [ Figure 21.1 ](text00004.html#filepos0001085945)
+    illustrates how order is important when allocating 6 units of capital to 3 different
+    assets. This means that we must consider all distinct permutations of each partition.
+    Even though there is a nice combinatorial solution to find the number of such
+    allocations, it may still be computationally intensive to find as *K* and *N*
+    grow large. However, we can use Stirling's approximation to easily arrive at an
+    estimate.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00343.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 21.1**](text00004.html#filepos0001085231) Partitions (1, 2, 3) and
+    (3, 2, 1) must be treated as different'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Snippet 21.1 provides an efficient algorithm to generate the set of all partitions,
+    ![](Image00365.jpg) , where ![](Image00261.jpg) are the natural numbers including
+    zero (whole numbers).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 21.1 PARTITIONS OF** ***K*** **OBJECTS INTO** ***N*** **SLOTS**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00400.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**21.5.2 Feasible Static Solutions**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: We would like to compute the set of all feasible solutions at any given horizon
+    *h* , which we denote Ω. Consider a partition set of *K* units into *N* assets,
+    *p ^(*K* , *N*)* . For each partition { *p [*i*]* } [*i* = 1, …, *N*] ∈ *p ^(*K*
+    , *N*)* , we can define a vector of absolute weights such that ![](Image00415.jpg)
+    , where ![](Image00430.jpg) (the full-investment constraint). This full-investment
+    (without leverage) constraint implies that every weight can be either positive
+    or negative, so for every vector of absolute weights {|ω [*i*] |} [*i*  = 1, …,  *N*]
+    we can generate 2 ^(*N*) vectors of (signed) weights. This is accomplished by
+    multiplying the items in {|ω [*i*] |} [*i*  = 1, …,  *N*] with the items of the
+    Cartesian product of { − 1, 1} with *N* repetitions. Snippet 21.2 shows how to
+    generate the set Ω of all vectors of weights associated with all partitions, ![](Image00443.jpg)
+    .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 21.2 SET Ω OF ALL VECTORS ASSOCIATED WITH ALL PARTITIONS**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00725.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**21.5.3 Evaluating Trajectories**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given the set of all vectors Ω, we define the set of all possible trajectories
+    Φ as the Cartesian product of Ω with *H* repetitions. Then, for every trajectory
+    we can evaluate its transaction costs and SR, and select the trajectory with optimal
+    performance across Φ. Snippet 21.3 implements this functionality. The object `params`
+    is a list of dictionaries that contain the values of *C* , μ, *V.*
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 21.3 EVALUATING ALL TRAJECTORIES**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00467.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Note that this procedure selects an globally optimal trajectory without relying
+    on convex optimization. A solution will be found even if the covariance matrices
+    are ill-conditioned, transaction cost functions are non-continuous, etc. The price
+    we pay for this generality is that calculating the solution is extremely computationally
+    intensive. Indeed, evaluating all trajectories is similar to the traveling-salesman
+    problem. Digital computers are inadequate for this sort of NP-complete or NP-hard
+    problems; however, quantum computers have the advantage of evaluating multiple
+    solutions at once, thanks to the property of linear superposition.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The approach presented in this chapter set the foundation for Rosenberg et al.
+    [2016], which solved the optimal trading trajectory problem using a quantum annealer.
+    The same logic can be applied to a wide range on financial problems involving
+    path dependency, such as a trading trajectory. Intractable ML algorithm can be
+    discretized and translated into a brute force search, intended for a quantum computer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**21.6 A Numerical Example**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Below we illustrate how the global optimum can be found in practice, using a
+    digital computer. A quantum computer would evaluate all trajectories at once,
+    whereas the digital computer does this sequentially.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**21.6.1 Random Matrices**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Snippet 21.4 returns a random matrix of Gaussian values with known rank, which
+    is useful in many applications (see exercises). You may want to consider this
+    code the next time you want to execute multivariate Monte Carlo experiments, or
+    scenario analyses.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 21.4 PRODUCE A RANDOM MATRIX OF A GIVEN RANK**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00480.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Snippet 21.5 generates *H* vectors of means, covariance matrices, and transaction
+    cost factors, *C* , μ, *V.* These variables are stored in a `params` list.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 21.5 GENERATE THE PROBLEM''S PARAMETERS**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00492.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**21.6.2 Static Solution**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Snippet 21.6 computes the performance of the trajectory that results from local
+    (static) optima.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 21.6 COMPUTE AND EVALUATE THE STATIC SOLUTION**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00507.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**21.6.3 Dynamic Solution**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Snippet 21.7 computes the performance associated with the globally dynamic optimal
+    trajectory, applying the functions explained throughout the chapter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 21.7 COMPUTE AND EVALUATE THE DYNAMIC SOLUTION**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00378.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**Exercises**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using the pigeonhole argument, prove that ![](Image00546.jpg) *.*
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Use Snippet 21.4 to produce random matrices of size (1000, 10), `sigma = 1`
+    and
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '`rank = 1` . Plot the eigenvalues of the covariance matrix.'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '`rank = 5` . Plot the eigenvalues of the covariance matrix.'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '`rank = 10` . Plot the eigenvalues of the covariance matrix.'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What pattern do you observe? How would you connect it to Markowitz's curse (Chapter
+    16)?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Run the numerical example in Section 21.6:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Use `size = 3` , and compute the running time with `timeit` . Repeat 10 batches
+    of 100 executions. How long did it take?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Use `size = 4` , and `timeit` . Repeat 10 batches of 100 executions. How long
+    did it take?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Review all snippets in this chapter.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: How many could be vectorized?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: How many could be parallelized, using the techniques from Chapter 20?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If you optimize the code, by how much do you think you could speed it up?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Using the optimized code, what is the problem dimensionality that could be solved
+    within a year?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Under what circumstances would the globally dynamic optimal trajectory match
+    the sequence of local optima?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Is that a realistic set of assumptions?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If not,
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: could that explain why naïve solutions beat Markowitz's (Chapter 16)?
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: why do you think so many firms spend so much effort in computing sequences of
+    local optima?
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**References**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Garleanu, N. and L. Pedersen (2012): “Dynamic trading with predictable returns
+    and transaction costs.” *Journal of Finance* , Vol. 68, No. 6, pp. 2309–2340.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Johansson, F. (2012): “Efficient implementation of the Hardy-Ramanujan-Rademacher
+    formula,” *LMS Journal of Computation and Mathematics* , Vol. 15, pp. 341–359.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Rosenberg, G., P. Haghnegahdar, P. Goddard, P. Carr, K. Wu, and M. López de
+    Prado (2016): “Solving the optimal trading trajectory problem using a quantum
+    annealer.” *IEEE Journal of Selected Topics in Signal Processing* , Vol. 10, No.
+    6 (September), pp. 1053–1060.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Williams, C. (2010): *Explorations in Quantum Computing* , 2nd ed. Springer.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Woeginger, G. (2003): “Exact algorithms for NP-hard problems: A survey.” In
+    Junger, M., G. Reinelt, and G. Rinaldi: *Combinatorial Optimization—Eureka, You
+    Shrink!* Lecture notes in computer science, Vol. 2570, Springer, pp. 185–207.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**CHAPTER 22**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**High-Performance Computational Intelligence and Forecasting Technologies**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Kesheng Wu and Horst D. Simon
+  prefs:
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '**22.1 Motivation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This chapter provides an introduction to the Computational Intelligence and
+    Forecasting Technologies (CIFT) project at Lawrence Berkeley National Laboratory
+    (LBNL). The main objective of CIFT is to promote the use of high-performance computing
+    (HPC) tools and techniques for analysis of streaming data. After noticing the
+    data volume being given as the explanation for the five-month delay for SEC and
+    CFTC to issue their report on the 2010 Flash Crash, LBNL started the CIFT project
+    to apply HPC technologies to manage and analyze financial data. Making timely
+    decisions with streaming data is a requirement for many business applications,
+    such as avoiding impending failure in the electric power grid or a liquidity crisis
+    in financial markets. In all these cases, the HPC tools are well suited in handling
+    the complex data dependencies and providing a timely solution. Over the years,
+    CIFT has worked on a number of different forms of streaming data, including those
+    from vehicle traffic, electric power grid, electricity usage, and so on. The following
+    sections explain the key features of HPC systems, introduce a few special tools
+    used on these systems, and provide examples of streaming data analyses using these
+    HPC tools.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.2 Regulatory Response to the Flash Crash of 2010**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: On May 6, 2010, at about 2:45 p.m. (U.S. Eastern Daylight Time), the U.S. stock
+    market experienced a nearly 10% drop in the Dow Jones Industrial Average, only
+    to recover most of the loss a few minutes later. It took about five months for
+    regulatory agencies to come up with an investigation report. In front of a congressional
+    panel investigating the crash, the data volume (∼20 terabytes) was given as the
+    primary reason for the long delay. Since HPC systems, such as those at National
+    Energy Research Scientific Computing (NERSC) center, ^([1](text00004.html#filepos0001169156))
+    routinely work with hundreds of terabytes in minutes, we should have no problem
+    processing the data from financial markets. This led to the establishment of the
+    CIFT project with the mission to apply the HPC techniques and tools for financial
+    data analysis.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A key aspect of financial big data is that it consists of mostly time series.
+    Over the years, the CIFT team, along with numerous collaborators, has developed
+    techniques to analyze many different forms of data streams and time series. This
+    chapter provides a brief introduction to the HPC system including both hardware
+    (Section 22.4) and software (Section 22.5), and recounts a few successful use
+    cases (Section 22.6). We conclude with a summary of our vision and work so far
+    and also provide contact information for interested readers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.3 Background**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Advances in computing technology have made it considerably easier to look for
+    complex patterns. This pattern-finding capability is behind a number of recent
+    scientific breakthroughs, such as the discovery of the Higgs particle (Aad et al.
+    [2016]) and gravitational waves (Abbot et al. [2016]). This same capability is
+    also at the core of many internet companies, for example, to match users with
+    advertisers (Zeff and Aronson [1999], Yen et al. [2009]). However, the hardware
+    and software used in science and in commerce are quite different. The HPC tools
+    have some critical advantages that should be useful in a variety of business applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Tools for scientists are typically built around high-performance computing (HPC)
+    platforms, while the tools for commercial applications are built around cloud
+    computing platforms. For the purpose of sifting through large volumes of data
+    to find useful patterns, the two approaches have been shown to work well. However,
+    the marquee application for HPC systems is large-scale simulation, such as weather
+    models used for forecasting regional storms in the next few days (Asanovic et al.
+    [2006]). In contrast, the commercial cloud was initially motivated by the need
+    to process a large number of independent data objects concurrently (data parallel
+    tasks).
+  prefs: []
+  type: TYPE_NORMAL
+- en: For our work, we are primarily interested in analyses of streaming data. In
+    particular, high-speed complex data streams, such as those from sensor networks
+    monitoring our nation's electric power grid and highway systems. This streaming
+    workload is not ideal for either HPC systems or cloud systems as we discuss below,
+    but we believe that the HPC ecosystem has more to offer to address the streaming
+    data analysis than the cloud ecosystem does.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Cloud systems were originally designed for parallel data tasks, where a large
+    number of independent data objects can be processed concurrently. The system is
+    thus designed for high throughput, not for producing real-time responses. However,
+    many business applications require real-time or near-real-time responses. For
+    example, an instability event in an electric power grid could develop and grow
+    into a disaster in minutes; finding the tell-tale signature quickly enough would
+    avert the disaster. Similarly, signs of emerging illiquidity events have been
+    identified in the financial research literature; quickly finding these signs during
+    the active market trading hours could offer options to prevent shocks to the market
+    and avoid flash crashes. The ability to prioritize quick turnaround time is essential
+    in these cases.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A data stream is by definition available progressively; therefore, there may
+    not be a large number of data objects to be processed in parallel. Typically,
+    only a fixed amount of the most recent data records are available for analysis.
+    In this case, an effective way to harness the computing power of many central
+    processing units (CPUs) cores is to divide the analytical work on a single data
+    object (or a single time-step) to many CPU cores. The HPC ecosystem has more advanced
+    tools for this kind of work than the cloud ecosystem does.
+  prefs: []
+  type: TYPE_NORMAL
+- en: These are the main points that motivated our work. For a more thorough comparison
+    of HPC systems and cloud systems, we refer interested readers to Asanovic et al.
+    [2006]. In particular, Fox et al. [2015] have created an extensive taxonomy for
+    describing the similarities and differences for any application scenario.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In short, we believe the HPC community has a lot to offer to advance the state-of-the-art
+    for streaming analytics. The CIFT project was established with a mission to transfer
+    LBNL's HPC expertise to streaming business applications. We are pursuing this
+    mission via collaboration, demonstration, and tool development.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To evaluate the potential uses of HPC technology, we have spent time working
+    with various applications. This process not only exposes our HPC experts to a
+    variety of fields, but also makes it possible for us to gather financial support
+    to establish a demonstration facility.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With the generous gifts from a number of early supporters of this effort, we
+    established a substantial computing cluster dedicated to this work. This dedicated
+    computer (named dirac1) allows users to utilize an HPC system and evaluate their
+    applications for themselves.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We are also engaged in a tool development effort to make HPC systems more usable
+    for streaming data analysis. In the following sections, we will describe the hardware
+    and software of the dedicated CIFT machine, as well as some of the demonstration
+    and tool development efforts. Highlights include improving the data handling speed
+    by 21-fold, and increasing the speed of computing an early warning indicator by
+    720-fold.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.4 HPC Hardware**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Legend has it that the first generation of big data systems was built with the
+    spare computer components gleaned from a university campus. This is likely an
+    urban legend, but it underscores an important point about the difference between
+    HPC systems and cloud systems. Theoretically, a HPC system is built with custom
+    high-cost components, while cloud systems are built with standard low-cost commodity
+    components. In practice, since the worldwide investment in HPC systems is much
+    smaller than that of personal computers, there is no way for manufacturers to
+    produce custom components just for the HPC market. The truth is that HPC systems
+    are largely assembled from commodity components just like cloud systems. However,
+    due to their different target applications, there are some differences in their
+    choices of the components.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let us describe the computing elements, storage system, and networking system
+    in turn. [Figure 22.1](text00004.html#filepos0001110151) is a high-level schematic
+    diagram representing the key components of the Magellan cluster around year 2010
+    (Jackson et al. [2010]; Yelick et al. [2011]). The computer elements include both
+    CPUs and graphics processing units (GPUs). These CPUs and GPUs are commercial
+    products in almost all the cases. For example, the nodes on dirac1 use a 24-core
+    2.2Ghz Intel processor, which is common to cloud computing systems. Currently,
+    dirac1 does not contain GPUs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00518.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 22.1**](text00004.html#filepos0001109467) Schematic of the Magellan
+    cluster (circa 2010), an example of HPC computer cluster'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The networking system consists of two parts: the InfiniBand network connecting
+    the components within the cluster, and the switched network connection to the
+    outside world. In this particular example, the outside connections are labeled
+    “ESNet” and “ANI.” The InfiniBand network switches are also common in cloud computing
+    systems.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The storage system in Figure 1 includes both rotating disks and flash storage.
+    This combination is also common. What is different is that a HPC system typically
+    has its storage system concentrated outside of the computer nodes, while a typical
+    cloud computing system has its storage system distributed among the compute nodes.
+    These two approaches have their own advantages and disadvantages. For example,
+    the concentrated storage is typically exported as a global file system to all
+    computer nodes, which makes it easier to deal with data stored in files. However,
+    this requires a highly capable network connecting the CPUs and the disks. In contrast,
+    the distributed approach could use lower-capacity network because there is some
+    storage that is close to each CPU. Typically, a distributed file system, such
+    as the Google file system (Ghemawat, Gobioff, and Leung [2003]), is layered on
+    top of a cloud computing system to make the storage accessible to all CPUs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In short, the current generation of HPC systems and cloud systems use pretty
+    much the same commercial hardware components. Their differences are primarily
+    in the arrangement of the storage systems and networking systems. Clearly, the
+    difference in the storage system designs could affect the application performance.
+    However, the virtualization layer of the cloud systems is likely the bigger cause
+    of application performance difference. In the next section, we will discuss another
+    factor that could have an even larger impact, namely software tools and libraries.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Virtualization is generally used in the cloud computing environment to make
+    the same hardware available to multiple users and to insulate one software environment
+    from another. This is one of the more prominent features distinguishing the cloud
+    computing environment from the HPC environment. In most cases, all three basic
+    components of a computer system—CPU, storage, and networking—are all virtualized.
+    This virtualization has many benefits. For example, an existing application can
+    run on a CPU chip without recompiling; many users can share the same hardware;
+    hardware faults could be corrected through the virtualization software; and applications
+    on a failed compute node could be more easily migrated to another node. However,
+    this virtualization layer also imposes some runtime overhead and could reduce
+    application performance. For time-sensitive applications, this reduction in performance
+    could become a critical issue.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Tests show that the performance differences could be quite large. Next, we briefly
+    describe a performance study reported by Jackson et al [2010]. [Figure 22.2](text00004.html#filepos0001114364)
+    shows the performance slowdown using different computer systems. The names below
+    the horizontal axis are different software packages commonly used at NERSC. The
+    left bar corresponds to the Commercial Cloud, the middle bar to Magellan, and
+    the (sometimes missing) right bar to the EC2-Beta-Opt system. The non-optimized
+    commercial cloud instances run these software packages 2 to 10 times slower than
+    on a NERSC supercomputer. Even on the more expensive high-performance instances,
+    there are noticeable slowdowns.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00589.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 22.2**](text00004.html#filepos0001113619) The cloud ran scientific
+    applications considerably slower than on HPC systems (circa 2010)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 22.3](text00004.html#filepos0001115509) shows a study of the main factor
+    causing the slowdown with the software package PARATEC. In Figure 2, we see that
+    PARATEC took 53 times longer to complete on the commercial cloud than on an HPC
+    system. We observe from Figure 3 that, as the number of cores (horizontal axis)
+    increases, the differences among the measured performances (measured in TFLOP/s)
+    become larger. In particular, the line labeled “10G- TCPoEth Vm” barely increases
+    as the number of cores grows. This is the case where the network instance is using
+    virtualized networking (TCP over Ethernet). It clearly shows that the networking
+    virtualization overhead is significant, to the point of rendering the cloud useless.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00613.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 22.3**](text00004.html#filepos0001114573) As the number of cores
+    increases (horizontal axis), the virtualization overhead becomes much more significant
+    (circa 2010)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The issue of virtualization overhead is widely recognized (Chen et al. [2015]).
+    There has been considerable research aimed at addressing both the I/O virtualization
+    overhead (Gordon et al. [2012]) as well as the networking virtualization overhead
+    (Dong et al. [2012]). As these state-of-the-art techniques are gradually being
+    moved into commercial products, we anticipate the overhead will decrease in the
+    future, but some overhead will inevitably remain.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To wrap up this section, we briefly touch on the economics of HPC versus cloud.
+    Typically, HPC systems are run by nonprofit research organizations and universities,
+    while cloud systems are provided by commercial companies. Profit, customer retention,
+    and many other factors affect the cost of a cloud system (Armburst et al. [2010]).
+    In 2011, the Magellan project report stated that “Cost analysis shows that DOE
+    centers are cost competitive, typically 3–7 × less expensive, when compared to
+    commercial cloud providers” (Yelick et al. [2010]).
+  prefs: []
+  type: TYPE_NORMAL
+- en: A group of high-energy physicists thought their use case was well-suited for
+    cloud computing and conducted a detailed study of a comparison study (Holzman
+    et al. [2017]). Their cost comparisons still show the commercial cloud offerings
+    as approximately 50% more expensive than dedicated HPC systems for comparable
+    computing tasks; however, the authors worked with severe limitations on data ingress
+    and egress to avoid potentially hefty charges on data movement. For complex workloads,
+    such as the streaming data analyses discussed in this book, we anticipate that
+    this HPC cost advantage will remain in the future. A 2016 National Academy of
+    Sciences study came to the same conclusion that even a long-term lease from Amazon
+    is likely 2 to 3 times more expensive than HPC systems to handle the expected
+    science workload from NSF (Box 6.2 from National Academies of Sciences, [2016]).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.5 HPC Software**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Ironically, the real power of a supercomputer is in its specialized software.
+    There are a wide variety of software packages available for both HPC systems and
+    cloud systems. In most cases, the same software package is available on both platforms.
+    Therefore, we chose to focus on software packages that are unique to HPC systems
+    and have the potential to improve computational intelligence and forecasting technologies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One noticeable feature of the HPC software ecosystem is that much of the application
+    software performs its own interprocessor communication through Message Passing
+    Interface (MPI). In fact, the cornerstone of most scientific computing books is
+    MPI (Kumar et al. [1994], Gropp, Lusk, and Skjellum [1999]). Accordingly, our
+    discussion of HPC software tools will start with MPI. As this book relies on data
+    processing algorithms, we will concentrate on data management tools (Shoshami
+    and Rotem [2010]).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.5.1 Message Passing Interface**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Message Passing Interface is a communication protocol for parallel computing
+    (Gropp, Lusk, and Skjellum [1999], Snir et al. [1988]). It defines a number of
+    point-to-point data exchange operations as well as some collective communication
+    operations. The MPI standard was established based on several early attempts to
+    build portable communication libraries. The early implementation from Argonne
+    National Lab, named MPICH, was high performance, scalable, and portable. This
+    helped MPI to gain wide acceptance among scientific users.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The success of MPI is partly due to its separation of Language Independent Specifications
+    (LIS) from its language bindings. This allows the same core function to be provided
+    to many different programming languages, which also contributes to its acceptance.
+    The first MPI standard specified ANSI C and Fortran-77 bindings together with
+    the LIS. The draft specification was presented to the user community at the 1994
+    Supercomputing Conference.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another key factor contributing to MPI's success is the open-source license
+    used by MPICH. This license allows the vendors to take the source code to produce
+    their own custom versions, which allows the HPC system vendors to quickly produce
+    their own MPI libraries. To this day, all HPC systems support the familiar MPI
+    on their computers. This wide adoption also ensures that MPI will continue to
+    be the favorite communication protocol among the users of HPC systems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.5.2 Hierarchical Data Format 5**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In describing the HPC hardware components, we noted that the storage systems
+    in an HPC platform are typically different from those in a cloud platform. Correspondingly,
+    the software libraries used by most users for accessing the storage systems are
+    different as well. This difference can be traced to the difference in the conceptual
+    models of data. Typically, HPC applications treat data as multi-dimensional arrays
+    and, therefore, the most popular I/O libraries on HPC systems are designed to
+    work with multi-dimensional arrays. Here, we describe the most widely used array
+    format library, HDF5 (Folk et al. [2011]).
+  prefs: []
+  type: TYPE_NORMAL
+- en: HDF5 is the fifth iteration of the Hierarchical Data Format, produced by the
+    HDF Group. ^([2](text00004.html#filepos0001169512)) The basic unit of data in
+    HDF5 is an array plus its associated information such as attributes, dimensions,
+    and data type. Together, they are known as a data set. Data sets can be grouped
+    into large units called groups, and groups can be organized into high-level groups.
+    This flexible hierarchical organization allows users to express complex relationships
+    among the data sets.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Beyond the basic library for organizing user data into files, the HDF Group
+    also provides a suite of tools and specialization of HDF5 for different applications.
+    For example, HDF5 includes a performance profiling tool. NASA has a specialization
+    of HDF5, named HDF5-EOS, for data from their Earth-Observing System (EOS); and
+    the next-generation DNA sequence community has produced a specialization named
+    BioHDF for their bioinformatics data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: HDF5 provides an efficient way for accessing the storage systems on HPC platform.
+    In tests, we have demonstrated that using HDF5 to store stock markets data significantly
+    speeds up the analysis operations. This is largely due to its efficient compression/decompression
+    algorithms that minimize network traffic and I/O operations, which brings us to
+    our next point.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.5.3** ***In Situ*** **Processing**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Over the last few decades, CPU performance has roughly doubled every 18 months
+    (Moore's law), while disk performance has been increasing less than 5% a year.
+    This difference has caused it to take longer and longer to write out the content
+    of the CPU memory. To address this issue, a number of research efforts have focused
+    on *in situ* analysis capability (Ayachit et al. [2016]).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Among the current generation of processing systems, the Adaptable I/O System
+    (ADIOS) is the most widely used (Liu et al. [2014]). It employs a number of data
+    transport engines that allow users to tap into the I/O stream and perform analytical
+    operations. This is useful because irrelevant data can be discarded in-flight,
+    hence avoiding its slow and voluminous storage. This same *in situ* mechanism
+    also allows it to complete write operations very quickly. In fact, it initially
+    gained attention because of its write speed. Since then, the ADIOS developers
+    have worked with a number of very large teams to improve their I/O pipelines and
+    their analysis capability.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Because ADIOS supports streaming data accesses, it is also highly relevant to
+    CIFT work. In a number of demonstrations, ADIOS with ICEE transport engine was
+    able to complete distributed streaming data analysis in real-time (Choi et al.
+    [2013]). We will describe one of the use cases involving blobs in fusion plasma
+    in the next section.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To summarize, *in situ* data processing capability is another very useful tool
+    from the HPC ecosystem.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.5.4 Convergence**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: We mentioned earlier that the HPC hardware market is a tiny part of the overall
+    computer hardware market. The HPC software market is even smaller compared to
+    the overall software market. So far, the HPC software ecosystem is largely maintained
+    by a number of small vendors along with some open-source contributors. Therefore,
+    HPC system users are under tremendous pressure to migrate to the better supported
+    cloud software systems. This is a significant driver for convergence between software
+    for HPC and software for cloud (Fox et al. [2015]).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Even though convergence appears to be inevitable, we advocate for a convergence
+    option that keeps the advantage of the software tools mentioned above. One of
+    the motivations of the CIFT project is to seek a way to transfer the above tools
+    to the computing environments of the future.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.6 Use Cases**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Data processing is such an important part of modern scientific research that
+    some researchers are calling it the fourth paradigm of science (Hey, Tansley,
+    and Tolle [2009]). In economics, the same data-driven research activities have
+    led to the wildly popular behavioral economics (Camerer and Loewenstein [2011]).
+    Much of the recent advances in data-driven research are based on machine learning
+    applications (Qiu et al. [2016], Rudin and Wagstaff [2014]). Their successes in
+    a wide variety of fields, such as planetary science and bioinformatics, have generated
+    considerable interest among researchers from diverse domains. In the rest of this
+    section, we describe a few examples applying advanced data analysis techniques
+    to various fields, where many of these use cases originated in the CIFT project.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.6.1 Supernova Hunting**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In astronomy, the determination of many important facts such as the expansion
+    speed of the universe, is performed by measuring the light from exploding type
+    Ia supernovae (Bloom et al. [2012]). The process of searching the night sky for
+    exploding supernovae is called synoptic imaging survey. The Palomar Transient
+    Factory (PTF) is an example of such a synoptic survey (Nicholas et al. [2009]).
+    The PTF telescopes scan the night sky and produce a set of images every 45 minutes.
+    The new image is compared against the previous observations of the same patch
+    of sky to determine what has changed and to classify the changes. Such identification
+    and classification tasks used to be performed by astronomers manually. However,
+    the current number of incoming images from the PTF telescopes is too large for
+    manual inspection. An automated workflow for these image processing tasks has
+    been developed and deployed at a number of different computer centers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 22.4](text00004.html#filepos0001128887) shows the supernova that was
+    identified earliest in its explosion process. On August 23, 2011, a patch of the
+    sky showed no sign of this star, but a faint light showed up on August 24\. This
+    quick turnover allowed astronomers around the world to perform detailed follow-up
+    observations, which are important for determining the parameters related to the
+    expansion of the universe.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00635.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 22.4**](text00004.html#filepos0001128262) Supernova SN 2011fe was
+    discovered 11 hours after first evidence of explosion, as a result of the extensive
+    automation in classification of astronomical observations'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The quick identification of this supernova is an important demonstration of
+    the machine learning capability of the automated workflow. This workflow processes
+    the incoming images to extract the objects that have changed since last observed.
+    It then classifies the changed object to determine a preliminary type based on
+    the previous training. Since follow-up resources for extracting novel science
+    from fast-changing transients are precious, the classification not only needs
+    to indicate the assumed type but also the likelihood and confidence of the classification.
+    Using classification algorithms trained on PTF data, the mislabeling of transients
+    and variable stars has a 3.8% overall error rate. Additional work is expected
+    to achieve higher accuracy rates in upcoming surveys, such as for the Large Synoptic
+    Survey Telescope.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.6.2 Blobs in Fusion Plasma**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Large-scale scientific exploration in domains such as physics and climatology
+    are huge international collaborations involving thousands of scientists each.
+    As these collaborations produce more and more data at progressively faster rates,
+    the existing workflow management systems are hard-pressed to keep pace. A necessary
+    solution is to process, analyze, summarize, and reduce the data before it reaches
+    the relatively slow disk storage system, a process known as in-transit processing
+    (or in-flight analysis). Working with the ADIOS developers, we have implemented
+    the ICEE transport engine to dramatically increase the data-handling capability
+    of collaborative workflow systems (Choi et al. [2013]). This new feature significantly
+    improved the data flow management for distributed workflows. Tests showed that
+    the ICEE engine allowed a number of large international collaborations to make
+    near real-time collaborative decisions. Here, we briefly describe the fusion collaboration
+    involving KSTAR.
+  prefs: []
+  type: TYPE_NORMAL
+- en: KSTAR is a nuclear fusion reactor with fully superconducting magnets. It is
+    located in South Korea, but there are a number of associated research teams around
+    the world. During a run of a fusion experiment, some researchers control the physics
+    device at KSTAR, but others may want to participate by performing collaborative
+    analysis of the preceding runs of the experiment to provide advice on how to configure
+    the device for the next run. During the analysis of the experimental measurement
+    data, scientists might run simulations or examine previous simulations to study
+    parametric choices. Typically, there may be a lapse of 10 to 30 minutes between
+    two successive runs, and all collaborative analyses need to complete during this
+    time window in order to affect the next run.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We have demonstrated the functionality of the ICEE workflow system with two
+    different types of data: one from the Electron Cyclotron Emission Imaging (ECEI)
+    data measured at KSTAR, and the other involving synthetic diagnostic data from
+    the XGC modelling. The distributed workflow engine needs to collect data from
+    these two sources, extract a feature known as blobs, track the movement of these
+    blobs, predict the movement of the blobs in the experimental measurements, and
+    then provide advices on actions to be performed. [Figure 22.5](text00004.html#filepos0001133138)
+    shows how the ECEI data is processed. The workflow for the XGC simulation data
+    is similar to what is shown in [Figure 22.5](text00004.html#filepos0001133138)
+    , except that the XGC data is located at NERSC.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00651.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 22.5**](text00004.html#filepos0001132658) A distributed workflow
+    for studying fusion plasma dynamics'
+  prefs: []
+  type: TYPE_NORMAL
+- en: To be able to complete the above analytical tasks in real-time, effective data
+    management with ICEE transport engine of ADIOS is only part of the story. The
+    second part is to detect blobs efficiently (Wu et al. [2016]). In this work, we
+    need to reduce the amount of data transported across wide-area networks by selecting
+    only the necessary chunks. We then identify all cells within the blobs and group
+    these cells into connected regions in space, where each connected region forms
+    a blob. The new algorithm we developed partitions the work into different CPU
+    cores by taking full advantage of the MPI for communication between the nodes
+    and the shared memory among the CPU cores on the same node. Additionally, we also
+    updated the connected component label algorithm to correctly identify blobs at
+    the edge, which were frequently missed by the earlier detection algorithms. Overall,
+    our algorithm was able to identify blobs in a few milliseconds for each time step
+    by taking full advantage of the parallelism available in the HPC system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.6.3 Intraday Peak Electricity Usage**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Utility companies are deploying advanced metering infrastructure (AMI) to capture
+    electricity consumption in unprecedented spatial and temporal detail. This vast
+    and fast-growing stream of data provides an important testing ground for the predictive
+    capability based on big data analytical platforms (Kim et al. [2015]). These cutting-edge
+    data science techniques, together with behavioral theories, enable behavior analytics
+    to gain novel insights into patterns of electricity consumption and their underlying
+    drivers (Todd et al. [2014]).
+  prefs: []
+  type: TYPE_NORMAL
+- en: As electricity cannot be easily stored, its generation must match consumption.
+    When the demand exceeds the generation capacity, a blackout will occur, typically
+    during the time when consumers need electricity the most. Because increasing generation
+    capacity is expensive and requires years of time, regulators and utility companies
+    have devised a number of pricing schemes intended to discourage unnecessary consumption
+    during peak demand periods.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To measure the effectiveness of a pricing policy on peak demand, one can analyze
+    the electricity usage data generated by AMI. Our work focuses on extracting baseline
+    models of household electricity usage for a behavior analytics study. The baseline
+    models would ideally capture the pattern of household electricity usage including
+    all features except the new pricing schemes. There are numerous challenges in
+    establishing such a model. For example, there are many features that could affect
+    the usage of electricity but for which no information is recorded, such as the
+    temperature set point of an air-conditioner or the purchase of a new appliance.
+    Other features, such as outdoor temperature, are known, but their impact is difficult
+    to capture in simple functions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Our work developed a number of new baseline models that could satisfy the above
+    requirements. At present, the gold standard baseline is a well-designed randomized
+    control group. We showed that our new data-driven baselines could accurately predict
+    the average electricity usage of the control group. For this evaluation, we use
+    a well-designed study from a region of the United States where the electricity
+    usage is the highest in the afternoon and evening during the months of May through
+    August. Though this work concentrates on demonstrating that the new baseline models
+    are effective for groups, we believe that these new models are also useful for
+    studying individual households in the future.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We explored a number of standard black-box approaches. Among machine learning
+    methods, we found gradient tree boosting (GTB) to be more effective than others.
+    However, the most accurate GTB models require lagged variables as features (for
+    example, the electricity usage a day before and a week before). In our work, we
+    need to use the data from year T-1 to establish the baseline usage for year T
+    and year T + 1\. The lagged variable for a day before and a week before would
+    be incorporating recent information not in year T-1\. We attempted to modify the
+    prediction procedure to use the recent predictions in place of the actual measured
+    values a day before and a week before; however, our tests show that the prediction
+    errors accumulate over time, leading to unrealistic predictions a month or so
+    into the summer season. This type of accumulation of prediction errors is common
+    to continuous prediction procedures for time series.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To address the above issue, we devised a number of white-box approaches, the
+    most effective of which, known as LTAP, is reported here. LTAP is based on the
+    fact that the aggregate variable electricity usage per day is accurately described
+    by a piece-wise linear function of average daily temperature. This fact allows
+    us to make predictions about the total daily electricity usage. By further assuming
+    that the usage profile of each household remains the same during the study, we
+    are able to assign the hourly usage values from the daily aggregate usage. This
+    approach is shown to be self-consistent; that is, the prediction procedure exactly
+    reproduces the electricity usage in year T–1, and the predictions for the control
+    group in both year T and T + 1 are very close to the actual measured values. Both
+    treatment groups have reduced electricity usages during the peak-demand hours,
+    and the active group reduced the usage more than the passive group. This observation
+    is in line with other studies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Though the new data-driven baseline model LTAP predicts the average usages of
+    the control group accurately, there are some differences in predicted impact of
+    the new time-of-use pricing intended to reduce the usage during the peak-demand
+    hours (see [Figure 22.6](text00004.html#filepos0001140885) ). For example, with
+    the control group as the baseline, the active group reduces its usage by 0.277 kWh
+    (out of about 2 kWh) averaged over the peak-demand hours in the first year with
+    the new price and 0.198 kWh in the second year. Using LTAP as the baseline, the
+    average reductions are only 0.164 kWh for both years. Part of the difference may
+    be due to the self-selection bias in treatment groups, especially the active group,
+    where the households have to explicitly opt-in to participate in the trial. It
+    is likely that the households that elected to join the active group are well-suited
+    to take advantage of the proposed new pricing structure. We believe that the LTAP
+    baseline is a way to address the self-selection bias and plan to conduct additional
+    studies to further verify this.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00666.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](Image00677.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](Image00692.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 22.6**](text00004.html#filepos0001139615) Gradient tree boosting
+    (GBT) appears to follow recent usage too closely and therefore not able to predict
+    the baseline usage as well as the newly develop method named LTAP. (a) GTB on
+    Control group. (b) LTAP on Control group. (c) GTB on Passive group. (d) LTAP on
+    Passive group. (e) GTB on Active group. (f) LTAP on Active group'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.6.4 The Flash Crash of 2010**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The extended time it took for the SEC and CFTC to investigate the Flash Crash
+    of 2010 was the original motivation for CIFT's work. Federal investigators needed
+    to sift through tens of terabytes of data to look for the root cause of the crash.
+    Since CFTC publicly blamed the volume of data to be the source of the long delay,
+    we started our work by looking for HPC tools that could easily handle tens of
+    terabytes. Since HDF5 is the most commonly used I/O library, we started our work
+    by applying HDF5 to organize a large set of stock trading data (Bethel et al.
+    [2011]).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let us quickly review what happened during the 2010 Flash Crash. On May 6, at
+    about 2:45 p.m. (U.S. Eastern Daylight Time), the Dow Jones Industrial Average
+    dropped almost 10%, and many stocks traded at one cent per share, the minimum
+    price for any possible trade. [Figure 22.7](text00004.html#filepos0001142959)
+    shows an example of another extreme case, where shares of Apple (symbol AAPL)
+    traded at $100,000 per share, the maximum possible price allowed by the exchange.
+    Clearly, these were unusual events, which undermined investors’ faith and confidence
+    in our financial markets. Investors demanded to know what caused these events.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00709.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 22.7**](text00004.html#filepos0001142401) Apple Stock price on May
+    6, 2010, along with HHI and VPIN values computed every 5 minutes during the market
+    hours'
+  prefs: []
+  type: TYPE_NORMAL
+- en: To make our work relevant to the financial industry, we sought to experiment
+    with the HDF5 software, and apply it to the concrete task of computing earlier
+    warning indicators. Based on recommendations from a group of institutional investors,
+    regulators, and academics, we implemented two sets of indicators that have been
+    shown to have “early warning” properties preceding the Flash Crash. They are the
+    Volume Synchronized Probability of Informed Trading (VPIN) (Easley, Lopez de Prado,
+    and O'Hara [2011]) and a variant of the Herfindahl-Hirschman Index (HHI) (Hirschman
+    [1980]) of market fragmentation. We implemented these two algorithms in the C++
+    language, while using MPI for inter-processor communication, to take full advantage
+    of the HPC systems. The reasoning behind this choice is that if any of these earlier
+    warning indicators is shown to be successful, the high-performance implementation
+    would allow us to extract the warning signals as early as possible so there might
+    be time to take corrective actions. Our effort was one of the first steps to demonstrate
+    that it is possible to compute the earlier warning signals fast enough.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For our work, we implemented two versions of the programs: one uses data organized
+    in HDF5 files, and another reads the data from the commonly used ASCII text files.
+    [Figure 22.8](text00004.html#filepos0001145415) shows the time required to process
+    the trading records of all S&P 500 stocks over a 10-year timespan. Since the size
+    of the 10-year trading data is still relatively small, we replicated the data
+    10 times as well. On a single CPU core (labeled “Serial” in [Figure 22.8](text00004.html#filepos0001145415)
+    ), it took about 3.5 hours with ASCII data, but only 603.98 seconds with HDF5
+    files. When 512 CPU cores are used, this time reduces to 2.58 seconds using HDF5
+    files, resulting in a speedup of 234 times.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00468.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 22.8**](text00004.html#filepos0001144627) Time to process 10-year
+    worth of SP500 quotes data stored in HDF5 files, which takes 21 times longer when
+    the same data is in ASCII files (603.98 seconds versus approximately 3.5 hours)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: On the larger (replicated) dataset, the advantage of HPC code for computing
+    these indices is even more pronounced. With 10 times as much data, it took only
+    about 2.3 times longer for the computer to complete the tasks, a below-linear
+    latency increase. Using more CPU makes HPC even more scalable.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 22.8](text00004.html#filepos0001145415) also shows that with a large
+    data set, we can further take advantage of the indexing techniques available in
+    HDF5 to reduce the data access time (which in turn reduces the overall computation
+    time). When 512 CPU cores are used, the total runtime is reduced from 16.95 seconds
+    to 4.59 seconds, a speedup of 3.7 due to this HPC technique of indexing.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.6.5 Volume-synchronized Probability of Informed Trading Calibration**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Understanding the volatility of the financial market requires the processing
+    of a vast amount of data. We apply techniques from data-intensive scientific applications
+    for this task, and demonstrate their effectiveness by computing an early warning
+    indicator called Volume Synchronized Probability of Informed Trading (VPIN) on
+    a massive set of futures contracts. The test data contains 67 months of trades
+    for the hundred most frequently traded futures contracts. On average, processing
+    one contract over 67 months takes around 1.5 seconds. Before we had this HPC implementation,
+    it took about 18 minutes to complete the same task. Our HPC implementation achieves
+    a speedup of 720 times.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that the above speedup was obtained solely based on the algorithmic improvement,
+    without the benefit of parallelization. The HPC code can run on parallel machines
+    using MPI, and thus is able to further reduce the computation time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The software techniques employed in our work include the faster I/O access through
+    HDF5 described above, as well as a more streamlined data structure for storing
+    the bars and buckets used for the computation of VPIN. More detailed information
+    is available in Wu et al. [2013].
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'With a faster program to compute VPIN, we were also able to explore the parametric
+    choices more closely. For example, we were able to identify the parameter values
+    that reduce VPIN''s false positive rate over one hundred contracts from 20% to
+    only 7%, see [Figure 22.9](text00004.html#filepos0001149194) . The parameter choices
+    to achieve this performance are: (1) pricing the volume bar with the median prices
+    of the trades (not the closing price typically used in analyses), (2) 200 buckets
+    per day, (3) 30 bars per bucket, (4) support window for computing VPIN = 1 day,
+    event duration = 0.1 day, (5) bulk volume classification with Student t-distribution
+    with ν = 0.1, and (6) threshold for CDF of VPIN = 0.99\. Again, these parameters
+    provide a low false positive rate on the totality of futures contracts, and are
+    not the result of individual fitting.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00742.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 22.9**](text00004.html#filepos0001148409) The average false positive
+    rates (α) of different classes of futures contracts ordered according to their
+    average.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: On different classes of futures contracts, it is possible to choose different
+    parameters to achieve even lower false positive rates. In some cases, the false
+    positive rates can fall significantly below 1%. Based on [Figure 22.9](text00004.html#filepos0001149194)
+    , interest rate and index futures contracts typically have lower false positive
+    rates. The futures contracts on commodities, such as energy and metal, generally
+    have higher false positive rates.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additionally, a faster program for computing VPIN allows us to validate that
+    the events identified by VPIN are “intrinsic,” in the sense that varying parameters
+    such as the threshold on VPIN CDF only slightly change the number of events detected.
+    Had the events been random, changing this threshold from 0.9 to 0.99 would have
+    reduced the number of events by a factor of 10\. In short, a faster VPIN program
+    also allows us to confirm the real-time effectiveness of VPIN.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.6.6 Revealing High Frequency Events with Non-uniform Fast Fourier Transform**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: High Frequency Trading is pervasive across all electronic financial markets.
+    As algorithms replace tasks previously performed by humans, cascading effects
+    similar to the 2010 Flash Crash may become more likely. In our work (Song et al.
+    [2014]), we brought together a number of high performance signal-processing tools
+    to improve our understanding of these trading activities. As an illustration,
+    we summarize the Fourier analysis of the trading prices of natural gas futures.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Normally, Fourier analysis is applied on uniformly spaced data. Since market
+    activity comes in bursts, we may want to sample financial time series according
+    to an index of trading activity. For example, VPIN samples financial series as
+    a function of volume traded. However, a Fourier analysis of financial series in
+    chronological time may still be instructive. To this purpose, we use a non-uniform
+    Fast Fourier Transform (FFT) procedure.
+  prefs: []
+  type: TYPE_NORMAL
+- en: From the Fourier analysis of the natural gas futures market, we see strong evidences
+    of High Frequency Trading in the market. The Fourier components corresponding
+    to high frequencies are (1) becoming more prominent in the recent years and (2)
+    are much stronger than could be expected from the structure of the market. Additionally,
+    a significant amount of trading activity occurs in the first second of every minute,
+    which is a tell-tale sign of trading triggered by algorithms that target a Time-Weighted
+    Average Price (TWAP).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fourier analysis on trading data shows that activities at the once-per-minute
+    frequency are considerably higher than at neighboring frequencies (see [Figure
+    22.10](text00004.html#filepos0001153202) ). Note that the vertical axis is in
+    logarithmic scale. The strength of activities at once-per-minute frequency is
+    more than ten times stronger than the neighboring frequencies. Additionally, the
+    activity is very precisely defined at once-per-minute, which indicates that these
+    trades are triggered by intentionally constructed automated events. We take this
+    to be strong evidence that TWAP algorithms have a significant presence in this
+    market.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00759.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 22.10**](text00004.html#filepos0001152531) Fourier spectrum of trading
+    prices of natural gas futures contracts in 2012\. Non-uniform FFT identifies strong
+    presence of activities happening once per day (frequency = 366), twice per day
+    (frequency = 732), and once per minute (frequency = 527040 = 366*24*60).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: We expected the frequency analysis to show strong daily cycles. In [Figure 22.10](text00004.html#filepos0001153202)
+    , we expect amplitude for frequency 365 to be large. However, we see the highest
+    amplitude was for the frequency of 366\. This can be explained because 2012 was
+    a leap year. This is a validation that the non-uniform FFT is capturing the expected
+    signals. The second- and third-highest amplitudes have the frequencies of 732
+    and 52, which are twice-a-day and once-a-week. These are also unsurprising.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We additionally applied the non-uniform FFT on the trading volumes and found
+    further evidence of algorithmic trading. Moreover, the signals pointed to a stronger
+    presence of algorithmic trading in recent years. Clearly, the non-uniform FFT
+    algorithm is useful for analyzing highly irregular time series.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.7 Summary and Call for Participation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Currently, there are two primary ways to construct large-scale computing platforms:
+    the HPC approach and the cloud approach. Most of the scientific computing efforts
+    use the HPC approach, while most of the business computing needs are satisfied
+    through the cloud approach. The conventional wisdom is that the HPC approach occupies
+    a small niche of little consequence. This is not true. HPC systems are essential
+    to the progress of scientific research. They played important roles in exciting
+    new scientific discoveries including the Higgs particle and gravitational waves.
+    They have spurred the development of new subjects of study, such as behavioral
+    economics, and new ways of conducting commerce through the Internet. The usefulness
+    of extremely large HPC systems has led to the 2015 National Strategic Computing
+    Initiative. ^([3](text00004.html#filepos0001169777))'
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are efforts to make HPC tools even more useful by accelerating their adoption
+    in business applications. The HPC4Manufacturing ^([4](text00004.html#filepos0001170487))
+    effort is pioneering this knowledge transfer to the U.S. manufacturing industry,
+    and has attracted considerable attention. Now is the time to make a more concerted
+    push for HPC to meet other critical business needs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In recent years, we have developed CIFT as a broad class of business applications
+    that could benefit from the HPC tools and techniques. In decisions such as how
+    to respond to a voltage fluctuation in a power transformer and an early warning
+    signal of impending market volatility event, HPC software tools could help determine
+    the signals early enough for decision makers, provide sufficient confidence about
+    the prediction, and anticipate the consequence before the catastrophic event arrives.
+    These applications have complex computational requirements and often have a stringent
+    demand on response time as well. HPC tools are better suited to meet these requirements
+    than cloud-based tools.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In our work, we have demonstrated that the HPC I/O library HDF5 can be used
+    to accelerate the data access speed by 21-fold, and HPC techniques can accelerate
+    the computation of the Flash Crash early-warning indicator VPIN by 720-fold. We
+    have developed additional algorithms that enable us to predict the daily peak
+    electricity usage years into the future. We anticipate that applying HPC tools
+    and techniques to other applications could achieve similarly significant results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In addition to the performance advantages mentioned above, a number of published
+    studies (Yelick et al. [2011], Holzman et al. [2017]) show HPC systems to have
+    a significant price advantage as well. Depending on the workload's requirement
+    on CPU, storage, and networking, using a cloud system might cost 50% more than
+    using a HPC system, and, in some cases, as much as seven times more. For the complex
+    analytical tasks described in this book, with their constant need to ingest data
+    for analysis, we anticipate the cost advantage will continue to be large.
+  prefs: []
+  type: TYPE_NORMAL
+- en: CIFT is expanding the effort to transfer HPC technology to private companies,
+    so that they can also benefit from the price and performance advantages enjoyed
+    by large-scale research facilities. Our earlier collaborators have provided the
+    funds to start a dedicated HPC system for our work. This resource should make
+    it considerably easier for interested parties to try out their applications on
+    an HPC system. We are open to different forms of collaborations. For further information
+    regarding CIFT, please visit CIFT's web page at [http://crd.lbl.gov/cift/](http://crd.lbl.gov/cift/)
+    .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**22.8 Acknowledgments**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The CIFT project is the brainchild of Dr. David Leinweber. Dr. Horst Simon brought
+    it to LBNL in 2010\. Drs. E. W. Bethel and D. Bailey led the project for four
+    years.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The CIFT project has received generous gifts from a number of donors. This work
+    is supported in part by the Office of Advanced Scientific Computing Research,
+    Office of Science, of the U.S. Department of Energy under Contract No. DE-AC02-05CH11231\.
+    This research also uses resources of the National Energy Research Scientific Computing
+    Center supported under the same contract.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**References**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Aad, G., et al. (2016): “Measurements of the Higgs boson production and decay
+    rates and coupling strengths using *pp* collision data at ![](Image00782.jpg)
+    and 8 TeV in the ATLAS experiment.” *The European Physical Journal C* , Vol. 76,
+    No. 1, p. 6.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Abbott, B.P. et al. (2016): “Observation of gravitational waves from a binary
+    black hole merger.” *Physical Review Letters* , Vol. 116, No. 6, p. 061102.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Armbrust, M., et al. (2010): “A view of cloud computing.” *Communications of
+    the ACM* , Vol. 53, No. 4, pp. 50–58.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Asanovic, K. et al. (2006): “The landscape of parallel computing research:
+    A view from Berkeley.” *Technical Report UCB/EECS-2006-183* , EECS Department,
+    University of California, Berkeley.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Ayachit, U. et al. “Performance analysis, design considerations, and applications
+    of extreme-scale in situ infrastructures.” Proceedings of the International Conference
+    for High Performance Computing, Networking, Storage and Analysis. IEEE Press.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bethel, E. W. et al. (2011): “Federal market information technology in the
+    post Flash Crash era: Roles for supercomputing.” Proceedings of WHPCF''2011\.
+    ACM. pp. 23–30.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bloom, J. S. et al. (2012): “Automating discovery and classification of transients
+    and variable stars in the synoptic survey era.” *Publications of the Astronomical
+    Society of the Pacific* , Vol. 124, No. 921, p. 1175.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Camerer, C.F. and G. Loewenstein (2011): “Behavioral economics: Past, present,
+    future.” In *Advances in Behavioral Economics* , pp. 1–52.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Chen, L. et al. (2015): “Profiling and understanding virtualization overhead
+    in cloud.” *Parallel Processing (ICPP)* , 2015 44th International Conference.
+    IEEE.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Choi, J.Y. et al. (2013): ICEE: “Wide-area in transit data processing framework
+    for near real-time scientific applications.” 4th SC Workshop on Petascale (Big)
+    Data Analytics: Challenges and Opportunities in Conjunction with SC13.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Dong, Y. et al. (2012): “High performance network virtualization with SR-IOV.”
+    *Journal of Parallel and Distributed Computing* , Vol. 72, No. 11, pp. 1471–1480.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Easley, D., M. Lopez de Prado, and M. O''Hara (2011): “The microstructure of
+    the ‘Flash Crash’: Flow toxicity, liquidity crashes and the probability of informed
+    trading.” *Journal of Portfolio Management* , Vol. 37, No. 2, pp. 118–128.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Folk, M. et al. (2011): “An overview of the HDF5 technology suite and its applications.”
+    Proceedings of the EDBT/ICDT 2011 Workshop on Array Databases. ACM.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Fox, G. et al. (2015): “Big Data, simulations and HPC convergence, iBig Data
+    benchmarking”: 6th International Workshop, WBDB 2015, Toronto, ON, Canada, June
+    16–17, 2015; and 7th International Workshop, WBDB 2015, New Delhi, India, December
+    14–15, 2015, Revised Selected Papers, T. Rabl, et al., eds. 2016, Springer International
+    Publishing: Cham. pp. 3–17\. DOI: 10.1007/978-3-319-49748-8_1.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Ghemawat, S., H. Gobioff, and S.-T. Leung (2003): “The Google file system,”
+    *SOSP ''03: Proceedings of the nineteenth ACM symposium on operating systems principles*
+    . ACM. pp. 29–43.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Gordon, A. et al. (2012): “ELI: Bare-metal performance for I/O virtualization.”
+    *SIGARCH Comput. Archit. News* , Vol. 40, No. 1, pp. 411–422.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Gropp, W., E. Lusk, and A. Skjellum (1999): *Using MPI: Portable Parallel Programming
+    with the Message-Passing Interface* . MIT Press.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hey, T., S. Tansley, and K.M. Tolle (2009): *The Fourth Paradigm: Data-Intensive
+    Scientific Discovery* . Vol. 1\. Microsoft research Redmond, WA.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hirschman, A. O. (1980): *National Power and the Structure of Foreign Trade*
+    . Vol. 105\. University of California Press.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Holzman, B. et al. (2017): “HEPCloud, a new paradigm for HEP facilities: CMS
+    Amazon Web Services investigation. *Computing and Software for Big Science* ,
+    Vol. 1, No. 1, p. 1.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Jackson, K. R., et al. (2010): “Performance analysis of high performance computing
+    applications on the Amazon Web Services Cloud. *Cloud Computing Technology and
+    Science (CloudCom)* . 2010 Second International Conference. IEEE.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Kim, T. et al. (2015): “Extracting baseline electricity usage using gradient
+    tree boosting.” IEEE International Conference on Smart City/SocialCom/SustainCom
+    (SmartCity). IEEE.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Kumar, V. et al. (1994): *Introduction to Parallel Computing: Design and Analysis
+    of Algorithms* . Benjamin/Cummings Publishing Company.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Liu, Q. et al., (2014): “Hello ADIOS: The challenges and lessons of developing
+    leadership class I/O frameworks.” *Concurrency and Computation: Practice and Experience*
+    , Volume 26, No. 7, pp. 1453–1473.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'National Academies of Sciences, Engineering and Medicine (2016): *Future Directions
+    for NSF Advanced Computing Infrastructure to Support U.S. Science and Engineering
+    in 2017–2020* . National Academies Press.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Nicholas, M. L. et al. (2009): “The Palomar transient factory: System overview,
+    performance, and first results.” *Publications of the Astronomical Society of
+    the Pacific* , Vol. 121, No. 886, p. 1395.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Qiu, J. et al. (2016): “A survey of machine learning for big data processing.”
+    *EURASIP Journal on Advances in Signal Processing* , Vol. 2016, No. 1, p. 67\.
+    DOI: 10.1186/s13634-016-0355-x'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Rudin, C. and K. L. Wagstaff (2014) “Machine learning for science and society.”
+    *Machine Learning* , Vol. 95, No. 1, pp. 1–9.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Shoshani, A. and D. Rotem (2010): “Scientific data management: Challenges,
+    technology, and deployment.” *Chapman & Hall/CRC Computational Science Series*
+    . CRC Press.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Snir, M. et al. (1998): *MPI: The Complete Reference. Volume 1, The MPI-1 Core*
+    . MIT Press.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Song, J. H. et al. (2014): “Exploring irregular time series through non-uniform
+    fast Fourier transform.” Proceedings of the 7th Workshop on High Performance Computational
+    Finance, IEEE Press.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Todd, A. et al. (2014): “Insights from Smart Meters: The potential for peak
+    hour savings from behavior-based programs.” Lawrence Berkeley National Laboratory.
+    Available at [https://www4.eere.energy.gov/seeaction/system/files/documents/smart_meters.pdf](https://www4.eere.energy.gov/seeaction/system/files/documents/smart_meters.pdf)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Wu, K. et al. (2013): “A big data approach to analyzing market volatility.”
+    *Algorithmic Finance* . Vol. 2, No. 3, pp. 241–267.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Wu, L. et al. (2016): “Towards real-time detection and tracking of spatio-temporal
+    features: Blob-filaments in fusion plasma. *IEEE Transactions on Big Data* , Vol.
+    2, No. 3, pp. 262–275.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Yan, J. et al. (2009): “How much can behavioral targeting help online advertising?”
+    Proceedings of the 18th international conference on world wide web. ACM. pp. 261–270.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Yelick, K., et al. (2011): “The Magellan report on cloud computing for science.”
+    U.S. Department of Energy, Office of Science.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Zeff, R.L. and B. Aronson (1999): *Advertising on the Internet* . John Wiley
+    & Sons.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Notes**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([1](text00004.html#filepos0001101859))    NERSC is a National User Facility
+    funded by U.S. Department of Energy, located at LBNL. More information about NERSC
+    can be found at [http://nersc.gov/](http://nersc.gov/) .
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([2](text00004.html#filepos0001121679))    The HDF Group web site is [https://www.hdfgroup.org/](https://www.hdfgroup.org/)
+    .
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([3](text00004.html#filepos0001155611))    The National Strategic Computing
+    Initiative plan is available online at [https://www.whitehouse.gov/ sites/whitehouse.gov/files/images/NSCI%20Strategic%20Plan.pdf](https://www.whitehouse.gov/sites/whitehouse.gov/files/images/NSCI%20Strategic%20Plan.pdf)
+    . The Wikipedia page on this topic ( [https://en.wikipedia.org/wiki/National_Strategic_Computing_Initiative](https://en.wikipedia.org/wiki/National_Strategic_Computing_Initiative)
+    ) also has some useful links to additional information.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([4](text00004.html#filepos0001155909))    Information about HPC4Manufacturing
+    is available online at [https://hpc4mfg.llnl.gov/](https://hpc4mfg.llnl.gov/)
+    .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '# 读累了记得休息一会哦~'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**公众号：古德猫宁李**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 电子书搜索下载
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 书单分享
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 书友学习交流
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**网站：**[沉金书屋 https://www.chenjin5.com](https://www.chenjin5.com)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 电子书搜索下载
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 电子书打包资源分享
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 学习资源分享
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL

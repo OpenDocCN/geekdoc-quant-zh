@@ -1,0 +1,3995 @@
+- en: '**3.5 Learning Side and Size**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this section we will discuss how to label examples so that an ML algorithm
+    can learn both the side and the size of a bet. We are interested in learning the
+    side of a bet when we do not have an underlying model to set the sign of our position
+    (long or short). Under such circumstance, we cannot differentiate between a profit-taking
+    barrier and a stop-loss barrier, since that requires knowledge of the side. Learning
+    the side implies that either there are no horizontal barriers or that the horizontal
+    barriers must be symmetric.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Snippet 3.3 implements the function `getEvents` , which finds the time of the
+    first barrier touch. The function receives the following arguments:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`close` : A pandas series of prices.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`tEvents` : The pandas timeindex containing the timestamps that will seed every
+    triple barrier. These are the timestamps selected by the sampling procedures discussed
+    in Chapter 2, Section 2.5.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`ptSl` : A non-negative float that sets the width of the two barriers. A 0
+    value means that the respective horizontal barrier (profit taking and/or stop
+    loss) will be disabled.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`t1` : A pandas series with the timestamps of the vertical barriers. We pass
+    a `False` when we want to disable vertical barriers.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`trgt` : A pandas series of targets, expressed in terms of absolute returns.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`minRet` : The minimum target return required for running a triple barrier
+    search.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`numThreads` : The number of threads concurrently used by the function.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**SNIPPET 3.3 GETTING THE TIME OF FIRST TOUCH**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00624.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Suppose that *I* = 1 *E* 6 and *h* = 1 *E* 3, then the number of conditions
+    to evaluate is up to one billion on a single instrument. Many ML tasks are computationally
+    expensive unless you are familiar with multi-threading, and this is one of them.
+    Here is where parallel computing comes into play. Chapter 20 discusses a few multiprocessing
+    functions that we will use throughout the book.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Function `mpPandasObj` calls a multiprocessing engine, which is explained in
+    depth in Chapter 20\. For the moment, you simply need to know that this function
+    will execute `applyPtSlOnT1` in parallel. Function `applyPtSlOnT1` returns the
+    timestamps at which each barrier is touched (if any). Then, the time of the first
+    touch is the earliest time among the three returned by `applyPtSlOnT1` . Because
+    we must learn the side of the bet, we have passed `ptSl = [ptSl,ptSl]` as argument,
+    and we arbitrarily set the side to be always long (the horizontal barriers are
+    symmetric, so the side is irrelevant to determining the time of the first touch).
+    The output from this function is a pandas dataframe with columns:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`t1` : The timestamp at which the first barrier is touched.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`trgt` : The target that was used to generate the horizontal barriers.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Snippet 3.4 shows one way to define a vertical barrier. For each index in `tEvents`
+    , it finds the timestamp of the next price bar at or immediately after a number
+    of days `numDays` . This vertical barrier can be passed as optional argument `t1`
+    in `getEvents` .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 3.4 ADDING A VERTICAL BARRIER**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00625.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: 'Finally, we can label the observations using the `getBins` function defined
+    in Snippet 3.5\. The arguments are the `events` dataframe we just discussed, and
+    the `close` pandas series of prices. The output is a dataframe with columns:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`ret` : The return realized at the time of the first touched barrier.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`bin` : The label, { − 1, 0, 1}, as a function of the sign of the outcome.
+    The function can be easily adjusted to label as 0 those events when the vertical
+    barrier was touched first, which we leave as an exercise.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**SNIPPET 3.5 LABELING FOR SIDE AND SIZE**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00628.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**3.6 Meta-Labeling**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suppose that you have a model for setting the side of the bet (long or short).
+    You just need to learn the size of that bet, which includes the possibility of
+    no bet at all (zero size). This is a situation that practitioners face regularly.
+    We often know whether we want to buy or sell a product, and the only remaining
+    question is how much money we should risk in such a bet. We do not want the ML
+    algorithm to learn the side, just to tell us what is the appropriate size. At
+    this point, it probably does not surprise you to hear that no book or paper has
+    so far discussed this common problem. Thankfully, that misery ends here. I call
+    this problem meta-labeling because we want to build a secondary ML model that
+    learns how to use a primary exogenous model.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Rather than writing an entirely new `getEvents` function, we will make some
+    adjustments to the previous code, in order to handle meta-labeling. First, we
+    accept a new `side` optional argument (with default `None` ), which contains the
+    side of our bets as decided by the primary model. When `side` is not `None` ,
+    the function understands that meta-labeling is in play. Second, because now we
+    know the side, we can effectively discriminate between profit taking and stop
+    loss. The horizontal barriers do not need to be symmetric, as in Section 3.5\.
+    Argument `ptSl` is a list of two non-negative float values, where `ptSl[0]` is
+    the factor that multiplies `trgt` to set the width of the upper barrier, and `ptSl[1]`
+    is the factor that multiplies `trgt` to set the width of the lower barrier. When
+    either is 0, the respective barrier is disabled. Snippet 3.6 implements these
+    enhancements.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 3.6 EXPANDING** `**GETEVENTS**` **TO INCORPORATE META-LABELING**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00337.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Likewise, we need to expand the `getBins` function, so that it handles meta-labeling.
+    Snippet 3.7 implements the necessary changes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 3.7 EXPANDING** `**GETBINS**` **TO INCORPORATE META-LABELING**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00633.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Now the possible values for labels in `out[‘bin’]` are {0,1}, as opposed to
+    the previous feasible values {−1,0,1}. The ML algorithm will be trained to decide
+    whether to take the bet or pass, a purely binary prediction. When the predicted
+    label is 1, we can use the probability of this secondary prediction to derive
+    the size of the bet, where the side (sign) of the position has been set by the
+    primary model.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**3.7 How to Use Meta-Labeling**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Binary classification problems present a trade-off between type-I errors (false
+    positives) and type-II errors (false negatives). In general, increasing the true
+    positive rate of a binary classifier will tend to increase its false positive
+    rate. The receiver operating characteristic (ROC) curve of a binary classifier
+    measures the cost of increasing the true positive rate, in terms of accepting
+    higher false positive rates.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 3.2](text00001.html#filepos0000256656) illustrates the so-called “confusion
+    matrix.” On a set of observations, there are items that exhibit a condition (positives,
+    left rectangle), and items that do not exhibit a condition (negative, right rectangle).
+    A binary classifier predicts that some items exhibit the condition (ellipse),
+    where the TP area contains the true positives and the TN area contains the true
+    negatives. This leads to two kinds of errors: false positives (FP) and false negatives
+    (FN). “Precision” is the ratio between the TP area and the area in the ellipse.
+    “Recall” is the ratio between the TP area and the area in the left rectangle.
+    This notion of recall (aka true positive rate) is in the context of classification
+    problems, the analogous to “power” in the context of hypothesis testing. “Accuracy”
+    is the sum of the TP and TN areas divided by the overall set of items (square).
+    In general, decreasing the FP area comes at a cost of increasing the FN area,
+    because higher precision typically means fewer calls, hence lower recall. Still,
+    there is some combination of precision and recall that maximizes the overall efficiency
+    of the classifier. The F1-score measures the efficiency of a classifier as the
+    harmonic average between precision and recall (more on this in Chapter 14).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00637.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 3.2**](text00001.html#filepos0000255126) A visualization of the “confusion
+    matrix”'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Meta-labeling is particularly helpful when you want to achieve higher F1-scores.
+    First, we build a model that achieves high recall, even if the precision is not
+    particularly high. Second, we correct for the low precision by applying meta-labeling
+    to the positives predicted by the primary model.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Meta-labeling will increase your F1-score by filtering out the false positives,
+    where the majority of positives have already been identified by the primary model.
+    Stated differently, the role of the secondary ML algorithm is to determine whether
+    a positive from the primary (exogenous) model is true or false. It is *not* its
+    purpose to come up with a betting opportunity. Its purpose is to determine whether
+    we should act or pass on the opportunity that has been presented.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Meta-labeling is a very powerful tool to have in your arsenal, for four additional
+    reasons. First, ML algorithms are often criticized as black boxes (see Chapter
+    1). Meta-labeling allows you to build an ML system on top of a white box (like
+    a fundamental model founded on economic theory). This ability to transform a fundamental
+    model into an ML model should make meta-labeling particularly useful to “quantamental”
+    firms. Second, the effects of overfitting are limited when you apply meta-labeling,
+    because ML will not decide the side of your bet, only the size. Third, by decoupling
+    the side prediction from the size prediction, meta-labeling enables sophisticated
+    strategy structures. For instance, consider that the features driving a rally
+    may differ from the features driving a sell-off. In that case, you may want to
+    develop an ML strategy exclusively for long positions, based on the buy recommendations
+    of a primary model, and an ML strategy exclusively for short positions, based
+    on the sell recommendations of an entirely different primary model. Fourth, achieving
+    high accuracy on small bets and low accuracy on large bets will ruin you. As important
+    as identifying good opportunities is to size them properly, so it makes sense
+    to develop an ML algorithm solely focused on getting that critical decision (sizing)
+    right. We will retake this fourth point in Chapter 10\. In my experience, meta-labeling
+    ML models can deliver more robust and reliable outcomes than standard labeling
+    models.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**3.8 The Quantamental Way**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: You may have read in the press that many hedge funds are embracing the quantamental
+    approach. A simple Google search will show reports that many hedge funds, including
+    some of the most traditional ones, are investing tens of millions of dollars in
+    technologies designed to combine human expertise with quantitative methods. It
+    turns out, meta-labeling is exactly what these people have been waiting for. Let
+    us see why.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Suppose that you have a series of features that you believe can forecast some
+    prices, you just do not know how. Since you do not have a model to determine the
+    side of each bet, you need to learn both side and size. You apply what you have
+    learned in Section 3.5, and produce some labels based on the triple-barrier method
+    with symmetric horizontal barriers. Now you are ready to fit your algorithm on
+    a training set, and evaluate the accuracy of your forecasts on a testing set.
+    Alternatively, you could do the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Use your forecasts from the primary model, and generate meta-labels. Remember,
+    horizontal barriers do not need to be symmetric in this case.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Fit your model again on the same training set, but this time using the meta-labels
+    you just generated.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Combine the “sides” from the first ML model with the “sizes” from the second
+    ML model.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: You can always add a meta-labeling layer to any primary model, whether that
+    is an ML algorithm, an econometric equation, a technical trading rule, a fundamental
+    analysis, etc. That includes forecasts generated by a human, solely based on his
+    intuition. In that case, meta-labeling will help us figure out when we should
+    pursue or dismiss a discretionary PM's call. The features used by such meta-labeling
+    ML algorithm could range from market information to biometric statistics to psychological
+    assessments. For example, the meta-labeling ML algorithm could find that discretionary
+    PMs tend to make particularly good calls when there is a structural break (Chapter
+    17), as they may be quicker to grasp a change in the market regime. Conversely,
+    it may find that PMs under stress, as evidenced by fewer hours of sleep, fatigue,
+    change in weight, etc. tend to make inaccurate predictions. ^([1](text00001.html#filepos0000278970))
+    Many professions require regular psychological exams, and an ML meta-labeling
+    algorithm may find that those scores are also relevant to assess our current degree
+    of confidence on a PM's predictions. Perhaps none of these factors affect discretionary
+    PMs, and their brains operate independently from their emotional being, like cold
+    calculating machines. My guess is that this is not the case, and therefore meta-labeling
+    should become an essential ML technique for every discretionary hedge fund. In
+    the near future, every discretionary hedge fund will become a quantamental firm,
+    and meta-labeling offers them a clear path to make that transition.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**3.9 Dropping Unnecessary Labels**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Some ML classifiers do not perform well when classes are too imbalanced. In
+    those circumstances, it is preferable to drop extremely rare labels and focus
+    on the more common outcomes. Snippet 3.8 presents a procedure that recursively
+    drops observations associated with extremely rare labels. Function `dropLabels`
+    recursively eliminates those observations associated with classes that appear
+    less than a fraction `minPct` of cases, unless there are only two classes left.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 3.8 DROPPING UNDER-POPULATED LABELS**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00640.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: 'Incidentally, another reason you may want to drop unnecessary labels is this
+    known sklearn bug: [https://github.com/scikit-learn/scikit-learn/issues/8566](https://github.com/scikit-learn/scikit-learn/issues/8566)
+    . This sort of bug is a consequence of very fundamental assumptions in sklearn
+    implementation, and resolving them is far from trivial. In this particular instance,
+    the error stems from sklearn''s decision to operate with standard numpy arrays
+    rather than structured arrays or pandas objects. It is unlikely that there will
+    be a fix by the time you are reading this chapter, or in the near future. In later
+    chapters, we will study ways to circumvent these sorts of implementation errors,
+    by building your own classes and expanding sklearn''s functionality.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Exercises**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Form dollar bars for E-mini S&P 500 futures:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Apply a symmetric CUSUM filter (Chapter 2, Section 2.5.2.1) where the threshold
+    is the standard deviation of daily returns (Snippet 3.1).
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Use Snippet 3.4 on a pandas series `t1` , where `numDays = 1` .
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: On those sampled features, apply the triple-barrier method, where `ptSl = [1,1]`
+    and `t1` is the series you created in point 1.b.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Apply `getBins` to generate the labels.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: From exercise 1, use Snippet 3.8 to drop rare labels.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Adjust the `getBins` function (Snippet 3.5) to return a 0 whenever the vertical
+    barrier is the one touched first.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Develop a trend-following strategy based on a popular technical analysis statistic
+    (e.g., crossing moving averages). For each observation, the model suggests a side,
+    but not a size of the bet.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Derive meta-labels for `ptSl = [1,2]` and `t1` where `numDays = 1` . Use as
+    `trgt` the daily standard deviation as computed by Snippet 3.1.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Train a random forest to decide whether to trade or not. Note: The decision
+    is whether to trade or not, {0,1}, since the underlying model (the crossing moving
+    average) has decided the side, {−1,1}.'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Develop a mean-reverting strategy based on Bollinger bands. For each observation,
+    the model suggests a side, but not a size of the bet.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Derive meta-labels for `ptSl = [0,2]` and `t1` where `numDays = 1` . Use as
+    `trgt` the daily standard deviation as computed by Snippet 3.1.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Train a random forest to decide whether to trade or not. Use as features: volatility,
+    serial correlation, and the crossing moving averages from exercise 2.'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What is the accuracy of predictions from the primary model (i.e., if the secondary
+    model does not filter the bets)? What are the precision, recall, and F1-scores?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What is the accuracy of predictions from the secondary model? What are the precision,
+    recall, and F1-scores?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Bibliography**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Ahmed, N., A. Atiya, N. Gayar, and H. El-Shishiny (2010): “An empirical comparison
+    of machine learning models for time series forecasting.” *Econometric Reviews*
+    , Vol. 29, No. 5–6, pp. 594–621.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Ballings, M., D. van den Poel, N. Hespeels, and R. Gryp (2015): “Evaluating
+    multiple classifiers for stock price direction prediction.” *Expert Systems with
+    Applications* , Vol. 42, No. 20, pp. 7046–7056.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bontempi, G., S. Taieb, and Y. Le Borgne (2012): “Machine learning strategies
+    for time series forecasting.” *Lecture Notes in Business Information Processing*
+    , Vol. 138, No. 1, pp. 62–77.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Booth, A., E. Gerding and F. McGroarty (2014): “Automated trading with performance
+    weighted random forests and seasonality.” *Expert Systems with Applications* ,
+    Vol. 41, No. 8, pp. 3651–3661.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Cao, L. and F. Tay (2001): “Financial forecasting using support vector machines.”
+    *Neural Computing & Applications* , Vol. 10, No. 2, pp. 184–192.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Cao, L., F. Tay and F. Hock (2003): “Support vector machine with adaptive parameters
+    in financial time series forecasting.” *IEEE Transactions on Neural Networks*
+    , Vol. 14, No. 6, pp. 1506–1518.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Cervelló-Royo, R., F. Guijarro, and K. Michniuk (2015): “Stock market trading
+    rule based on pattern recognition and technical analysis: Forecasting the DJIA
+    index with intraday data.” *Expert Systems with Applications* , Vol. 42, No. 14,
+    pp. 5963–5975.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Chang, P., C. Fan and J. Lin (2011): “Trend discovery in financial time series
+    data using a case-based fuzzy decision tree.” *Expert Systems with Applications*
+    , Vol. 38, No. 5, pp. 6070–6080.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Kuan, C. and L. Tung (1995): “Forecasting exchange rates using feedforward
+    and recurrent neural networks.” *Journal of Applied Econometrics* , Vol. 10, No.
+    4, pp. 347–364.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Creamer, G. and Y. Freund (2007): “A boosting approach for automated trading.”
+    *Journal of Trading* , Vol. 2, No. 3, pp. 84–96.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Creamer, G. and Y. Freund (2010): “Automated trading with boosting and expert
+    weighting.” *Quantitative Finance* , Vol. 10, No. 4, pp. 401–420.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Creamer, G., Y. Ren, Y. Sakamoto, and J. Nickerson (2016): “A textual analysis
+    algorithm for the equity market: The European case.” *Journal of Investing* ,
+    Vol. 25, No. 3, pp. 105–116.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Dixon, M., D. Klabjan, and J. Bang (2016): “Classification-based financial
+    markets prediction using deep neural networks.” *Algorithmic Finance* , forthcoming
+    (2017). Available at SSRN: [https://ssrn.com/abstract=2756331](https://ssrn.com/abstract=2756331)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Dunis, C., and M. Williams (2002): “Modelling and trading the euro/US dollar
+    exchange rate: Do neural network models perform better?” *Journal of Derivatives
+    & Hedge Funds* , Vol. 8, No. 3, pp. 211–239.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Feuerriegel, S. and H. Prendinger (2016): “News-based trading strategies.”
+    *Decision Support Systems* , Vol. 90, pp. 65–74.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hsu, S., J. Hsieh, T. Chih, and K. Hsu (2009): “A two-stage architecture for
+    stock price forecasting by integrating self-organizing map and support vector
+    regression.” *Expert Systems with Applications* , Vol. 36, No. 4, pp. 7947–7951.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Huang, W., Y. Nakamori, and S. Wang (2005): “Forecasting stock market movement
+    direction with support vector machine.” *Computers & Operations Research* , Vol.
+    32, No. 10, pp. 2513–2522.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Kara, Y., M. Boyacioglu, and O. Baykan (2011): “Predicting direction of stock
+    price index movement using artificial neural networks and support vector machines:
+    The sample of the Istanbul Stock Exchange.” *Expert Systems with Applications*
+    , Vol. 38, No. 5, pp. 5311–5319.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Kim, K. (2003): “Financial time series forecasting using support vector machines.”
+    *Neurocomputing* , Vol. 55, No. 1, pp. 307–319.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Krauss, C., X. Do, and N. Huck (2017): “Deep neural networks, gradient-boosted
+    trees, random forests: Statistical arbitrage on the S&P 500.” *European Journal
+    of Operational Research* , Vol. 259, No. 2, pp. 689–702.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Laborda, R. and J. Laborda (2017): “Can tree-structured classifiers add value
+    to the investor?” *Finance Research Letters* , Vol. 22 (August), pp. 211–226.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Nakamura, E. (2005): “Inflation forecasting using a neural network.” *Economics
+    Letters* , Vol. 86, No. 3, pp. 373–378.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Olson, D. and C. Mossman (2003): “Neural network forecasts of Canadian stock
+    returns using accounting ratios.” *International Journal of Forecasting* , Vol.
+    19, No. 3, pp. 453–465.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Patel, J., S. Sha, P. Thakkar, and K. Kotecha (2015): “Predicting stock and
+    stock price index movement using trend deterministic data preparation and machine
+    learning techniques.” *Expert Systems with Applications* , Vol. 42, No. 1, pp.
+    259–268.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Patel, J., S. Sha, P. Thakkar, and K. Kotecha (2015): “Predicting stock market
+    index using fusion of machine learning techniques.” *Expert Systems with Applications*
+    , Vol. 42, No. 4, pp. 2162–2172.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Qin, Q., Q. Wang, J. Li, and S. Shuzhi (2013): “Linear and nonlinear trading
+    models with gradient boosted random forests and application to Singapore Stock
+    Market.” *Journal of Intelligent Learning Systems and Applications* , Vol. 5,
+    No. 1, pp. 1–10.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Sorensen, E., K. Miller, and C. Ooi (2000): “The decision tree approach to
+    stock selection.” *Journal of Portfolio Management* , Vol. 27, No. 1, pp. 42–52.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Theofilatos, K., S. Likothanassis, and A. Karathanasopoulos (2012): “Modeling
+    and trading the EUR/USD exchange rate using machine learning techniques.” *Engineering,
+    Technology & Applied Science Research* , Vol. 2, No. 5, pp. 269–272.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Trafalis, T. and H. Ince (2000): “Support vector machine for regression and
+    applications to financial forecasting.” *Neural Networks* , Vol. 6, No. 1, pp.
+    348–353.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Trippi, R. and D. DeSieno (1992): “Trading equity index futures with a neural
+    network.” *Journal of Portfolio Management* , Vol. 19, No. 1, pp. 27–33.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Tsai, C. and S. Wang (2009): “Stock price forecasting by hybrid machine learning
+    techniques.” *Proceedings of the International Multi-Conference of Engineers and
+    Computer Scientists* , Vol. 1, No. 1, pp. 755–760.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Tsai, C., Y. Lin, D. Yen, and Y. Chen (2011): “Predicting stock returns by
+    classifier ensembles.” *Applied Soft Computing* , Vol. 11, No. 2, pp. 2452–2459.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Wang, J. and S. Chan (2006): “Stock market trading rule discovery using two-layer
+    bias decision tree.” *Expert Systems with Applications* , Vol. 30, No. 4, pp.
+    605–611.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Wang, Q., J. Li, Q. Qin, and S. Ge (2011): “Linear, adaptive and nonlinear
+    trading models for Singapore Stock Market with random forests.” Proceedings of
+    the 9th IEEE International Conference on Control and Automation, pp. 726–731.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Wei, P. and N. Wang (2016): “Wikipedia and stock return: Wikipedia usage pattern
+    helps to predict the individual stock movement.” Proceedings of the 25th International
+    Conference Companion on World Wide Web, Vol. 1, pp. 591–594.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](Image00642.jpg) bikowski, K. (2015): “Using volume weighted support vector
+    machines with walk forward testing and feature selection for the purpose of creating
+    stock trading strategy.” *Expert Systems with Applications* , Vol. 42, No. 4,
+    pp. 1797–1805.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Zhang, G., B. Patuwo, and M. Hu (1998): “Forecasting with artificial neural
+    networks: The state of the art.” *International Journal of Forecasting* , Vol.
+    14, No. 1, pp. 35–62.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Zhu, M., D. Philpotts and M. Stevenson (2012): “The benefits of tree-based
+    models for stock selection.” *Journal of Asset Management* , Vol. 13, No. 6, pp.
+    437–448.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Zhu, M., D. Philpotts, R. Sparks, and J. Stevenson, Maxwell (2011): “A hybrid
+    approach to combining CART and logistic regression for stock ranking.” *Journal
+    of Portfolio Management* , Vol. 38, No. 1, pp. 100–109.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Note**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([1](text00001.html#filepos0000262020))    You are probably aware of at least
+    one large hedge fund that monitors the emotional state of their research analysts
+    on a daily basis.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**CHAPTER 4**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Sample Weights**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**4.1 Motivation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Chapter 3 presented several new methods for labeling financial observations.
+    We introduced two novel concepts, the triple-barrier method and meta-labeling,
+    and explained how they are useful in financial applications, including quantamental
+    investment strategies. In this chapter you will learn how to use sample weights
+    to address another problem ubiquitous in financial applications, namely that observations
+    are not generated by independent and identically distributed (IID) processes.
+    Most of the ML literature is based on the IID assumption, and one reason many
+    ML applications fail in finance is because those assumptions are unrealistic in
+    the case of financial time series.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**4.2 Overlapping Outcomes**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In Chapter 3 we assigned a label *y [*i*]* to an observed feature *X [*i*]*
+    , where *y [*i*]* was a function of price bars that occurred over an interval
+    [ *t [*i* , 0]* , *t [*i* , 1]* ]. When *t [*i* , 1]* > *t [*j* , 0]* and *i*
+    < *j* , then *y [*i*]* and *y [*j*]* will both depend on a common return ![](Image00644.jpg)
+    , that is, the return over the interval [ *t [*j*  , 0] * , min{ *t [*i*  , 1]
+    * , *t [*j*  , 1] * }]. The implication is that the series of labels, { *y [*i*]
+    * } [*i*  = 1, …,  *I*] , are not IID whenever there is an overlap between any
+    two consecutive outcomes, ∃ *i* | *t [*i*  , 1] * > *t [*i*  + 1, 0] * ..
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suppose that we circumvent this problem by restricting the bet horizon to *t
+    [*i* , 1]* ≤ *t [*i* + 1, 0]* . In this case there is no overlap, because every
+    feature outcome is determined before or at the onset of the next observed feature.
+    That would lead to coarse models where the features’ sampling frequency would
+    be limited by the horizon used to determine the outcome. On one hand, if we wished
+    to investigate outcomes that lasted a month, features would have to be sampled
+    with a frequency up to monthly. On the other hand, if we increased the sampling
+    frequency to let's say daily, we would be forced to reduce the outcome's horizon
+    to one day. Furthermore, if we wished to apply a path-dependent labeling technique,
+    like the triple-barrier method, the sampling frequency would be subordinated to
+    the first barrier's touch. No matter what you do, restricting the outcome's horizon
+    to eliminate overlaps is a terrible solution. We must allow *t [*i* , 1]* > *t
+    [*i* + 1, 0]* , which brings us back to the problem of overlapping outcomes described
+    earlier.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This situation is characteristic of financial applications. Most non-financial
+    ML researchers can assume that observations are drawn from IID processes. For
+    example, you can obtain blood samples from a large number of patients, and measure
+    their cholesterol. Of course, various underlying common factors will shift the
+    mean and standard deviation of the cholesterol distribution, but the samples are
+    still independent: There is one observation per subject. Suppose you take those
+    blood samples, and someone in your laboratory spills blood from each tube into
+    the following nine tubes to their right. That is, tube 10 contains blood for patient
+    10, but also blood from patients 1 through 9\. Tube 11 contains blood from patient
+    11, but also blood from patients 2 through 10, and so on. Now you need to determine
+    the features predictive of high cholesterol (diet, exercise, age, etc.), without
+    knowing for sure the cholesterol level of each patient. That is the equivalent
+    challenge that we face in financial ML, with the additional handicap that the
+    spillage pattern is non-deterministic and unknown. Finance is not a plug-and-play
+    subject as it relates to ML applications. Anyone who tells you otherwise will
+    waste your time and money.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are several ways to attack the problem of non-IID labels, and in this
+    chapter we will address it by designing sampling and weighting schemes that correct
+    for the undue influence of overlapping outcomes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**4.3 Number of Concurrent Labels**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Two labels *y [*i*]* and *y [*j*]* are concurrent at *t* when both are a function
+    of at least one common return, ![](Image00112.jpg) *.* The overlap does not need
+    to be perfect, in the sense of both labels spanning the same time interval. In
+    this section we are going to compute the number of labels that are a function
+    of a given return, *r [*t*  − 1,  *t*] * . First, for each time point *t* = 1,
+    …, *T* , we form a binary array, {1 [*t*  ,  *i*] } [*i*  = 1, …,  *I*] , where
+    1 [*t*  ,  *i*] ∈ {0, 1}. Variable 1 [*t*  ,  *i*] = 1 if and only if [ *t [*i*  ,
+    0] * , *t [*i*  , 1] * ] overlaps with [ *t* − 1, *t* ] and 1 [*t*  ,  *i*] =
+    0 otherwise. Recall that the labels’ spans {[ *t [*i*  , 0] * , *t [*i*  , 1]
+    * ]} [*i*  = 1, …,  *I*] are defined by the `t1` object introduced in Chapter
+    3\. Second, we compute the number of labels concurrent at *t* , ![](Image00672.jpg)
+    . Snippet 4.1 illustrates an implementation of this logic.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 4.1 ESTIMATING THE UNIQUENESS OF A LABEL**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00682.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**4.4 Average Uniqueness of a Label**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this section we are going to estimate a label's uniqueness (non-overlap)
+    as its average uniqueness over its lifespan. First, the uniqueness of a label
+    *i* at time *t* is *u [*t* , *i*]* = 1 [*t* , *i*] *c ^(− 1) [*t*]* . Second,
+    the average uniqueness of label *i* is the average *u [*t* , *i*]* over the label's
+    lifespan, ![](Image00698.jpg) . This average uniqueness can also be interpreted
+    as the reciprocal of the harmonic average of *c [*t*] * over the event's lifespan.  [
+    Figure 4.1 ](text00001.html#filepos0000290928) plots the histogram of uniqueness
+    values derived from an object `t1` . Snippet 4.2 implements this calculation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00714.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 4.1**](text00001.html#filepos0000290555) Histogram of uniqueness
+    values'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 4.2 ESTIMATING THE AVERAGE UNIQUENESS OF A LABEL**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00732.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Note that we are making use again of the function `mpPandasObj` , which speeds
+    up calculations via multiprocessing (see Chapter 20). Computing the average uniqueness
+    associated with label *i* , ![](Image00750.jpg) , requires information that is
+    not available until a future time, `events['t1']` . This is not a problem, because
+    ![](Image00769.jpg) are used on the training set in combination with label information,
+    and not on the testing set. These ![](Image00788.jpg) are not used for forecasting
+    the label, hence there is no information leakage. This procedure allows us to
+    assign a uniqueness score between 0 and 1 for each observed feature, in terms
+    of non-overlapping outcomes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**4.5 Bagging Classifiers and Uniqueness**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The probability of not selecting a particular item *i* after *I* draws with
+    replacement on a set of *I* items is (1 − *I ^(− 1)* ) ^(*I*) . As the sample
+    size grows, that probability converges to the asymptotic value ![](Image00807.jpg)
+    . That means that the number of unique observations drawn is expected to be ![](Image00824.jpg)
+    .
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suppose that the maximum number of non-overlapping outcomes is *K* ≤ *I* . Following
+    the same argument, the probability of not selecting a particular item *i* after
+    *I* draws with replacement on a set of *I* items is (1 − *K ^(− 1)* ) ^(*I*) .
+    As the sample size grows, that probability can be approximated as ![](Image00499.jpg)
+    . That means that the number of unique observations drawn is expected to be ![](Image00601.jpg)
+    . The implication is that incorrectly assuming IID draws leads to oversampling.
+  prefs: []
+  type: TYPE_NORMAL
+- en: When sampling with replacement (bootstrap) on observations with ![](Image00152.jpg)
+    , it becomes increasingly likely that in-bag observations will be (1) redundant
+    to each other, and (2) very similar to out-of-bag observations. Redundancy of
+    draws makes the bootstrap inefficient (see Chapter 6). For example, in the case
+    of a random forest, all trees in the forest will essentially be very similar copies
+    of a single overfit decision tree. And because the random sampling makes out-of-bag
+    examples very similar to the in-bag ones, out-of-bag accuracy will be grossly
+    inflated. We will address this second issue in Chapter 7, when we study cross-validation
+    under non-IID observations. For the moment, let us concentrate on the first issue,
+    namely bagging under observations where ![](Image00773.jpg) *.*
+  prefs: []
+  type: TYPE_NORMAL
+- en: A first solution is to drop overlapping outcomes before performing the bootstrap.
+    Because overlaps are not perfect, dropping an observation just because there is
+    a partial overlap will result in an extreme loss of information. I do not advise
+    you to follow this solution.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A second and better solution is to utilize the average uniqueness, ![](Image00010.jpg)
+    , to reduce the undue influence of outcomes that contain redundant information.
+    Accordingly, we could sample only a fraction `out['tW'].mean()` of the observations,
+    or a small multiple of that. In sklearn, the `sklearn.ensemble.BaggingClassifier`
+    class accepts an argument `max_samples` , which can be set to `max_samples=out['tW'].mean()`
+    . In this way, we enforce that the in-bag observations are not sampled at a frequency
+    much higher than their uniqueness. Random forests do not offer that `max_samples`
+    functionality, however, a solution is to bag a large number of decision trees.
+    We will discuss this solution further in Chapter 6.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**4.5.1 Sequential Bootstrap**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A third and better solution is to perform a sequential bootstrap, where draws
+    are made according to a changing probability that controls for redundancy. Rao
+    et al. [1997] propose sequential resampling with replacement until *K* distinct
+    original observations appear. Although interesting, their scheme does not fully
+    apply to our financial problem. In the following sections we introduce an alternative
+    method that addresses directly the problem of overlapping outcomes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: First, an observation *X [*i*]* is drawn from a uniform distribution, *i* ∼
+    *U* [1, *I* ], that is, the probability of drawing any particular value *i* is
+    originally δ ^((1)) [*i*] = *I ^(− 1)* . For the second draw, we wish to reduce
+    the probability of drawing an observation *X [*j*]* with a highly overlapping
+    outcome. Remember, a bootstrap allows sampling with repetition, so it is still
+    possible to draw *X [*i*]* again, but we wish to reduce its likelihood, since
+    there is an overlap (in fact, a perfect overlap) between *X [*i*]* and itself.
+    Let us denote as φ the sequence of draws so far, which may include repetitions.
+    Until now, we know that φ ^((1)) = { *i* }. The uniqueness of *j* at time *t*
+    is ![](Image00160.jpg) , as that is the uniqueness that results from adding alternative
+    *j* ’s to the existing sequence of draws φ ^((1)) . The average uniqueness of
+    *j* is the average *u ^((2)) [   *t*  ,  *j*   ] * over *j* ’s lifespan, ![](Image00191.jpg)
+    . We can now make a second draw based on the updated probabilities {δ ^((2)) [   *j*   ]
+    } [*j*  = 1, …,  *I*] ,
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00165.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where {δ ^((2)) [*j*] } [*j* = 1, .., *I*] are scaled to add up to 1, ![](Image00135.jpg)
+    *.* We can now do a second draw, update φ ^((2)) and re-evaluate {δ ^((3)) [   *j*   ]
+    } [*j*  = 1, …,  *I*] . The process is repeated until *I* draws have taken place.
+    This sequential bootstrap scheme has the advantage that overlaps (even repetitions)
+    are still possible, but decreasingly likely. The sequential bootstrap sample will
+    be much closer to IID than samples drawn from the standard bootstrap method. This
+    can be verified by measuring an increase in ![](Image00153.jpg) , relative to
+    the standard bootstrap method.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**4.5.2 Implementation of Sequential Bootstrap**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Snippet 4.3 derives an indicator matrix from two arguments: the index of bars
+    ( `barIx` ), and the pandas Series `t1` , which we used multiple times in Chapter
+    3\. As a reminder, `t1` is defined by an index containing the time at which the
+    features are observed, and a values array containing the time at which the label
+    is determined. The output of this function is a binary matrix indicating what
+    (price) bars influence the label for each observation.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 4.3 BUILD AN INDICATOR MATRIX**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00170.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Snippet 4.4 returns the average uniqueness of each observed feature. The input
+    is the indicator matrix built by `getIndMatrix` .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 4.4 COMPUTE AVERAGE UNIQUENESS**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00629.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Snippet 4.5 gives us the index of the features sampled by sequential bootstrap.
+    The inputs are the indicator matrix ( `indM` ) and an optional sample length (
+    `sLength` ), with a default value of as many draws as rows in `indM` .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 4.5 RETURN SAMPLE FROM SEQUENTIAL BOOTSTRAP**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00706.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**4.5.3 A Numerical Example**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consider a set of labels { *y [*i*]* } [*i* = 1, 2, 3] , where label *y [1]*
+    is a function of return *r [0, 3]* , label *y [2]* is a function of return *r
+    [2, 4]* and label *y [3]* is a function of return *r [4, 6]* . The outcomes’ overlaps
+    are characterized by this indicator matrix {1 [*t* , *i*] },
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00183.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'The procedure starts with φ ^((0)) = ∅, and a uniform distribution of probability,
+    ![](Image00186.jpg) , ∀ *i* = 1, 2, 3 *.* Suppose that we randomly draw a number
+    from {1, 2, 3}, and 2 is selected. Before we make a second draw on {1, 2, 3} (remember,
+    a bootstrap samples with repetition), we need to adjust the probabilities. The
+    set of observations drawn so far is φ ^((1)) = {2}. The average uniqueness for
+    the first feature is ![](Image00266.jpg) , and for the second feature is ![](Image00194.jpg)
+    *.* The probabilities for the second draw are ![](Image00199.jpg) . Two points
+    are worth mentioning: (1) The lowest probability goes to the feature that was
+    picked in the first draw, as that would exhibit the highest overlap; and (2) among
+    the two possible draws outside φ ^((1)) , the greater probability goes to δ ^((2))
+    [  3  ] , as that is the label with no overlap to φ ^((1)) . Suppose that the
+    second draw selects number 3\. We leave as an exercise the update of the probabilities
+    δ ^((3)) for the third and final draw. Snippet 4.6 runs a sequential bootstrap
+    on the {1 [*t*  ,  *i*] } indicator matrix in this example.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 4.6 EXAMPLE OF SEQUENTIAL BOOTSTRAP**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00319.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**4.5.4 Monte Carlo Experiments**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: We can evaluate the efficiency of the sequential bootstrap algorithm through
+    experimental methods. Snippet 4.7 lists the function that generates a random `t1`
+    series for a number of observations `numObs` ( *I* ). Each observation is made
+    at a random number, drawn from a uniform distribution, with boundaries 0 and `numBars`
+    , where `numBars` is the number of bars ( *T* ). The number of bars spanned by
+    the observation is determined by drawing a random number from a uniform distribution
+    with boundaries 0 and `maxH` .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 4.7 GENERATING A RANDOM T1 SERIES**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00203.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Snippet 4.8 takes that random `t1` series, and derives the implied indicator
+    matrix, `indM` . This matrix is then subjected to two procedures. In the first
+    one, we derive the average uniqueness from a standard bootstrap (random sampling
+    with replacement). In the second one, we derive the average uniqueness by applying
+    our sequential bootstrap algorithm. Results are reported as a dictionary.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 4.8 UNIQUENESS FROM STANDARD AND SEQUENTIAL BOOTSTRAPS**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00356.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: These operations have to be repeated over a large number of iterations. Snippet 4.9
+    implements this Monte Carlo using the multiprocessing techniques discussed in
+    Chapter 20\. For example, it will take about 6 hours for a 24-cores server to
+    carry out a Monte Carlo of 1E6 iterations, where `numObs=10` , `numBars=100` ,
+    and `maxH=5` . Without parallelization, a similar Monte Carlo experiment would
+    have taken about 6 days.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 4.9 MULTI-THREADED MONTE CARLO**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00377.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '[Figure 4.2](text00001.html#filepos0000310792) plots the histogram of the uniqueness
+    from standard bootstrapped samples (left) and the sequentially bootstrapped samples
+    (right). The median of the average uniqueness for the standard method is 0.6,
+    and the median of the average uniqueness for the sequential method is 0.7\. An
+    ANOVA test on the difference of means returns a vanishingly small probability.
+    Statistically speaking, samples from the sequential bootstrap method have an expected
+    uniqueness that exceeds that of the standard bootstrap method, at any reasonable
+    confidence level.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00392.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 4.2**](text00001.html#filepos0000310005) Monte Carlo experiment of
+    standard vs. sequential bootstraps'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**4.6 Return Attribution**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the previous section we learned a method to bootstrap samples closer to IID.
+    In this section we will introduce a method to weight those samples for the purpose
+    of training an ML algorithm. Highly overlapping outcomes would have disproportionate
+    weights if considered equal to non-overlapping outcomes. At the same time, labels
+    associated with large absolute returns should be given more importance than labels
+    with negligible absolute returns. In short, we need to weight observations by
+    some function of both uniqueness and absolute return.
+  prefs: []
+  type: TYPE_NORMAL
+- en: When labels are a function of the return sign ({ − 1, 1} for standard labeling
+    or {0, 1} for meta-labeling), the sample weights can be defined in terms of the
+    sum of the attributed returns over the event's lifespan, [ *t [*i* , 0]* , *t
+    [*i* , 1]* ],
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00410.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](Image00220.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: hence ![](Image00656.jpg) . We have scaled these weights to add up to *I* ,
+    since libraries (including sklearn) usually define algorithmic parameters assuming
+    a default weight of 1.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The rationale for this method is that we wish to weight an observation as a
+    function of the absolute log returns that can be attributed uniquely to it. However,
+    this method will not work if there is a “neutral” (return below threshold) case.
+    For that case, lower returns should be assigned higher weights, not the reciprocal.
+    The “neutral” case is unnecessary, as it can be implied by a “−1” or “1” prediction
+    with low confidence. This is one of several reasons I would generally advise you
+    to drop “neutral” cases. Snippet 4.10 implements this method.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 4.10 DETERMINATION OF SAMPLE WEIGHT BY ABSOLUTE RETURN ATTRIBUTION**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00115.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**4.7 Time Decay**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Markets are adaptive systems (Lo [2017]). As markets evolve, older examples
+    are less relevant than the newer ones. Consequently, we would typically like sample
+    weights to decay as new observations arrive. Let ![](Image00119.jpg) be the time-decay
+    factors that will multiply the sample weights derived in the previous section.
+    The final weight has no decay, ![](Image00123.jpg) , and all other weights will
+    be adjusted relative to that. Let *c* ∈ ( − 1., .1] be a user-defined parameter
+    that determines the decay function as follows: For *c* ∈ [0, 1], then *d* [1]
+    = *c* , with linear decay; for *c* ∈ ( − 1, 0), then ![](Image00125.jpg) , with
+    linear decay between ![](Image00128.jpg) and *d* [ *x* ] = 0 ![](Image00130.jpg)
+    . For a linear piecewise function *d* = max{0, *a* + *bx* }, such requirements
+    are met by the following boundary conditions:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00134.jpg) .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Contingent on c:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](Image00137.jpg) , ∀*c* ∈ [0, 1]'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](Image00140.jpg) , ∀*c* ∈ ( − 1, 0)'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_IMG
+- en: Snippet 4.11 implements this form of time-decay factors. Note that time is not
+    meant to be chronological. In this implementation, decay takes place according
+    to cumulative uniqueness, ![](Image00143.jpg) , because a chronological decay
+    would reduce weights too fast in the presence of redundant observations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 4.11 IMPLEMENTATION OF TIME-DECAY FACTORS**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00147.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: 'It is worth discussing a few interesting cases:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*c* = 1 means that there is no time decay.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 0 < *c* < 1 means that weights decay linearly over time, but every observation
+    still receives a strictly positive weight, regardless of how old.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*c* = 0 means that weights converge linearly to zero, as they become older.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*c* < 0 means that the oldest portion *cT* of the observations receive zero
+    weight (i.e., they are erased from memory).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Figure 4.3](text00001.html#filepos0000318296) shows the decayed weights, `out[''w'']*df`
+    , after applying the decay factors for *c* ∈ {1, .75, .5, 0, −.25, −.5}. Although
+    not necessarily practical, the procedure allows the possibility of generating
+    weights that increase as they get older, by setting *c* > 1.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00150.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 4.3**](text00001.html#filepos0000317671) Piecewise-linear time-decay
+    factors'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**4.8 Class Weights**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In addition to sample weights, it is often useful to apply class weights. Class
+    weights are weights that correct for underrepresented labels. This is particularly
+    critical in classification problems where the most important classes have rare
+    occurrences (King and Zeng [2001]). For example, suppose that you wish to predict
+    liquidity crisis, like the flash crash of May 6, 2010\. These events are rare
+    relative to the millions of observations that take place in between them. Unless
+    we assign higher weights to the samples associated with those rare labels, the
+    ML algorithm will maximize the accuracy of the most common labels, and flash crashes
+    will be deemed to be outliers rather than rare events.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ML libraries typically implement functionality to handle class weights. For
+    example, sklearn penalizes errors in samples of `class[j]` , *j=1,…,J* , with
+    weighting `class_weight[j]` rather than 1\. Accordingly, higher class weights
+    on label *j* will force the algorithm to achieve higher accuracy on *j* . When
+    class weights do not add up to *J* , the effect is equivalent to changing the
+    regularization parameter of the classifier.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In financial applications, the standard labels of a classification algorithm
+    are { − 1, 1}, where the zero (or neutral) case will be implied by a prediction
+    with probability only slightly above 0.5 and below some neutral threshold. There
+    is no reason for favoring accuracy of one class over the other, and as such a
+    good default is to assign `class_weight=''balanced''` . This choice re-weights
+    observations so as to simulate that all classes appeared with equal frequency.
+    In the context of bagging classifiers, you may want to consider the argument `class_weight=''balanced_subsample''`
+    , which means that `class_weight=''balanced''` will be applied to the in-bag bootstrapped
+    samples, rather than to the entire dataset. For full details, it is helpful to
+    read the source code implementing `class_weight` in sklearn. Please also be aware
+    of this reported bug: [https://github.com/scikit-learn/scikit-learn/issues/4324](https://github.com/scikit-learn/scikit-learn/issues/4324)
+    .'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Exercises**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In Chapter 3, we denoted as `t1` a pandas series of timestamps where the first
+    barrier was touched, and the index was the timestamp of the observation. This
+    was the output of the `getEvents` function.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Compute a `t1` series on dollar bars derived from E-mini S&P 500 futures tick
+    data.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Apply the function `mpNumCoEvents` to compute the number of overlapping outcomes
+    at each point in time.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Plot the time series of the number of concurrent labels on the primary axis,
+    and the time series of exponentially weighted moving standard deviation of returns
+    on the secondary axis.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Produce a scatterplot of the number of concurrent labels (x-axis) and the exponentially
+    weighted moving standard deviation of returns (y-axis). Can you appreciate a relationship?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Using the function `mpSampleTW` , compute the average uniqueness of each label.
+    What is the first-order serial correlation, AR(1), of this time series? Is it
+    statistically significant? Why?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Fit a random forest to a financial dataset where ![](Image00577.jpg) .
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: What is the mean out-of-bag accuracy?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What is the mean accuracy of k-fold cross-validation (without shuffling) on
+    the same dataset?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Why is out-of-bag accuracy so much higher than cross-validation accuracy? Which
+    one is more correct / less biased? What is the source of this bias?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Modify the code in Section 4.7 to apply an exponential time-decay factor.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Consider you have applied meta-labels to events determined by a trend-following
+    model. Suppose that two thirds of the labels are 0 and one third of the labels
+    are 1.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: What happens if you fit a classifier without balancing class weights?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: A label 1 means a true positive, and a label 0 means a false positive. By applying
+    balanced class weights, we are forcing the classifier to pay more attention to
+    the true positives, and less attention to the false positives. Why does that make
+    sense?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What is the distribution of the predicted labels, before and after applying
+    balanced class weights?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Update the draw probabilities for the final draw in Section 4.5.3.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: In Section 4.5.3, suppose that number 2 is picked again in the second draw.
+    What would be the updated probabilities for the third draw?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '**References**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Rao, C., P. Pathak and V. Koltchinskii (1997): “Bootstrap by sequential resampling.”
+    *Journal of Statistical Planning and Inference* , Vol. 64, No. 2, pp. 257–281.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'King, G. and L. Zeng (2001): “Logistic Regression in Rare Events Data.” Working
+    paper, Harvard University. Available at [https://gking.harvard.edu/files/0s.pdf](https://gking.harvard.edu/files/0s.pdf)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Lo, A. (2017): *Adaptive Markets* , 1st ed. Princeton University Press.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Bibliography**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sample weighting is a common topic in the ML learning literature. However the
+    practical problems discussed in this chapter are characteristic of investment
+    applications, for which the academic literature is extremely scarce. Below are
+    some publications that tangentially touch some of the issues discussed in this
+    chapter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Efron, B. (1979): “Bootstrap methods: Another look at the jackknife.” *Annals
+    of Statistics* , Vol. 7, pp. 1–26.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Efron, B. (1983): “Estimating the error rote of a prediction rule: Improvement
+    on cross-validation.” *Journal of the American Statistical Association* , Vol.
+    78, pp. 316–331.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bickel, P. and D. Freedman (1981): “Some asymptotic theory for the bootstrap.”
+    *Annals of Statistics* , Vol. 9, pp. 1196–1217.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Gine, E. and J. Zinn (1990): “Bootstrapping general empirical measures.” *Annals
+    of Probability* , Vol. 18, pp. 851–869.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hall, P. and E. Mammen (1994): “On general resampling algorithms and their
+    performance in distribution estimation.” *Annals of Statistics* , Vol. 24, pp.
+    2011–2030.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Mitra, S. and P. Pathak (1984): “The nature of simple random sampling.” *Annals
+    of Statistics* , Vol. 12, pp. 1536–1542.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Pathak, P. (1964): “Sufficiency in sampling theory.” *Annals of Mathematical
+    Statistics* , Vol. 35, pp. 795–808.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Pathak, P. (1964): “On inverse sampling with unequal probabilities.” *Biometrika*
+    , Vol. 51, pp. 185–193.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Praestgaard, J. and J. Wellner (1993): “Exchangeably weighted bootstraps of
+    the general empirical process.” *Annals of Probability* , Vol. 21, pp. 2053–2086.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Rao, C., P. Pathak and V. Koltchinskii (1997): “Bootstrap by sequential resampling.”
+    *Journal of Statistical Planning and Inference* , Vol. 64, No. 2, pp. 257–281.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**CHAPTER 5**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Fractionally Differentiated Features**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**5.1 Motivation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is known that, as a consequence of arbitrage forces, financial series exhibit
+    low signal-to-noise ratios (López de Prado [2015]). To make matters worse, standard
+    stationarity transformations, like integer differentiation, further reduce that
+    signal by removing memory. Price series have memory, because every value is dependent
+    upon a long history of previous levels. In contrast, integer differentiated series,
+    like returns, have a memory cut-off, in the sense that history is disregarded
+    entirely after a finite sample window. Once stationarity transformations have
+    wiped out all memory from the data, statisticians resort to complex mathematical
+    techniques to extract whatever residual signal remains. Not surprisingly, applying
+    these complex techniques on memory-erased series likely leads to false discoveries.
+    In this chapter we introduce a data transformation method that ensures the stationarity
+    of the data while preserving as much memory as possible.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**5.2 The Stationarity vs. Memory Dilemma**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'It is common in finance to find non-stationary time series. What makes these
+    series non-stationary is the presence of memory, i.e., a long history of previous
+    levels that shift the series'' mean over time. In order to perform inferential
+    analyses, researchers need to work with invariant processes, such as returns on
+    prices (or changes in log-prices), changes in yield, or changes in volatility.
+    These data transformations make the series stationary, at the expense of removing
+    all memory from the original series (Alexander [2001], chapter 11). Although stationarity
+    is a necessary property for inferential purposes, it is rarely the case in signal
+    processing that we wish all memory to be erased, as that memory is the basis for
+    the model''s predictive power. For example, equilibrium (stationary) models need
+    some memory to assess how far the price process has drifted away from the long-term
+    expected value in order to generate a forecast. The dilemma is that returns are
+    stationary, however memory-less, and prices have memory, however they are non-stationary.
+    The question arises: What is the minimum amount of differentiation that makes
+    a price series stationary while preserving as much memory as possible? Accordingly,
+    we would like to generalize the notion of returns to consider *stationary series
+    where not all memory is erased.* Under this framework, returns are just one kind
+    of (and in most cases suboptimal) price transformation among many other possibilities.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Part of the importance of cointegration methods is their ability to model series
+    with memory. But why would the particular case of zero differentiation deliver
+    best outcomes? Zero differentiation is as arbitrary as 1-step differentiation.
+    There is a wide region between these two extremes (fully differentiated series
+    on one hand, and zero differentiated series on the other) that can be explored
+    through fractional differentiation for the purpose of developing a highly predictive
+    ML model.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Supervised learning algorithms typically require stationary features. The reason
+    is that we need to map a previously unseen (unlabeled) observation to a collection
+    of labeled examples, and infer from them the label of that new observation. If
+    the features are not stationary, we cannot map the new observation to a large
+    number of known examples. But stationarity does not ensure predictive power. Stationarity
+    is a necessary, non-sufficient condition for the high performance of an ML algorithm.
+    The problem is, there is a trade-off between stationarity and memory. We can always
+    make a series more stationary through differentiation, but it will be at the cost
+    of erasing some memory, which will defeat the forecasting purpose of the ML algorithm.
+    In this chapter, we will study one way to resolve this dilemma.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**5.3 Literature Review**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Virtually all the financial time series literature is based on the premise
+    of making non-stationary series stationary through integer transformation (see
+    Hamilton [1994] for an example). This raises two questions: (1) Why would integer
+    1 differentiation (like the one used for computing returns on log-prices) be optimal?
+    (2) Is over-differentiation one reason why the literature has been so biased in
+    favor of the efficient markets hypothesis?'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The notion of fractional differentiation applied to the predictive time series
+    analysis dates back at least to Hosking [1981]. In that paper, a family of ARIMA
+    processes was generalized by permitting the degree of differencing to take fractional
+    values. This was useful because fractionally differenced processes exhibit long-term
+    persistence and antipersistence, hence enhancing the forecasting power compared
+    to the standard ARIMA approach. In the same paper, Hosking states: “Apart from
+    a passing reference by Granger (1978), fractional differencing does not appear
+    to have been previously mentioned in connection with time series analysis.”'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'After Hosking''s paper, the literature on this subject has been surprisingly
+    scarce, adding up to eight journal articles written by only nine authors: Hosking,
+    Johansen, Nielsen, MacKinnon, Jensen, Jones, Popiel, Cavaliere, and Taylor. See
+    the references for details. Most of those papers relate to technical matters,
+    such as fast algorithms for the calculation of fractional differentiation in continuous
+    stochastic processes (e.g., Jensen and Nielsen [2014]).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Differentiating the stochastic process is a computationally expensive operation.
+    In this chapter we will take a practical, alternative, and novel approach to recover
+    stationarity: We will generalize the difference operator to non-integer steps.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**5.4 The Method**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consider the backshift operator, *B* , applied to a matrix of real-valued features
+    { *X [*t*]* }, where *B ^(*k*) X [*t*]* = *X [*t* − *k*]* for any integer *k*
+    ≥ 0 *.* For example, (1 − *B* ) ² = 1 − 2 *B* + *B ²* , where *B ² X [*t*]* =
+    *X [*t* − 2]* , so that (1 − *B* ) ² *X [*t*]* = *X [*t*]* − 2 *X [*t* − 1]* +
+    *X [*t* − 2]* . Note that ![](Image00154.jpg) , for *n* a positive integer. For
+    a real number *d* , ![](Image00158.jpg) , the binomial series.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In a fractional model, the exponent *d* is allowed to be a real number, with
+    the following formal binomial series expansion:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00847.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**5.4.1 Long Memory**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let us see how a real (non-integer) positive *d* preserves memory. This arithmetic
+    series consists of a dot product
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00163.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: with weights ω
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00172.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: and values *X*
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00169.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: When *d* is a positive integer number, ![](Image00173.jpg) , and memory beyond
+    that point is cancelled. For example, *d* = 1 is used to compute returns, where
+    ![](Image00175.jpg) , and ω = {1, −1, 0, 0, …}.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**5.4.2 Iterative Estimation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Looking at the sequence of weights, ω, we can appreciate that for *k* = 0,
+    …, ∞, with ω [0] = 1, the weights can be generated iteratively as:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00176.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[Figure 5.1](text00001.html#filepos0000341782) plots the sequence of weights
+    used to compute each value of the fractionally differentiated series. The legend
+    reports the value of *d* used to generate each sequence, the x-axis indicates
+    the value of *k* , and the y-axis shows the value of ω [*k*] . For example, for
+    *d* = 0, all weights are 0 except for ω [0] = 1 *.* That is the case where the
+    differentiated series coincides with the original one. For *d* = 1, all weights
+    are 0 except for ω [0] = 1 and ω [1] = −1 *.* That is the standard first-order
+    integer differentiation, which is used to derive log-price returns. Anywhere in
+    between these two cases, all weights after ω [0] = 1 are negative and greater
+    than −1.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00178.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 5.1**](text00001.html#filepos0000340412) *ω [*k*]* (y-axis) as *k*
+    increases (x-axis). Each line is associated with a particular value of *d* ∈ [0,1],
+    in 0.1 increments.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 5.2](text00001.html#filepos0000342705) plots the sequence of weights
+    where *d* ∈ [1, 2], at increments of 0.1\. For *d* > 1, we observe ω [1] < −1
+    and ω [*k*] > 0, ∀ *k* ≥ 2 *.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00228.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 5.2**](text00001.html#filepos0000342096) *ω [*k*]* (y-axis) as *k*
+    increases (x-axis). Each line is associated with a particular value of *d* ∈ [1,2],
+    in 0.1 increments.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Snippet 5.1 lists the code used to generate these plots.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 5.1 WEIGHTING FUNCTION**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00246.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**5.4.3 Convergence**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let us consider the convergence of the weights. From the above result, we can
+    see that for *k* > *d* , if ω [*k* − 1] ≠ 0, then ![](Image00190.jpg) , and ω
+    [*k*] = 0 otherwise. Consequently, the weights converge asymptotically to zero,
+    as an infinite product of factors within the unit circle. Also, for a positive
+    *d* and *k* < *d* + 1, we have ![](Image00281.jpg) , which makes the initial weights
+    alternate in sign. For a non-integer *d* , once *k* ≥ *d* + 1, ω [*k*] will be
+    negative if int[ *d* ] is even, and positive otherwise. Summarizing, ![](Image00300.jpg)
+    (converges to zero from the left) when int[ *d* ] is even, and ![](Image00202.jpg)
+    (converges to zero from the right) when Int[ *d* ] is odd. In the special case
+    *d* ∈ (0, 1), this means that − 1 < ω [*k*] < 0, ∀ *k* > 0 *.* This alternation
+    of weight signs is necessary to make ![](Image00336.jpg) stationary, as memory
+    wanes or is offset over the long run.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**5.5 Implementation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this section we will explore two alternative implementations of fractional
+    differentiation: the standard “expanding window” method, and a new method that
+    I call “fixed-width window fracdiff” (FFD).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**5.5.1 Expanding Window**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let us discuss how to fractionally differentiate a (finite) time series in practice.
+    Suppose a time series with *T* real observations, { *X [*t*]* },  *t* = 1, …,
+    *T* . Because of data limitations, the fractionally differentiated value ![](Image00206.jpg)
+    cannot be computed on an infinite series of weights. For instance, the last point
+    ![](Image00209.jpg) will use weights {ω [*k*] },  *k* = 0, …, *T* − 1, and ![](Image00213.jpg)
+    will use weights {ω [*k*] },  *k* = 0, …, *T* − *l* − 1\. This means that the
+    initial points will have a different amount of memory compared to the final points.
+    For each *l* , we can determine the relative weight-loss, ![](Image00216.jpg)
+    . Given a tolerance level τ ∈ [0, 1], we can determine the value *l* * such that
+    ![](Image00425.jpg) and ![](Image00741.jpg) . This value *l* * corresponds to
+    the first results ![](Image00744.jpg) where the weight-loss is beyond the acceptable
+    threshold, λ [*t*] > τ (e.g., τ = 0.01) *.*
+  prefs: []
+  type: TYPE_NORMAL
+- en: From our earlier discussion, it is clear that ![](Image00749.jpg) depends on
+    the convergence speed of {ω [*k*] }, which in turn depends on *d* ∈ [0, 1]. For
+    *d* = 1, ω [*k*] = 0, ∀ *k* > 1, and λ [*l*] = 0, ∀ *l* > 1, hence it suffices
+    to drop ![](Image00753.jpg) . As *d* → 0 ^+ , *l* * increases, and a larger portion
+    of the initial ![](Image00754.jpg) needs to be dropped in order to keep the weight-loss
+    ![](Image00755.jpg) .  [ Figure 5.3 ](text00001.html#filepos0000350067) plots
+    the E-mini S&P 500 futures trade bars of size 1E4, rolled forward, fractionally
+    differentiated, with parameters ( *d* = .4, τ = 1) on the top and parameters (
+    *d* = .4, τ = 1 *E* − 2) on the bottom.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00758.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 5.3**](text00001.html#filepos0000349525) Fractional differentiation
+    without controlling for weight loss (top plot) and after controlling for weight
+    loss with an expanding window (bottom plot)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The negative drift in both plots is caused by the negative weights that are
+    added to the initial observations as the window is expanded. When we do not control
+    for weight loss, the negative drift is extreme, to the point that only that trend
+    is visible. The negative drift is somewhat more moderate in the right plot, after
+    controlling for the weight loss, however, it is still substantial, because values
+    ![](Image00762.jpg) are computed on an expanding window. This problem can be corrected
+    by a fixed-width window, implemented in Snippet 5.2.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 5.2 STANDARD FRACDIFF (EXPANDING WINDOW)**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00767.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**5.5.2 Fixed-Width Window Fracdiff**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Alternatively, fractional differentiation can be computed using a fixed-width
+    window, that is, dropping the weights after their modulus (|ω [*k*] |) falls below
+    a given threshold value (τ) *.* This is equivalent to finding the first *l* *
+    such that ![](Image00771.jpg) and ![](Image00775.jpg) , setting a new variable
+    ![](Image00779.jpg)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00781.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: and ![](Image00783.jpg) , for *t* = *T* − *l* * + 1, …, *T* .  [ Figure 5.4
+    ](text00001.html#filepos0000353033) plots E-mini S&P 500 futures trade bars of
+    size 1E4, rolled forward, fractionally differentiated ( *d* = .4, τ = 1 *E* −
+    5).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00786.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 5.4**](text00001.html#filepos0000352607) Fractional differentiation
+    after controlling for weight loss with a fixed-width window'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This procedure has the advantage that the same vector of weights is used across
+    all estimates of ![](Image00791.jpg) , hence avoiding the negative drift caused
+    by an expanding window's added weights. The result is a driftless blend of level
+    plus noise, as expected. The distribution is no longer Gaussian, as a result of
+    the skewness and excess kurtosis that comes with memory, however it is stationary.
+    Snippet 5.3 presents an implementation of this idea.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 5.3 THE NEW FIXED-WIDTH WINDOW FRACDIFF METHOD**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00794.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**5.6 Stationarity with Maximum Memory Preservation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consider a series { *X [*t*]* } [*t* = 1, …, *T*] . Applying the fixed-width
+    window fracdiff (FFD) method on this series, we can compute the minimum coefficient
+    *d* * such that the resulting fractionally differentiated series ![](Image00798.jpg)
+    is stationary. This coefficient *d* * quantifies the amount of memory that needs
+    to be removed to achieve stationarity. If ![](Image00801.jpg) is already stationary,
+    then *d* * = 0 *.* If ![](Image00803.jpg) contains a unit root, then *d* * < 1
+    *.* If ![](Image00806.jpg) exhibits explosive behavior (like in a bubble), then
+    *d* * > 1 *.* A case of particular interest is 0 < *d* * ≪ 1, when the original
+    series is “mildly non-stationary.” In this case, although differentiation is needed,
+    a full integer differentiation removes excessive memory (and predictive power).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 5.5](text00001.html#filepos0000357571) illustrates this concept. On
+    the right y-axis, it plots the ADF statistic computed on E-mini S&P 500 futures
+    log-prices, rolled forward using the ETF trick (see Chapter 2), downsampled to
+    daily frequency, going back to the contract''s inception. On the x-axis, it displays
+    the *d* value used to generate the series on which the ADF statistic was computed.
+    The original series has an ADF statistic of –0.3387, while the returns series
+    has an ADF statistic of –46.9114\. At a 95% confidence level, the test''s critical
+    value is –2.8623\. The ADF statistic crosses that threshold in the vicinity of
+    *d* = 0.35 *.* The left y-axis plots the correlation between the original series
+    ( *d* = 0) and the differentiated series at various *d* values. At *d* = 0.35
+    the correlation is still very high, at 0.995\. This confirms that the procedure
+    introduced in this chapter has been successful in achieving stationarity without
+    giving up too much memory. In contrast, the correlation between the original series
+    and the returns series is only 0.03, hence showing that the standard integer differentiation
+    wipes out the series’ memory almost entirely.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00808.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 5.5**](text00001.html#filepos0000355959) ADF statistic as a function
+    of *d* , on E-mini S&P 500 futures log-prices'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Virtually all finance papers attempt to recover stationarity by applying an
+    integer differentiation *d* = 1 ≫ 0.35, which means that most studies have over-differentiated
+    the series, that is, they have removed much more memory than was necessary to
+    satisfy standard econometric assumptions. Snippet 5.4 lists the code used to produce
+    these results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 5.4 FINDING THE MINIMUM** ***D*** **VALUE THAT PASSES THE ADF TEST**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00809.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: The example on E-mini futures is by no means an exception. [Table 5.1](text00001.html#filepos0000359372)
+    shows the ADF statistics after applying FFD( *d* ) on various values of *d* ,
+    for 87 of the most liquid futures worldwide. In all cases, the standard *d* =
+    1 used for computing returns implies over-differentiation. In fact, in all cases
+    stationarity is achieved with *d* < 0.6 *.* In some cases, like orange juice (JO1
+    Comdty) or live cattle (LC1 Comdty) no differentiation at all was needed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**Table 5.1**](text00001.html#filepos0000358629) **ADF Statistic on FFD(**
+    ***d*** **) for Some of the Most Liquid Futures Contracts**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00812.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](Image00815.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**5.7 Conclusion**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To summarize, most econometric analyses follow one of two paradigms:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Box-Jenkins: Returns are stationary, however memory-less.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Engle-Granger: Log-prices have memory, however they are non-stationary. Cointegration
+    is the trick that makes regression work on non-stationary series, so that memory
+    is preserved. However the number of cointegrated variables is limited, and the
+    cointegrating vectors are notoriously unstable.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In contrast, the FFD approach introduced in this chapter shows that there is
+    no need to give up all of the memory in order to gain stationarity. And there
+    is no need for the cointegration trick as it relates to ML forecasting. Once you
+    become familiar with FFD, it will allow you to achieve stationarity without renouncing
+    to memory (or predictive power).
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In practice, I suggest you experiment with the following transformation of
+    your features: First, compute a cumulative sum of the time series. This guarantees
+    that some order of differentiation is needed. Second, compute the FFD( *d* ) series
+    for various *d* ∈ [0, 1]. Third, determine the minimum *d* such that the p-value
+    of the ADF statistic on FFD( *d* ) falls below 5%. Fourth, use the FFD( *d* )
+    series as your predictive feature.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Exercises**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Generate a time series from an IID Gaussian random process. This is a memory-less,
+    stationary series:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Compute the ADF statistic on this series. What is the p-value?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute the cumulative sum of the observations. This is a non-stationary series
+    without memory.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What is the order of integration of this cumulative series?
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute the ADF statistic on this series. What is the p-value?
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Differentiate the series twice. What is the p-value of this over-differentiated
+    series?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Generate a time series that follows a sinusoidal function. This is a stationary
+    series with memory.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Compute the ADF statistic on this series. What is the p-value?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Shift every observation by the same positive value. Compute the cumulative sum
+    of the observations. This is a non-stationary series with memory.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute the ADF statistic on this series. What is the p-value?
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Apply an expanding window fracdiff, with τ = 1*E* − 2*.* For what minimum *d*
+    value do you get a p-value below 5%?
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Apply FFD, with τ = 1*E* − 5*.* For what minimum *d* value do you get a p-value
+    below 5%?
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Take the series from exercise 2.b:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Fit the series to a sine function. What is the R-squared?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Apply FFD(*d = 1* ). Fit the series to a sine function. What is the R-squared?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What value of *d* maximizes the R-squared of a sinusoidal fit on FFD(*d* ).
+    Why?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Take the dollar bar series on E-mini S&P 500 futures. Using the code in Snippet
+    5.3, for some *d* ∈ [0, 2], compute `fracDiff_FFD(fracDiff_FFD(series,d),-d)`
+    . What do you get? Why?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Take the dollar bar series on E-mini S&P 500 futures.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Form a new series as a cumulative sum of log-prices.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Apply FFD, with τ = 1*E* − 5*.* Determine for what minimum *d* ∈ [0, 2] the
+    new series is stationary.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute the correlation of the fracdiff series to the original (untransformed)
+    series.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Apply an Engel-Granger cointegration test on the original and fracdiff series.
+    Are they cointegrated? Why?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Apply a Jarque-Bera normality test on the fracdiff series.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Take the fracdiff series from exercise 5.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Apply a CUSUM filter (Chapter 2), where *h* is twice the standard deviation
+    of the series.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Use the filtered timestamps to sample a features’ matrix. Use as one of the
+    features the fracdiff value.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Form labels using the triple-barrier method, with symmetric horizontal barriers
+    of twice the daily standard deviation, and a vertical barrier of 5 days.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Fit a bagging classifier of decision trees where:'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The observed features are bootstrapped using the sequential method from Chapter
+    4.
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: On each bootstrapped sample, sample weights are determined using the techniques
+    from Chapter 4.
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**References**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Alexander, C. (2001): *Market Models* , 1st edition. John Wiley & Sons.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hamilton, J. (1994): *Time Series Analysis* , 1st ed. Princeton University
+    Press.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hosking, J. (1981): “Fractional differencing.” *Biometrika* , Vol. 68, No.
+    1, pp. 165–176.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Jensen, A. and M. Nielsen (2014): “A fast fractional difference algorithm.”
+    *Journal of Time Series Analysis* , Vol. 35, No. 5, pp. 428–436.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'López de Prado, M. (2015): “The Future of Empirical Finance.” *Journal of Portfolio
+    Management* , Vol. 41, No. 4, pp. 140–144\. Available at [https://ssrn.com/abstract=2609734](https://ssrn.com/abstract=2609734)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Bibliography**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Cavaliere, G., M. Nielsen, and A. Taylor (2017): “Quasi-maximum likelihood
+    estimation and bootstrap inference in fractional time series models with heteroskedasticity
+    of unknown form.” *Journal of Econometrics* , Vol. 198, No. 1, pp. 165–188.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Johansen, S. and M. Nielsen (2012): “A necessary moment condition for the fractional
+    functional central limit theorem.” *Econometric Theory* , Vol. 28, No. 3, pp.
+    671–679.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Johansen, S. and M. Nielsen (2012): “Likelihood inference for a fractionally
+    cointegrated vector autoregressive model.” *Econometrica* , Vol. 80, No. 6, pp.
+    2267–2732.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Johansen, S. and M. Nielsen (2016): “The role of initial values in conditional
+    sum-of-squares estimation of nonstationary fractional time series models.” *Econometric
+    Theory* , Vol. 32, No. 5, pp. 1095–1139.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Jones, M., M. Nielsen and M. Popiel (2015): “A fractionally cointegrated VAR
+    analysis of economic voting and political support.” *Canadian Journal of Economics*
+    , Vol. 47, No. 4, pp. 1078–1130.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Mackinnon, J. and M. Nielsen, M. (2014): “Numerical distribution functions
+    of fractional unit root and cointegration tests.” *Journal of Applied Econometrics*
+    , Vol. 29, No. 1, pp. 161–171.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**PART 2**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Modelling**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Chapter 6 Ensemble Methods](text00001.html#filepos0000371207)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Chapter 7 Cross-Validation in Finance](text00001.html#filepos0000404229)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Chapter 8 Feature Importance](text00001.html#filepos0000434781)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Chapter 9 Hyper-Parameter Tuning with Cross-Validation](text00001.html#filepos0000476302)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**CHAPTER 6**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Ensemble Methods**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**6.1 Motivation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this chapter we will discuss two of the most popular ML ensemble methods.
+    ^([1](text00001.html#filepos0000402654)) In the references and footnotes you will
+    find books and articles that introduce these techniques. As everywhere else in
+    this book, the assumption is that you have already used these approaches. The
+    goal of this chapter is to explain what makes them effective, and how to avoid
+    common errors that lead to their misuse in finance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**6.2 The Three Sources of Errors**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ML models generally suffer from three errors: ^([2](text00001.html#filepos0000403004))'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Bias:** This error is caused by unrealistic assumptions. When bias is high,
+    the ML algorithm has failed to recognize important relations between features
+    and outcomes. In this situation, the algorithm is said to be “underfit.”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Variance:** This error is caused by sensitivity to small changes in the training
+    set. When variance is high, the algorithm has overfit the training set, and that
+    is why even minimal changes in the training set can produce wildly different predictions.
+    Rather than modelling the general patterns in the training set, the algorithm
+    has mistaken noise with signal.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Noise:** This error is caused by the variance of the observed values, like
+    unpredictable changes or measurement errors. This is the irreducible error, which
+    cannot be explained by any model.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Consider a training set of observations { *x [*i*]* } [*i* = 1, …, *n*] and
+    real-valued outcomes { *y [*i*]* } [*i* = 1, …, *n*] . Suppose a function *f*
+    [ *x* ] exists, such that *y* = *f* [ *x* ] + ϵ, where *ϵ* is white noise with
+    E[ϵ [*i*] ] = 0 and E[ϵ ² [*i*] ] = σ [ϵ] ² . We would like to estimate the function
+    ![](Image00818.jpg) that best fits *f* [ *x* ], in the sense of making the variance
+    of the estimation error ![](Image00821.jpg) minimal (the mean squared error cannot
+    be zero, because of the noise represented by σ ² [  ϵ  ] ). This mean-squared
+    error can be decomposed as
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00826.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: An ensemble method is a method that combines a set of weak learners, all based
+    on the same learning algorithm, in order to create a (stronger) learner that performs
+    better than any of the individual ones. Ensemble methods help reduce bias and/or
+    variance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**6.3 Bootstrap Aggregation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Bootstrap aggregation (bagging) is an effective way of reducing the variance
+    in forecasts. It works as follows: First, generate *N* training datasets by random
+    sampling *with replacement.* Second, fit *N* estimators, one on each training
+    set. These estimators are fit independently from each other, hence the models
+    can be fit in parallel. Third, the ensemble forecast is the *simple* average of
+    the individual forecasts from the *N* models. In the case of categorical variables,
+    the probability that an observation belongs to a class is given by the proportion
+    of estimators that classify that observation as a member of that class (majority
+    voting). When the base estimator can make forecasts with a prediction probability,
+    the bagging classifier may derive a mean of the probabilities.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If you use sklearn''s `BaggingClassifier` class to compute the out-of-bag accuracy,
+    you should be aware of this bug: [https://github.com/scikit-learn/scikit-learn/issues/8933](https://github.com/scikit-learn/scikit-learn/issues/8933)
+    . One workaround is to rename the labels in integer sequential order.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**6.3.1 Variance Reduction**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Bagging''s main advantage is that it reduces forecasts’ variance, hence helping
+    address overfitting. The variance of the bagged prediction (φ [*i*] [ *c* ]) is
+    a function of the number of bagged estimators ( *N* ), the average variance of
+    a single estimator''s prediction ( ![](Image00830.jpg) ), and the average correlation
+    among their forecasts ( ![](Image00833.jpg) ):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00836.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: where σ [*i* , *j*] is the covariance of predictions by estimators *i* , *j*
+    ; ![](Image00838.jpg) ![](Image00843.jpg) ; and ![](Image00849.jpg) ![](Image00850.jpg)
+    .
+  prefs: []
+  type: TYPE_NORMAL
+- en: The equation above shows that bagging is only effective to the extent that ![](Image00851.jpg)
+    ; as ![](Image00223.jpg) . One of the goals of sequential bootstrapping (Chapter
+    4) is to produce samples as independent as possible, thereby reducing ![](Image00003.jpg)
+    , which should lower the variance of bagging classifiers.  [ Figure 6.1 ](text00001.html#filepos0000380113)
+    plots the standard deviation of the bagged prediction as a function of *N* ∈ [5,
+    30], ![](Image00007.jpg) and ![](Image00012.jpg) *.*
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00083.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 6.1**](text00001.html#filepos0000379588) Standard deviation of the
+    bagged prediction'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**6.3.2 Improved Accuracy**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consider a bagging classifier that makes a prediction on *k* classes by majority
+    voting among *N* independent classifiers. We can label the predictions as {0,
+    1}, where 1 means a correct prediction. The accuracy of a classifier is the probability
+    *p* of labeling a prediction as 1\. On average we will get *Np* predictions labeled
+    as 1, with variance *Np* (1 − *p* ). Majority voting makes the correct prediction
+    when the most forecasted class is observed. For example, for *N* = 10 and *k*
+    = 3, the bagging classifier made a correct prediction when class *A* was observed
+    and the cast votes were [ *A* , *B* , *C* ] = [4, 3, 3]. However, the bagging
+    classifier made an incorrect prediction when class *A* was observed and the cast
+    votes were [ *A* , *B* , *C* ] = [4, 1, 5]. A sufficient condition is that the
+    sum of these labels is ![](Image00016.jpg) . A necessary (non-sufficient) condition
+    is that ![](Image00019.jpg) , which occurs with probability
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00138.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: The implication is that for a sufficiently large *N* , say ![](Image00026.jpg)
+    , then ![](Image00174.jpg) , hence the bagging classifier's accuracy exceeds the
+    average accuracy of the individual classifiers. Snippet 6.1 implements this calculation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 6.1 ACCURACY OF THE BAGGING CLASSIFIER**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00031.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: 'This is a strong argument in favor of bagging any classifier in general, when
+    computational requirements permit it. However, unlike boosting, bagging cannot
+    improve the accuracy of poor classifiers: If the individual learners are poor
+    classifiers ( ![](Image00035.jpg) ), majority voting will still perform poorly
+    (although with lower variance).  [ Figure 6.2 ](text00001.html#filepos0000384361)
+    illustrates these facts. Because it is easier to achieve ![](Image00037.jpg) than
+    ![](Image00041.jpg) , bagging is more likely to be successful in reducing variance
+    than in reducing bias.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: For further analysis on this topic, the reader is directed to Condorcet's Jury
+    Theorem. Although the theorem is derived for the purposes of majority voting in
+    political science, the problem addressed by this theorem shares similarities with
+    the above discussion.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00269.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 6.2**](text00001.html#filepos0000383462) Accuracy of a bagging classifier
+    as a function of the individual estimator''s accuracy (*P* ), the number of estimators
+    (*N* ), and *k * = 2'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**6.3.3 Observation Redundancy**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In Chapter 4 we studied one reason why financial observations cannot be assumed
+    to be IID. Redundant observations have two detrimental effects on bagging. First,
+    the samples drawn with replacement are more likely to be virtually identical,
+    even if they do not share the same observations. This makes ![](Image00046.jpg)
+    , and bagging will not reduce variance, regardless of *N.* For example, if each
+    observation at *t* is labeled according to the return between *t* and *t + 100*
+    , we should sample 1% of the observations per bagged estimator, but not more.
+    Chapter 4, Section 4.5 recommended three alternative solutions, one of which consisted
+    of setting `max_samples=out[‘tW’].mean()` in sklearn's implementation of the bagging
+    classifier class. Another (better) solution was to apply the sequential bootstrap
+    method.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The second detrimental effect from observation redundancy is that out-of-bag
+    accuracy will be inflated. This happens because random sampling with replacement
+    places in the training set samples that are very similar to those out-of-bag.
+    In such a case, a proper stratified k-fold cross-validation without shuffling
+    before partitioning will show a much lower testing-set accuracy than the one estimated
+    out-of-bag. For this reason, it is advisable to set `StratifiedKFold(n_splits=k,`
+    `shuffle=False)` when using that sklearn class, cross-validate the bagging classifier,
+    and ignore the out-of-bag accuracy results. A low number *k* is preferred to a
+    high one, as excessive partitioning would again place in the testing set samples
+    too similar to those used in the training set.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**6.4 Random Forest**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Decision trees are known to be prone to overfitting, which increases the variance
+    of the forecasts. ^([3](text00001.html#filepos0000403445)) In order to address
+    this concern, the random forest (RF) method was designed to produce ensemble forecasts
+    with lower variance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'RF shares some similarities with bagging, in the sense of training independently
+    individual estimators over bootstrapped subsets of the data. The key difference
+    with bagging is that random forests incorporate a second level of randomness:
+    When optimizing each node split, only a random subsample (without replacement)
+    of the attributes will be evaluated, with the purpose of further decorrelating
+    the estimators.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Like bagging, RF reduces forecasts’ variance without overfitting (remember,
+    as long as ![](Image00050.jpg) ). A second advantage is that RF evaluates feature
+    importance, which we will discuss in depth in Chapter 8\. A third advantage is
+    that RF provides out-of-bag accuracy estimates, however in financial applications
+    they are likely to be inflated (as discussed in Section 6.3.3). But like bagging,
+    RF will not necessarily exhibit lower bias than individual decision trees.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If a large number of samples are redundant (non-IID), overfitting will still
+    take place: Sampling randomly with replacement will build a large number of essentially
+    identical trees ( ![](Image00322.jpg) ), where each decision tree is overfit (a
+    flaw for which decision trees are notorious). Unlike bagging, RF always fixes
+    the size of the bootstrapped samples to match the size of the training dataset.
+    Let us review ways we can address this RF overfitting problem in sklearn. For
+    illustration purposes, I will refer to sklearn''s classes; however, these solutions
+    can be applied to any implementation:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Set a parameter `max_features` to a lower value, as a way of forcing discrepancy
+    between trees.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Early stopping: Set the regularization parameter `min_weight_fraction_leaf`
+    to a sufficiently large value (e.g., 5%) such that out-of-bag accuracy converges
+    to out-of-sample (k-fold) accuracy.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Use `BaggingClassifier` on `DecisionTreeClassifier` where `max_samples` is set
+    to the average uniqueness (`avgU` ) between samples.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '`clf=DecisionTreeClassifier(criterion=‘entropy’,max_features=‘auto’,class_weight=‘balanced’)`'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '`bc=BaggingClassifier(base_estimator=clf,n_estimators=1000,max_samples=avgU,max_features=1.)`'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Use `BaggingClassifier` on `RandomForestClassifier` where `max_samples` is set
+    to the average uniqueness (`avgU` ) between samples.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '`clf=RandomForestClassifier(n_estimators=1,criterion=‘entropy’,bootstrap=False,class_weight=‘balanced_subsample’)`'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '`bc=BaggingClassifier(base_estimator=clf,n_estimators=1000,max_samples=avgU,max_features=1.)`'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Modify the RF class to replace standard bootstrapping with sequential bootstrapping.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In summary, Snippet 6.2 demonstrates three alternative ways of setting up an
+    RF, using different classes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 6.2 THREE WAYS OF SETTING UP AN RF**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00055.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: When fitting decision trees, a rotation of the features space in a direction
+    that aligns with the axes typically reduces the number of levels needed by the
+    tree. For this reason, I suggest you fit RF on a PCA of the features, as that
+    may speed up calculations and reduce some overfitting (more on this in Chapter
+    8). Also, as discussed in Chapter 4, Section 4.8, `class_weight=‘balanced_subsample’`
+    will help you prevent the trees from misclassifying minority classes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**6.5 Boosting**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Kearns and Valiant [1989] were among the first to ask whether one could combine
+    weak estimators in order to achieve one with high accuracy. Shortly after, Schapire
+    [1990] demonstrated that the answer to that question was affirmative, using the
+    procedure we today call boosting. In general terms, it works as follows: First,
+    generate one training set by random sampling with replacement, according to some
+    sample weights (initialized with uniform weights). Second, fit one estimator using
+    that training set. Third, if the single estimator achieves an accuracy greater
+    than the acceptance threshold (e.g., 50% in a binary classifier, so that it performs
+    better than chance), the estimator is kept, otherwise it is discarded. Fourth,
+    give more weight to misclassified observations, and less weight to correctly classified
+    observations. Fifth, repeat the previous steps until *N* estimators are produced.
+    Sixth, the ensemble forecast is the *weighted* average of the individual forecasts
+    from the *N* models, where the weights are determined by the accuracy of the individual
+    estimators. There are many boosting algorithms, of which AdaBoost is one of the
+    most popular (Geron [2017]). [Figure 6.3](text00001.html#filepos0000393759) summarizes
+    the decision flow of a standard AdaBoost implementation.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00060.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 6.3**](text00001.html#filepos0000393467) AdaBoost decision flow'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**6.6 Bagging vs. Boosting in Finance**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'From the above description, a few aspects make boosting quite different from
+    bagging: ^([4](text00001.html#filepos0000403829))'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Individual classifiers are fit sequentially.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Poor-performing classifiers are dismissed.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Observations are weighted differently in each iteration.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The ensemble forecast is a weighted average of the individual learners.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Boosting's main advantage is that it reduces both variance and bias in forecasts.
+    However, correcting bias comes at the cost of greater risk of overfitting. It
+    could be argued that in financial applications bagging is generally preferable
+    to boosting. Bagging addresses overfitting, while boosting addresses underfitting.
+    Overfitting is often a greater concern than underfitting, as it is not difficult
+    to overfit an ML algorithm to financial data, because of the low signal-to-noise
+    ratio. Furthermore, bagging can be parallelized, while generally boosting requires
+    sequential running.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**6.7 Bagging for Scalability**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you know, several popular ML algorithms do not scale well with the sample
+    size. Support vector machines (SVMs) are a prime example. If you attempt to fit
+    an SVM on a million observations, it may take a while until the algorithm converges.
+    And even once it has converged, there is no guarantee that the solution is a global
+    optimum, or that it is not overfit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One practical approach is to build a bagging algorithm, where the base estimator
+    belongs to a class that does not scale well with the sample size, like SVM. When
+    defining that base estimator, we will impose a tight early stopping condition.
+    For example, in sklearn's SVM implementation, you could set a low value for the
+    `max_iter` parameter, say 1E5 iterations. The default value is `max_iter=-1` ,
+    which tells the estimator to continue performing iterations until errors fall
+    below a tolerance level. Alternatively, you could raise the tolerance level through
+    the parameter `tol` , which has a default value `tol=1E-3` . Either of these two
+    parameters will force an early stop. You can stop other algorithms early with
+    equivalent parameters, like the number of levels in an RF ( `max_depth` ), or
+    the minimum weighted fraction of the sum total of weights (of all the input samples)
+    required to be at a leaf node ( `min_weight_fraction_leaf` ).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given that bagging algorithms can be parallelized, we are transforming a large
+    sequential task into many smaller ones that are run simultaneously. Of course,
+    the early stopping will increase the variance of the outputs from the individual
+    base estimators; however, that increase can be more than offset by the variance
+    reduction associated with the bagging algorithm. You can control that reduction
+    by adding more independent base estimators. Used in this way, bagging will allow
+    you to achieve fast and robust estimates on extremely large datasets.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Exercises**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Why is bagging based on random sampling with replacement? Would bagging still
+    reduce a forecast's variance if sampling were without replacement?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Suppose that your training set is based on highly overlap labels (i.e., with
+    low uniqueness, as defined in Chapter 4).
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Does this make bagging prone to overfitting, or just ineffective? Why?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Is out-of-bag accuracy generally reliable in financial applications? Why?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Build an ensemble of estimators, where the base estimator is a decision tree.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: How is this ensemble different from an RF?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Using sklearn, produce a bagging classifier that behaves like an RF. What parameters
+    did you have to set up, and how?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Consider the relation between an RF, the number of trees it is composed of,
+    and the number of features utilized:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Could you envision a relation between the minimum number of trees needed in
+    an RF and the number of features utilized?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Could the number of trees be too small for the number of features used?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Could the number of trees be too high for the number of observations available?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: How is out-of-bag accuracy different from stratified k-fold (with shuffling)
+    cross-validation accuracy?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '**References**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Geron, A. (2017): *Hands-on Machine Learning with Scikit-Learn and TensorFlow:
+    Concepts, Tools, and Techniques to Build Intelligent Systems* , 1st edition. O''Reilly
+    Media.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Kearns, M. and L. Valiant (1989): “Cryptographic limitations on learning Boolean
+    formulae and finite automata.” In Proceedings of the 21st Annual ACM Symposium
+    on Theory of Computing, pp. 433–444, New York. Association for Computing Machinery.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Schapire, R. (1990): “The strength of weak learnability.” *Machine Learning*
+    . Kluwer Academic Publishers. Vol. 5 No. 2, pp. 197–227.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Bibliography**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Gareth, J., D. Witten, T. Hastie, and R. Tibshirani (2013): *An Introduction
+    to Statistical Learning: With Applications in R* , 1st ed. Springer-Verlag.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hackeling, G. (2014): *Mastering Machine Learning with Scikit-Learn* , 1st
+    ed. Packt Publishing.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hastie, T., R. Tibshirani and J. Friedman (2016): *The Elements of Statistical
+    Learning* , 2nd ed. Springer-Verlag.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hauck, T. (2014): *Scikit-Learn Cookbook* , 1st ed. Packt Publishing.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Raschka, S. (2015): *Python Machine Learning* , 1st ed. Packt Publishing.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Notes**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '^([1](text00001.html#filepos0000371661))    For an introduction to ensemble
+    methods, please visit: [http://scikit-learn.org/stable/modules/ ensemble.html.](http://scikit-learn.org/stable/modules/ensemble.html.)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '^([2](text00001.html#filepos0000372338))    I would not typically cite Wikipedia,
+    however, on this subject the user may find some of the illustrations in this article
+    useful: [https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff.](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff.)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '^([3](text00001.html#filepos0000387116))    For an intuitive explanation of
+    Random Forest, visit the following link: [https://quantdare.com/random -forest-many-is-better-than-one/.](https://quantdare.com/random-forest-many-is-better-than-one/.)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '^([4](text00001.html#filepos0000394181))    For a visual explanation of the
+    difference between bagging and boosting, visit: [https://quantdare.com/ what-is-the-difference-between-bagging-and-boosting/.](https://quantdare.com/what-is-the-difference-between-bagging-and-boosting/.)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**CHAPTER 7**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Cross-Validation in Finance**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**7.1 Motivation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The purpose of cross-validation (CV) is to determine the generalization error
+    of an ML algorithm, so as to prevent overfitting. CV is yet another instance where
+    standard ML techniques fail when applied to financial problems. Overfitting will
+    take place, and CV will not be able to detect it. In fact, CV will contribute
+    to overfitting through hyper-parameter tuning. In this chapter we will learn why
+    standard CV fails in finance, and what can be done about it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**7.2 The Goal of Cross-Validation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'One of the purposes of ML is to learn the general structure of the data, so
+    that we can produce predictions on future, unseen features. When we test an ML
+    algorithm on the same dataset as was used for training, not surprisingly, we achieve
+    spectacular results. When ML algorithms are misused that way, they are no different
+    from file lossy-compression algorithms: They can summarize the data with extreme
+    fidelity, yet with zero forecasting power.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'CV splits observations drawn from an IID process into two sets: the *training*
+    set and the *testing* set. Each observation in the complete dataset belongs to
+    one, and only one, set. This is done as to prevent leakage from one set into the
+    other, since that would defeat the purpose of testing on unseen data. Further
+    details can be found in the books and articles listed in the references section.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'There are many alternative CV schemes, of which one of the most popular is
+    k-fold CV. [Figure 7.1](text00001.html#filepos0000407324) illustrates the *k*
+    train/test splits carried out by a k-fold CV, where *k* = 5\. In this scheme:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The dataset is partitioned into *k* subsets.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: For *i = 1,…,k*
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The ML algorithm is trained on all subsets excluding *i.*
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The fitted ML algorithm is tested on *i.*
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](Image00063.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 7.1**](text00001.html#filepos0000406409) Train/test splits in a 5-fold
+    CV scheme'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The outcome from k-fold CV is a *kx1* array of cross-validated performance metrics.
+    For example, in a binary classifier, the model is deemed to have learned something
+    if the cross-validated accuracy is over 1/2, since that is the accuracy we would
+    achieve by tossing a fair coin.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In finance, CV is typically used in two settings: model development (like hyper-parameter
+    tuning) and backtesting. Backtesting is a complex subject that we will discuss
+    thoroughly in Chapters 10–16\. In this chapter, we will focus on CV for model
+    development.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**7.3 Why K-Fold CV Fails in Finance**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: By now you may have read quite a few papers in finance that present k-fold CV
+    evidence that an ML algorithm performs well. Unfortunately, it is almost certain
+    that those results are wrong. One reason k-fold CV fails in finance is because
+    observations cannot be assumed to be drawn from an IID process. A second reason
+    for CV's failure is that the testing set is used multiple times in the process
+    of developing a model, leading to multiple testing and selection bias. We will
+    revisit this second cause of failure in Chapters 11–13\. For the time being, let
+    us concern ourselves exclusively with the first cause of failure.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Leakage takes place when the training set contains information that also appears
+    in the testing set. Consider a serially correlated feature *X* that is associated
+    with labels *Y* that are formed on overlapping data:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Because of the serial correlation, *X [*t*]* ≈ *X [*t* + 1]* .
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Because labels are derived from overlapping datapoints, *Y [*t*]* ≈ *Y [*t*
+    + 1]* .
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: By placing *t* and *t + 1* in different sets, information is leaked. When a
+    classifier is first trained on ( *X [*t*]* , *Y [*t*]* ), and then it is asked
+    to predict E[ *Y [*t* + 1]* | *X [*t* + 1]* ] based on an observed *X [*t* + 1]*
+    , this classifier is more likely to achieve *Y [*t* + 1]* = E[ *Y [*t* + 1]* |
+    *X [*t* + 1]* ] even if *X* is an irrelevant feature.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If *X* is a predictive feature, leakage will enhance the performance of an
+    already valuable strategy. The problem is leakage in the presence of irrelevant
+    features, as this leads to false discoveries. There are at least two ways to reduce
+    the likelihood of leakage:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Drop from the training set any observation *i* where *Y [*i*]* is a function
+    of information used to determine *Y [*j*]* , and *j* belongs to the testing set.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: For example, *Y [*i*]* and *Y [*j*]* should not span overlapping periods (see
+    Chapter 4 for a discussion of sample uniqueness).
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Avoid overfitting the classifier. In this way, even if some leakage occurs,
+    the classifier will not be able to profit from it. Use:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Early stopping of the base estimators (see Chapter 6).
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Bagging of classifiers, while controlling for oversampling on redundant examples,
+    so that the individual classifiers are as diverse as possible.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Set `max_samples` to the average uniqueness.
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Apply sequential bootstrap (Chapter 4).
+  prefs:
+  - PREF_IND
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Consider the case where *X [*i*]* and *X [*j*]* are formed on overlapping information,
+    where *i* belongs to the training set and *j* belongs to the testing set. Is this
+    a case of informational leakage? Not necessarily, as long as *Y [*i*]* and *Y
+    [*j*]* are independent. For leakage to take place, it must occur that ( *X [*i*]*
+    , *Y [*i*]* ) ≈ ( *X [*j*]* , *Y [*j*]* ), and it does not suffice that *X [*i*]*
+    ≈ *X [*j*]* or even *Y [*i*]* ≈ *Y [*j*]* .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**7.4 A Solution: Purged K-Fold CV**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: One way to reduce leakage is to purge from the training set all observations
+    whose labels overlapped in time with those labels included in the testing set.
+    I call this process “purging.” In addition, since financial features often incorporate
+    series that exhibit serial correlation (like ARMA processes), we should eliminate
+    from the training set observations that immediately follow an observation in the
+    testing set. I call this process “embargo.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**7.4.1 Purging the Training Set**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suppose a testing observation whose label *Y [*j*]* is decided based on the
+    information set Φ [*j*] . In order to prevent the type of leakage described in
+    the previous section, we would like to purge from the training set any observation
+    whose label *Y [*i*]* is decided based on the information set Φ [*i*] , such that
+    Φ [*i*] ∩Φ [*j*] = ∅ *.*
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In particular, we will determine that there is informational overlap between
+    two observations *i* and *j* whenever *Y [*i*]* and *Y [*j*]* are concurrent (see
+    Chapter 4, Section 4.3), in the sense that both labels are contingent on at least
+    one common random draw. For example, consider a label *Y [*j*]* that is a function
+    of observations in the closed range *t* ∈ [ *t [*j* , 0]* , *t [*j* , 1]* ], *Y
+    [*j*]* = *f* [[ *t [*j* , 0]* , *t [*j* , 1]* ]] (with some abuse of notation).
+    For example, in the context of the triple-barrier labeling method (Chapter 3),
+    it means that the label is the sign of the return spanning between price bars
+    with indices *t [*j* , 0]* and *t [*j* , 1]* , that is ![](Image00065.jpg) . A
+    label *Y [*i*] * = *f* [[ *t [*i*  , 0] * , *t [*i*  , 1] * ]] overlaps with *Y
+    [*j*] * if any of the three sufficient conditions is met:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*t [*j* , 0]* ≤ *t [*i* , 0]* ≤ *t [*j* , 1]*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*t [*j* , 0]* ≤ *t [*i* , 1]* ≤ *t [*j* , 1]*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*t [*i* , 0]* ≤ *t [*j* , 0]* ≤ *t [*j* , 1]* ≤ *t [*i* , 1]*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Snippet 7.1 implements this purging of observations from the training set.
+    If the testing set is contiguous, in the sense that no training observations occur
+    between the first and last testing observation, then purging can be accelerated:
+    The object `testTimes` can be a pandas series with a single item, spanning the
+    entire testing set.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 7.1 PURGING OBSERVATION IN THE TRAINING SET**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00068.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: 'When leakage takes place, performance improves merely by increasing *k* → *T*
+    , where *T* is the number of bars. The reason is that the larger the number of
+    testing splits, the greater the number of overlapping observations in the training
+    set. In many cases, purging suffices to prevent leakage: Performance will improve
+    as we increase *k* , because we allow the model to recalibrate more often. But
+    beyond a certain value *k* *, performance will not improve, indicating that the
+    backtest is not profiting from leaks. [Figure 7.2](text00001.html#filepos0000421908)
+    plots one partition of the k-fold CV. The test set is surrounded by two train
+    sets, generating two overlaps that must be purged to prevent leakage.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00071.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 7.2**](text00001.html#filepos0000421536) Purging overlap in the training
+    set'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**7.4.2 Embargo**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: For those cases where purging is not able to prevent all leakage, we can impose
+    an embargo on training observations *after* every test set. The embargo does not
+    need to affect training observations prior to a test set, because training labels
+    *Y [*i*]* = *f* [[ *t [*i* , 0]* , *t [*i* , 1]* ]], where *t [*i* , 1]* < *t
+    [*j* , 0]* (training ends before testing begins), contain information that was
+    available at the testing time *t [*j* , 0]* . In other words, we are only concerned
+    with training labels *Y [*i*]* = *f* [[ *t [*i* , 0]* , *t [*i* , 1]* ]] that
+    take place immediately after the test, *t [*j* , 1]* ≤ *t [*i* , 0]* ≤ *t [*j*
+    , 1]* + *h.* We can implement this embargo period *h* by setting *Y [*j*]* = *f*
+    [[ *t [*j* , 0]* , *t [*j* , 1]* + *h* ]] before purging. A small value *h* ≈
+    .01 *T* often suffices to prevent all leakage, as can be confirmed by testing
+    that performance does not improve indefinitely by increasing *k* → *T* . [Figure
+    7.3](text00001.html#filepos0000425442) illustrates the embargoing of train observations
+    immediately after the testing set. Snippet 7.2 implements the embargo logic.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00074.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 7.3**](text00001.html#filepos0000425092) Embargo of post-test train
+    observations'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 7.2 EMBARGO ON TRAINING OBSERVATIONS**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00078.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**7.4.3 The Purged K-Fold Class**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the previous sections we have discussed how to produce training/testing splits
+    when labels overlap. That introduced the notion of purging and embargoing, in
+    the particular context of model development. In general, we need to purge and
+    embargo overlapping training observations whenever we produce a train/test split,
+    whether it is for hyper-parameter fitting, backtesting, or performance evaluation.
+    Snippet 7.3 extends scikit-learn's `KFold` class to account for the possibility
+    of leakages of testing information into the training set.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 7.3 CROSS-VALIDATION CLASS WHEN OBSERVATIONS OVERLAP**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00461.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**7.5 Bugs in Sklearn''s Cross-Validation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You would think that something as critical as cross-validation would be perfectly
+    implemented in one of the most popular ML libraries. Unfortunately that is not
+    the case, and this is one of the reasons you must always read all the code you
+    run, and a strong point in favor of open source. One of the many upsides of open-source
+    code is that you can verify everything and adjust it to your needs. Snippet 7.4
+    addresses two known sklearn bugs:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Scoring functions do not know `classes_` , as a consequence of sklearn''s reliance
+    on numpy arrays rather than pandas series: [https://github.com/scikit-learn/scikit-learn/issues/6231](https://github.com/scikit-learn/scikit-learn/issues/6231)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '`cross_val_score` will give different results because it passes weights to
+    the fit method, but not to the `log_loss` method: [https://github.com/scikit-learn/scikit-learn/issues/9144](https://github.com/scikit-learn/scikit-learn/issues/9144)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**SNIPPET 7.4 USING THE** `**PURGEDKFOLD**` **CLASS**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00477.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Please understand that it may take a long time until a fix for these bugs is
+    agreed upon, implemented, tested, and released. Until then, you should use `cvScore`
+    in Snippet 7.4, and avoid running the function `cross_val_score` .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Exercises**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Why is shuffling a dataset before conducting k-fold CV generally a bad idea
+    in finance? What is the purpose of shuffling? Why does shuffling defeat the purpose
+    of k-fold CV in financial datasets?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Take a pair of matrices ( *X* , *y* ), representing observed features and labels.
+    These could be one of the datasets derived from the exercises in Chapter 3.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Derive the performance from a 10-fold CV of an RF classifier on (*X* , *y* ),
+    without shuffling.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Derive the performance from a 10-fold CV of an RF on (*X* , *y* ), with shuffling.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Why are both results so different?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: How does shuffling leak information?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Take the same pair of matrices ( *X* , *y* ) you used in exercise 2.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Derive the performance from a 10-fold purged CV of an RF on (*X* , *y* ), with
+    1% embargo.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Why is the performance lower?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Why is this result more realistic?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In this chapter we have focused on one reason why k-fold CV fails in financial
+    applications, namely the fact that some information from the testing set leaks
+    into the training set. Can you think of a second reason for CV's failure?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Suppose you try one thousand configurations of the same investment strategy,
+    and perform a CV on each of them. Some results are guaranteed to look good, just
+    by sheer luck. If you only publish those positive results, and hide the rest,
+    your audience will not be able to deduce that these results are false positives,
+    a statistical fluke. This phenomenon is called “selection bias.”
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Can you imagine one procedure to prevent this?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'What if we split the dataset in three sets: training, validation, and testing?
+    The validation set is used to evaluate the trained parameters, and the testing
+    is run only on the one configuration chosen in the validation phase. In what case
+    does this procedure still fail?'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What is the key to avoiding selection bias?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Bibliography**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Bharat Rao, R., G. Fung, and R. Rosales (2008): “On the dangers of cross-validation:
+    An experimental evaluation.” White paper, IKM CKS Siemens Medical Solutions USA.
+    Available at [http://people.csail.mit.edu/romer/papers/CrossVal_SDM08.pdf](http://people.csail.mit.edu/romer/papers/CrossVal_SDM08.pdf)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Bishop, C. (1995): *Neural Networks for Pattern Recognition* , 1st ed. Oxford
+    University Press.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Breiman, L. and P. Spector (1992): “Submodel selection and evaluation in regression:
+    The X-random case.” White paper, Department of Statistics, University of California,
+    Berkeley. Available at [http://digitalassets.lib.berkeley.edu/sdtr/ucb/text/197.pdf](http://digitalassets.lib.berkeley.edu/sdtr/ucb/text/197.pdf)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hastie, T., R. Tibshirani, and J. Friedman (2009): *The Elements of Statistical
+    Learning* , 1st ed. Springer.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'James, G., D. Witten, T. Hastie and R. Tibshirani (2013): *An Introduction
+    to Statistical Learning* , 1st ed. Springer.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Kohavi, R. (1995): “A study of cross-validation and bootstrap for accuracy
+    estimation and model selection.” International Joint Conference on Artificial
+    Intelligence. Available at [http://web.cs.iastate.edu/∼jtian/cs573/Papers/Kohavi-IJCAI-95.pdf](http://web.cs.iastate.edu/~jtian/cs573/Papers/Kohavi-IJCAI-95.pdf)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Ripley, B. (1996): *Pattern Recognition and Neural Networks* , 1st ed. Cambridge
+    University Press.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**CHAPTER 8**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Feature Importance**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**8.1 Motivation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'One of the most pervasive mistakes in financial research is to take some data,
+    run it through an ML algorithm, backtest the predictions, and repeat the sequence
+    until a nice-looking backtest shows up. Academic journals are filled with such
+    pseudo-discoveries, and even large hedge funds constantly fall into this trap.
+    It does not matter if the backtest is a walk-forward out-of-sample. The fact that
+    we are repeating a test over and over on the same data will likely lead to a false
+    discovery. This methodological error is so notorious among statisticians that
+    they consider it scientific fraud, and the American Statistical Association warns
+    against it in its ethical guidelines (American Statistical Association [2016],
+    Discussion #4). It typically takes about 20 such iterations to discover a (false)
+    investment strategy subject to the standard significance level (false positive
+    rate) of 5%. In this chapter we will explore why such an approach is a waste of
+    time and money, and how feature importance offers an alternative.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**8.2 The Importance of Feature Importance**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A striking facet of the financial industry is that so many very seasoned portfolio
+    managers (including many with a quantitative background) do not realize how easy
+    it is to overfit a backtest. How to backtest properly is not the subject of this
+    chapter; we will address that extremely important topic in Chapters 11–15\. The
+    goal of this chapter is to explain one of the analyses that must be performed
+    *before* any backtest is carried out.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suppose that you are given a pair of matrices ( *X* , *y* ), that respectively
+    contain features and labels for a particular financial instrument. We can fit
+    a classifier on ( *X* , *y* ) and evaluate the generalization error through a
+    purged k-fold cross-validation (CV), as we saw in Chapter 7\. Suppose that we
+    achieve good performance. The next natural question is to try to understand what
+    features contributed to that performance. Maybe we could add some features that
+    strengthen the signal responsible for the classifier's predictive power. Maybe
+    we could eliminate some of the features that are only adding noise to the system.
+    Notably, understanding feature importance opens up the proverbial black box. We
+    can gain insight into the patterns identified by the classifier if we understand
+    what source of information is indispensable to it. This is one of the reasons
+    why the black box mantra is somewhat overplayed by the ML skeptics. Yes, the algorithm
+    has learned without us directing the process (that is the whole point of ML!)
+    in a black box, but that does not mean that we cannot (or should not) take a look
+    at what the algorithm has found. Hunters do not blindly eat everything their smart
+    dogs retrieve for them, do they?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Once we have found what features are important, we can learn more by conducting
+    a number of experiments. Are these features important all the time, or only in
+    some specific environments? What triggers a change in importance over time? Can
+    those regime switches be predicted? Are those important features also relevant
+    to other related financial instruments? Are they relevant to other asset classes?
+    What are the most relevant features across all financial instruments? What is
+    the subset of features with the highest rank correlation across the entire investment
+    universe? This is a much better way of researching strategies than the foolish
+    backtest cycle. Let me state this maxim as one of the most critical lessons I
+    hope you learn from this book:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Snippet 8.1 Marcos’ First Law of Backtesting—Ignore at your own peril**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: “Backtesting is not a research tool. Feature importance is.”
+  prefs:
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Marcos López de Prado *Advances in Financial Machine Learning* (2018)
+  prefs:
+  - PREF_BQ
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '**8.3 Feature Importance with Substitution Effects**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: I find it useful to distinguish between feature importance methods based on
+    whether they are impacted by substitution effects. In this context, a substitution
+    effect takes place when the estimated importance of one feature is reduced by
+    the presence of other related features. Substitution effects are the ML analogue
+    of what the statistics and econometrics literature calls “multi-collinearity.”
+    One way to address linear substitution effects is to apply PCA on the raw features,
+    and then perform the feature importance analysis on the orthogonal features. See
+    Belsley et al. [1980], Goldberger [1991, pp. 245–253], and Hill et al. [2001]
+    for further details.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**8.3.1 Mean Decrease Impurity**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Mean decrease impurity (MDI) is a fast, explanatory-importance (in-sample,
+    IS) method specific to tree-based classifiers, like RF. At each node of each decision
+    tree, the selected feature splits the subset it received in such a way that impurity
+    is decreased. Therefore, we can derive for each decision tree how much of the
+    overall impurity decrease can be assigned to each feature. And given that we have
+    a forest of trees, we can average those values across all estimators and rank
+    the features accordingly. See Louppe et al. [2013] for a detailed description.
+    There are some important considerations you must keep in mind when working with
+    MDI:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Masking effects take place when some features are systematically ignored by
+    tree-based classifiers in favor of others. In order to avoid them, set `max_features=int(1)`
+    when using sklearn's RF class. In this way, only one random feature is considered
+    per level.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Every feature is given a chance (at some random levels of some random trees)
+    to reduce impurity.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Make sure that features with zero importance are not averaged, since the only
+    reason for a 0 is that the feature was not randomly chosen. Replace those values
+    with `np.nan` .
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The procedure is obviously IS. Every feature will have some importance, even
+    if they have no predictive power whatsoever.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: MDI cannot be generalized to other non-tree based classifiers.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: By construction, MDI has the nice property that feature importances add up to
+    1, and every feature importance is bounded between 0 and 1.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'The method does not address substitution effects in the presence of correlated
+    features. MDI dilutes the importance of substitute features, because of their
+    interchangeability: The importance of two identical features will be halved, as
+    they are randomly chosen with equal probability.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Strobl et al. [2007] show experimentally that MDI is biased towards some predictor
+    variables. White and Liu [1994] argue that, in case of single decision trees,
+    this bias is due to an unfair advantage given by popular impurity functions toward
+    predictors with a large number of categories.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Sklearn's `RandomForest` class implements MDI as the default feature importance
+    score. This choice is likely motivated by the ability to compute MDI on the fly,
+    with minimum computational cost. ^([1](text00001.html#filepos0000475986)) Snippet
+    8.2 illustrates an implementation of MDI, incorporating the considerations listed
+    earlier.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 8.2 MDI FEATURE IMPORTANCE**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00087.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**8.3.2 Mean Decrease Accuracy**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Mean decrease accuracy (MDA) is a slow, predictive-importance (out-of-sample,
+    OOS) method. First, it fits a classifier; second, it derives its performance OOS
+    according to some performance score (accuracy, negative log-loss, etc.); third,
+    it permutates each column of the features matrix ( *X* ), one column at a time,
+    deriving the performance OOS after each column''s permutation. The importance
+    of a feature is a function of the loss in performance caused by its column''s
+    permutation. Some relevant considerations include:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This method can be applied to any classifier, not only tree-based classifiers.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: MDA is not limited to accuracy as the sole performance score. For example, in
+    the context of meta-labeling applications, we may prefer to score a classifier
+    with F1 rather than accuracy (see Chapter 14, Section 14.8 for an explanation).
+    That is one reason a better descriptive name would have been “permutation importance.”
+    When the scoring function does not correspond to a metric space, MDA results should
+    be used as a ranking.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Like MDI, the procedure is also susceptible to substitution effects in the presence
+    of correlated features. Given two identical features, MDA always considers one
+    to be redundant to the other. Unfortunately, MDA will make both features appear
+    to be outright irrelevant, even if they are critical.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Unlike MDI, it is possible that MDA concludes that all features are unimportant.
+    That is because MDA is based on OOS performance.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The CV must be purged and embargoed, for the reasons explained in Chapter 7.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Snippet 8.3 implements MDA feature importance with sample weights, with purged
+    k-fold CV, and with scoring by negative log-loss or accuracy. It measures MDA
+    importance as a function of the improvement (from permutating to not permutating
+    the feature), relative to the maximum possible score (negative log-loss of 0,
+    or accuracy of 1). Note that, in some cases, the improvement may be negative,
+    meaning that the feature is actually detrimental to the forecasting power of the
+    ML algorithm.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 8.3 MDA FEATURE IMPORTANCE**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00504.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**8.4 Feature Importance without Substitution Effects**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Substitution effects can lead us to discard important features that happen to
+    be redundant. This is not generally a problem in the context of prediction, but
+    it could lead us to wrong conclusions when we are trying to understand, improve,
+    or simplify a model. For this reason, the following single feature importance
+    method can be a good complement to MDI and MDA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**8.4.1 Single Feature Importance**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Single feature importance (SFI) is a cross-section predictive-importance (out-of-sample)
+    method. It computes the OOS performance score of each feature in isolation. A
+    few considerations:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This method can be applied to any classifier, not only tree-based classifiers.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: SFI is not limited to accuracy as the sole performance score.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Unlike MDI and MDA, no substitution effects take place, since only one feature
+    is taken into consideration at a time.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Like MDA, it can conclude that all features are unimportant, because performance
+    is evaluated via OOS CV.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The main limitation of SFI is that a classifier with two features can perform
+    better than the bagging of two single-feature classifiers. For example, (1) feature
+    B may be useful only in combination with feature A; or (2) feature B may be useful
+    in explaining the splits from feature A, even if feature B alone is inaccurate.
+    In other words, joint effects and hierarchical importance are lost in SFI. One
+    alternative would be to compute the OOS performance score from subsets of features,
+    but that calculation will become intractable as more features are considered.
+    Snippet 8.4 demonstrates one possible implementation of the SFI method. A discussion
+    of the function `cvScore` can be found in Chapter 7.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 8.4 IMPLEMENTATION OF SFI**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00092.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**8.4.2 Orthogonal Features**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: As argued in Section 8.3, substitution effects dilute the importance of features
+    measured by MDI, and significantly underestimate the importance of features measured
+    by MDA. A partial solution is to orthogonalize the features before applying MDI
+    and MDA. An orthogonalization procedure such as principal components analysis
+    (PCA) does not prevent all substitution effects, but at least it should alleviate
+    the impact of linear substitution effects.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consider a matrix { *X [*t* , *n*]* } of stationary features, with observations
+    *t* = 1, …, *T* and variables *n* = 1, …, *N* . First, we compute the standardized
+    features matrix *Z* , such that *Z [*t* , *n*]* = σ ^(− 1) [*n*] ( *X [*t* , *n*]*
+    − μ [*n*] ), where μ [*n*] is the mean of { *X [*t* , *n*]* } [*t* = 1, …, *T*]
+    and σ [*n*] is the standard deviation of { *X [*t* , *n*]* } [*t* = 1, …, *T*]
+    . Second, we compute the eigenvalues Λ and eigenvectors *W* such that *Z* ' *ZW*
+    = *W* Λ, where Λ is an *NxN* diagonal matrix with main entries sorted in descending
+    order, and *W* is an *NxN* orthonormal matrix. Third, we derive the orthogonal
+    features as *P* = *ZW* . We can verify the orthogonality of the features by noting
+    that *P* ' *P* = *W* ' *Z* ' *ZW* = *W* ' *W* Λ *W* ' *W* = Λ.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The diagonalization is done on *Z* rather than *X* , for two reasons: (1) centering
+    the data ensures that the first principal component is correctly oriented in the
+    main direction of the observations. It is equivalent to adding an intercept in
+    a linear regression; (2) re-scaling the data makes PCA focus on explaining correlations
+    rather than variances. Without re-scaling, the first principal components would
+    be dominated by the columns of *X* with highest variance, and we would not learn
+    much about the structure or relationship between the variables.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Snippet 8.5 computes the smallest number of orthogonal features that explain
+    at least 95% of the variance of *Z* .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 8.5 COMPUTATION OF ORTHOGONAL FEATURES**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00541.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: 'Besides addressing substitution effects, working with orthogonal features provides
+    two additional benefits: (1) orthogonalization can also be used to reduce the
+    dimensionality of the features matrix *X* , by dropping features associated with
+    small eigenvalues. This usually speeds up the convergence of ML algorithms; (2)
+    the analysis is conducted on features designed to explain the structure of the
+    data.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let me stress this latter point. An ubiquitous concern throughout the book is
+    the risk of overfitting. ML algorithms will always find a pattern, even if that
+    pattern is a statistical fluke. You should always be skeptical about the purportedly
+    important features identified by any method, including MDI, MDA, and SFI. Now,
+    suppose that you derive orthogonal features using PCA. Your PCA analysis has determined
+    that some features are more “principal” than others, without any knowledge of
+    the labels (unsupervised learning). That is, PCA has ranked features without any
+    possible overfitting in a classification sense. When your MDI, MDA, or SFI analysis
+    selects as most important (using label information) the same features that PCA
+    chose as principal (ignoring label information), this constitutes confirmatory
+    evidence that the pattern identified by the ML algorithm is not entirely overfit.
+    If the features were entirely random, the PCA ranking would have no correspondance
+    with the feature importance ranking. [Figure 8.1](text00001.html#filepos0000456463)
+    displays the scatter plot of eigenvalues associated with an eigenvector (x-axis)
+    paired with MDI of the feature associated with an engenvector (y-axis). The Pearson
+    correlation is 0.8491 (p-value below 1E-150), evidencing that PCA identified informative
+    features and ranked them correctly without overfitting.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00100.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 8.1**](text00001.html#filepos0000455929) Scatter plot of eigenvalues
+    (x-axis) and MDI levels (y-axis) in log-log scale'
+  prefs: []
+  type: TYPE_NORMAL
+- en: I find it useful to compute the weighted Kendall's tau between the feature importances
+    and their associated eigenvalues (or equivalently, their inverse PCA rank). The
+    closer this value is to 1, the stronger is the consistency between PCA ranking
+    and feature importance ranking. One argument for preferring a weighted Kendall's
+    tau over the standard Kendall is that we want to prioritize rank concordance among
+    the most importance features. We do not care so much about rank concordance among
+    irrelevant (likely noisy) features. The hyperbolic-weighted Kendall's tau for
+    the sample in [Figure 8.1](text00001.html#filepos0000456463) is 0.8206.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Snippet 8.6 shows how to compute this correlation using Scipy. In this example,
+    sorting the features in descending importance gives us a PCA rank sequence very
+    close to an ascending list. Because the `weightedtau` function gives higher weight
+    to higher values, we compute the correlation on the inverse PCA ranking, `pcRank**-1`
+    . The resulting weighted Kendall's tau is relatively high, at 0.8133.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 8.6 COMPUTATION OF WEIGHTED KENDALL''S TAU BETWEEN FEATURE IMPORTANCE
+    AND INVERSE PCA RANKING**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00586.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**8.5 Parallelized vs. Stacked Feature Importance**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are at least two research approaches to feature importance. First, for
+    each security *i* in an investment universe *i* = 1, …, *I* , we form a dataset
+    ( *X [*i*]* , *y [*i*]* ), and derive the feature importance in parallel. For
+    example, let us denote λ [*i* , *j* , *k*] the importance of feature *j* on instrument
+    *i* according to criterion *k.* Then we can aggregate all results across the entire
+    universe to derive a combined Λ [*j* , *k*] importance of feature *j* according
+    to criterion *k.* Features that are important across a wide variety of instruments
+    are more likely to be associated with an underlying phenomenon, particularly when
+    these feature importances exhibit high rank correlation across the criteria. It
+    may be worth studying in-depth the theoretical mechanism that makes these features
+    predictive. The main advantage of this approach is that it is computationally
+    fast, as it can be parallelized. A disadvantage is that, due to substitution effects,
+    important features may swap their ranks across instruments, increasing the variance
+    of the estimated λ [*i* , *j* , *k*] . This disadvantage becomes relatively minor
+    if we average λ [*i* , *j* , *k*] across instruments for a sufficiently large
+    investment universe.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'A second alternative is what I call “features stacking.” It consists in stacking
+    all datasets ![](Image00609.jpg) into a single combined dataset ( *X* , *y* ),
+    where ![](Image00109.jpg) is a transformed instance of *X [*i*] * (e.g., standardized
+    on a rolling trailing window). The purpose of this transformation is to ensure
+    some distributional homogeneity, ![](Image00335.jpg) . Under this approach, the
+    classifier must learn what features are more important across all instruments
+    simultaneously, as if the entire investment universe were in fact a single instrument.
+    Features stacking presents some advantages: (1) The classifier will be fit on
+    a much larger dataset than the one used with the parallelized (first) approach;
+    (2) the importance is derived directly, and no weighting scheme is required for
+    combining the results; (3) conclusions are more general and less biased by outliers
+    or overfitting; and (4) because importance scores are not averaged across instruments,
+    substitution effects do not cause the dampening of those scores.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: I usually prefer features stacking, not only for features importance but whenever
+    a classifier can be fit on a set of instruments, including for the purpose of
+    model prediction. That reduces the likelihood of overfitting an estimator to a
+    particular instrument or small dataset. The main disadvantage of stacking is that
+    it may consume a lot of memory and resources, however that is where a sound knowledge
+    of HPC techniques will come in handy (Chapters 20–22).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**8.6 Experiments with Synthetic Data**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this section, we are going to test how these feature importance methods
+    respond to synthetic data. We are going to generate a dataset ( *X* , *y* ) composed
+    on three kinds of features:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Informative: These are features that are used to determine the label.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Redundant: These are random linear combinations of the informative features.
+    They will cause substitution effects.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Noise: These are features that have no bearing on determining the observation''s
+    label.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Snippet 8.7 shows how we can generate a synthetic dataset of 40 features where
+    10 are informative, 10 are redundant, and 20 are noise, on 10,000 observations.
+    For details on how sklearn generates synthetic datasets, visit: [http://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)
+    .'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 8.7 CREATING A SYNTHETIC DATASET**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00338.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Given that we know for certain what feature belongs to each class, we can evaluate
+    whether these three feature importance methods perform as designed. Now we need
+    a function that can carry out each analysis on the same dataset. Snippet 8.8 accomplishes
+    that, using bagged decision trees as default classifier (Chapter 6).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 8.8 CALLING FEATURE IMPORTANCE FOR ANY METHOD**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00342.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Finally, we need a main function to call all components, from data generation
+    to feature importance analysis to collection and processing of output. These tasks
+    are performed by Snippet 8.9.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 8.9 CALLING ALL COMPONENTS**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00344.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: For the aesthetically inclined, Snippet 8.10 provides a nice layout for plotting
+    feature importances.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 8.10 FEATURE IMPORTANCE PLOTTING FUNCTION**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00349.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '[Figure 8.2](text00001.html#filepos0000467068) shows results for MDI. For each
+    feature, the horizontal bar indicates the mean MDI value across all the decision
+    trees, and the horizontal line is the standard deviation of that mean. Since MDI
+    importances add up to 1, if all features were equally important, each importance
+    would have a value of 1/40\. The vertical dotted line marks that 1/40 threshold,
+    separating features whose importance exceeds what would be expected from undistinguishable
+    features. As you can see, MDI does a very good job in terms of placing all informative
+    and redundant features above the red dotted line, with the exception of R_5, which
+    did not make the cut by a small margin. Substitution effects cause some informative
+    or redundant features to rank better than others, which was expected.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00352.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 8.2**](text00001.html#filepos0000466053) MDI feature importance computed
+    on a synthetic dataset'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 8.3](text00001.html#filepos0000468012) shows that MDA also did a good
+    job. Results are consistent with those from MDI''s in the sense that all the informed
+    and redundant features rank better than the noise feature, with the exception
+    of R_6, likely due to a substitution effect. One not so positive aspect of MDA
+    is that the standard deviation of the means are somewhat higher, although that
+    could be addressed by increasing the number of partitions in the purged k-fold
+    CV, from, say, 10 to 100 (at the cost of 10 × the computation time without parallelization).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00355.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 8.3**](text00001.html#filepos0000467240) MDA feature importance computed
+    on a synthetic dataset'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 8.4](text00001.html#filepos0000468942) shows that SFI also does a decent
+    job; however, a few important features rank worse than noise (I_6, I_2, I_9, I_1,
+    I_3, R_5), likely due to joint effects.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The labels are a function of a combination of features, and trying to forecast
+    them independently misses the joint effects. Still, SFI is useful as a complement
+    to MDI and MDA, precisely because both types of analyses are affected by different
+    kinds of problems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00360.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 8.4**](text00001.html#filepos0000468184) SFI feature importance computed
+    on a synthetic dataset'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Exercises**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Using the code presented in Section 8.6:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Generate a dataset (*X* , *y* ).
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Apply a PCA transformation on *X* , which we denote ![](Image00363.jpg) .
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute MDI, MDA, and SFI feature importance on ![](Image00366.jpg) , where
+    the base estimator is RF.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Do the three methods agree on what features are important? Why?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: From exercise 1, generate a new dataset ![](Image00370.jpg) , where ![](Image00373.jpg)
+    is a feature union of *X* and ![](Image00376.jpg) .
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Compute MDI, MDA, and SFI feature importance on ![](Image00379.jpg) , where
+    the base estimator is RF.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Do the three methods agree on the important features? Why?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Take the results from exercise 2:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Drop the most important features according to each method, resulting in a features
+    matrix ![](Image00381.jpg) .
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute MDI, MDA, and SFI feature importance on ![](Image00385.jpg) , where
+    the base estimator is RF.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Do you appreciate significant changes in the rankings of important features,
+    relative to the results from exercise 2?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Using the code presented in Section 8.6:'
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Generate a dataset (*X* , *y* ) of 1E6 observations, where 5 features are informative,
+    5 are redundant and 10 are noise.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Split (*X* , *y* ) into 10 datasets {(*X [*i*]* , *y [*i*]* )} [*i* = 1, …,
+    10] , each of 1E5 observations.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute the parallelized feature importance (Section 8.5), on each of the 10
+    datasets, {(*X [*i*]* , *y [*i*]* )} [*i* = 1, …, 10] .
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute the stacked feature importance on the combined dataset (*X* , *y* ).
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What causes the discrepancy between the two? Which one is more reliable?
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Repeat all MDI calculations from exercises 1–4, but this time allow for masking
+    effects. That means, do not set `max_features=int(1)` in Snippet 8.2\. How do
+    results differ as a consequence of this change? Why?
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '**References**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'American Statistical Association (2016): “Ethical guidelines for statistical
+    practice.” Committee on Professional Ethics of the American Statistical Association
+    (April). Available at [http://www.amstat.org/asa/files/pdfs/EthicalGuidelines.pdf](http://www.amstat.org/asa/files/pdfs/EthicalGuidelines.pdf)
+    .'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Belsley, D., E. Kuh, and R. Welsch (1980): *Regression Diagnostics: Identifying
+    Influential Data and Sources of Collinearity* , 1st ed. John Wiley & Sons.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Goldberger, A. (1991): *A Course in Econometrics* . Harvard University Press,
+    1st edition.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Hill, R. and L. Adkins (2001): “Collinearity.” In Baltagi, Badi H. *A Companion
+    to Theoretical Econometrics* , 1st ed. Blackwell, pp. 256–278.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Louppe, G., L. Wehenkel, A. Sutera, and P. Geurts (2013): “Understanding variable
+    importances in forests of randomized trees.” Proceedings of the 26th International
+    Conference on Neural Information Processing Systems, pp. 431–439.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Strobl, C., A. Boulesteix, A. Zeileis, and T. Hothorn (2007): “Bias in random
+    forest variable importance measures: Illustrations, sources and a solution.” *BMC
+    Bioinformatics* , Vol. 8, No. 25, pp. 1–11.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'White, A. and W. Liu (1994): “Technical note: Bias in information-based measures
+    in decision tree induction.” *Machine Learning* , Vol. 15, No. 3, pp. 321–329.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Note**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^([1](text00001.html#filepos0000443800))     [http://blog.datadive.net/selecting-good-features-part-iii-random-forests/](http://blog.datadive.net/selecting-good-features-part-iii-random-forests/)
+    .
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**CHAPTER 9**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Hyper-Parameter Tuning with Cross-Validation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**9.1 Motivation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Hyper-parameter tuning is an essential step in fitting an ML algorithm. When
+    this is not done properly, the algorithm is likely to overfit, and live performance
+    will disappoint. The ML literature places special attention on cross-validating
+    any tuned hyper-parameter. As we have seen in Chapter 7, cross-validation (CV)
+    in finance is an especially difficult problem, where solutions from other fields
+    are likely to fail. In this chapter we will discuss how to tune hyper-parameters
+    using the purged k-fold CV method. The references section lists studies that propose
+    alternative methods that may be useful in specific problems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**9.2 Grid Search Cross-Validation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Grid search cross-validation conducts an exhaustive search for the combination
+    of parameters that maximizes the CV performance, according to some user-defined
+    score function. When we do not know much about the underlying structure of the
+    data, this is a reasonable first approach. Scikit-learn has implemented this logic
+    in the function `GridSearchCV` , which accepts a CV generator as an argument.
+    For the reasons explained in Chapter 7, we need to pass our `PurgedKFold` class
+    (Snippet 7.3) in order to prevent that `GridSearchCV` overfits the ML estimator
+    to leaked information.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 9.1 GRID SEARCH WITH PURGED K-FOLD CROSS-VALIDATION**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00387.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: Snippet 9.1 lists function `clfHyperFit` , which implements a purged `GridSearchCV`
+    . The argument `fit_params` can be used to pass `sample_weight` , and `param_grid`
+    contains the values that will be combined into a grid. In addition, this function
+    allows for the bagging of the tuned estimator. Bagging an estimator is generally
+    a good idea for the reasons explained in Chapter 6, and the above function incorporates
+    logic to that purpose.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I advise you to use `scoring=‘f1’` in the context of meta-labeling applications,
+    for the following reason. Suppose a sample with a very large number of negative
+    (i.e., label ‘0’) cases. A classifier that predicts all cases to be negative will
+    achieve high `‘accuracy’` or `‘neg_log_loss’` , even though it has not learned
+    from the features how to discriminate between cases. In fact, such a model achieves
+    zero recall and undefined precision (see Chapter 3, Section 3.7). The `‘f1’` score
+    corrects for that performance inflation by scoring the classifier in terms of
+    precision and recall (see Chapter 14, Section 14.8).
+  prefs: []
+  type: TYPE_NORMAL
+- en: For other (non-meta-labeling) applications, it is fine to use `‘accuracy’` or
+    `‘neg_log_loss’` , because we are equally interested in predicting all cases.
+    Note that a relabeling of cases has no impact on `‘accuracy’` or `‘neg_log_loss’`
+    , however it will have an impact on `‘f1’` .
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This example introduces nicely one limitation of sklearn''s `Pipelines` : Their
+    fit method does not expect a `sample_weight` argument. Instead, it expects a `fit_params`
+    keyworded argument. That is a bug that has been reported in GitHub; however, it
+    may take some time to fix it, as it involves rewriting and testing much functionality.
+    Until then, feel free to use the workaround in Snippet 9.2\. It creates a new
+    class, called `MyPipeline` , which inherits all methods from sklearn''s `Pipeline`
+    . It overwrites the inherited `fit` method with a new one that handles the argument
+    `sample_weight` , after which it redirects to the parent class.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 9.2 AN ENHANCED PIPELINE CLASS**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00389.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: 'If you are not familiar with this technique for expanding classes, you may
+    want to read this introductory Stackoverflow post: [http://stackoverflow.com/questions/
+    576169/understanding-python-super-with-init-methods](http://stackoverflow.com/questions/576169/understanding-python-super-with-init-methods)
+    .'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**9.3 Randomized Search Cross-Validation**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For ML algorithms with a large number of parameters, a grid search cross-validation
+    (CV) becomes computationally intractable. In this case, an alternative with good
+    statistical properties is to sample each parameter from a distribution (Begstra
+    et al. [2011, 2012]). This has two benefits: First, we can control for the number
+    of combinations we will search for, regardless of the dimensionality of the problem
+    (the equivalent to a computational budget). Second, having parameters that are
+    relatively irrelevant performance-wise will not substantially increase our search
+    time, as would be the case with grid search CV.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Rather than writing a new function to work with `RandomizedSearchCV` , let us
+    expand Snippet 9.1 to incorporate an option to this purpose. A possible implementation
+    is Snippet 9.3.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 9.3 RANDOMIZED SEARCH WITH PURGED K-FOLD CV**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00391.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
+- en: '**9.3.1 Log-Uniform Distribution**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is common for some ML algorithms to accept non-negative hyper-parameters
+    only. That is the case of some very popular parameters, such as `C` in the SVC
+    classifier and `gamma` in the RBF kernel. ^([1](text00002.html#filepos0000501318))
+    We could draw random numbers from a uniform distribution bounded between 0 and
+    some large value, say 100\. That would mean that 99% of the values would be expected
+    to be greater than 1\. That is not necessarily the most effective way of exploring
+    the feasibility region of parameters whose functions do not respond linearly.
+    For example, an SVC can be as responsive to an increase in `C` from 0.01 to 1
+    as to an increase in `C` from 1 to 100. ^([2](text00002.html#filepos0000501610))
+    So sampling `C` from a *U* [0, 100] (uniform) distribution will be inefficient.
+    In those instances, it seems more effective to draw values from a distribution
+    where the logarithm of those draws will be distributed uniformly. I call that
+    a “log-uniform distribution,” and since I could not find it in the literature,
+    I must define it properly.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'A random variable *x* follows a log-uniform distribution between *a* > 0 and
+    *b* > *a* if and only if log [ *x* ] ∼ *U* [log [ *a* ], log [ *b* ]]. This distribution
+    has a CDF:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00394.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'From this, we derive a PDF:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](Image00569.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![](Image00401.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**Figure 9.1**](text00001.html#filepos0000487213) Result from testing the
+    `logUniform_gen` class'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that the CDF is invariant to the base of the logarithm, since ![](Image00403.jpg)
+    for any base *c* , thus the random variable is not a function of *c.* Snippet 9.4
+    implements (and tests) in `scipy.stats` a random variable where [ *a* , *b* ]
+    = [1 *E* − 3, 1 *E* 3], hence log [ *x* ] ∼ *U* [log [1 *E* − 3], log [1 *E* 3]].  [
+    Figure 9.1 ](text00001.html#filepos0000486173) illustrates the uniformity of the
+    samples in log-scale.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**SNIPPET 9.4 THE** `**LOGUNIFORM_GEN**` **CLASS**'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](Image00406.jpg)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_IMG
