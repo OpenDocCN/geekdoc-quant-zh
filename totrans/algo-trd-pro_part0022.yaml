@@ -120,6 +120,7 @@
   id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: '`mavg_crossover`特征成为一个信号，可能在我们的交易算法中触发买入或卖出决策。'
 - en: Feature engineering is the crucible in which raw data is transmuted into a refined
     input for our predictive models. It requires a blend of domain expertise, statistical
     acumen, and programming skill. As we continue our journey through the labyrinthine
@@ -130,10 +131,12 @@
   id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 特征工程是将原始数据转化为我们预测模型的精炼输入的熔炉。这需要领域专业知识、统计能力和编程技能的结合。当我们在复杂的期权交易世界中继续前行，借助Python的能力，我们不断完善我们的工具箱，确保我们的策略得到最具洞察力和预测性的特征的支持。这一基础工作为后续章节的高级分析技术铺平了道路。
 - en: Exploration of Options Data Characteristics
   id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权数据特征探索
 - en: A meticulous examination of options data characteristics is paramount to unearthing
     patterns and insights that drive successful trading strategies. In this section,
     we dissect the kaleidoscope of metrics and attributes that define options data,
@@ -141,10 +144,12 @@
   id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 细致审查期权数据特征对于发现驱动成功交易策略的模式和洞察至关重要。在这一部分中，我们将解析定义期权数据的各种指标和属性，利用Python的分析能力在复杂性中筛选出重要信息。
 - en: 'Volume and Open Interest Analysis:'
   id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 成交量和未平仓合约分析：
 - en: Volume and open interest serve as the pulse and rhythm of the options market,
     offering a glimpse into the vibrancy and depth of trading activity. Volume, the
     number of contracts traded within a given timeframe, can indicate the liquidity
@@ -154,11 +159,13 @@
   id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 成交量和未平仓合约作为期权市场的脉搏和节奏，提供了交易活动的活力和深度的洞察。成交量，即在特定时间范围内交易的合约数量，可以指示流动性和市场对特定行权价或到期日的情绪。未平仓合约，即未平仓合约的总数，提供了市场趋势流动性和可持续性的见解。
 - en: 'Utilizing Python''s pandas library, we can aggregate and visualize these metrics
     to discern patterns:'
   id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 利用Python的pandas库，我们可以聚合和可视化这些指标，以识别模式：
 - en: '[PRE3]'
   id: totrans-25
   prefs: []
@@ -168,6 +175,7 @@
   id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 历史定价趋势：
 - en: The historical price movements of options, encompassing bid, ask, and settlement
     prices, are rich with information. Analyzing these trends can reveal the options'
     sensitivity to market changes, identify support and resistance levels, and inform
@@ -175,11 +183,13 @@
   id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权的历史价格变动，包括买入价、卖出价和结算价，蕴含着丰富的信息。分析这些趋势可以揭示期权对市场变化的敏感性，识别支撑和阻力水平，并为行权价的选择提供参考。
 - en: 'With the power of matplotlib, we can chart these price movements for visual
     analysis:'
   id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 借助matplotlib的强大功能，我们可以将这些价格变动绘制成图，进行可视化分析：
 - en: '[PRE4]'
   id: totrans-29
   prefs: []
@@ -189,6 +199,7 @@
   id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 隐含波动率曲面映射：
 - en: Implied volatility is an indispensable metric in options trading. It reflects
     the market's forecast of a likely movement in the underlying asset's price. By
     constructing an implied volatility surface—mapping implied volatility across different
@@ -197,10 +208,12 @@
   id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 隐含波动率是期权交易中不可或缺的指标。它反映了市场对基础资产价格可能变动的预期。通过构建隐含波动率曲面——在不同的行权价和到期时间上绘制隐含波动率，我们可以洞察市场对期权波动性的看法。
 - en: 'Let''s use Python to create a basic implied volatility surface plot:'
   id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们使用Python创建一个基本的隐含波动率曲面图：
 - en: '[PRE5]'
   id: totrans-33
   prefs: []
@@ -210,6 +223,7 @@
   id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 希腊字母分析：
 - en: The Greeks—Delta, Gamma, Theta, Vega, and Rho—quantify the sensitivity of an
     option's price to various factors. They are critical for managing risk and constructing
     hedged positions. A thorough analysis of the Greeks can reveal the risk profile
@@ -217,11 +231,13 @@
   id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 希腊字母——Delta、Gamma、Theta、Vega和Rho——量化了期权价格对各种因素的敏感性。它们对于风险管理和构建对冲头寸至关重要。对希腊字母的全面分析可以揭示期权投资组合的风险特征，并指导战略调整。
 - en: 'In Python, we can calculate and analyze the Greeks using financial libraries
     like mibian or py_vollib for various options positions:'
   id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Python中，我们可以使用金融库，如mibian或py_vollib，计算和分析各种期权头寸的希腊字母：
 - en: '[PRE6]'
   id: totrans-37
   prefs: []
