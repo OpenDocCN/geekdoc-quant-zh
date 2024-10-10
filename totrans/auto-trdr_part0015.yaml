@@ -1,0 +1,602 @@
+- en: Chapter 12\. Real-Time Data Processing in Algorithmic Trading
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Importance of Real-Time Data
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The phrase "time is money", while trite, is hard to contest, especially in
+    the realm of Algorithmic Trading. Every second, the financial markets communicate
+    a wealth of information like price, volume, and trade size through data streams.
+    Decoding, interpreting, and actioning these data sets all hinge on one crucial
+    parameter: timeliness. Thus, one may argue that the importance of real-time data
+    to an algorithmic trader is equivalent to the vitality of a compass to a mariner
+    traversing turbulent seas.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Monetising market data is about speed, and the acceleration at which real-time
+    data is channeled into trading algorithms can be the deciding factor between reaping
+    a windfall or bearing a loss with algorithmic trading. Because high-frequency
+    trading (HFT) algorithms rely on real-time data to execute trades within microseconds,
+    a delay of even a fraction of a second can mirror the avalanche effect.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Equally imperative is the quality of real-time data. Quality data injects clarity
+    and accuracy into your trading decisions. Real-time data cleansed of inconsistencies,
+    inaccuracies, or duplications is the lifeblood of any reliable trading algorithm.
+    Therefore, understanding the importance of real-time data is only the tip of the
+    iceberg. A great success in algorithmic trading is penned down by how effectively
+    traders receive, utilise, and respond to this real-time data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A not-so-obvious advantage, but nonetheless significant aspect of real-time
+    data, is its utility in the post-trade analysis. By examining real-time data recorded
+    at the time of a trade, traders can dissect their trading success or failure,
+    picking apart vital insights to tweak and fine-tune their future trading strategy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: While the quest for the fastest, most accurate data feeds is incessant, let's
+    not forget the grave responsibility that comes with wielding real-time data. Market
+    data is a crucial asset, and its misuse or abuse can have alarming repercussions,
+    both on the regulatory front and the economic scope.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let''s touch upon an example of how real-time data might be utilised within
+    a Python-based trading algorithm:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: This basic script uses the yfinance library to fetch the most recent day's data
+    for Google's stock. It then extracts the closing price and the trade volume for
+    that day, which could be used as a part of an algorithmic trading strategy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In sum, embarking on the voyage of algorithmic trading without understanding
+    the importance of real-time data is akin to venturing into a maze blindfolded.
+    Real-time data illuminates the path traders thread on, enabling informed decisions,
+    swift responses, and eventually, a prosperous algorithmic trading adventure.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Data Feeds and Sources
+  prefs: []
+  type: TYPE_NORMAL
+- en: As we stand at the threshold of the Information Age, data has phenomenally emerged
+    as the lifeblood of algorithmic trading foretelling a shift from intuition-based
+    decision-making to data-driven strategies. But in this ocean of data, what differentiates
+    a successful trader is pinpointing relevant noteworthy feeds and reliable data
+    sources.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For any algorithmic trader, data feeds funnel in a continuous jet of data in
+    real-time, and this data can be dissected into two broad categories: market data
+    and auxiliary data. Market data, as the name suggests, is the core of trading
+    and the catalyst of any algorithm''s decision-making process. It comprises price
+    data, historical data, and intraday data, which include the opening price, closing
+    price, highs and lows, trading volumes, and many more.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Auxiliary data, on the other hand, is contextual and covers factors that influence
+    the financial markets but are not directly part of it. This might include economic
+    indicators, news feeds, social media sentiments, or meteorological data, to mention
+    a few.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Data sources, the wellsprings of these data feeds, are abundant and diverse.
+    They range from stock exchanges like NYSE and NASDAQ, data vendors like Bloomberg
+    or Reuters, APIs like Alpha Vantage and Polygon.io, to unconventional sources
+    like Twitter for sentiment analysis or even Federal databases for macroeconomic
+    indicators.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Python, as a machine-friendly language, is equipped with frameworks and libraries
+    to efficiently handle data feeds. Libraries like Pandas and Numpy not only ease
+    the process of retrieving and cleaning data, but they also equip the algorithm
+    to manipulate and analyse the vast amounts of data with relative ease. For instance,
+    here is a simple script to fetch market data using the yfinance library:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: In this script, we are pulling the last five days of market data for Apple's
+    stock using the yfinance library – a simple yet powerful demonstration of how
+    Python can be used to digest data feeds.
+  prefs: []
+  type: TYPE_NORMAL
+- en: However, while choosing data feeds and their sources, traders need to consider
+    factors like cost, latency, consistency, and the scope of data provided. One must
+    bear in mind that not all data is created equal, and therefore, careful scrutiny
+    and selection are paramount. A high-quality real-time data feed could make the
+    difference between identifying an emerging trend and missing an optimum trade.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Data Cleansing and Preprocessing
+  prefs: []
+  type: TYPE_NORMAL
+- en: Situated at the heart of any successful algorithmic trading strategy lies a
+    process less glamorous, albeit fundamentally crucial - data cleansing and preprocessing.
+    As the cogs and wheels of the financial markets continue to spin, datasets - often
+    riddled with missing values, irregularities, and noise - flow into the trading
+    system. The process of preparing this raw, imperfect data for further analysis
+    forms the pivotal stage of data preprocessing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Typically, data preprocessing involves steps that make the data 'clean', relevant,
+    and ready for analysis. These steps can be categorized broadly as data cleansing,
+    data transformation, and data reduction.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Data cleansing, or data cleaning, is the process of ferreting and correcting
+    (or removing) corrupt or inaccurate records from a dataset. This may involve handling
+    missing values, removing duplicates, correcting inconsistent values, and validating
+    and correcting values against a known list of entities. Python''s Pandas library
+    offers a robust suite of functions for data cleansing. Here is a simple python
+    snippet showcasing the usage of the ''fillna'' method in Pandas for handling missing
+    data:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: The second stage involves data transformation, wherein raw data is transformed
+    into a specified format to allow for better algorithmic comprehension and improved
+    data analysis. Data transformation operations might include scaling, where data
+    values are adjusted within a certain range; aggregation, where summary or aggregate
+    operations are applied to the data; and normalization, where data is scaled to
+    fall within a small, specified range.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Data reduction, the final step, is performed to trim down the data volume by
+    removing redundant or less significant data. This helps make the dataset smaller,
+    making the algorithm's processing phase more efficient.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Moving onto the practical implementation of these steps, Python's scikit-learn
+    package provides robust and efficient tools for data preprocessing. As does Pandas,
+    which we've previously mentioned. There are also other libraries like Numpy and
+    SciPy that provide useful features for data preprocessing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE3]'
+  prefs: []
+  type: TYPE_PRE
+- en: This Python snippet scales the sample data ‘x’ to have a mean of 0 and a standard
+    deviation of 1 by using the ‘scale’ method from the sklearn.preprocessing module.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In conclusion, adeptness at data cleansing and preprocessing - though often
+    understated - constitutes a critical competence for any trader aiming to carve
+    a successful career in the realm of algorithmic trading. By mastering this stage,
+    the trader effectively ensures that his algorithms not only sip from the fountain
+    of accurate insight but also reach conclusions quicker and more efficiently. However,
+    it''s important to remember the moral that every seasoned trader has emblazoned
+    in his mind: ''Garbage in, garbage out''. Even the most sophisticated of algorithms
+    can falter if the preprocessing is flawed, making mastering data cleansing and
+    preprocessing not just an option, but a necessity for success. As we move forward,
+    we''ll delve more into how this preprocessed data is put to use in real-time trading
+    scenarios.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Handling Missing or Outlying Data
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In the algorithmic trading ecosystem, unprocessed data is akin to unmined gold.
+    While it holds tremendous potential, it must undergo meticulous refinement before
+    it can lend itself to valuable insights. One key challenge is the handling of
+    missing or outlying data. Every trader, data scientist, and financial analyst
+    knows this all too well: trading data is rarely perfect; it often presents itself
+    with missing entries and anomalous outliers. In this , we''ll elucidate practices
+    on how to efficiently handle such elusive data quirks.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"Missing data" essentially refers to the absence of data value for certain
+    variables in an observation. It poses a significant problem in data analysis as
+    it could lead to biased or incorrect results if not handled appropriately. So,
+    how does one tend to this conundrum? Python, armed with a plethora of libraries
+    and functions, provides powerful solutions. Pandas, for instance, offers the ''dropna''
+    method to remove observations with missing values.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE4]'
+  prefs: []
+  type: TYPE_PRE
+- en: The snippet above replaces missing values with mean values in the DataFrame
+    df using "dropna".
+  prefs: []
+  type: TYPE_NORMAL
+- en: However, purging all the missing values may not always be the best solution;
+    it often depends on the quantity and nature of the missing data. If the missing
+    value itself provides crucial information or if the quantity of missing data is
+    substantial, imputation, or replacing missing data with substituted values, might
+    be a better approach. For imputation, the 'fillna' function in Pandas or the Imputer
+    class in the scikit-learn library can be utilized.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Outlying data, on the other hand, are values in a dataset that lie at an abnormal
+    distance from other values. Just as missing data, outliers too can distort the
+    conclusion derived from the data. In financial markets, outliers could result
+    from market glitches, extreme events or human error. It is pivotal for a trader
+    to apply appropriate outlier handling techniques to maintain the reliability and
+    accuracy of the algorithm's output.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Python libraries such as Numpy, Scipy, and Pandas provide methods to identify
+    outliers. The Z-score, for example, is an effective mathematical tool to identify
+    outliers. Here is how you can use it with Scipy:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE5]'
+  prefs: []
+  type: TYPE_PRE
+- en: The Python snippet calculates the Z-score of each value in the data array and
+    then identifies the outliers as those with Z-scores more than 2.5 standard deviations
+    away from the mean.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Rounding off, we need to remember that missing and outlying data are part and
+    parcel of the financial markets. They complicate the data preprocessing step,
+    thereby making it as challenging as it is important. Both missing and outlying
+    data need careful, systematic handling using the best available techniques and
+    tools. Python, with its powerful options, provides a reliable way to tackle this.
+    After all, to command the best ship, one must navigate choppy waters. The voyage
+    of data processing from raw, unclean data to precise, valuable insights is nothing
+    short of an adventurous sea journey. In the next s, we shall venture further into
+    other key aspects of algorithmic trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Real-Time Data Analytics
+  prefs: []
+  type: TYPE_NORMAL
+- en: In a world that's continuously moving at an accelerated pace, where financial
+    exchanges never sleep, the real-time analysis of data is an indispensable component
+    of successful algorithmic trading. By the end of this , you'll comprehend how
+    real-time data analytics can enhance your trading strategies, optimize the timing
+    of trades, and provide unparalleled insight into the intricacies of the financial
+    markets.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Real-time data analytics is a process that involves scrutinizing data as it
+    streams in – almost instantaneously. Unearth buried treasure of insights from
+    gigabytes of trading data each second, and speedily leverage these insights to
+    make quick, informed, and strategic trading decisions. You're pulling back the
+    curtain on market operations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To venture into real-time data analytics, Python's ecosystem offers a wealth
+    of tools at your disposal. Libraries such as Pandas (for data manipulation), NumPy
+    (for numerical operations), and Statsmodels (for statistical modeling) all allow
+    for complex computations and data processing in real-time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Consider the example below where we use websocket API from Alpaca (a popular
+    commission-free trading platform) for real-time price updates:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE6]'
+  prefs: []
+  type: TYPE_PRE
+- en: In this code, we establish a WebSocket connection to receive real-time updates
+    about Apple's stock. As any change in price is received immediately, it is then
+    converted to a more readable format (uniform timestamp) and printed out along
+    with the updated price.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let''s take another step forward and try a real-time simple moving average
+    calculation using pandas. You can use a deque from the collections package for
+    this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE7]'
+  prefs: []
+  type: TYPE_PRE
+- en: Here, every time a new price point arrives, it appends the price to the deque
+    'prices'. Once we have exactly 20 prices stored, we calculate our Simple Moving
+    Average (SMA) using Numpy's mean function, which is then printed along with its
+    respective timestamp.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In essence, investing in real-time data analytics will ensure that you're not
+    just going with the flow but shaping the current. You will be in the captain's
+    seat of your trading journey, steering with insights brewed afresh by the second.
+    In the forthcoming s, let's expand our understanding to explore other aspects
+    of using real-time data for algorithmic trading such as event-driven programming,
+    risk management in real-time, and real-time data latency. You'll discover how
+    all these pieces come together to form a complete, robust trading system. Algorithmic
+    trading is not a sprint, but a marathon that demands endurance, precision, and
+    timely decision-making. Equip yourself with real-time data analytics, and you're
+    well on your way to cross the finish line triumphantly.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Event-Driven Programming for Real-Time Trading
+  prefs: []
+  type: TYPE_NORMAL
+- en: In algorithmic trading, proficient players have comprehended that timing is
+    everything. Executing trades at the opportune moment could spell the difference
+    between tangible profit or dismal loss. The cornerstone of such impeccable timing
+    is an approach known as event-driven programming. Let us delve into the abyss
+    of event-driven programming for real-time trading. By the end, you will understand
+    why event-driven programming is coveted in the realm of high-frequency trading,
+    and how Python's capabilities specifically eases the implementation of this approach.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Evolution has bestowed upon us the concept of event-driven programming. It's
+    a programming paradigm centred around the concept of events - the occurrences
+    that affect the flow of the program. In trading, these events generally equate
+    to changes in market data, but they can likewise include server issues, a change
+    in portfolio constituents, a change in regulatory guidelines, and so forth. Upon
+    such events' occurrence, the event handling routine - code specifically written
+    to respond to the particular event - is invoked, radically changing the direction
+    of the wind in the sea of algorithms.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Python lends fantastically to an event-driven programming setup. It allows
+    the construction of an event handler that will continuously monitor market event
+    changes. With asynchronous programming libraries like asyncio and sophisticated
+    packages like event-driven, python developers are armed to the teeth to handle
+    the deluge of real-time trading data like a seasoned sailor in the storm. A simple
+    demonstration of an event-driven implementation in Python would look like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE8]'
+  prefs: []
+  type: TYPE_PRE
+- en: In this simplified scenario, the creation of an event instance, `TradeEvent()`
+    is seen. This class keeps a record of all the associated callback functions which
+    will be triggered when the respective event is raised. Understanding and designing
+    an effective event-driven programming setup is where the key to successful real-time
+    trading lies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Carefully choreographed acts of nature cannot be predicted, but with enough
+    preparation, one can ride out the storm. Similarly, event-driven programming isn't
+    about predicting the future of trading, but about being ready when a profitable
+    opportunity presents itself. Preceding s have also expounded on essential aspects
+    of real-time data usage in algorithmic trading. Building on this groundwork, let’s
+    proceed into subjects that make your trading operation a masterful rendition of
+    programming art. These include the management of real-time risk, understanding
+    data latency, dealing with streaming data, and finally deploying a time-series
+    database for it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Take a deep breath, fellow trader. You are not just combating the waves, but
+    mastering the tempest. Each moment is but an opportunity in the fierce, blazing
+    universe of algorithmic trading. With Python and event-driven programming at your
+    compass, explore the cerebral battleground with an agility that others can only
+    marvel at. Is the sea of trades a tumultuous storm or a glorious battle cry? For
+    a true event-driven financial gladiator, it's never the former.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Real-Time Risk Management
+  prefs: []
+  type: TYPE_NORMAL
+- en: As algorithmic traders, we innately understand that no potential for gain comes
+    without the shadow of risk looming not-so-distantly. Winning the strategy game
+    of trading doesn't always mean incessantly chasing the glory of profit. It often
+    means navigating the stormy waters of uncertainty with a robust and adaptive risk
+    management system. More often, this risk management orchestrates its chore in
+    real-time, adjusting to the ever-gyrating landscape of the market, we navigate
+    the labyrinth of real-time risk management in algorithmic trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Real-time risk management involves gauging and managing the risk levels of trading
+    strategies within the blinks of market shift. It's a systemic measure that plays
+    a vital role in mitigating potential losses and ensuring the functional resilience
+    of your trading system. In the trading universe, the real-time component of this
+    phrase is what brings home the bacon. Reacting to risks as they emerge, without
+    time as a luxury, equates to staying ahead of the curve.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Having a powerful real-time risk management system is no more a luxury but,
+    in fact, a survival requisite in today's algorithmic trading world. Python, with
+    its sophisticated programming potentiality and innumerable function libraries,
+    enables you to establish such solutions that comprehensively cover the essential
+    components of real-time risk management. These primarily include an automated
+    stop-loss system, position sizing, real-time alerts, and sophisticated stress-testing
+    systems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: An understanding of an automated stop-loss system helps create positions that
+    automatically close when the loss on a trade reaches a predetermined threshold.
+    This system acts as a fail-proof weapon, ensuring that your trading ecosystem
+    doesn't crumble even under severe adverse market conditions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE9]'
+  prefs: []
+  type: TYPE_PRE
+- en: Position sizing is another essential aspect of risk management. It entails determining
+    the trading position's size or the number of shares to buy or sell in a trade.
+    Effectively leveraged, position sizing can protect your portfolio from significant
+    volatility.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE10]'
+  prefs: []
+  type: TYPE_PRE
+- en: Push notifications and real-time alerts help keep track of every minute market
+    movement, enabling immediate reaction to potential risk factors. Python, with
+    its robust packages such as `pushbullet.py`, make setting up these real-time alerts
+    an extremely smooth process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Risk is an ever-morphing entity in the dynamic market landscape. Therefore,
+    real-time risk management isn't just about setting up risk boundaries, but continually
+    updating them to accommodate the constantly changing market conditions. Stress-testing,
+    a simulation technique used in algorithmic trading, gauges a trading strategy's
+    resilience to extreme market conditions, effectively ensuring your system is always
+    prepared for the worst.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Breathe deeply, intrepid trader. You're not simply charting the unpredictable
+    waves of algorithmic trading. Instead, you're proactively shaping your voyage
+    by mastering real-time risk management, transforming turbulent squalls into the
+    gentlest breeze. Remember, in the art of trading, success is not about avoiding
+    the storm but about learning to sail your ship. Powered by Python and a robust
+    real-time risk management system, tackle algorithmic trading with a resilience
+    that leaves others in awe.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Data Latency and its Impact
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the universe of trading, time is as vital as it is relentless. Every microscopic
+    moment bears an inscription of possibility that could pivot the course of fortunes.
+    They say, 'time and tide wait for none,' resonating profoundly within the realm
+    of trading. No tide is as mercurial as the waves of market prices, and no time
+    is as fleeting as the instances in algorithmic trading. In this world, every nano-second
+    is a combat zone, and to win, one must outpace time itself or, better still, tame
+    it. Here, we drift into the domain of data latency and its omnipresent impact
+    in algorithmic trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Data latency, in the simplest terms, is the delay in the data transmission.
+    In algorithmic trading, it refers to the time lag between the moment the market
+    event happens (like a price change), till the point the event is captured in your
+    trading platform. The longer this delay, the higher is the data latency. Lower
+    latency, therefore, translates to tighter control over trading activities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: While for a regular trader, this latency might seem an inconspicuous stretch
+    of milliseconds, for an algorithmic trader, it's an eternity. These snippets of
+    time could mean, in some cases, the difference between a profitable trade and
+    a loss. To put things in perspective, today's high-frequency trading firms vie
+    for attaining data latency in the realm of microseconds (one millionth of a second)
+    or even nanoseconds (one billionth of a second).
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the vast and intricate landscape of algorithmic trading, data latency impacts
+    primarily in two ways - your ability to capture opportunities swiftly and the
+    risk of slippage. When latency is high, fast-moving market opportunities get missed,
+    or worse, expose you to higher losses from sudden adverse market movements - a
+    phenomenon known as slippage.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Python, with its advanced tools and libraries, helps us tackle data latency.
+    Libraries like `ZeroMQ` can transport messages or data over different networks
+    swiftly, with minimal latency. Other methods to combat latency issues might include
+    infrastructure improvements such as faster internet connection, direct market
+    access or even co-location - a physical proximity of your server to the exchange's
+    server for quickest data exchange.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE11]'
+  prefs: []
+  type: TYPE_PRE
+- en: The above Python code demonstrates the use of the `ZeroMQ` library to send a
+    test string message. In a real-world trading application, this message could involve
+    a trade order or a market data update, executed swiftly, outrunning latency issues.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Taming time in trading means overriding data latency, a mission steered by the
+    unbeatable Python's prowess coupled with advanced infrastructural adaptability.
+    As we journey through these galactic realms of real-time data processing, remember
+    - it's not just about beating time; it's about befriending it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Streaming Data with Websockets
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Streams of data: serene rivers of blooming potential, continually running,
+    their waters brimming with information. Yet harnessing these flows efficiently
+    is a challenge, one that requires navigational acumen and the right tools. When
+    it comes to algorithmic trading, there''s no piece of equipment more apt for data
+    navigation than Websockets.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Websockets are communication protocols that establish real-time, bidirectional
+    communication channels over a single TCP connection. They maintain an 'open' connection,
+    enabling a server and client to send real-time updates in either direction as
+    soon as data becomes available, unlike the traditional HTTP's request-response
+    model where the client must initiate the interactions. This aspect of Websockets
+    is crucial for algorithmic trading, where split-second data updates could determine
+    the success of a trading strategy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consider an algorithmic trading system that needs real-time market data to make
+    a trading decision. Using Http requests, this system would continuously poll a
+    server for data. Though functional, such a model is inefficient, leading to wasted
+    resources, higher bandwidth usage, and considerable time delay. In contrast, with
+    a Websockets-based system, our trading platform adopts a 'ready to receive' mode
+    where the server instantly pushes relevant market data when it becomes available,
+    ensuring faster response times and more efficient data utilisation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Python, true to its versatility, offers superb support for Websockets. Libraries
+    like `websocket` provide low-level APIs for Websocket interaction, while `websockets`
+    (note the 's' at the end) offers high-level APIs with an easy-to-use interface.
+    Let's look at a basic Python code illustrating the use of the `websocket` library.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE12]'
+  prefs: []
+  type: TYPE_PRE
+- en: In this code, we create an instance of `websocket.WebSocketApp` and supply 'on
+    message' and 'on open' callback function handlers. The `on_message` function is
+    called whenever a new message arrives, whereas `on_open` is called once our Websocket
+    is successfully connected. This code would connect to the specified endpoint,
+    streaming real-time data as messages that our functions can process instantaneously.
+  prefs: []
+  type: TYPE_NORMAL
+- en: But mind you, while Websockets are powerful tools that enable real-time interaction
+    with data streams, they have to be tamed carefully. Overly enthusiastic data streaming
+    might lead to flooding market data, leading to potential system performance issues.
+    Remember, it's not about having all the data but having the right data at the
+    right time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Time-Series Databases for Real-Time Data
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the realm of algorithmic trading, data is the lifeblood. Specifically, real-time
+    data. Every decision the algorithm makes, each tweak the trader initiates, and
+    every strategy the system utilizes, depends on the latest market data. But data
+    in itself becomes meaningless if not stored and managed efficiently. Here, specialized
+    databases, like time-series databases (TSDBs), become pivotal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Time-series databases are optimized for handling time-stamped data. What differentiates
+    them from traditional relational databases or key-value databases is their ability
+    to efficiently store and retrieve data that happens over time. This ability makes
+    them indispensable in scenarios like financial trading, where real-time data equates
+    to real-time profits (or losses).
+  prefs: []
+  type: TYPE_NORMAL
+- en: In algorithmic trading, time-series data usually involves stock prices changing
+    over various time intervals. A TSDB can efficiently store this data and support
+    rapid retrieval of historical data for a specific point in time or a specific
+    interval. This retrieval underpins the algorithms' ability to analyze past trends,
+    make current decisions, and predict future movements.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Python, our infallible ally in algorithmic trading, provides a variety of libraries
+    to interact with time-series databases. One notable library, called 'InfluxDB-Python',
+    interfaces with InfluxDB, a popular open-source time-series database. The following
+    Python code showcases how the library can be used to interact with InfluxDB.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE13]'
+  prefs: []
+  type: TYPE_PRE
+- en: This code provides an example of connecting to an InfluxDB database, writing
+    a new point with time and value data, and finally, querying the data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using time-series databases in concert with Websockets for data streaming creates
+    a robust platform for handling real-time data in algorithmic trading. Combining
+    the real-time data acquisition capabilities of Websockets with the efficient data
+    handling and recall capacities of time-series databases, it forms a powerhouse
+    of data management that can streamline and boost the performance of algorithmic
+    trading strategies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As reassuring as it sounds, one must not forget the outgoing tide leaves only
+    the sturdy ships. The layers of complexity in handling real-time data, managing
+    connectivity, and dealing with extreme cases brought to light by trading events
+    can challenge even the most efficient systems. Therefore, a relentless quest for
+    better strategies, methods and tools continues in the world of algorithmic trading,
+    ensuring that the future remains intriguing and enriching. All of which sets the
+    stage for our next adventure into the invaluable implications of machine learning
+    and AI in algorithmic trading.
+  prefs: []
+  type: TYPE_NORMAL

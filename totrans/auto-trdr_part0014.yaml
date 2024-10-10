@@ -1,0 +1,650 @@
+- en: Chapter 11\. Building A Robust Trading Infrastructure
+  prefs: []
+  type: TYPE_NORMAL
+- en: Hardware Considerations
+  prefs: []
+  type: TYPE_NORMAL
+- en: At the heart of every algorithmic trading setup lies the hardware, the cornerstone
+    supporting the software, data streams, and algorithmic computations. A proficient
+    and rigorous algorithmic trader places paramount importance on the hardware, emphasizing
+    its capacity, reliability, and adaptability to meet changing needs and market
+    challenges. In this , we'll delve into the critical elements to consider when
+    selecting or upgrading your hardware configuration.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One of the initial hardware considerations is the Central Processing Unit (CPU).
+    The CPU serves as the computer's brain, executing instructions from the software.
+    For algorithmic trading, a high-performance CPU is beneficial as it can handle
+    simultaneous computations and data streams faster. This might be necessary, particularly
+    where the trader employs high-frequency trading or complex mathematical models.
+    Therefore, traders might prioritize CPUs with higher clock speeds, multiple cores,
+    and parallel processing capabilities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Secondly, consider the Random Access Memory (RAM), which temporarily stores
+    data that the CPU uses during operation. A larger RAM assists in running multiple
+    applications simultaneously and processing massive datasets common in algorithmic
+    trading. Notably, traders developing machine learning models or handling real-time
+    market feed might require more RAM to facilitate smooth operations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another critical element is the hard drive. For saving vast amounts of historical
+    market data and logging trades, a larger storage unit is prudent. Nowadays, Solid
+    State Drives (SSD) are preferred over traditional Hard Disk Drives (HDD) due to
+    their faster data retrieval speed and reliability, augmenting the overall system
+    performance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Next, network connectivity should not be overlooked. Even the most sophisticated
+    algorithmic trading setup can falter with inconsistent or slow internet connection.
+    Hence, a stable and fast network connection is crucial for receiving real-time
+    data feeds, executing trade orders without latency, and maintaining connection
+    with brokers, counterparts and exchanges.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Beyond these, traders might also consider graphics processing units (GPUs),
+    especially relevant for machine learning applications since they can handle mass
+    parallel calculations. Furthermore, cooling systems, power backup solutions, and
+    multiple monitors could also augment your trading infrastructure.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, a key decision for a trader when considering hardware is whether to
+    invest in a local hardware setup or leverage cloud-based solutions. While local
+    systems might provide a higher level of control and security, cloud-based solutions
+    can offer greater scalability, flexibility, and cost-effectiveness, especially
+    for growing trading operations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here''s a mock Python script illustrating how your hardware considerations
+    translate to your trading setup:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: This script would return a summary of CPU cores, RAM, and available GPUs. Such
+    an analysis can help you understand your current system capabilities and identify
+    areas for future upgrades.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Hardware infrastructure is an essential component of algorithmic trading, especially
+    for strategies that require quick decision-making based on real-time data. A well-equipped
+    system can give traders the potential edge in the highly competitive financial
+    markets. Hence, hardware considerations should always align with future growth,
+    trading objectives, and budget constraints. Remember, an investment in robust
+    hardware could yield its weight in profitable trades.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Software Architecture
+  prefs: []
+  type: TYPE_NORMAL
+- en: Delving into the realms of algorithmic trading isn't merely a testament to your
+    affinity for blending financial acumen with coding prowess. It's explicitly about
+    constructing a formidable machine. A machine that symbolises an indomitable merger
+    of comprehensive hardware setup and ingenious software architecture. In this ,
+    we navigate the intricate coalescence of code, algorithms, and data, better known
+    to the trader world as, the 'Software Architecture.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Software architecture forms the skeletal strategic inter where your algorithmic
+    decisions are met with a methodical structure, enforcing interdisciplinary functionality
+    and interoperability across your trading setup. Much like an architectural blueprint
+    for a physical building, a software architecture outlines the system's design
+    and specifies the interaction amongst its components.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Established at the heart of your trading horizon, you'll find the algorithmic
+    trading platform. This is the primary component of your software architecture,
+    serving as the conductor leading the algorithmic symphony. Trading platforms handle
+    important functionalities such as gathering market data, implementation of trading
+    signals and managing order placements. Tools like Interactive Brokers, Alpaca,
+    and Robinhood provide Python APIs that can be a great starting point.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here''s an example of how to establish a connection to Alpaca''s trading API
+    using Python:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: The backbone, in any case, is the data acquisition and storage component. Real-time,
+    high-frequency data is the lifeblood of algorithmic trading. Ensuring efficient
+    and reliable methods of data ingestion from brokers or data vendors is critical.
+    Simultaneously, a robust data storage solution capable of handling vast amounts
+    of data is requisite. Databases like MySQL or PostgreSQL could be leveraged for
+    structured data, while NoSQL databases like MongoDB could be utilised for semi-structured
+    data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For processing trading data and implementing trading strategies, traders usually
+    employ backtesting and execution engines. These components allow traders to test
+    their strategies using historical data (backtesting) or real-time data (live trading).
+    Python, with its extensive libraries such as Pandas for data manipulation, NumPy
+    for numerical computations and Zipline for backtesting, becomes the unsung hero
+    in these endeavours.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: The final pie in the software architecture is the risk management and trade
+    processing unit. This favours any contingencies, managing open positions, tracking
+    fills and sending orders while maintaining an echo of the algorithmic trading
+    activity.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The choice between building individual components from scratch or making use
+    of existing solutions is contingent upon factors such as strategy complexity,
+    budget, and the trader's coding proficiency. Many commercial and open-source software
+    solutions provide versatile features to facilitate both novice and seasoned algorithmic
+    traders. Remember, a well-designed software architecture is pivotal for efficient,
+    reliable, and scalable trading operations. It can make the difference between
+    sustained profitability and intermittent success.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Data Storage and Management
+  prefs: []
+  type: TYPE_NORMAL
+- en: Within the labyrinth of algorithmic trading, the strength of your software architecture
+    can only be fully realised when the right pieces are put together. And data, revered
+    as the new oil, forms an undeniable cornerstone in this framework. Data in trading
+    is not just about volume; it's about speed, accuracy, timeliness, and accessibility.
+    Thus, in this , we will explore the profound aspects of data storage and management.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Data in trading encompasses diverse data types. You have real-time data, historical
+    data, fundamental data, and alternative data, each with its own idiosyncrasies.
+    Therefore, a robust data storage and management strategy should be capable of
+    accommodating this diversity, ensuring seamless data communication, and setting
+    up a fail-safe data backup and recovery plan.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consider an algorithmic trading setup. Data needs to flow from the market data
+    provider or broker to your trading system speedily and efficiently. This is where
+    database management systems (DBMS) come into play. SQL-based DBMS like MySQL or
+    PostgreSQL are known for their robustness and extensive query capabilities, making
+    them ideal for structured data management.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For instance, here is an example of inserting stock data into PostgreSQL with
+    Python:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE3]'
+  prefs: []
+  type: TYPE_PRE
+- en: Semi-structured and unstructured data (for example, alternative data like social
+    media sentiment or Reuters News Flow) would require more flexible storage solutions
+    like NoSQL databases such as MongoDB or Cloud Storage platforms such as Amazon
+    S3.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Data, of course, is no static entity. With its characteristic fluidity, comes
+    the need for pre-processing, cleaning, backfilling for missing datapoints, outlier
+    management, and normalization. These are the routines you need to build within
+    your data storage and management ecosystem. Python libraries such as Pandas, NumPy,
+    and Scikit-Learn can be especially useful for these purposes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Yet another crucial component is real-time data handling. Elements like data
+    streaming and processing become inevitable when dealing with real-time trading
+    data. This is where tools like Redis, Kafka, or RabbitMQ can aid in real-time
+    data processing with lower latency and higher throughput as a data pipeline framework.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the grand scheme of algorithmic trading, your fortress of data necessitates
+    a solid shield that guards against data corruption, loss, or breaches. Ensuring
+    regular data backups, encryption during data transfers, and rigorous access control
+    mechanisms should be integral to your data management strategy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, don’t underestimate the importance of data accessibility. An intricate
+    network of APIs (Application Programming Interfaces) should ensure that data can
+    seamlessly be fetched from, and fed into, all necessary components of your trading
+    system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In a nutshell, tactical command over your data arsenal can be the pivot that
+    makes or breaks your algorithmic trading operation. But remember, with great data,
+    comes great responsibility. Beyond just caching data, the real capability lies
+    in the extraction of actionable insights that guide your trading strategies, simply
+    put, operationalizing data. Thus, an effective data storage and management strategy
+    propels you onboard the flight towards achieving your trading goals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Security Considerations
+  prefs: []
+  type: TYPE_NORMAL
+- en: From the bedrock of software architecture to the veneer of user interfaces,
+    security in algorithmic trading is a multi-faceted domain that bridges technology
+    and compliance. With increasing migrations towards cloud-based setups, permeability
+    of mobile applications, and the incessant rise in cybercrime, security has undoubtedly
+    become a forefront priority. In this , we plunge into the whirlpool of security
+    considerations for an algorithmic trading infrastructure.
+  prefs: []
+  type: TYPE_NORMAL
+- en: At the crux of your trading operations lies the sanctity of your data. Encrypted
+    data transmission, secure login mechanisms, restricted access control, and regular
+    security audits help forge the protective barriers around your data. SSL/TLS encryption
+    ensures secure communication between your trading bots and broker's servers. Multi-factor
+    authentication enhances the security of your user logins.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Consider this snippet of Python code for AES encryption of your data:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE4]'
+  prefs: []
+  type: TYPE_PRE
+- en: Yet, protecting your data is not where it ends, but where it begins. It’s also
+    vital to shield your order routing and execution mechanisms, critical to averting
+    market manipulation. Pre-trade risk checks, order throttling, kill switches -
+    these must form an integral part of an algorithmic trader's toolkit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Hardware and network security are the unsung heroes of an algorithmic trading
+    setup. Firewalls and intrusion detection or prevention systems (IDS/IPS) safeguard
+    you from any unauthorized access to your trading network. Public key infrastructure
+    and secure VPNs further bolster your network security.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Security, in the realm of cloud computing and trading, is twofold. While cloud
+    servers offer the advantage of robust protection against hardware failures, power
+    outages, and losing data, they also pose a risk of multi-tenancy and shared technology
+    vulnerabilities. Therefore, selecting a reputable cloud service provider with
+    stringent security norms is pivotal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Lastly, let's not overlook the regulatory guidelines that rule the roost. Compliance
+    to tiered access controls, audit logs, and regulatory measures such as GDPR, HIPAA,
+    and CCPA (depending on your geographic and demographic trading patterns) ensures
+    that you navigate the stormy waters of algorithmic trading legally unscathed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In conclusion, security in an algorithmic trading setup is not an option, but
+    a mandatory checklist. It demands constant surveillance, timely upgrades, and
+    running on the treadwheel of evolving technology and regulations. After all, in
+    the realm of trading, while you hustle for profits, you cannot afford to lose
+    your shield.
+  prefs: []
+  type: TYPE_NORMAL
+- en: System Monitoring and Alerts
+  prefs: []
+  type: TYPE_NORMAL
+- en: The crux of algorithmic trading is not simply the formulation of successful
+    trading strategies; it is also about timely and efficient execution. This requires
+    a seamless performance of your infrastructure, making system monitoring and imposed
+    alerts mission-critical components of your trading setup. Wondering why? This 
+    dives into precisely that.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Any malfunction or fault in your algorithmic trading infrastructure can cascade
+    into colossal losses in a matter of seconds. Here, system monitoring proves to
+    be your knight in shining armor. It aids in identifying hardware malfunctions,
+    software crashes, network connectivity issues, or even unwarranted latencies,
+    allowing you to take quick remedial actions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In Python, there are incredible tools which enable efficient system monitoring.
+    For instance, `psutil` is a cross-platform library used to access system details
+    and process utilities. The following Python snippet demonstrates how to fetch
+    CPU utilization data:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE5]'
+  prefs: []
+  type: TYPE_PRE
+- en: Apart from monitoring the computational resources, it is essential to scrutinize
+    the performance metrics of your trading algorithms. You should ensure the expected
+    throughput, latency, and transaction-per-second (TPS) are within acceptable limits
+    and keep an eye out for any memory leakage problems. Here Python's `Profile` library
+    can help provide statistical analysis of resources consumed by different s of
+    your algorithm.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The second wing of a robust system is alert management. To operate at peak
+    efficiency, you need immediate alerts about any failures or breakdowns so that
+    you can take immediate action. Alerts also help prevent fraud by detecting unusual
+    trading behaviors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE6]'
+  prefs: []
+  type: TYPE_PRE
+- en: This simple Python script could be used to send an email alert in the event
+    of a malfunction or irregularity. Other platforms, like Twilio, offer APIs for
+    SMS alerts. You can often also customize these alerts based on the severity of
+    the issues.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Monitoring the health of your trading system and keeping alert mechanisms in
+    place ensure a smooth trading experience, limit undesired losses, and help catch
+    technical glitches before they snowball into major issues. They form an integral
+    part of your fail-safe mechanism and ensure the robustness of your trading infrastructure.
+    Be vigilant, stay alerted, and trade with confidence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fail-Safe Mechanisms
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fail-safe mechanisms take a critical role in ensuring the functionality and
+    profitability of your algorithmic trading setup. Predominantly designed to curb
+    the impact of unexpected catastrophic events or failures, these mechanisms add
+    a preventative layer to your trading process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: From system crashes and power outages to abrupt market fluctuations and data
+    corruption, diverse spectrums of threats lie in the path of algorithmic trading.
+    Without a resilient fail-safe mechanism, these threats have the potential to escalate
+    into significant financial losses. This  will guide you on effectively integrating
+    robust fail-safe mechanisms to safeguard your trading operations against the unpredictable.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Before diving into the technical context, it's essential to understand the concept
+    of fail-safe mechanisms in the landscape of algorithmic trading. Essentially,
+    fail-safe mechanisms are systematic protocols devised to ensure graceful degradation
+    in the event of a breakdown. In algorithmic trading, where trades are lightning-fast
+    and automatic, these mechanisms are designed to prevent failures from spiraling
+    into costly errors.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Python, as an incredibly versatile language, offers excellent tools to implement
+    such fail-safe mechanisms. Central to this is exception handling. Python’s try-except
+    blocks can catch and deal with errors during run-time, preventing the program''s
+    abrupt halt. Here is an elementary example of how exception handling works in
+    Python:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE7]'
+  prefs: []
+  type: TYPE_PRE
+- en: These blocks can catch different types of exceptions, from a simple IOError
+    to complex issues like MemoryError, providing you complete control over problem-solving
+    strategies. They gracefully catch any unexpected behavior during run-time and
+    define what happens in the event of such errors.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another effective fail-safe strategy involves the use of 'circuit breakers'.
+    These are protections invoked when specific conditions are met, forcing the algorithm
+    to stop trading. This mechanism is particularly beneficial when markets are hugely
+    volatile, helping avoid massive losses. It's equivalent to the emergency stop
+    lever on a piece of dangerous machinery.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For instance, developing a simple circuit breaker in Python can involve defining
+    a conditional statement checking for an unacceptable level of portfolio drawdown.
+    If the drawdown surpasses the predefined limit, the 'circuit breaker' triggers,
+    halting the algorithm from placing further trades.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE8]'
+  prefs: []
+  type: TYPE_PRE
+- en: Intricate planning should be applied to designing fail-safe mechanisms as one-size
+    may not fit all. The fail-safe for a high-frequency trading algorithm might look
+    very different from a slower, bulk trading bot. Remember, the ultimate goal of
+    these mechanisms is to protect you from unpredictable market dynamics and technical
+    glitches.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Maintaining order in the whirlwind of algorithmic trading can be challenging.
+    Still, by enforcing suitable fail-safe mechanisms, you can navigate this digital
+    world with more confidence and resilience, positioning yourself one step ahead
+    in the game of algorithmic trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Order Routing and Execution
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the financial markets, success or failure hangs often in the balance of milliseconds.
+    Even the most robustly coded trading algorithms armed with fail-safe measures
+    can fall flat without an efficient order routing and execution process highly
+    susceptible to concepts such as latency. This  endeavors to facilitate a deeper
+    understanding of the significance of order routing and execution in algorithmic
+    trading, specifically focusing on how Python can leverage this critical aspect.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Order routing is the systemized procedure through which market orders - your
+    buying or selling instructions- reach the exchange from your trading platform.
+    The speed, efficiency, and reliability of this procedure play a crucial role in
+    securing price-time priority, a coveted aspect when dealing with highly volatile,
+    hyper-reactive financial markets.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Python, renowned for its simplicity and power, emerges as an effective language
+    for overseeing the order routing and execution process. Several Python-based trading
+    platforms, libraries, and Application Programming Interfaces (APIs) offer straightforward
+    ways to route orders and handle their execution. Whether you’re interfacing directly
+    with an exchange or using a broker, Python likely has a serviceable library or
+    API.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For instance, Interactive Brokers, a popular broker among algorithmic traders,
+    provides the IBPy interface. This Python wrapper allows you to interact with the
+    Interactive Brokers' Trader WorkStation (TWS), enabling you to route orders and
+    handle their execution programmatically.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let us consider the following block of Python code as an example to illustrate
+    how to route an order:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE9]'
+  prefs: []
+  type: TYPE_PRE
+- en: In this snippet, a connection to TWS is established, an order for buying one
+    share of Google's stock is created, and then the order is placed for execution.
+    The entire order routing and execution process takes place within a brief, programmable
+    procedure.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Speed isn't the only benchmark; quality matters just as much, if not more. Invest
+    in meticulously tracking the performance of any venue to which you are routing
+    orders. Supervise fills, monitor latency, and constantly keep an eye out for speed
+    bumps.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Order routing and execution in algorithmic trading goes beyond technology or
+    strategy. It forms a canvas where the law of microeconomics, nuances of market
+    mechanics, and art of algorithmic elegance converge. In this pursuit of blending
+    precision with promptness, Python might just prove to be the guide you were seeking
+    in the labyrinth of algorithmic trading. Always remember, financial markets never
+    sleep, and as an algorithmic trader, neither does your code. Your algorithms should
+    be always up, always analyzing and always ready. And the right order routing and
+    execution strategy ensures just that. It ensures you stay ahead of the markets,
+    always.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Colocation and Proximity Hosting
+  prefs: []
+  type: TYPE_NORMAL
+- en: The world of algorithmic trading is dictated by response times that are often
+    smaller than the blink of an eye. These extremely minuscule time measures, known
+    in the vernacular as latencies, can become a formidable roadblock for traders
+    who fail to acknowledge and address them. It may dissuade these otherwise capable
+    coders caught in a struggle between pushing their systems into overdrive and accepting
+    that technology and geology possess finite limits. This is where colocation and
+    proximity hosting enter the frame, enabling traders to bend the seemingly indomitable
+    limits of time and distance alike.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Colocation and proximity hosting are fundamental elements in today’s ultra-competitive
+    algorithmic trading landscape. Traders employ these techniques to eliminate the
+    constraints posed by the speed of light and geographic location. They fundamentally
+    alter the algorithmic trading environment by pulling servers and traders from
+    various corners across the globe and gathering them into tightly packed technological
+    bazaars. Here, information flows seamlessly and nearly instantaneously, giving
+    birth to a trading utopia where winning and losing stand on a knife's edge.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Firstly, let us zero in on understanding what colocation and proximity hosting
+    imply. Colocation, in the context of trading, pertains to the practice of housing
+    privately-owned servers and networking equipment in a third-party data centre.
+    This is typically a facility that is situated within, or extremely close to, the
+    premises of an exchange. Proximity hosting is quite similar, although it pushes
+    the concept a touch further by providing a managed service where a third-party
+    vendor also takes the responsibility of maintaining the servers along with providing
+    the space.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The main goal of both these practices is to cut down the travel time when an
+    order is placed and wedding the trading algorithm to the exchange. Doing so not
+    only introduces higher speed to order execution but also, with greater proximity,
+    comes enhanced access to real-time market data directly from the exchange itself.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'But how is the amalgamation of colocation and Python beneficial to an algorithmic
+    trader? Suppose you utilise the following Pythonic code to proximally host an
+    order handling algorithm:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE10]'
+  prefs: []
+  type: TYPE_PRE
+- en: This script sends a single order of buying 5 DOJun19 contracts at a price of
+    42.56 pesos to the ROFX market from a proximally hosted server directly through
+    the trading engine. Just by utilising Python’s libraries, the speed and efficiency
+    of an algorithm can be dramatically improved.
+  prefs: []
+  type: TYPE_NORMAL
+- en: But like the two sides of a coin, colocation and proximity hosting come with
+    their own sets of challenges. Traders need to deal with surprisingly high maintenance
+    costs of high-end servers, infrastructural complexity and challenges in maintaining
+    a stable connection. Therefore, algorithmic traders must evaluate the associated
+    benefit from lower latencies against these costs, keeping in perspective their
+    specific trading strategies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As latency gets whittled down, the battle in algorithmic trading will increasingly
+    happen at the peripheries – in milliseconds and microseconds. In this advanced
+    race against time, colocation and proximity hosting could be the game-changing
+    elements that differentiate success from failure. These two techniques, twinned
+    with Python as a tool, can truly empower an algorithmic trader to turn latency
+    from a potential obstacle into a competitive edge.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Building Redundancies
+  prefs: []
+  type: TYPE_NORMAL
+- en: Algorithmic trading has blossomed into a complex machine that weds sophisticated
+    financial mathematics with some of the most advanced computing technologies mankind
+    has created. Latency is obliterated, algorithms whirr into motion at the speed
+    of light, and fortunes are made or lost before we can blink. But what happens
+    when this magnificently streamlined contraption comes grinding to a screeching
+    halt? Such moments remind traders of a seemingly omnipresent Tolkienian adage,
+    “One error to rule them all”.
+  prefs: []
+  type: TYPE_NORMAL
+- en: System failures are inherent parts of algorithmic trading that every trader
+    grapples with at some point. However, the damage these errors inflict can be significantly
+    curtailed by weaving a safety net by way of building redundancies. Building redundancies,
+    in a nutshell, is a set of protocols developed to avoid, mitigate and manage catastrophic
+    failures in algorithmic trading systems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Redundancy, in computing and algorithmic trading, is a method of fault tolerance.
+    It involves allocating surplus or backup resources in anticipation of system failure.
+    These backup systems spring into action when main trading servers, connections
+    or algorithms stumble or fail. They serve as a secondary line of defence that
+    keeps your trading infrastructure up and running even when primary systems fail.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For instance, algorithmic traders operating on Python can leverage cloud-based
+    resources for creating redundancy. Let''s examine an example using Amazon Web
+    Services (AWS) to create multiple instances of your trading server:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE11]'
+  prefs: []
+  type: TYPE_PRE
+- en: This script spins up two replicas of your trading server to act as redundancies
+    in an AWS environment. If the primary server were to stumble and fall, the burden
+    of operations would be swiftly handed over to the redundant servers, ensuring
+    continuous functioning of the algorithmic trading strategy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let''s explore another type of redundancy; network redundancy. An algorithmic
+    trader, as an example, could set up a secondary ISP or Internet Service Provider
+    that automatically takes over should the primary ISP fail. Pythonic code for managing
+    and switching between different network interfaces could look something like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE12]'
+  prefs: []
+  type: TYPE_PRE
+- en: Redundancies are an integral part of algorithmic trading, a knight in shining
+    armour that shield traders against unforeseen mechanical errors. But bear in mind
+    that creating redundant systems isn't a one-size-fits-all solution. It needs careful
+    understanding of the specific resilience requirements, appropriate infrastructure
+    resources, and the costs associated with achieving redundancy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Impenetrable defence systems are born as much from iron wills as from meticulous
+    planning and preparation. And while building redundancies may appear tedious and
+    costly, in the formidable world of algorithmic trading, it could well be the stitch
+    that saves nine.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Maintenance and Upkeep
+  prefs: []
+  type: TYPE_NORMAL
+- en: We’ve all heard the age-old adage, “Prevention is better than cure”. The wisdom
+    that underpins this saying holds all-too-true in the world of algorithmic trading.
+    As much as we strive to prevent slip-ups and roadblocks from arising within our
+    trading infrastructures, the harsh reality is that these disruptions are inevitable.
+    Trading systems are fallible, and it's important these mishaps are handled with
+    expediency and precision.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Maintenance and upkeep are arguably the unsung heroes of algorithmic trading,
+    the Pheonix rising from the ashes of trading catastrophes and gracefully restoring
+    order amidst chaos. These terms refer to the continuous task of testing, updating,
+    modifying, and managing the software and trading infrastructure to guarantee its
+    optimal functioning.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s kick-start this exploration with scheduled maintenance. This usually
+    involves periodical checks and updates on your trading systems. You might test
+    your server speed, check the stability of your algorithms, scrutinize each line
+    of code for bugs and bottlenecks, or add updates to improve system performance.
+    Let''s take a look at how one might schedule a task in Python, using a library
+    called schedule:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE13]'
+  prefs: []
+  type: TYPE_PRE
+- en: This bit of script schedules a daily system check at 1 am, a time when you probably
+    aren't executing trades. This form of maintenance guarantees that your system
+    is running at its optimal best and any identified issues can be swiftly rectified.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Regular data clean-up is another crucial maintenance activity. Over time, immense
+    amounts of data are accrued - obsolete, redundant, or no longer valuable for trading
+    decisions. Regular deletion or archiving of such data not only declutters your
+    system but can help your algorithms run more efficiently. An example of a Python
+    script to remove outdated files could look something like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE14]'
+  prefs: []
+  type: TYPE_PRE
+- en: This script lists all the files in your specific data folder, checks the last
+    modification time, and if the file hasn't been updated in the past 60 days, it
+    removes the file.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Maintenance and upkeep in algorithmic trading aren’t mere preventative measures,
+    they’re also a way to extract the most juice from your system. Along with performance-enhancing
+    system updates, traders can progressively incorporate advancements in market research,
+    algorithmic techniques, new datasets, and novel instruments to trade.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Ultimately, the practicality and urgency of maintenance and upkeep cannot be
+    overstated. The best-built ships would countdown to wreckage without continuous
+    upkeep, and algorithmic trading systems are no different. Remember, the smooth
+    functioning of your trading infrastructure is an ongoing endeavor, a tireless
+    exploration that undergirds the complex ballet of algorithmic trading.
+  prefs: []
+  type: TYPE_NORMAL

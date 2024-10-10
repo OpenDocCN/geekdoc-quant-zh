@@ -1,0 +1,884 @@
+- en: Sample Trading Programs – Step by Step Guide
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sample Trading Program 1 - Generic
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 1: Import Libraries and Set Up Environment'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let's start by importing the necessary libraries.
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: import pandas as pd
+  prefs: []
+  type: TYPE_NORMAL
+- en: import numpy as np
+  prefs: []
+  type: TYPE_NORMAL
+- en: import matplotlib.pyplot as plt
+  prefs: []
+  type: TYPE_NORMAL
+- en: from sklearn.ensemble import RandomForestClassifier
+  prefs: []
+  type: TYPE_NORMAL
+- en: from sklearn.metrics import accuracy_score
+  prefs: []
+  type: TYPE_NORMAL
+- en: from sklearn.model_selection import train_test_split
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 2: Import and Preprocess Data'
+  prefs: []
+  type: TYPE_NORMAL
+- en: For this example, let's use historical stock data for, say, Apple Inc. (AAPL).
+    You can obtain this data from various sources, like Yahoo Finance or a dedicated
+    API.
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: Assume df is a DataFrame with historical data
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df = pd.read_csv('AAPL_data.csv')
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Calculate moving averages
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df['SMA_50'] = df['Close'].rolling(window=50).mean()
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['SMA_200'] = df['Close'].rolling(window=200).mean()
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 3: Feature Engineering'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let's add some more features that might be relevant for trading, like volatility
+    and momentum.
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: Volatility
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df['Volatility'] = df['Close'].rolling(window=50).std()
+  prefs: []
+  type: TYPE_NORMAL
+- en: Momentum
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df['Momentum'] = df['Close'].diff(4)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 4: Create Labels'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let's label our data for supervised learning. If the price increased in the
+    next 5 days, label it as 1; otherwise, 0.
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Future_Close'] = df['Close'].shift(-5)
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Label'] = np.where(df['Future_Close'] >= df['Close'], 1, 0)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 5: Prepare Data for Model'
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: features = ['SMA_50', 'SMA_200', 'Volatility', 'Momentum']
+  prefs: []
+  type: TYPE_NORMAL
+- en: X = df[features].dropna()
+  prefs: []
+  type: TYPE_NORMAL
+- en: y = df['Label'][df.index.isin(X.index)]
+  prefs: []
+  type: TYPE_NORMAL
+- en: X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 6: Build and Train Model'
+  prefs: []
+  type: TYPE_NORMAL
+- en: We will use a Random Forest Classifier for this example.
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: model = RandomForestClassifier(n_estimators=100)
+  prefs: []
+  type: TYPE_NORMAL
+- en: model.fit(X_train, y_train)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 7: Evaluate Model'
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: y_pred = model.predict(X_test)
+  prefs: []
+  type: TYPE_NORMAL
+- en: print('Accuracy:', accuracy_score(y_test, y_pred))
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 8: Implement Strategy and Backtest'
+  prefs: []
+  type: TYPE_NORMAL
+- en: If the model predicts 1 (price will go up), then buy; otherwise, sell.
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Predicted_Label'] = model.predict(df[features].dropna())
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Strategy_Returns'] = df['Close'].pct_change() * df['Predicted_Label'].shift()
+  prefs: []
+  type: TYPE_NORMAL
+- en: cumulative_strategy_returns = (1 + df['Strategy_Returns']).cumprod()
+  prefs: []
+  type: TYPE_NORMAL
+- en: cumulative_market_returns = (1 + df['Close'].pct_change()).cumprod()
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.figure(figsize=(10,5))
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.plot(cumulative_market_returns, label='Market Returns')
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.plot(cumulative_strategy_returns, label='Strategy Returns')
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.legend()
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.show()
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is a simple example to get you started. In a real-world application, you'd
+    have to validate your strategy through extensive backtesting, optimize your features,
+    and probably implement risk management strategies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Python – Complete Program
+  prefs: []
+  type: TYPE_NORMAL
+- en: Importing Libraries
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: import pandas as pd
+  prefs: []
+  type: TYPE_NORMAL
+- en: import numpy as np
+  prefs: []
+  type: TYPE_NORMAL
+- en: from sklearn.ensemble import RandomForestClassifier
+  prefs: []
+  type: TYPE_NORMAL
+- en: from sklearn.metrics import accuracy_score
+  prefs: []
+  type: TYPE_NORMAL
+- en: from sklearn.model_selection import train_test_split
+  prefs: []
+  type: TYPE_NORMAL
+- en: import matplotlib.pyplot as plt
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 2: Import and Preprocess Data'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Assuming you have a CSV file called 'AAPL_data.csv' with historical data
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df = pd.read_csv('AAPL_data.csv')
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: For demonstration, let's generate some dummy data
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df = pd.DataFrame({
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Close'': np.random.rand(1000) * 1000  # Generating random close prices'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '})'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculate moving averages
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df['SMA_50'] = df['Close'].rolling(window=50).mean()
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['SMA_200'] = df['Close'].rolling(window=200).mean()
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 3: Feature Engineering'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Volatility
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df['Volatility'] = df['Close'].rolling(window=50).std()
+  prefs: []
+  type: TYPE_NORMAL
+- en: Momentum
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df['Momentum'] = df['Close'].diff(4)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 4: Create Labels'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df['Future_Close'] = df['Close'].shift(-5)
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Label'] = np.where(df['Future_Close'] >= df['Close'], 1, 0)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 5: Prepare Data for Model'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: features = ['SMA_50', 'SMA_200', 'Volatility', 'Momentum']
+  prefs: []
+  type: TYPE_NORMAL
+- en: X = df[features].dropna()
+  prefs: []
+  type: TYPE_NORMAL
+- en: y = df['Label'][df.index.isin(X.index)]
+  prefs: []
+  type: TYPE_NORMAL
+- en: X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 6: Build and Train Model'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: model = RandomForestClassifier(n_estimators=100)
+  prefs: []
+  type: TYPE_NORMAL
+- en: model.fit(X_train, y_train)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 7: Evaluate Model'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: y_pred = model.predict(X_test)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'print(f''Accuracy: {accuracy_score(y_test, y_pred)}'')'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 8: Implement Strategy and Backtest'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df['Predicted_Label'] = model.predict(df[features].dropna())
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Strategy_Returns'] = df['Close'].pct_change() * df['Predicted_Label'].shift()
+  prefs: []
+  type: TYPE_NORMAL
+- en: cumulative_strategy_returns = (1 + df['Strategy_Returns']).cumprod()
+  prefs: []
+  type: TYPE_NORMAL
+- en: cumulative_market_returns = (1 + df['Close'].pct_change()).cumprod()
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.figure(figsize=(10,5))
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.plot(cumulative_market_returns, label='Market Returns')
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.plot(cumulative_strategy_returns, label='Strategy Returns')
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.legend()
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.show()
+  prefs: []
+  type: TYPE_NORMAL
+- en: Please note that you'll need to replace the random dummy data with actual historical
+    data by uncommenting the line that reads the CSV file. And remember, this is just
+    an example and not actual trading advice. Make sure to backtest thoroughly before
+    considering any strategy for live trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sample Trading Program 2 - Generic
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 1: Importing Libraries We''ll use Pandas for data manipulation, Matplotlib
+    for charting, and NumPy for numerical operations.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: import pandas as pd
+  prefs: []
+  type: TYPE_NORMAL
+- en: import numpy as np
+  prefs: []
+  type: TYPE_NORMAL
+- en: import matplotlib.pyplot as plt
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 2: Import and Preprocess Data Assuming you have a CSV file with historical
+    data (let''s say for the AAPL stock).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: df = pd.read_csv('AAPL_data.csv')
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: For demo purposes, let's generate some random data
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df = pd.DataFrame({
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Close'': np.random.rand(1000) * 1000'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '})'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 3: Feature Engineering Calculate the rolling mean and standard deviation
+    for 20 periods.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Rolling_Mean'] = df['Close'].rolling(window=20).mean()
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Rolling_STD'] = df['Close'].rolling(window=20).std()
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 4: Create Bollinger Bands The upper band is the rolling mean + (2 * rolling
+    std dev), and the lower band is the rolling mean - (2 * rolling std dev).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Upper_Band'] = df['Rolling_Mean'] + (df['Rolling_STD'] * 2)
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Lower_Band'] = df['Rolling_Mean'] - (df['Rolling_STD'] * 2)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 5: Create Labels If the Close price is higher than the Upper Band, we''ll
+    sell (-1), and if it''s lower than the Lower Band, we''ll buy (1).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Signal'] = 0
+  prefs: []
+  type: TYPE_NORMAL
+- en: df.loc[df['Close'] > df['Upper_Band'], 'Signal'] = -1
+  prefs: []
+  type: TYPE_NORMAL
+- en: df.loc[df['Close'] < df['Lower_Band'], 'Signal'] = 1
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 6: Implement Strategy Calculate daily returns.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Daily_Return'] = df['Close'].pct_change()
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Strategy_Return'] = df['Signal'].shift() * df['Daily_Return']
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 7: Backtest Calculate the cumulative returns for both the strategy and
+    the market.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Cumulative_Market_Returns'] = (1 + df['Daily_Return']).cumprod()
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Cumulative_Strategy_Returns'] = (1 + df['Strategy_Return']).cumprod()
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 8: Plotting the Strategy vs Market Returns'
+  prefs: []
+  type: TYPE_NORMAL
+- en: python
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.figure(figsize=(10,5))
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.plot(df['Cumulative_Market_Returns'], label='Market Returns')
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.plot(df['Cumulative_Strategy_Returns'], label='Strategy Returns')
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.legend()
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.show()
+  prefs: []
+  type: TYPE_NORMAL
+- en: Here's the complete code in one piece. You'd need to replace the dummy data
+    with your real historical data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Python
+  prefs: []
+  type: TYPE_NORMAL
+- en: import pandas as pd
+  prefs: []
+  type: TYPE_NORMAL
+- en: import numpy as np
+  prefs: []
+  type: TYPE_NORMAL
+- en: import matplotlib.pyplot as plt
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 2: Import and Preprocess Data'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df = pd.read_csv('AAPL_data.csv')
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Dummy data for the demonstration
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df = pd.DataFrame({
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Close'': np.random.rand(1000) * 1000'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '})'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 3: Feature Engineering'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df['Rolling_Mean'] = df['Close'].rolling(window=20).mean()
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Rolling_STD'] = df['Close'].rolling(window=20).std()
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 4: Create Bollinger Bands'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df['Upper_Band'] = df['Rolling_Mean'] + (df['Rolling_STD'] * 2)
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Lower_Band'] = df['Rolling_Mean'] - (df['Rolling_STD'] * 2)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 5: Create Labels'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df['Signal'] = 0
+  prefs: []
+  type: TYPE_NORMAL
+- en: df.loc[df['Close'] > df['Upper_Band'], 'Signal'] = -1
+  prefs: []
+  type: TYPE_NORMAL
+- en: df.loc[df['Close'] < df['Lower_Band'], 'Signal'] = 1
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 6: Implement Strategy'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df['Daily_Return'] = df['Close'].pct_change()
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Strategy_Return'] = df['Signal'].shift() * df['Daily_Return']
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 7: Backtest'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df['Cumulative_Market_Returns'] = (1 + df['Daily_Return']).cumprod()
+  prefs: []
+  type: TYPE_NORMAL
+- en: df['Cumulative_Strategy_Returns'] = (1 + df['Strategy_Return']).cumprod()
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 8: Plotting'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: plt.figure(figsize=(10,5))
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.plot(df['Cumulative_Market_Returns'], label='Market Returns')
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.plot(df['Cumulative_Strategy_Returns'], label='Strategy Returns')
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.legend()
+  prefs: []
+  type: TYPE_NORMAL
+- en: plt.show()
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sample Trading Program 3 – Interactive Brokers
+  prefs: []
+  type: TYPE_NORMAL
+- en: from ib_insync import IB, Stock, util, MarketOrder
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 1: Connect to Interactive Brokers'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: ib = IB()
+  prefs: []
+  type: TYPE_NORMAL
+- en: ib.connect('127.0.0.1', 7497, clientId=1)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 2: Define a contract and request historical candles'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: contract = Stock('AAPL', 'SMART', 'USD')
+  prefs: []
+  type: TYPE_NORMAL
+- en: ib.qualifyContracts(contract)
+  prefs: []
+  type: TYPE_NORMAL
+- en: bars = ib.reqHistoricalData(
+  prefs: []
+  type: TYPE_NORMAL
+- en: contract,
+  prefs: []
+  type: TYPE_NORMAL
+- en: endDateTime='',
+  prefs: []
+  type: TYPE_NORMAL
+- en: durationStr='30 D',
+  prefs: []
+  type: TYPE_NORMAL
+- en: barSizeSetting='1 hour',
+  prefs: []
+  type: TYPE_NORMAL
+- en: whatToShow='MIDPOINT',
+  prefs: []
+  type: TYPE_NORMAL
+- en: useRTH=True)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Convert to DataFrame
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: df = util.df(bars)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 3: Define a simple moving average strategy'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: sma_short = df['close'].rolling(window=5).mean()
+  prefs: []
+  type: TYPE_NORMAL
+- en: sma_long = df['close'].rolling(window=20).mean()
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 4: Generate trading signals based on the strategy'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: signals = []
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'for short, long in zip(sma_short, sma_long):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'if short > long:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: signals.append(1)  # Buy
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'else:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: signals.append(0)  # Sell
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 5: Execute trades'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'for i in range(1, len(signals)):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'if signals[i] > signals[i - 1]:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Execute a buy order
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: order = MarketOrder('BUY', 10)
+  prefs: []
+  type: TYPE_NORMAL
+- en: trade = ib.placeOrder(contract, order)
+  prefs: []
+  type: TYPE_NORMAL
+- en: ib.sleep(1)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'print(f"Buy order status: {trade.orderStatus.status}")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'elif signals[i] < signals[i - 1]:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Execute a sell order
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: order = MarketOrder('SELL', 10)
+  prefs: []
+  type: TYPE_NORMAL
+- en: trade = ib.placeOrder(contract, order)
+  prefs: []
+  type: TYPE_NORMAL
+- en: ib.sleep(1)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'print(f"Sell order status: {trade.orderStatus.status}")'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ib.disconnect()
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sample Trading Program 4 – Meta Trader
+  prefs: []
+  type: TYPE_NORMAL
+- en: //+------------------------------------------------------------------+
+  prefs: []
+  type: TYPE_NORMAL
+- en: //|                                              MovingAverage.mq4   |
+  prefs: []
+  type: TYPE_NORMAL
+- en: //|                        Copyright 2023, Company Name               |
+  prefs: []
+  type: TYPE_NORMAL
+- en: //+------------------------------------------------------------------+
+  prefs: []
+  type: TYPE_NORMAL
+- en: '#property copyright "MetaQuotes Software Corp."'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '#property link      "https://www.mql5.com"'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '#property version   "1.00"'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Declare extern variables (adjustable from MetaTrader)
+  prefs: []
+  type: TYPE_NORMAL
+- en: extern int TakeProfit = 100;
+  prefs: []
+  type: TYPE_NORMAL
+- en: extern int StopLoss = 50;
+  prefs: []
+  type: TYPE_NORMAL
+- en: extern int FastMA = 5;
+  prefs: []
+  type: TYPE_NORMAL
+- en: extern int SlowMA = 20;
+  prefs: []
+  type: TYPE_NORMAL
+- en: //+------------------------------------------------------------------+
+  prefs: []
+  type: TYPE_NORMAL
+- en: //| Expert initialization function                                   |
+  prefs: []
+  type: TYPE_NORMAL
+- en: //+------------------------------------------------------------------+
+  prefs: []
+  type: TYPE_NORMAL
+- en: int OnInit()
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Initialize your trading algorithm here
+  prefs: []
+  type: TYPE_NORMAL
+- en: return(INIT_SUCCEEDED);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: //+------------------------------------------------------------------+
+  prefs: []
+  type: TYPE_NORMAL
+- en: //| Expert deinitialization function                                 |
+  prefs: []
+  type: TYPE_NORMAL
+- en: //+------------------------------------------------------------------+
+  prefs: []
+  type: TYPE_NORMAL
+- en: void OnDeinit(const int reason)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // De-initialize your trading algorithm here
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: //+------------------------------------------------------------------+
+  prefs: []
+  type: TYPE_NORMAL
+- en: //| Expert tick function                                             |
+  prefs: []
+  type: TYPE_NORMAL
+- en: //+------------------------------------------------------------------+
+  prefs: []
+  type: TYPE_NORMAL
+- en: void OnTick()
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{'
+  prefs: []
+  type: TYPE_NORMAL
+- en: double fastMA = iMA(NULL, 0, FastMA, 0, MODE_SMA, PRICE_CLOSE, 0);
+  prefs: []
+  type: TYPE_NORMAL
+- en: double slowMA = iMA(NULL, 0, SlowMA, 0, MODE_SMA, PRICE_CLOSE, 0);
+  prefs: []
+  type: TYPE_NORMAL
+- en: if(fastMA > slowMA)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Buy logic here
+  prefs: []
+  type: TYPE_NORMAL
+- en: if(OrderSend(Symbol(), OP_BUY, 1, Ask, 3, 0, Ask + TakeProfit * Point, "", 0,
+    Green) > 0)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Successfully placed buy order
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: else if(fastMA < slowMA)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Sell logic here
+  prefs: []
+  type: TYPE_NORMAL
+- en: if(OrderSend(Symbol(), OP_SELL, 1, Bid, 3, 0, Bid - StopLoss * Point, "", 0,
+    Red) > 0)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Successfully placed sell order
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: //+------------------------------------------------------------------+
+  prefs: []
+  type: TYPE_NORMAL
