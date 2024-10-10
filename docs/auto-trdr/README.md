@@ -1,6 +1,6 @@
-# 技术指标和振荡器大全
+# 自动交易员指南
 
-> 原文：[`stockcharts.com/school/doku.php?id=chart_school:technical_indicators`](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators)
+> 原文：[`annas-archive.org/md5/1d649bd514cf61e6e48fdfe720ef452b`](https://annas-archive.org/md5/1d649bd514cf61e6e48fdfe720ef452b)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 
