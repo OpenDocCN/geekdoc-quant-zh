@@ -96,10 +96,12 @@
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 二叉树是期权估值中的基本结构，提供了资产价格随时间变化的可能路径的图形表示。它的构建是有条不紊的，每一层代表到期的一个时间步骤，每个节点的价格是通过特定的上升和下降运动因子计算得出的。我们将现在检查构建二叉树的逐步过程，根植于理论智慧和实际应用之中。
 - en: 'Step-by-Step Construction:'
   id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 逐步构建：
 - en: 'Firstly, we must establish our parameters: the initial asset price (S0), the
     strike price (K), the time to expiration (T), the risk-free rate (r), the volatility
     of the underlying asset (σ), and the number of time steps (n). These parameters
@@ -108,20 +110,24 @@
   id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，我们必须确定我们的参数：初始资产价格（S0）、行使价格（K）、到期时间（T）、无风险利率（r）、基础资产的波动率（σ）以及时间步数（n）。这些参数将决定我们二叉树的形状和大小，并直接影响期权的定价。
 - en: '1\. Time Interval Determination:'
   id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 时间间隔确定：
 - en: Calculate the length of each time interval (Δt) by dividing the total time to
     expiration (T) by the number of time steps (n). This interval dictates the frequency
     of asset price movements within the model.
   id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过将到期总时间（T）除以时间步数（n），计算每个时间间隔的长度（Δt）。此间隔决定了模型中资产价格变动的频率。
 - en: '2\. Calculation of Up and Down Factors:'
   id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 上升和下降因子的计算：
 - en: The up factor (u) and the down factor (d) are determined using the asset's volatility
     (σ) and the length of the time intervals (Δt). These factors represent the proportion
     by which the asset price will increase or decrease at each step and are typically
@@ -129,20 +135,24 @@
   id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 上升因子（u）和下降因子（d）是通过资产的波动率（σ）和时间间隔的长度（Δt）来确定的。这些因子表示在每一步中资产价格将增加或减少的比例，通常由波动率和正态分布属性推导而来。
 - en: '3\. Initialization of Asset Prices:'
   id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 资产价格初始化：
 - en: Begin by setting the initial asset price at the top-most node. For each subsequent
     step down the tree, calculate the price by multiplying the previous step's price
     by the up or down factor.
   id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先在最顶层节点设置初始资产价格。对于树的每一个后续步骤，计算价格，通过将前一步的价格乘以上升或下降因子。
 - en: '4\. Asset Price at Each Node:'
   id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 4\. 每个节点的资产价格：
 - en: 'At each node, two branches extend to the next step: an up branch, where the
     new price is the previous node''s price multiplied by the up factor (u), and a
     down branch, where the new price is the previous node''s price multiplied by the
@@ -150,10 +160,12 @@
   id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 在每个节点，两个分支延伸到下一个步骤：一个上升分支，其中新价格是前一个节点的价格乘以上升因子（u），另一个下降分支，其中新价格是前一个节点的价格乘以下降因子（d）。
 - en: '5\. Risk-Neutral Probabilities:'
   id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 5\. 风险中性概率：
 - en: Using the risk-free rate (r) and the up and down factors, compute the risk-neutral
     probability (p) of an up movement in the asset price. The probability of a down
     movement will be 1-p. These probabilities are essential for ensuring the model
@@ -161,15 +173,18 @@
   id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用无风险利率（r）以及上升和下降因子，计算资产价格上升的风险中性概率（p）。下降运动的概率将为1-p。这些概率对于确保模型无套利以及将未来收益折现为现值至关重要。
 - en: 'Python Implementation Example:'
   id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: Python实现示例：
 - en: 'Let''s construct a binomial tree for an underlying asset with the following
     parameters: S0 = $100, K = $100, T = 1 year, r = 5%, σ = 30%, and n = 3 steps.'
   id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们为一个基础资产构建一个二叉树，参数如下：S0 = $100，K = $100，T = 1年，r = 5%，σ = 30%，n = 3步。
 - en: '[PRE1]'
   id: totrans-27
   prefs: []
@@ -179,6 +194,7 @@
   id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过可视化表示加深理解：
 - en: To deepen our intuition and aid in the comprehension of the binomial tree, one
     can visualize the tree's structure. This can be accomplished by plotting the tree's
     nodes and connecting them to their respective up and down branches, showcasing
@@ -186,6 +202,7 @@
   id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了加深我们的直觉并帮助理解二叉树，可以将树的结构可视化。通过绘制树的节点并将其连接到各自的上升和下降分支，可以展示资产价格可能遵循的各种潜在路径。
 - en: Constructing a binomial tree is a meticulous process that captures the essence
     of option valuation under uncertainty. It allows for the incorporation of market
     nuances such as American option's early exercise rights and the flexibility to
@@ -516,10 +533,12 @@
   id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: Theta表示期权价格对时间流逝的敏感性，通常称为时间衰减。对于使用二项树计算的期权，Theta是两个时间步长之间期权价格的差异。
 - en: 'Vega - Volatility Sensitivity:'
   id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: Vega - 波动率敏感性：
 - en: While not technically a Greek letter, Vega is indispensable in options trading,
     measuring the option's sensitivity to volatility. In the context of a binomial
     tree, Vega is gauged by assessing the change in the option's value with respect
@@ -527,10 +546,12 @@
   id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然严格来说不是一个希腊字母，但Vega在期权交易中不可或缺，衡量期权对波动率的敏感性。在二项树的背景下，Vega通过评估期权价值对小幅波动率变化的变化进行测量。
 - en: 'Rho - Interest Rate Risk:'
   id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: Rho - 利率风险：
 - en: Rho assesses the impact of interest rate changes on the option's value. Although
     often less significant than the other Greeks, Rho's importance grows with long-dated
     options. It is computed by observing the difference in option prices for varying
@@ -538,15 +559,18 @@
   id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: Rho评估利率变化对期权价值的影响。尽管通常不如其他希腊字母重要，但Rho在长期期权中的重要性逐渐上升。它是通过观察不同利率下期权价格的差异来计算的。
 - en: 'Calculating Greeks Using Python and a Binomial Tree:'
   id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用Python和二项树计算希腊字母：
 - en: Let us construct a Python function that calculates the Greeks for an American
     put option using a binomial tree.
   id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们构建一个Python函数，用于使用二项树计算美式看跌期权的希腊字母。
 - en: '[PRE4]'
   id: totrans-85
   prefs: []
@@ -556,6 +580,7 @@
   id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 解读希腊字母：
 - en: Understanding the Greeks allows traders to construct a portfolio that is balanced
     not just in terms of asset allocation but also in terms of risk exposure. Delta
     hedging, for example, might involve adjusting positions to achieve a Delta-neutral
@@ -564,6 +589,7 @@
   id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 理解希腊字母使交易者能够构建一个在资产配置和风险暴露方面都平衡的投资组合。例如，Delta对冲可能涉及调整头寸以实现Delta中性投资组合，从而减少基础资产小幅价格波动的影响。
 - en: The binomial tree, with its discrete time steps and flexibility in modeling
     early exercise, serves as an excellent framework for calculating the Greeks. Armed
     with these calculations, traders and risk managers can make informed decisions
@@ -574,6 +600,7 @@
   id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 二项树以其离散的时间步长和灵活的早期行使建模能力，为计算希腊字母提供了出色的框架。借助这些计算，交易者和风险管理者可以做出明智的决策，以保护和优化他们的投资组合。提供的Python实现是深入探讨期权希腊字母世界的起点，邀请读者进一步完善这些方法，以适应更复杂的期权结构或市场条件。
 - en: In the pursuit of precision and practicality, we have traversed beyond mere
     formulaic definitions, venturing into the sphere of computational finance, where
     Python stands as an indomitable ally. By fostering a robust understanding of the
@@ -582,10 +609,12 @@
   id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 在追求精确和实用的过程中，我们已经超越了单纯的公式定义，进入了计算金融的领域，在这里，Python是一个不可动摇的盟友。通过培养对希腊字母的深入理解，我们使自己能够自信而灵活地应对市场风险的不断变化。
 - en: Convergence and Stability of the Binomial Model
   id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 二项模型的收敛性和稳定性
 - en: Venturing further into the mechanics of the binomial model, we turn our attention
     to its convergence and stability—attributes that are central to the model's credibility
     and reliability. The convergence of the binomial model ensures that as the number
@@ -595,6 +624,7 @@
   id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 更深入地探讨二项模型的机制，我们将注意力转向其收敛性和稳定性——这些属性是模型可信度和可靠性的核心。二项模型的收敛性确保随着时间步数的增加，计算的期权价格接近真实的连续时间期权价格。稳定性则指模型在不同输入参数下产生一致结果的能力。
 - en: Convergence is the bedrock upon which the binomial model is validated. It is
     the mathematical property that guarantees the model's output aligns with established
     option pricing theory as the number of steps within the tree increases. To ensure
