@@ -2,10 +2,12 @@
   id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第7章：优化你的交易算法
 - en: The Need for Optimization
   id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 优化的必要性
 - en: Imagine this. You're an artist, your canvas arrayed with various hues from the
     financial markets reflecting unpredictable complexities. Your chosen tool of creation?
     Trading algorithms. However, even the most spectacular masterpiece requires careful
@@ -15,6 +17,7 @@
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 想象一下。你是一位艺术家，你的画布上呈现出来自金融市场的各种色彩，反映出不可预测的复杂性。你选择的创作工具是什么？交易算法。然而，即使是最壮观的杰作也需要仔细的打磨——一个细致的过程，将普通作品转变为精美工艺。欢迎来到优化的世界，这是算法交易的关键方面，等待着被揭示。
 - en: In trading, the 'artistic flair' isn't about flamboyant expressions but considerable
     financial profit. Hence, creating the initial trading idea, though important,
     isn't the be-all and end-all. The real hero of this finance saga is optimization
@@ -23,6 +26,7 @@
   id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在交易中，“艺术魅力”并不是华丽的表达，而是可观的财务利润。因此，创造初始交易理念虽然重要，但并不是**全部**。这个金融传奇的真正英雄是优化——可以潜在地将好的交易策略转变为伟大的秘密武器。
 - en: 'Often, a trading algorithm appears promising at onset, equipped with seemingly
     robust logic, hypothetical profit potential and backtested with historical data
     for performance evaluation. However, a myriad of underlying parameters: entry
@@ -35,6 +39,7 @@
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 通常，交易算法在开始时看似充满潜力，具备看似稳健的逻辑、假设的利润潜力，并通过历史数据进行回测以评估表现。然而，许多潜在的参数：入场或出场标准、风险管理规则、头寸规模或移动平均线中的周期数量，带来了丰富的复杂性。每个参数都会影响交易策略的盈利能力、表现和风险暴露。但你如何选择最佳参数值以最大化利润并最小化风险呢？这就是优化不可或缺的艺术发挥作用的地方。
 - en: Algorithmic trading is fraught with the conundrum of choices. There is no 'one-size-fits-all'
     algorithm. The real challenge lies not just in designing algorithms but in optimizing
     them to adapt to the trader's needs, their risk appetite and their performance
@@ -44,6 +49,7 @@
   id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法交易面临选择的难题。没有“通用”的算法。真正的挑战不仅在于设计算法，还在于优化它们以适应交易者的需求、风险承受能力和业绩期望。在这里，优化施展其魔法，微调参数，使其达到最佳水平，从而策略的表现达到最佳效果。
 - en: Optimization is your ultimate aide in this decision-making process. It's a meticulous
     drill that tests and tweaks your trading system under diverse scenarios, adjusting
     it to work best under the anticipated market conditions. It offers a close evaluation
@@ -52,6 +58,7 @@
   id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 优化是你在决策过程中的**终极**助手。这是一个细致的练习，在多种情境下测试和调整你的交易系统，使其在预期市场条件下发挥最佳效果。它提供对交易参数的仔细评估，以提高能力并在实时实施之前减少低效。
 - en: Still, why the 'need' for optimization you ask? The market, in its innate dynamism,
     has multiple moving parts. Volatility, volume fluctuations, changing asset prices,
     and liquidity patterns - all play a role in the grand scheme of the market. Trading
@@ -61,6 +68,7 @@
   id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过，你问，为何需要优化？市场本质上的动态性具有多个活动部分。波动性、交易量波动、资产价格变化和流动性模式——这些都在市场的整体格局中发挥作用。交易算法优化是让你的算法在这一系列变量中高效运行的关键，使其在市场的有害暗流中脱颖而出，朝着交易成功的地平线前行。
 - en: However, it is important to tread this road of optimization with caution, dodging
     potential pitfalls such as over-optimization, where the algorithm becomes a victim
     of overfitting, tailoring too closely to historical data but faltering to replicate

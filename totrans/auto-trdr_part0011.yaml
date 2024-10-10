@@ -1,160 +1,228 @@
 - en: Chapter 8\. Managing Risk in Algorithmic Trading
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第8章：算法交易中的风险管理
 - en: 'No Reward Without Risk: Deciphering the Many Faces of Trading Risks'
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 无风险无回报：解读交易风险的多面性
 - en: In a world where market conditions ebb and flow with the same audacity as the
     ocean tide, algorithmic trading is often both hailed and feared. Why? Because,
     like the sea itself, it is laden with a mélange of risks. And these risks are
     the gateway to the opportunity for potential reward. Grasping the significance
     of these risks, each with its unique characteristics and potential impacts, is
     the foundation of a robust algorithmic trading strategy.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在市场条件像海洋潮汐一样变化莫测的世界中，算法交易常常受到推崇与恐惧。为什么？因为，像海洋本身一样，它充满了各种风险。这些风险是潜在回报机会的门户。理解这些风险的意义，每一种都有其独特的特征和潜在影响，是构建稳健算法交易策略的基础。
 - en: Recognition and understanding of risks do not equate to their elimination, but
     it allows for judicious management, taking steps to mitigate harsh impacts and
     harnessing potential opportunities. The forest of algorithmic trading can be intricate
     and mysterious, but let's illuminate the path by introducing the different types
     of risks that may lurk in the shadows.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 识别和理解风险并不等于消除风险，但可以实现明智管理，采取措施减轻严重影响并利用潜在机会。算法交易的森林可能错综复杂且神秘，但让我们通过介绍潜伏在阴影中的不同类型风险来照亮前行之路。
 - en: Market Risk
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 市场风险
 - en: Market risk, also known as systematic or undiversifiable risk, refers to the
     risk influencing an entire market, not just specific securities or trading algorithms.
     The key aspects dictating market risk vary from interest rates and inflation to
     political turmoils and pandemics. Although these factors are typically uncontrollable,
     understanding market risk is a cornerstone in building a resilient trading algorithm.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 市场风险，也称为系统性风险或不可分散风险，是指影响整个市场的风险，而不仅仅是特定的证券或交易算法。决定市场风险的关键因素包括利率、通货膨胀、政治动荡和疫情等。尽管这些因素通常是不可控的，但理解市场风险是构建韧性交易算法的基石。
 - en: Liquidity Risk
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 流动性风险
 - en: This is the risk arising from the inability to swiftly execute trades without
     significantly impacting the security's price. For instance, a trading algorithm
     may identify an opportunity, but market circumstances like low trading volume
     could hinder the execution of the trade without causing substantial price changes.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是由于无法迅速执行交易而不会显著影响证券价格而产生的风险。例如，交易算法可能识别出一个机会，但市场状况如低交易量可能会阻碍交易的执行，而不造成重大价格变化。
 - en: Model Risk
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型风险
 - en: Model risk springs from deficiencies in model design or erroneous algorithms.
     This could be due to inaccurate assumptions, faulty data input, coding errors,
     or oversimplifications. Rigorous backtesting can help mitigate this risk, unhindered
     by the temptation of overfitting.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型风险源于模型设计缺陷或算法错误。这可能是由于不准确的假设、错误的数据输入、编码错误或过于简单化。严格的回测可以帮助减轻这种风险，而不受过拟合诱惑的影响。
 - en: Operational Risk
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 操作风险
 - en: Operational risk refers to the risk of loss resulting from inadequate or failed
     internal processes, systems, personnel, or external events. This could range from
     hardware or software malfunction, internet connectivity interruptions, to human
     errors — all posing a threat to a smooth trading operation.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 操作风险指由于内部流程、系统、人员或外部事件不充分或失败而导致的损失风险。这可能包括硬件或软件故障、互联网连接中断，以及人为错误——这些都对顺利交易操作构成威胁。
 - en: Regulatory Risk
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 监管风险
 - en: Regulatory risk is the risk of changes in laws and regulations affecting a security,
     market, industry, or a country’s general investment climate. Algorithmic trading
     must necessarily comply with regulations of financial bodies, and any non-compliance
     can pose significant risk elements.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 监管风险是指法律法规的变化影响证券、市场、行业或一个国家的整体投资环境的风险。算法交易必须遵守金融机构的法规，任何不合规都可能带来重大风险因素。
 - en: Counterparty Risk
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 对手方风险
 - en: Counterparty Risk, also known as default risk, is the risk that the counterparty
     in a contract may not live up to their contractual obligations. This risks the
     potential non-completion of the transactions initiated by the trading algorithm.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 对手方风险，也称为违约风险，是指合同中的对手方可能无法履行其合同义务的风险。这会导致交易算法发起的交易未能完成的潜在风险。
 - en: Risk Metrics
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 风险指标
 - en: In the dynamic world of algorithmic trading, risk can often feel like an elusive
     shadow – ever-present yet difficult to grasp. A fundamental approach to risk management
     in the realm of finance is through quantification. By working with tangible numbers
     using defined metrics, traders and algorithms can understand, compare, and predict
     various risk factors, thereby making informed decisions.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 在动态的算法交易世界中，风险常常像一个难以捉摸的影子——时刻存在却难以掌握。金融领域风险管理的基本方法是通过量化。通过使用定义好的指标与可量化的数字，交易者和算法能够理解、比较和预测各种风险因素，从而做出明智的决策。
 - en: Value at Risk (VaR)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 风险价值（VaR）
 - en: VaR is an industry-standard tool used to quantify market risk and assess possible
     portfolio losses. It essentially tells us the maximum loss a portfolio could potentially
     endure over a given period at a certain confidence level. While VaR aids in providing
     a concise risk measure, it also has limitations such as ignoring tail risk and
     potential extreme market movements.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: VaR是一种行业标准工具，用于量化市场风险和评估可能的投资组合损失。它基本上告诉我们，在某个特定置信水平下，投资组合可能承受的最大损失。虽然VaR提供了简明的风险度量，但它也有局限性，如忽视尾部风险和潜在的极端市场波动。
 - en: Conditional Value at Risk (CVaR)
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 条件风险价值（CVaR）
 - en: CVaR or Expected Shortfall (ES), recognizes the limitations of VaR and aims
     to address them. Instead of only considering the maximum loss up to a certain
     confidence level, CVaR measures the worst-case loss beyond that level. As such,
     CVaR considers tail risk while revealing the extent of losses in extreme scenarios.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: CVaR或预期短缺（ES）承认VaR的局限性并旨在解决这些问题。CVaR不仅考虑在特定置信水平下的最大损失，还测量超出该水平的最坏情况损失。因此，CVaR考虑了尾部风险，同时揭示了在极端情况下的损失程度。
 - en: Variance and Standard Deviation
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 方差和标准差
 - en: These statistical measures denote the dispersion of a dataset or, in our case,
     the returns. Higher variance or standard deviation typifies a higher degree of
     risk because the asset's returns spread far from the mean or expected value. Thus,
     variance and standard deviation are direct indicators of volatility, a principal
     risk in trading.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些统计指标表示数据集的离散程度，或者在我们的例子中，是回报的离散程度。更高的方差或标准差意味着更高的风险，因为资产的回报远离均值或预期值。因此，方差和标准差是波动性（交易中的主要风险）的直接指标。
 - en: Beta
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 贝塔
 - en: This risk metric evaluates the asset or portfolio's systemic risk and sensitivity
     to changes in the market as a whole. Its calculation compares the asset's returns
     to the market returns, providing a measure of the asset's market-related risk.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 该风险指标评估资产或投资组合的系统性风险及其对整体市场变化的敏感性。其计算方法是将资产的回报与市场回报进行比较，从而提供资产的市场相关风险的度量。
 - en: Alpha
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 阿尔法
 - en: While beta helps us understand market-related risk, alpha presents the risk-adjusted
     performance of an investment. Alpha compares the return of the asset or portfolio
     against that of a benchmark index and adjusts it for the risk undertaken (measured
     by beta).
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然贝塔帮助我们理解与市场相关的风险，但阿尔法呈现的是投资的风险调整后表现。阿尔法将资产或投资组合的回报与基准指数进行比较，并根据所承担的风险（由贝塔测量）进行调整。
 - en: Sharpe Ratio
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 夏普比率
 - en: The Sharpe ratio allows traders to understand the returns of a portfolio per
     unit of risk taken. It subtracts the risk-free rate from the expected portfolio
     returns and divides the result by the portfolio's standard deviation (volatility).
     A higher Sharpe ratio indicates better risk-adjusted performance.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 夏普比率让交易者理解每单位风险所获得的投资组合回报。它将无风险利率从预期的投资组合回报中减去，并将结果除以投资组合的标准差（波动性）。更高的夏普比率表明更好的风险调整后表现。
 - en: Drawdown
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 回撤
 - en: Drawdown is a metric that traders often review, illustrating the decline from
     a peak to a trough for an investment during a specific period. It aids in visualizing
     potential losses from the peak and can trigger checks or controls in trading algorithms
     when certain levels are breached.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 回撤是交易者经常审查的一个指标，显示了在特定时期内，投资从峰值到低谷的下降情况。它有助于可视化从峰值产生的潜在损失，并可以在某些水平被突破时触发交易算法中的检查或控制。
 - en: Sortino Ratio
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: Sortino比率
 - en: Like the Sharpe ratio, the Sortino ratio also evaluates risk-adjusted returns.
     However, its uniqueness lies in penalizing only downside volatility, making it
     particularly relevant in asymmetric return distributions or strategies.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 与夏普比率类似，Sortino比率也评估风险调整后的回报。然而，它的独特之处在于仅惩罚下行波动，使其在不对称回报分布或策略中特别相关。
 - en: Having equipped ourselves with these risk quantification checkpoints, we are
     now better prepared to engage with the dynamic tide of financial markets. By effectively
     measuring risk through these metrics, we can fine-tune our trading strategies
@@ -164,65 +232,91 @@
     through the systematic application of risk metrics. As algorithmic traders, we
     learn to dance with risk, knowing when to make our move and when to step back,
     all to the rhythm and beat of complex financial markets.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 凭借这些风险量化的检查点，我们现在更好地准备与金融市场的动态潮流互动。通过有效衡量这些指标中的风险，我们可以微调交易策略，以最小化损失，*最终*最大化利润，伴随我们在算法交易中的旅程。尽管市场不断演变且充满不确定性，我们学会在其混乱中保持舒适，通过系统性地应用风险指标寻找机会。作为算法交易者，我们学会与风险共舞，知道何时出手，何时退步，伴随复杂金融市场的节奏和韵律。
 - en: Implementing Stop Losses
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 实施止损
 - en: In the tempestuous seas of financial markets, the seasoned algorithmic trader
     understands the crucial balance between sailing forth to seize potential profits
     and knowing when to lower the anchor, mitigating risks. The implementation of
     stop losses is one such technique to limit potential losses, protecting the trader's
     valuable capital.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 在金融市场的波涛汹涌中，经验丰富的算法交易者理解在抓住潜在利润和知道何时降低锚以减轻风险之间的关键平衡。实施止损是一种限制潜在损失的技巧，保护交易者宝贵的资本。
 - en: Stop losses can be the lighthouse amidst a storm, offering a predetermined point
     of retreat when the market tides turn against us. It's a form of python-coded
     insurance policy, activating a sell order once a security hits a specifically
     set price. This nuance of algorithmic trading offers both a shield and a weapon,
     providing risk management while empowering traders with the comfort to be more
     aggressive in their profitable positions.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 止损可以在风暴中充当灯塔，当市场潮流对我们不利时，提供一个预定的撤退点。这是一种用 Python 编写的保险政策，当证券达到特定设定价格时激活卖单。这种算法交易的细微之处既提供了保护，又成为一种武器，既实现风险管理，又让交易者在获利头寸上更加积极。
 - en: Let's dive into the process of setting up stop losses, incorporating them into
     a Python-powered trading algorithm, and understanding their impact.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们深入探讨设置止损的过程，将其纳入一个由 Python 驱动的交易算法，并理解其影响。
 - en: Fixed Stop Loss
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 固定止损
 - en: The simplest form is the fixed stop loss, setting a firm exit point at a set
     price below the buying price. If the market price drops to this value, the algorithm
     triggers a sell order. The disadvantage, however, is the lack of flexibility,
     potentially dislodging a position due to normal market volatility.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 最简单的形式是固定止损，在买入价格下方设定一个坚定的退出点。如果市场价格跌至该值，算法会触发卖单。然而，缺乏灵活性可能会因正常市场波动而使持仓失位。
 - en: '[PRE0]'
+  id: totrans-41
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: Trailing Stop Loss
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 跟踪止损
 - en: A trailing stop loss provides a more adaptable approach. It sets the stop loss
     price below the market price but adjusts upwards if the market price rises. However,
     if the market price falls, the stop loss price remains unchanged. This allows
     the trader to protect gains while limiting losses.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 跟踪止损提供了一种更灵活的方法。它将止损价格设定在市场价格下方，但如果市场价格上涨，则向上调整。然而，如果市场价格下跌，止损价格则保持不变。这允许交易者在限制损失的同时保护收益。
 - en: '[PRE1]'
+  id: totrans-44
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: By integrating these functions into our algorithm, we offer it a safeguard against
     undue risk, allowing it to navigate the unpredictable ebbs and flows of the market
     ocean with more confidence.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过将这些功能集成到我们的算法中，我们为其提供了一种防范不当风险的保障，使其能够更自信地应对市场波动的不可预测性。
 - en: Equipping the algorithm with stop loss implementation requires meticulous planning
     as it influences the risk-reward ratio, which is quintessential to any trading
     strategy. While it might create bounded losses, it can also limit profits if not
     strategically positioned.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 为算法配备止损实施需要细致的规划，因为它会影响风险回报比，这对任何交易策略至关重要。虽然它可能会产生有限的损失，但如果未能战略性地定位，也可能限制利润。
 - en: As we imbibe these practices, we acknowledge that as traders, we are not fortune
     tellers predicting the future with unfailing accuracy, but navigators, who chart
     our courses so that we can weather the storms that come our way. With stop losses
@@ -232,89 +326,124 @@
     is just one facet of the multifaceted gem that is algorithmic trading risk management.
     As we delve further into this world, we assemble our arsenal, one technique at
     a time.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们吸收这些实践时，我们承认作为交易者，我们不是能够准确预测未来的占卜者，而是航海者，绘制航线以应对即将来临的风暴。通过将止损集成到我们的算法中，我们为未来的不确定性筑起了防线，使我们的交易冒险更加自信地驶向成功的地平线。将止损编程到我们的算法路径中只是算法交易风险管理这个多面宝石的一个方面。当我们进一步深入这个世界时，我们每次都在积累我们的武器库，一步一个脚印。
 - en: There's a fine line between bravery and recklessness in the realm of trading.
     Implementing stop losses ensures we are on the right side of that line. As we
     venture forth, our quest to master the vocation of algorithmic trading evolves,
     charting not just a course on the sea of bytes and data, but also on a journey
     of continuous learning and adaptation.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 在交易领域，勇敢与鲁莽之间有一条微妙的界限。实施止损可以确保我们站在这条界线的正确一侧。随着我们不断前行，掌握算法交易的职业之旅不断演变，不仅在字节和数据的海洋中绘制航线，还踏上了持续学习和适应的旅程。
 - en: Position Sizing Strategies
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 头寸规模策略
 - en: In any given trade, choosing to side with optimism or caution is a gambler's
     game, often resulting in ruin if left purely to the whims of chance. For the astute
     trader, there's a tried and proven methodology that pulls us clear of speculation
     and firmly into the realm of strategic planning and execution. Welcome to the
     world of position sizing strategies.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 在任何交易中，选择乐观或谨慎的态度都是一种赌博游戏，往往如果完全依赖于偶然的冲动，结果会导致毁灭。对于精明的交易者来说，有一种经过验证的方法论可以使我们摆脱投机，坚定地进入战略规划和执行的领域。欢迎来到头寸规模策略的世界。
 - en: Position sizing has a twofold purpose. It lays down a method to calculate the
     amount of capital to be invested in each trade and at the same time, serves as
     another protective layer, hedging against capital depletion from unpredictable
     market movements.
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 头寸规模有双重目的。它为每笔交易计算投资资本的金额奠定了方法，同时也作为另一层保护，抵御市场波动带来的资本减少。
 - en: Envision it as deciding the number of sailors to board your ship for an expedition.
     Too few and you risk insufficient manpower for tough seas, too many and your ship
     may sink from the weight. It’s a balancing act that the algorithmic trader must
     carefully execute, and Python provides us with the ideal toolbox to do so.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 可以将其想象成决定为远征登船的水手人数。人手太少，你可能面临在恶劣海况下的不足人力；人手太多，你的船可能因重量而沉没。这是算法交易者必须谨慎执行的平衡行为，而
+    Python 为我们提供了理想的工具箱来实现这一点。
 - en: 'Let''s delve into two crucial position sizing strategies that you can implement
     in your trading algorithm: Fixed Fractional Position Sizing and Fixed Ratio Position
     Sizing.'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们深入探讨可以在交易算法中实施的两种关键头寸规模策略：固定分数头寸规模和固定比例头寸规模。
 - en: Fixed Fractional Position Sizing
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 固定分数头寸规模
 - en: 'Here, a fixed percentage of available capital is risked in each trading operation,
     providing a consistent benchmark for each trade. The Python implementation might
     look like:'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，每次交易操作中都会冒一定比例的可用资本风险，为每笔交易提供一致的基准。Python 实现可能看起来像这样：
 - en: '[PRE2]'
+  id: totrans-56
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: This strategy ensures that as your account balance grows, you're comfortably
     obligated to invest more per trade, while if cuts befall, the amount risked drops
     in proportion.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个策略确保随着你的账户余额增长，你会在每笔交易中舒适地投资更多，而如果出现亏损，冒的风险金额会相应下降。
 - en: Fixed Ratio Position Sizing
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 固定比例头寸规模
 - en: For traders with aggressive profit aspirations, the Fixed Ratio method increases
     the amount bet per trade as the account balance goes up. This approach employs
     a delta value to accelerate the rise in bet size relative to the increase in account
     balance.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于那些追求激进利润的交易者，固定比例方法会随着账户余额的增加而增加每笔交易的赌注金额。此方法采用增量值来加速赌注规模相对于账户余额增长的上升。
 - en: '[PRE3]'
+  id: totrans-60
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: By defining the position sizing strategy within our Python-powered algorithm,
     we induce an additional level of control, and give our trading system the latitude
     to chase profitable trades, whilst also being cognizant of risk thresholds.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过在我们基于Python的算法中定义头寸规模策略，我们增加了一层控制，同时赋予交易系统追求盈利交易的自由，同时也关注风险阈值。
 - en: Clearly, there's no 'one-size-fits-all' approach when it comes to position sizing.
     The trader and algorithm designer must consider parameters such as risk appetite,
     financial goals, and individual market conditions. What counts is the consistent
     application of the chosen strategy, giving the algo its best chance at navigating
     the market's tumultuous currents.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 显然，头寸规模没有“统一标准”的方法。交易者和算法设计者必须考虑风险偏好、财务目标和个别市场条件等参数。重要的是对所选策略的一致应用，让算法在市场动荡的潮流中拥有最佳的导航机会。
 - en: Position sizing is an adventurer's game, a fine-tuned algorithmic apparatus
     that steers us between the shores of caution and venturous equity growth. It’s
     not just about fighting the market monstrosities but about training our algorithmic
     knight to choose its battles wisely, knowing when to charge forth and when to
     hold back.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 头寸规模是冒险者的游戏，是一个精细调校的算法工具，指导我们在谨慎与冒险性股本增长的海岸之间航行。这不仅仅是与市场巨兽作斗争，而是训练我们的算法骑士明智地选择战斗，知道何时冲锋、何时撤退。
 - en: As we architect the blueprint of our trading algorithm, remember that position
     sizing is more than mere addition to its structure. It infuses the algorithm with
     a shield of risk prudence, even as it arms it with a sword of progressive investment.
@@ -325,398 +454,556 @@
     that philosophy. The expedition to steady profits is ever-evolving, demanding
     constant learning, adaptation, and resilience, much like the ocean tides that
     a seasoned mariner learns to respect and harness.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们构建交易算法的蓝图时，请记住，头寸规模不仅仅是其结构的一个补充。它赋予算法风险谨慎的保护盾，同时也武装其进取投资的剑。在打造这样一个平衡的算法时，我们进入金融交易领域的冒险之旅便成为一场令人兴奋的探索，等待为我们提供细致而精心策划的胜利的财富。成功的交易者不仅是一个勇敢的征服者，更是一个智慧的战略家。我们的头寸规模策略正是这种哲学的体现。稳定盈利的探索是不断演变的，要求持续的学习、适应和韧性，就像经验丰富的水手学会尊重和利用的海洋潮汐。
 - en: So, strap up, for your algorithmic ship is now ready to set sail into the strategic
     seas of position sizing, equipped with the compass of Python, and the maps of
     tried and tested strategies. A thrilling pursuit of the trading fortune awaits.
     Unfurl your algorithmic sails! Let the wind of diligent strategy guide your vessel
     towards the horizon of financial prowess.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，系好安全带，因为你的算法船现在已经准备好启航，驶入头寸规模的战略海洋，装备着Python的罗盘和经过验证的策略地图。激动人心的交易财富追求在等待着你。展开你的算法帆！让勤奋策略的风引导你的船只驶向财务实力的地平线。
 - en: Diversification Strategies
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 多样化策略
 - en: Venture forth into any vibrant cornfield. Wade through the different shades
     of green. A verdant expanse unfolds into a vast tapestry of diversity. Just like
     a farmland thrives on a diversity of crops, a trading portfolio too, gains resilience
     and potential growth through diversification.
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 走进任何生机勃勃的玉米田。穿行于不同的绿色阴影中。一片郁郁葱葱的土地展开成多样性的广阔画卷。就像农田因作物多样性而蓬勃生长，交易组合也通过多样化获得韧性和潜在的增长。
 - en: With a myriad of assets begging for our attention, selective trading might seem
     an enticing approach. However, no single asset, however lucrative it appears,
     is foolproof to the capricious whims of the market. If a storm hits the cornfield,
     every corn stalk could be damaged. Similarly, placing all your stakes in a single
     asset class sets the stage for crippling losses when the market sways unfavorably.
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 在众多资产争夺我们的注意力时，选择性交易似乎是一种诱人的方法。然而，没有任何单一资产，无论它看起来多么丰厚，都能完全抵御市场的变化。如果一场风暴袭击玉米田，每根玉米秆都有可能受损。类似地，将所有赌注压在单一资产类别上会在市场不利波动时造成重大的损失。
 - en: Python, yet again, brings to the fore an ensemble of diversification techniques,
     ensuring trading portfolios branch out into avenues that simultaneously optimize
     returns and minimize risks.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: Python再次将一系列多样化技术呈现于前，确保交易组合向优化收益和最小化风险的途径发展。
 - en: Portfolio Diversification
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 投资组合多样化
 - en: In its most preliminary essence, diversification involves spreading investments
     across various markets rather than lumping them into a single basket. An optimally
     diversified portfolio encompasses a blend of distinct assets whose price movements
     are not entirely correlated, creating a collective force-field against unpredictable
     shocks in any particular sector.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 在其最基本的本质上，多样化涉及将投资分散到各个市场，而不是将其集中在一个篮子里。一个优化的多样化投资组合包含了一系列价格变动不完全相关的独特资产，形成了抵御任何特定领域不可预测冲击的集体力场。
 - en: 'Here is a simple Python function that calculate a diversified portfolio:'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有一个简单的Python函数，用于计算多样化的投资组合：
 - en: '[PRE4]'
+  id: totrans-73
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: Sector Diversification
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 行业多样化
 - en: Excellent diversification doesn't merely lie in owning a variety of stocks,
     but in ensuring that these stocks span across multiple industries or sectors.
     Spreading investments across sectors like technology, healthcare, energy, or financial
     services, provides another layer of diversification.
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 优秀的多样化不仅仅在于拥有多种股票，而在于确保这些股票跨越多个行业或领域。将投资分散到技术、医疗保健、能源或金融服务等领域，为多样化提供了另一层保障。
 - en: '[PRE5]'
+  id: totrans-76
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: Geographic Diversification
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 地理多样化
 - en: Geographic diversification takes the broad approach of splitting investments
     across domestic, international, and emerging markets, thereby mitigating risks
     related to economic factors unique to a certain country or region.
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 地理多样化采取广泛的方法，将投资分散到国内、国际和新兴市场，从而减少与特定国家或地区独特经济因素相关的风险。
 - en: '[PRE6]'
+  id: totrans-79
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: Deftly implemented, diversification strategies serve as our course-plotting
     compasses and storm-ready anchors, offering a holistic approach to managing portfolio
     risks. Like the trusty sextant of the seasoned mariner, Python guides the diligent
     algo trader to establish a truly diversified portfolio sailing the changing waves
     of profit.
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 巧妙实施的多样化策略充当了我们航行的罗盘和防风锚，为管理投资组合风险提供了整体性的方法。就像经验丰富的水手信赖的六分仪，Python引导勤奋的算法交易者建立真正多样化的投资组合，驾驭变化的利润波浪。
 - en: In the grand scheme, diversification methods are not standalone SOS signals
     sent out into the vast financial ocean. They are integral coordinates on our investing
     map, scripting a well-founded story of exploration, decision, and adaptation.
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 在宏观层面上，多样化方法并不是独立的SOS信号发往广阔的金融海洋。它们是我们投资地图上的重要坐标，书写着探索、决策和适应的良好故事。
 - en: And so our journey continues. With diversification strategies etched into the
     heart of our algorithmic blueprint, we are poised to cast our horizons wider.
     Don the captain's hat, for it's time to embark on the next thrilling expedition!
     May Python be your reliable first mate in navigating the unpredictable yet exciting
     sea of trading diversification. To prosperous trading adventures! Set sail!
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我们的旅程继续。随着多样化策略深植于我们的算法蓝图中，我们准备好拓宽视野。戴上船长帽，是时候开始下一个激动人心的探险了！愿Python成为你可靠的副手，导航这片不可预测但令人兴奋的交易多样化海域。祝繁荣的交易冒险顺利！启航！
 - en: Stress Testing Your Algorithms
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 压力测试你的算法
 - en: If a ship, thoughtfully built and diligently maintained, has never endured a
     tempest, can we, in all confidence, deem it seaworthy? The same speculative doubt
     hovers over our algorithmic trading strategies. Without thorough stress testing,
     we could possibly be steering into uncharted waters with a faulty compass.
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果一艘船，经过深思熟虑的建造和细心维护，从未经历过风暴，我们能否充满信心地认为它是适航的？同样的猜测怀疑也萦绕在我们的算法交易策略上。没有彻底的压力测试，我们可能在不明水域航行，指针却失灵。
 - en: In algorithmic trading, stress testing is akin to crafting meticulously detailed
     'What If' scenarios to explore how trading strategies might perform under various
     market conditions, notably extreme ones. It constructs visualisations of storms,
     tempests, high tides, and calm waters in the trading universe, allowing us to
     navigate through each situation within the safe confines of a simulated environment.
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 在算法交易中，压力测试类似于精心制作详细的“如果”场景，以探索交易策略在各种市场条件下的表现，尤其是在极端情况下。它构建了交易宇宙中的风暴、狂潮、涨潮和平静水域的可视化，让我们能够在模拟环境的安全范围内应对每种情况。
 - en: Python, the astute deckhand in our algorithmic journey, offers compelling functionalities
     that simplify stress testing, making it not just a dire need, but even a fascinating
     exploration. Let's delve into how Python equips us to implement rigorous stress
     testing, pushing the plausible boundaries and shaking up the algorithmic status
     quo.
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: Python，这位在我们算法旅程中聪明的船员，提供了令人信服的功能，简化了压力测试，使其不仅是迫切需要的，更是一次迷人的探索。让我们深入探讨Python如何帮助我们实施严格的压力测试，推动合理的边界并打破算法的现状。
 - en: Extreme Value Theory (EVT) with Python
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用Python的极值理论（EVT）
 - en: EVT enables us to understand the behavior of extreme outliers. Often, financial
     disasters are caused by these rare, unexpected market events. Utilising EVT with
     Python allows us to model and anticipate these occasions.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: EVT使我们能够理解极端异常值的行为。通常，金融灾难正是由这些罕见且意想不到的市场事件引起的。利用Python进行EVT可以帮助我们建模并预测这些情况。
 - en: '[PRE7]'
+  id: totrans-89
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE7]'
 - en: Monte Carlo Simulation for Stress Testing
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 用于压力测试的蒙特卡罗模拟
 - en: A Monte Carlo simulation generates a broad spectrum of scenarios for any given
     investment portfolio. It takes into account the risk and return of the portfolio's
     individual constituents to create numerous probable outcomes.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 蒙特卡罗模拟为任何给定投资组合生成广泛的情景。它考虑了投资组合各个组成部分的风险和回报，以创建众多可能的结果。
 - en: '[PRE8]'
+  id: totrans-92
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE8]'
 - en: Importance of Stress Testing
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 压力测试的重要性
 - en: Stress testing in algorithmic trading takes a proactive, preventative approach,
     akin to conducting regular medical check-ups. It won't necessarily prevent a market
     slump or an unexpected catastrophe, but it can certainly prepare an algo-trader
     to face one, design robust failsafe mechanisms, and recover from potential losses
     with added confidence and control.
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法交易中的压力测试采取了一种主动的预防方法，类似于定期进行医疗检查。它并不一定能防止市场下滑或意外灾难，但确实可以帮助算法交易者做好准备，设计稳健的安全机制，并以更大的信心和控制力从潜在损失中恢复。
 - en: Stress testing is like a telltale beacon on a lighthouse tower, guiding and
     forewarning of dangers lurking in the vast financial ocean. It might not always
     divert a collision course completely, but its light can soften the impact, reducing
     the harm and helping to chart a safer course as we navigate the tumultuous algorithmic
     seas.
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 压力测试就像灯塔塔楼上的一个预警信号，指引并警告在广袤金融海洋中潜藏的危险。它可能并不总能完全偏离碰撞路线，但它的光芒可以减轻冲击，减少损害，并帮助我们在波涛汹涌的算法海洋中绘制更安全的航线。
 - en: As we wrap up this journey through the stormy straits of stress testing, the
     ocean's horizon glows with the approaching dawn of improved trading insights and
     fortified strategies. Up ahead, there's another intriguing island of knowledge
     to explore—stay onboard as we set our sights on the fascinating realm of 'Algorithmic
     Risk Models'. Our adventure is far from over; in fact, it is only just beginning.
     To weathering storms and navigating the seascape of fortune—bon voyage!
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们结束这段压力测试的风暴旅程时，海洋的地平线闪耀着改善交易洞察和强化策略的曙光。在前方，还有一个引人入胜的知识岛屿等待我们探索——请继续关注，我们将目光投向“算法风险模型”的迷人领域。我们的冒险远未结束；实际上，它才刚刚开始。为了抵御风暴和在财富的海洋中航行——祝一路顺风！
 - en: Algorithmic Risk Models
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法风险模型
 - en: In the grand scheme of algorithmic trading, risk is an inevitable chapter penned
     in invisible ink, seen only under the lamp of continuous study and assessment.
     We cannot eliminate risk, but we can learn to recognize its manifestations, predict
     its movements, and mitigate its impact through the use of risk management strategies
     - more precisely, algorithmic risk models.
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 在算法交易的宏观视角中，风险是用隐形墨水书写的必然章节，只有在持续学习和评估的灯光下才能显现。我们无法消除风险，但我们可以学会识别其表现，预测其动向，并通过风险管理策略（更准确地说，是算法风险模型）来减轻其影响。
 - en: Risk modelling in algorithmic trading is like designing a compass adjusted to
     the magnetic fields of the market's volatility. It attempts to predict and adapt
     to the wilderness of the financial landscape by estimating directional trends,
     the magnitude of moves, and the probability of extreme events.
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法交易中的风险建模就像设计一个调整到市场波动磁场的指南针。它试图通过估计方向趋势、变动幅度和极端事件的概率，预测并适应金融领域的荒野。
 - en: Python, the astute accomplice in our trading journey, proffers an array of excellent
     features making risk modelling not only accessible but a deep reservoir of insights
     waiting to be uncovered. Let's sail into the world of risk models and appreciate
     the role of Python in crafting these virtual compasses.
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: Python，这位敏锐的伙伴，为我们的交易之旅提供了一系列优秀的特性，使风险建模不仅可及，而且是一个等待被揭示的深厚洞察的宝库。让我们驶入风险模型的世界，欣赏Python在构建这些虚拟指南针中的角色。
 - en: Value-at-Risk (VaR) Models with Python
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用Python的风险价值（VaR）模型
 - en: VaR serves as a standard risk measure, defining the maximum potential loss an
     investment portfolio might incur over a defined period and at a specific confidence
     level. VaR has three types:Parametric VaR, Historical VaR and Monte-Carlo VaR.
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: VaR作为标准风险度量，定义了投资组合在特定期间和特定置信水平下可能遭受的最大潜在损失。VaR有三种类型：参数VaR、历史VaR和蒙特卡洛VaR。
 - en: 'The example below demonstrates the calculation of Parametric VaR using Python:'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面的例子演示了使用Python计算参数VaR：
 - en: '[PRE9]'
+  id: totrans-104
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE9]'
 - en: Expected Shortfall (ES) or Conditional Value-at-Risk (CVaR) Model
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 预期短缺（ES）或条件风险价值（CVaR）模型
 - en: ES estimates the expected value or average of all losses exceeding VaR. This
     measure is particularly useful for assessing risk in situations of extreme market
     distress.
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: ES估计超过VaR的所有损失的预期值或平均值。该指标在评估极端市场困境中的风险时特别有用。
 - en: '[PRE10]'
+  id: totrans-107
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE10]'
 - en: Risk Measures for Algorithmic Trading Performance Metrics
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法交易表现指标的风险度量
 - en: When assessing the performance of algorithmic trading strategies, certain risk-adjusted
     measures can provide a more profound understanding of the risks involved. An example
     is the Sharpe ratio, measuring the performance of an investment compared to a
     risk-free asset, after adjusting for its risk.
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 在评估算法交易策略的表现时，某些风险调整的指标可以提供对所涉及风险的更深刻理解。一个例子是夏普比率，它衡量投资的表现与无风险资产的比较，经过风险调整后进行评估。
 - en: '[PRE11]'
+  id: totrans-110
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE11]'
 - en: Risk models, like virtual lighthouses or echo-ranging sonars, draw the depth
     of the financial ocean bed, marking the seamounts of sudden market fluctuations
     and the trenches of potential investment losses. Still, they do not offer the
     trading vessel complete immunity from the harsh weather and rugged waves.
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 风险模型，如虚拟灯塔或回声定位声纳，描绘了金融海洋底部的深度，标记出突发市场波动的海山和潜在投资损失的深渊。然而，它们并不能为交易船只提供完全免疫于恶劣天气和崎岖波浪的保护。
 - en: Bear in mind, these tools are as effective as the vigilance of the observer
     operating them. With continuous learning, keen observation, and disciplined use
     of risk models, traders can navigate the financial seascape with boosted confidence
     and resilience.
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 请记住，这些工具的有效性取决于操作者的警觉性。通过持续学习、敏锐观察和规范使用风险模型，交易者能够以增强的信心和韧性在金融海洋中航行。
 - en: As we reach the shoreline of this discussion on algorithmic risk models, another
     adventurous peak is visible not far ahead. Onwards, we set our sails towards the
     notion of 'Leveraging and Margin' in the trading universe; another exciting stop
     on our expansive voyage through the world of algorithmic trading. Set your course
     and prepare to delve into the depths of financial knowledge—a plentiful treasure
     awaits. Bon voyage!
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们到达关于算法风险模型讨论的岸边时，前方不远处可见另一个冒险的高峰。我们扬帆向“杠杆和保证金”这一交易宇宙的概念驶去；这是我们在算法交易世界中广泛航行的又一个激动人心的停靠点。调整航向，准备深入金融知识的深处——丰富的宝藏在等待。祝航行愉快！
 - en: Leveraging and Margin
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 杠杆和保证金
 - en: Sailing through the ever-volatile waters of financial markets, successful algorithmic
     traders are similar to adept sailors - they're cautious yet adventurous, precise
     yet flexible. They understand the winds of change, and they harness these forces
     to their advantage. Buckle up as we embark on a vivid exploration of financial
     leveraging and margin trading; a segment of this journey every budding algorithmic
     trader should equip themselves with.
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 在金融市场不断波动的水域中，成功的算法交易者类似于熟练的水手——他们谨慎而又冒险，精确而又灵活。他们理解变化的风，并利用这些力量为自己谋利。系好安全带，让我们开始对金融杠杆和保证金交易的生动探索；每位新兴的算法交易者都应该装备自己这一旅程的一部分。
 - en: Leveraging, like the wind in a sail, can speed up a trader’s journey to financial
     success significantly. It is a ubiquitous tool in the trading arena, allowing
     traders to control positions larger than their initial capital, thereby increasing
     their potential profits. But as much as it can speed up one’s journey, if not
     navigated wisely, it can capsize the vessel in turbulent waters, emphasising its
     double-edged sword nature.
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 杠杆，像帆中的风，可以显著加快交易者通往财务成功的旅程。这是交易领域中的普遍工具，允许交易者控制超出其初始资本的头寸，从而增加潜在利润。但它的双刃剑特性也表明，若未明智导航，可能会在动荡的水域中倾覆船只。
 - en: Margin, on the other hand, is the deposit traders make to open a leveraged position
     - akin to the insurance premium for their voyage through the trading seascape.
     It is crucial to manage margin effectively since a margin call (akin to sea pirates
     on the look-out) could lead to the closing of positions, often at less-than-ideal
     times.
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一方面，保证金是交易者为开设杠杆头寸而支付的押金——类似于他们在交易海域航行的保险费。有效管理保证金至关重要，因为保证金追缴（类似寻找海盗）可能导致在不理想时关闭头寸。
 - en: Python, the sailor's faithful chart and compass, provides powerful tools to
     incorporate leverage into algorithmic trading strategies, and a serious trader
     would do well to master those.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: Python，水手忠实的图表和指南针，提供强大的工具，将杠杆融入算法交易策略，而严肃的交易者应当掌握这些工具。
 - en: 'Let''s consider a Python code sample of a leveraged trading strategy backtest:'
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们考虑一个杠杆交易策略回测的Python代码示例：
 - en: '[PRE12]'
+  id: totrans-120
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE12]'
 - en: This code first assumes a specific strategy's returns. The leverage factor is
     then applied to these returns, effectively amplifying the returns (as well as
     potential losses). Finally, a backtest is performed on these leveraged returns.
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 这段代码首先假设特定策略的收益。然后，将杠杆因子应用于这些收益，有效地放大收益（以及潜在损失）。最后，对这些杠杆收益进行回测。
 - en: While sailing in financially turbulent waters might seem adventurous and rewarding,
     traders must harness the power of leveraging and margin with caution. Algorithmic
     trading, combined with meticulous risk management, can potentially transform these
     volatile waves into a trader's paradise.
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然在金融动荡的水域航行可能看起来冒险而有回报，但交易者必须谨慎利用杠杆和保证金。算法交易结合细致的风险管理，可能将这些波动的浪潮转变为交易者的天堂。
 - en: Scenario Analysis
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 情景分析
 - en: As we continue our exciting voyage through the algorithmic trading ocean, let's
     now drop anchor at an incredibly insightful port of analytical technique - Scenario
     Analysis. Navigating the financial seascape involves braving uncertain winds and
     waters. It is here that scenario analysis emerges as the trusty compass guiding
     traders through choppy financial waves, aiding them in determining the course
     of their financial voyages.
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们继续在算法交易海洋中航行时，现在让我们在一个极具洞察力的分析技术港口——情景分析停靠。驾驭金融海洋需要迎接不确定的风浪。在这里，情景分析作为可靠的指南针，帮助交易者在波动的金融浪潮中前行，帮助他们确定财务航程的方向。
 - en: A seasoned trader knows that the financial market, akin to the mighty sea, ebbs
     and flows with the broader economic tides. Economic indicators, policy decisions,
     geopolitical events, and even unforeseen occurrences (analogous to storms at sea)
     have a notable impact on the movements of this vast financial ocean.
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: 一位经验丰富的交易者知道，金融市场就像浩瀚的海洋，随着更广泛的经济潮流起伏。经济指标、政策决策、地缘政治事件，甚至不可预见的事件（类似海上的风暴）对这片广袤金融海洋的运动有显著影响。
 - en: In essence, scenario analysis is the process of envisioning various outcomes
     in a financial situation and forecasting the potential paths of investments given
     these possible scenarios. It is the tool that empowers traders to ask the all-important
     question - "What if?"
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 从本质上讲，情景分析是设想金融情境中各种结果的过程，并预测在这些可能情境下投资的潜在路径。这是赋予交易者提出关键问题的工具——“如果呢？”
 - en: What if the Federal Reserve decides to increase interest rates? What if there's
     an economic slowdown in the European Union? What if there's a sudden surge in
     the demand for electric vehicles? Asking such questions and then creating trading
     strategies for each scenario helps ensure stability in even the harshest financial
     sea squalls.
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果美联储决定提高利率会怎样？如果欧盟经济放缓会怎样？如果电动汽车的需求突然激增会怎样？提出这样的疑问，然后为每种情境创建交易策略，有助于在即使是最恶劣的金融风暴中确保稳定。
 - en: 'Let''s now dive into the Python code, which showcases a simple demonstration
     of a scenario analysis:'
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们深入Python代码，展示一个情境分析的简单示例：
 - en: '[PRE13]'
+  id: totrans-129
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE13]'
 - en: This simple Python script downloads historical data for a specific security,
     calculates the daily returns and identifies the 5th and 95th percentiles of these
     returns. The red lines on the histogram highlight these percentiles, reflecting
     the 'clear' and 'turbulent' scenarios for an investment in Apple Inc.
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个简单的Python脚本下载特定证券的历史数据，计算每日收益，并识别这些收益的第5和第95百分位。直方图上的红线突出显示了这些百分位，反映了对苹果公司投资的“明确”和“动荡”情境。
 - en: The Role of Risk Management in Algorithmic Trading
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 风险管理在算法交易中的作用
 - en: After our enlightening expedition into the world of scenario analysis, we now
     venture forth into the challenging yet vital arena of Risk Management. It is here
     that we will explore and elucidate the strategic importance of risk management
     in ensuring the success of your algorithmic trading journey.
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们对情境分析的启发性探索之后，现在我们将进入一个具有挑战性但至关重要的风险管理领域。在这里，我们将探讨并阐明风险管理在确保您算法交易旅程成功中的战略重要性。
 - en: If financial markets are a turbulent sea and trading, a ship trying to find
     its way, then risk management is the experienced and skillful captain who ensures
     our ship doesn't capsize the moment it encounters a storm.
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果金融市场是一片动荡的海洋，交易是一艘试图找到方向的船，那么风险管理就是那位经验丰富、技艺高超的船长，确保我们的船在遇到风暴时不会倾覆。
 - en: Risk management in algorithmic trading is as essential to a trader as a compass
     is to a sailor. One cannot expect to navigate the treacherous waters of the financial
     markets without having a concrete risk management plan in place. Risk management
     involves anticipation of potential pitfalls, preparation for unforeseen circumstances,
     and a robust strategy to minimize losses and maximize profits.
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 在算法交易中，风险管理对交易者而言就像对水手而言的指南针一样至关重要。没有具体的风险管理计划，无法预期在金融市场的险恶水域中顺利航行。风险管理涉及对潜在陷阱的预见、对不可预见情况的准备以及一种强有力的策略，以最小化损失并最大化利润。
 - en: 'In the world of algorithmic trading, the foundation of effective risk management
     is laid on four pillars:'
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 在算法交易的世界中，有效风险管理的基础建立在四个支柱上：
 - en: '1\. Identifying Risks: Before you can manage risks, you need to identify them.
     These could be market risk (losses due to market movements), credit risk (losses
     due to counterparty default), operational risk (losses due to failures in systems
     and processes), liquidity risk (difficulty in exiting positions), and algorithmic
     risk (losses due to algorithm errors or failure).'
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 识别风险：在管理风险之前，您需要识别这些风险。它们可能包括市场风险（由于市场波动导致的损失）、信用风险（由于对方违约导致的损失）、操作风险（由于系统和流程的故障导致的损失）、流动性风险（退出头寸的困难）和算法风险（由于算法错误或失败导致的损失）。
 - en: '2\. Assessing Risks: Once you have identified the potential risks, you must
     evaluate the likelihood of their occurrence and the potential damage they may
     cause. Algorithmic traders use measures such as Value at Risk (VaR), Expected
     Shortfall (ES) and stress testing to assess the risks in their portfolio.'
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 评估风险：一旦识别出潜在风险，您必须评估其发生的可能性及其可能造成的损害。算法交易者使用如风险价值（VaR）、预期损失（ES）和压力测试等措施来评估其投资组合中的风险。
 - en: '3\. Mitigating Risks: This involves implementing strategies to decrease the
     adverse effects of risk. It may include diversifying your portfolio, using hedging
     techniques, enforcing stop-loss orders, ensuring proper algorithmic testing procedures,
     and having adequate controls in place to prevent algorithmic failure.'
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 缓解风险：这涉及实施策略以减少风险的负面影响。可能包括多样化投资组合、使用对冲技术、强制执行止损订单、确保适当的算法测试程序，以及采取足够的控制措施以防止算法失败。
 - en: '4\. Monitoring Risks: Last but definitely not least, risk management involves
     the continuous monitoring and re-evaluation of risks. The rapidly changing landscape
     of the financial markets makes this an ongoing and critical process in risk management.'
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 4\. 监控风险：最后但绝对不容忽视的是，风险管理涉及对风险的持续监控和重新评估。金融市场快速变化的格局使得这一过程成为风险管理中持续且至关重要的环节。
 - en: 'It''s critical here to note the significant role Python plays in risk management
     tasks. From data acquisition, preparation, risk modeling, to execution of risk
     management strategies, Python offers a wide array of tools and libraries to streamline
     the process. Here is an example of how to calculate Value at Risk (VaR) using
     Python:'
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，重要的是要注意Python在风险管理任务中发挥的重要作用。从数据获取、准备、风险建模到风险管理策略的执行，Python提供了丰富的工具和库来简化这个过程。以下是一个使用Python计算风险价值（VaR）的示例：
 - en: '[PRE14]'
+  id: totrans-141
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE14]'
 - en: This code, utilizing the scipy and numpy, calculates the Value at Risk at the
     95% confidence level for our example asset. As we put more trust in our computations,
     we are sailing closer to the land of promising results.
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 这段代码利用了scipy和numpy，计算我们示例资产在95%置信水平下的风险价值（Value at Risk）。随着我们对计算结果的信任增加，我们正逐渐驶向充满希望的结果之地。
 - en: The stirring adventure of algorithm trading continues to immerse us in its depths,
     as we bounty for the wealth of knowledge and skills. As we sail away from the
     hasbor of risk management, remember that in the realm of finance, the most effective
@@ -725,5 +1012,7 @@
     "Advanced Python Techniques for Trading," expanding our trader's toolbox with
     more powerful weapons. All aboard, let's sail on, for a sea of excitement and
     learning awaits us!
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法交易的激动人心的冒险之旅继续将我们沉浸在其深处，我们为获取知识和技能的财富而努力。当我们远离风险管理的港口时，请记住，在金融领域，对抗风险风暴的最有效武器是一份精心制定并认真监控的风险管理计划。当我们将指南针指向下一个章节时，我们将学习“交易的高级Python技巧”，用更强大的工具扩展我们的交易者工具箱。全员登船，让我们出发，因为一片激动与学习的海洋在等待着我们！

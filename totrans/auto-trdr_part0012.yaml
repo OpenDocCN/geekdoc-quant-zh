@@ -1,21 +1,29 @@
 - en: Chapter 9\. Advanced Python Techniques for Trading
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第9章：高级Python交易技术
 - en: Using NumPy for Numerical Operations
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用NumPy进行数值运算
 - en: As we chart a course towards the unchartered waters of Advanced Python Techniques
     for Trading, a highly efficient, multi-functional library, NumPy holds the helm.
     No conversation about Python's applications in trading can be complete without
     a special mention of NumPy.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们朝着高级Python交易技术的未知水域航行时，NumPy掌舵。在关于Python在交易中应用的讨论中，无法不特别提到NumPy。
 - en: NumPy, short for "Numerical Python," is the cornerstone for any trader or developer
     using Python in algorithmic trading. Array computing, its many features and functions,
     has unlocked countless possibilities in data analysis, simulation, and computational
     mathematics, making it the first choice for analyzing financial time series data.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: NumPy是“数值Python”的缩写，是任何使用Python进行算法交易的交易者或开发者的基石。数组计算及其众多功能解锁了数据分析、仿真和计算数学的无数可能性，使其成为分析金融时间序列数据的首选。
 - en: NumPy's most notable feature is its N-dimensional array object or ndarray. The
     ndarray grants remarkable efficiency in storing homogeneous data types, whether
     it be integer, float or any other data type. Moreover, plan your trade, and trade
@@ -23,58 +31,78 @@
     that – Analyze your trade. The ndarray object makes financial analysis that much
     easier, be it computing moving averages, calculating returns or implementing technical
     indicators. All such operations can be done with relatively few lines of code.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: NumPy最显著的特点是其N维数组对象或ndarray。ndarray在存储同质数据类型方面具有显著的效率，无论是整数、浮点数还是其他任何数据类型。此外，制定你的交易计划，并执行你的计划是每位经验丰富的交易者对新手的建议；让我们补充一句——分析你的交易。ndarray对象使金融分析变得更加简单，无论是计算移动平均、计算收益还是实现技术指标。所有这些操作都可以用相对较少的代码行完成。
 - en: 'To provide an understanding of how efficient NumPy is at numerical computations,
     let us take a practical scenario from trading where we calculate the moving average,
     a common financial indicator used in algorithmic trading:'
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了理解NumPy在数值计算中的高效性，让我们以交易中的一个实际场景为例，计算移动平均，这是一种在算法交易中常用的金融指标：
 - en: '[PRE0]'
+  id: totrans-6
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: Let the rudder of your ship of trading be guided by this edifying example. NumPy,
     by utilizing its in-built functions, remarkably simplifies calculations that otherwise
     would require loops, thereby processing data in a lightning-fast, efficient manner.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 让你的交易船的舵受到这个启发性例子的引导。NumPy通过利用其内置函数，显著简化了计算，这些计算在其他情况下可能需要循环，从而以闪电般的快速和高效方式处理数据。
 - en: Ultimately, efficiency in such numerical operations directly translates into
     speed in trading performance. This is an advantage that cannot be understated.
     In the high-stakes, quick-decision world of algorithmic trading, every millisecond
     shaves off execution time can make the difference between profit or loss. As NumPy
     reduces computational complexity, it improves the execution speed of trading algorithms.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 最终，这种数值运算的效率直接转化为交易表现的速度。这是一个不容小觑的优势。在高风险、快速决策的算法交易世界中，每毫秒的执行时间都可能决定盈利或亏损。随着NumPy减少计算复杂性，它提高了交易算法的执行速度。
 - en: While this discussion emphasizes the ndarray, NumPy offers a league of other
     functions beneficial for financial computing, including linear algebra functions,
     Fourier transform, and random number capabilitie among others. These functions
     provide the building blocks for creating sophisticated trading models and carrying
     out high-performance statistical computations.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然这次讨论强调了ndarray，但NumPy还提供了许多其他对金融计算有益的函数，包括线性代数函数、傅里叶变换和随机数功能等。这些函数为创建复杂的交易模型和进行高性能统计计算提供了基础。
 - en: On this note, we conclude our dive into how NumPy facilitates numerical operations
     in algorithmic trading. We've seen the crucial role it plays in providing an efficient
     means to manipulate data and run complex mathematical calculations, thus proving
     to be an indispensable tool in the Python's ecosystem for traders.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这一点上，我们结束了对NumPy如何促进算法交易中数值运算的探讨。我们看到了它在提供高效手段以操纵数据和运行复杂数学计算方面所发挥的关键作用，因此在Python生态系统中成为交易者不可或缺的工具。
 - en: As we meander through the landscape of Python's advanced techniques, our next
     stop is the exploration of another Python's treasure, Pandas. As we set sail to
     explore its wealth, remember to make NumPy a trusted friend on your journey through
     the vast, yet exciting realm of algorithmic trading. A sea of insights awaits
     us.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们探索Python高级技术的过程中，下一站是探索另一个Python的宝藏，Pandas。当我们启航去探索其丰富时，记得在你穿越广阔而激动人心的算法交易领域时，让NumPy成为你可信赖的朋友。一片洞见的海洋在等待着我们。
 - en: Pandas for Data Manipulation
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: Pandas用于数据处理
 - en: '`If the essence of trading is data, then the lifeblood of algorithmic trading
     is data manipulation. Potent tools that can shape, mold and dissect this critical
     resource are undisputed game-changers in the field of algorithmic trading. And
     there is no better envoy for this task than Pandas – Python''s powerhouse for
     data manipulation.'
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: '`如果交易的本质是数据，那么算法交易的命脉就是数据处理。能够塑造、改变和剖析这一关键资源的强大工具，毫无疑问是算法交易领域的游戏规则改变者。而在这个任务中，没有比Pandas更合适的使者了——Python在数据处理方面的强大工具。'
 - en: In the grand tapestry of financial data analysis, Pandas is the bright thread
     that offers traders a highly-efficient, flexible, and fast data structure for
     complex data manipulation tasks. It builds on the NumPy array structure and extends
@@ -83,66 +111,88 @@
     and even uncover hidden patterns in your trading data. This is precisely the edge
     that successful algorithmic traders leverage to gain their spot on the leaderboard
     of the trading arena.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 在金融数据分析的宏大画卷中，Pandas是一根明亮的线，为交易者提供了一个高效、灵活且快速的数据结构，以应对复杂的数据处理任务。它建立在NumPy数组结构之上，并扩展到可以在表格中容纳异构数据，每一行和每一列都可以被标记。现在，想象一下利用这个工具的强大功能来构建、检查，甚至发掘你交易数据中的隐藏模式。这正是成功的算法交易者所利用的优势，使他们在交易领域的排行榜上占据一席之地。
 - en: We can start this exploration into the vast capabilities of this exceptional
     library by inspecting its two primary data structures – the Series for one-dimensional
     data and DataFrame for two-dimensional data. The ease with which you can select
     and slice data by labels, aggregate data, and handle missing values with these
     data structures is a trader's delight.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以通过检查其两个主要数据结构——用于一维数据的Series和用于二维数据的DataFrame，开始探索这个卓越库的广泛能力。使用这些数据结构，你可以通过标签轻松选择和切片数据，聚合数据，并处理缺失值，这让交易者无比欢喜。
 - en: 'Suppose we have the closing prices for a particular asset and want to find
     the percentage change in prices over time, a key time series operation in finance:'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我们有某个资产的收盘价，并想要计算价格随时间的百分比变化，这是金融中一个关键的时间序列操作：
 - en: '[PRE1]'
+  id: totrans-17
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: With this succinct code, Pandas affords incredible agility and efficiency in
     manipulating financial datasets.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用这段简洁的代码，Pandas为处理金融数据集提供了令人难以置信的灵活性和效率。
 - en: However, the magic of Pandas transcends beyond manipulation to actual data analysis.
     By offering flexible reshaping and pivoting of data sets, built-in descriptive
     statistics, merging and joining of data sets and time-series functionality, Pandas
     morphs from a mere data manipulation tool into a significant asset in your financial
     analysis toolbox.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，Pandas的魔力超越了简单的数据处理，进入了实际的数据分析。通过提供灵活的数据集重塑和透视、内置的描述性统计、数据集的合并与连接以及时间序列功能，Pandas从一个简单的数据处理工具转变为你金融分析工具箱中的重要资产。
 - en: Consider, for instance, how moving window functions like rolling() and ewm()
     allow for the calculation of moving averages, Bollinger bands, or other financial
     indicators that are the fulcrum of any technical trading strategy. If data is
     the soil, the calculated indicators are the seeds from which profitable trades
     bloom.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，考虑一下移动窗口函数，如rolling()和ewm()，它们允许计算移动平均线、布林带或其他技术指标，这些都是任何技术交易策略的支点。如果数据是土壤，那么计算得出的指标就是从中绽放出盈利交易的种子。
 - en: As traders, the labyrinth of financial markets demands not just access to vast
     amounts of historical and real-time data, but the proficiency to extract meaningful
     insights from it. Seated at this confluence of data manipulation and analysis,
     Pandas stands as a lighthouse guiding traders safely towards the treasure island
     of profitable algorithmic trading.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为交易者，金融市场的迷宫不仅要求接入大量历史和实时数据，还需要从中提取有意义的见解。Pandas坐落于数据处理与分析的交汇处，犹如一座灯塔，指引交易者安全前往盈利算法交易的宝岛。
 - en: Asyncio for Asynchronous Programming
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: Asyncio用于异步编程
 - en: Venture into the world of high-frequency algorithmic trading and, almost immediately,
     you'll be faced with the restraint of time. Against the relentless maw of financial
     markets, where microseconds mean money, every trading decision must be executed
     with lightning speed. If your trading bot lags, it’s not just profits that loom
     large but also potential losses. Enter, asynchronous programming principle, and
     its shining star – Python's Asyncio.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 进入高频算法交易的世界，几乎立刻，您就会面临时间的束缚。在金融市场这个无情的深渊中，微秒意味着金钱，每个交易决策必须以闪电般的速度执行。如果您的交易机器人滞后，不仅潜在的利润面临威胁，甚至可能出现损失。进入异步编程原理，以及它的明星——Python的Asyncio。
 - en: In traditional synchronous programming, your bot would execute tasks sequentially.
     While it is dealing with one task, all the others must wait. This "one track mind"
     approach doesn't hold muster when dealing with the colossal load of data streaming
     in real time from financial markets. Missed data or latency in decision-making
     can mean missed trading opportunities. So, how do you prevent your bot from losing
     time and missing these opportunities? Asyncio rises to the challenge.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 在传统的同步编程中，您的机器人将任务按顺序执行。当它处理一个任务时，其他所有任务都必须等待。这种“单轨思维”的方法在处理来自金融市场的庞大实时数据流时显得无能为力。错过数据或决策延迟可能意味着错失交易机会。那么，您如何防止您的机器人浪费时间并错失这些机会呢？Asyncio迎接了这个挑战。
 - en: Harnessing the strength of the Asyncio library, you can write single-threaded
     concurrent code using coroutines, multiplexing I/O access over sockets, and other
     resources. It's a tool designed to improve performance by taking advantage of
@@ -150,62 +200,84 @@
     In regular words, while a part of your program waits for response from a trade
     executed, another part could be analyzing incoming price data. No more waiting
     around – you've essentially opened more lanes on your highway of transactions.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 利用Asyncio库的强大功能，您可以使用协程编写单线程并发代码，通过套接字和其他资源进行I/O多路复用。它是一个旨在提高性能的工具，利用等待I/O操作所花费的时间来改善整体程序性能。通俗地说，当您的程序的一部分在等待交易响应时，另一部分可以分析传入的价格数据。无需再等待——您实际上是在交易的高速公路上打开了更多车道。
 - en: Take for an example a trading bot that monitors prices of a multitude of assets
     and makes a buy or sell order based on certain conditions. With Asyncio, this
     bot can keep tabs on multiple assets, make the necessary computations, and execute
     trades, all seemingly “at the same time". This type of multitasking is crucial
     in the race against time that is algorithmic trading.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 以一个监控众多资产价格并根据某些条件进行买卖订单的交易机器人为例。借助Asyncio，这个机器人可以同时关注多个资产，进行必要的计算并执行交易，所有这些似乎“在同一时间”完成。这种多任务处理在与时间的赛跑中至关重要，尤其是在算法交易中。
 - en: 'Here’s a glimpse of how Asyncio operates:'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面是Asyncio如何工作的一个快照：
 - en: '[PRE2]'
+  id: totrans-28
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: In this example, trade execution for each asset mimics being performed concurrently,
     giving an impression of multiple trades being executed at the same time. We've
     now made our trading operations more efficient and cost-effective!
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，每种资产的交易执行似乎是同时进行的，给人一种多个交易同时执行的印象。我们现在已经使我们的交易操作更高效、更具成本效益！
 - en: Consider the Asyncio library as your secret weapon to tackle real-time data's
     relentless onslaught. It puts your Python algorithmic trading bot on rails, allowing
     it to navigate the chaotic twists and turns of volatile financial markets with
     grace and efficiency.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 将Asyncio库视为您应对实时数据无情冲击的秘密武器。它使您的Python算法交易机器人在轨道上运行，让它在动荡的金融市场中优雅高效地穿行于复杂的曲折和转弯。
 - en: But remember, Asyncio is just one aspect of your bot's operation. As we move
     forward, we'll dive into the world of web scraping for additional trading data,
     offering you an even richer canvas to design your trading strategies on. So, tighten
     your seatbelts and hold on to the thrill of algorithmic trading. The tour has
     only just begun, and the landscape of success lies ahead.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 但请记住，Asyncio只是您机器人操作的一个方面。在接下来的过程中，我们将深入探讨网络爬虫以获取额外的交易数据，为您提供一个更丰富的设计交易策略的画布。所以，系好安全带，感受算法交易的刺激之旅。旅程才刚刚开始，成功的前景就在前方。
 - en: Web Scraping for Trading Data
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 用于交易数据的网络爬虫
 - en: In a world where data is the new oil, web scraping takes the form of a high-end
     drill, extending its reach into the deepest crevices of the internet to extract
     this invaluable commodity. In the domain of financial trading, comprehensive knowledge
     is power, and the more data you have, the broader your knowledgebase to make trade
     decisions. Consequently, it is imperative to harness web scraping to enrich your
     trading algorithm's diet with a diverse spread of information.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 在数据成为新石油的世界里，网络爬虫就像一台高端钻井机，深入互联网最深处提取这一宝贵商品。在金融交易领域，全面的知识就是力量，拥有的数据越多，你的知识基础就越广泛，从而做出更好的交易决策。因此，利用网络爬虫来丰富你的交易算法的信息来源是至关重要的。
 - en: Web scraping, at its core, is an efficient tool to extract structured data from
     websites. It constitutes the fundamental backbone of many business models. For
     our purposes and to the delight of Python enthusiasts, it lays out a data-feast
     for our trading bots, offering a significant edge in algorithmic trading.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 网络爬虫在本质上是一种高效的工具，用于从网站中提取结构化数据。它构成了许多商业模型的基础。就我们的目的而言，并且让 Python 爱好者感到高兴，它为我们的交易机器人提供了一场数据盛宴，在算法交易中提供了显著的优势。
 - en: Traditionally, trading bots rely on APIs provided by the trading platforms or
     official financial data vendors. While APIs are efficient and reliable, they have
     their limitations. They may not always provide the specific data you need, they
     might have usage restrictions, or perhaps the cost might be prohibitive.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 传统上，交易机器人依赖于交易平台或官方金融数据供应商提供的 API。虽然 API 高效可靠，但它们也有局限性。它们可能无法始终提供你所需的特定数据，可能会有使用限制，或者成本可能过于高昂。
 - en: Web scraping slides into the spotlight, addressing these restrictions. By directly
     scraping data from websites, we increase the breadth of our trading bot's data
     reach. Furthermore, this approach allows us to tap into unconventional financial
@@ -213,36 +285,51 @@
     like Reddit and Twitter, and other such nationally or globally influential factors.
     Herein, you navigate beyond labelled genealogical financial data, delving into
     unstructured data mines, converting dormant information into active trading signals.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 网络爬虫走入聚光灯，解决了这些限制。通过直接从网站抓取数据，我们扩大了交易机器人数据的覆盖范围。此外，这种方法使我们能够利用非常规的金融数据来源——想想新闻标题、来自社交网络网站（如
+    Reddit 和 Twitter）的公众情绪，以及其他在国家或全球范围内影响重大的因素。在这里，你超越了标记的家谱金融数据，深入未结构化的数据矿，将沉睡的信息转化为主动交易信号。
 - en: Consider, for instance, tapping into the financial news flow, extracting headlines,
     and rendering sentiment analysis - all at lightning speed through web scraping.
     Or imagine the wealth of insights that could be drawn from analysing the public
     sentiment on Twitter, feeding this back into your trading strategy. The possibilities
     when you start merging web scraping with your trading strategies are boundless.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，可以考虑利用金融新闻流，提取标题并进行情感分析——所有这些都是通过网络爬虫以闪电般的速度完成的。或者想象一下，从分析 Twitter 上的公众情绪中获得的丰富见解，将其反馈到你的交易策略中。当你开始将网络爬虫与交易策略相结合时，可能性是无穷无尽的。
 - en: 'Here’s a basic example of using Python’s BeautifulSoup and requests libraries
     for web scraping:'
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个使用 Python 的 BeautifulSoup 和 requests 库进行网络爬虫的基本示例：
 - en: '[PRE3]'
+  id: totrans-39
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: In this example, you extract specific information, say, the most recent financial
     headline from a fictional financial website. The extracted data could be further
     analysed (sentiment analysis, for instance) and fed into your trading algorithm.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，你提取特定信息，比如某个虚构金融网站上最新的金融头条。提取的数据可以进一步分析（例如情感分析），并输入到你的交易算法中。
 - en: However, a word of caution - comply with the website's scraping policies and
     use this newfound ability responsibly, ensuring that you are not infringing on
     the website's terms of service. Also, remember that web scraped data requires
     rigorous cleansing and pre-processing before its ready for algorithmic consumption.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，有一点需要注意——遵守网站的爬虫政策，并负责任地使用这一新能力，确保你不会侵犯网站的服务条款。同时，请记住，网络爬取的数据在准备好用于算法处理之前，需要经过严格的清洗和预处理。
 - en: API Integrations
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: API 集成
 - en: Across the timeline of technological advances, one achievement that unequivocally
     revolutionized processes in several industry domains, including finance, is API
     - Application Programming Interface. An API acts as a cardinal point of connection,
@@ -250,113 +337,157 @@
     Just as neurons communicate via synaptic connections in the human brain, trading
     bots and financial platforms communicate through APIs, giving birth to the realm
     of automated, algorithmic trading.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 在技术进步的时间线上，有一项成就无疑彻底革新了多个行业领域的流程，包括金融，那就是 API - 应用程序编程接口。API 作为连接的核心点，使两个独立的软件系统能够交互和共享数据及功能。就像神经元通过突触连接在大脑中进行通信一样，交易机器人和金融平台通过
+    API 进行通信，诞生了自动化算法交易的领域。
 - en: In the vast array of financial information, APIs serve the purpose of a decentralized
     hub, where real-time data, historical data, execution capabilities, and more are
     accessed seamlessly. From fetching real-time stock prices to executing orders,
     the extensive role of APIs in algorithmic trading has added an unprecedented efficiency
     to finance.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 在广泛的金融信息中，API 充当去中心化的中心，能够无缝访问实时数据、历史数据、执行能力等。从获取实时股票价格到执行订单，API 在算法交易中的广泛角色为金融带来了前所未有的效率。
 - en: Python, a holy grail for traders, provides numerous libraries that deploy APIs
     simplifying the entire trading process. APIs made available by financial data
     providers such as Alpha Vantage, IEX Cloud, or even Yahoo Finance, give access
     to an abundance of financial data ready to be mined.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: Python 是交易者的圣杯，提供了众多库，通过 API 简化整个交易过程。金融数据提供商如 Alpha Vantage、IEX Cloud，甚至 Yahoo
+    Finance 提供的 API，能够访问丰富的金融数据，随时可以进行挖掘。
 - en: It does not end at data acquisition; APIs step up the integration allowing us
     to perform various trading actions. Online trading platforms and brokers provide
     APIs enabling automatic trading based on your trading algorithm. Notably, Interactive
     Brokers API or Alpaca API can be integrated directly into your Python script,
     allowing order execution, portfolio management and more.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据获取并不是终点；API 提升了集成，使我们能够执行各种交易操作。在线交易平台和经纪商提供 API，支持基于你的交易算法进行自动交易。值得注意的是，Interactive
+    Brokers API 或 Alpaca API 可以直接集成到你的 Python 脚本中，允许订单执行、投资组合管理等。
 - en: 'Consider the following example, where Python integrates with the Alpha Vantage
     API to fetch real-time stock data:'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 考虑以下示例，Python 如何与 Alpha Vantage API 集成以获取实时股票数据：
 - en: '[PRE4]'
+  id: totrans-48
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: Here, Python, leveraging the Alpha Vantage API, fetches real-time data for the
     Apple stocks. The API Key must be kept secret, similar to a password, and the
     retrieved data will be a Pandas DataFrame easily integrated with your trading
     algorithm.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，Python 利用 Alpha Vantage API 获取 Apple 股票的实时数据。API 密钥必须保密，类似于密码，获取的数据将是一个
+    Pandas DataFrame，可以轻松集成到你的交易算法中。
 - en: The interplay of APIs and Python forms an amalgamation so powerful that it feels
     almost effortless to bake a trading bot capable of executing trades, managing
     risk and generating profit, further capable of adapting to the capricious financial
     markets.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: API 与 Python 的相互作用形成了一种强大的结合，几乎毫不费力地构建出能够执行交易、管理风险并产生利润的交易机器人，并且能够适应变化无常的金融市场。
 - en: However, as always, with great power, comes greater responsibility. Respecting
     the API usage policy, considering rate limits, and ensuring you responsibly handle
     the potentially sensitive data accessed via these APIs is a cornerstone of ethical
     algorithmic trading.
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，正如往常一样，强大的力量伴随着更大的责任。遵守 API 使用政策，考虑速率限制，并确保你负责任地处理通过这些 API 访问的潜在敏感数据，是道德算法交易的基石。
 - en: Embrace Python API integration as the heartbeat of your algorithmic trading
     system. As we progress further into the labyrinth of algorithmic trading, remember
     that every API call is a step closer to your algorithmic trading zenith.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 将 Python API 集成视为你的算法交易系统的心跳。随着我们在算法交易的迷宫中不断深入，记住每一个 API 调用都是朝着你算法交易巅峰迈出的更近一步。
 - en: Multi-threading and Parallelization
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 多线程与并行化
 - en: Algorithmic trading thrives in the domain of speed. In the bustling ecosystem
     of financial markets, a delay of even a fraction of a second can lead to significant
     opportunity costs. Every tick counts and every computational gain adds up, shaping
     the trajectory of your trading strategies, and the felicity of your algorithm's
     execution. Encoding speed and efficiency into your algorithm forms the bedrock
     of successful algorithmic trading.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法交易在速度领域蓬勃发展。在金融市场的繁忙生态系统中，即使是微小的延迟也可能导致显著的机会成本。每一个滴答声都至关重要，每一次计算收益都累积起来，塑造你的交易策略轨迹，以及算法执行的成功与否。将速度和效率编码到你的算法中是成功算法交易的基础。
 - en: 'Python, a popular language amongst the trading community, stands riddled with
     criticisms due to its ''Global Interpreter Lock'' (GIL) – a construct that allows
     only one thread to be executed at a time. This construct places a major bottleneck
     for CPU-intensive tasks. The question arises: How do we perform tasks concurrently
     leveraging Python''s syntax simplicity?'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: Python在交易社区中非常受欢迎，但由于其“全局解释器锁”（GIL）而受到批评——这一构造使得每次只能执行一个线程。这一构造对CPU密集型任务造成了主要瓶颈。问题随之而来：我们如何利用Python的语法简洁性并发执行任务？
 - en: Python serves this conundrum on a platter of multi-threading and parallelization
     to overcome these limitations and optimally utilize computational resources. Multi-threading
     and parallel computing combine to diminish run time and maximize productivity,
     breathing life into multi-core CPUs.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: Python以多线程和并行化的方式解决这个难题，以克服这些限制并优化计算资源的利用。多线程和并行计算结合在一起，可以减少运行时间并最大化生产力，为多核CPU注入活力。
 - en: Multi-threading involves concurrent execution of different threads of a program,
     intertwining together to optimize the processing power. In the universe of algorithmic
     trading, multi-threading can be leveraged for high-frequency strategies, market
     data gathering, order routing, and more.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 多线程涉及程序中不同线程的并发执行，相互交织以优化处理能力。在算法交易的宇宙中，多线程可用于高频策略、市场数据收集、订单路由等。
 - en: Parallelization, on the other hand, divides a problem into sub-parts and solves
     them concurrently. With Python libraries like Joblib, you can run independent
     tasks parallelly, harnessing the power of all CPU cores.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一方面，并行化将问题分成子部分并同时解决。借助Joblib等Python库，你可以并行运行独立任务，充分利用所有CPU核心的力量。
 - en: 'Here is a simple example of multi-threading in Python:'
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是一个Python中多线程的简单示例：
 - en: '[PRE5]'
+  id: totrans-60
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: Despite its promising prowess, multi-threading, and parallelization have their
     caveats. The dual-edged sword can introduce complexities like thread synchronization,
     challenges in debugging, and in some cases, may introduce more overhead than speedup.
     It's of utmost importance to understand the trade-offs involved and how best to
     navigate these challenges to reap the benefits of these tools.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管多线程和并行化展现出令人期待的潜力，但它们也有其缺陷。这把双刃剑可能引入复杂性，比如线程同步、调试中的挑战，且在某些情况下，可能引入的开销超过了加速。了解相关权衡和如何最好地应对这些挑战以获得这些工具的好处至关重要。
 - en: As an algorithmic trader, you are constantly balancing multiple tasks ‒ market
     data feeds, order execution, risk management algorithms, predictive models ‒ efficacy
     in multi-threading and parallelization sets you apart. It is akin to conducting
     an orchestra where concurrent harmonies coalesce to build a symphony of success
     in algorithmic trading.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为一名算法交易者，你需要不断平衡多个任务——市场数据馈送、订单执行、风险管理算法、预测模型——在多线程和并行化方面的高效使你脱颖而出。这就像指挥一个乐团，让并发的和声汇聚成成功的算法交易交响曲。
 - en: Emboldened by the advent of technology, modern algorithmic trading is pushing
     past the limitations of desktop computing, into the expansive realm of the cloud.
     Here, servers, storage, databases, networking, software, analytics, intelligence,
@@ -364,74 +495,100 @@
     of scale. The cloud is the new frontier waiting to be explored, but how does this
     nebulous notion surface in algorithmic trading? Stay tuned to delve into the world
     where trading meets technology in the sky.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 在科技进步的推动下，现代算法交易正突破桌面计算的局限，进入云的广阔领域。在这里，服务器、存储、数据库、网络、软件、分析、智能等提供了更快的创新、灵活的资源和规模经济。云计算是等待探索的新前沿，但这一模糊概念如何在算法交易中体现？敬请关注，深入了解交易与科技在天空中的结合世界。
 - en: Cloud Computing in Algorithmic Trading
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法交易中的云计算
 - en: Cloud Computing can be likened to a giant, omnipotent brain, a colossal mass
     of processing power and storage, accessible to anyone, anywhere. It enables one
     to scale up or down their infrastructure in response to changing conditions, affording
     unsurpassed flexibility. In the context of algorithmic trading, cloud computing
     serves like a virtual trading desk, a platform where mammoth volumes of market
     data congregate, and intricate algorithms deploy.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 云计算可以被比作一个巨大的、无所不能的大脑，巨量的处理能力和存储，任何人、任何地方都可以访问。它使得在变化的条件下可以随时扩展或缩减基础设施，提供无与伦比的灵活性。在算法交易的背景下，云计算就像一个虚拟交易台，一个汇聚大量市场数据并部署复杂算法的平台。
 - en: The amalgamation of cloud computing and algorithmic trading has revolutionized
     the way traders engage in the financial markets. Previously, implementing complex
     trading algorithms and managing enormous data sets were reserved for institutional
     investors - hedge funds, investment banks. The emergence of cloud computing has
     democratized this access, leveling the playing field for individual algorithmic
     traders.
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 云计算与算法交易的结合彻底改变了交易者参与金融市场的方式。以前，实施复杂的交易算法和管理庞大的数据集是机构投资者——对冲基金、投资银行的专利。云计算的出现使这一访问变得民主化，为个人算法交易者平衡了竞争环境。
 - en: Cloud computing services like Amazon Web Services (AWS), Google Cloud, and Microsoft
     Azure offer elastic, pay-as-you-go computing resources that are both cost-effective
     and performance-driven. They offer extensive data storage capabilities, analytical
     powerhouses for backtesting strategies, real-time data streaming, high-frequency
     trading, automatic trading robots, and much more.
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 云计算服务如亚马逊网络服务（AWS）、Google Cloud和微软Azure提供弹性、按需付费的计算资源，既经济又高效。它们提供广泛的数据存储能力、回测策略的分析能力、实时数据流、高频交易、自动交易机器人等等。
 - en: Python, an industry staple, shines in cloud environments. The simplicity and
     versatility of Python code enable it to integrate seamlessly with cloud services,
     facilitating the execution of algorithms, data analysis, backtesting, and live
     trading. Python libraries like Zipline, Backtrader, and PyAlgoTrade, combined
     with cloud computing, can create sophisticated trading systems.
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: Python作为行业标准，在云环境中表现出色。Python代码的简单性和多功能性使其能够与云服务无缝集成，促进算法执行、数据分析、回测和实时交易。Python库如Zipline、Backtrader和PyAlgoTrade与云计算结合，可以创建复杂的交易系统。
 - en: 'Let''s consider a backtesting scenario with Google Cloud''s Dataflow. The process
     unfolds as follows:'
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们考虑一个使用Google Cloud的Dataflow进行回测的场景。过程如下：
 - en: '[PRE6]'
+  id: totrans-70
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: This simple code initiates a Dataflow pipeline, runs a backtest on stocks 'AAPL',
     'MSFT', 'GOOG', and handles the entire data processing pipeline.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 这段简单的代码启动了一个Dataflow管道，对股票'AAPL'、'MSFT'、'GOOG'进行回测，并处理整个数据处理管道。
 - en: While the exhilarating speed and limitless storage abilities make cloud computing
     an attractive proposition, one should not overlook issues of data security, privacy,
     and regulatory compliance. Assessing your risk tolerance and ensuring robust security
     measures becomes paramount.
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管云计算的快速和无限存储能力使其成为一个吸引人的选择，但人们不应忽视数据安全、隐私和合规性的问题。评估你的风险承受能力并确保强有力的安全措施至关重要。
 - en: Navigating the exciting yet labyrinthine cloud landscape can seem daunting at
     first. Strategically leveraging cloud computing can empower you to optimize your
     algorithmic trading operations. Irrespective of your trading volume, data needs,
     or algorithm complexity, cloud computing delivers. By freeing yourself from the
     limitations of local infrastructure, you elevate your trading strategies, leading
     to innovative and profitable outcomes.
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 在充满挑战的云计算环境中导航起初可能让人感到望而生畏。战略性地利用云计算可以帮助你优化算法交易操作。无论你的交易量、数据需求或算法复杂性如何，云计算都能满足。通过摆脱本地基础设施的限制，你能够提升交易策略，从而实现创新和盈利的结果。
 - en: Embrace the cloud, elevate your trading, and explore the endless sky of trading
     opportunities it unfolds! Up next, we delve into insights on data visualization
     with Matplotlib and Seaborn.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 拥抱云计算，提升你的交易，探索它所展开的无尽交易机会的天空！接下来，我们将深入探讨使用Matplotlib和Seaborn进行数据可视化的见解。
 - en: Data Visualization with Matplotlib and Seaborn
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用Matplotlib和Seaborn进行数据可视化
 - en: Visions are our dominant sense, which offers us an innate propensity for pictorial
     making sense of the world around us. In essence, simply put, we are visual beings.
     So, when it comes to dissecting the intricacies of algorithmic trading, a typical
@@ -439,169 +596,231 @@
     becomes the much-needed lifebuoy for traders immersed in oceans of data. In this
     privileged realm of Python, Matplotlib and Seaborn stand tall as the vanguard
     of data visualization libraries.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 视觉是我们主导的感官，它赋予我们一种天生的倾向，使我们能够通过图像理解周围的世界。简单来说，我们本质上是视觉生物。因此，当涉及到剖析算法交易的复杂性时，这是一个与大型数据集和复杂模式同义的典型领域，数据可视化成为了沉浸在数据海洋中的交易者急需的救生圈。在这个Python的特权领域，Matplotlib和Seaborn高耸入云，成为数据可视化库的先锋。
 - en: Matplotlib, a stalwart in the Python data visualization scene, is a comprehensive
     library that offers a sweeping array of functionalities. From creating simple
     line charts and scatter plots to crafting intricate 3D visualizations, Matplotlib
     is a mighty toolkit for the data-driven stories waiting to be untold. With Matplotlib,
     one can seamlessly navigate vast temporal trading data, track price trends, map
     technical indicators, and much more.
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: Matplotlib作为Python数据可视化领域的中坚力量，是一个全面的库，提供了广泛的功能。从创建简单的折线图和散点图到制作复杂的3D可视化，Matplotlib是为待讲述的数据驱动故事准备的强大工具包。使用Matplotlib，可以轻松处理庞大的时间交易数据，跟踪价格趋势，绘制技术指标等等。
 - en: 'Before we delve any further, let''s initialize Matplotlib with the traditional
     import line:'
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 在深入之前，让我们用传统的导入行初始化Matplotlib：
 - en: '[PRE7]'
+  id: totrans-79
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE7]'
 - en: 'Suppose we want to visualize the moving-average crossover trading strategy
     for Apple''s stock. Let''s consider our data is stored in a Pandas DataFrame ''df''
     with ''Close'' prices and two columns ''SMA'' and ''LMA'' for short and long-term
     moving averages. Visualizing this with Matplotlib involves:'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我们想要可视化苹果股票的移动平均交叉交易策略。假设我们的数据存储在一个名为'df'的Pandas DataFrame中，其中包含'Close'价格和用于短期和长期移动平均的两列'SMA'和'LMA'。使用Matplotlib可视化这一点涉及到：
 - en: '[PRE8]'
+  id: totrans-81
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE8]'
 - en: Beautiful simplicity, isn't it?
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 美丽的简单，不是吗？
 - en: Meanwhile, Seaborn, a Python library based on Matplotlib, offers a higher-level
     interface and additional functionalities. Catered towards statisticians, it integrates
     more effortlessly with Pandas data structures, offering incredible plot types
     – be it violin plots, box plots, or heatmaps. It also embeds attractive default
     themes, allowing data scientists to produce aesthetically pleasing graphical representations
     effortlessly.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 与此同时，Seaborn是一个基于Matplotlib的Python库，提供了更高级的接口和额外的功能。针对统计学家，它与Pandas数据结构的集成更加顺畅，提供了令人难以置信的绘图类型——无论是小提琴图、箱形图，还是热图。它还嵌入了吸引人的默认主题，使数据科学家能够轻松地生成美观的图形表现。
 - en: '[PRE9]'
+  id: totrans-84
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE9]'
 - en: In this example, the seaborn distplot feature visualizes the return distribution
     of Apple's stock, painting a comprehensive picture of the stock's performance,
     from its color-coded density estimator to histogram bins representing return frequencies.
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，seaborn的distplot特性可视化了苹果股票的回报分布，描绘了该股票表现的全景，从颜色编码的密度估计器到代表回报频率的直方图箱。
 - en: In the hands of a proficient trader, data visualization is a powerful ally.
     It can translate raw data into meaningful patterns and trends, instill clarity
     amidst confusion, and illuminate the path towards profitable trading strategies.
     While Matplotlib and Seaborn are two distinguished tools in the Python repertoire,
     the landscape of data visualization is endless. It invites you to explore, understand,
     innovate, and ultimately, convert data power to trading prowess.
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 在熟练交易者的手中，数据可视化是一个强大的盟友。它可以将原始数据转化为有意义的模式和趋势，在混乱中灌输清晰感，并照亮通往盈利交易策略的道路。虽然Matplotlib和Seaborn是Python工具库中两个杰出的工具，但数据可视化的领域是无尽的。它邀请你去探索、理解、创新，并最终将数据的力量转化为交易的才能。
 - en: 'Real-time Data Streaming:'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 实时数据流：
 - en: In the realm of algorithmic trading, every data point matters and a single millisecond
     can spell the difference between landing a profit or biting the dust. Accurate,
     swift, and reliable access to financial markets is an unabating need for traders
     across the globe. Bringing this need to stark realization is real-time data streaming
     — a proverbial cornerstone of modern trading infrastructures that ensures traders
     are equipped with the freshest market data at all times.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 在算法交易领域，每一个数据点都至关重要，单毫秒的差距可能意味着获得利润或遭受损失。对全球交易者来说，准确、迅速和可靠地访问金融市场是持续的需求。实时数据流使这一需求变得尤为显著——它是现代交易基础设施的基石，确保交易者始终配备最新的市场数据。
 - en: In its purest essence, real-time data streaming is an uninterrupted, continuous
     transmission of data that allows traders to receive and process data as soon as
     it is available. This instantaneous data flow ensures algorithmic trading systems
     are ever vigilant and primed to react to market changes at lightning speed.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 在其最纯粹的本质上，实时数据流是一个不间断、持续的数据传输，使交易者能够在数据可用时立即接收和处理数据。这种瞬时数据流确保算法交易系统时刻保持警惕，并准备迅速响应市场变化。
 - en: In the context of the Python programming language, numerous libraries and tools
     facilitate real-time data streaming. Among the most utilized is WebSocket — an
     advanced technology that provides full-duplex communication channels over a single
     TCP connection. This bidirectional communication paves the way for real-time data
     transmission from servers to clients and vice versa.
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Python编程语言的背景下，众多库和工具促进了实时数据流的实现。其中最常用的是WebSocket——一种通过单个TCP连接提供全双工通信通道的先进技术。这种双向通信为从服务器到客户端及反向的实时数据传输铺平了道路。
 - en: 'Let''s explore a simple Python implementation of establishing a WebSocket connection:'
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们探索一个简单的Python实现WebSocket连接的示例：
 - en: '[PRE10]'
+  id: totrans-92
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE10]'
 - en: In this example, we establish a WebSocket connection to a hypothetical financial
     data provider, ws-api.example.com. As soon as the connection opens, we subscribe
     to real-time data for the symbol we're interested in, here 'AAPL' for Apple's
     stock. Subsequently, we define functions to handle incoming messages and closing
     the connection.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，我们建立了与假设的金融数据提供者`ws-api.example.com`的WebSocket连接。连接打开后，我们订阅了我们感兴趣的实时数据，这里是‘AAPL’，代表苹果公司的股票。随后，我们定义了处理传入消息和关闭连接的函数。
 - en: It's important to note that the real-time aspect of such data ensures algorithmic
     trading systems can factor in the most up-to-date market conditions and price
     movements. This invaluable information can be used to analyze the market, implement
     high-frequency trading strategies, facilitate arbitrage, and much more.
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 重要的是要注意，这种数据的实时性确保算法交易系统能够考虑到最新的市场状况和价格变动。这些宝贵的信息可用于分析市场、实施高频交易策略、促进套利等多种用途。
 - en: However, it is crucial to consider data overflow as data streams can be immense,
     particularly in highly volatile markets. This is where asynchronous programming
     becomes paramount, and Python libraries such as asyncio become handy, allowing
     concurrent tasks' execution without blockage and efficient use of resources.
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，考虑数据溢出是至关重要的，因为数据流可能是巨大的，特别是在高度波动的市场中。这就是异步编程变得尤为重要的地方，Python库如`asyncio`变得非常实用，允许并发任务的执行而不发生阻塞，从而高效利用资源。
 - en: Ultimately, the advent of real-time data streaming heralds an era of unprecedented
     speed, precision, and efficiency in algorithmic trading. As data floods in at
     a breakneck pace, traders can harness the precious insights embedded in these
     numerical tides to steer their strategies towards profitable shores.
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 最终，实时数据流的出现预示着算法交易速度、精确度和效率的前所未有的时代。随着数据以惊人的速度涌入，交易者可以利用这些数值潮流中蕴含的宝贵洞察，指引其策略驶向盈利的岸边。
 - en: With real-time data streaming illuminating the trading path, harness its power
     with automated trading bots, the subject of our next enlightening discourse.
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着实时数据流照亮交易路径，利用其力量与自动化交易机器人相结合，这是我们下一个启发性讨论的主题。
 - en: Automated Trading Bots
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 自动化交易机器人
 - en: Trading has undergone a seismic evolution since its inception, with the sprouting
     of technology, the digital age watering it into a flourishing landscape of new-aged
     finance. Emerging triumphant from this evolution is the epoch of algorithmic trading,
     with automated trading bots forming the vanguard. Delegation has etched its place
     in history as a tool of efficiency, and in the throbbing heart of the trading
     world, it comes in the form of automated trading bots.
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 自交易诞生以来，交易经历了巨大的变革，随着科技的崛起，数字时代将其浇灌成一个繁荣的新金融景观。在这场变革中，算法交易的时代应运而生，自动交易机器人成为先锋。委托已成为效率的工具，在交易世界的核心，它以自动交易机器人的形式存在。
 - en: By installing automated trading bots, traders entrust the responsibility of
     initiating trades on their behalf based on pre-set and programmed instructions.
     These bots operate on a set of rules, revolving around timing, quantity, price,
     or any mathematical model that aids in making trading profitable. In fact, algorithmic
     trading, coupled with automated bots, has become such a critical part of the trading
     world that it contributes to a substantial chunk of market orders.
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过安装自动交易机器人，交易者将根据预设的编程指令，委托这些机器人代表他们发起交易。这些机器人基于一套规则运作，围绕时间、数量、价格或任何有助于盈利的数学模型进行交易。实际上，算法交易与自动化机器人结合，已经成为交易世界中一个至关重要的部分，贡献了大量的市场订单。
 - en: 'Python serves as an ideal programming language for designing these trading
     bots, credited to its simplicity of syntax and an assortment of robust libraries
     for data analysis and manipulation. A simple version of an automated trading bot,
     targeting a price-based strategy, might look something like the following in Python:'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: Python是设计这些交易机器人的理想编程语言，因其语法简单和众多强大的数据分析与处理库。一个简单的基于价格策略的自动交易机器人的版本可能在Python中看起来如下：
 - en: '[PRE11]'
+  id: totrans-102
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE11]'
 - en: In the sample code snippet, the bot, powered by the ccxt library, trades with
     Binance to buy Bitcoin when its price falls below the set target, and sells Bitcoin
     once its price goes beyond this set point.
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 在示例代码片段中，使用ccxt库的机器人在比特币价格低于设定目标时进行购买，并在价格超过这一设定点时卖出比特币。
 - en: Dexterity is the name of the game when algorithmic trading is concerned, enabling
     nimble maneuvers in split seconds that would otherwise be impossible for manual
     traders. Automated trading bots offer an indispensable advantage here, executing
     high frequency and timely trades that enable traders to maximize profit and minimize
     risk.
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 在算法交易中，灵活性是关键，能够在分秒间进行快速操作，这是手动交易者所无法实现的。自动交易机器人在这里提供了不可或缺的优势，执行高频且及时的交易，使交易者能够最大化利润并最小化风险。
 - en: However, it is crucial to bear in mind that these bots are not a magic cure-for-all,
     and they come with their own sets of challenges and risks. Exhaustive backtesting
     must be the precursor to all bot implementations to ensure that the trading algorithm
     works well with past data. Overcoming slippage, network latency, sudden market
     fluctuations, and ensuring seamless strategy execution can all present significant
     challenges - ones that require continual monitoring, testing, and tweaking.
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，重要的是要记住，这些机器人并不是万无一失的灵丹妙药，它们也有自身的挑战和风险。彻底的回测必须是所有机器人实施的前提，以确保交易算法与历史数据的良好适配。克服滑点、网络延迟、突发市场波动以及确保策略执行的无缝性都可能带来重大挑战，这些都需要持续的监测、测试和调整。
 - en: Breaking the shackles of geographical boundaries and freeing traders from the
     constraints of time, automated trading bots stand as the future of the trading
     world. Their role promises to be even more crucial as we venture into an era where
     digital assets like cryptocurrencies are becoming mainstream.
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 打破地理边界的束缚，解放交易者免受时间限制，自动交易机器人成为交易世界的未来。随着我们迈入数字资产（如加密货币）逐渐主流的时代，它们的角色将变得更加关键。
