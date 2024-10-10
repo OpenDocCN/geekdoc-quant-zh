@@ -97,6 +97,7 @@
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 尾部风险包含了金融市场收益分布并不完全对称的概念；相反，分布的两端或“尾部”可能更肥厚，表明极端结果的发生概率高于正常分布的预期。这些极端值代表了与均值的显著偏差，通常与市场动荡和不可预见的危机相关联。
 - en: The term 'black swan' was popularized by finance professor and writer Nassim
     Nicholas Taleb to describe events that are unpredicted and unpredictably impactful,
     yet, in hindsight, are rationalized as if they could have been expected. Black
@@ -106,10 +107,12 @@
   id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: “黑天鹅”一词由金融教授及作家纳西姆·尼古拉斯·塔勒布普及，用于描述那些不可预测且影响深远的事件，但事后看来却被合理化为似乎可以预见的。黑天鹅事件是尾部风险的一个子集，以其稀有性、严重影响和事后可预测性为特征。例子包括2008年金融危机和互联网泡沫破裂。
 - en: Statistical Underpinnings of Tail Risk
   id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 尾部风险的统计基础
 - en: To comprehend tail risk, one must delve into the statistical measures that capture
     the likelihood and impact of these events. Value at Risk (VaR) and Conditional
     Value at Risk (CVaR) are two such measures. VaR provides an estimate of the maximum
@@ -118,11 +121,13 @@
   id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了理解尾部风险，必须**深入**研究能够捕捉这些事件可能性和影响的统计度量。风险价值（VaR）和条件风险价值（CVaR）是两种这样的度量。VaR提供了在给定时间框架和置信水平下预期的最大损失估计，而CVaR计算超过VaR阈值的预期损失。
 - en: 'Illustrating with Python, we can simulate a portfolio''s return distribution
     and calculate its VaR and CVaR:'
   id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过Python模拟，我们可以模拟一个投资组合的收益分布，并计算其VaR和CVaR：
 - en: '[PRE1]'
   id: totrans-17
   prefs: []
@@ -132,6 +137,7 @@
   id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 财务历史中的黑天鹅事件
 - en: Historically, black swan events have led to drastic changes in the financial
     landscape. The 1987 stock market crash, known as Black Monday, saw the Dow Jones
     Industrial Average plummet by 22% in a single day. The 2008 global financial crisis,
@@ -140,10 +146,12 @@
   id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 从历史上看，黑天鹅事件导致了金融格局的重大变化。1987年的股市崩盘，被称为“黑色星期一”，道琼斯工业平均指数在一天内暴跌22%。2008年全球金融危机，由美国房地产市场泡沫崩溃引发，是另一个典型例子，导致了大萧条。
 - en: Mitigating Tail Risk and Black Swan Events
   id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 减轻尾部风险和黑天鹅事件
 - en: Investors and portfolio managers aim to mitigate the adverse effects of tail
     risks through diversification, hedging strategies such as buying out-of-the-money
     put options, and maintaining a risk-aware portfolio construction. Black swan events,
@@ -153,6 +161,7 @@
   id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 投资者和投资组合经理通过多样化、购买虚值看跌期权等对冲策略以及保持风险意识的投资组合构建，旨在减轻尾部风险的不利影响。然而，黑天鹅事件由于其不可预测的性质，提出了独特的挑战，通常最好的防御是拥有强大的风险管理协议，这些协议能够迅速适应变化的条件。
 - en: Understanding tail risk and black swan events is crucial for anyone involved
     in financial markets. By recognizing the limitations of traditional risk metrics
     and embracing more dynamic and comprehensive measures, investors can better prepare
@@ -163,10 +172,12 @@
   id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 理解尾部风险和黑天鹅事件对任何参与金融市场的人来说都至关重要。通过认识到传统风险指标的局限性，并采用更动态和全面的度量，投资者可以更好地为意外做好准备，保护他们的投资组合免受这些稀有但重要现象的潜在冲击。通过应用先进的统计技术和算法交易，我们可以增强对金融市场行为中固有的冲击和压力的抵御能力。
 - en: Use of Out-of-the-Money Options for Hedging
   id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用虚值期权进行对冲
 - en: Hedging, in its essence, is an investment strategy implemented to reduce the
     risk of adverse price movements in an asset. A proficient tool in the hedger's
     arsenal is the utilization of out-of-the-money (OTM) options. These options have
