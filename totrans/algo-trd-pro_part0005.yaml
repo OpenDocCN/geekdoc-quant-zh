@@ -1,6 +1,8 @@
 - en: 1.3\. Options Pricing Models
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 1.3\. 期权定价模型
 - en: An exploration of the financial strategies one can deploy in the options market
     is markedly incomplete without a meticulous examination of options pricing models.
     These models are the cornerstone for estimating the fair value of options, serving
@@ -8,8 +10,10 @@
     informed decisions. In this section, we delve into the sophisticated sphere of
     these pricing models, starting with the foundational theories and progressing
     to the more complex and nuanced adaptations that have evolved over time.
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在期权市场上可以部署的金融策略的探讨，若没有对期权定价模型的细致审视，将显得明显不完整。这些模型是估算期权公允价值的基石，为交易者和量化分析师构建策略和做出明智决策提供了基础。在本节中，我们将深入探讨这些定价模型的复杂领域，从基础理论开始，逐步进入随着时间演变而发展的更复杂和细致的适应。
 - en: The Black-Scholes model, formulated by Fischer Black, Myron Scholes, and Robert
     Merton, revolutionized the world of finance by providing a closed-form solution
     for pricing European-style options. Grounded in the assumption of log-normal distribution
@@ -19,8 +23,10 @@
     of the underlying asset. The elegance of the model lies in the Black-Scholes formula,
     a mathematical expression encapsulating these variables into a coherent whole,
     thus allowing traders to gauge the theoretical value of an option.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 黑-舒尔茨模型由费舍尔·布莱克、迈伦·舒尔茨和罗伯特·默顿提出，革命性地改变了金融世界，通过提供一个欧洲风格期权定价的闭合解。该模型建立在资产价格对数正态分布和无套利原则的假设上，根据标的资产当前价格、期权行使价格、到期时间、无风险利率以及标的资产的波动性等因素推导期权价格。该模型的优雅之处在于黑-舒尔茨公式，这一数学表达将这些变量封装成一个一致的整体，从而使交易者能够评估期权的理论价值。
 - en: While the Black-Scholes model is an invaluable starting point, it is not without
     limitations. Real-world market conditions such as early exercise options, discrete
     dividends, and dynamic interest rates led to the development of the Binomial Options
@@ -29,16 +35,20 @@
     payouts. By simulating the possible price paths of the underlying asset through
     a binomial tree—depicting upward and downward movements—traders can evaluate the
     option’s value at each node, tracing back to its present value.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然黑-舒尔茨模型是一个不可或缺的起点，但它并非没有局限性。现实市场条件如提前行使期权、离散股息和动态利率促使了二项式期权定价模型的发展。该模型采用离散时间格子框架，灵活适应美式期权和可变公司分红。通过模拟标的资产在二项树上的可能价格路径——表现为向上和向下的运动——交易者可以评估每个节点的期权价值，并追溯到其现值。
 - en: Further complexities in market behavior gave rise to the need for models that
     account for stochastic volatility and interest rates. The Merton model, an extension
     of the Black-Scholes framework, introduces random jumps in asset prices, capturing
     the sudden and significant movements often observed in markets. Meanwhile, the
     Heston model allows for a stochastic volatility process, admitting the reality
     that volatility itself is not constant but varies over time.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 市场行为的进一步复杂性催生了需要考虑随机波动性和利率的模型。默顿模型是黑-舒尔茨框架的扩展，引入了资产价格的随机跳跃，捕捉到市场中常见的突发且显著的波动。同时，赫斯顿模型允许随机波动性过程，承认波动性本身并非恒定，而是随时间变化。
 - en: 'Central to the practical application of these models is the computation of
     the Greeks—Delta, Gamma, Theta, Vega, and Rho. These risk measures elucidate the
     sensitivity of an option''s price to various factors: the underlying asset price
@@ -46,8 +56,10 @@
     rate. An accurate estimation of the Greeks enables traders to hedge their option
     positions effectively, tailor their exposure to market dynamics, and capitalize
     on temporal or event-induced volatility.'
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些模型实际应用的核心是希腊字母的计算——Delta、Gamma、Theta、Vega和Rho。这些风险指标阐明了期权价格对各种因素的敏感性：标的资产价格变化、时间衰减、波动性变化以及无风险利率的变动。准确估算希腊字母使交易者能够有效对冲期权头寸，调整对市场动态的敞口，并利用时间或事件引发的波动性。
 - en: While classical pricing models serve as the linchpin in the options trader's
     toolkit, they also set the stage for a candid discussion about their limitations.
     Issues such as the assumption of a continuous trading environment, the underestimation
@@ -55,8 +67,11 @@
     review of these models. Traders and quants must be vigilant in assessing when
     a model's assumptions break down and how to employ alternative methods or incorporate
     empirical corrections.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然经典定价模型是期权交易者工具箱中的关键，但它们也为坦诚讨论其局限性奠定了基础。诸如连续交易环境的假设、对极端市场事件的低估或交易成本的忽略等问题，
+    necessitate对这些模型的批判性审查。交易者和量化分析师必须警惕，评估何时模型的假设失效，以及如何采用替代方法或纳入经验修正。
 - en: In the subsequent pages, we will dissect each pricing model in detail, outlining
     its theoretical underpinnings, practical application, and the computational nuances
     involved in their implementation using Python. Through code examples and case
@@ -65,19 +80,25 @@
     performance by backtesting and comparing its predictions against historical market
     data, shedding light on their efficacies and guiding traders towards a more enlightened
     application of these essential financial tools.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 在接下来的页面中，我们将详细剖析每个定价模型，概述其理论基础、实际应用及其在使用Python实现时的计算细节。通过代码示例和案例研究，我们将演示如何计算期权价格、估算希腊值，并调整市场缺陷。我们还将通过回测和将其预测与历史市场数据进行比较，批判性分析每个模型的表现，揭示其有效性，引导交易者更明智地应用这些基本金融工具。
 - en: Through a rigorous and detailed investigation of options pricing models, traders
     are empowered to craft strategies that are robust, sophisticated, and reflective
     of the complex collage that is the global options market. Our foray into the world
     of options pricing is not merely academic; it is a necessary pilgrimage to the
     heart of strategic trading—a journey that every serious trader must undertake
     with rigor and a zeal for quantitative excellence.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过对期权定价模型的严格和详细调查，交易者能够制定出稳健、复杂且反映全球期权市场复杂拼图的策略。我们对期权定价世界的探索不仅仅是学术性的；它是通往战略交易核心的必要朝圣之旅——每个严肃的交易者都必须以严谨和对定量卓越的热情进行这一旅程。
 - en: Binomial Options Pricing Model
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 二项式期权定价模型
 - en: Conceived by Cox, Ross, and Rubinstein, the binomial model constructs a discrete-time
     lattice for the possible future prices of the underlying asset. The essence of
     the model is to break down the time to expiration into potentially infinite minute
@@ -85,8 +106,10 @@
     incremental shifts are predicated on the fundamental assumptions about the volatility
     of the underlying asset and fixed probabilities of upward or downward movements—creating
     a binomial tree that branches out with each time step.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 由考克斯、罗斯和鲁宾斯坦构思的二项式模型构建了潜在未来价格的离散时间格子。该模型的本质在于将到期时间分解为可能无限的微小步骤，在这些步骤中，资产价格可以按照某个因素向上或向下移动。这些增量变动是基于对基础资产波动性的基本假设和固定的向上或向下运动概率——从而创建了一个随着时间步长分支的二项树。
 - en: At the heart of the Binomial Options Pricing Model is the concept of replicating
     portfolios. At each node of the binomial tree, the model postulates the construction
     of a portfolio comprising the underlying asset and risk-free securities that exactly
@@ -95,8 +118,10 @@
     price. This no-arbitrage argument allows us to iteratively compute the option's
     fair value by working backward from the terminal nodes (where the option's payoffs
     are known) towards the present.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 二项式期权定价模型的核心概念是复制投资组合。在二项树的每个节点上，模型假设构建一个包含基础资产和无风险证券的投资组合，该组合恰好复制所评估期权的收益。这里的基本见解是，如果两个投资组合具有相同的收益，它们必然拥有相同的市场价格。这种无套利论证使我们能够通过从终端节点（期权收益已知处）向现在反向推导，迭代计算期权的公平价值。
 - en: This backward induction process is not only theoretically sound but also practically
     potent. Consider an American option, which can be exercised at any point up to
     and including the expiration date. The binomial model elegantly accommodates this
@@ -104,8 +129,10 @@
     node, thus capturing its early exercise premium. We can also adjust our tree to
     reflect dividends by reducing the underlying asset price at nodes corresponding
     to dividend payment dates.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种逆向归纳过程不仅理论上合理，而且在实践中也很有效。考虑一个美式期权，它可以在到期日之前的任何时刻被行使。二项模型优雅地容纳了这一特征，允许在任何节点上行使期权（如果它是实值的），从而捕捉其提前行使的溢价。我们还可以通过在对应于股息支付日期的节点上减少基础资产价格来调整我们的树，以反映股息。
 - en: 'Let us now wield Python as our computational scythe to carve out the binomial
     model from the raw numerical underbrush. We begin by defining the lattice parameters:
     the time step size, the up and down factors (usually derived from volatility),
@@ -113,8 +140,10 @@
     tree, populating them with asset prices and option values. For each node, we calculate
     the option''s value as the expected present value of the option at the subsequent
     up and down nodes, discounting back at the risk-free rate.'
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们运用 Python 作为我们的计算镰刀，从原始数值的丛林中雕刻出二项模型。我们首先定义晶格参数：时间步长、上涨和下跌因子（通常由波动率推导得出），以及风险中性概率。然后我们构建代表树的数组，用资产价格和期权价值填充它们。对于每个节点，我们计算期权的价值，作为后续上升和下降节点期权的预期现值，以无风险利率进行折现。
 - en: As we iterate over this process, Python's for-loops and array manipulations
     serve us well, allowing us to efficiently traverse the tree. We can further refine
     our model by incorporating Python’s SciPy and NumPy libraries for more complex
@@ -122,34 +151,46 @@
     of Python also enables us to extend the binomial framework to accommodate exotic
     options, adding branches to our lattice that capture the unique features of these
     financial derivatives.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们在这个过程中反复迭代时，Python 的 for 循环和数组操作为我们提供了极大的便利，使我们能够高效地遍历树。我们还可以通过结合 Python
+    的 SciPy 和 NumPy 库来进一步优化模型，以进行更复杂的数学运算，从而确保模型的精确性和稳健性。Python 的灵活性还使我们能够扩展二项框架，以适应奇异期权，为我们的晶格增加分支，以捕捉这些金融衍生品的独特特征。
 - en: By the conclusion of our binomial modeling, we stand with a tool of remarkable
     adaptability. From the simplest European call to the more complex American put
     with variable dividends, the Binomial Options Pricing Model, facilitated by Python's
     versatile programming capabilities, proves to be an indispensable ally in the
     quantitative trader's arsenal.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 在完成我们的二项建模时，我们掌握了一个极具适应性的工具。从最简单的欧式看涨期权到更复杂的带有可变股息的美式看跌期权，借助 Python 多功能的编程能力，二项期权定价模型成为量化交易者工具箱中不可或缺的盟友。
 - en: Through detailed examples and comprehensive explanations, this section of our
     book aims to demystify the binomial model, ensuring that you, the reader, are
     well-equipped to implement and adapt this model to a multitude of options pricing
     challenges. It is through this methodical deconstruction and reconstruction that
     we gain not just understanding, but proficiency in the essential craft of options
     valuation.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过详细的例子和全面的解释，本书的这一部分旨在揭示二项模型的奥秘，确保你，读者，能够很好地实施和调整此模型以应对多种期权定价挑战。正是通过这种系统的解构与重构，我们不仅获得了理解，还在期权估值这一基本技能上获得了熟练度。
 - en: Black-Scholes Model
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: Black-Scholes 模型
 - en: The Black-Scholes model rests on the bedrock of certain fundamental assumptions
     – the absence of arbitrage, the ability to borrow and lend at the risk-free interest
     rate, and the logarithmic normality of stock price returns, to name a few. The
     heart of the model is the partial differential equation known as the Black-Scholes
     PDE, which describes how the price of an option evolves over time in relation
     to the underlying asset's price, the passage of time, and the absence of uncertainty.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: Black-Scholes 模型建立在某些基本假设的基础上——无套利、能够以无风险利率借贷，以及股票价格回报的对数正态性，等等。该模型的核心是被称为 Black-Scholes
+    偏微分方程的部分微分方程，它描述了期权价格如何随时间演变，如何与基础资产价格、时间的推移以及不确定性的缺失相关联。
 - en: But let us eschew the abstract for the concrete and turn to Python, the workhorse
     of data analysis and financial modeling. Python, with its rich ecosystem of libraries
     and its syntactic clarity, enables us to crystallize the Black-Scholes formula
@@ -157,8 +198,10 @@
     from libraries like numpy and scipy. With these tools at hand, we define the Black-Scholes
     formula, taking care to express each variable and each Greek – Delta, Gamma, Theta,
     Vega, and Rho – with meticulous care.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 但让我们摒弃抽象，转向具体，看看Python，这一数据分析和金融建模的主力军。Python凭借其丰富的库生态系统和语法清晰性，使我们能够将布莱克-斯科尔斯公式转化为可操作的代码。我们首先从像numpy和scipy这样的库中导入必要的数学工具。掌握这些工具后，我们定义布莱克-斯科尔斯公式，细致表达每个变量和每个希腊字母——Delta、Gamma、Theta、Vega和Rho。
 - en: The calculation of these Greeks allows traders to understand the sensitivity
     of option prices to various factors. Delta measures the rate of change of the
     option value with respect to changes in the underlying asset's price. Gamma extends
@@ -168,262 +211,358 @@
     price to the risk-free interest rate. It is the interplay of these Greeks that
     traders harness to manage their portfolios and hedge their positions against market
     movements.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些希腊字母的计算使交易者能够理解期权价格对各种因素的敏感性。Delta衡量期权价值相对于基础资产价格变化的变化率。Gamma扩展了这一分析，考察Delta自身的变化率。Theta量化时间衰减对期权价格的影响，Vega表述波动率与期权价值之间的关系，而Rho评估期权价格对无风险利率的敏感性。这些希腊字母的相互作用使交易者能够管理其投资组合，并对市场波动进行对冲。
 - en: In Python, we can elegantly encapsulate these calculations within functions,
     creating a library of tools that not only compute the theoretical price of an
     option but also arm traders with insights into the option's risk profile. We can
     then iterate over a range of underlying prices and volatilities, plotting the
     Greeks and the option values, thus visualizing the theoretical landscape defined
     by the Black-Scholes model.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Python中，我们可以优雅地将这些计算封装在函数中，创建一个工具库，不仅计算期权的理论价格，还为交易者提供期权风险特征的洞察。然后，我们可以迭代一系列基础价格和波动率，绘制希腊字母和期权价值，从而可视化由布莱克-斯科尔斯模型定义的理论景观。
 - en: Yet, the Black-Scholes model is not without its critics. It assumes constant
     volatility and interest rates, an efficient market, and overlooks the possibility
     of early exercise, which can be critical for American options. As such, the model
     serves as an idealized benchmark—a North Star guiding traders through the nocturnal
     canvas of the markets, even if the real world occasionally clouds its luminescence
     with the mists of market imperfections.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，布莱克-斯科尔斯模型并非没有批评者。它假设波动率和利率恒定，市场有效，并忽视了早期行使的可能性，这对于美式期权至关重要。因此，该模型作为一个理想化的基准——一颗北极星，引导交易者穿越市场的夜空，即使现实世界偶尔用市场缺陷的迷雾遮蔽其光辉。
 - en: This section, therefore, is not merely a recitation of formulas and code, but
     a narrative of the model's philosophical and practical underpinnings. It seeks
     to empower you, the reader, with the prowess to implement the Black-Scholes model,
     to critique it, and to understand its role within the broader assemblage of quantitative
     finance tools.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，本节不仅仅是公式和代码的复述，而是对模型哲学和实际基础的叙述。它旨在赋予你，读者，实施布莱克-斯科尔斯模型的能力，批判它，并理解它在更广泛的量化金融工具集合中的角色。
 - en: As we chart our course through the Nuances of the model, we shall not shy away
     from its limitations but embrace them as opportunities for innovation. In doing
     so, we recognize that the true utility of the Black-Scholes model in contemporary
     finance lies not in its unassailable accuracy but in its ability to provide a
     foundational grammar for the language of options pricing.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们深入探讨模型的细微差别时，我们不会回避它的局限性，而是将其视为创新的机会。通过这样做，我们认识到，布莱克-斯科尔斯模型在当代金融中的真正效用不在于其无懈可击的准确性，而在于它为期权定价语言提供了基础语法。
 - en: With Python as our scribe, we transcribe this grammar into executable scripts,
     bringing to life the theoretical constructs that have shaped the edifice of modern
     finance. The exploration of the Black-Scholes model within these pages is as much
     about the model itself as it is about cultivating the skills necessary to navigate
     the ever-evolving landscape of quantitative finance.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 以Python为我们的记录者，我们将这一语法转化为可执行脚本，赋予理论构想以生命，这些构想塑造了现代金融的基础。在这些页面中探索布莱克-舒尔斯模型，不仅仅是关于模型本身，还在于培养在不断变化的量化金融领域中导航所需的技能。
 - en: Merton’s Extension to the Black-Scholes Model
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 梅尔顿对布莱克-舒尔斯模型的扩展
 - en: The odyssey of option pricing models did not reach its terminus with the advent
     of the Black-Scholes model. It was Robert C. Merton, an architect in the pantheon
     of financial engineering, who refined the model by incorporating the reality of
     dividend payments into the valuation of options. His extension is a pivotal chapter
     in our narrative, as it addresses a significant limitation of the original model
     – the absence of dividends in the valuation process.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权定价模型的探索并未因布莱克-舒尔斯模型的出现而结束。正是金融工程领域的建筑师罗伯特·C·梅尔顿，通过将股息支付的现实纳入期权估值，改进了该模型。他的扩展是我们叙述中的关键章节，因为它解决了原模型的一个重大局限——在估值过程中缺乏股息。
 - en: Merton proposed that dividends could be treated as a continuous yield, thereby
     enhancing the original model's capability to mirror real-world conditions more
     closely. This extension is palpable evidence of the model's elasticity and its
     ability to adapt to the complexities of financial markets.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 梅尔顿提出可以将股息视为连续收益，从而增强原模型更贴近现实条件的能力。这一扩展有力证明了模型的弹性及其适应金融市场复杂性的能力。
 - en: In the sanctuary of Python’s development environment, we can instantiate Merton's
     concept with precision. Let us set the stage by considering an underlying asset
     that pays a continuous dividend yield, q. This necessitates the reformulation
     of the Black-Scholes pricing formula, taking into account the present value of
     dividends expected to be paid over the life of the option.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Python开发环境的圣殿中，我们可以精确实例化梅尔顿的概念。让我们设定舞台，考虑一个支付连续股息收益率q的基础资产。这需要重新制定布莱克-舒尔斯定价公式，考虑在期权有效期内预期支付的股息现值。
 - en: The Pythonic implementation of Merton's extension is akin to an eloquent opus
     where each line of code harmonizes with the next. We shall define a function `merton_model()`
     that accepts parameters including the spot price of the underlying asset, the
     strike price, the time to expiration, the risk-free interest rate, the volatility
     of the underlying asset, and the continuous dividend yield.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 梅尔顿扩展的Python实现如同一篇优雅的乐章，每一行代码都与下一行和谐共鸣。我们将定义一个名为`merton_model()`的函数，该函数接受包括基础资产现货价格、执行价格、到期时间、无风险利率、基础资产的波动率和连续股息收益率等参数。
 - en: '[PRE0]'
+  id: totrans-31
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: In this Python function, the adjusted spot price `S_adj` encapsulates the effect
     of the continuous dividend yield. The `norm.cdf()` function from the `scipy.stats`
     module computes the cumulative distribution function of the standard normal distribution,
     which is integral to the model.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个Python函数中，调整后的现货价格`S_adj`封装了连续股息收益率的影响。来自`scipy.stats`模块的`norm.cdf()`函数计算标准正态分布的累积分布函数，这是模型的一个重要组成部分。
 - en: The analytical elegance of Merton's extension is not without its assumptions
     – the model presupposes that dividends are known and constant, which is not always
     the case in the real market environment. However, Merton’s model provides a more
     comprehensive framework that aligns with the empirical observations of option
     pricing in the presence of dividend-yielding assets.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 梅尔顿扩展的分析优雅并非没有假设——该模型假设股息是已知且恒定的，但这在现实市场环境中并不总是如此。然而，梅尔顿的模型提供了一个更全面的框架，与在股息收益资产存在下的期权定价的实证观察相一致。
 - en: By threading Merton's extension into our Python collage, we gain a richer representation
     of the financial landscape, one that accommodates the influence of dividends on
     the behavior of option prices. As we scrutinize the outputs of the model, plotting
     the calculated call and put prices against different dividend yields, we obtain
     a graphical narrative that elucidates the impact of this crucial variable.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过将Merton的扩展融入我们的Python拼贴中，我们获得了对金融景观的更丰富表现，这种表现考虑了股息对期权价格行为的影响。当我们仔细审视模型的输出，绘制不同股息收益率下计算的看涨和看跌价格时，我们获得了一种图形叙述，阐明了这一关键变量的影响。
 - en: The detailed analysis of Merton's extension within these pages is not an isolated
     academic exercise but a pragmatic guide for practitioners. It equips the astute
     trader with an augmented understanding of options pricing and furnishes the quantitative
     analyst with sophisticated tools to delve into the probabilistic spheres of the
     market.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这些页面中对Merton扩展的详细分析并不是孤立的学术练习，而是为从业者提供的务实指南。它为精明的交易者提供了对期权定价的增强理解，并为量化分析师提供了深入市场概率领域的复杂工具。
 - en: In the next evolution of our journey, we veraciously integrate Merton's extension
     into the lattice of options trading strategies. This will empower you, the reader,
     to wield these enhanced valuation techniques with confidence, integrating them
     into your own sophisticated financial models and investment decisions.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们旅程的下一次进化中，我们将Merton的扩展与期权交易策略的框架紧密结合。这将使你，读者，能够自信地运用这些增强的估值技术，将其融入你自己的复杂金融模型和投资决策中。
 - en: The Greeks (Delta, Gamma, Theta, Vega, Rho)
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 希腊字母（Delta、Gamma、Theta、Vega、Rho）
 - en: In the amphibious of financial analytics, 'the Greeks' are not characters of
     an ancient play, but rather the critical measures that elucidate the sensitivities
     of option prices to various factors. These risk measures—Delta, Gamma, Theta,
     Vega, and Rho—form the core lexicon for traders and are essential in sculpting
     a coherent risk management strategy.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 在金融分析的两栖领域，“希腊字母”并不是古代戏剧中的角色，而是阐明期权价格对各种因素敏感性的关键指标。这些风险指标——Delta、Gamma、Theta、Vega和Rho——构成了交易者的核心词汇，并在塑造连贯的风险管理策略中至关重要。
 - en: Let us commence on a detailed dissection of these metrics, each revealing a
     different facet of an option's risk profile. We shall wield Python as our scalpel,
     dissecting the complex relationships embedded within option pricing models.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们开始对这些指标进行详细剖析，每个指标揭示期权风险特征的不同方面。我们将使用Python作为我们的手术刀，解剖期权定价模型中嵌入的复杂关系。
 - en: 'Delta:'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: Delta：
 - en: Delta quantifies the rate of change in the option's price for a one-unit change
     in the price of the underlying asset. It is the first derivative of the option's
     value with respect to the underlying asset's price. In Python, we calculate Delta
     using the `norm.cdf()` function from the `scipy.stats` module, which represents
     the cumulative distribution function of the option's standardized price.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: Delta量化了期权价格对于基础资产价格一单位变化的变动率。它是期权价值相对于基础资产价格的第一导数。在Python中，我们使用`scipy.stats`模块中的`norm.cdf()`函数计算Delta，该函数表示期权标准化价格的累积分布函数。
 - en: '[PRE1]'
+  id: totrans-42
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: 'Gamma:'
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: Gamma：
 - en: Gamma measures the rate of change in the Delta with respect to changes in the
     underlying asset's price. It signals the curvature of the option's value graph
     as the underlying price varies. A high Gamma indicates a more sensitive Delta,
     and thus, the option's price could rapidly change.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: Gamma衡量Delta对于基础资产价格变化的变化率。它显示了期权价值图形在基础价格变化时的曲率。高Gamma表示更敏感的Delta，因此期权价格可能会迅速变化。
 - en: '[PRE2]'
+  id: totrans-45
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: 'Theta:'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: Theta：
 - en: Theta tells us the time decay of the option; it's the change in the option's
     price as the expiration date approaches. Typically, it is negative, indicating
     a loss in value with the passage of time.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: Theta告诉我们期权的时间衰减；它是期权价格随着到期日临近而变化的情况。通常，它是负的，表明随着时间的推移，价值会减少。
 - en: '[PRE3]'
+  id: totrans-48
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: 'Vega:'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: Vega：
 - en: Vega, although technically not a Greek letter, is adopted into this pantheon
     to represent the sensitivity of an option's price to changes in the volatility
     of the underlying asset. A high Vega indicates that the option price is particularly
     sensitive to volatility.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: Vega虽然从技术上讲并不是一个希腊字母，但被纳入这一神殿以表示期权价格对基础资产波动性变化的敏感性。高Vega表明期权价格对波动性特别敏感。
 - en: '[PRE4]'
+  id: totrans-51
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: 'Rho:'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: Rho：
 - en: Finally, Rho gauges the sensitivity of an option's price to changes in the risk-free
     interest rate. This Greek is often considered less significant for short-dated
     options, as the impact of interest rate changes is minimal over such short periods.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，Rho衡量期权价格对无风险利率变化的敏感性。这个希腊字母通常被认为对短期期权不太重要，因为利率变化在如此短的时间内影响微乎其微。
 - en: '[PRE5]'
+  id: totrans-54
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: Understanding and monitoring these Greeks allows traders to construct and adjust
     their portfolios to achieve a desired exposure to movements in the underlying
     asset's price, volatility, and time decay—aiming for a Delta-neutral position,
     managing Gamma to temper the effects of rapid Delta changes, or utilizing Vega
     to take advantage of shifts in market volatility.
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 理解和监控这些希腊字母使交易者能够构建和调整他们的投资组合，以实现对基础资产价格、波动率和时间衰减变化的期望敞口——旨在实现Delta中性头寸，管理Gamma以减缓快速Delta变化的影响，或利用Vega抓住市场波动性的变化。
 - en: As we navigate further, we shall apply these Greeks not only in isolation but
     also in concert, crafting multifaceted strategies that reflect our nuanced understanding
     of the options market's dynamics. This section stands as a testament to our commitment
     to equipping the reader with the quantitative tools necessary to maneuver through
     the complex terrain of options trading with finesse and precision.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着我们进一步深入，我们将不仅孤立地应用这些希腊字母，还将它们结合使用，构建反映我们对期权市场动态的细致理解的多元化策略。本节证明了我们致力于为读者提供必要的定量工具，以便在复杂的期权交易领域中灵活而精准地航行。
 - en: Limitations of Classical Pricing Models
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 古典定价模型的局限性
 - en: Classical pricing models are the cornerstone upon which the edifice of modern
     financial theory is built. Yet, as with any construct of human ingenuity, they
     are not without their limitations. The Black-Scholes model and the Binomial model,
     for instance, are paragons of elegance in their mathematical simplicity and theoretical
     clarity. However, when we subject these models to the crucible of market realities,
     we uncover an array of limitations that must be carefully navigated.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 古典定价模型是现代金融理论大厦的基石。然而，和任何人类智慧的构造一样，它们也并非没有局限性。例如，布莱克-肖尔斯模型和二项式模型在其数学简洁性和理论清晰度上都是优雅的典范。然而，当我们将这些模型置于市场现实的熔炉中时，我们揭示出必须谨慎应对的一系列局限性。
 - en: Firstly, the assumption of constant volatility—an underpinning of the Black-Scholes
     model—stands at odds with the empirical observation that volatility is a dynamic
     beast, fluctuating with market sentiment and macroeconomic forces. This idealized
     constancy can lead to mispricing of options, especially in markets bracing for
     significant events that are likely to jolt volatility levels.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，假设波动率恒定——这是布莱克-肖尔斯模型的基础——与经验观察的波动率是动态的这一事实相悖，波动率会随着市场情绪和宏观经济力量而波动。这种理想化的恒定性可能导致期权定价错误，尤其是在市场面临可能导致波动率大幅变化的重要事件时。
 - en: '[PRE6]'
+  id: totrans-60
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: Another prominent limitation is the assumption of a frictionless market. Classical
     models often ignore the realities of transaction costs, bid-ask spreads, and the
     impact of taxes, all of which can significantly erode the profitability of trading
     strategies that appear sound on paper.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个显著的局限性是假设市场无摩擦。古典模型往往忽略了交易成本、买卖价差和税收影响的现实，这些都可能显著侵蚀看似合理的交易策略的盈利能力。
 - en: The treatment of dividends in these models also introduces inaccuracies. Real-world
     dividends can be unpredictable and inconsistent, which the models' simplifications
     fail to accommodate. This discrepancy can lead to a divergence between theoretical
     option prices and those observed in the market.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些模型对股息的处理也引入了不准确性。现实世界中的股息往往是不可预测和不一致的，而模型的简化未能考虑这一点。这种差异可能导致理论期权价格与市场观察到的价格之间的偏差。
 - en: Furthermore, the Black-Scholes model's assumption of European-style options,
     which can only be exercised at expiration, does not account for the American-style
     options prevalent in the US markets, where early exercise is a strategic reality.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，布莱克-肖尔斯模型假设的欧洲式期权只能在到期时行使，并未考虑在美国市场上普遍存在的美式期权，在那里，提前行使是一种战略现实。
 - en: The mathematical scaffolding of the binomial model, on the other hand, while
     more flexible in accommodating early exercise, relies on a discretized view of
     time and price movements. This discretization can lead to a jagged representation
     of option prices, especially when the steps in the binomial tree are not fine
     enough to capture the nuanced evolution of market prices.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 二项模型的数学框架在适应提前行权方面更为灵活，但依赖于离散化的时间和价格变动视角。这种离散化可能导致期权价格呈现出不规则的表现，特别是当二项树的步骤不足以捕捉市场价格的细微变化时。
 - en: Lastly, the assumption of a risk-free rate being constant and known over the
     life of the option is a quixotic notion in the turbulent seas of interest rates
     that central banks and market forces shape.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，假设无风险利率在期权生命周期内是恒定且已知的，这在中央银行和市场力量塑造的动荡利率海洋中是一种幻想。
 - en: In practical applications, these classical models serve as a starting point—a
     framework from which to begin the complex task of option valuation. Yet the prudent
     analyst must be vigilant, ready to adjust and refine these models with the alloys
     of empirical data and advanced numerical techniques. It is through such calibrations
     that we strive to reconcile the elegance of theory with the idiosyncratic nature
     of market behavior.
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 在实际应用中，这些经典模型作为起点存在——一个开始进行期权估值复杂任务的框架。然而，谨慎的分析师必须保持警惕，随时准备用实证数据和先进数值技术的合金调整和优化这些模型。正是通过这样的校准，我们努力将理论的优雅与市场行为的特性和谐统一。
 - en: This section has only skimmed the surface of the limitations of classical pricing
     models. As we venture deeper into the nuances of options valuation, we will unearth
     further complexities and learn to navigate them with the tools and techniques
     at our disposal—refining our models, hedging our risks, and seeking a truer alignment
     with the mercurial spirit of the options markets.
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 本节仅仅触及经典定价模型局限性的表面。当我们深入探讨期权估值的细微差别时，将会揭示更多复杂性，并学习如何利用我们手中的工具和技术进行导航——优化我们的模型、对冲风险，并寻求与期权市场瞬息万变的特性更真实的契合。
