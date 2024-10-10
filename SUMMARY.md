@@ -1,2 +1,6 @@
 +   [金融机器学习的进展](docs/adv-fin-ml/README.md)
++   [自动交易员指南](docs/auto-trdr/README.md)
++   [算法交易系统构建指南](docs/bd-algo-trd-sys/README.md)
++   [大数据、机器学习与量化投资](docs/bgdt-ml-quant-invs/README.md)
++   [算法交易入门](docs/intro-algo-trd/README.md)
 +   [技术指标和振荡器大全](docs/tech-ind-ovly/README.md)
