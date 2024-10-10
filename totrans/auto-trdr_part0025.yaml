@@ -1,884 +1,1438 @@
 - en: Sample Trading Programs – Step by Step Guide
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例交易程序 - 步骤指南
 - en: Sample Trading Program 1 - Generic
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例交易程序 1 - 通用
 - en: 'Step 1: Import Libraries and Set Up Environment'
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 步骤 1：导入库并设置环境
 - en: Let's start by importing the necessary libraries.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们首先导入必要的库。
 - en: python
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: import pandas as pd
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: import pandas as pd
 - en: import numpy as np
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: import numpy as np
 - en: import matplotlib.pyplot as plt
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: import matplotlib.pyplot as plt
 - en: from sklearn.ensemble import RandomForestClassifier
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: from sklearn.ensemble import RandomForestClassifier
 - en: from sklearn.metrics import accuracy_score
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: from sklearn.metrics import accuracy_score
 - en: from sklearn.model_selection import train_test_split
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: from sklearn.model_selection import train_test_split
 - en: 'Step 2: Import and Preprocess Data'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 步骤 2：导入和预处理数据
 - en: For this example, let's use historical stock data for, say, Apple Inc. (AAPL).
     You can obtain this data from various sources, like Yahoo Finance or a dedicated
     API.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，我们使用苹果公司（AAPL）的历史股票数据。你可以从不同来源获取这些数据，例如雅虎财经或专用 API。
 - en: python
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: Assume df is a DataFrame with historical data
+  id: totrans-14
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 假设 df 是一个包含历史数据的 DataFrame
 - en: df = pd.read_csv('AAPL_data.csv')
+  id: totrans-15
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: df = pd.read_csv('AAPL_data.csv')
 - en: Calculate moving averages
+  id: totrans-16
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 计算移动平均线
 - en: df['SMA_50'] = df['Close'].rolling(window=50).mean()
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: df['SMA_50'] = df['Close'].rolling(window=50).mean()
 - en: df['SMA_200'] = df['Close'].rolling(window=200).mean()
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: df['SMA_200'] = df['Close'].rolling(window=200).mean()
 - en: 'Step 3: Feature Engineering'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 步骤 3：特征工程
 - en: Let's add some more features that might be relevant for trading, like volatility
     and momentum.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们添加一些可能与交易相关的特征，如波动率和动量。
 - en: python
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: Volatility
+  id: totrans-22
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 波动率
 - en: df['Volatility'] = df['Close'].rolling(window=50).std()
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Volatility'] = df['Close'].rolling(window=50).std()
 - en: Momentum
+  id: totrans-24
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 动量
 - en: df['Momentum'] = df['Close'].diff(4)
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Momentum'] = df['Close'].diff(4)
 - en: 'Step 4: Create Labels'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 步骤 4：创建标签
 - en: Let's label our data for supervised learning. If the price increased in the
     next 5 days, label it as 1; otherwise, 0.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们为监督学习标记数据。如果接下来的 5 天价格上涨，标记为 1；否则，标记为 0。
 - en: python
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: df['Future_Close'] = df['Close'].shift(-5)
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Future_Close'] = df['Close'].shift(-5)
 - en: df['Label'] = np.where(df['Future_Close'] >= df['Close'], 1, 0)
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Label'] = np.where(df['Future_Close'] >= df['Close'], 1, 0)
 - en: 'Step 5: Prepare Data for Model'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 步骤 5：为模型准备数据
 - en: python
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: features = ['SMA_50', 'SMA_200', 'Volatility', 'Momentum']
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: features = ['SMA_50', 'SMA_200', '波动率', '动量']
 - en: X = df[features].dropna()
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: X = df[features].dropna()
 - en: y = df['Label'][df.index.isin(X.index)]
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: y = df['Label'][df.index.isin(X.index)]
 - en: X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 - en: 'Step 6: Build and Train Model'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 步骤 6：构建和训练模型
 - en: We will use a Random Forest Classifier for this example.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将使用随机森林分类器进行此示例。
 - en: python
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: model = RandomForestClassifier(n_estimators=100)
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: model = RandomForestClassifier(n_estimators=100)
 - en: model.fit(X_train, y_train)
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: model.fit(X_train, y_train)
 - en: 'Step 7: Evaluate Model'
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 步骤 7：评估模型
 - en: python
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: y_pred = model.predict(X_test)
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: y_pred = model.predict(X_test)
 - en: print('Accuracy:', accuracy_score(y_test, y_pred))
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: print('准确率:', accuracy_score(y_test, y_pred))
 - en: 'Step 8: Implement Strategy and Backtest'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 步骤 8：实施策略和回测
 - en: If the model predicts 1 (price will go up), then buy; otherwise, sell.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果模型预测为 1（价格将上涨），则买入；否则，卖出。
 - en: python
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: df['Predicted_Label'] = model.predict(df[features].dropna())
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Predicted_Label'] = model.predict(df[features].dropna())
 - en: df['Strategy_Returns'] = df['Close'].pct_change() * df['Predicted_Label'].shift()
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Strategy_Returns'] = df['Close'].pct_change() * df['Predicted_Label'].shift()
 - en: cumulative_strategy_returns = (1 + df['Strategy_Returns']).cumprod()
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: cumulative_strategy_returns = (1 + df['Strategy_Returns']).cumprod()
 - en: cumulative_market_returns = (1 + df['Close'].pct_change()).cumprod()
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: cumulative_market_returns = (1 + df['Close'].pct_change()).cumprod()
 - en: plt.figure(figsize=(10,5))
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.figure(figsize=(10,5))
 - en: plt.plot(cumulative_market_returns, label='Market Returns')
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.plot(cumulative_market_returns, label='市场收益')
 - en: plt.plot(cumulative_strategy_returns, label='Strategy Returns')
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.plot(cumulative_strategy_returns, label='策略收益')
 - en: plt.legend()
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.legend()
 - en: plt.show()
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.show()
 - en: This is a simple example to get you started. In a real-world application, you'd
     have to validate your strategy through extensive backtesting, optimize your features,
     and probably implement risk management strategies.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个简单的例子，可以帮助你入门。在实际应用中，你需要通过广泛的回测验证你的策略，优化特征，并可能实施风险管理策略。
 - en: Python – Complete Program
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: Python - 完整程序
 - en: Importing Libraries
+  id: totrans-60
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 导入库
 - en: import pandas as pd
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: import pandas as pd
 - en: import numpy as np
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: import numpy as np
 - en: from sklearn.ensemble import RandomForestClassifier
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: from sklearn.ensemble import RandomForestClassifier
 - en: from sklearn.metrics import accuracy_score
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: from sklearn.metrics import accuracy_score
 - en: from sklearn.model_selection import train_test_split
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: from sklearn.model_selection import train_test_split
 - en: import matplotlib.pyplot as plt
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: import matplotlib.pyplot as plt
 - en: 'Step 2: Import and Preprocess Data'
+  id: totrans-67
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 步骤 2：导入和预处理数据
 - en: Assuming you have a CSV file called 'AAPL_data.csv' with historical data
+  id: totrans-68
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 假设你有一个名为'AAPL_data.csv'的CSV文件，其中包含历史数据
 - en: df = pd.read_csv('AAPL_data.csv')
+  id: totrans-69
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: df = pd.read_csv('AAPL_data.csv')
 - en: For demonstration, let's generate some dummy data
+  id: totrans-70
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 为演示，我们生成一些虚拟数据
 - en: df = pd.DataFrame({
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: df = pd.DataFrame({
 - en: '''Close'': np.random.rand(1000) * 1000  # Generating random close prices'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: '''收盘'': np.random.rand(1000) * 1000  # 生成随机收盘价格'
 - en: '})'
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: '})'
 - en: Calculate moving averages
+  id: totrans-74
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 计算移动平均
 - en: df['SMA_50'] = df['Close'].rolling(window=50).mean()
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: df['SMA_50'] = df['收盘'].rolling(window=50).mean()
 - en: df['SMA_200'] = df['Close'].rolling(window=200).mean()
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: df['SMA_200'] = df['收盘'].rolling(window=200).mean()
 - en: 'Step 3: Feature Engineering'
+  id: totrans-77
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第3步：特征工程
 - en: Volatility
+  id: totrans-78
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 波动率
 - en: df['Volatility'] = df['Close'].rolling(window=50).std()
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: df['波动率'] = df['收盘'].rolling(window=50).std()
 - en: Momentum
+  id: totrans-80
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 动量
 - en: df['Momentum'] = df['Close'].diff(4)
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: df['动量'] = df['收盘'].diff(4)
 - en: 'Step 4: Create Labels'
+  id: totrans-82
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第4步：创建标签
 - en: df['Future_Close'] = df['Close'].shift(-5)
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: df['未来收盘'] = df['收盘'].shift(-5)
 - en: df['Label'] = np.where(df['Future_Close'] >= df['Close'], 1, 0)
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: df['标签'] = np.where(df['未来收盘'] >= df['收盘'], 1, 0)
 - en: 'Step 5: Prepare Data for Model'
+  id: totrans-85
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第5步：为模型准备数据
 - en: features = ['SMA_50', 'SMA_200', 'Volatility', 'Momentum']
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 特征 = ['SMA_50', 'SMA_200', '波动率', '动量']
 - en: X = df[features].dropna()
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: X = df[features].dropna()
 - en: y = df['Label'][df.index.isin(X.index)]
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: y = df['标签'][df.index.isin(X.index)]
 - en: X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 - en: 'Step 6: Build and Train Model'
+  id: totrans-90
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第6步：构建和训练模型
 - en: model = RandomForestClassifier(n_estimators=100)
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型 = RandomForestClassifier(n_estimators=100)
 - en: model.fit(X_train, y_train)
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: model.fit(X_train, y_train)
 - en: 'Step 7: Evaluate Model'
+  id: totrans-93
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第7步：评估模型
 - en: y_pred = model.predict(X_test)
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: y_pred = model.predict(X_test)
 - en: 'print(f''Accuracy: {accuracy_score(y_test, y_pred)}'')'
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 'print(f''准确率: {accuracy_score(y_test, y_pred)}'')'
 - en: 'Step 8: Implement Strategy and Backtest'
+  id: totrans-96
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第8步：实施策略并进行回测
 - en: df['Predicted_Label'] = model.predict(df[features].dropna())
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: df['预测标签'] = model.predict(df[features].dropna())
 - en: df['Strategy_Returns'] = df['Close'].pct_change() * df['Predicted_Label'].shift()
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: df['策略收益'] = df['收盘'].pct_change() * df['预测标签'].shift()
 - en: cumulative_strategy_returns = (1 + df['Strategy_Returns']).cumprod()
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 累计策略收益 = (1 + df['策略收益']).cumprod()
 - en: cumulative_market_returns = (1 + df['Close'].pct_change()).cumprod()
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 累计市场收益 = (1 + df['收盘'].pct_change()).cumprod()
 - en: plt.figure(figsize=(10,5))
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.figure(figsize=(10,5))
 - en: plt.plot(cumulative_market_returns, label='Market Returns')
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.plot(累计市场收益, label='市场收益')
 - en: plt.plot(cumulative_strategy_returns, label='Strategy Returns')
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.plot(累计策略收益, label='策略收益')
 - en: plt.legend()
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.legend()
 - en: plt.show()
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.show()
 - en: Please note that you'll need to replace the random dummy data with actual historical
     data by uncommenting the line that reads the CSV file. And remember, this is just
     an example and not actual trading advice. Make sure to backtest thoroughly before
     considering any strategy for live trading.
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，您需要通过取消注释读取CSV文件的行来将随机虚拟数据替换为实际历史数据。请记住，这只是一个示例，并非实际交易建议。在考虑任何策略进行实时交易之前，请确保彻底回测。
 - en: Sample Trading Program 2 - Generic
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例交易程序2 - 通用
 - en: 'Step 1: Importing Libraries We''ll use Pandas for data manipulation, Matplotlib
     for charting, and NumPy for numerical operations.'
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 第1步：导入库 我们将使用Pandas进行数据处理，Matplotlib进行图表绘制，NumPy进行数值运算。
 - en: python
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: import pandas as pd
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: import pandas as pd
 - en: import numpy as np
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: import numpy as np
 - en: import matplotlib.pyplot as plt
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: import matplotlib.pyplot as plt
 - en: 'Step 2: Import and Preprocess Data Assuming you have a CSV file with historical
     data (let''s say for the AAPL stock).'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 第2步：导入和预处理数据 假设你有一个CSV文件，其中包含历史数据（比如AAPL股票）。
 - en: python
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: df = pd.read_csv('AAPL_data.csv')
+  id: totrans-115
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: df = pd.read_csv('AAPL_data.csv')
 - en: For demo purposes, let's generate some random data
+  id: totrans-116
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 为演示目的，我们生成一些随机数据
 - en: df = pd.DataFrame({
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: df = pd.DataFrame({
 - en: '''Close'': np.random.rand(1000) * 1000'
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: '''收盘'': np.random.rand(1000) * 1000'
 - en: '})'
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: '})'
 - en: 'Step 3: Feature Engineering Calculate the rolling mean and standard deviation
     for 20 periods.'
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 第3步：特征工程 计算20个周期的滚动均值和标准差。
 - en: python
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: df['Rolling_Mean'] = df['Close'].rolling(window=20).mean()
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: df['滚动均值'] = df['收盘'].rolling(window=20).mean()
 - en: df['Rolling_STD'] = df['Close'].rolling(window=20).std()
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: df['滚动标准差'] = df['收盘'].rolling(window=20).std()
 - en: 'Step 4: Create Bollinger Bands The upper band is the rolling mean + (2 * rolling
     std dev), and the lower band is the rolling mean - (2 * rolling std dev).'
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 第4步：创建布林带 上带是滚动均值 + (2 * 滚动标准差)，下带是滚动均值 - (2 * 滚动标准差)。
 - en: python
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: df['Upper_Band'] = df['Rolling_Mean'] + (df['Rolling_STD'] * 2)
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: df['上带'] = df['滚动均值'] + (df['滚动标准差'] * 2)
 - en: df['Lower_Band'] = df['Rolling_Mean'] - (df['Rolling_STD'] * 2)
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: df['下带'] = df['滚动均值'] - (df['滚动标准差'] * 2)
 - en: 'Step 5: Create Labels If the Close price is higher than the Upper Band, we''ll
     sell (-1), and if it''s lower than the Lower Band, we''ll buy (1).'
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 第5步：创建标签 如果收盘价高于上轨，我们将卖出（-1），如果低于下轨，我们将买入（1）。
 - en: python
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: df['Signal'] = 0
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Signal'] = 0
 - en: df.loc[df['Close'] > df['Upper_Band'], 'Signal'] = -1
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: df.loc[df['Close'] > df['Upper_Band'], 'Signal'] = -1
 - en: df.loc[df['Close'] < df['Lower_Band'], 'Signal'] = 1
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: df.loc[df['Close'] < df['Lower_Band'], 'Signal'] = 1
 - en: 'Step 6: Implement Strategy Calculate daily returns.'
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 第6步：实施策略 计算每日收益。
 - en: python
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: df['Daily_Return'] = df['Close'].pct_change()
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Daily_Return'] = df['Close'].pct_change()
 - en: df['Strategy_Return'] = df['Signal'].shift() * df['Daily_Return']
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Strategy_Return'] = df['Signal'].shift() * df['Daily_Return']
 - en: 'Step 7: Backtest Calculate the cumulative returns for both the strategy and
     the market.'
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 第7步：回测 计算策略和市场的累计收益。
 - en: python
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: df['Cumulative_Market_Returns'] = (1 + df['Daily_Return']).cumprod()
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Cumulative_Market_Returns'] = (1 + df['Daily_Return']).cumprod()
 - en: df['Cumulative_Strategy_Returns'] = (1 + df['Strategy_Return']).cumprod()
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Cumulative_Strategy_Returns'] = (1 + df['Strategy_Return']).cumprod()
 - en: 'Step 8: Plotting the Strategy vs Market Returns'
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 第8步：绘制策略与市场收益
 - en: python
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: python
 - en: plt.figure(figsize=(10,5))
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.figure(figsize=(10,5))
 - en: plt.plot(df['Cumulative_Market_Returns'], label='Market Returns')
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.plot(df['Cumulative_Market_Returns'], label='市场收益')
 - en: plt.plot(df['Cumulative_Strategy_Returns'], label='Strategy Returns')
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.plot(df['Cumulative_Strategy_Returns'], label='策略收益')
 - en: plt.legend()
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.legend()
 - en: plt.show()
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.show()
 - en: Here's the complete code in one piece. You'd need to replace the dummy data
     with your real historical data.
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是完整的代码。你需要将虚拟数据替换为你的真实历史数据。
 - en: Python
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: Python
 - en: import pandas as pd
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: import pandas as pd
 - en: import numpy as np
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: import numpy as np
 - en: import matplotlib.pyplot as plt
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: import matplotlib.pyplot as plt
 - en: 'Step 2: Import and Preprocess Data'
+  id: totrans-153
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第2步：导入和预处理数据
 - en: df = pd.read_csv('AAPL_data.csv')
+  id: totrans-154
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: df = pd.read_csv('AAPL_data.csv')
 - en: Dummy data for the demonstration
+  id: totrans-155
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 演示用的虚拟数据
 - en: df = pd.DataFrame({
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: df = pd.DataFrame({
 - en: '''Close'': np.random.rand(1000) * 1000'
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: '''Close'': np.random.rand(1000) * 1000'
 - en: '})'
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: '})'
 - en: 'Step 3: Feature Engineering'
+  id: totrans-159
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第3步：特征工程
 - en: df['Rolling_Mean'] = df['Close'].rolling(window=20).mean()
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Rolling_Mean'] = df['Close'].rolling(window=20).mean()
 - en: df['Rolling_STD'] = df['Close'].rolling(window=20).std()
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Rolling_STD'] = df['Close'].rolling(window=20).std()
 - en: 'Step 4: Create Bollinger Bands'
+  id: totrans-162
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第4步：创建布林带
 - en: df['Upper_Band'] = df['Rolling_Mean'] + (df['Rolling_STD'] * 2)
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Upper_Band'] = df['Rolling_Mean'] + (df['Rolling_STD'] * 2)
 - en: df['Lower_Band'] = df['Rolling_Mean'] - (df['Rolling_STD'] * 2)
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Lower_Band'] = df['Rolling_Mean'] - (df['Rolling_STD'] * 2)
 - en: 'Step 5: Create Labels'
+  id: totrans-165
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第5步：创建标签
 - en: df['Signal'] = 0
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Signal'] = 0
 - en: df.loc[df['Close'] > df['Upper_Band'], 'Signal'] = -1
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: df.loc[df['Close'] > df['Upper_Band'], 'Signal'] = -1
 - en: df.loc[df['Close'] < df['Lower_Band'], 'Signal'] = 1
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: df.loc[df['Close'] < df['Lower_Band'], 'Signal'] = 1
 - en: 'Step 6: Implement Strategy'
+  id: totrans-169
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第6步：实施策略
 - en: df['Daily_Return'] = df['Close'].pct_change()
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Daily_Return'] = df['Close'].pct_change()
 - en: df['Strategy_Return'] = df['Signal'].shift() * df['Daily_Return']
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Strategy_Return'] = df['Signal'].shift() * df['Daily_Return']
 - en: 'Step 7: Backtest'
+  id: totrans-172
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第7步：回测
 - en: df['Cumulative_Market_Returns'] = (1 + df['Daily_Return']).cumprod()
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Cumulative_Market_Returns'] = (1 + df['Daily_Return']).cumprod()
 - en: df['Cumulative_Strategy_Returns'] = (1 + df['Strategy_Return']).cumprod()
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: df['Cumulative_Strategy_Returns'] = (1 + df['Strategy_Return']).cumprod()
 - en: 'Step 8: Plotting'
+  id: totrans-175
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第8步：绘制
 - en: plt.figure(figsize=(10,5))
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.figure(figsize=(10,5))
 - en: plt.plot(df['Cumulative_Market_Returns'], label='Market Returns')
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.plot(df['Cumulative_Market_Returns'], label='市场收益')
 - en: plt.plot(df['Cumulative_Strategy_Returns'], label='Strategy Returns')
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.plot(df['Cumulative_Strategy_Returns'], label='策略收益')
 - en: plt.legend()
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.legend()
 - en: plt.show()
+  id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.show()
 - en: Sample Trading Program 3 – Interactive Brokers
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例交易程序3 – Interactive Brokers
 - en: from ib_insync import IB, Stock, util, MarketOrder
+  id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: from ib_insync import IB, Stock, util, MarketOrder
 - en: 'Step 1: Connect to Interactive Brokers'
+  id: totrans-183
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第1步：连接到Interactive Brokers
 - en: ib = IB()
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: ib = IB()
 - en: ib.connect('127.0.0.1', 7497, clientId=1)
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: ib.connect('127.0.0.1', 7497, clientId=1)
 - en: 'Step 2: Define a contract and request historical candles'
+  id: totrans-186
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第2步：定义合约并请求历史K线
 - en: contract = Stock('AAPL', 'SMART', 'USD')
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: contract = Stock('AAPL', 'SMART', 'USD')
 - en: ib.qualifyContracts(contract)
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: ib.qualifyContracts(contract)
 - en: bars = ib.reqHistoricalData(
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: bars = ib.reqHistoricalData(
 - en: contract,
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: contract,
 - en: endDateTime='',
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: endDateTime='',
 - en: durationStr='30 D',
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: durationStr='30天',
 - en: barSizeSetting='1 hour',
+  id: totrans-193
   prefs: []
   type: TYPE_NORMAL
+  zh: barSizeSetting='1小时',
 - en: whatToShow='MIDPOINT',
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: whatToShow='MIDPOINT',
 - en: useRTH=True)
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: useRTH=True)
 - en: Convert to DataFrame
+  id: totrans-196
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 转换为DataFrame
 - en: df = util.df(bars)
+  id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: df = util.df(bars)
 - en: 'Step 3: Define a simple moving average strategy'
+  id: totrans-198
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第3步：定义简单移动平均策略
 - en: sma_short = df['close'].rolling(window=5).mean()
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: sma_short = df['close'].rolling(window=5).mean()
 - en: sma_long = df['close'].rolling(window=20).mean()
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: sma_long = df['close'].rolling(window=20).mean()
 - en: 'Step 4: Generate trading signals based on the strategy'
+  id: totrans-201
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第4步：基于策略生成交易信号
 - en: signals = []
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: signals = []
 - en: 'for short, long in zip(sma_short, sma_long):'
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: 'for short, long in zip(sma_short, sma_long):'
 - en: 'if short > long:'
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: 'if short > long:'
 - en: signals.append(1)  # Buy
+  id: totrans-205
   prefs: []
   type: TYPE_NORMAL
+  zh: signals.append(1)  # 买入
 - en: 'else:'
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: 'else:'
 - en: signals.append(0)  # Sell
+  id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: signals.append(0)  # 卖出
 - en: 'Step 5: Execute trades'
+  id: totrans-208
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第 5 步：执行交易
 - en: 'for i in range(1, len(signals)):'
+  id: totrans-209
   prefs: []
   type: TYPE_NORMAL
+  zh: 'for i in range(1, len(signals)):'
 - en: 'if signals[i] > signals[i - 1]:'
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: 'if signals[i] > signals[i - 1]:'
 - en: Execute a buy order
+  id: totrans-211
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 执行一个买入订单
 - en: order = MarketOrder('BUY', 10)
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: order = MarketOrder('BUY', 10)
 - en: trade = ib.placeOrder(contract, order)
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: trade = ib.placeOrder(contract, order)
 - en: ib.sleep(1)
+  id: totrans-214
   prefs: []
   type: TYPE_NORMAL
+  zh: ib.sleep(1)
 - en: 'print(f"Buy order status: {trade.orderStatus.status}")'
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: 'print(f"买入订单状态: {trade.orderStatus.status}")'
 - en: 'elif signals[i] < signals[i - 1]:'
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: 'elif signals[i] < signals[i - 1]:'
 - en: Execute a sell order
+  id: totrans-217
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 执行一个卖出订单
 - en: order = MarketOrder('SELL', 10)
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: order = MarketOrder('SELL', 10)
 - en: trade = ib.placeOrder(contract, order)
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: trade = ib.placeOrder(contract, order)
 - en: ib.sleep(1)
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: ib.sleep(1)
 - en: 'print(f"Sell order status: {trade.orderStatus.status}")'
+  id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: 'print(f"卖出订单状态: {trade.orderStatus.status}")'
 - en: ib.disconnect()
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: ib.disconnect()
 - en: Sample Trading Program 4 – Meta Trader
+  id: totrans-223
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例交易程序 4 – Meta Trader
 - en: //+------------------------------------------------------------------+
+  id: totrans-224
   prefs: []
   type: TYPE_NORMAL
+  zh: //+------------------------------------------------------------------+
 - en: //|                                              MovingAverage.mq4   |
+  id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: //|                                              MovingAverage.mq4   |
 - en: //|                        Copyright 2023, Company Name               |
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: //|                        版权 2023, 公司名称                     |
 - en: //+------------------------------------------------------------------+
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: //+------------------------------------------------------------------+
 - en: '#property copyright "MetaQuotes Software Corp."'
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
+  zh: '#property copyright "MetaQuotes Software Corp."'
 - en: '#property link      "https://www.mql5.com"'
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: '#property link      "https://www.mql5.com"'
 - en: '#property version   "1.00"'
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: '#property version   "1.00"'
 - en: // Declare extern variables (adjustable from MetaTrader)
+  id: totrans-231
   prefs: []
   type: TYPE_NORMAL
+  zh: // 声明外部变量（可从 MetaTrader 调整）
 - en: extern int TakeProfit = 100;
+  id: totrans-232
   prefs: []
   type: TYPE_NORMAL
+  zh: extern int TakeProfit = 100;
 - en: extern int StopLoss = 50;
+  id: totrans-233
   prefs: []
   type: TYPE_NORMAL
+  zh: extern int StopLoss = 50;
 - en: extern int FastMA = 5;
+  id: totrans-234
   prefs: []
   type: TYPE_NORMAL
+  zh: extern int FastMA = 5;
 - en: extern int SlowMA = 20;
+  id: totrans-235
   prefs: []
   type: TYPE_NORMAL
+  zh: extern int SlowMA = 20;
 - en: //+------------------------------------------------------------------+
+  id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: //+------------------------------------------------------------------+
 - en: //| Expert initialization function                                   |
+  id: totrans-237
   prefs: []
   type: TYPE_NORMAL
+  zh: //| 专家初始化函数                                           |
 - en: //+------------------------------------------------------------------+
+  id: totrans-238
   prefs: []
   type: TYPE_NORMAL
+  zh: //+------------------------------------------------------------------+
 - en: int OnInit()
+  id: totrans-239
   prefs: []
   type: TYPE_NORMAL
+  zh: int OnInit()
 - en: '{'
+  id: totrans-240
   prefs: []
   type: TYPE_NORMAL
+  zh: '{'
 - en: // Initialize your trading algorithm here
+  id: totrans-241
   prefs: []
   type: TYPE_NORMAL
+  zh: // 在这里初始化你的交易算法
 - en: return(INIT_SUCCEEDED);
+  id: totrans-242
   prefs: []
   type: TYPE_NORMAL
+  zh: return(INIT_SUCCEEDED);
 - en: '}'
+  id: totrans-243
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: //+------------------------------------------------------------------+
+  id: totrans-244
   prefs: []
   type: TYPE_NORMAL
+  zh: //+------------------------------------------------------------------+
 - en: //| Expert deinitialization function                                 |
+  id: totrans-245
   prefs: []
   type: TYPE_NORMAL
+  zh: //| 专家去初始化函数                                         |
 - en: //+------------------------------------------------------------------+
+  id: totrans-246
   prefs: []
   type: TYPE_NORMAL
+  zh: //+------------------------------------------------------------------+
 - en: void OnDeinit(const int reason)
+  id: totrans-247
   prefs: []
   type: TYPE_NORMAL
+  zh: void OnDeinit(const int reason)
 - en: '{'
+  id: totrans-248
   prefs: []
   type: TYPE_NORMAL
+  zh: '{'
 - en: // De-initialize your trading algorithm here
+  id: totrans-249
   prefs: []
   type: TYPE_NORMAL
+  zh: // 在这里去初始化你的交易算法
 - en: '}'
+  id: totrans-250
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: //+------------------------------------------------------------------+
+  id: totrans-251
   prefs: []
   type: TYPE_NORMAL
+  zh: //+------------------------------------------------------------------+
 - en: //| Expert tick function                                             |
+  id: totrans-252
   prefs: []
   type: TYPE_NORMAL
+  zh: //| 专家每次报价函数                                             |
 - en: //+------------------------------------------------------------------+
+  id: totrans-253
   prefs: []
   type: TYPE_NORMAL
+  zh: //+------------------------------------------------------------------+
 - en: void OnTick()
+  id: totrans-254
   prefs: []
   type: TYPE_NORMAL
+  zh: void OnTick()
 - en: '{'
+  id: totrans-255
   prefs: []
   type: TYPE_NORMAL
+  zh: '{'
 - en: double fastMA = iMA(NULL, 0, FastMA, 0, MODE_SMA, PRICE_CLOSE, 0);
+  id: totrans-256
   prefs: []
   type: TYPE_NORMAL
+  zh: double fastMA = iMA(NULL, 0, FastMA, 0, MODE_SMA, PRICE_CLOSE, 0);
 - en: double slowMA = iMA(NULL, 0, SlowMA, 0, MODE_SMA, PRICE_CLOSE, 0);
+  id: totrans-257
   prefs: []
   type: TYPE_NORMAL
+  zh: double slowMA = iMA(NULL, 0, SlowMA, 0, MODE_SMA, PRICE_CLOSE, 0);
 - en: if(fastMA > slowMA)
+  id: totrans-258
   prefs: []
   type: TYPE_NORMAL
+  zh: if(fastMA > slowMA)
 - en: '{'
+  id: totrans-259
   prefs: []
   type: TYPE_NORMAL
+  zh: '{'
 - en: // Buy logic here
+  id: totrans-260
   prefs: []
   type: TYPE_NORMAL
+  zh: // 买入逻辑在这里
 - en: if(OrderSend(Symbol(), OP_BUY, 1, Ask, 3, 0, Ask + TakeProfit * Point, "", 0,
     Green) > 0)
+  id: totrans-261
   prefs: []
   type: TYPE_NORMAL
+  zh: if(OrderSend(Symbol(), OP_BUY, 1, Ask, 3, 0, Ask + TakeProfit * Point, "", 0,
+    Green) > 0)
 - en: '{'
+  id: totrans-262
   prefs: []
   type: TYPE_NORMAL
+  zh: '{'
 - en: // Successfully placed buy order
+  id: totrans-263
   prefs: []
   type: TYPE_NORMAL
+  zh: // 成功下单买入
 - en: '}'
+  id: totrans-264
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-265
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: else if(fastMA < slowMA)
+  id: totrans-266
   prefs: []
   type: TYPE_NORMAL
+  zh: else if(fastMA < slowMA)
 - en: '{'
+  id: totrans-267
   prefs: []
   type: TYPE_NORMAL
+  zh: '{'
 - en: // Sell logic here
+  id: totrans-268
   prefs: []
   type: TYPE_NORMAL
+  zh: // 卖出逻辑在这里
 - en: if(OrderSend(Symbol(), OP_SELL, 1, Bid, 3, 0, Bid - StopLoss * Point, "", 0,
     Red) > 0)
+  id: totrans-269
   prefs: []
   type: TYPE_NORMAL
+  zh: if(OrderSend(Symbol(), OP_SELL, 1, Bid, 3, 0, Bid - StopLoss * Point, "", 0,
+    Red) > 0)
 - en: '{'
+  id: totrans-270
   prefs: []
   type: TYPE_NORMAL
+  zh: '{'
 - en: // Successfully placed sell order
+  id: totrans-271
   prefs: []
   type: TYPE_NORMAL
+  zh: // 成功下单卖出
 - en: '}'
+  id: totrans-272
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-273
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-274
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: //+------------------------------------------------------------------+
+  id: totrans-275
   prefs: []
   type: TYPE_NORMAL
+  zh: //+------------------------------------------------------------------+
