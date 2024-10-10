@@ -1,10 +1,12 @@
 - en: 3.2\. Time Series Descriptive Statistics
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
 - en: In the quest to unravel the complex narratives told by financial markets, descriptive
     statistics serve as our cipher. By distilling vast arrays of time series data
     into comprehensible metrics, we gain the power to interpret the underlying stories
     of market behavior with clarity and precision.
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
 - en: 'The Bedrock of Descriptive Analysis: Central to our analytical arsenal are
@@ -12,12 +14,14 @@
     on the ''typical'' value within a dataset. The mean provides a balance point,
     the median offers a midpoint unaffected by outliers, and the mode reflects the
     most frequent occurrence, each weaving together a tale of market equilibrium.'
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: 'The Measure of Spread: Beyond the central tendency, the dispersion of data—articulated
     through variance and standard deviation—speaks to the volatility inherent in financial
     time series. A tight spread suggests a market moving in measured steps, while
     a wide dispersion signals a market dancing to a frenetic rhythm.'
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
 - en: 'Skewness and Kurtosis: The skewness of a dataset reveals asymmetry in the distribution,
@@ -25,12 +29,14 @@
     measures the ''tailedness'' of the distribution, indicating the propensity for
     extreme events. Together, these metrics whisper of the market''s temperament,
     whether tranquil or tempestuous.'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: 'Temporal Dependencies: Autocorrelation and partial autocorrelation expose the
     threads of dependency that link past and present values in a time series. A high
     autocorrelation suggests a lingering influence of past prices on future values,
     a pattern that can be exploited or guarded against in algorithmic trading strategies.'
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
 - en: 'Stationarity as Cornerstone: The assumption of stationarity—that statistical
@@ -38,22 +44,27 @@
     analysis. Engaging tools like the Augmented Dickey-Fuller test, we probe time
     series for the presence of unit roots, seeking the stability that allows for meaningful
     model construction.'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
 - en: 'A Practical Example: Let us consider a time series `ts` of daily closing prices
     of an options contract. To compute the descriptive statistics that capture the
     essence of this time series, we turn to pandas:'
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE0]'
+  id: totrans-8
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: With these calculations, we can begin to paint a picture of the option's price
     behavior. The mean and median offer insights into the general price level, while
     the standard deviation provides a gauge for the option's volatility. Skewness
     and kurtosis prepare us for the likelihood of experiencing unusually high or low
     prices, and autocorrelation suggests whether yesterday's closing price might serve
     as a prophet for today's.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
 - en: 'In Summary: The descriptive statistics of time series are the foundational
@@ -63,131 +74,173 @@
     of the market''s unfolding story. They are not merely numbers but the lexicon
     of market analysis, enabling us to speak the language of the market with fluency
     and insight.'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 总结：时间序列的描述性统计是我们建立市场动态理解的基础要素。从建立市场条件的基线叙事到识别信号潜在交易机会的异常，这些统计数据是市场展开故事的定量表达。它们不仅仅是数字，而是市场分析的词汇，使我们能够流利且深入地理解市场的语言。
 - en: 'The Pulse of the Market: Measures of Central Tendency in Time Series'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 市场脉搏：时间序列中的集中趋势度量
 - en: In the dissection of financial time series data, measures of central tendency
     are akin to taking the market's pulse. They provide pivotal insights into the
     general level around which market prices tend to gravitate. By examining the core
     measures of central tendency—mean, median, and mode—we tease out the subtle nuances
     of the market's central narrative.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 在对金融时间序列数据的剖析中，集中趋势的度量类似于把握市场的脉搏。它们提供了关于市场价格趋向的关键洞察。通过研究集中趋势的核心度量——均值、中位数和众数，我们提炼出市场核心叙事的微妙细节。
 - en: 'The Arithmetic Mean: Often the first foray into central tendency, the arithmetic
     mean—simply the sum of all values divided by the number of values—serves as a
     proxy for the ''average'' level of market prices over a given period. In a time
     series of daily closing prices, the mean encapsulates the culmination of myriad
     factors influencing the market within the observed window.'
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 算术平均数：通常是集中趋势的首次探索，算术平均数——所有值之和除以值的数量——作为市场价格在特定时间段内的“平均”水平的代理。在每日收盘价的时间序列中，均值概括了影响市场的诸多因素在观察窗口内的汇聚。
 - en: 'The Median: The median, representing the middle value when a dataset is ordered
     from lowest to highest, is impervious to the sway of outliers that may skew the
     mean. It is particularly telling in markets where a few extreme values could paint
     a distorted picture of ''typical'' market behavior. The median shines a light
     on the center of the market''s activity, offering a clear view unobscured by the
     anomalies.'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 中位数：中位数是将数据集按从低到高排序后的中间值，能抵御可能扭曲均值的异常值的影响。在一些极端值可能描绘出“典型”市场行为失真的市场中，中位数特别具有参考意义。中位数照亮市场活动的中心，提供了不受异常值干扰的清晰视野。
 - en: 'The Mode: The mode, the most frequently occurring value in a dataset, might
     find less frequent application in continuous financial data due to its discrete
     nature. However, in discretized or binned price data, such as price ranges or
     rounded-off figures, the mode can spotlight the most congested price level, hinting
     at potential psychological price points or support and resistance levels in the
     market.'
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 众数：众数是数据集中出现频率最高的值，由于其离散性，众数在连续金融数据中的应用可能较少。然而，在离散或分箱价格数据中，例如价格区间或四舍五入的数字，众数可以突出最拥挤的价格水平，暗示潜在的心理价格点或市场的支撑和阻力水平。
 - en: 'Applying the Concepts: To elucidate these measures, let us turn to a practical
     Python example, where we calculate the central tendencies of a time series `ts`
     representing the closing prices of an options contract:'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 应用概念：为了阐明这些度量，让我们转向一个实用的Python示例，在这里我们计算代表期权合约收盘价的时间序列`ts`的集中趋势：
 - en: '[PRE1]'
+  id: totrans-17
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: In this code snippet, `mean_price` offers a quick estimation of what traders
     have been willing to pay on average for the options contract. `median_price` cuts
     through the noise, providing a more robust indicator of central market value.
     `mode_price`, derived from binned data, might reveal a price level that has acted
     as a magnet for traders.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个代码片段中，`mean_price`提供了一个快速的估算，显示交易者平均愿意支付的期权合约价格。`median_price`切穿噪音，提供了一个更强有力的中心市场价值指标。`mode_price`来自分箱数据，可能揭示一个吸引交易者的价格水平。
 - en: 'Insights and Implications: Armed with these measures, traders and analysts
     can infer market sentiment and make educated predictions about future price movements.
     A market with a mean significantly higher than the median may suggest a recent
     surge in price, potentially due to a speculative bubble or sudden bullish sentiment.
     Conversely, a median that stands above the mean could indicate a market that has
     recently experienced a sell-off.'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 见解与影响：凭借这些指标，交易者和分析师能够推断市场情绪，并对未来价格波动做出有根据的预测。平均值显著高于中位数的市场可能暗示近期价格激增，这可能是由于投机泡沫或突发的看涨情绪。相反，中位数高于平均值可能表明市场最近经历了抛售。
 - en: In the crucible of market analysis, these statistical measures are not mere
     abstractions; they are the distilled essence of market psychology and investor
     behavior. As we forge ahead to more complex analytical techniques, the understanding
     gained from measures of central tendency will remain an anchor, grounding our
     insights in the bedrock of statistical truth.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 在市场分析的熔炉中，这些统计指标并非简单的抽象；它们是市场心理和投资者行为的提炼精华。随着我们向更复杂的分析技术迈进，来自集中趋势的理解将始终是我们的锚，扎根于统计真理的基石上。
 - en: The narrative of a market is multifaceted and ever-evolving. By mastering the
     measures of central tendency, we grasp the threads that run through this narrative,
     equipping ourselves to anticipate and react to the unfolding story of financial
     markets with acumen and agility.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 市场的叙事是多面而不断发展的。通过掌握集中趋势的指标，我们抓住了贯穿这一叙事的线索，使自己能够敏锐而灵活地预测和应对金融市场 unfolding 的故事。
 - en: 'The Dynamics of Dispersal: Dispersion and Volatility Measurement in Financial
     Series'
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 离散性的动态：金融序列中的离散性和波动性测量。
 - en: 'The Standard Deviation: At the heart of dispersion, we find the standard deviation,
     a quantification of the average distance each data point lies from the mean. It
     is a measure both elemental and profound in its implications. In a time series
     of options prices, a high standard deviation signals a tumultuous landscape with
     price swings wide and frequent, while a low standard deviation suggests a placid
     market, where prices meander gently around the mean.'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 标准差：在离散性的核心，我们发现标准差，它量化了每个数据点与均值之间的平均距离。这是一个既基本又深刻的衡量标准。在期权价格的时间序列中，高标准差意味着价格波动剧烈且频繁，而低标准差则暗示市场平稳，价格轻柔地徘徊在均值附近。
 - en: 'The Variance: A close sibling to standard deviation, variance squares the distances
     from the mean, magnifying the impact of outliers. For analysts and traders, variance
     is the squared scrutiny under which market stability is assessed. It provides
     a mathematical backbone to the notion of risk—after all, risk in financial markets
     is often a story of variance in disguise.'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 方差：作为标准差的近亲，方差平方了与均值的距离，放大了异常值的影响。对于分析师和交易者而言，方差是评估市场稳定性的放大审视。它为风险的概念提供了数学支撑——毕竟，金融市场中的风险往往是伪装下的方差故事。
 - en: 'Volatility as a Measure: Volatility, the heartbeat of the options world, is
     often expressed as the annualized standard deviation of returns. It is the metric
     that breathes life into the Black-Scholes model, where it directly influences
     the perceived value of an option. Volatility does not merely suggest the degree
     of risk; it is the crucible in which the price of risk is forged.'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 波动性作为衡量标准：波动性，期权世界的脉动，通常以年化收益的标准差来表示。它是赋予布莱克-斯科尔斯模型生命的指标，直接影响期权的感知价值。波动性不仅仅暗示风险程度；它是风险价格铸造的熔炉。
 - en: 'Applying the Concepts:'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 应用概念：
 - en: 'To anchor these concepts in the practical sphere, consider a Python example
     that calculates both the standard deviation and the annualized volatility of an
     options contract''s returns:'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了将这些概念锚定于实践领域，考虑一个计算期权合约收益的标准差和年化波动率的Python示例：
 - en: '[PRE2]'
+  id: totrans-28
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: In this fragment of code, `standard_deviation` serves as a litmus test for the
     daily tumult experienced by the options contract. `annualized_volatility` then
     extrapolates this to an annual frame of reference, providing a lens through which
     traders view the likely ebb and flow of prices over the course of a year.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这段代码中，`standard_deviation`作为期权合约每日波动的试金石。`annualized_volatility`将其外推至年参考框架，提供了一个透视，帮助交易者观察一年内价格可能的起伏。
 - en: 'Insights and Implications: Grasping the essence of dispersion and volatility
     equips the market participant with a shield and sword against the unpredictability
     of the market. A contract with high volatility offers the promise of high returns,
     but also demands a higher premium, and it is in this balance that the shrewd trader
     finds opportunity.'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
 - en: Moreover, understanding these measures of dispersion allows for more than just
     insight—it enables strategy. Whether opting for a straddle in the face of high
     volatility or a more conservative covered call approach during tranquil market
     conditions, the informed use of these metrics is a testament to the trader's skill.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
 - en: In the end, dispersion and volatility are not merely numbers; they are the stories
@@ -196,9 +249,11 @@
     to journey through the maze of market analysis, let us remember that the essence
     of risk is not something to be feared but understood, measured, and navigated
     with the precision of a seasoned cartographer.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
 - en: 'Unveiling Asymmetry and Tails: Skewness and Kurtosis in Options Markets'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
 - en: Skewness quantifies the degree of asymmetry in the distribution of returns.
@@ -208,15 +263,18 @@
     tail, suggesting a greater likelihood of outlier returns on the upside. Conversely,
     negative skewness, with its longer left tail, hints at a propensity for downside
     risks.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
 - en: For option traders, skewness is a beacon, revealing the undercurrents of market
     sentiment. A negatively skewed options market may reflect fear of downside risk,
     perhaps due to impending economic reports or geopolitical tension. Here, the trader
     might consider strategies such as protective puts to hedge against potential declines.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
 - en: 'Kurtosis - The Tale of Tails:'
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
 - en: Kurtosis measures the 'tailedness' of the distribution, providing insight into
@@ -227,31 +285,39 @@
     a higher probability of extreme returns. A platykurtic distribution, on the other
     hand, with negative excess kurtosis, suggests thinner tails—a distribution more
     concentrated around the mean.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
 - en: In the context of options trading, high kurtosis may signal an environment ripe
     for strategies that benefit from large price movements, such as long straddles
     or strangles. Traders must be vigilant, as high kurtosis also implies a greater
     risk of tail events that could challenge conventional risk management practices.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
 - en: 'Python in Practice:'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
 - en: 'Let us employ Python to calculate skewness and kurtosis, turning raw data into
     actionable insights:'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE3]'
+  id: totrans-41
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: In this Python snippet, `skew()` and `kurtosis()` functions from the `scipy.stats`
     library are utilized to compute the respective measures. The `fisher=True` parameter
     in the `kurtosis()` function ensures that the calculation yields the excess kurtosis,
     aligning with the standard definition used in finance.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
 - en: 'Strategic Implementation:'
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
 - en: Armed with the knowledge of skewness and kurtosis, the astute trader can tailor
@@ -259,6 +325,7 @@
     cautious optimism might prevail, with the trader deploying strategies that capitalize
     on rare but impactful events, while also maintaining stringent risk controls to
     mitigate the impact of those very same tail risks.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
 - en: Skewness and kurtosis are not mere statistical curiosities; they are the radar
@@ -266,9 +333,11 @@
     trader's intuition, sharpen the strategic approach, and ultimately contribute
     to a more nuanced understanding of the probabilistic landscape that is options
     trading.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
 - en: 'Deciphering Dependence: Autocorrelation in Financial Time Series'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
 - en: Autocorrelation, also known as serial correlation, stands as a sentinel, revealing
@@ -276,9 +345,11 @@
     In the world of options trading, where the past can cast long shadows over the
     future, understanding autocorrelation becomes a key to unlocking potential predictive
     patterns in price movements.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
 - en: 'Autocorrelation - The Memory of Returns:'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
 - en: At its core, autocorrelation measures the linear relationship between current
@@ -287,6 +358,7 @@
     instrument. An autocorrelation near +1 indicates a strong positive correlation
     with past values, often seen in trending markets, while a value near -1 suggests
     an inverse relationship, characteristic of mean-reverting systems.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
 - en: For the options trader, a significant positive autocorrelation might justify
@@ -294,9 +366,11 @@
     buying in an uptrend. Meanwhile, negative autocorrelation could be a signal to
     employ contrarian strategies, like writing covered calls in anticipation of a
     reversion to the mean.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
 - en: 'Partial Autocorrelation - Isolating Direct Influences:'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
 - en: Partial autocorrelation refines this concept further by isolating the direct
@@ -304,110 +378,151 @@
     refined measure helps traders discern the genuine predictors within a time series,
     which is invaluable when building predictive models or identifying the optimal
     points for entering or exiting positions.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
 - en: 'Python in Practice:'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
 - en: 'Let''s turn to Python to extract these measures from time series data:'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE4]'
+  id: totrans-55
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: In this example, `acf()` and `pacf()` functions from the `statsmodels.tsa.stattools`
     module calculate the autocorrelation and partial autocorrelation, respectively.
     The `autocorrelation_plot()` function provides a visual representation of the
     autocorrelations up to 20 lags, aiding in the identification of potential lagged
     relationships.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，来自`statsmodels.tsa.stattools`模块的`acf()`和`pacf()`函数分别计算自相关和部分自相关。`autocorrelation_plot()`函数提供最多20个滞后的自相关的可视化表示，帮助识别潜在的滞后关系。
 - en: 'Strategic Implementation:'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 策略实施：
 - en: In the hands of an adept trader, autocorrelation and partial autocorrelation
     serve as a compass, guiding the calibration of trading strategies. By recognizing
     the persistence of past behaviors or the likelihood of a reversion, traders can
     adjust their risk parameters and select option positions that are aligned with
     the underlying market dynamics.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 在熟练交易者的手中，自相关和部分自相关充当指南针，指导交易策略的调整。通过识别过去行为的持续性或回归的可能性，交易者可以调整风险参数，选择与基础市场动态相符的期权头寸。
 - en: For instance, in a market where the autocorrelation analysis reveals cyclical
     patterns, a trader might look to straddle positions around periods where the cycle
     indicates a potential shift in direction. Similarly, high partial autocorrelation
     at specific lags could prompt the use of calendar spreads that exploit the expected
     move at that future point in time.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在自相关分析揭示周期性模式的市场中，交易者可能会在周期指示潜在方向变化的时期寻找跨期头寸。类似地，特定滞后的高部分自相关可能促使使用日历价差，以利用在未来某一时刻预期的波动。
 - en: It is through the lens of autocorrelation and partial autocorrelation that the
     trader gains a nuanced appreciation of the temporal forces at play. By harnessing
     these analytics within Python's robust ecosystem, one can elevate the sophistication
     of their trading approach, seeking not just to respond to the market's moves,
     but to anticipate them with informed confidence.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 透过自相关和部分自相关的视角，交易者对时间力量有了更细致的理解。通过在Python的强大生态系统中利用这些分析，交易者可以提升其交易方法的复杂性，不仅响应市场变化，还能以信息丰富的信心进行预测。
 - en: 'The Keystone of Predictive Models: Stationarity in Time Series'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 预测模型的基石：时间序列中的平稳性
 - en: At the heart of time series analysis lies the concept of stationarity — a property
     that implies stability and predictability over time. For financial time series,
     such as options prices or the implied volatility levels, stationarity becomes
     a key assumption for many statistical models used in forecasting future values.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 时间序列分析的核心在于平稳性这一概念——这一特性意味着随时间的稳定性和可预测性。对于金融时间序列，如期权价格或隐含波动率水平，平稳性成为许多用于预测未来值的统计模型的关键假设。
 - en: 'Stationarity Defined:'
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 平稳性定义：
 - en: A stationary time series is characterized by statistical properties — mean,
     variance, and covariance — that are constant over time. Such constancy allows
     for the use of historical data to forecast future values without the concern that
     underlying changes in the system's dynamics will render past observations irrelevant.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 平稳时间序列的特征是统计属性——均值、方差和协方差——在时间上保持不变。这种恒定性允许使用历史数据来预测未来值，而无需担心系统动态的潜在变化会使过去的观察无关紧要。
 - en: In the domain of options trading, non-stationarity can be a harbinger of risk,
     as it suggests that past pricing patterns may not be a reliable indicator of future
     performance. Hence, achieving stationarity, or at least understanding its degree
     within a dataset, is crucial for the development of robust trading algorithms.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 在期权交易领域，非平稳性可能是风险的预兆，因为它表明过去的定价模式可能不是未来表现的可靠指标。因此，实现平稳性，或至少理解数据集中其程度，对于开发稳健的交易算法至关重要。
 - en: 'Detecting Stationarity:'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 检测平稳性：
 - en: The search for stationarity begins with visual inspection — plotting the data
     to observe for trends, seasonal effects, or other systematic patterns that might
     suggest evolving dynamics. Yet, visual inspection is subjective; thus, quantitative
     tests such as the Augmented Dickey-Fuller (ADF) test are employed to rigorously
     evaluate stationarity.
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 对平稳性的探寻始于视觉检查——绘制数据以观察趋势、季节效应或其他可能表明动态变化的系统模式。然而，视觉检查是主观的；因此，采用如扩展的迪基-福勒（ADF）测试等定量检验来严格评估平稳性。
 - en: 'Python at Work:'
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: Python应用实例：
 - en: 'Let''s implement the ADF test in Python to assess the stationarity of an options
     time series:'
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们在Python中实施ADF测试，以评估期权时间序列的平稳性：
 - en: '[PRE5]'
+  id: totrans-70
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: If the p-value is less than a critical value (e.g., 0.05), we reject the null
     hypothesis of the presence of a unit root, suggesting that the time series is
     stationary.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
 - en: 'Transforming Non-Stationary Data:'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
 - en: 'In the presence of non-stationarity, transformations such as differencing,
     logarithmic scaling, or detrending can be applied to stabilize the statistical
     properties. For instance, instead of using raw price data, one might use log-returns,
     which often exhibit properties closer to stationarity:'
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE6]'
+  id: totrans-74
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: 'Strategic Implications:'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
 - en: A firm grasp of stationarity opens up a repertoire of predictive modeling techniques,
@@ -415,6 +530,7 @@
     For the options trader, a stationary model of implied volatility might inform
     decisions on which options strategies to deploy, such as volatility spreads or
     vega hedging positions.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
 - en: In a market where the stationarity of returns guides strategy selection, an
@@ -422,6 +538,7 @@
     of the time series. For instance, if implied volatility displays mean-reverting
     behavior (a form of stationarity), one might construct trades that profit from
     a return to the long-term average level of volatility.
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
 - en: Stationarity, therefore, is not merely an academic concern; it is a foundational
@@ -429,5 +546,6 @@
     financial markets. With Python's analytical capabilities, traders can dissect
     their time series data, ensuring that the strategies they build are grounded in
     the rigorous examination of market behavior stability.
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
