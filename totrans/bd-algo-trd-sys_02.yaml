@@ -1,17 +1,25 @@
 - en: PART II
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第二部分
 - en: YOUR TRADING SYSTEM
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 你的交易系统
 - en: CHAPTER 5
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第五章
 - en: Testing and Evaluating a Trading System
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 测试和评估交易系统
 - en: If you are going to design trading systems, it is critical that you know how
     to evaluate the performance metrics of a trading system. This is not always as
     easy as it sounds. To show you what I mean, take a look at [Figure 5.1](#figure5-1).
@@ -25,14 +33,20 @@
     Are the results good or bad? Are the results believable? Do the results have any
     predictive value? Finally, how do you separate the wheat from the chaff? I’ll
     answer these questions and more in this chapter.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你打算设计交易系统，了解如何评估交易系统的性能指标至关重要。这并不总是像听起来那么简单。为了让你明白我的意思，看看[图5.1](#figure5-1)。这个权益曲线是一个期货交易系统的，典型地表现出如果你自己测试策略，或者你可能在互联网上找到的一个系统。这个曲线是使用TradeStation软件生成的，但其他流行程序的结果，如MultiCharts和NinjaTrader，基本上是一样的。所有好的交易软件都提供多种重要的（在我看来，许多是不重要的）指标供你审查和检查。大多数时候，权益曲线和性能报告引发的问题比答案还要多。结果是好是坏？结果可信么？结果有任何预测价值吗？最后，如何将好与坏区分开来？我将在本章中回答这些问题和更多内容。
 - en: '![images](images/c05f001.jpg)'
+  id: totrans-5
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c05f001.jpg)'
 - en: '[**FIGURE 5.1**](#figureanchor5-1) Trading System Results—Is This Believable?'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图5.1**](#figureanchor5-1) 交易系统结果——这可信么？'
 - en: The first point to realize and understand when looking at performance reports,
     equity curves, or trade data is the old adage “if it is too good to be true, it
     probably is.” As a general rule, future performance of a trading system is almost
@@ -40,23 +54,29 @@
     tests historically, the less likely it is to perform that well in the future.
     Of course, there are exceptions to this rule, and after developing trading strategies
     for a while, these exceptions become easier to find.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 在查看性能报告、权益曲线或交易数据时，首先要意识到并理解的一点是那句老话：“如果听起来好得令人难以置信，那可能真的不可信。”一般来说，交易系统的未来表现几乎从来都没有其历史表现那么好。事实上，一个交易系统在历史测试中表现越好，未来表现如此优秀的可能性就越小。当然，这条规则也有例外，经过一段时间的交易策略开发，这些例外会变得更容易发现。
 - en: Why do historical test results usually look better than future results? Some
     of it has to do with survivorship bias, meaning only the good historical trading
     systems are typically shown. Why would a vendor sell a system with poor historical
     performance? Why would you trade a poor system that you created yourself? The
     simple answer is that in both cases the bad results would be discarded, leaving
     only the remaining good results.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 为什么历史测试结果通常看起来比未来结果更好？部分原因与存活偏差有关，这意味着通常只展示表现良好的历史交易系统。为什么供应商会出售历史表现不佳的系统？为什么你会交易自己创建的糟糕系统？简单的答案是，在这两种情况下，糟糕的结果会被丢弃，只留下剩余的良好结果。
 - en: It is also possible that the historical test results are indeed valid and that
     the system developer has uncovered a true edge in the market. Over time, though,
     this edge may disappear, either due to others finding it, market changes, or a
     host of different reasons. The trading system will then revert to the mean, which
     would be a breakeven strategy before commissions and trading costs.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 也有可能历史测试结果确实有效，系统开发者在市场中发现了真实的优势。然而，随着时间的推移，这种优势可能会消失，原因可能是其他人发现了它、市场变化或其他各种原因。然后，交易系统会回归均值，这将是一个在扣除佣金和交易成本之前的盈亏平衡策略。
 - en: 'Historical test results also can look better than future results due to the
     method of the historical testing. Most people test and evaluate systems incorrectly.
     Later in the book, you’ll learn one correct way to test and evaluate systems,
@@ -64,27 +84,37 @@
     faulty testing leads to overoptimistic results and trading systems that are sure
     to disappoint the end user. Of course, experienced traders know how to test systems.
     The question is: when looking at historical results, how do you know what to believe?'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 历史测试结果看起来可能比未来结果更好，这与历史测试的方法有关。大多数人错误地测试和评估系统。稍后在书中，你将学习一种正确的测试和评估系统的方法，但现在只需意识到，公认的测试标准是错误的。这种错误的测试导致过于乐观的结果和一定会让最终用户失望的交易系统。当然，经验丰富的交易者知道如何测试系统。问题是：在查看历史结果时，你如何知道该相信什么？
 - en: '[Figure 5.2](#figure5-2) depicts what I call a “BS” meter for performance results.
     It gives you an idea of who, if anyone, you can trust with providing you trading
     results.'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图 5.2](#figure5-2) 描绘了我所称的性能结果“废话”计量器。它给你提供了一个想法，让你知道如果有人提供交易结果，你可以相信谁。'
 - en: '![images](images/c05f002.jpg)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![图片](images/c05f002.jpg)'
 - en: '[**FIGURE 5.2**](#figureanchor5-2) BS Meter for Trading System Results'
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 5.2**](#figureanchor5-2) 交易系统结果的“废话”计量器'
 - en: 'At the very top of the scale—the group with the most BS to sling—are trading
     system vendors. I put this group at the top, even though I have been part of this
     group (although I trade my systems with my own money, unlike most in this group).
     In general, any performance information you receive from someone wanting to sell
     you signals, a black box system, a subscription, trading room, and so on should
     *not* be trusted. An excellent general rule is: don’t believe any of it.'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个等级的最顶部——拥有最多“废话”的群体——是交易系统供应商。我将这个群体放在最上面，尽管我曾是这个群体的一部分（虽然我用自己的钱进行交易，不像这个群体中的大多数人）。一般来说，任何你从想要向你出售信号、黑箱系统、订阅、交易室等的人那里获得的业绩信息都*不*值得信任。一个优秀的通用规则是：不要相信任何这些。
 - en: This approach is extreme, I realize, but given the probability of a vendor’s
     selling a great trading system, as opposed to a vendor’s selling you a good-looking
     but actually terrible system, this is sound advice. You will save a lot of money
@@ -93,8 +123,10 @@
     vendor should be trading it himself, raking in the big bucks, not hawking the
     system on the Internet for pennies. That is why trading system vendors top the
     BS list.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我意识到这种方法很极端，但考虑到供应商出售优秀交易系统的概率，相比于供应商向你出售看起来不错但实际上糟糕的系统，这是合理的建议。通过避免任何向你提供绝佳交易系统的人，你将节省很多钱。任何仅以少量钱提供优秀交易系统的人，都不能通过我的“嗅觉”测试——供应商应该自己进行交易，赚取丰厚的利润，而不是在互联网上低价兜售系统。这就是为什么交易系统供应商位居“废话”榜首的原因。
 - en: Since trading system vendors typically provide worthless junk, you may be inclined
     to go the “do-it-yourself” (DIY) route. For the DIYers out there, there are dozens
     of trading platforms that will help you analyze, test, and optimize any type of
@@ -106,15 +138,19 @@
     curve-fit trading system. Such a system will produce a great back test, but will
     almost never perform well in the real-time future. So novice DIY developers rank
     just below trading system vendors on the BS scale.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于交易系统供应商通常提供毫无价值的垃圾，你可能会倾向于走“自己动手”（DIY）的路线。对于那些DIY者，有数十种交易平台可以帮助你分析、测试和优化你想要创建的任何类型的交易系统。从表面上看，这似乎是一个很好的方法，仅依靠自己、自己的想法和交易软件。问题在于，稍后将详细讨论，开发交易系统并不像软件供应商所声称的那么简单。事实上，遵循软件建议的方法的新开发者不可避免地会创建一个过度优化、曲线拟合的交易系统。这种系统会产生很好的回测，但在实时未来中几乎从未表现良好。因此，初学者DIY开发者在“废话”等级上排在交易系统供应商之下。
 - en: If buying from a vendor is fraught with hazard, and novice DIYers not much better,
     what options are left? If you are convinced that you have to have someone else
     provide you with a trading system or signals, using a broker-supplied system or
     a Commodity Trading Advisor (CTA) system is a much better approach. Let’s take
     a quick look at what they offer, and the advantages and disadvantages.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果从供应商那里购买充满风险，而初学者的 DIY 开发者也没好到哪里去，那么还有什么选择呢？如果你坚信必须让其他人提供交易系统或信号，使用经纪商提供的系统或商品交易顾问（CTA）系统将是一个更好的选择。让我们快速看看他们提供的内容，以及其优缺点。
 - en: 'Many futures brokers now offer what they call “Broker Assist” or “Follow the
     Signals”–type services. Two groups that offer these services are Striker Securities
     ([www.striker.com](http://www.striker.com)) and World Cup Advisor ([www.worldcupadvisor.com](http://www.worldcupadvisor.com)).
@@ -124,8 +160,11 @@
     provider. The signals provider will typically have an account at the broker and
     will be placing live trades. So the results shown are typically actual results,
     a *huge* step above the nonsense most trading system vendors show as “real.”'
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 许多期货经纪商现在提供他们所称的“经纪人协助”或“跟随信号”类型的服务。提供这些服务的两个机构是 Striker Securities ([www.striker.com](http://www.striker.com))
+    和 World Cup Advisor ([www.worldcupadvisor.com](http://www.worldcupadvisor.com))。（完全披露：我过去曾经或将来计划通过这两家经纪商提供信号。根据我的个人经验，我认为他们是值得信赖的。）支付月费后，你可以“跟随”信号提供者的交易信号。信号提供者通常会在经纪商那里有一个账户，并会进行实时交易。因此，所显示的结果通常是真实结果，*远远高于*大多数交易系统供应商所展示的“真实”内容。
 - en: Of course, just because the results provided by these services are from a traded
     account, it does not mean you will get the same results. Even real results should
     be treated as hypothetical. In fact, my general rule is that unless the results
@@ -133,8 +172,10 @@
     As you well know, hypothetical leaves the door open for a lot of variation in
     actual results, which you should be prepared for. That is one disadvantage of
     the broker services.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，仅仅因为这些服务提供的结果来自于一个交易账户，并不意味着你会获得相同的结果。即使是真实结果也应被视为假设性结果。事实上，我的一般原则是，除非结果确实发生在你的账户中，否则你*必须*将这些结果视为假设性的。正如你所知，假设性结果给实际结果的变化留出了很多空间，你应对此做好准备。这是经纪服务的一个缺点。
 - en: Another possible disadvantage of a broker-supplied signal service is that something
     can go wrong with either the developer providing the signals to the broker or
     the broker itself. For example, if the developer uses a discretionary approach
@@ -142,45 +183,59 @@
     that was once good now becomes bad. On the broker side, a quick and sudden fraud,
     à la the PFG Best corruption and bankruptcy in 2012, might put your account at
     risk.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 经纪商提供的信号服务的另一个可能缺点是，提供信号的开发者或经纪商本身可能会出现问题。例如，如果开发者采用自由裁量的交易方式，个人危机可能会影响他的交易，而曾经有效的交易方法现在可能变得无效。在经纪商方面，像
+    2012 年 PFG Best 公司的腐败和破产那样的迅速和突发的欺诈，可能会使你的账户处于风险之中。
 - en: If you choose to follow a CTA, it is reassuring to know that the group is audited
     by regulators and accounting firms and that trading results shown are by-and-large
     accurate. Of course, some unethical bad apples always slip into the bunch, and
     they may produce stellar results for many years, before being destroyed in an
     explosion of fraud and deceit. Bernie Madoff and his firm, while not a CTA, is
     a good example of a trusted investment company actually being a complete fraud.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你选择跟随商品交易顾问（CTA），知道该组织接受监管机构和会计师事务所的审计，并且交易结果通常是准确的，这令人感到安慰。当然，总有一些不道德的坏分子混入其中，他们可能会在许多年内产生出色的结果，然后在欺诈和欺骗的爆炸中被摧毁。伯尼·麦道夫和他的公司虽然不是
+    CTA，但却是一个值得信赖的投资公司实际上是一个彻底的欺诈的好例子。
 - en: If you can’t believe trading system vendors, with inexperienced DIY trading
     system developers not being much better, and brokers and CTAs being much better
     but not without risk, what can you do? What is the low group on the BS totem pole?
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你不能相信交易系统供应商，而经验不足的 DIY 交易系统开发者也没好到哪里去，经纪商和 CTA 虽然更好但也有风险，那么你该怎么办？在这个 BS 图腾柱上，最低的层级是什么？
 - en: My opinion is that an experienced DIY trading system developer is the least
     susceptible to BS or otherwise invalid performance reports. I claim this for a
     few reasons. First, an experienced developer knows his trading back-test software
     and knows all the ways to fool it. He knows to avoid these software limitations,
     where many trading system vendors actively seek out these limitations and use
     them to produce their faulty, extremely good-looking performance reports.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 我的观点是，经验丰富的DIY交易系统开发者最不容易受到虚假信息或其他无效表现报告的影响。我这样说有几个理由。首先，经验丰富的开发者了解自己的交易回测软件，并且知道如何欺骗它。他知道如何避免这些软件的限制，而许多交易系统供应商则积极利用这些限制，制作出虚假的、看似非常优秀的表现报告。
 - en: A second reason an experienced developer, creating his own systems, is lowest
     on the BS scale, is that he is in charge of the process. He can eliminate many
     potential issues, such as faulty or missing market data, incorrect forward-looking
     rules, and overoptimization and curve fitting. Being in charge of the complete
     process is an enormous responsibility, but an experienced developer will be quick
     to fix issues, since he ultimately is solely responsible for his results.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一原因是，经验丰富的开发者在创建自己系统时掌控整个过程。他可以消除许多潜在问题，例如错误或缺失的市场数据、不正确的前瞻性规则，以及过度优化和曲线拟合。掌控整个过程是一项巨大的责任，但经验丰富的开发者能迅速解决问题，因为最终他对自己的结果负全责。
 - en: Of course, just developing trading systems for many years does not make one
     an expert. The key is to develop systems and then verify the performance in real
     time. Over the course of a few years, a good developer will get better and better
     at producing historical results for trading systems that have a better and better
     chance of holding up in the future. Certainly, when done correctly, an experienced
     DIY developer can be pretty low on the BS scale.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，单靠多年的交易系统开发并不能使人变成专家。关键在于开发系统并实时验证其表现。在几年的过程中，一位优秀的开发者会越来越擅长为交易系统生成历史结果，这些结果在未来的有效性也会越来越高。当然，如果操作得当，一位经验丰富的DIY开发者在虚假信息的比例上可以相当低。
 - en: At this point, a few readers are probably asking, “Why even bother testing?
     All it does is prove something worked in the past. It has no bearing on future
     performance.” This is an argument that has some validity, up to a point. It is
@@ -188,8 +243,10 @@
     is why the U.S. government requires this disclaimer when discussing trading system
     performance. But does it therefore mean that historical testing has *no* validity?
     I don’t think so.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 此时，一些读者可能会问：“为什么还要测试呢？这只证明过去某些事情有效，和未来表现无关。”这个论点在某种程度上是有一定道理的。确实，“过去的表现并不能预示未来的结果”，这也是为什么美国政府在讨论交易系统表现时要求使用这个免责声明。但是，这是否意味着历史测试*没有*任何有效性呢？我并不这样认为。
 - en: Here is a case in point. Let’s say you want to build a model of the sun rising.
     Every day for a month, you get up before dawn, and wait for the sun to appear.
     Every day, it rises in the east. So, you build you model, run it for tomorrow,
@@ -198,8 +255,10 @@
     and the sun could rise in the north, south, or west. Highly unlikely, yes, but
     so was the flash crash of 2010 or the financial crisis of 2008\. Outlier and unexpected
     events can and do happen.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有一个例子。假设你想建立一个关于太阳升起的模型。一个月的时间里，你每天黎明前起床，等待太阳出现。每天，太阳都是从东方升起的。那么，你构建了模型，运行明天的预测，它“预测”太阳将从东方升起。那会是真的吗？谁能确定呢？某种奇怪的轴切换或地球自转反转可能会在夜间发生，太阳可能会从北方、南方或西方升起。这种可能性非常小，没错，但2010年的闪电崩盘和2008年的金融危机也同样出人意料。极端和意外事件确实可能发生。
 - en: If such a calamity occurs, does it mean that the model is useless and never
     should have been built? No, but certainly you’d have to now take into account
     that the world you modeled has changed dramatically. It is the same for trading
@@ -208,52 +267,72 @@
     having a model based on history is much better than completely guessing. With
     guessing, you are likely to be looking the wrong way when the sun rises tomorrow
     morning.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果这样的灾难发生，这是否意味着模型毫无用处，永远不应该被构建？不，但你必须考虑到你建模的世界发生了巨大变化。交易系统也是如此。全新的市场条件可能会在明天、下周或下个月使你的交易策略变得无用，或者根本不会。但我认为，基于历史的模型比完全猜测要好得多。通过猜测，你很可能在明天早上太阳升起时朝错误的方向看。
 - en: 'In evaluating trading systems and their performance report and equity curves,
     it is important to distinguish *how* the results were obtained. There are four
     main ways to produce results:'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 在评估交易系统及其表现报告和权益曲线时，区分*如何*获得结果非常重要。有四种主要方法来产生结果：
 - en: Historical back testing
+  id: totrans-30
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 历史回测
 - en: Out-of-sample testing
+  id: totrans-31
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 超出样本测试
 - en: Walk-forward testing
+  id: totrans-32
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 向前走测试
 - en: Real-time testing
+  id: totrans-33
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 实时测试
 - en: Each of these is discussed in turn next.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来将逐一讨论每种方法。
 - en: '![images](images/gbox.jpg) Historical Back Testing'
+  id: totrans-35
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 历史回测'
 - en: Historical back testing is the most common method of testing. It is also the
     easiest to perform, and the easiest to abuse and misuse. The developer simply
     enters the start date and the end date (usually today’s date), includes any parameters
     to optimize, and then lets the strategy engine do all the calculations. The end
     result will be the best set of parameters for that period of time, which can then
     be used in real live trading.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 历史回测是最常见的测试方法。这也是最容易执行的，也是最容易滥用和误用的。开发者只需输入开始日期和结束日期（通常是今天的日期），包括任何要优化的参数，然后让策略引擎进行所有计算。最终结果将是该时间段内的最佳参数集，可以用于真实交易。
 - en: Unfortunately, there is a major problem when performing a back test in this
     manner. Assuming that the results are not due to overoptimization—too many rules,
     too many parameters, and/or too many parameter values—the historical results are
     by definition going to look great. After all, those results come from optimizing!
     There is virtually no chance that the results in the future will be close to the
     optimized results. The results are just too “tuned” to the data used in the test.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 不幸的是，以这种方式进行回测时存在一个主要问题。假设结果不是由于过度优化造成的——规则过多、参数过多和/或参数值过多——历史结果在定义上看起来会非常好。毕竟，这些结果来自于优化！未来的结果几乎没有可能接近优化结果。这些结果对测试中使用的数据过于“调谐”了。
 - en: 'A great example of this is shown in [Figure 5.3](#figure5-3). Looking at just
     the optimized results of a simple trading system, it looks like this is a viable
     system. But this is because what you see was optimized. Take any other set of
@@ -263,19 +342,27 @@
     actual system performance. The deceiving part in all this is that sometimes these
     systems perform well for a time after optimizing. In general, though, the more
     optimization that is done, the less likely the system will work well going forward.'
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个很好的例子在[图5.3](#figure5-3)中展示。仅仅看一个简单交易系统的优化结果，似乎这是一个可行的系统。但这只是因为你看到的是优化后的结果。换一组参数，系统的表现就会更糟。往前看，你认为哪种结果更可能——那个优化过的良好结果还是许多糟糕的结果？我希望答案非常清晰：糟糕的结果更真实地反映了实际系统性能。令人误解的是，这些系统在优化后有时会在一段时间内表现良好。然而，通常来说，优化越多，系统在未来表现良好的可能性就越小。
 - en: '![images](images/c05f003.jpg)'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c05f003.jpg)'
 - en: '[**FIGURE 5.3**](#figureanchor5-3) Optimized Results Frequently Fall Apart
     after Testing'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图5.3**](#figureanchor5-3) 优化结果在测试后常常崩溃'
 - en: '![images](images/gbox.jpg) Out-of-Sample Testing'
+  id: totrans-41
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 超出样本测试'
 - en: Only the most inexperienced and naive developers test and optimize their trading
     system over the whole historical data set. If that has been your approach up until
     now, this statement may make you mad. But odds are that your real-time trading
@@ -284,8 +371,10 @@
     optimized on. It is just not a very good practice. Trust me, I know—I used to
     do it all the time before the market told me, via taking money out of my account,
     that I was doing things incorrectly!
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 只有最缺乏经验和天真的开发者才会在整个历史数据集上测试和优化他们的交易系统。如果你一直以来都是这样做的，这句话可能会让你感到愤怒。但很可能你的实时交易结果并不好，或者至少不是一直都好。很多原因都可以归结为在与优化时相同的数据上评估策略的表现。这并不是一个很好的做法。相信我，我知道——在市场通过从我的账户中取钱告诉我我做错了之前，我一直在这样做！
 - en: Some developers get around this by including an out-of-sample period. This is
     shown in [Figure 5.4](#figure5-4). An out-of-sample period will be 10 to 20 percent
     of the data reserved for review after optimization. Typically, the data left for
@@ -293,21 +382,29 @@
     apply it to data before their optimization data. The theory behind that alternative
     approach is that the optimization should include the most recent data, so the
     strategy is “tuned” to current market conditions.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些开发者通过包括一个超出样本的时期来规避这个问题。这在[图 5.4](#figure5-4)中有所展示。超出样本的时期将是10%到20%的数据，这部分数据在优化后保留供复审。通常，留作超出样本测试的数据是最新的数据。然而，我见过有人将其应用于他们优化数据之前的数据。这种替代方法的理论是，优化应包括最新的数据，以便策略“调优”到当前市场条件。
 - en: '![images](images/c05f004.jpg)'
+  id: totrans-44
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c05f004.jpg)'
 - en: '[**FIGURE 5.4**](#figureanchor5-4) Out-of-Sample Testing Results'
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 5.4**](#figureanchor5-4) 超出样本的测试结果'
 - en: Conducting a test with out-of-sample data is a magnitude or two better than
     optimizing over all the data, especially if the out-of-sample period has a significant
     number of trades in it. If the optimized results look good with the out-of-sample
     data, there is much more confidence in the optimized results. It will likely perform
     better in real time.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 在超出样本数据上进行测试比在所有数据上优化要好得多，尤其是当超出样本的时期有大量交易时。如果优化后的结果在超出样本数据上表现良好，那么对这些优化结果的信心就会更大。这可能在实时中表现得更好。
 - en: One problem with the out-of-sample approach is that the optimized parameters
     are set forever. So, for example, if you optimize your trading system and get
     values X, Y, and Z as the best inputs to your system, those inputs should never
@@ -315,54 +412,76 @@
     to change your input parameters, or at least check them on an ongoing basis. In
     this manner, the out-of-sample test idea can be taken one step further. The resulting
     analysis, walk-forward analysis, is much better, and much closer to reality.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 超出样本方法的一个问题是，优化参数是永久设定的。因此，例如，如果你优化了交易系统并得到X、Y和Z作为系统的最佳输入，这些输入就不应改变。但也许由于市场条件的变化，你确实希望能够更改输入参数，或者至少在持续的基础上检查它们。通过这种方式，超出样本测试的想法可以更进一步。结果分析，向前走分析，要好得多，并且更接近现实。
 - en: '![images](images/gbox.jpg) Walk-Forward Analysis'
+  id: totrans-48
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 向前走分析'
 - en: Walk-forward analysis is much more cumbersome than traditional back tests, but
     the results are usually worth the effort. Walk-forward analysis can be done by
     hand, in conjunction with trading software optimization. This was the method I
     used to be a top finisher in the World Cup contest, and I encourage you to try
     it by hand a few times to fully understand the process. After that, many trading
     software packages now include walk-forward analysis in their available tools.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 向前走分析比传统的回测要复杂得多，但结果通常值得付出这些努力。向前走分析可以手动进行，并结合交易软件的优化。这是我曾经在世界杯比赛中取得优异成绩所使用的方法，我鼓励你手动尝试几次，以充分理解这个过程。之后，许多交易软件包现在都在其可用工具中包括向前走分析。
 - en: 'The idea behind walk-forward analysis is simple: the performance results and
     the optimized results are based on two different data sets. This can be seen in
     [Figure 5.5](#figure5-5). Walk-forward analysis is simply the aggregate of many
     out-of-sample periods, stitched together.'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 向前走分析背后的想法很简单：表现结果和优化结果基于两个不同的数据集。这可以在[图 5.5](#figure5-5)中看到。向前走分析就是将许多超出样本的时期汇总在一起。
 - en: '![images](images/c05f005.jpg)'
+  id: totrans-51
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c05f005.jpg)'
 - en: '[**FIGURE 5.5**](#figureanchor5-5) Walk-Forward Analysis'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图5.5**](#figureanchor5-5) 前向分析'
 - en: Results of walk-forward analysis, when done correctly, can be much closer to
     reality than a simple optimized test. A sample of this is given in [Figure 5.6](#figure5-6),
     which shows that the walk-forward analysis, and the live results are pretty comparable.
     There is no dramatic shift in performance between live and walk-forward results.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 正确进行的前向分析结果，往往比简单的优化测试更接近现实。这个样本在[图5.6](#figure5-6)中展示，显示前向分析和实时结果相当可比。实时与前向结果之间的绩效没有显著的差异。
 - en: '![images](images/c05f006.jpg)'
+  id: totrans-54
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c05f006.jpg)'
 - en: '[**FIGURE 5.6**](#figureanchor5-6) Walk-Forward Testing Results'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图5.6**](#figureanchor5-6) 前向测试结果'
 - en: Walk-forward analysis is a great tool when there are a lot of historical data
     to analyze. It is my recommended method. But in cases where there is not much
     historical data, the best approach may be to test and evaluate the trading system
     in real time.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 当有大量历史数据可供分析时，前向分析是一个很好的工具。这是我推荐的方法。但在历史数据不多的情况下，最佳的方式可能是在实时中测试和评估交易系统。
 - en: '![images](images/gbox.jpg) Real-Time Analysis'
+  id: totrans-57
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 实时分析'
 - en: Some very successful traders eschew all forms of back testing due to inherent
     conflicts and issues in such testing. These folks simply test strategies in real
     time, possibly even with real money. The obvious advantage to such a method is
@@ -372,21 +491,29 @@
     years. Most people do not have the patience to wait for such a test to complete.
     Another disadvantage is that anytime the strategy is changed, the clock goes back
     to zero, and the evaluation starts fresh. This can really prolong the test period.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些非常成功的交易者由于这种测试固有的冲突和问题，避免所有形式的回测。这些人只是实时测试策略，甚至可能使用真实资金。这种方法的明显优势是，不可能将规则适配于过去数据并利用后见之明。一个重大缺点是，你只能以市场速度收集数据。直到你在实时中测试多年，才有可能在多年内收集统计数据。大多数人没有耐心等待这样的测试完成。另一个缺点是，每当策略更改时，时钟就会回到零，评估重新开始。这可能会真正延长测试周期。
 - en: For the reasons cited, most people do not consider real-time testing, even with
     its advantages, as a viable solution. In the trading system development method
     shown later in this book, however, real-time analysis is used and provides useful
     verification of a trading system.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 出于上述原因，大多数人并不认为实时测试，即使有其优势，也是一个可行的解决方案。然而，在本书后面展示的交易系统开发方法中，实时分析被使用，并为交易系统提供了有用的验证。
 - en: CHAPTER 6
+  id: totrans-60
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第6章
 - en: Preliminary Analysis
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 初步分析
 - en: Now that we have examined the primary ways to test a trading strategy and produce
     a trading performance report, I’ll share with you what I think is important in
     these reports. A typical summary performance report is shown in [Figure 6.1](#figure6-1).
@@ -396,19 +523,27 @@
     it turns out, are not all that important when time comes to evaluate the trading
     system. Maybe a performance metric for “drawdown—coefficient of variation” matters
     to some people but certainly not to me.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们已经检查了测试交易策略和生成交易绩效报告的主要方法，我将分享我认为这些报告中重要的内容。典型的总结绩效报告如[图6.1](#figure6-1)所示。完整的TradeStation生成的绩效报告至少有七页，并包括数百个计算参数、交易列表和绩效图表。提供的信息量实在令人不知所措。结果显示，很多结果在评估交易系统时并不那么重要。“回撤—变异系数”的绩效指标可能对某些人重要，但对我来说却并非如此。
 - en: '![images](images/c06f001.jpg)'
+  id: totrans-63
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c06f001.jpg)'
 - en: '[**FIGURE 6.1**](#figureanchor6-1) Sample Performance Report'
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图6.1**](#figureanchor6-1) 样本绩效报告'
 - en: As with most aspects of trading, I try to keep my performance report analysis
     simple. A few numbers are typically all that I need to conduct a cursory review
     of any trading system. Once I find something I like, then I will delve deeper.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 和交易的多数方面一样，我试图保持我的绩效报告分析简单。通常我只需要几个数字就能进行对任何交易系统的粗略审查。一旦我找到我喜欢的东西，我就会深入探讨。
 - en: First, a few ground rules are in order. The performance report should be based
     either on live data or on a walk-forward test. Optimized back tests should not
     even be analyzed, as their results are bogus and misleading. Next, there should
@@ -421,8 +556,11 @@
     a fair comparison is all but impossible. Plus, a bad strategy can be made to look
     appealing by position sizing. To keep it simple, I look at position sizing only
     after I feel confident the strategy is viable trading one contract at a time.
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，必须设定一些基本规则。绩效报告应基于实时数据或前向测试。优化的回测结果甚至不应被分析，因为它们的结果是虚假的且具有误导性。接下来，应有多年的数据，并有大量的交易。一个好的经验法则是
+    5 到 10 年的数据，以及每个交易规则 30 到 100 笔交易。第三，我通常会审查未应用头寸大小的绩效报告。在审查许多绩效报告时，比较“苹果与苹果”将非常重要。如果你查看一个基于单合约交易的绩效报告，并试图与另一个使用多合约头寸大小的报告进行比较，公平比较几乎是不可能的。此外，糟糕的策略通过头寸大小可能看起来吸引人。为了简单起见，我只有在对策略的可行性感到自信后，才考虑头寸大小。
 - en: 'Finally, accurate assumptions for commission and slippage must be included
     in the report. Many times I see performance reports without these values added
     in, with the flippant response from the creator, “Those costs can be added in
@@ -434,45 +572,65 @@
     example, if you optimize based on net profit or something similar, the optimizer
     will usually give you a best set of parameters that make you trade too much. Here
     is an example:'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，报告中必须包含佣金和滑点的准确假设。许多时候，我看到的业绩报告没有这些值，创作者却轻描淡写地回应：“这些成本可以稍后添加，没问题。”不包括佣金和滑点，不仅极不道德——如果不是不道德——因为这些成本对交易系统的影响，暗示开发者并不真正理解适当的策略开发。很容易证明，未考虑佣金和滑点的测试会导致选择交易频率更高、每笔交易平均利润更低的交易系统。例如，如果你基于净利润或类似的东西进行优化，优化器通常会给出一组最佳参数，使你交易过于频繁。这里有一个例子：
 - en: Without Slippage or Commission
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 无滑点或佣金
 - en: 'Parameter Setting 1: Gross profit/trade = $25, 1,000 trades, gross profit =
     $25,000'
+  id: totrans-69
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 参数设置 1：每笔交易毛利 = $25，1,000 笔交易，毛利 = $25,000
 - en: 'Parameter Setting 2: Gross profit/trade = $50, 300 trades, gross profit = $15,000'
+  id: totrans-70
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 参数设置 2：每笔交易毛利 = $50，300 笔交易，毛利 = $15,000
 - en: The optimizer will select Setting 1 as superior.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 优化器将选择设置 1 作为更优选择。
 - en: With $25 Slippage and Commission
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 带有 $25 滑点和佣金
 - en: 'Parameter Setting 1: Net profit/trade = $0, 1,000 trades, gross profit = $0'
+  id: totrans-73
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 参数设置 1：每笔交易净利 = $0，1,000 笔交易，毛利 = $0
 - en: 'Parameter Setting 2: Net profit/trade = $25, 300 trades, net profit = $7,500'
+  id: totrans-74
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 参数设置 2：每笔交易净利 = $25，300 笔交易，净利 = $7,500
 - en: The optimizer will now select Setting 2 as superior.
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 优化器将选择设置 2 作为更优选择。
 - en: Which approach is better? Well, in the first scenario, such a system in the
     real world will churn the average trader until his account is depleted. It is
     definitely not as simple as “you can add commissions and slippage in later.” The
     second scenario, however, produces a result that is far more realistic and believable.
     So, all other things being equal, optimizing with slippage and commissions is
     an approach much closer to reality and should always be used.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 哪种方法更好？在第一种情况下，这样的系统在现实世界中将使平均交易者耗尽账户。绝非“你可以稍后加入佣金和滑点”那么简单。然而，第二种情况产生的结果要现实得多。因此，其他条件相同的情况下，考虑滑点和佣金的优化方法更接近现实，应该始终使用。
 - en: With these basic ground rules in place, the first number I look at is the total
     net profit. This seems self-evident, since if there is no profit, why bother looking
     at the report any further? It may be that the net profit shown is not worthwhile,
@@ -481,59 +639,85 @@
     back test, the annual net profit should be $5,000 per year per contract minimum,
     preferably $10,000 or more. Any amount less than this will likely not be worthwhile
     on a risk-adjusted basis or will not have enough trades to be significant.
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这些基本规则到位后，我首先查看的数字是总净利润。这似乎是不言自明的，因为如果没有利润，为什么还要继续查看报告呢？可能显示的净利润并不值得，可能是由于涉及的时间段或必须忍受的回撤，但无论如何应该有利润。在我的经验中，经过前瞻性回测，每份合约的年净利润至少应为
+    $5,000，最好是 $10,000 或更多。任何低于这个数额的收益在风险调整基础上可能都不值得，或者交易次数不够，无法具有统计意义。
 - en: Profit factor is the next number I review. Obviously, higher numbers are better
     here. Many people say that only profit factors greater than 2.0 are acceptable,
     but I don’t share this view. To me, anything over 1.0 has at least some merit,
     so I don’t discard any systems between 1.0 and 2.0 just based on this number.
     I do find that profit factors below 1.5 generally have a hard time making it through
     the rest of the steps in the development process, though.
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 利润因子是我接下来审核的数字。显然，这里的数字越高越好。很多人说，只有利润因子大于 2.0 的系统才是可以接受的，但我并不认同这个观点。在我看来，任何超过
+    1.0 的利润因子至少都有一些价值，所以我不会仅仅基于这个数字而排除介于 1.0 和 2.0 之间的系统。不过，我确实发现利润因子低于 1.5 的系统通常很难通过开发过程中的其余步骤。
 - en: I always review total number of trades to ensure that enough trades are being
     taken during the test period. If, for example, the report contains only 5 trades,
     just how valid can the results actually be? I generally use a rough guide of 30
     to 100 trades minimum per strategy rule. So, for example, if I have four strategy
     rules, I’d like to see at least 120 to 400 trades in the report. Obviously, the
     more trades the better.
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 我总是审查交易总数，以确保在测试期间进行的交易足够多。例如，如果报告中仅包含 5 笔交易，那么结果到底有多有效呢？我通常会使用每个策略规则至少 30 到
+    100 笔交易的粗略指南。因此，例如，如果我有四个策略规则，我希望在报告中看到至少 120 到 400 笔交易。显然，交易越多越好。
 - en: Average trade net profit is the next performance number I look at. Since this
     number is after commissions and slippage, it is a great and easy way to compare
     trading systems. I generally like to see $50 or more per trade average, based
     on trading one contract. For average trade values less than $50, the system might
     still be viable, but the closer you ride to that $0 breakeven line, the less leeway
     you allow for errors, mistakes, slight changes in performance, and the like.
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 平均交易净利润是我查看的下一个绩效数字。由于这个数字是扣除佣金和滑点后的，所以这是比较交易系统的一个好且简单的方法。我通常希望看到每笔交易的平均值在 $50
+    或以上，基于交易一份合约。对于平均交易值低于 $50 的系统，可能仍然可行，但你越接近 $0 的盈亏平衡线，允许错误、失误和轻微表现变化的余地就越小。
 - en: The next number I review is average losing trade, which I combine with the average
     trade net profit to calculate expectancy. There is a lot of confusion about expectancy
     and how to calculate it, so I will explain it here.
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 我接下来审核的数字是平均亏损交易，我将其与平均交易净利润结合起来计算期望值。关于期望值及其计算方式有很多困惑，所以我将在这里解释。
 - en: 'Many traders calculate expectancy in this way:'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 许多交易者以这种方式计算期望值：
 - en: Expectancy = average $ winners * win % + average $ losers * lose % = average
     trade
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 期望值 = 平均 $ 胜利者 * 胜率 + 平均 $ 输家 * 失败率 = 平均交易
 - en: where average $ losers is a negative number
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 其中平均 $ 输家是一个负数。
 - en: Note that this is also the average trade net profit. So calculating an expectancy
     using this equation does not provide any additional information beyond what is
     already known with the average trade net profit.
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意，这也是平均交易净利润。因此，使用这个方程计算期望值并没有提供超出平均交易净利润已知信息的任何额外信息。
 - en: 'An alternative expectancy can be calculated as follows:'
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 替代期望值可以按如下方式计算：
 - en: Expectancy = (average $ winners * win % + average $ losers * lose %)/ (-average
     $ losers)
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 期望值 = (平均 $ 胜利者 * 胜率 + 平均 $ 输家 * 失败率) / (-平均 $ 输家)
 - en: This metric is useful since it is a risk-adjusted value. It basically states
     for every dollar you risk, what is your expected return? So with an expectancy
     of 0.2, you’d expect to receive 20 cents in gains for every $1 you put at risk.
@@ -541,13 +725,18 @@
     Van Tharp, so to avoid future confusion, I will refer to this calculation as “Tharp
     Expectancy.” To me, it is much more valuable than the first method of calculating
     expectancy.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个指标是有用的，因为它是一个风险调整后的值。它基本上说明了你每冒险一美元，预期回报是多少？因此，若期望值为0.2，你可以预期每冒险$1会获得20美分的收益。这个期望值受到了交易心理学家和教育者Dr.
+    Van Tharp的高度推崇，为了避免将来的混淆，我将这一计算称为“Tharp期望”。对我来说，它比计算期望的第一种方法更有价值。
 - en: For the Tharp Expectancy, I generally look for values greater than 0.1\. Anything
     below this threshold will be difficult to trade and likely will demand too much
     risk for too little reward.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于Tharp期望值，我通常寻找大于0.1的值。低于这个阈值的交易将很难进行，并且可能需要承受过大的风险以换取太少的回报。
 - en: The next numbers I look at in the performance report are total slippage and
     total commission. If the numbers are $0, I immediately discard the report and
     ignore all other results I may have seen. There is no such thing as cost-free
@@ -557,8 +746,10 @@
     fees, and so on are added in. Commissions can be less than this, especially if
     you do a lot of volume or if you are an exchange member, but the $5 figure is
     appropriate for most retail traders.
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在绩效报告中查看的下一个数字是总滑点和总佣金。如果这些数字为$0，我会立即丢弃报告，并忽略我可能看到的所有其他结果。没有无成本交易，因此任何显示这种情况的绩效报告都是虚假的。一般来说，我需要每合约每个回合的交易佣金为$5。毕竟，这是折扣券商在加上所有交易所费用、全国期货协会费用等后收取的典型值。佣金可以低于这个数字，特别是如果你进行大量交易或是交易所会员，但$5的数字对大多数零售交易者来说是合适的。
 - en: 'Total slippage is an even more critical number than total commission. Many
     developers, especially those who have never traded before, consistently underestimate
     the amount of slippage experienced in the real world. I define slippage as the
@@ -567,20 +758,28 @@
     fills at the bid, when in real trading you’ll buy at the ask. The difference is
     what I consider slippage. Based on my experience, I assume the following slippage
     values for heavily traded markets:'
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 总滑点比总佣金更为关键。许多开发者，尤其是那些从未交易过的人，始终低估了现实世界中经历的滑点量。我将滑点定义为软件策略回测引擎给出的成交价格与实际成交价格之间的差异。例如，许多策略引擎假设在买入时按买价成交，而在实际交易中你会按卖价成交。这种差异就是我认为的滑点。根据我的经验，我假设重度交易市场的滑点值如下：
 - en: 'Market orders: 1 to 2 ticks slippage per round turn.'
+  id: totrans-92
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 市场订单：每个回合1到2个点的滑点。
 - en: 'Stop orders: 1 to 2 ticks slippage per round turn.'
+  id: totrans-93
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 停止订单：每个回合1到2个点的滑点。
 - en: 'Limit orders: 0 ticks slippage.'
+  id: totrans-94
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 限价订单：0个点的滑点。
 - en: The tricky part is that a typical trading strategy will have some mix of market,
     limit, and stop orders. In that case, if you can apply only one slippage value
     to each trade, what should it be? I find being conservative in this situation
@@ -588,8 +787,10 @@
     for these mixed-order-type strategies. I find this generally a bit pessimistic,
     but it is better than underestimating the slippage costs and being disappointed
     with real-world results.
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 棘手的部分在于，典型的交易策略将混合使用市场、限价和停止订单。在这种情况下，如果你只能对每笔交易应用一个滑点值，那应该是什么呢？我发现在这种情况下采取保守态度是有帮助的。对于这些混合订单类型策略，我通常会每个回合交易应用1.5到2.0个点的滑点。我发现这通常有点悲观，但总比低估滑点成本而对现实结果感到失望要好。
 - en: The final number I look at in the performance report is maximum drawdown. I
     have no set criteria for a drawdown limit, but if I see a $10,000 maximum drawdown
     for a strategy that produces only $15,000 net profit, alarm bells go off. In the
@@ -598,38 +799,50 @@
     I’ll discard the system immediately. Otherwise, I know that high risk, low rewards
     will be tossed out during later steps, so I don’t eliminate the strategy just
     yet.
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在表现报告中查看的最后一个数字是最大回撤。我没有设定回撤限制的具体标准，但如果我看到某个策略的最大回撤为$10,000，而净利润仅为$15,000，就会引起警觉。在我心里，我会考虑回撤，知道在实时交易中我可能会看到更大的回撤。如果我无法承受这种回撤，我会立即放弃该系统。否则，我知道高风险、低回报的策略会在后面的步骤中被淘汰，因此我不会立即排除该策略。
 - en: There are arguably other important numbers in the performance report, to be
     certain. Many people, for example, put a lot of faith in winning percentage, or
     Sharpe ratio, or one of the hundreds of other metrics. The fact is that all metrics
     are important to an extent, and the developer should try to find ones he or she
     is comfortable with. Ultimately, any metrics relied upon should prove themselves
     by leading to successful real-time strategies.
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 无疑，表现报告中还有其他重要数字。例如，许多人对胜率、夏普比率或数百种其他指标非常信任。事实是，所有指标在一定程度上都是重要的，开发者应该尽量找到自己熟悉的指标。最终，任何依赖的指标都应通过导致成功的实时策略来证明自己。
 - en: 'Once I am done reviewing the performance report, I generally take a look at
     some of the trade graphs. I am interested in one chart in particular: the closed
     trade equity graph. If you are a visual learner, just looking at an equity curve—either
     a closed trade equity curve or a daily equity curve (shown in [Figure 6.2](#figure6-2))—might
     tell you all you need to know. Here are the main things I look for in an equity
     chart.'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦我完成了对表现报告的审查，我通常会查看一些交易图表。我对一张图表特别感兴趣：已平仓交易的权益图。如果你是一个视觉学习者，仅仅查看一个权益曲线——无论是已平仓交易的权益曲线还是每日权益曲线（如[图6.2](#figure6-2)所示）——可能就能告诉你所有你需要知道的内容。以下是我在权益图中关注的主要事项。
 - en: '![images](images/c06f002.jpg)'
+  id: totrans-99
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c06f002.jpg)'
 - en: '[**FIGURE 6.2**](#figureanchor6-2) Sample Equity Curve'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图6.2**](#figureanchor6-2) 示例权益曲线'
 - en: The first thing I look for in an equity curve is the slope. If the chart is
     not steadily going from lower left to upper right, it may not be a very good strategy.
     The problem is that the chart can be distorted by the scaling used. So it is also
     important to look at the end equity, and then divide that by the number of years
     in the curve. That will give you an annual average profit and a good indication
     of whether the strategy is at all worthwhile.
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在权益曲线中寻找的第一件事是斜率。如果图表没有稳步从左下角上升到右上角，可能不是一个很好的策略。问题在于，图表可能会因为使用的缩放而扭曲。因此，查看最终权益也很重要，然后将其除以曲线中的年数。这将给你一个年均利润的好指示，判断该策略是否值得投资。
 - en: After the slope, I like to look for flat periods. Flat periods are obviously
     better than periods of drawdown, but many periods, punctuated by rapid rises,
     should be cause for concern. Such an equity curve suggests that the strategy may
@@ -639,22 +852,28 @@
     frame. In this case, it might be okay to assume that performance will improve
     when government intervention ends. Of course, when, if ever, will some sort of
     government intervention end, and who can predict it?
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 在斜率之后，我喜欢寻找平坦的时期。显然，平坦的时期比回撤时期要好，但许多被快速上涨穿插的时期应引起关注。这样的权益曲线表明，该策略可能只抓住了一些好的交易，这可能是由于曲线拟合或过度优化所致。平坦的时期也可能是由于政府干预造成的，例如2009年至2013年间美国的量化宽松计划（QE、QE2、QE3）。在这种情况下，可以假设政府干预结束时表现会改善。当然，何时以及是否会结束某种形式的政府干预，谁能预测呢？
 - en: The third major item I look for is drawdown periods. How severe are the drawdowns,
     and how long does the strategy take to recover from these drawdowns? Answers to
     these questions will give you an idea of what to expect if you trade this strategy
     for real. Drawdowns in the future may be more severe, and may last longer—your
     position sizing and money management should assume that both of these things will
     happen—but you can at least get a sense of what to expect.
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 我关注的第三个主要项目是回撤期。回撤的严重程度如何，策略需要多长时间才能从这些回撤中恢复？这些问题的答案将让你对如果实际交易这个策略时应该期待什么有一个大致的了解。未来的回撤可能更严重，持续时间可能更长——你的仓位规模和资金管理应该假设这两种情况都会发生——但至少你可以对预期有一个大致的了解。
 - en: The absence of any drawdowns on the equity curve should also be cause for concern.
     I know of no real system, except for money deposited in a savings account, that
     has only a small or no drawdown. Again, the curve has to “look” realistic. Reward
     with no risk is not realistic.
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 权益曲线上没有任何回撤的情况也应引起关注。我知道除了存入储蓄账户的钱，没有任何真正的系统仅有小幅或没有回撤。同样，曲线必须“看起来”真实。没有风险的回报是不现实的。
 - en: 'A final item I review on equity charts is the “fuzziness” of the curve. This
     cannot be seen on a closed equity chart, but it can be seen on a daily equity
     chart. The fuzzier the curve, the more the daily results jump around, moving up
@@ -664,54 +883,72 @@
     2, and gains $75 on day 3, is that preferable to System B, which gains a steady
     $25 per day? Both have the same end result, but the fuzziness of System A makes
     it less appealing than System B.'
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在权益图表上检查的最后一项是曲线的“模糊性”。这在封闭的权益图表上无法看到，但在每日权益图表上可以看到。曲线越模糊，每日结果的波动就越大，即使长期趋势向上，短期内也会上下波动。非常模糊的曲线更难交易，更难进行仓位规模调整，也更难情感上应对。想想看：如果系统A在第一天获得$200，第二天损失$200，第三天获得$75，这是否比系统B（每天稳定获得$25）更可取？两者的最终结果相同，但系统A的模糊性使其不如系统B有吸引力。
 - en: Obviously, just looking at an equity curve is by no means a very scientific
     or very rigorous way to evaluate a trading system. But it can be useful for preliminary
     analysis. There is no need to look at performance report details if you do not
     like the look of the equity curve. In those cases, you can save a lot of time
     by spending a few seconds staring at the equity curve and then rejecting a system
     you do not like.
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 显然，仅仅查看权益曲线并不是评估交易系统的科学或严格的方法。但这对于初步分析是有用的。如果你对权益曲线的表现不满意，就没有必要查看绩效报告的详细信息。在这种情况下，你可以节省很多时间，只需花几秒钟盯着权益曲线，然后拒绝一个你不喜欢的系统。
 - en: The discussion thus far has focused on simple, quick numbers and methods to
     evaluate the performance of a trading system. Such analysis is useful in the early
     stages of development, where most strategies are junk, and a fast, cursory review
     can eliminate them, freeing up more time for you as the developer to create new
     systems. But, eventually, you will need to do in-depth analysis of performance
     results. That is a whole different animal.
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止的讨论集中在简单、快速的数字和方法上，以评估交易系统的绩效。这种分析在开发的早期阶段非常有用，因为大多数策略都不靠谱，快速的初步审查可以排除它们，从而为你作为开发者创造新系统腾出更多时间。但最终，你将需要对绩效结果进行深入分析。这是一个完全不同的层面。
 - en: CHAPTER 7
+  id: totrans-108
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第7章
 - en: Detailed Analysis
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 详细分析
 - en: As the development of a trading strategy progresses, the analysis also progresses,
     and the performance hurdles a strategy must meet to be considered viable get more
     stringent. My primary method of analysis at the later stages is Monte Carlo analysis.
     But before I explain how I run the analysis and what I look for in results, I’ll
     first briefly describe the process.
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着交易策略的发展，分析也在不断进步，策略必须满足的绩效障碍变得越来越严格。在后期阶段，我主要采用蒙特卡罗分析方法。但在我解释如何进行分析以及我关注结果中的哪些内容之前，我首先简要描述一下这个过程。
 - en: '![images](images/gbox.jpg) What Is Monte Carlo Analysis?'
+  id: totrans-111
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 什么是蒙特卡罗分析？'
 - en: Monte Carlo analysis, or simulation, sounds like a daunting topic, but actually
     it is not. With the Monte Carlo spreadsheet I created, which you can download
     for free ([www.wiley.com/go/algotradingsystems](http://www.wiley.com/go/algotradingsystems)),
     the analysis is pretty simple. But what is it actually?
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 蒙特卡洛分析或模拟听起来是一个艰巨的话题，但实际上并非如此。使用我创建的蒙特卡洛电子表格，你可以免费下载（[www.wiley.com/go/algotradingsystems](http://www.wiley.com/go/algotradingsystems)），分析过程相当简单。那么，它实际上是什么呢？
 - en: Think about the individual trades in your strategy. These trades taken sequentially,
     in the order they occurred, yield the strategy equity curve. But what if the order
     of those was different? Could the drawdown become more severe? Could the end equity
     be different? These are the questions Monte Carlo analysis can answer.
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 想想你策略中的个别交易。这些交易按发生顺序依次进行，形成策略的权益曲线。但如果这些交易的顺序不同呢？回撤是否会变得更严重？最终权益是否会不同？这些都是蒙特卡洛分析可以回答的问题。
 - en: 'In its simplest form, you can think of it this way: First, get a number of
     little pieces of paper, one for each trade in your strategy. Then, write down
     one trade result on each piece of paper. Once you have all trades accounted for,
@@ -720,8 +957,10 @@
     the hat (this is referred to as random sampling with replacement). Then, pick
     another piece of paper, record its value, and add it to the existing equity curve
     you are building.'
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 在最简单的形式下，你可以这样理解：首先，准备一些小纸片，每个纸片对应你策略中的一个交易。然后，在每个纸片上写下一个交易结果。当你记录完所有交易后，把所有纸片放进一个帽子里。随机选择一张。这就是你的第一次交易。记录它，将其加入你的初始权益中，然后把纸片放回帽子里（这称为有放回的随机抽样）。然后，选另一张纸片，记录它的值，并将其加入你正在构建的现有权益曲线中。
 - en: If you do this for a number of trades, you’ll have a possible equity curve.
     If you perform the whole analysis many, many times, you’ll have a family of equity
     curves. Each one represents a possible way that trades in your strategy could
@@ -732,16 +971,20 @@
     the historically derived trades will be the same as the trades in the future.
     If your historical trades are based on flawed development, future results will
     be garbage.
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你对多个交易进行这种分析，你将会得到一个可能的权益曲线。如果你多次执行整个分析，你将得到一系列的权益曲线。每一条曲线代表着在你的策略中交易可能发生的方式。利用这系列可能的曲线，你可以获取有关交易系统的统计数据。这些统计数据可以帮助你评估策略，确定头寸大小方法，并为你在实际交易中可能面临的情况提供现实的场景。当然，这一切都假设历史交易将与未来的交易相同。如果你的历史交易基于有缺陷的开发，未来的结果将毫无价值。
 - en: Obviously, there are some potentially serious drawbacks to this analysis. First,
     the analysis assumes that the trades in your performance report are the only possible
     trades that can happen. This is obviously false, since when you start trading
     live, any result is possible for a particular trade. But, if the distribution
     (overall mean and standard deviation) of the trades is accurate, then the Monte
     Carlo approach can yield meaningful results.
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 显然，这种分析存在一些潜在的严重缺陷。首先，分析假设你的绩效报告中的交易是唯一可能发生的交易。这显然是错误的，因为当你开始实时交易时，任何结果都是可能的。但如果交易的分布（总体均值和标准差）是准确的，那么蒙特卡洛方法可以产生有意义的结果。
 - en: A second drawback is that this analysis assumes that each trade is independent
     of the previous trade, a condition commonly referred to as serial or auto correlation.
     For most trading strategies, this is not an issue. However, if you have a strategy
@@ -752,8 +995,11 @@
     correlation is the Durbin Watson statistic. Although it is beyond the scope of
     this book, you can find details, examples, and spreadsheets on this calculation
     on the Internet.
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二个缺点是该分析假设每笔交易与前一笔交易是独立的，这种情况通常称为序列或自相关。对于大多数交易策略来说，这不是问题。然而，如果你的策略中交易结果相互依赖，简单的蒙特卡洛分析就不适用了。比如，交易
+    B 信号依赖于前一笔交易 A 的结果。在使用蒙特卡洛分析之前，最好先检查这种情况。检查序列相关性的一种方法是 Durbin Watson 统计量。尽管超出了本书的范围，但你可以在网上找到有关此计算的详细信息、示例和电子表格。
 - en: If you find that your trades do exhibit serial correlation, the simple Monte
     Carlo analysis may not be appropriate to use. In such cases, you could try to
     use a Monte Carlo simulation that included serial correlation effects, or you
@@ -767,55 +1013,81 @@
     the set of drawdowns *d.* This method may be a bit more cumbersome than Monte
     Carlo, but it is a better way to analyze the data when you have serial correction,
     since trade sequence will be mostly preserved.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你发现交易确实表现出序列相关性，那么简单的蒙特卡洛分析可能不适用。在这种情况下，你可以尝试使用包含序列相关性影响的蒙特卡洛模拟，或者可以收集一种称为“开始交易分析”或“移动开始分析”的方法的统计数据。在此分析中，你在每笔交易开始时进行模拟，并收集回报和回撤的统计数据。例如，如果你的样本中有
+    10 笔交易，*i*, *i + 1, … i + 9*，你首先从交易 *i* 开始创建一个权益曲线。从生成的曲线中，你可以获得回撤 *d[i]*。然后，从交易
+    *i + 1* 开始这条权益曲线。这条曲线将给你回撤 *d[i]*[+1]。如果你继续遍历所有交易，可以分析回撤集合 *d*。这种方法可能比蒙特卡洛更复杂，但在存在序列相关时，它是分析数据的更好方法，因为交易顺序大部分会被保留。
 - en: 'Assuming you can live with the drawbacks listed, Monte Carlo can help you answer
     the following questions:'
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设你能接受列出的缺点，蒙特卡洛方法可以帮助你回答以下问题：
 - en: What is my risk of ruin for a given account size?
+  id: totrans-120
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 对于给定账户规模，我的破产风险是多少？
 - en: What are the chances of my system’s having a maximum drawdown of X percent?
+  id: totrans-121
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我的系统发生最大回撤 X 百分比的几率有多大？
 - en: What kind of annual return can I expect from this trading system?
+  id: totrans-122
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我可以期望从这个交易系统获得什么样的年回报？
 - en: Is the risk I am taking to trade this strategy appropriate for the return I
     am receiving?
+  id: totrans-123
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我为交易这个策略所承担的风险是否与我所获得的回报相符？
 - en: Each of these questions will be addressed in the discussion that follows. To
     simplify the narrative, I will assume the reader is using my Monte Carlo spreadsheet.
     Any Monte Carlo simulator available to the public should be able to give the same
     results, although some of the terminology and assumptions used may be different.
     Therefore, whether you use the simulator or not, the discussion will still be
     useful for you.
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些问题将在接下来的讨论中逐一解决。为了简化叙述，我将假设读者使用我的蒙特卡洛电子表格。任何可公开使用的蒙特卡洛模拟器都应该能够给出相同的结果，尽管使用的术语和假设可能会有所不同。因此，无论你是否使用模拟器，讨论仍然对你有用。
 - en: '![images](images/gbox.jpg) Inputs to Monte Carlo Simulator'
+  id: totrans-125
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 蒙特卡洛模拟器的输入'
 - en: There are only a few required inputs to perform Monte Carlo simulation. These
     are listed below, and are shown in [Figure 7.1](#figure7-1).
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 执行蒙特卡洛模拟只需要少量输入。这些输入如下所列，并显示在[图 7.1](#figure7-1)中。
 - en: '![images](images/c07f001.jpg)'
+  id: totrans-127
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c07f001.jpg)'
 - en: '[**FIGURE 7.1**](#figureanchor7-1) Monte Carlo Simulator Inputs'
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 7.1**](#figureanchor7-1) 蒙特卡洛模拟器输入'
 - en: '*Base Starting Equity.* This is the starting amount of your account, in dollars.'
+  id: totrans-129
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*基础起始权益。* 这是你账户的起始金额，以美元计。'
 - en: '*Stop Trading if Equity Drops Below $.* This is the amount of capital below
     which you will cease trading. For example, if you enter $3,500 here, once your
     equity, on a closed-trade basis, drops below $3,500, you will not be permitted
@@ -827,117 +1099,163 @@
     to increase this minimum amount. As a rule, I never recommend trading with only
     enough capital to just meet the margin requirement, but for this simulation, the
     assumption is acceptable.'
+  id: totrans-130
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*如果权益低于 $，则停止交易。* 这是指低于该金额时你将停止交易的资本。例如，如果你在这里输入 $3,500，一旦你的权益在平仓基础上低于 $3,500，你将不再被允许进行交易。你的账户将被视为“破产”。至少，该值必须大于你的系统所交易工具的一个合约的初始保证金。在前面的例子中，你只能交易初始保证金低于
+    $3,500 的产品。如果你想交易更高保证金的工具，如黄金（当前初始保证金为 $8,800），你将必须增加这个最低金额。通常，我从不推荐只用足够满足保证金要求的资本进行交易，但对于这个模拟，假设是可以接受的。'
 - en: '*# Trades, 1 Year.* This is simply the number of trades that your system takes
     in a one-year period. My simulator is designed to trade for only one year, so
     each equity curve generated will consist of this number of trades. That is, of
     course, assuming the ruin point is not hit first.'
+  id: totrans-131
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*# 交易次数，1 年。* 这仅仅是你的系统在一年内进行的交易数量。我的模拟器设计为仅交易一年，因此生成的每条权益曲线将由此交易次数组成。当然，这是假设破产点未先触及。'
 - en: '*Individual Trade Results.* This column of data contains all the trade data,
     one trade per row. All trades should be based on the same reference point, that
     is, per contract, per day, and so on. You cannot mix some trades that were based
     on one contract with trades that had multiple contracts.'
+  id: totrans-132
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*单个交易结果。* 这一列数据包含所有交易数据，每行一笔交易。所有交易应基于相同的参考点，即每合约、每天等。你不能将一些基于一个合约的交易与多个合约的交易混合在一起。'
 - en: '![images](images/gbox.jpg) Limitations of the Simulator'
+  id: totrans-133
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 模拟器的局限性'
 - en: To keep things simple, the simulator makes a few assumptions. First, it is assumed
     that one contract is traded for each trade. There is no position sizing built
     into the simulator. Second, the simulator assumes one year of trading. Both of
     these assumptions can be changed in the Excel macro code by anyone who understands
     macro programming language.
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了简化问题，模拟器做了一些假设。首先，假设每次交易只交易一个合约。模拟器中没有包含仓位规模。其次，模拟器假设交易时间为一年。这两个假设可以由任何了解宏编程语言的人在Excel宏代码中进行更改。
 - en: In the discussion that follows, a “run” or iteration is defined as the generation
     of one single equity curve. In a “simulation,” there will be a number of runs—in
     the simulator discussed, this is 2,500 runs. To generate statistics, such as risk
     of ruin or median return, the results of a simulation (2,500 individual runs)
     are used.
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 在接下来的讨论中，“运行”或迭代被定义为生成一条单一的权益曲线。在一次“模拟”中，将有多个运行——在讨论的模拟器中，这为 2,500 次运行。为了生成风险破产或中位回报等统计数据，将使用一次模拟的结果（2,500
+    次单独运行）。
 - en: '![images](images/gbox.jpg) Simulator Output'
+  id: totrans-136
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 模拟器输出'
 - en: Once the simulator runs, a table of output values and corresponding curves will
     be generated, as depicted in [Figure 7.2](#figure7-2). Following is an explanation
     of each output value, how to interpret it, and what values I consider appropriate
     for a tradable system.
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦模拟器运行，将生成一个输出值表和相应的曲线，如[图 7.2](#figure7-2)所示。以下是对每个输出值的解释，包括如何解读它，以及我认为适合可交易系统的值。
 - en: '![images](images/c07f002.jpg)'
+  id: totrans-138
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c07f002.jpg)'
 - en: '[**FIGURE 7.2**](#figureanchor7-2) Monte Carlo Simulator Outputs'
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 7.2**](#figureanchor7-2) 蒙特卡洛模拟器输出'
 - en: Starting Equity
+  id: totrans-140
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 起始权益
 - en: This is the size of your account at the start of the Monte Carlo analysis. All
     rates of return are calculated based on this number, and risk of ruin and maximum
     drawdown are both heavily influenced by it. The simulator uses a range of different
     starting equities in order to generate the table and the output curves.
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是你在蒙特卡洛分析开始时的账户规模。所有的回报率都是基于这个数字计算的，破产风险和最大回撤都受到它的强烈影响。模拟器使用不同的起始权益范围来生成表格和输出曲线。
 - en: Risk of Ruin
+  id: totrans-142
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 破产风险
 - en: This statistic tells you the chances (probability) that within a year’s time,
     your account will be wiped out (i.e., fall below the “Stop Trading if Equity Drops
     Below $”). For example, if the risk of ruin is 12 percent, that means within the
     first year of trading the system, you have a 12 percent chance of having to cease
     trading.
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个统计数据告诉你，在一年内，你的账户被清零（即，低于“如果股本低于$，则停止交易”）的几率（概率）。例如，如果破产风险为12%，这意味着在系统的第一个交易年内，你有12%的机会必须停止交易。
 - en: 'Risk of ruin is an extremely important statistic, especially for traders with
     small accounts. The risk of ruin can be significant for small accounts, even if
     the system is a winning system! Here is an example that should make that clear:'
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: 破产风险是一个极其重要的统计数据，特别是对于小账户的交易者。即使系统是一个成功的系统，小账户的破产风险也可能很高！这里有一个例子可以说明这一点：
 - en: Let’s say you have a very good day trading system. It trades two times a day.
     Winning trades are $200 after all costs, 50 percent of the time. When it loses
     the other 50 percent of the time, it loses $175 net.
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设你有一个非常好的日间交易系统。它每天交易两次。盈利交易每次在扣除所有成本后能赚$200，发生的概率为50%。当它在另外50%的时间内亏损时，每次净亏损$175。
 - en: Per day, on average, you’d make $25 a day. In a year, you’d make $6,300 per
     contract. If you traded this with a $10,000 account, always with one contract,
     you’d make a 63 percent annual return, with somewhere around 15 percent maximum
     drawdown. By most measures that is really good.
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: 平均而言，你每天可以赚取$25。一年内，每个合约你可以赚取$6,300。如果你用$10,000的账户进行交易，始终保持一个合约，你的年回报率将为63%，最大回撤大约为15%。按大多数标准，这真的很不错。
 - en: Now, let’s say you take this positive expectancy system and trade it with a
     small account, $5,000 and under. Let’s say your broker allows $500 day trading
     margin, so that is your “ruin” point—if your account drops below $500, you are
     ruined and you quit trading.
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，假设你用一个小账户（$5,000及以下）来交易这个积极预期的系统。假设你的经纪商允许$500的日间交易保证金，所以这是你的“破产”点——如果你的账户低于$500，你就破产了，停止交易。
 - en: In one year of trading, how likely are you to be ruined (drop below $500 and
     cease trading)? The results, depicted in [Figure 7.3](#figure7-3), might surprise
     you.
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: 在一年交易中，你破产（跌破$500并停止交易）的可能性有多大？结果在[图 7.3](#figure7-3)中展示，可能会让你感到惊讶。
 - en: '![images](images/c07f003.jpg)'
+  id: totrans-149
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c07f003.jpg)'
 - en: '[**FIGURE 7.3**](#figureanchor7-3) Account Size and Risk of Ruin'
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 7.3**](#figureanchor7-3) 账户规模与破产风险'
 - en: 'The question is: where do you feel most comfortable being on this curve? The
     person with $1,500 is probably panicking after each loss, since he doesn’t have
     much wiggle room. But the trader with $5,000—still a small account, only 3.3 times
     the first trader’s account—is 20 times less likely to be ruined.'
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: 问题是：你在这条曲线上感觉最舒适的位置在哪里？拥有$1,500的人在每次损失后可能会感到恐慌，因为他没有太多的灵活空间。但拥有$5,000的交易者——仍然是一个小账户，仅为第一位交易者账户的3.3倍——破产的可能性低20倍。
 - en: The conclusion is that being underfunded can be disastrous, *even with a winning
     system.* So I pay a lot of attention to the risk-of-ruin number that the simulator
     outputs. Any value above 10 percent means, for me, that I am trying to trade the
@@ -947,49 +1265,69 @@
     of return. In my experience, I have found that simulation results with less than
     10 percent risk of ruin are fairly safe, while still providing an acceptable rate
     of return.
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 结论是，资金不足可能是灾难性的，*即使有一个成功的系统。*因此，我非常关注模拟器输出的破产风险值。任何超过10%的值对我而言意味着，我试图以过少的资本进行交易，应该增加资本以降低到10%以下。显然，破产概率在0到1%的系统是最好的，但与交易中的任何事物一样，这都是收益率的权衡。在我的经验中，我发现破产风险低于10%的模拟结果相对安全，同时仍能提供可接受的收益率。
 - en: Median Drawdown
+  id: totrans-153
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 中位数回撤
 - en: This statistic can be a bit confusing at first. It is actually the median value
     of the maximum drawdown. Are you confused yet? Perhaps breaking it into pieces
     will help.
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个统计数据一开始可能会有点困惑。它实际上是最大回撤的中位数值。你现在困惑了吗？也许将其拆分会有所帮助。
 - en: 'First, the maximum drawdown is the maximum percentage drop in account size
     from an equity peak. It should always be measured from the previous equity peak.
     [Figure 7.4](#figure7-4) gives an example of three different drawdowns:'
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，最大回撤是账户规模从股本峰值的最大百分比下降。它应始终从前一个股本峰值进行测量。[图 7.4](#figure7-4)给出了三种不同回撤的例子：
 - en: 'Drawdown 1: $5,000 drawdown, after peak equity of $20,000 = $5,000/ $20,000
     = 25 percent drawdown'
+  id: totrans-156
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回撤 1：$5,000 回撤，在最高权益 $20,000 后 = $5,000/ $20,000 = 25% 回撤
 - en: 'Drawdown 2: $10,000 drawdown, after peak equity of $30,000 = $10,000/ $30,000
     = 33 percent drawdown'
+  id: totrans-157
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回撤 2：$10,000 回撤，在最高权益 $30,000 后 = $10,000/ $30,000 = 33% 回撤
 - en: 'Drawdown 3: $15,000 drawdown, after peak equity of $60,000 = $15,000/ $60,000
     = 25 percent drawdown'
+  id: totrans-158
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回撤 3：$15,000 回撤，在最高权益 $60,000 后 = $15,000/ $60,000 = 25% 回撤
 - en: '![images](images/c07f004.jpg)'
+  id: totrans-159
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c07f004.jpg)'
 - en: '[**FIGURE 7.4**](#figureanchor7-4) Maximum Drawdown Explained'
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 7.4**](#figureanchor7-4) 最大回撤解释'
 - en: In this example, the maximum percentage drawdown occurs during drawdown 2 and
     is 33 percent. It is interesting to note that it is the maximum percentage drawdown,
     not the absolute dollar maximum drawdown (drawdown 3, in dollar amounts, is higher
     than drawdown 2).
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，最大百分比回撤发生在回撤 2 中，为 33%。有趣的是，这是最大百分比回撤，而不是绝对美元最大回撤（回撤 3 的美元金额高于回撤 2）。
 - en: For every simulation run, there will be a corresponding maximum percentage drawdown.
     Over a great number of simulation runs, there will be a distribution of maximum
     drawdowns, varying from 0 percent (no drawdown at all, a hopelessly pie-in-the-sky
@@ -999,22 +1337,30 @@
     in the term “median maximum drawdown,” the word *maximum* refers to the largest
     drawdown in a particular simulation run, and *median* refers to the midpoint of
     maximum drawdowns over a large number of simulation runs.
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于每次模拟运行，都会有一个相应的最大百分比回撤。在大量模拟运行中，会有一个最大回撤的分布，范围从 0%（完全没有回撤，完全不切实际的情况）到 100%（从最高权益点完全崩溃到
+    $0 权益）。这个分布将有一个中位数值，这意味着 50% 的回撤值超过中位数，50% 在其以下。因此，在“中位数最大回撤”这个术语中，*最大*一词指的是特定模拟运行中的最大回撤，而*中位数*指的是大量模拟运行中最大回撤的中点。
 - en: There is no magic in selecting the median maximum drawdown to be the output
     value for the simulation. It could easily be the 30 percent, 60 percent, 90 percent,
     and so on, percentile value, too. I chose the median value just to use for comparison
     purposes to other systems. If I instead wanted a worst-case value, I could have
     used the 95th percentile value of drawdown, meaning only 5 percent of maximum
     drawdowns are worse than this value.
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: 在选择中位数最大回撤作为模拟的输出值时，并没有什么魔法。它也可以轻易是 30%、60%、90% 等百分位值。我选择中位数值只是为了与其他系统进行比较。如果我想要一个最坏情况值，我可以使用回撤的第95百分位值，这意味着只有
+    5% 的最大回撤会比这个值更糟。
 - en: Based on my own personal preference, I generally accept up to a 40 percent median
     maximum drawdown. That is, within 1 year I have a 50 percent chance of reaching
     a 40 percent maximum drawdown. This may be too extreme for most people, but it
     suits my objectives and my personality.
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据我个人的偏好，我一般接受最多 40% 的中位数最大回撤。也就是说，在 1 年内，我有 50% 的机会达到 40% 的最大回撤。这对于大多数人来说可能太极端，但它符合我的目标和个性。
 - en: 'One thing to keep in mind with maximum drawdown is that traders, especially
     new traders, have a tendency to greatly overestimate their ability to withstand
     a drawdown. Based on my conversations with various traders, I have found that
@@ -1025,12 +1371,17 @@
     I have coined a phrase for this phenomenon: “half of what you think it is.” Just
     remember to keep this in mind when you establish your personal maximum allowable
     drawdown.'
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: 需要记住的一件事是，交易者，尤其是新交易者，往往会大大高估自己承受回撤的能力。根据我与不同交易者的对话，我发现交易者通常只能承受他们认为可以承受的最大回撤的一半。例如，如果一个交易者在交易系统之前决定他可以承受
+    30% 的最大回撤，当真实资金面临风险时，他会开始恐慌，可能会在 15% 回撤时退出或更改系统。我为这种现象创造了一个短语：“你认为的只有一半。”当你建立个人最大允许回撤时，请记得牢记这一点。
 - en: Median $ Profit, Median Return
+  id: totrans-166
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 中位数 $ 利润，中位数回报
 - en: As with the drawdown, over a full simulation of 2,500 runs, there will be a
     distribution of results. This distribution is used to calculate the median profit
     and median return. Median $ profit is simply the final equity minus the initial
@@ -1038,123 +1389,182 @@
     level can be calculated. This is the median $ profit. The median return is calculated
     in a similar fashion, although it is the final equity divided by the initial equity,
     in order to get it into percentage terms.
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 与回撤类似，在 2,500 次完整模拟中，结果会有一个分布。这种分布用于计算中位数利润和中位数回报。中位数 $ 利润就是经过一年的交易后，最终股本减去初始股本。在
+    2,500 次运行过程中，可以计算出一个中位数水平。这就是中位数 $ 利润。中位数回报以类似方式计算，但它是最终股本除以初始股本，以百分比形式表示。
 - en: For my personal trading, I have no set goal for median $ profit. I do like to
     see median returns above 50 percent, especially since I stated earlier that I
     would allow up to 40 percent median drawdown values. It would not be wise of me
     to set the return threshold at 20 percent with a 40 percent drawdown. To keep
     me aware of this relationship between risk and reward, I also calculate the return/drawdown
     ratio.
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于我个人的交易，我没有设定中位数 $ 利润的目标。我确实希望看到中位数回报超过 50%，特别是因为我之前提到过我会允许高达 40% 的中位数回撤值。如果我将回报阈值设定为
+    20%，而回撤为 40%，那就不明智。为了让我意识到风险与回报之间的关系，我还会计算回报/回撤比率。
 - en: Return/Drawdown
+  id: totrans-169
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 回报/回撤
 - en: Of all the statistics produced by the Monte Carlo analysis, I feel this number
     is the most important. It is referred to in financial literature as the Calmar
     ratio when it is calculated over a three-year period. Since I am only simulating
     one year of performance, the simulator result is not exactly a Calmar ratio. The
     spreadsheet-produced number is simply the median annual percentage return divided
     by the median maximum percentage drawdown.
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 在蒙特卡洛分析生成的所有统计数据中，我认为这个数字是最重要的。当它在三年期间计算时，金融文献中称其为卡尔马比率。由于我仅模拟一年表现，因此模拟器结果并不完全是卡尔马比率。电子表格生成的数字只是中位数年百分比回报除以中位数最大百分比回撤。
 - en: One way to think about this ratio is “it takes Y risk to make X.” In this case,
     Y is the drawdown, and X is the profit return. Obviously, high values of this
     ratio are better. I generally look for return/drawdown ratios above 2.0, although
     I will accept lower values in special circumstances. In my experience, I find
     that ratios above 2.0 will usually produce acceptable results in the real world
     of trading live.
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: 一种思考这个比率的方法是“需要 Y 的风险来获得 X。”在这种情况下，Y 是回撤，X 是利润回报。显然，这个比率的高值更好。我通常寻找回报/回撤比率在
+    2.0 以上，尽管在特殊情况下我会接受较低的值。在我的经验中，我发现超过 2.0 的比率通常能在实际交易中产生可接受的结果。
 - en: Prob > 0
+  id: totrans-172
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 概率 > 0
 - en: This gives you the probability, expressed as a percentage, that the system will
     make money in the first year of trading. For example, if Prob > 0 equals 89 percent,
     that means you will have an 89 percent chance of showing profit in the first year.
     Of course, this is all based on your historical test results, so if they are not
     accurate, this result will not be either.
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: 这给你提供了系统在第一年交易中盈利的概率，以百分比表示。例如，如果概率 > 0 等于 89%，这意味着你在第一年有 89% 的机会实现盈利。当然，这一切都基于你的历史测试结果，因此如果它们不准确，这个结果也不会准确。
 - en: '![images](images/gbox.jpg) Summary'
+  id: totrans-174
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 摘要'
 - en: Now that we have discussed the performance report, equity curve, and Monte Carlo
     simulator, we can summarize the uses of all the values and threshold values for
     acceptability ([Table 7.1](#table7-1)).
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们已经讨论了性能报告、股本曲线和蒙特卡洛模拟器，我们可以总结所有数值及其可接受性阈值的用途 ([表 7.1](#table7-1))。
 - en: '[**TABLE 7.1**](#tableanchor7-1) Important Performance Parameters'
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**表 7.1**](#tableanchor7-1) 重要性能参数'
 - en: '| Parameter | Source | Utilized During | Threshold |'
+  id: totrans-177
   prefs: []
   type: TYPE_TB
+  zh: '| 参数 | 来源 | 使用期间 | 阈值 |'
 - en: '| --- | --- | --- | --- |'
+  id: totrans-178
   prefs: []
   type: TYPE_TB
+  zh: '| --- | --- | --- | --- |'
 - en: '| Total net profit | Performance report | Initial review | ∼$10K per year per
     contract |'
+  id: totrans-179
   prefs: []
   type: TYPE_TB
+  zh: '| 总净利润 | 性能报告 | 初步审查 | ∼每合同每年$10K |'
 - en: '| Profit factor | Performance report | Initial review | >1.0 OK, >1.5 ideal
     |'
+  id: totrans-180
   prefs: []
   type: TYPE_TB
+  zh: '| 利润因子 | 性能报告 | 初步审查 | >1.0 可接受, >1.5 理想 |'
 - en: '| Average trade net profit | Performance report | Initial review | >$50 per
     contract |'
+  id: totrans-181
   prefs: []
   type: TYPE_TB
+  zh: '| 平均交易净利润 | 性能报告 | 初步审查 | 每合同 >$50 |'
 - en: '| Tharp Expectancy | Performance report | Initial review | >0.10 |'
+  id: totrans-182
   prefs: []
   type: TYPE_TB
+  zh: '| Tharp 期望值 | 性能报告 | 初步审查 | >0.10 |'
 - en: '| Slippage and commission | Performance report | Initial review | Discard if
     $0, otherwise $5 commission 1–2 ticks slippage per round turn |'
+  id: totrans-183
   prefs: []
   type: TYPE_TB
+  zh: '| 滑点和佣金 | 绩效报告 | 初步审查 | 如果$0则丢弃，其他情况下每次交易$5佣金，1-2个点的滑点 |'
 - en: '| Maximum drawdown | Performance report | Initial review | Should be much smaller
     than total net profit |'
+  id: totrans-184
   prefs: []
   type: TYPE_TB
+  zh: '| 最大回撤 | 绩效报告 | 初步审查 | 应远小于总净利润 |'
 - en: '| Equity curve slope | Equity curve | Initial review | Ideally rises at 45-degree
     angle |'
+  id: totrans-185
   prefs: []
   type: TYPE_TB
+  zh: '| 资金曲线斜率 | 资金曲线 | 初步审查 | 理想情况下以45度角上升 |'
 - en: '| Equity curve flat periods | Equity curve | Initial review | Short in duration
     |'
+  id: totrans-186
   prefs: []
   type: TYPE_TB
+  zh: '| 资金曲线平坦期 | 资金曲线 | 初步审查 | 持续时间短 |'
 - en: '| Equity curve drawdown, depth and duration | Equity curve | Initial review
     | Proportional to overall curve |'
+  id: totrans-187
   prefs: []
   type: TYPE_TB
+  zh: '| 资金曲线回撤、深度和持续时间 | 资金曲线 | 初步审查 | 与整体曲线成比例 |'
 - en: '| Equity curve fuzziness | Equity curve | Initial review | Small is ideal |'
+  id: totrans-188
   prefs: []
   type: TYPE_TB
+  zh: '| 资金曲线模糊度 | 资金曲线 | 初步审查 | 较小为佳 |'
 - en: '| Risk of ruin | Monte Carlo simulation | Detailed review | <10% |'
+  id: totrans-189
   prefs: []
   type: TYPE_TB
+  zh: '| 破产风险 | 蒙特卡洛模拟 | 详细审查 | <10% |'
 - en: '| Median maximum drawdown | Monte Carlo simulation | Detailed review | <40%
     |'
+  id: totrans-190
   prefs: []
   type: TYPE_TB
+  zh: '| 中位数最大回撤 | 蒙特卡洛模拟 | 详细审查 | <40% |'
 - en: '| Median % return | Monte Carlo simulation | Detailed review | >40% |'
+  id: totrans-191
   prefs: []
   type: TYPE_TB
+  zh: '| 中位数 % 回报 | 蒙特卡洛模拟 | 详细审查 | >40% |'
 - en: '| Return/drawdown ratio | Monte Carlo simulation | Detailed review | >2.0 |'
+  id: totrans-192
   prefs: []
   type: TYPE_TB
+  zh: '| 回报/回撤比 | 蒙特卡洛模拟 | 详细审查 | >2.0 |'
 - en: CHAPTER 8
+  id: totrans-193
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第8章
 - en: Designing and Developing Systems
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: 设计与开发系统
 - en: With the vast multitude of trading system software packages now available, designing
     your own trading system has never been easier. Of course, the popularity of packages
     such as TradeStation, NinjaTrader, and MultiCharts is both a blessing and a curse.
@@ -1163,16 +1573,21 @@
     in a hardcore programming language (such as C, C++, Visual Basic, or, for those
     older programmers out there, Fortran) now takes minutes or even seconds. Life
     is certainly easier in that respect.
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着现在可用的交易系统软件包数量庞大，设计自己的交易系统从未如此简单。当然，像TradeStation、NinjaTrader和MultiCharts这样的软件包的流行既是福音也是诅咒。这些易于使用的软件程序使将想法转化为策略变得比以往任何时候都更容易。以前在Microsoft
+    Excel或硬核编程语言（如C、C++、Visual Basic，或者对于那些年长程序员而言，Fortran）中完成的工作，现在只需几分钟甚至几秒钟。生活在这方面确实轻松了很多。
 - en: The downside to this modern software—besides the fact that many people are testing
     millions of trading ideas every day and will likely discover any “edge” you find,
     eventually rendering it useless—is that trading software makes it too easy. Simply
     look a chart, insert a strategy—possibly one of the many standard strategies that
     come with the software—and you can quickly analyze and optimize to your heart’s
     content.
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种现代软件的缺点在于——除了许多人每天测试数百万个交易想法，并最终可能发现你找到的任何“优势”，从而使其变得无用——就是交易软件使一切变得太简单。只需查看图表，插入策略——可能是软件附带的许多标准策略之一——你就可以快速分析和优化，尽情享受。
 - en: Unfortunately, it is this simplicity that is also the Achilles’ heel of the
     software. It is nearly impossible to create a viable strategy in the simplistic
     manner that trading software products describe. Taking the easy way may indeed
@@ -1182,8 +1597,10 @@
     that looked like the left side of Figure 5.3, only to turn them loose on the live
     market and experience the right side of the equity curve, which inevitably lost
     money.
+  id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: 不幸的是，正是这种简单性也成为了该软件的致命弱点。以交易软件产品所描述的简单方式创建可行策略几乎是不可能的。走捷径确实可能让你得到一个回测结果看起来很不错的策略，但当策略开始在实盘中运行时，所有统计数据都会变得糟糕。也许这曾经发生在你身上，就像我在早期开发阶段所经历的一样。我擅长生成看起来像图5.3左侧的回测，但将它们放到实时市场上后，却体验到了资金曲线的右侧，最终不可避免地亏损。
 - en: Another drawback to the simplicity of ease of use of these “retail” trading
     software packages is that many professional traders can’t or won’t use them. That
     should give pause to every retail trader who thinks the well-known, commercially
@@ -1196,8 +1613,11 @@
     If something does not provide the capability you need, either from an analysis,
     strategy development, or automation point of view, chances are very good that
     another, likely more expensive, software tool out there does provide it.
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些“零售”交易软件包简单易用的另一个缺点是，许多专业交易者无法或不愿使用它们。这应该让每个认为知名商业软件包是最佳选择的零售交易者有所警惕。事实上，许多专业人士通常使用更复杂的编程和分析工具，如
+    R、Python、Matlab 等等。或者，他们从头开始开发自己的平台，利用互联网上可用的开源代码。我并不是想暗示只有专业软件工具才好；而是想提醒交易者，所有交易软件都有局限性和不足之处。如果某些工具在分析、策略开发或自动化方面无法满足你的需求，那么很有可能另一个可能更昂贵的软件工具能够提供这些功能。
 - en: Over the years, I’ve progressed from evaluating systems by hand to analyzing
     them via spreadsheet, to creating strategy evaluators in Fortran (the engineer
     in me) and Visual Basic, to primarily using TradeStation and NinjaTrader today.
@@ -1216,22 +1636,32 @@
     the goal is to create a back test that will reflect the future performance of
     the strategy. Waterboarding or otherwise torturing your strategy until it gives
     great results is not a successful approach.
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: 多年来，我从手动评估系统逐步转变为通过电子表格分析，再到使用 Fortran（我作为工程师的一面）和 Visual Basic 创建策略评估器，如今主要使用
+    TradeStation 和 NinjaTrader。在这个过程中，我在开发交易系统时犯了许多错误，并不得不以交易亏损的形式支付市场的“学费”。最终，我终于聪明地改进了我的交易系统开发方法。现在，我遵循多步骤的方法，如
+    [图 8.1](#figure8-1) 所示。在每个过程的节点上都有一个“关卡”——策略必须满足的标准，以便进入下一步。对于在过程中失败的策略，可以在适当时对其进行小的调整。然而在大多数情况下，最好将策略放到废弃堆上，然后继续下一想法。为什么？很多时候，当一个策略在第一次过程中不起作用时，对其的更改可能会无意中引入曲线拟合、事后偏见或其他数百万个策略禁忌中的一种。欺骗性的部分在于，回测看起来会更好——可能好得多。但请记住，目标不是创建一个出色的回测；而是创建一个能够反映策略未来表现的回测。通过水刑或其他方式折磨你的策略直到其给出优秀结果并不是成功的方法。
 - en: '![images](images/c08f001.jpg)'
+  id: totrans-200
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c08f001.jpg)'
 - en: '[**FIGURE 8.1**](#figureanchor8-1) My Strategy Development Process'
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 8.1**](#figureanchor8-1) 我的策略开发过程'
 - en: 'Back in the old days, before I developed the process I now use, I did what
     most other people do: I picked a market, selected a bar interval and time period,
     put a few rules in a strategy, and then optimized. Whatever turned out to be best
     is what I started to trade with live. The magic of the computer, with its ability
     to quickly do millions of iterations, uncovered what I was sure would be riches.
     Boy, was I ever disappointed!'
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我开发现在使用的过程之前，早期的日子里，我做的和大多数人一样：我选择一个市场，设定一个时间段和条形间隔，制定一些规则，然后进行优化。无论最终表现最佳的是什么，我就用它开始进行实盘交易。计算机的魔力在于能够迅速进行数百万次迭代，揭示我确信将会带来财富的东西。哦，我真是失望透顶！
 - en: 'Those early failures led me to a more involved, robust, and ideally trouble-free
     development process. I can’t take credit for any of the individual concepts—certainly,
     many traders before me long ago developed most of the steps of my process. One
@@ -1240,8 +1670,11 @@
     Wiley and Sons, 1992). I have simply tailored all I have learned and read to create
     something that feels right to me, and by and large it has yielded good results
     in real time.'
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些早期的失败让我得以建立一个更复杂、稳健，并理想上无故障的开发过程。我不能为任何单独的概念归功——当然，许多交易者在我之前早就开发了我过程中的大部分步骤。关于系统开发的一个经典参考是系统设计的“圣经”：《交易策略的评估与优化》，作者是**罗伯特·帕多**（John
+    Wiley and Sons, 1992）。我只是将我所学到和阅读的内容进行了调整，创造出让我觉得合适的东西，总体上它在实时中取得了不错的结果。
 - en: That is not to say it is an easy process for strategies to pass. When I first
     started using the basic process I use today (I have enhanced and refined it over
     the years, and if anything it is more stringent today than it was a few years
@@ -1249,8 +1682,10 @@
     before I found something worth trading. With time and experience, that number
     has dropped significantly, but coming up with tradable strategies is not an easy
     task.
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: 这并不是说策略通过的过程很简单。当我第一次开始使用我今天所用的基本过程时（多年来我对其进行了增强和完善，如果说有什么不同的话，如今的标准比几年前更严格），我大约需要100到200个交易想法用于进出交易，才找到值得交易的策略。随着时间和经验的积累，这个数字显著减少，但提出可交易策略并不是一件容易的事情。
 - en: 'Traders that are new to using walk-forward analysis, Monte Carlo analysis,
     and the like frequently are frustrated by the difficulty of discovering a strategy.
     My answer to that dilemma usually is: “But that is how it is supposed to be!”
@@ -1259,8 +1694,10 @@
     and researchers out there every day looking for edges, mining data, and running
     tests. I guarantee you that all the easy strategies either no longer work or have
     been long ago discovered.'
+  id: totrans-205
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于新手交易者来说，使用前向分析、蒙特卡洛分析等方法时，经常会因为发现策略的困难而感到沮丧。我对这种困境的回答通常是：“但这就是应该如此！”想一想，如果找到策略是容易的，你不觉得其他人早就找到了并加以利用吗？每天都有成千上万的交易者和研究者在寻找优势、挖掘数据和进行测试。我可以保证，所有简单的策略要么不再有效，要么早已被发现。
 - en: 'My good trader friend, who is a Commodity Trading Advisor (CTA), once told
     me that if he finds one new strategy a year to trade, he is a happy camper. He
     should be, since even one strategy, with proper money management, can make you
@@ -1272,8 +1709,10 @@
     running the machines, monitoring the quality of the product. The output usually
     fills a big garbage bin right outside your factory, unfortunately. But what isn’t
     thrown away as garbage is pure gold: your tradable strategy.'
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: 我的一位好交易朋友，他是一名商品交易顾问（CTA），曾告诉我，如果他每年能找到一个新策略进行交易，他就会感到高兴。他确实应该如此，因为即使一个策略，只要管理得当，也能让你致富。但要每年找到一个策略需要付出大量的努力。我常常把策略开发过程视为一个工厂。在工厂的接收门口是你的交易想法和策略，这些是你不断需要运行工厂的原材料。你的分析工具、回测软件和前向算法就是工厂中的机器。你当然是操作这些机器的熟练工人，监控产品的质量。可惜的是，输出的产品通常装满了工厂外的大垃圾桶。但未被丢弃的垃圾却是纯金：你的可交易策略。
 - en: The factory metaphor is appropriate because strategy development is tough work.
     Factory workers are among the toughest people I know of, and that is how you need
     to be to develop strategies. I am always amazed by educators out there who gloss
@@ -1284,63 +1723,83 @@
     journaling in the world will not save you. As an aside, it is ironic, though,
     that many times “soft” skills such as psychology or journaling will be indispensable
     to a trader with an edge. You really do need both to succeed.
+  id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: 工厂的比喻恰当，因为策略开发是一项艰巨的工作。工厂工人是我认识的最坚韧的人之一，而你需要具备这样的品质来开发策略。我总是对那些忽视策略开发的教育者感到惊讶。他们往往专注于诸如感受的联系或写日记等无意义的事情。别误会——这些方面在交易中有其时间和地点，但不能替代拥有一个具有优势的策略。如果你没有一个好的策略，再多的记录也无法拯救你。不过，讽刺的是，许多时候，心理学或记录等“软”技能对拥有优势的交易者是不可或缺的。成功确实需要两者。
 - en: 'Since strategy development is a factory, you need to keep the factory running
     at all times. Here are some tips that I use or have used to keep things humming
     along:'
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: 既然策略开发是一座工厂，你需要时刻保持工厂运转。以下是一些我使用或曾经使用过的保持运转的建议：
 - en: Any time you see a trading idea that intrigues you, write it down. Keep a list
     of ideas you want to test.
+  id: totrans-209
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 每当你看到一个吸引你的交易想法时，写下来。保持一个想要测试的想法列表。
 - en: Look for ideas anywhere. Trading books, magazines, and Internet forums are all
     good sources of raw ideas. I would not recommend taking an idea as presented and
     trading it exactly as is, though. I’d look to modify it first, and put your own
     unique spin on it.
+  id: totrans-210
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在任何地方寻找想法。交易书籍、杂志和网络论坛都是很好的原始想法来源。不过，我不建议完全照搬一个想法来交易。我会先考虑修改它，并加入你独特的见解。
 - en: No idea is too silly, too stupid, or too dumb. The only dumb ideas are the ones
     you never test.
+  id: totrans-211
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 没有任何想法是太傻、太愚蠢或太笨的。唯一愚蠢的想法是你从未测试过的想法。
 - en: If you make a big mistake in your coding, test it anyway. I’m a big proponent
     of “accidental” mistakes. Maybe they are really serendipitous creations of your
     subconscious. It sounds crazy, I realize, but I have successfully traded, with
     real money, more than one of my programming mistakes.
+  id: totrans-212
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果你在编码中犯了一个大错误，还是要进行测试。我是“意外”错误的大力支持者。也许它们真的是你潜意识的偶然创造。我意识到这听起来很疯狂，但我确实用真实资金成功交易过不止一个我的编程错误。
 - en: If things are going bad, try the opposite. Buy when you think you should sell,
     and vice versa. Maybe something interesting will develop from your opposite idea.
+  id: totrans-213
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果情况不佳，尝试相反的方法。在你认为应该卖出时买入，反之亦然。也许你的相反想法会带来一些有趣的结果。
 - en: If you are a goal setter, try to test one to five strategies per week, at a
     minimum. It may take six months to a year of rigorous testing, but eventually
     you’ll find something.
+  id: totrans-214
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果你设定目标，尽量每周测试一到五个策略，至少。可能需要六个月到一年的严格测试，但最终你会找到一些有效的东西。
 - en: 'If you run out of ideas, pull up random charts and just stare at them. You
     can even add an indicator or two. After staring a while, but not thinking, walk
     away from those charts and revisit them a few days or a week later. Then start
     to think: do you see anything in the relationship of the indicator to the chart
     or in the chart itself? Write down what you see, program it, and test it.'
+  id: totrans-215
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果你没有想法，就随机挑选一些图表盯着看。你甚至可以添加一两个指标。盯着一段时间，但不思考，然后离开这些图表，几天或一周后再回来看。然后开始思考：你在指标与图表的关系或图表本身中看到什么吗？写下你看到的，编程实现并测试。
 - en: Find other traders at roughly the same skill level as you. Offer to swap ideas
     or strategies. Take what these traders have, and then build strategies around
     their idea. I do this frequently with some of my fellow World Cup Championship
     of Futures Trading winners.
+  id: totrans-216
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 找到与你技能水平相近的其他交易者，提出交换想法或策略的建议。借鉴这些交易者的观点，然后围绕他们的想法构建策略。我经常这样做，和一些我的期货交易世界冠军同事们交流。
 - en: Change your criteria. Maybe you are being too restrictive in what you consider
     acceptable. Open the door a bit to strategies that meet most, but not all, of
     your criteria. You can always tighten the criteria once your factory starts producing.
@@ -1349,39 +1808,51 @@
     “passing” systems. Then, tighten the criteria slowly, and ideally by then you’ll
     be able to improve your systems to meet the tighter challenge. Keep repeating
     this, and eventually you’ll have a strategy that meets your original criteria.
+  id: totrans-217
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 改变你的标准。也许你对可接受的标准要求过于严格。稍微放宽一下标准，以便接受那些符合大部分但不是全部标准的策略。你的工厂开始生产后，你可以随时收紧标准。如果你放宽了标准，不一定要交易第一个通过的策略。这样做的真正目的是为了让你在开发“通过”系统时获得更多经验和信心。然后，慢慢收紧标准，理想情况下到那时你将能够改善你的系统以满足更严格的挑战。不断重复这个过程，最终你会有一个符合你原始标准的策略。
 - en: '![images](images/gbox.jpg) Isn’t It All Just Optimizing?'
+  id: totrans-218
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 这难道不只是优化吗？'
 - en: 'After reading the next few chapters about my process, you might wonder to yourself,
     “Isn’t strategy development just all about optimizing?” That is a fair question,
     and in a way, all strategy development is. If you start out with 10 million strategies
     to test, chances are good that at least a few will make it through whatever performance
     hurdles you put in place, and emerge after incubation as a potential winning strategy.
     At that point, a few possibilities emerge regarding the strategy:'
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: 在阅读接下来的几章关于我的过程后，你可能会想，“策略开发难道不就是优化吗？”这是个合理的问题，从某种意义上来说，所有的策略开发确实都是这样。如果你一开始就有一千万个策略待测试，那么至少有几个策略会在你设置的绩效门槛中脱颖而出，经过孵化后成为潜在的获胜策略。在这一点上，关于策略有几种可能性出现：
 - en: You have a true edge, and you will be profitable trading it for at least a little
     while, until the edge disappears.
+  id: totrans-220
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 你确实有一个真正的优势，你将至少在一段时间内通过交易获得盈利，直到这个优势消失。
 - en: You have overoptimized and overfit the strategy to pass all the tests, but you
     have nothing that will really work in real time (this happens a lot to inexperienced
     developers).
+  id: totrans-221
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 你过度优化并过度拟合了策略，以便通过所有测试，但实际上没有任何能够在实时中有效的策略（这在缺乏经验的开发者中很常见）。
 - en: You have tested so many strategies that sooner or later one was bound to pass
     all your tests. You think this strategy has an edge, but it really doesn’t. It
     is just random chance that you tried this particular strategy. Like a blind squirrel
     finding a nut once in a while, you simply got lucky!
+  id: totrans-222
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 你测试了这么多策略，迟早会有一个能够通过你所有的测试。你认为这个策略有优势，但实际上并没有。你只是碰巧尝试了这个特定的策略。就像盲目松鼠偶尔找到一个坚果一样，你只是运气好！
 - en: Obviously, you are looking for strategies that fit into scenario 1\. My process
     will help you avoid strategies in scenario 2 (although you can stretch the guidelines
     I give and end up overoptimizing). Scenario 3 is, in my mind, the scary alternative.
@@ -1389,33 +1860,45 @@
     lucky. You’ll never know for sure if this scenario applies. You could trade successfully
     for years with a lucky strategy, or you could lose money from day 1\. You just
     never know what will happen.
+  id: totrans-223
   prefs: []
   type: TYPE_NORMAL
+  zh: 显然，你在寻找适合情景1的策略。我的过程将帮助你避免情景2中的策略（虽然你可以放宽我给出的指导方针，从而导致过度优化）。在我看来，情景3是可怕的替代选择。在这种情况下，你认为自己有优势，但实际上只是非常幸运。你永远无法确定这个情景是否适用。你可能会用一个幸运策略成功交易多年，或者从第一天起就亏损。你永远不知道会发生什么。
 - en: 'My advice to avoid scenario 3—finding a “lucky” strategy:'
+  id: totrans-224
   prefs: []
   type: TYPE_NORMAL
+  zh: 我的建议是避免情景3——找到一个“幸运”策略：
 - en: Have a logical basis for your strategy. Think about your entries and exits and
     how they can give you an edge. Use your brain to exploit what you see in the market.
+  id: totrans-225
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 为你的策略有一个逻辑基础。考虑一下你的进出场时机，以及它们如何给你带来优势。运用你的头脑来利用你在市场中看到的情况。
 - en: Keep things as simple as possible. Typically, more rules and conditions lead
     to a greater chance that the strategy will not work in the future.
+  id: totrans-226
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 尽量保持事情简单。通常，更多的规则和条件会导致策略在未来不太可能有效。
 - en: Don’t just stick random indicators together until you find something that actually
     works. If you do enough of these tests, you will eventually find something, but
     it is probably just a lucky catch. There are products out there that use this
     technique, and they can be very useful if used correctly. Just don’t expect the
     computer to do all your strategy thinking for you.
+  id: totrans-227
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 不要随意将随机指标拼凑在一起，直到找到真正有效的东西。如果你进行足够多的测试，你最终会找到一些东西，但这可能只是一次幸运的捕获。市场上确实存在使用这种技术的产品，如果使用得当，它们可以非常有用。只是不要指望电脑为你完成所有的策略思考。
 - en: Gently optimize whatever you do.
+  id: totrans-228
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 温和地优化你所做的任何事情。
 - en: Sometimes I liken the strategy development process to fishing. If you want to
     catch a catfish, one way would be to get a huge net, capture thousands of fish,
     and then just pick your catfish out of the pile of fish stuck in the net. That
@@ -1425,11 +1908,15 @@
     is akin to developing an edge and then creating rules to exploit that edge. All
     things being equal, your chances of long-term success are probably better with
     the latter method.
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时候，我将战略开发过程比作钓鱼。如果你想抓住一条鲶鱼，一种方法是用一个巨大的渔网捕捉成千上万条鱼，然后从被网困住的鱼堆中挑出你的鲶鱼。这相当于随机测试一百万种策略，然后找到几种看似不错的。更好的方法可能是考虑鲶鱼喜欢什么，并根据你认为能够钓到鲶鱼的方式来调整你的饵料和钓鱼方法。这类似于发展一个优势，然后制定规则来利用这个优势。其他条件相同的情况下，后者方法可能更有利于你获得长期成功。
 - en: In the chapters that follow, I detail the process I currently use to design
     and develop trading systems. Feel free to follow this exact process yourself,
     or just extract bits and pieces that apply to your situation. In either case,
     your development skills will improve by following what works for me.
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: 在接下来的章节中，我将详细介绍我目前用于设计和开发交易系统的过程。你可以完全按照这个过程进行，也可以提取适合你情况的部分。无论哪种方式，跟随适合我的方法，你的开发技能都将得到提升。
