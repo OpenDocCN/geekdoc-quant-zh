@@ -1,110 +1,161 @@
 - en: Chapter 10 - Let’s Get Started – A Simple Sample Algo
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第十章 - 开始吧 - 一个简单的示例算法
 - en: In this chapter, I am going to walk through a simple algo trading example. 
     Note that my focus here is on using the trading software – regardless of the platform
     you use, you really must be able to do these basic tasks.
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我将演示一个简单的算法交易示例。请注意，我在这里的重点是使用交易软件——无论你使用什么平台，你必须能够完成这些基本任务。
 - en: This example is NOT an example of the proper, or only, steps to develop a solid
     algorithm.  That is beyond the scope of this short book.  But this example will
     at least get you started with the concepts laid out in this book.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个例子并不是开发稳健算法的正确或唯一步骤。这超出了这本简短书籍的范围。但这个例子至少可以帮助你开始理解书中阐述的概念。
 - en: Treat this chapter as an interactive guide.  For each step I take, try to duplicate
     it with your trading software.  Go to the next step only when you have mastered
     the first step.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 将本章视为互动指南。对于我采取的每一步，尽量用你的交易软件复制它。只有在掌握第一步后，才能进行下一步。
 - en: NOTE:  This strategy, as presented, is NOT a tradable strategy – it has weak
     out-of-sample performance.  It is merely an illustrative example.  The steps shown
     do not represent the strategy development process I use for my own trading (my
     trademarked Strategy Factory® process).  The key here is if you feel comfortable
     performing each of the steps I have detailed in this chapter, you have graduated
     from beginner algo level, and you can now be a serious algo strategy developer.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：这个策略如所示，并不是一个可交易策略——它在样本外的表现较弱。它只是一个示例。所展示的步骤并不代表我为自己交易使用的策略开发过程（我注册商标的Strategy
+    Factory®过程）。关键在于，如果你觉得自己能够执行本章中详细说明的每一步，那么你就已经从初学者算法水平毕业，现在可以成为一名严肃的算法策略开发者。
 - en: Call Up A Chart
+  id: totrans-5
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 调出图表
 - en: Let’s start out with a simple task.  Open a daily continuous chart of Soybeans
     from 2007 to today.  Have the start date of January 1, 2007 and end date of December
     31, 2016.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们从一个简单的任务开始。打开2007年至今的大豆日线连续图，起始日期为2007年1月1日，结束日期为2016年12月31日。
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig25.jpg](../images/00026.jpeg)'
+  id: totrans-7
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig25.jpg](../images/00026.jpeg)'
 - en: Figure 25- Can You Create A Chart Like This In Your Platform?
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 25 - 你能在你的平台上创建这样的图表吗？
 - en: Get A Trading Idea
+  id: totrans-9
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 获取一个交易想法
 - en: A simple trading idea is usually the best.  In this case, I’ll create a basic
     breakout system.  The idea is that higher prices can only occur by exceeding previous
     high prices – pretty simple!
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个简单的交易想法通常是最好的。在这个例子中，我将创建一个基本的突破系统。这个想法是，较高的价格只能通过超过以前的高价来实现——非常简单！
 - en: At the close of every bar, if the highest price is the highest closing price
     of the last “xbars,” and the 15 bar ADX (a technical indicator measure of trendiness)
     is above 20, then go long.  Do the opposite for short trades.  I’ll also include
     a simple stop loss, with no profit target (let winning trades run!).  This type
     a system is good for trends, but will likely experience a lot of whipsaw during
     non-trending markets.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 在每根K线的收盘时，如果最高价是过去“xbars”的最高收盘价，并且15根K线的ADX（趋势性技术指标）超过20，则做多。对于做空交易，则执行相反操作。我还会包括一个简单的止损，没有利润目标（让获利交易继续进行！）。这种系统适合趋势，但在非趋势市场中可能会经历很多震荡。
 - en: Program It
+  id: totrans-12
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 编程它
 - en: Program this simple strategy in your own platform.  Code for Tradestation Easy
     Language is below.  Include $5 round turn trade for commissions, and $25 round
     turn for slippage (VERY important!).
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 在你自己的平台上编程这个简单策略。Tradestation Easy Language的代码如下。包括$5的来回交易佣金和$25的滑点（非常重要！）。
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig26.jpg](../images/00027.jpeg)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig26.jpg](../images/00027.jpeg)'
 - en: Figure 26- Code This Strategy In Your Platform
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 26 - 在你的平台上编写这个策略
 - en: Apply It To The Chart
+  id: totrans-16
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 应用到图表上
 - en: Now, use your software to attach/apply that strategy to the previously built
     chart.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，使用你的软件将该策略附加/应用到之前构建的图表上。
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig27.jpg](../images/00028.jpeg)'
+  id: totrans-18
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig27.jpg](../images/00028.jpeg)'
 - en: Figure 27- Can You See Trades On Your Chart?
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 27 - 你能在你的图表上看到交易吗？
 - en: Optimize A Bit
+  id: totrans-20
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 适度优化
 - en: Optimization is a dirty word, but when used in moderation it can be useful. 
     Try to optimize the variable “xbar.”  Use a minimum value of 5 (short term) up
     to 30 (medium term) in steps of 5.  Also, optimize the stop loss, from 500 to
     1500 in steps of 500 dollars.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 优化是一个脏字，但适度使用时可以很有用。尝试优化变量“xbar”。使用最小值5（短期）到30（中期），以5为步长。同时，优化止损，从500到1500，以500美元为步长。
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig28.jpg](../images/00029.jpeg)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig28.jpg](../images/00029.jpeg)'
 - en: Figure 28- Optimization Results
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 图28- 优化结果
 - en: Look At Results
+  id: totrans-24
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 查看结果
 - en: Take a look at the optimization results.  There are 18 iterations (runs), and
     all of them are profitable.  This is generally a good sign.  The dilemma becomes,
     which parameter set to choose?  Highest Net Profit?  Average Return on Account? 
@@ -112,20 +163,28 @@
     prepared for a slew of answers, with pointed and sharp opinions.  The truth is
     there is no “perfect” criteria to use – it is a matter of personal preference
     and experience.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 看一下优化结果。有18次迭代（运行），所有都盈利。这通常是个好兆头。问题是，选择哪个参数集？最高净利润？账户平均回报？最低胜率？在交易论坛中问这个问题，准备接受一系列的回答和尖锐的观点。事实上，没有“完美”的标准可用——这取决于个人偏好和经验。
 - en: The choices for what to pick are pretty much endless, which is one reason I
     follow a set criteria when I do my development, which includes walkfoward testing.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 可选的参数几乎是无穷无尽的，这也是我在开发时遵循一套标准的原因，其中包括前向测试。
 - en: 'For now, let’s assume that we will pick a “median” Net Profit – not the best,
     not the worst.  That is iteration #9, with value of xbar=30, stop=500.'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 目前，我们假设选择一个“中位”净利润——既不是最好也不是最差。也就是第9次迭代，xbar=30，止损=500。
 - en: Run Out-Of-Sample
+  id: totrans-28
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 进行样本外测试
 - en: Once we have our parameters chosen, it is time to run the strategy in 2017 and
     2018.  To do that, we simply change the chart end date, then review the updated
     Performance Report (not shown).  The results, while not horrible (if 2017-8 results
@@ -133,26 +192,40 @@
     not really good enough for trading.  At this point, the strategy should probably
     just be abandoned, since if we test again and again, our out-of-sample results
     are no longer truly out-of-sample.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦选择了参数，就该在2017年和2018年运行策略。为此，我们只需更改图表结束日期，然后查看更新的性能报告（未显示）。结果虽然不差（如果2017-2018年的结果真的很差，说明我们过度优化或曲线拟合过多），但交易的质量并不够好。在此时，策略可能应该放弃，因为如果我们一次又一次地测试，样本外结果就不再是真正的样本外了。
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig29.jpg](../images/00030.jpeg)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig29.jpg](../images/00030.jpeg)'
 - en: Figure 29- Sample Strategy, Out-Of-Sample Results
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 图29- 示例策略，样本外结果
 - en: Automate it
+  id: totrans-32
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 自动化
 - en: 'For this strategy, based on the out-of-sample performance, I would not trade
     it.  But assume you wanted to trade it.  What steps would you take to turn it
     on and automate it?  Here is the step by step process for Tradestation:'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于这个策略，基于样本外表现，我不会进行交易。但假设你想交易它。你会采取什么步骤来启用并自动化它？以下是Tradestation的逐步流程：
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig30.jpg](../images/00031.jpeg)'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig30.jpg](../images/00031.jpeg)'
 - en: Figure 30- Steps To Automate A Strategy, Tradestation
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 图30- 自动化策略的步骤，Tradestation

@@ -1,137 +1,191 @@
 - en: Chapter 11 - Tips For Successful Algo Trading
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第11章 - 成功算法交易的建议
 - en: Successful algo trading, unfortunately, is a lot more than just learning a trading
     platform and a programming language.  After trading algos in the futures markets
     for the last 25 years or so, here are some of my best tips on how to succeed. 
     Hopefully they will help you, like they have helped me!
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 不幸的是，成功的算法交易远不止是学习一个交易平台和一门编程语言。在过去大约25年中从事期货市场的算法交易，这里是我一些关于如何成功的最佳建议。希望它们能像帮助我一样帮助你！
 - en: Have Realistic Expectations
+  id: totrans-2
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 要有现实的期望值
 - en: Nothing is worse than the person with only $500 in his trading account who thinks
     he can make $50,000 per year via algo trading.  Maybe one person in a million
     can do that, but the rest of us will never come close.  Too many people enter
     trading with dollar signs in their eyes.  Most end up blowing out their accounts.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 没有什么比账户中只有$500的人更糟，他认为可以通过算法交易赚取$50,000年收入。也许百万分之一的人能做到，但我们其他人永远无法接近。太多人以美元符号为目标进入交易，最终大多数人都爆仓了。
 - en: Make sure, before you start trading, that you understand the potential rewards,
     but more importantly, the potential risks, inherent in algo trading.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在你开始交易之前，一定要确保你了解算法交易中潜在的回报，更重要的是，潜在的风险。
 - en: Start With Enough Risk Capital
+  id: totrans-5
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 从足够的风险资本开始
 - en: 'The amount of capital you start with can really influence your success rate. 
     Traders with small amounts of capital run a higher risk of ruin, and that is a
     mathematical fact.  In you only have a few thousand (or fewer) dollars in your
     trading account, here is what I recommend:'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 你开始时的资本数量真的会影响你的成功率。资本少的交易者面临更高的破产风险，这是一个数学事实。如果你的交易账户中只有几千（或更少）美元，我建议你：
 - en: Trade with microforex (1/100 of a standard lot) at first.  Don’t worry about
     the money, worry about developing proper trading practices.
+  id: totrans-7
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 刚开始时用微型外汇（标准手的1/100）进行交易。不要担心金钱，担心培养正确的交易习惯。
 - en: Gather more trading capital from outside sources.  Get a second job, for example.
     Try to get your risk capital up to $10,000 or more, as a minimum.  Give yourself
     a fighting chance against the professionals.
+  id: totrans-8
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从外部来源获得更多的交易资本。例如，找一份兼职工作。尽量将你的风险资本提高到至少$10,000或更多，以便给自己一个与专业人士竞争的机会。
 - en: Learn Proper Strategy Development
+  id: totrans-9
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 学习正确的策略开发
 - en: Most people develop strategies incorrectly.  They overoptimize, they curve fit,
     they have too many rules – the list of mistakes goes on and on.  Learn how to
     develop strategies in a proper, time proven, scientific manner.  Earlier, I suggested
     some authors who can help with that.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 大多数人错误地开发策略。他们过度优化，过度拟合，规则太多——错误的清单一长串。学习如何以正确、经过时间检验的科学方式开发策略。之前我提到过一些可以帮助你的人。
 - en: Test With A Lot Of Historical Data
+  id: totrans-11
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 用大量历史数据进行测试
 - en: Running a historical backtest on the last 3 months of market data is not enough. 
     Markets continually change, and your algo strategy needs to be able to survive
     in most or all markets.  So, you should test with as much data as you can.  I
     generally test with about 10 years of data, and in some markets, more than 20
     years.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 仅对过去三个月的市场数据进行历史回测是不够的。市场持续变化，你的算法策略需要能够在大多数或所有市场中生存。因此，你应该尽可能多地测试数据。我一般用大约10年的数据进行测试，在一些市场中，甚至超过20年。
 - en: Testing with many years of history makes finding a strategy much, much harder. 
     But, it is the right thing to do.  You want to find a long term edge, not a short
     term strategy that has worked for only the last 3 months – such “edges” might
     just be due to random luck.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 用多年的历史数据进行测试使得找到一个策略变得更加困难。但这是正确的做法。你想找到一个长期的优势，而不是仅在过去三个月内有效的短期策略——这种“优势”可能仅仅是由于随机运气。
 - en: Be Sure To Include Slippage and Commissions
+  id: totrans-14
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 一定要考虑滑点和佣金
 - en: I am amazed at how many people neglect commissions, and especially slippage,
     when they test a trading algo.  The ironic thing is most strategies will show
     a profit, until you include these two frictional costs.  Once these costs of trading
     are included, most strategies fail to make money.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我对有多少人忽视佣金，尤其是滑点感到惊讶，当他们测试一个交易算法时。讽刺的是，大多数策略在不包括这两项摩擦成本时会显示盈利。一旦考虑到这些交易成本，大多数策略便无法盈利。
 - en: The amount of slippage varies from market to market, but generally, for futures
     markets $25-50 per round trip trade per contract is a good rule of thumb.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 滑点的数量因市场而异，但一般来说，对于期货市场，每轮交易每份合约$25-50是一个不错的经验法则。
 - en: Run Test With Out-Of-Sample Or Walkforward Periods
+  id: totrans-17
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 在样本外或步进测试期进行测试
 - en: The education charlatans like to dazzle prospects with terrific looking equity
     curves.  The key thing is most of those curves are based on optimized, in-sample
     data.  They were optimized, so of course they look good!
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 教育骗子喜欢用看起来很棒的股权曲线来吸引潜在客户。关键是，这些曲线大多基于优化的、样本内的数据。它们经过优化，因此当然看起来很好！
 - en: For any algo you create, make sure you include an out-of-sample verification. 
     Better yet, use the approach I employ, which is walkforward testing.  Walkforward
     is a more complicated test method, but it gives you a lot of out-of-sample results
     to evaluate.  This type of test is much more realistic than an optimized backtest.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于你创建的任何算法，请确保包含一个超出样本的验证。更好的是，使用我采用的方法，即前向测试。前向测试是一种更复杂的测试方法，但它提供了很多超出样本的结果供评估。这种测试比优化的回测更现实。
 - en: Remember That Simple Is Usually Best
+  id: totrans-20
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 记住，简单通常是最好的。
 - en: I remember a few years ago a Tradestation user was asking for advice for a new
     trading computer.  He was lamenting the fact that his strategy took all weekend
     to optimize!  He had about 300 variables he was optimizing, and he wanted to do
     it more quickly.  I suggested instead of a new computer, maybe what he needed
     was a simpler strategy to test.  He disregarded and mocked my advice, and soon
     disappeared from the trading community.  Coincidence?
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 我记得几年前，有个 Tradestation 用户在寻求新交易电脑的建议。他抱怨他的策略需要整个周末才能优化！他有大约 300 个变量需要优化，并希望能更快完成。我建议他，或许他需要的是一个更简单的策略进行测试，而不是一台新电脑。他无视并嘲笑了我的建议，随后很快就消失在交易社区。巧合吗？
 - en: The fact is that simpler strategies tend to work better on unseen, future market
     data.  Anyone can create enough rules to perfectly fit history, but these strategies
     almost never work in the future.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 事实是，更简单的策略在未见过的未来市场数据上往往表现更好。任何人都可以创造足够的规则来完美地适应历史，但这些策略几乎从未在未来奏效。
 - en: Keep your strategies simple.  They won’t look as good in backtest, but is that
     really the objective?  Some misguided traders think it is, and they are wrong.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 保持你的策略简单。它们在回测中可能看起来不那么好，但这真的就是目标吗？一些误入歧途的交易者认为是，而他们错了。
 - en: Know When To Quit
+  id: totrans-24
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 知道何时退出。
 - en: You will struggle with algo trading, we all have and will continue to.  Trading
     is hard.  So, you have to know when to change your approach, change your strategies,
     or just quit trading altogether.  Have a plan for all the bad things that can
     happen.  Then, follow that plan.  Hopefully you’ll never need it, but knowing
     when to quit is a requirement in this field.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 你在算法交易上会遇到困难，我们都经历过，并将继续面临。交易是困难的。因此，你必须知道何时改变你的方法、改变你的策略，或者干脆放弃交易。要为所有可能发生的坏事制定计划。然后，按照那个计划执行。希望你永远用不到它，但在这个领域，知道何时退出是必需的。
 - en: I have heard too many sad stories of broken marriages, lost retirement accounts
     and financial struggles as a result of losing trading.  Many of these may have
     been avoided if the person quit before things got too bad.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 我听说过太多因亏损交易而导致破裂的婚姻、失去的退休账户和经济困难的悲惨故事。如果这些人能在情况变得太糟之前退出，很多事情可能是可以避免的。

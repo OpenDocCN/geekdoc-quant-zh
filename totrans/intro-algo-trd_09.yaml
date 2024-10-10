@@ -1,148 +1,204 @@
 - en: Chapter 9 - Trading Platform – Next Steps
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第9章 - 交易平台 - 下一步
 - en: Once you have a trading platform selected, it is time to get to work!  Before
     you can start creating and trading your algos, there are some specific platform
     tasks you need to master.  Here is how I would do it, in the order I would recommend
     for you.
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦你选择了交易平台，就该开始工作了！在你可以开始创建和交易算法之前，还有一些特定的平台任务需要掌握。以下是我推荐的顺序。
 - en: Learn The “Help” Sources Of Your Platform
+  id: totrans-2
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 了解你平台的“帮助”来源
 - en: Starting out with a new trading platform, whichever one it is, will certainly
     be a daunting task.  You will need help.  Luckily, if you choose one of the top
     platforms detailed in the previous chapter, you will find help in all sorts of
     places.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 刚开始使用新的交易平台，无论是哪一个，都会是一项令人生畏的任务。你需要帮助。幸运的是，如果你选择了前一章中详细介绍的顶级平台，你会在各个地方找到帮助。
 - en: The first source of help should be the software vendor itself.   They have trained
     people to answer most questions, especially for beginners.  As you progress in
     your knowledge, though, you’ll realize that other users are sometimes a better
     source of information.  In the beginning, though, the vendor or their online help
     files and videos should be a first resort.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一个帮助来源应该是软件供应商本身。他们有经过培训的人可以回答大多数问题，特别是对于初学者。然而，随着知识的增长，你会意识到其他用户有时是更好的信息来源。不过，在开始时，供应商或他们的在线帮助文件和视频应该是首选。
 - en: Once important thing to remember with vendor help – if it is a trade specific
     issue (missed order, bad fill, etc) you should always call the Trade Desk at your
     broker first.  They are always the best source of information for specific trade
     details of your account.  They might refer you to technical support, but when
     I have an issue and am unsure of my current position, I first call the Trade Desk.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 记住与供应商帮助的一个重要事项——如果是特定交易的问题（如未成交的订单、错误的成交等），你应该首先拨打经纪商的交易台。他们总是你账户具体交易详情的最佳信息来源。他们可能会把你转给技术支持，但当我遇到问题且不确定自己当前状态时，我首先会拨打交易台。
 - en: Sometimes the vendor can’t answer your question, or can’t spend the time with
     you that you need.  Luckily, there are 3rd party sources of technical assistance. 
     For example, YouTube has a ton of useful videos for Tradestation.  Many of these
     outside sources provide free information, along with paid services.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时候供应商无法回答你的问题，或者无法花时间与你解决问题。幸运的是，还有第三方技术支持来源。例如，YouTube上有大量关于Tradestation的有用视频。这些外部来源提供免费的信息，以及付费服务。
 - en: I think the true experts are the software users who are also traders.  Make
     sure you know how to contact these people.  Usually they can be found on trading
     forums like futures.io or elitetrader.com.  Also, every software vendor has a
     user forum, where the best answers might come from experienced users and traders. 
     I use Tradestation’s user forum quite a bit, and I still ask questions to this
     day, some 14 years after I started using the software.  The learning never ends!
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我认为真正的专家是那些也是交易者的软件用户。确保你知道如何联系这些人。通常，他们可以在像futures.io或elitetrader.com这样的交易论坛找到。此外，每个软件供应商都有用户论坛，最佳答案可能来自有经验的用户和交易者。我相当频繁地使用Tradestation的用户论坛，至今仍会提问，尽管我已经使用这个软件14年了。学习是无止境的！
 - en: Learn The Basics Of Your Platform
+  id: totrans-8
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 了解你平台的基础知识
 - en: Don’t make the mistake of trying to create an algo trading strategy the first
     day you start up your new trading software.  Take some time, learn the basics,
     get a feel for how things are set up and how they work.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 不要在启动新交易软件的第一天就试图创建算法交易策略。花一些时间，学习基础知识，了解事物是如何设置和工作的。
 - en: Be a child with the software.  Have you ever watched a child interact with new
     software?  I have with my three kids, and I can say, they are absolutely fearless. 
     They will click on anything and everything, knowing they can usually shut the
     software down and start it up again fresh.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 对待软件要像个孩子。你有没有看过孩子如何与新软件互动？我和我的三个孩子一起看过，我可以说，他们绝对无所畏惧。他们会随意点击任何东西，知道通常可以关闭软件并重新启动。
 - en: Be a kid – play with your new toy!  Pull up a chart, throw some indicators on
     it, apply some canned strategies to the chart, and take a look at the resulting
     performance report.  Explore and play – you will learn more quickly that way.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 做个孩子——和你新玩具一起玩吧！拉起图表，添加一些指标，应用一些现成策略到图表上，看看结果报告。探索和玩耍——你会更快地学习。
 - en: Learn The Basics Of Programming
+  id: totrans-12
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 学习编程基础
 - en: Since most of your algo development will eventually consist of building strategies,
     learn how to do it!  Start by learning the basic structure of the programming
     language – if…then statements, buy and sell order syntax, etc.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于大部分算法开发最终将包括构建策略，所以要学习如何做到这一点！首先学习编程语言的基本结构——if…then语句、买卖订单语法等。
 - en: Each platform vendor likely has free manuals, reference guides, videos, etc. 
     Most also have paid services, like introductory programming “boot camps.”  There
     are also plenty of third party companies with both free and paid programming tips.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 每个平台供应商可能都有免费的手册、参考指南、视频等。大多数还提供付费服务，比如入门编程“训练营”。此外，还有很多第三方公司提供免费的和付费的编程技巧。
 - en: But even with a comprehensive programming manual at your side, nothing can take
     the place of actually programming and practicing on your own.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 但即使有一本全面的编程手册在手，实际上编程和自己练习是没有什么可以替代的。
 - en: Take a look at any strategies supplied with the software.  Figure out what each
     line does, and how it is written.  Make a copy of the strategy, and then modify
     the copy.  Make small changes at first, and then progressively attempt more complicated
     changes.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 查看软件中提供的任何策略。弄清楚每一行的作用以及它是如何编写的。复制该策略，然后修改副本。最初做小的改变，然后逐步尝试更复杂的更改。
 - en: Eventually, you will feel confident enough to build your own strategy from scratch. 
     That might take a few days, weeks or even months, but that is where you eventually
     want to be – where you can easily modify existing strategies, and create your
     own new strategies.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 最终，你会感到足够自信，从零开始构建自己的策略。这可能需要几天、几周甚至几个月，但这正是你希望达到的地方——能够轻松修改现有策略，创造自己的新策略。
 - en: Learn The Basics of Strategy Development and Evaluation
+  id: totrans-18
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 学习策略开发和评估的基础知识
 - en: One major topic your software will not help you with is developing strategies
     in a proper manner.  It is not as simple as applying a strategy to a chart, running
     a lot of optimization and then live trading the best overall optimized result. 
     In fact, that is the exact WRONG thing to do, even though the software makes it
     so easy.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 你的软件不会帮助你处理的一个主要话题是如何正确地开发策略。它并不像把策略应用到图表上，运行大量优化，然后实时交易最佳的整体优化结果那么简单。事实上，这正是错误的做法，即使软件让这看起来非常简单。
 - en: Correct strategy development and evaluation is a big topic, and there are very
     good books out there on proper strategy development.  Books by Pardo, Tomasini
     and Davey are among the best for learning proper strategy development processes,
     in my opinion.  I recommend you get a couple or all of these books, and incorporate
     their lessons into how you develop strategies.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 正确的策略开发和评估是一个重要话题，关于适当策略开发有很多优秀的书籍。在我看来，Pardo、Tomasini和Davey的书是学习正确策略开发过程的最佳书籍。我建议你获取几本或所有这些书籍，并将它们的经验融入到你策略的开发中。
 - en: Put it all together – Start with a chart, End with a strategy
+  id: totrans-21
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 整合一切——从图表开始，以策略结束
 - en: Follow the steps in the next chapter, where I create a simple strategy.  Although
     I use Tradestation for my example, you should be able to replicate each of the
     steps in your platform.  Once you can easily do all these steps, you are in good
     position to begin creating your own trading algos.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 按照下一章中的步骤，我会创建一个简单的策略。虽然我以Tradestation作为例子，但你应该能够在你的平台上复制每一个步骤。一旦你可以轻松完成所有这些步骤，你就处于一个良好的位置，可以开始创建自己的交易算法。
 - en: Learn How To “Trick” Your Platform
+  id: totrans-23
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 学习如何“欺骗”你的平台
 - en: The last task in learning your software is learning how to fool it.  Almost
     every trading platform can be “gamed.”  That is, there are coding tricks and software
     settings that produce phenomenal equity curves.  An example is below.  I created
     this strategy in 1 minute.  Looks perfect to trade, doesn’t it?  One slight problem,
     though – it is fake, and the results are based on exploiting the trading software
     backtest engine.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 学习软件的最后一项任务是学习如何“欺骗”它。几乎每个交易平台都可以被“游戏化”。也就是说，有一些编码技巧和软件设置可以产生惊人的收益曲线。下面是一个例子。我在1分钟内创建了这个策略。看起来交易完美，不是吗？不过，有一个小问题——它是假的，结果是基于利用交易软件回测引擎的。
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig24.jpg](../images/00025.jpeg)'
+  id: totrans-25
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig24.jpg](../images/00025.jpeg)'
 - en: Figure 24- Can You Create A Fake Algo Like This With Your Software?
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 图24- 你能用你的软件创建这样的假算法吗？
 - en: Once you know a few ways to create fake, but perfect, looking equity curves,
     I’d say you know your software well enough.  At that point, you know you are on
     your way to being an expert!
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦你知道几种创造假冒但完美的权益曲线的方法，我可以说你对自己的软件了解得足够深刻。此时，你就知道自己正在成为专家的路上！
