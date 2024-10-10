@@ -1,9 +1,13 @@
 - en: Chapter 15\. Algorithmic Options and Derivatives Trading
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第15章：算法期权与衍生品交易
 - en: Basics of Options and Derivatives
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权与衍生品基础知识
 - en: Laying the foundation for the sophisticated world of Options and Derivatives,
     it is essential to comprehend the basics of these financial products. Incorporating
     them into your tool belt can provide you with strategic diversification, hedge
@@ -11,82 +15,116 @@
     trading amplifies these advantages by automating the process, optimizing strategies
     in real-time, and facilitating entry into these markets with higher precision
     and lower latency.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了为复杂的期权和衍生品世界奠定基础，理解这些金融产品的基本知识至关重要。将它们纳入你的工具箱，可以为你提供战略性多样化，对潜在风险进行对冲，并带来可观利润的机会。算法交易通过自动化流程、实时优化策略，并以更高的精确度和更低的延迟便于进入这些市场，从而增强了这些优势。
 - en: Options and derivatives are financial instruments that derive their value from
     an underlying asset. These underlying assets could be a variety of entities ranging
     from stocks, bonds, commodities to currencies, interest rates, or indices. Primarily,
     these instruments are utilized for hedging risks, speculating on future prices,
     and getting access to additional assets or leverage.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权和衍生品是从基础资产中衍生出其价值的金融工具。这些基础资产可以是多种实体，包括股票、债券、商品、货币、利率或指数。主要来说，这些工具用于对冲风险、对未来价格进行投机以及获取额外资产或杠杆。
 - en: Options -
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权 -
 - en: An option is a derivative contract that provides the holder the right, but not
     the obligation, to buy or sell a specific asset (underlying asset) at a predetermined
     price (strike price) on or before a specific date (expiration date).
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权是一种衍生合同，赋予持有者在特定日期（到期日）之前以预定价格（行权价）买入或卖出特定资产（基础资产）的权利，但不承担义务。
 - en: 'The two main types of options are:'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 主要有两种类型的期权：
 - en: '1\. Call Option: It gives the holder the right to buy the underlying asset
     at the strike price before the expiration date.'
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 认购期权：它赋予持有者在到期日前以行权价购买基础资产的权利。
 - en: '[PRE0]'
+  id: totrans-8
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: '2\. Put Option: It grants the holder the right to sell the underlying asset
     at the strike price before the expiration date.'
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 认沽期权：它赋予持有者在到期日前以行权价出售基础资产的权利。
 - en: Derivatives -
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 衍生品 -
 - en: Broadly speaking, derivatives are financial contracts whose value is linked
     to the price of an underlying asset. They are complex instruments used for various
     purposes including hedging, gaining access to additional assets or markets, and
     benefiting from a particular price movement.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 广义上说，衍生品是其价值与基础资产价格相关的金融合同。它们是复杂的工具，用于多种目的，包括对冲、获取额外资产或市场，以及从特定价格变动中获益。
 - en: 'Major categories of derivatives include:'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 衍生品的主要类别包括：
 - en: '1\. Forwards and Futures: These are contractual agreements to buy or sell a
     particular asset at a predetermined price at a specified future date. Futures
     are standardized contracts traded on an exchange whereas forwards are private
     agreements between two parties.'
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 远期合约和期货：这些是关于在指定未来日期以预定价格买入或卖出特定资产的合同协议。期货是在交易所交易的标准化合同，而远期合约是两方之间的私人协议。
 - en: '2\. Swaps: Swaps are agreements between two parties to exchange financial instruments
     or cash flows of one party for those of the other party. Common types include
     interest rate swaps and currency swaps.'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 互换：互换是两方之间交换金融工具或一方现金流的协议。常见类型包括利率互换和货币互换。
 - en: '3\. Credit Derivatives: Instruments such as credit default swaps (CDS) that
     aim to transfer the credit exposure of fixed income products between two or more
     parties.'
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 信用衍生品：如信用违约互换（CDS）等工具，旨在在两个或多个方之间转移固定收益产品的信用风险敞口。
 - en: In the exciting world of options and derivatives trading, algorithmic methodologies
     can provide daunting advantages. Through automation, traders can monitor numerous
     assets simultaneously, manage multiple positions with ease, and adjust strategies
     in a split second.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 在令人兴奋的期权与衍生品交易世界中，算法方法可以提供巨大的优势。通过自动化，交易者可以同时监控众多资产，轻松管理多个头寸，并在瞬间调整策略。
 - en: However, it's important to remember that while options and derivatives can offer
     substantial rewards, they can also present significant risks, including the loss
     of the entire investment. Hence, understanding the fundamental mechanisms of these
     instruments and cautiously managing potential risks, especially when integrating
     them into algorithmic trading systems, are essential prerequisites for any serious
     market participant.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，重要的是要记住，尽管期权和衍生品可以提供可观的收益，但它们也可能带来重大风险，包括损失全部投资。因此，理解这些工具的基本机制并谨慎管理潜在风险，尤其是在将其整合到算法交易系统中，是任何认真市场参与者的基本前提。
 - en: Option Pricing Models
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权定价模型
 - en: Stepping deeper into the universe of options trading, it is paramount to comprehend
     how an option's value or price is determined. Fundamentally, an option's price
     is influenced by a multitude of factors such as the market price of the underlying
@@ -94,16 +132,22 @@
     without risk (commonly a risk-free interest rate), and market volatility. The
     amalgamation of these variables into robust mathematical models generate theoretical
     prices for options, providing traders with essential inputs for their strategies.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 更深入地探索期权交易的宇宙，理解期权的价值或价格是如何确定的至关重要。从根本上说，期权的价格受到多种因素的影响，如基础资产的市场价格、期权的执行价格、到期剩余时间、无风险回报率（通常是无风险利率）以及市场波动性。这些变量的结合形成稳健的数学模型，生成期权的理论价格，为交易者提供其策略所需的重要输入。
 - en: While there are several models available, the most prominent ones are the Black-Scholes
     Model and the Binomial Option Pricing Model. Let's dissect these pricing models
     and understand how to implement them using Python.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然有几种可用模型，但最突出的模型是Black-Scholes模型和二项式期权定价模型。让我们分析这些定价模型，并理解如何使用Python实现它们。
 - en: Black-Scholes Model -
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: Black-Scholes模型 -
 - en: The Black-Scholes Model, introduced by economists Fisher Black and Myron Scholes
     in 1973, is the cornerstone of modern financial theory. It is used to calculate
     a theoretical call and put price using the five key determinants mentioned above.
@@ -111,73 +155,111 @@
     and that the risk-free rate and volatility of the underlying are known and constant.
     Notwithstanding these assumptions can be limiting in real-world scenarios, the
     model has been widely used due to its simplicity and speed in computation.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: Black-Scholes模型由经济学家费舍尔·布莱克和迈伦·斯科尔斯于1973年提出，是现代金融理论的基石。该模型用于根据上述五个关键因素计算理论的看涨和看跌价格。该模型假设金融市场是有效的，收益是正态分布的，并且无风险利率和基础资产的波动性是已知且恒定的。尽管这些假设在现实场景中可能是有限的，但由于其简单性和计算速度，该模型被广泛使用。
 - en: 'Black-Scholes formula for call and put options are:'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: Black-Scholes公式用于看涨期权和看跌期权为：
 - en: Call = S0 * N(d1) - X * e^-rt * N(d2)
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 看涨期权 = S0 * N(d1) - X * e^-rt * N(d2)
 - en: Put  = X * e^-rt * N(-d2) - S0 * N(-d1)
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 看跌期权 = X * e^-rt * N(-d2) - S0 * N(-d1)
 - en: 'Where:'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 其中：
 - en: '- N is a standard normal cumulative distribution function'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: '- N是标准正态累积分布函数'
 - en: '- S0 is the underlying stock price'
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: '- S0是基础股票价格'
 - en: '- X is the strike price'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: '- X是执行价格'
 - en: '- r is the free risk rate'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: '- r是无风险利率'
 - en: '- t is the time till expiration'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: '- t是到期时间'
 - en: '- sigma is the standard deviation of the underlying stock'
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: '- sigma是基础股票的标准差'
 - en: Now, let's look at a python codes for the Black-Scholes call and put price calculation.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，让我们看看用于计算Black-Scholes看涨期权和看跌期权价格的python代码。
 - en: '[PRE1]'
+  id: totrans-34
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: Binomial Option Pricing Model -
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 二项式期权定价模型 -
 - en: Another widely used model in option pricing is the Binomial Option Pricing Model.
     Developed by Cox, Ross, and Rubinstein in 1979, it provides a numerical method
     to value American options that can be exercised at any time before expiration.
     The model is termed 'binomial' because it assumes that the underlying asset can
     only have two possible prices in the next time period - an up price and a down
     price.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一种广泛使用的期权定价模型是二项式期权定价模型。该模型由考克斯、罗斯和鲁宾斯坦于1979年开发，为在到期前可随时行使的美式期权提供了数值方法。之所以称为“二项式”，是因为它假设基础资产在下一个时间段只能有两个可能的价格——上涨价格和下跌价格。
 - en: Although the math behind this model is a bit more intricate, its implementation
     in python is quite straightforward. Let's take a look at that.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管该模型背后的数学略显复杂，但其在python中的实现相当简单。让我们来看看。
 - en: '[PRE2]'
+  id: totrans-38
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: It's crucial to understand that while mathematical models like the Black-Scholes
     and Binomial Model can yield theoretical prices for options, they cannot eliminate
     the inherent risk associated with trading these instruments. They serve as helpful
     tools in constructing profitable strategies when combined with a solid comprehension
     of options and derivatives, disciplined risk management, and continuous learning.
     In the next , we'll delve deeper into strategies for options trading.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 理解数学模型如布莱克-舒尔斯模型和二项式模型能够为期权提供理论价格这一点至关重要，但它们无法消除与交易这些工具相关的固有风险。它们在与对期权和衍生品的扎实理解、严格的风险管理和持续学习相结合时，是构建盈利策略的有用工具。在接下来的内容中，我们将深入探讨期权交易策略。
 - en: Strategies for Options Trading
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权交易策略
 - en: Strategizing is an essential aspect of options trading, one that separates fledgling
     traders from seasoned veterans. While a basic understanding of options and pricing
     models forms the bedrock, strategy formulation opens up numerous avenues, each
@@ -186,45 +268,66 @@
     in the world of options trading. The strategies will range from simple to complex,
     each with its own merits and risks. So, grab your Python IDE, uncap your finance
     knowledge ink, and let's set forth.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 策略制定是期权交易的重要方面，它将新手交易者与经验丰富的老手区分开来。虽然对期权和定价模型的基本理解构成了基础，但策略制定开辟了许多途径，每条路径都提供了在不同市场条件下获利的众多机会。在本部分中，我们将深入探讨交易者在期权交易世界中采用的一些最常见的策略。这些策略从简单到复杂，各有优缺点和风险。所以，拿起你的Python
+    IDE，准备好你的金融知识，让我们出发吧。
 - en: Covered Call -
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 覆盖看涨期权 -
 - en: The covered call strategy is implemented when a trader holds a neutral to a
     slightly bullish outlook on the underlying asset. In this, the trader sells call
     options for stocks they already own. This means if the stock does not increase
     much in price before the expiration of the contract, the trader keeps the premium
     and the stock. On the flip side, if the stock's price escalates steeply, their
     gains are capped at the strike price of the sold call options.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 当交易者对基础资产持中性或略微看涨的观点时，会实施覆盖看涨期权策略。在这种情况下，交易者会出售他们已持有股票的看涨期权。这意味着如果股票在合约到期前价格没有大幅上涨，交易者将保留溢价和股票。反之，如果股票价格急剧上升，他们的收益将被出售的看涨期权的执行价格限制。
 - en: 'In Python, strategizing a covered call can be implemented as follows:'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Python中，覆盖看涨期权的策略可以如下实现：
 - en: '[PRE3]'
+  id: totrans-45
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: Protective Put -
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 保护性看跌期权 -
 - en: The protective put strategy, also known as a synthetic long call, acts as an
     insurance policy against a possible plunge in the price of the underlying asset.
     Here, a trader buys put options for an asset they already own. If the asset's
     price falls, the increase in the put options' value will offset the loss. Conversely,
     if the price rises, the trader benefits from the asset's appreciation, although
     decreased by the cost of put options.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 保护性看跌期权策略，也称为合成长期看涨期权，充当对基础资产价格可能下跌的保险。在这里，交易者为他们已拥有的资产购买看跌期权。如果资产价格下跌，看跌期权价值的增加将抵消损失。相反，如果价格上涨，交易者将受益于资产的增值，尽管会因看跌期权的成本而减少。
 - en: 'Here''s an example of how one might implement this in Python:'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是如何在Python中实现的一个示例：
 - en: '[PRE4]'
+  id: totrans-49
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: Straddles and Strangles -
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 跨式和宽跨式 -
 - en: A trader employs straddle or strangle strategies when they expect high volatility
     in the price of the underlying asset but are unsure of the direction. Both strategies
     involve buying or selling a combination of put and call options with the same
@@ -232,64 +335,90 @@
     price for both options, making it costlier but also providing potentially unlimited
     profits. In contrast, a strangle has a lower call strike price and a higher put
     strike price, thus being more cost-effective but offering limited profit potential.
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 当交易者预期基础资产价格有高波动但不确定方向时，会采用跨式或宽跨式策略。这两种策略都涉及购买或出售具有相同到期日但不同执行价格的看跌和看涨期权组合。跨式的两个期权具有相同的执行价格，成本较高但潜在利润无限。而宽跨式则有较低的看涨执行价格和较高的看跌执行价格，因此更具成本效益，但提供有限的利润潜力。
 - en: '[PRE5]'
+  id: totrans-52
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: Risk Management in Options
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权风险管理
 - en: In the thrilling, high-stakes game of options trading, the players are nothing
     if not daring. However, even the most skilled and confident trader knows the importance
     of risk management. It is the backbone that ensures survival during turbulent
     times and drives sustainability in long-term success. The following  discusses
     some key perspectives and measures for managing risk in options trading and also
     includes Python code snippets to explain key concepts.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 在激动人心、高风险的期权交易游戏中，参与者无疑是大胆的。然而，即使是最熟练和自信的交易者也明白风险管理的重要性。它是确保在动荡时期生存的支柱，并推动长期成功的可持续性。以下内容讨论了一些管理期权交易风险的关键视角和措施，并包含Python代码片段以解释关键概念。
 - en: Establishing a Risk Management Plan - An integral part of a trader's toolkit,
     a well-documented risk management plan outlines the criteria for trade entries
     and exits, the amount of money risked on each trade (usually a fixed percentage
     of the total trading capital), and the maximum allowed drawdown. Additionally,
     a solid plan considers the different possible outcomes of a trade and prepares
     for each scenario.
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 制定风险管理计划 - 风险管理计划是交易者工具箱中不可或缺的一部分，详尽的文档规定了交易进出场的标准、每笔交易风险的资金金额（通常是总交易资本的固定百分比）以及允许的最大回撤。此外，完善的计划考虑了交易的不同可能结果，并为每种情境做好准备。
 - en: '[PRE6]'
+  id: totrans-56
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: Hedging - This strategy is akin to buying insurance; it protects against adverse
     price movements of the underlying asset by holding offsetting positions. In options
     trading, a range of hedging strategies can be employed, such as collar, covered
     call, protective put, and more. Effective hedging limits potential loss but can
     also curtail potential gains.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 对冲 - 这种策略类似于购买保险；通过持有抵消头寸来保护免受基础资产不利价格波动的影响。在期权交易中，可以采用一系列对冲策略，例如领口、备兑开仓、保护性认沽等。有效的对冲限制潜在损失，但也可能削弱潜在收益。
 - en: '[PRE7]'
+  id: totrans-58
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE7]'
 - en: Diversification - This classic risk-management technique involves spreading
     investment across various financial instruments or asset classes to reduce exposure
     to any one particular asset or risk. In the context of options trading, diversification
     can occur across strike prices, expiry dates, and underlying assets.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 多样化 - 这种经典的风险管理技巧涉及将投资分散到不同的金融工具或资产类别中，以减少对特定资产或风险的暴露。在期权交易的背景下，多样化可以发生在行使价格、到期日和基础资产之间。
 - en: '[PRE8]'
+  id: totrans-60
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE8]'
 - en: Position Sizing - This involves deciding the amount of capital to allocate to
     a specific trade. The size of each trade should be proportionate to the trader's
     risk tolerance and the total trading capital. The aim is to avoid any single trade
     causing significant damage to the trading capital.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 头寸规模 - 这涉及决定分配给特定交易的资本量。每笔交易的规模应与交易者的风险承受能力和总交易资本成比例。目的是避免任何单笔交易对交易资本造成重大损失。
 - en: '[PRE9]'
+  id: totrans-62
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE9]'
 - en: Hedging Strategies Using Options
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用期权的对冲策略
 - en: 'Embracing risk is a constant in the realm of investment. Every position you
     take, every strategy you devise, and every trade you execute carries an element
     of risk. Options traders, despite their sophistication and market savviness, are
@@ -297,8 +426,10 @@
     sets them apart: the power of hedging. In this , we delve into the details of
     various hedging strategies employed by options traders to manage and mitigate
     risk.'
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 拥抱风险是投资领域中的常态。你所采取的每个仓位、设计的每个策略以及执行的每笔交易都包含风险因素。尽管期权交易者具备一定的复杂性和市场敏锐度，但他们并不例外。然而，他们在工具箱中拥有一项武器，使他们与众不同：对冲的力量。在这里，我们将深入探讨期权交易者用以管理和降低风险的各种对冲策略的细节。
 - en: The Essence of Hedging in Options - Hedging in options is essentially about
     protecting your assets. It's an approach that helps traders insulate their portfolios
     against negative price movements in the underlying assets. This is done by taking
@@ -306,62 +437,86 @@
     price you pay for this protection is the premium for the option contract. The
     inevitable trade-off is that hedging will also curtail your potential profits.
     However, from a risk management perspective, it's a fair and necessary compromise.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权对冲的本质 - 期权对冲本质上是保护你的资产。这是一种帮助交易者隔离其投资组合免受基础资产负面价格波动影响的方法。通过采取抵消潜在损失的头寸来实现这一点，类似于保险的运作。你为这种保护支付的价格是期权合约的权利金。不可避免的权衡是，对冲也会限制你的潜在利润。然而，从风险管理的角度来看，这是一个公平且必要的妥协。
 - en: Covered Call Strategy - This strategy is implemented by writing, or selling,
     call options on securities that are owned in the portfolio. While the income from
     selling the call option provides a buffer against moderate drops in the stock's
     price, the trade-off is that the maximum possible profit is capped. Here's a Python
     example of executing a covered call strategy.
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 有担保看涨策略 - 该策略通过在投资组合中持有的证券上书写或出售看涨期权来实现。出售看涨期权所获得的收入为股票价格的适度下跌提供了缓冲，但权衡之下，最大可能利润受到限制。以下是执行有担保看涨策略的Python示例。
 - en: '[PRE10]'
+  id: totrans-67
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE10]'
 - en: 'Protective Put Strategy - This strategy works by purchasing put options for
     an equivalent number of shares owned. The holder of the put option has the right
     to sell the asset at the strike price, thereby serving as an insurance policy
     should the stock price fall. The Python pseudocode below depicts this strategy:'
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 保护性认沽策略 - 该策略通过购买与所持股票数量相等的认沽期权来运作。认沽期权的持有人有权以执行价格出售资产，从而在股票价格下跌时充当保险。下面的Python伪代码描述了这一策略：
 - en: '[PRE11]'
+  id: totrans-69
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE11]'
 - en: 'Straddle Strategy - A straddle is a neutral strategy that involves buying a
     call and a put option with the same strike price and expiry date. This strategy
     allows traders to profit from high volatility, regardless of which direction the
     market moves. Here is a Python pseudocode for a straddle:'
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 跨式策略 - 跨式是一种中性策略，涉及购买具有相同执行价格和到期日期的看涨和认沽期权。此策略允许交易者在高波动性中获利，无论市场朝哪个方向移动。以下是跨式的Python伪代码：
 - en: '[PRE12]'
+  id: totrans-71
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE12]'
 - en: Strangle Strategy - A strangle strategy is akin to the straddle strategy with
     one key distinction; the call and put options have different strike prices. This
     strategy is employed when the investor expects the market to be extremely volatile,
     but is unsure of the direction of the movement.
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 垂直价差策略 - 垂直价差策略类似于跨式策略，但有一个关键区别；看涨和认沽期权的执行价格不同。当投资者预计市场会极度波动，但对运动方向不确定时，就会使用此策略。
 - en: '[PRE13]'
+  id: totrans-73
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE13]'
 - en: These strategies offer traders the means to control risk in their trading portfolio.
     Hedging does not eliminate risk entirely; it merely allows one to manage and mitigate
     it. Remember, markets are unpredictable and trading is inherently risky. However,
     the right methodology and a well-considered strategy can provide a degree of protection
     against market gyrations.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些策略为交易者提供了控制其交易组合中风险的手段。对冲并不能完全消除风险；它只是让人们能够管理和减轻风险。请记住，市场不可预测，交易本质上具有风险。然而，正确的方法和经过深思熟虑的策略可以在市场波动中提供一定程度的保护。
 - en: Volatility Arbitrage in Options
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权中的波动率套利
 - en: Volatility Arbitrage is a trading strategy that seeks to profit from the difference
     between the forecasted future price-volatility of an asset, like a stock, and
     the implied volatility of options based on that asset. This sophisticated strategy
     is often utilized by advanced options traders due to its exploration of the pricing
     discrepancies in options markets.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 波动率套利是一种交易策略，旨在从资产（如股票）的未来价格波动预测与基于该资产的期权隐含波动率之间的差异中获利。这一复杂策略通常被高级期权交易者采用，因为它探索了期权市场中的定价差异。
 - en: Understanding Volatility Arbitrage - The core philosophy of volatility arbitrage
     hinges on the fundamental concept of volatility. Volatility, in essence, conveys
     the rate at which the price of an underlying asset, intensifies or decreases for
@@ -369,8 +524,10 @@
     pricing is deeply influenced by volatility. Essentially, volatility arbitrage
     exploits the inconsistency between the implied volatility of options and a prediction
     of future realized volatility.
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 理解波动率套利 - 波动率套利的核心理念基于波动率的基本概念。波动率本质上传达了基础资产价格以一组收益率强烈上升或下降的速率。熟悉期权市场的交易者会证明，期权定价深受波动率的影响。本质上，波动率套利利用期权隐含波动率与未来实现波动率预测之间的不一致。
 - en: 'The Dynamics of Implied Volatility - When an options trader talks about implied
     volatility, they refer to the degree of fluctuation that market constituents expect
     in the price of an asset or security. Basically, implied volatility is the estimated
@@ -378,17 +535,24 @@
     it is a forward-looking metric that helps investors gauge potential swings in
     securities amid market chaos. Here''s a Python script that calculates implied
     volatility:'
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 隐含波动率的动态 - 当期权交易者谈论隐含波动率时，他们指的是市场参与者对资产或证券价格波动程度的预期。基本上，隐含波动率是从期权价格推导出的股票价格的预期波动性。本质上，它是一个前瞻性指标，帮助投资者在市场混乱中评估证券可能的波动。以下是一个计算隐含波动率的
+    Python 脚本：
 - en: '[PRE14]'
+  id: totrans-79
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE14]'
 - en: Volatility Arbitrage in Practice - Traders executing this strategy will typically
     sell or purchase options then hedge that risk with the underlying security. In
     this way, the trader can fully exploit the arbitrage while remaining essentially
     risk-neutral to movements in the underlying security.
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 实践中的波动率套利 - 执行此策略的交易者通常会卖出或购买期权，然后用基础证券对冲该风险。通过这种方式，交易者可以充分利用套利，同时对基础证券的波动保持风险中性。
 - en: When perceived market imbalances occur, it's an investor's instinct to rectify
     the disparity and reincorporate balance. Despite the lofty ambition, volatility
     arbitrage is not without its limitations. The sophistication and complexity of
@@ -397,235 +561,331 @@
     resources to identify and capitalize on market inefficiencies. Thus, it is generally
     leveraged by institutional investors and proprietary trading firms rather than
     the individual retail investor.
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 当市场感知到失衡时，投资者的本能是纠正这种差异并重新恢复平衡。尽管抱有远大理想，波动率套利并非没有局限性。这种策略的复杂性使其不适合新手交易者，不仅需要对期权交易的高级理解，还需要必要的计算和分析资源来识别并利用市场低效。因此，它通常由机构投资者和自营交易公司运用，而非个人散户投资者。
 - en: Delta Neutral Strategies
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: Delta 中性策略
 - en: Utilizing derivatives strategies to manage risk and optimize returns is a fundamental
     part of modern finance. One of the essential strategies employed by many professional
     options traders to limit risk and create opportunity is the Delta Neutral Strategy.
     This mathematical approach allows traders to take advanced positions without predicting
     the direction of the market.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 利用衍生品策略管理风险和优化收益是现代金融的基本组成部分。许多专业期权交易者为限制风险和创造机会而采用的一种基本策略是 Delta 中性策略。这种数学方法使交易者可以在不预测市场方向的情况下采取高级头寸。
 - en: Understanding Delta and Delta Neutral Strategies - Delta, in the context of
     options trading, represents the amount an option price is expected to change for
     a $1 change in the price of the underlying asset. It essentially measures the
     sensitivity of the option's price to movements in the underlying asset's value.
     For example, if an option has a delta of 0.6, this means the option's price will
     rise by $0.60 for each $1.00 rise in the underlying asset's price.
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 理解 Delta 和 Delta 中性策略 - 在期权交易中，Delta 表示期权价格预期因基础资产价格变动 $1 而变化的金额。它本质上衡量了期权价格对基础资产价值波动的敏感性。例如，如果一个期权的
+    Delta 为 0.6，这意味着该期权的价格会因基础资产价格每上涨 $1.00 而上涨 $0.60。
 - en: A delta neutral strategy involves creating a portfolio where the total delta
     equals zero. This can be attained by taking multiple positions in options and
     stocks so that any movement in the stock price can potentially be offset by movements
     in the option positions.
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: Delta 中性策略涉及创建一个总 Delta 等于零的投资组合。这可以通过在期权和股票中采取多个头寸来实现，以便股票价格的任何波动都可以通过期权头寸的波动来抵消。
 - en: Implementing Delta Neutral Strategies - Achieving a delta neutral position is
     about balancing. For instance, if you purchase 100 shares of a particular stock,
     the total delta of your shares is 100\. To counteract this, you might buy two
     at-the-money put options, each with a delta of -0.50, resulting in a total delta
     of -100 for the two options. The deltas from the stock and the options offset
     each other, resulting in a delta neutral position.
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 实施 Delta 中性策略 - 实现 Delta 中性头寸就是要平衡。例如，如果你购买了 100 股特定股票，则你的股票的总 Delta 为 100。为此，你可能会购买两个平价看跌期权，每个期权的
+    Delta 为 -0.50，从而使两个期权的总 Delta 为 -100。股票和期权的 Delta 相互抵消，从而形成 Delta 中性头寸。
 - en: 'Here''s a Python script that calculates the delta of an option:'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个计算期权delta的Python脚本：
 - en: '[PRE15]'
+  id: totrans-88
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE15]'
 - en: Practical Considerations - While a delta neutral strategy can help a trader
     to profit regardless of a security's price movement, it requires continuous monitoring
     and rebalancing to maintain the neutral position due to changes in the underlying
     asset's delta, termed as gamma risk. Additionally, transaction costs can add up
     with frequent adjustments.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 实用考虑 - 尽管delta中性策略可以帮助交易者在证券价格波动时获利，但由于基础资产delta的变化，这需要持续监控和再平衡以维持中性头寸，这被称为gamma风险。此外，频繁调整可能导致交易成本累积。
 - en: Despite these challenges, delta neutral strategies can provide a dynamic means
     to hedge existing positions, exploit perceived mispricing, or create volatility-focused
     positions that don't rely upon price direction. As always, with increased complexity
     comes increased risk, and these strategies should only be undertaken by experienced
     traders with a deep understanding of the risks involved.
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管存在这些挑战，delta中性策略仍可提供动态手段来对冲现有头寸，利用感知到的错误定价，或创建不依赖于价格方向的波动性聚焦头寸。正如往常一样，复杂性增加伴随风险增加，这些策略应仅由具备深厚风险理解的经验丰富的交易者实施。
 - en: As we journey further into the complexities of options trading, it becomes increasingly
     apparent that knowledge is power. With each new strategy discussed, we increase
     our arsenal of available tools. In our next exploration, we'll delve into the
     fascinating role of Greeks in options trading. Stay tuned for another insightful
     intrigue into the world of options.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着我们进一步探索期权交易的复杂性，知识的力量变得愈加明显。每当讨论新的策略时，我们便增加了可用工具的 arsenal。在我们的下一次探索中，我们将深入探讨希腊字母在期权交易中的迷人角色。敬请期待更多关于期权世界的深刻见解。
 - en: Greeks in Options Trading
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权交易中的希腊字母
 - en: Deriving their terminology from the Greek alphabet, the 'Greeks' in options
     trading represent quantities that are critical in measuring the sensitivity of
     the price of an option or an options portfolio to various factors such as price
     movements, volatility fluctuations, time decay and changes in interest rates.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 在期权交易中，"希腊字母"的术语源自希腊字母表，代表在衡量期权或期权投资组合的价格对各种因素（如价格波动、波动率波动、时间衰减和利率变化）敏感性的重要量。
 - en: 'Understanding the Greeks - There are five main ''Greeks'' that are used by
     options traders:'
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 理解希腊字母 - 期权交易者使用五个主要的"希腊字母"：
 - en: '- Delta: Already discussed, it represents the rate of change of an options
     price with respect to the underlying asset''s price changes.'
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: '- Delta：已讨论，它表示期权价格随基础资产价格变化的变化率。'
 - en: '- Gamma: This measures the rate of change in the delta of an option per unit
     change in the price of the underlying asset. It gauges how quickly your risk exposure
     is changing.'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: '- Gamma：衡量基础资产价格变化单位内期权delta的变化率。它评估风险暴露变化的速度。'
 - en: '- Theta: This is the rate of decay of an option''s value with respect to time.
     It is particularly crucial when dealing with time to expiry.'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: '- Theta：这是期权价值随时间衰减的速率。在处理到期时间时尤为重要。'
 - en: '- Vega (Not a Greek letter, but in the family anyway!): It quantifies the rate
     of change of an options price per unit change in the volatility of the underlying
     asset.'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: '- Vega（不是希腊字母，但算在家族里！）：它量化了期权价格随基础资产波动率变化的变化率。'
 - en: '- Rho: This represents the sensitivity of an option''s price to variations
     in interest rates.'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: '- Rho：表示期权价格对利率变化的敏感性。'
 - en: Using the Greeks to Your Advantage - Understanding the Greeks allows options
     traders to gain a more comprehensive view of the risk and potential reward scenarios
     in an options position or portfolio and helps them make more informed decisions.
     For instance, by considering theta, a trader who is writing options might target
     short-dated options that will lose their time value rapidly.
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 利用希腊字母的优势 - 理解希腊字母使期权交易者能够更全面地了解期权头寸或投资组合中的风险和潜在收益场景，并帮助他们做出更明智的决策。例如，通过考虑theta，写期权的交易者可能会瞄准快速失去时间价值的短期期权。
 - en: The Greeks can also be used to create various types of advanced strategic positions
     such as vega neutral or theta positive positions. While understanding and utilizing
     the Greeks might seem cumbersome at first, their use can greatly enhance the capacity
     of a trader to manage risk and generate profits.
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 希腊字母还可用于创建各种高级战略头寸，例如vega中性或theta积极头寸。尽管理解和使用希腊字母起初可能显得繁琐，但它们的使用可以极大增强交易者管理风险和产生利润的能力。
 - en: 'Below is a Python code to calculate the various ''Greeks'' using the Black-Scholes
     Model:'
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是一个Python代码，用于使用Black-Scholes模型计算各种“希腊字母”：
 - en: '[PRE16]'
+  id: totrans-103
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE16]'
 - en: Considerations while Using Greeks - The estimates provided by the Greeks are
     theoretical and require continuous adjustment of assumptions such as volatility
     and interest rates. Moreover, computationally they are based on continuously sampled
     prices, which does not account for the discrete and potentially high-impact price
     jumps in real market scenarios.
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用希腊字母时的注意事项 - 希腊字母提供的估算是理论上的，需要对波动率和利率等假设进行持续调整。此外，从计算上看，它们基于连续取样的价格，这并未考虑在实际市场情境中可能出现的离散和高影响的价格跳跃。
 - en: Despite these challenges, the Greeks provide options traders with a conceptual
     framework for understanding how different factors can affect the value of an option.
     It allows them to quantify and manage the risks involved in their portfolio effectively.
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管面临这些挑战，希腊字母为期权交易者提供了一个概念框架，以理解不同因素如何影响期权的价值。这使他们能够有效量化和管理投资组合中涉及的风险。
 - en: 'Having explored the role of Greeks in options trading, our journey in the intriguing
     world of options continues. Our next stop: exotic options and structured products.
     A fresh narrative awaits you, filled with insights and understanding of these
     lesser-known financial tools.'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 探索了希腊字母在期权交易中的作用后，我们在这个引人入胜的期权世界中的旅程继续。我们的下一个站点：奇异期权和结构性产品。一个全新的叙述正等待着你，充满了对这些鲜为人知的金融工具的洞察和理解。
 - en: Exotic Options and Structured Products
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 奇异期权和结构性产品
 - en: Exotic options and structured products are esoteric financial instruments that
     have unique properties and payoffs that go beyond the standard put or call options.
     These cutting-edge investment tools, while complex and often highly speculative,
     allow sophisticated investors to create and manage unique risk-return profiles.
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 奇异期权和结构性产品是具有独特特性和收益的晦涩金融工具，超越了标准的看跌或看涨期权。这些前沿投资工具虽然复杂且往往高度投机，但允许成熟的投资者创建和管理独特的风险-收益配置。
 - en: Demystifying Exotic Options - An exotic option is a derivative that has been
     tailored to a specific trader's needs, beyond the conventional calls and puts.
     They are more complex than widely traded plain vanilla options, offering greater
     flexibility and variability in terms of how risk and reward can be structured.
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 解密奇异期权 - 奇异期权是一种衍生品，已根据特定交易者的需求进行了定制，超越了常规的看涨和看跌期权。它们比广泛交易的普通期权更复杂，提供了在风险和收益结构方面更大的灵活性和可变性。
 - en: 'Several types of exotic options exist, such as:'
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 存在几种类型的奇异期权，例如：
 - en: '- Barrier Options: The payoff depends on whether or not the underlying asset''s
     price reaches a certain level.'
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 障碍期权：收益取决于基础资产的价格是否达到某一水平。'
 - en: '- Asian Options: The pay-off is determined by the average price of the underlying
     asset over a certain period.'
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 亚洲期权：收益取决于在一定时期内基础资产的平均价格。'
 - en: '- Binary Options: The pay-off is all-or-nothing, based on whether certain conditions
     are met.'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 二元期权：收益是全有或全无，基于某些条件是否满足。'
 - en: '- Lookback Options: The striking price is determined at the expiry of the option
     as being either the maximum high (in a call) or minimum low (in a put) of the
     underlying asset over the life of the option.'
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 回望期权：执行价格在期权到期时根据基础资产在期权有效期内的最高价（看涨）或最低价（看跌）确定。'
 - en: All these exotic options can potentially generate a higher payoff in specific
     market conditions, thereby allowing for greater diversification in a portfolio.
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 所有这些奇异期权在特定市场条件下都有可能产生更高的收益，从而允许投资组合实现更大的多样化。
 - en: Understanding Structured Products - Structured products are predefined investment
     strategies based on derivatives such as options that package together a fixed
     income security and one or more derivatives. They're designed to facilitate specific
     risk-return objectives that can't be achieved with standard financial instruments.
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 理解结构性产品 - 结构性产品是基于衍生品（如期权）预定义的投资策略，它将固定收益证券和一种或多种衍生品打包在一起。它们旨在实现无法通过标准金融工具达到的特定风险-收益目标。
 - en: 'Some commonly known structured products include:'
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些常见的结构性产品包括：
 - en: '- Structured Notes: These are debt obligations with an embedded derivative
     component that adjusts the security''s risk-return profile.'
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 结构性票据：这些是具有嵌入式衍生品成分的债务义务，调整证券的风险-收益配置。'
 - en: '- Principal Protected Notes: These provide a guarantee of the principal invested
     while allowing for participation in the potential upside of one or more underlying
     assets.'
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 本金保护票据：这些票据保证投资的本金，同时允许参与一个或多个基础资产的潜在收益。'
 - en: '- Reverse Convertibles: These are short-term notes linked to an underlying
     asset that returns a high coupon, but may force the investor to buy the asset
     at an inflated price if it falls.'
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 反向可转债：这些是与基础资产相关的短期票据，提供高额息票，但如果资产价格下跌，可能迫使投资者以虚高价格购买该资产。'
 - en: 'For illustrating this, assume we created a Python script to price a European
     style binary call option:'
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了说明这一点，假设我们创建了一个Python脚本来定价欧洲式二元看涨期权：
 - en: '[PRE17]'
+  id: totrans-122
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE17]'
 - en: Exotic options and structured products, while complex to understand and value,
     offer valuable tools for both hedging and speculation. They can allow investors
     further control over their risk-return profile and enable investment strategies
     to be tailored to a specific view on the market.
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 异国期权和结构化产品虽然复杂且难以理解和评估，但为对冲和投机提供了有价值的工具。它们可以让投资者进一步控制其风险收益特征，并使投资策略能够针对特定市场观点进行定制。
 - en: Nevertheless, while these financial instruments can potentially offer higher
     returns, they also carry higher risks due to their complexity, opacity and unique
     risk characteristics. It's essential that traders fully understand these risks
     before venturing into these sophisticated territory of financial markets.
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，尽管这些金融工具可能提供更高的回报，但由于其复杂性、不透明性和独特的风险特征，它们也带来了更高的风险。在进入这些复杂的金融市场领域之前，交易者必须充分理解这些风险。
 - en: Regulatory Considerations in Options Trading
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权交易中的监管考虑
 - en: 'As we further immerse ourselves in the world of options trading, it''s essential
     to grasp the regulatory principles regulating this arena. Regulatory considerations
     for options trading are expansive and complex, incorporating a range of laws,
     regulations, rules, and standards designed to foster fair, transparent, and efficient
     markets. This regulatory landscape is primarily concentrated around two key pillars:
     market conduct and investor protection.'
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着我们进一步深入期权交易的世界，掌握调控这一领域的监管原则至关重要。期权交易的监管考虑范围广泛且复杂，涵盖了一系列法律、法规、规则和标准，旨在促进公平、透明和高效的市场。这一监管环境主要集中在两个关键支柱上：市场行为和投资者保护。
 - en: Market Conduct and Fair Trade
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 市场行为与公平交易
 - en: At the heart of regulatory considerations is the principle of market conduct
     or the requirement for all market participants to engage in fair, honest, and
     responsible trading. Regulatory bodies like the Financial Industry Regulatory
@@ -633,71 +893,101 @@
     or the Australian Securities and Investments Commission (ASIC) in Australia enforce
     rules targeting market manipulation, including deceptive trading practices and
     illegal dissemination of false or misleading market information.
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 监管考虑的核心是市场行为原则，或所有市场参与者进行公平、诚实和负责任交易的要求。美国金融行业监管局（FINRA）、英国金融行为监管局（FCA）或澳大利亚证券和投资委员会（ASIC）等监管机构执行针对市场操纵的规则，包括欺骗性交易行为和非法传播虚假或误导性市场信息。
 - en: 'For example, options traders must adhere to several key aspects of fair trade
     regulation:'
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，期权交易者必须遵守几个公平交易法规的关键方面：
 - en: '- Trading and Transparency Rules: These mandate transparency in dealing operations
     and order routing, requiring participants to disclose pertinent information to
     customers.'
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 交易和透明度规则：这些规定要求在交易操作和订单路由中保持透明，要求参与者向客户披露相关信息。'
 - en: '- Reporting Requirements: These demand comprehensive and timely reporting of
     transactions to regulatory authorities, providing systemic oversight.'
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 报告要求：这些要求向监管机构全面及时地报告交易，提供系统的监督。'
 - en: '- Position Limits: These cap the number of contracts a participant can hold,
     reducing excessive speculation and market manipulation.'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 持仓限制：这些限制参与者可以持有的合约数量，以减少过度投机和市场操纵。'
 - en: Investor Protection
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 投资者保护
 - en: The second governing principle lies in investor protection, ensuring retail
     traders don't fall prey to overly risky or inappropriate financial products. Regulatory
     concerns here revolve around ensuring complete and fair disclosure of risks, preventing
     exploitative marketing tactics, and requiring the suitability and appropriateness
     of investment advice.
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二个监管原则在于投资者保护，确保散户交易者不会成为过于风险或不适当金融产品的受害者。这里的监管关注点在于确保风险的全面和公平披露，防止剥削性营销策略，并要求投资建议的适宜性和合理性。
 - en: 'In the purview of options trading, some key considerations include:'
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 在期权交易的范围内，一些关键考虑因素包括：
 - en: '- Know Your Customer (KYC): This principle necessitates brokers to understand
     their customers'' financial situations, risk appetite, and investment objectives
     before recommending trades or strategies.'
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 了解你的客户（KYC）：这一原则要求经纪人了解客户的财务状况、风险偏好和投资目标，然后再推荐交易或策略。'
 - en: '- Suitability Rules: These guidelines ensure the strategies recommended are
     appropriate for the individual investor''s objectives and risk tolerance.'
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 适宜性规则：这些指南确保推荐的策略适合个别投资者的目标和风险承受能力。'
 - en: '- Sales Practice Requirements: These norms prohibit high-pressure sales tactics
     and call for clear, fair, and not misleading representations.'
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 销售实践要求：这些规范禁止高压销售策略，并要求清晰、公平且不具误导性的陈述。'
 - en: Regulations encapsulate a host of other aspects, including margin requirements,
     insolvency protections, dispute resolutions, and compliance frameworks. Violations
     can result in hefty penalties, suspension, or even expulsion from market participation.
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 监管规则涵盖了许多其他方面，包括保证金要求、破产保护、争议解决和合规框架。违反规定可能导致高额罚款、暂停或甚至被排除在市场参与之外。
 - en: '[PRE18]'
+  id: totrans-140
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE18]'
 - en: Despite their complexity, understanding the regulatory requirements is non-negotiable
     for any trader. The rules not only ensure markets function smoothly, but also
     safeguard traders from ruinous losses, unscrupulous practices, and unfettered
     risk. They form a crucial compass guiding traders in their quest for profitability,
     shaping the parameters within which they operate.
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管这些规则复杂，但理解监管要求对任何交易者来说都是不可妥协的。这些规则不仅确保市场顺利运作，还保护交易者免受毁灭性损失、不道德行为和无节制风险的侵害。它们构成了指导交易者追求盈利的关键指南，塑造了他们操作的参数。
 - en: As we close the door on options and derivatives, remember that each new asset
     class and trading strategy brings along its unique regulatory quirks that demand
     a fresh understanding and interpretation. With that, let's step into the realm
     of 'Building A Trading Community and Ecosystem' in the next chapter, where we
     explore the importance of collective intelligence and collaboration in the world
     of trading.
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们关闭期权和衍生品的大门时，请记住，每一个新的资产类别和交易策略都带来了独特的监管细节，要求我们重新理解和解释。接下来，让我们步入下一章的“构建交易社区和生态系统”，探索集体智慧和协作在交易世界中的重要性。
