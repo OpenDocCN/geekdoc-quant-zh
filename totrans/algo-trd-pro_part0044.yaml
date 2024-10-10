@@ -2,6 +2,7 @@
   id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 9.2\. 建立市场数据行情工厂
 - en: The primary objective of a ticker plant is to process market data with minimal
     latency, ensuring that trading algorithms can respond to market movements as they
     occur. Python, with its extensive libraries and community support, is an excellent
@@ -9,6 +10,7 @@
   id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 行情工厂的主要目标是以最小延迟处理市场数据，确保交易算法能够实时响应市场动态。Python凭借其丰富的库和社区支持，是开发此类系统的绝佳选择。
 - en: A robust ticker plant captures data from various sources, normalizes it, and
     disseminates it within the trading infrastructure. The architecture must be resilient,
     capable of handling the high-velocity, high-volume tick-by-tick data characteristic
@@ -16,10 +18,12 @@
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个强大的行情工厂捕获来自各种来源的数据，对其进行标准化，并在交易基础设施中传播。这一架构必须具备韧性，能够处理当今金融市场特有的高速度、高容量逐笔数据。
 - en: 'Let''s outline the core components of a Python-based market data ticker plant:'
   id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们概述一个基于Python的市场数据行情工厂的核心组件：
 - en: '1\. Data Ingestion: The first layer involves connecting to external data sources.
     This could be direct exchange feeds, decentralized networks, or APIs from data
     vendors. Python''s `requests` library or WebSocket connections can be employed
@@ -27,6 +31,7 @@
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 数据摄取：第一层涉及连接外部数据源。这可能是直接的交易所数据流、去中心化网络或来自数据供应商的API。Python的`requests`库或WebSocket连接可以用于此目的。
 - en: '[PRE0]'
   id: totrans-5
   prefs: []
@@ -39,6 +44,7 @@
   id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 数据标准化：接收到的原始数据通常格式各异。标准化层对于将这些数据转换为交易算法可以统一解释的标准化形式至关重要。Python的`pandas`库在这一阶段特别有用，可以高效地转换和清洗数据。
 - en: '[PRE1]'
   id: totrans-7
   prefs: []
@@ -51,6 +57,7 @@
   id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 数据存储：尽管数据的主要路径是用于实时分析，但存储历史数据以供回测和分析也是至关重要的。Python可以与如PostgreSQL这样的数据库或InfluxDB这样的时间序列数据库有效接口，以存储这些信息。
 - en: '[PRE2]'
   id: totrans-9
   prefs: []
@@ -63,6 +70,7 @@
   id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 4\. 数据传播与排队：处理过的数据必须传播到交易系统的各个组成部分，如风险模型、订单管理系统及算法本身。可以通过Python集成消息队列系统，如RabbitMQ或Kafka，以确保数据的高效可靠传递。
 - en: '[PRE3]'
   id: totrans-11
   prefs: []
@@ -75,6 +83,7 @@
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 5\. 故障容忍和高可用性：行情工厂必须设计为具有韧性，具备冗余和故障转移机制，以应对停机或数据激增。Python的多进程或线程库可以用于分配负载和管理并行处理。
 - en: '[PRE4]'
   id: totrans-13
   prefs: []
@@ -88,10 +97,12 @@
   id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用Python构建市场数据行情工厂证明了该语言的多功能性以及金融行业对稳健、实时数据处理的依赖。通过利用Python的能力，我们可以构建一个不仅推动交易策略的引擎，还体现了推动现代金融发展的创新精神。
 - en: Designing a Real-Time Market Data Infrastructure
   id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 设计实时市场数据基础设施
 - en: Designing a real-time market data infrastructure is akin to engineering the
     arteries of financial computation, where every millisecond of latency can be the
     difference between profit and loss. The infrastructure must not only be robust
@@ -99,16 +110,19 @@
   id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 设计实时市场数据基础设施类似于构建金融计算的动脉，其中每毫秒的延迟都可能是盈利与亏损之间的差别。基础设施不仅必须稳健，还要精心设计，以提供速度、效率和准确性。
 - en: Here, we explore the critical components and design considerations for constructing
     a market data infrastructure that stands as the backbone of high-frequency trading
     operations.
   id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们探讨构建市场数据基础设施的关键组件和设计考虑，这些基础设施是高频交易操作的支柱。
 - en: '1\. System Architecture:'
   id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 系统架构：
 - en: The architecture of a real-time market data system requires a careful balance
     between throughput, latency, and scalability. Python provides a foundation for
     rapid development, but the underlying system design must prioritize performance.
@@ -117,10 +131,12 @@
   id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 实时市场数据系统的架构需要在吞吐量、延迟和可扩展性之间进行仔细平衡。Python为快速开发提供了基础，但底层系统设计必须优先考虑性能。采用微服务架构可以促进这一点，使得各个组件能够独立扩展和更新。
 - en: '2\. Data Feed Handlers:'
   id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 数据源处理程序：
 - en: At the forefront are the data feed handlers. These components are responsible
     for interfacing with market data sources, whether they are direct exchange feeds
     or aggregated from data vendors. Python's asyncio library can be leveraged to
@@ -129,6 +145,7 @@
   id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据源处理程序处于最前沿。这些组件负责与市场数据源进行接口，无论是直接的交易所数据流还是来自数据供应商的聚合数据。可以利用Python的asyncio库异步处理多个数据流，保持数据的非阻塞流动。
 - en: '[PRE5]'
   id: totrans-22
   prefs: []
@@ -138,6 +155,7 @@
   id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 低延迟消息传递：
 - en: The choice of messaging protocol is pivotal. Low-latency protocols such as UDP
     may be preferred over TCP in scenarios where speed trumps reliability. Within
     Python, libraries like `zeromq` or `nanomsg` can be utilized to create a messaging
@@ -145,6 +163,7 @@
   id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 消息协议的选择至关重要。在速度胜过可靠性的场景中，低延迟协议如UDP可能优于TCP。在Python中，可以利用`zeromq`或`nanomsg`等库创建一个以最小延迟分发数据的消息层。
 - en: '[PRE6]'
   id: totrans-25
   prefs: []
@@ -154,6 +173,7 @@
   id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 4\. 数据规范化引擎：
 - en: Incoming market data is often in varied formats, necessitating a normalization
     engine that can standardize this data in real-time. Python's Pandas library is
     adept at transforming data frames on the fly, but for low-latency operations,
@@ -161,10 +181,12 @@
   id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 进入的市场数据通常采用不同格式，这就需要一个能够实时标准化这些数据的规范化引擎。Python的Pandas库擅长动态转换数据框，但对于低延迟操作，可能会采用Cython或C扩展以加速关键路径。
 - en: '5\. Time Series Database:'
   id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 5\. 时间序列数据库：
 - en: Storing time-stamped market data efficiently requires a time series database
     optimized for high write throughput and fast queries. InfluxDB is a popular choice
     in the Python ecosystem, with client libraries that facilitate the seamless storage
@@ -172,6 +194,7 @@
   id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 高效存储带时间戳的市场数据需要一个优化了高写入吞吐量和快速查询的时间序列数据库。InfluxDB在Python生态系统中是一个流行的选择，配有客户端库，可以方便地存储和检索时间序列数据。
 - en: '[PRE7]'
   id: totrans-30
   prefs: []
@@ -181,6 +204,7 @@
   id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 6\. 实时分析：
 - en: The infrastructure must also support real-time analytics to empower trading
     algorithms with the ability to make decisions based on the latest market conditions.
     Python's NumPy and SciPy libraries come into play here, providing high-performance
@@ -188,10 +212,12 @@
   id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 基础设施还必须支持实时分析，使交易算法能够根据最新的市场状况做出决策。Python的NumPy和SciPy库在这里发挥作用，提供技术分析和模式识别所需的高性能数学函数。
 - en: '7\. Scalability and Redundancy:'
   id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 7\. 可扩展性与冗余：
 - en: Scalability ensures that as data volumes grow, the infrastructure can grow with
     them without degradation in performance. Cloud services like AWS or Google Cloud
     offer scalable solutions that can be combined with containerization tools like
@@ -199,6 +225,7 @@
   id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 可扩展性确保随着数据量的增长，基础设施能够与之共同增长，而不降低性能。像AWS或Google Cloud这样的云服务提供可扩展的解决方案，可以与Docker等容器化工具和Kubernetes等编排系统结合使用。
 - en: '[PRE8]'
   id: totrans-35
   prefs: []
@@ -208,6 +235,7 @@
   id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 8\. 监控与告警：
 - en: A comprehensive monitoring system must be in place to track the health of the
     data infrastructure. Grafana or Kibana dashboards can visualize system metrics,
     while alerting systems like Prometheus or Nagios can notify operators of potential
@@ -215,6 +243,7 @@
   id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 必须建立一个全面的监控系统，以跟踪数据基础设施的健康状况。Grafana或Kibana仪表板可以可视化系统指标，而像Prometheus或Nagios这样的告警系统可以在潜在问题升级之前通知操作人员。
 - en: In designing this infrastructure, the goal is to enable the seamless flow of
     market data into the decision-making algorithms that drive trading strategy. Python's
     ecosystem offers the tools needed for rapid development, but the underlying principles
@@ -223,10 +252,12 @@
   id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 在设计这个基础设施时，目标是使市场数据无缝流入驱动交易策略的决策算法。Python生态系统提供了快速开发所需的工具，但低延迟系统设计的基本原则必须指导这个算法交易关键组件的蓝图。
 - en: Using Messaging Queues (e.g., RabbitMQ, Kafka)
   id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用消息队列（例如RabbitMQ、Kafka）
 - en: Messaging queues play a pivotal role in the architecture of a market data infrastructure,
     acting as the conduits through which real-time data is reliably transported and
     decoupled from the processing components. Two prominent technologies in this space
@@ -235,10 +266,12 @@
   id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 消息队列在市场数据基础设施的架构中扮演着关键角色，作为实时数据可靠传输的通道，与处理组件解耦。在这个领域中，RabbitMQ和Kafka是两种显著的技术，各自在金融数据处理的不同方面具有各自的优势。
 - en: '1\. RabbitMQ:'
   id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. RabbitMQ：
 - en: RabbitMQ, an open-source message broker, excels in scenarios where message delivery
     guarantees, such as at-most-once or exactly-once delivery semantics, are critical.
     Its support for a variety of messaging protocols, including AMQP, STOMP, and MQTT,
@@ -246,11 +279,13 @@
   id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: RabbitMQ作为一个开源消息代理，在消息传递保证（例如最多一次或准确一次交付语义）至关重要的场景中表现出色。它支持多种消息传递协议，包括AMQP、STOMP和MQTT，使其成为一种多功能选择。
 - en: In a Python-based system, the `pika` library provides an interface to RabbitMQ,
     allowing for the asynchronous consumption and publishing of messages with ease.
   id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 在基于Python的系统中，`pika`库提供了RabbitMQ的接口，使得消息的异步消费和发布变得轻而易举。
 - en: '[PRE9]'
   id: totrans-44
   prefs: []
@@ -263,10 +298,12 @@
   id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: RabbitMQ特别适合需要复杂路由逻辑的任务，例如主题交换和直接交换，这在处理多种金融工具和将数据路由到相应交易策略时至关重要。
 - en: '2\. Kafka:'
   id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. Kafka：
 - en: Apache Kafka, on the other hand, is a distributed streaming platform known for
     its high throughput and durability. It is designed to handle data streams for
     real-time analytics and has become a staple in systems that require the processing
@@ -274,11 +311,13 @@
   id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一方面，Apache Kafka是一个分布式流平台，以其高吞吐量和耐用性而闻名。它旨在处理用于实时分析的数据流，已成为需要以最低延迟处理大量数据的系统中的主流选择。
 - en: Python's `kafka-python` library allows for integration with Kafka, providing
     the functionality needed to produce and consume messages within a Python application.
   id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: Python的`kafka-python`库允许与Kafka集成，提供在Python应用程序中生成和消费消息所需的功能。
 - en: '[PRE10]'
   id: totrans-49
   prefs: []
@@ -290,10 +329,12 @@
   id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: Kafka作为一个分布式日志，具有分区设计，允许在多台服务器上扩展，其强大的数据复制处理确保即使在服务器故障情况下也不会丢失任何消息。
 - en: '3\. Choosing Between RabbitMQ and Kafka:'
   id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 选择RabbitMQ与Kafka之间：
 - en: The decision to use RabbitMQ or Kafka hinges on the specific requirements of
     the market data infrastructure. RabbitMQ's message routing capabilities and lightweight
     nature make it ideal for smaller scale systems or those with complex routing needs.
@@ -303,12 +344,14 @@
   id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用RabbitMQ或Kafka的决策取决于市场数据基础设施的具体要求。RabbitMQ的消息路由能力和轻量特性使其非常适合较小规模系统或需要复杂路由的系统。Kafka的分布式特性和高吞吐量使其更适合生成大量数据的大型系统，这些系统需要进行长期数据保留以进行历史分析或重播。
 - en: A well-designed market data infrastructure might even use both technologies,
     leveraging RabbitMQ for certain tasks where message routing is complex and Kafka
     for others where data volume and log retention are more critical.
   id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个设计良好的市场数据基础设施可能会同时使用这两种技术，在消息路由复杂的任务中利用RabbitMQ，而在数据量和日志保留更为关键的任务中使用Kafka。
 - en: Messaging queues like RabbitMQ and Kafka are essential for building a resilient
     and efficient market data infrastructure. They provide the means to handle vast
     streams of financial data in real-time, ensuring that the backbone of algorithmic
@@ -318,10 +361,12 @@
   id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 像RabbitMQ和Kafka这样的消息队列对于构建一个稳健而高效的市场数据基础设施至关重要。它们提供了实时处理大量金融数据的手段，确保算法交易的核心——数据——是强健、可靠和响应迅速的。作为更广泛架构的一部分，这些技术使交易者能够利用实时分析的力量，最终导致更明智和及时的交易决策。
 - en: Managing Data Updates and Latency
   id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 管理数据更新和延迟
 - en: In the complex dance of algorithmic trading, the timely and accurate delivery
     of market data is the lifeblood of any successful strategy. Data updates and latency
     are two critical components that can dictate the triumphant performance or the
@@ -329,10 +374,12 @@
   id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 在算法交易的复杂舞蹈中，市场数据的及时和准确交付是任何成功策略的生命线。数据更新和延迟是决定交易算法成功表现或灾难性失败的两个关键因素。
 - en: '1\. Data Updates:'
   id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 数据更新：
 - en: The velocity and veracity of data updates are paramount. Financial markets are
     in a constant state of flux, with prices, volumes, and other market signals changing
     multiple times per second. Ensuring that these updates are processed and reflected
@@ -341,6 +388,7 @@
   id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据更新的速度和准确性至关重要。金融市场处于不断变化之中，价格、成交量和其他市场信号每秒变化多次。确保这些更新能够即时处理并反映在交易算法中，需要对数据管道设计进行细致的处理。
 - en: In Python, leveraging asynchronous I/O operations through frameworks like `asyncio`
     can be instrumental in managing data updates. With the capability to handle multiple
     data streams concurrently, the trading system remains continuously synced with
@@ -348,6 +396,7 @@
   id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Python中，通过像`asyncio`这样的框架利用异步I/O操作可以有效管理数据更新。具备同时处理多个数据流的能力，使交易系统始终与最新市场动态保持同步。
 - en: '[PRE11]'
   id: totrans-60
   prefs: []
@@ -359,10 +408,12 @@
   id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种非阻塞的数据消费方法允许在更新到达时进行处理，确保算法基于当前可用的最新信息进行操作。
 - en: '2\. Latency:'
   id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 延迟：
 - en: Latency represents the time it takes for data to travel from the source to the
     trading algorithm and for the resulting trades to reach the market. In high-frequency
     trading environments, latency is measured in microseconds, and reducing it is
@@ -370,6 +421,7 @@
   id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 延迟代表数据从源头到交易算法的传输时间，以及由此产生的交易到达市场所需的时间。在高频交易环境中，延迟以微秒计量，减少延迟是一项持续的挑战。
 - en: The physical proximity to the data source, known as colocation, can significantly
     reduce the time it takes for market updates to be received. Moreover, optimizing
     the code for speed, such as using `NumPy` for numerical operations or `Cython`
@@ -378,6 +430,7 @@
   id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 与数据源的物理接近度称为共置，可以显著减少市场更新接收所需的时间。此外，优化代码以提高速度，例如使用`NumPy`进行数值运算或使用`Cython`将Python代码编译为C，可以为交易算法的反应时间节省宝贵的微秒。
 - en: '[PRE12]'
   id: totrans-65
   prefs: []
@@ -389,10 +442,12 @@
   id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 系统的每个元素，从网络堆栈到应用层，都必须为最小化延迟进行微调。采用批处理和压缩数据等技术也可以帮助减少数据传输所需的时间。
 - en: '3\. The Symbiosis of Data Updates and Latency:'
   id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 数据更新与延迟的共生关系：
 - en: The interaction between data updates and latency is a delicate balance. While
     rapid updates are desirable, they can exacerbate latency issues if the infrastructure
     is not equipped to handle the load. Conversely, a focus on reducing latency should
@@ -400,22 +455,26 @@
   id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据更新和延迟之间的互动是一种微妙的平衡。虽然快速更新是可取的，但如果基础设施没有能力处理负载，它们可能会加剧延迟问题。相反，减少延迟的关注点不应导致对数据准确性和更新频率的忽视。
 - en: Effective management of these two facets involves deploying a robust technological
     stack, developing a deep understanding of the trading system's architecture, and
     continuously monitoring and optimizing network and computational performance.
   id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 有效管理这两个方面涉及部署强大的技术栈，深入理解交易系统的架构，并持续监控和优化网络及计算性能。
 - en: Ultimately, the goal is to achieve a harmonious state where the trading algorithms
     are synchronized with the market's pulse, capable of executing decisions with
     precision and agility that stand the test of market volatilities.
   id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 最终目标是实现一个和谐的状态，使交易算法与市场脉动同步，能够在市场波动的考验下精准灵活地执行决策。
 - en: Data Normalization and Timestamp Alignment
   id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据标准化和时间戳对齐
 - en: In our quest to sculpt a formidable trading algorithm, data normalization and
     timestamp alignment emerge as pivotal processes. The essence of these tasks lies
     in the transformation of raw data into a refined form, where it becomes not just
@@ -423,16 +482,19 @@
   id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们塑造强大交易算法的过程中，数据标准化和时间戳对齐显得至关重要。这些任务的本质在于将原始数据转化为精炼的形式，使其不仅易于理解，更具分析价值。
 - en: '1\. Data Normalization:'
   id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 数据标准化：
 - en: Normalization is the process of converting disparate data sets into a unified
     format, allowing for seamless integration and comparison. Within the diverse ecosystem
     of financial data, normalization addresses variances in formats, scales, and conventions.
   id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 标准化是将不同数据集转换为统一格式的过程，允许无缝集成和比较。在金融数据的多样生态系统中，标准化解决了格式、规模和约定的差异。
 - en: In Python, the `pandas` library stands as a cornerstone for data normalization.
     It offers functions for normalization such as `DataFrame.apply()` which can be
     used to apply a unifying function across columns or rows, and `DataFrame.groupby()`
@@ -440,6 +502,8 @@
   id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 Python 中，`pandas` 库是数据标准化的基石。它提供了如 `DataFrame.apply()` 的标准化函数，可以在列或行中应用统一函数，以及用于合并数据的
+    `DataFrame.groupby()`。
 - en: '[PRE13]'
   id: totrans-76
   prefs: []
@@ -452,10 +516,12 @@
   id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 该代码片段示例了在 DataFrame 中对交易量的标准化。通过应用 `normalize_volume` 函数，我们将每个股票的交易量相对于其最大交易量进行缩放，从而促进对不同资产的比较分析。
 - en: '2\. Timestamp Alignment:'
   id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 时间戳对齐：
 - en: The alignment of timestamps is a meticulous task that ensures all data points
     across multiple sources are synchronized to the same temporal frame of reference.
     This eliminates discrepancies arising from differing data publication frequencies
@@ -463,6 +529,7 @@
   id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 时间戳的对齐是一项细致的任务，确保来自多个来源的所有数据点都同步到相同的时间参考框架。这消除了因数据发布频率或网络延迟不同而产生的差异。
 - en: To achieve this, Python's `pandas` library again serves as an invaluable tool.
     With functions like `DataFrame.resample()` and `DataFrame.asfreq()`, we can standardize
     the frequency of time-series data, filling in missing values or aggregating as
@@ -470,6 +537,8 @@
   id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 为此，Python 的 `pandas` 库再次成为无价之宝。借助 `DataFrame.resample()` 和 `DataFrame.asfreq()`
+    等函数，我们可以标准化时间序列数据的频率，填补缺失值或根据需要进行汇总。
 - en: '[PRE14]'
   id: totrans-81
   prefs: []
@@ -481,10 +550,12 @@
   id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 在示例中，我们将 DataFrame 转换为统一的一分钟间隔频率。然后通过前向填充来处理任何缺失的数据，这是一种传播最后已知值以填补空白的技术。
 - en: '3\. The Interplay of Normalization and Timestamp Alignment:'
   id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 标准化与时间戳对齐的相互作用：
 - en: When normalization and timestamp alignment are weaved together, they form the
     bedrock of a robust data preprocessing pipeline. The former ensures that the data
     is in a state ready for cross-sectional analysis, while the latter guarantees
@@ -492,12 +563,14 @@
   id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 当标准化与时间戳对齐交织在一起时，它们构成了强大数据预处理管道的基础。前者确保数据处于可进行横向分析的状态，而后者确保所有数据点之间的时间一致性。
 - en: A combination of both prepares the algorithm for the rigorous demands of real-time
     decision-making, where every piece of information is in its rightful place, primed
     for the algorithm to interpret and act upon.
   id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 两者的结合为算法准备了实时决策的严格要求，其中每条信息都在其应有的位置，随时为算法解读和执行。
 - en: The process of normalization and timestamp alignment is not a one-off task but
     an ongoing discipline. As new data flows in, the trading system must dynamically
     adapt, normalizing and aligning on the fly to maintain the integrity of the decision-making
@@ -505,10 +578,12 @@
   id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 规范化和时间戳对齐的过程不是一次性的任务，而是一项持续的工作。随着新数据的流入，交易系统必须动态适应，实时进行规范化和对齐，以维护决策过程的完整性。
 - en: High Availability and Fault Tolerance
   id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 高可用性和容错性
 - en: The architecture of an automated trading system is built not solely on the prowess
     of its analytical algorithms but also on the resilience of its infrastructure.
     High availability and fault tolerance are the twin pillars that sustain the operational
@@ -516,35 +591,42 @@
   id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 自动交易系统的架构不仅依赖于其分析算法的强大，还依赖于其基础设施的韧性。高可用性和容错性是支持交易活动持续运营的双重支柱，即使在不可预见的情况下也是如此。
 - en: '1\. High Availability (HA):'
   id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 高可用性 (HA)：
 - en: High availability refers to a system's ability to remain operational with minimal
     downtime. For a trading system, this translates to an architecture designed to
     provide continuous service, even during maintenance or minor failures.
   id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 高可用性指的是系统在最小停机时间内保持运行的能力。对于交易系统而言，这意味着设计一个即使在维护或小故障期间也能提供连续服务的架构。
 - en: 'In the Python ecosystem, HA can be achieved through various means. For instance:'
   id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 Python 生态系统中，可以通过多种方式实现高可用性。例如：
 - en: '- Redundancy: Implementing redundant systems that can take over in case of
     a primary system failure.'
   id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 冗余：实施冗余系统，以便在主要系统故障时接管。'
 - en: '- Load Balancing: Utilizing load balancers to distribute requests evenly across
     multiple servers, ensuring no single point of failure.'
   id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 负载均衡：利用负载均衡器将请求均匀分配到多个服务器，确保没有单点故障。'
 - en: '- Health Checks: Regularly monitoring system health and automating the failover
     process to backup systems when anomalies are detected.'
   id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 健康检查：定期监控系统健康，并在检测到异常时自动将故障转移到备份系统。'
 - en: '[PRE15]'
   id: totrans-95
   prefs: []
@@ -555,35 +637,42 @@
   id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个简单的 Flask 应用程序使用 APScheduler 进行定期健康检查，这是维护金融系统高可用性的基本部分。
 - en: '2\. Fault Tolerance:'
   id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 容错性：
 - en: Fault tolerance is the attribute that enables a system to continue functioning
     correctly in the event of a component failure. It is achieved by designing the
     system to handle potential faults proactively.
   id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 容错性是指系统在组件故障时继续正常运作的特性。通过设计系统以主动处理潜在故障来实现。
 - en: 'Techniques for fault tolerance include:'
   id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 容错性技术包括：
 - en: '- Exception Handling: Writing robust error handling logic to manage unexpected
     exceptions gracefully.'
   id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 异常处理：编写强健的错误处理逻辑，以优雅地管理意外异常。'
 - en: '- Data Redundancy: Storing data across multiple databases or storage systems
     to prevent data loss.'
   id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 数据冗余：在多个数据库或存储系统中存储数据，以防止数据丢失。'
 - en: '- Failover Mechanisms: Having backup components or systems ready to take over
     without manual intervention.'
   id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 故障切换机制：准备好备份组件或系统，以便在没有人工干预的情况下接管。'
 - en: '[PRE16]'
   id: totrans-103
   prefs: []
@@ -595,10 +684,12 @@
   id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们使用 Python 的 `requests` 库来获取市场数据，并通过异常处理来管理潜在的请求失败，展示了基本的容错操作。
 - en: '3\. Ensuring HA and Fault Tolerance:'
   id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 确保高可用性和容错性：
 - en: The interplay between high availability and fault tolerance in a trading environment
     is crucial. While HA aims at uninterrupted service, fault tolerance prepares the
     system for the inevitable occurrence of faults - ensuring that these do not cascade
@@ -606,12 +697,14 @@
   id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 在交易环境中，高可用性与容错性之间的相互作用至关重要。高可用性旨在提供不间断的服务，而容错性则为系统准备好不可避免的故障 - 确保这些故障不会蔓延成系统性故障。
 - en: Achieving HA and fault tolerance requires meticulous planning and continuous
     testing. Scenarios such as server crashes, network latency, and data corruption
     are simulated to train the system in recovery procedures.
   id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 实现高可用性和容错性需要细致的规划和持续的测试。模拟服务器崩溃、网络延迟和数据损坏等场景，以训练系统的恢复程序。
 - en: The ultimate goal is to construct a trading system that not only performs with
     precision but also possesses the resilience to withstand the vagaries of technology
     and the market. As we proceed to explore further Nuances of real-time data feed
