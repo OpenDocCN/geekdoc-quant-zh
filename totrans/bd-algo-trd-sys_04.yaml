@@ -1,36 +1,52 @@
 - en: PART IV
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第四部分
 - en: CREATING A SYSTEM
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建系统
 - en: CHAPTER 18
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第18章
 - en: Goals, Initial and Walk-Forward Testing
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 目标、初始和前向测试
 - en: Now that I’ve walked you through the strategy development process I use, I think
     it will be instructive and informative for me to walk you through the development
     of two strategies I created in March 2013 and started real-money trading in August
     2013\. If you go to the web site ([www.wiley.com/go/algotradingsystems](http://www.wiley.com/go/algotradingsystems))
     you will see updates for these strategies, assuming I am still trading them, or
     a post-mortem analysis if I decide to stop trading them.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我已经向你介绍了我使用的策略开发过程，我认为为你详细说明我在2013年3月创建的两个策略的开发过程是有益的，并且我在2013年8月开始真实交易。如果你访问网站（[www.wiley.com/go/algotradingsystems](http://www.wiley.com/go/algotradingsystems)），你将看到这些策略的更新，假设我仍在交易它们，或者如果我决定停止交易，则会有事后分析。
 - en: The next chapters will walk you through the process, and after that Chapter
     24 will give running commentary and updates as I trade it live.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来的章节将引导你完成这个过程，之后第24章将在我进行实时交易时提供运行评论和更新。
 - en: '![images](images/gbox.jpg) Developing a New Strategy'
+  id: totrans-6
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 开发新策略'
 - en: 'As with all new trading strategies, first I start out with a SMART goal:'
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 和所有新的交易策略一样，我首先设定一个SMART目标：
 - en: “I want to create a trading system for the euro currency that is an intraday
     strategy that can earn 50 percent annual return with a median maximum drawdown
     (determined by Monte Carlo simulation) of 25 percent or less, which is a return
@@ -39,23 +55,31 @@
     This trading system will take no more than two trades per day. I will give myself
     one month of development to complete this task (end of March 2013), and if I do
     not have a system at that time, I will move on to the next idea.”
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: “我想为欧元货币创建一个日内策略，该策略能够获得50%的年回报，且中位数最大回撤（通过蒙特卡洛模拟确定）为25%或更少，回报与回撤比为2.0或更好。该系统（可能包含多个独立策略）应在其交易的55%以上的日子里盈利。这个交易系统每天最多进行两次交易。我将给自己一个月的开发时间来完成这个任务（2013年3月底），如果到那时我没有系统，我将继续下一个想法。”
 - en: 'Is this goal sufficient for a SMART goal? Let’s take a look:'
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个目标是否足够成为一个SMART目标？让我们来看看：
 - en: '***S****pecific.* Intraday euro strategy, with specific performance goals.
     Yes, it is specific. In fact, it may be too specific—it is a pretty long goal
     statement.'
+  id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '***特定性***。日内欧元策略，具有具体的绩效目标。是的，它是具体的。事实上，它可能过于具体——这是一个相当长的目标声明。'
 - en: '***M****easurable.* 50 percent annual return, less than 25 percent drawdown,
     return/drawdown ratio greater than 2.0, 55 percent winning days. Yes, it will
     easy to measure performance against these benchmarks.'
+  id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '***可测量性***。50%的年回报，最大回撤少于25%，回报/回撤比大于2.0，55%的胜率。是的，针对这些基准衡量绩效将非常容易。'
 - en: '***A****ttainable.* 50 percent annual return, less than 25 percent drawdown,
     return/drawdown ratio greater than 2.0\. When I first started developing systems,
     these goals were very ambitious. It turns out that developing a strategy the *correct*
@@ -63,25 +87,33 @@
     small compared to what a decent optimized strategy looks like. Remember, though,
     that a great-looking back test does not always mean too much. So, yes, the goals
     here are attainable. The toughest part will be making the system an intraday strategy.'
+  id: totrans-12
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '***可实现性***。50%的年回报，最大回撤少于25%，回报/回撤比大于2.0。当我刚开始开发系统时，这些目标非常雄心勃勃。事实证明，以*正确*的方式开发策略是相当困难的。许多人会嘲笑这些数字，因为与一个优化良好的策略相比，它们似乎很小。不过，记住，一个看起来很棒的回测并不总是意味着太多。因此，是的，这里的目标是可实现的。最难的部分将是使该系统成为一个日内策略。'
 - en: '***R****elevant.* Everything in my goal statement relates to development of
     this system. Yes, it is relevant.'
+  id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '***相关性***。我的目标声明中的一切都与该系统的发展相关。是的，它是相关的。'
 - en: '***T****ime bound.* Since I limit myself to one month of development time,
     this is a time-bound goal. This time limit will also prevent me from making too
     many changes to a decent strategy, which will prevent overfitting and other bad
     development habits.'
+  id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '***时间限制***。由于我将开发时间限制为一个月，因此这是一个时间限制的目标。这个时间限制也将防止我对一个不错的策略进行太多更改，这将防止过拟合和其他不良开发习惯。'
 - en: Once I had the SMART goal identified, I could proceed to developing my trading
     idea.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦我确定了SMART目标，我就可以继续开发我的交易想法。
 - en: From past development experience, I know that intraday systems are difficult
     to develop, much more so than a longer-term swing system. The best intraday systems,
     in my experience, are those that trade infrequently and tend to ride winners (trends)
@@ -93,31 +125,43 @@
     will inevitably have a low winning percentage. To counteract this, I will likely
     need another strategy, one that has small winners, larger losers, and a high winning
     percentage.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据以往的开发经验，我知道日内系统的开发比长期波段系统要困难得多。在我看来，最佳的日内系统是那些交易频率较低、尽可能长时间顺势而为的系统。这使我倾向于一种相对快速止损的策略，但保留盈利直到交易日结束。为了获得最大的收益，这个系统应该在美国的交易日内进行交易，因为许多大幅波动发生在这个流动性极强的时间段。这个方法的问题在于，拥有许多小亏损和少数大盈利的系统不可避免地会有较低的胜率。为了抵消这一点，我可能需要另一种策略，一种拥有小盈利、较大亏损且胜率较高的策略。
 - en: 'As you can see, just thinking about the kind of system I want really helped
     me figure out the best way to proceed. After some more thought, I ended up with
     the following:'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如你所看到的，思考我想要的系统类型确实帮助我找到了最佳的推进方式。经过进一步思考，我得出了以下结论：
 - en: 'Create two strategies for the euro currency, using continuous contract @EC:'
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 为欧元货币创建两种策略，使用连续合约 @EC：
 - en: '*Strategy 1: Nighttime strategy “euro night.”* Runs on 105-minute bars, from
     6 P.M. ET to 7 A.M. ET. All trades are exited by 7 A.M., so they do not interfere
     with strategy 2\. This strategy will focus on small wins, larger losses, and will
     initiate trades only until 1 A.M. ET (I have to sleep sometime, in case I do not
     automate this strategy).'
+  id: totrans-19
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*策略 1：夜间策略“欧元夜”。* 从东部时间下午 6 点到早上 7 点，基于 105 分钟的K线。所有交易在早上 7 点之前平仓，以免干扰策略 2。该策略将专注于小盈利和较大的亏损，并且只会在东部时间凌晨
+    1 点之前发起交易（我总得睡觉，除非我将这个策略自动化）。'
 - en: '*Strategy 2: Daytime strategy “euro day.”* Runs on 60-minute bars from 7 A.M.
     to 3 P.M. ET, with all trades exited by 3 P.M. The end of the trading day is 5
     P.M., but I am closing all trades at 3 P.M., since trading volume is a lot less
     from 3 P.M. to 5 P.M.'
+  id: totrans-20
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*策略 2：日间策略“欧元日”。* 从东部时间早上 7 点到下午 3 点，基于 60 分钟的K线，所有交易在下午 3 点之前平仓。交易日结束于下午 5
+    点，但我将在下午 3 点关闭所有交易，因为从下午 3 点到下午 5 点的交易量要少得多。'
 - en: For the test period, since I am using small bars, I will test back only to January
     1, 2009\. Typically, for swing systems I use 5 to 10 years of historical data,
     which means this is a slightly different approach for me. This also avoids my
@@ -129,27 +173,37 @@
     accept. Strategy development is full of these trade-offs, and there is not always
     a correct way to resolve them. Sometimes you just have to try and see what happens,
     and that is what I am doing here.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 在测试期间，由于我使用的是小K线，我将只回测至 2009 年 1 月 1 日。通常，对于波段系统，我会使用 5 到 10 年的历史数据，这意味着这是我稍微不同的方法。这也避免了我在
+    2008 年金融危机期间进行测试，这可能会使开发更加困难。因此，请注意，以某种方式，我在这个策略开发中采取了一些捷径，因为我（1）只使用了大约 4 年的历史数据，以及（2）避免了重大市场事件。我意识到这些捷径会导致一个不如可能的系统那么稳健，但这是我愿意接受的牺牲。策略开发充满了这些权衡，解决它们并不总是有正确的方法。有时你只需要尝试一下，看看会发生什么，而这正是我在这里所做的。
 - en: Now that I have the preliminary information established, I can go ahead with
     the entry and exit rules. I’ll start with the exit rules, since those will be
     relatively fixed, compared to the entries. For both strategies, I want to lose
     no more than $450 per trade, after slippage and commission of $17.50 per trade.
     This equates to a loss of 34 ticks. When I go to detailed development, I will
     allow this stop amount to be lower than 34 ticks, but never more.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我已经建立了初步信息，可以继续制定进出场规则。我将从出场规则开始，因为与入场规则相比，它们相对固定。对于两种策略，我希望每笔交易的损失不超过 $450，考虑到每笔交易的滑点和
+    $17.50 的佣金。这相当于损失 34 个点。当我进行详细开发时，我会允许这个止损金额低于 34 个点，但绝不会超过。
 - en: For profit, with both strategies I will allow the profit target to be optimized
     for euro night strategy, and fixed at $5,000 for the euro day strategy. Since
     there has never been a $5,000 intraday move in euro, the $5,000 limit is effectively
     saying, “Go for as much profit as you can, and hold until the end of the trading
     session.”
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 在获利方面，对于两种策略，我将允许欧元夜间策略的利润目标进行优化，而欧元日策略固定为$5,000。由于欧元从未出现过$5,000的日内波动，因此$5,000的限额实际上是在说：“尽可能多获利，持有到交易结束。”
 - en: The final exit for both strategies will be to close all open trades at the end
     of the session. This will be a rigid exit, with no optimization needed.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于两种策略，最终的退出将是在交易结束时平掉所有未平仓交易。这将是一个严格的退出，不需要优化。
 - en: With the simple exits firmly established, the trick to making these strategies
     successful will lie in the entries. After some cursory examination and testing,
     it became apparent that reversal-type entries would be the best thing for both
@@ -158,32 +212,48 @@
     makes these strategies a type of mean reversion, since you are entering against
     a trend and banking on its reversing before turning into a trend in the opposing
     direction.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着简单的退出方式得到牢固确立，使这些策略成功的关键在于入场。在经过一些初步检查和测试后，显然反转型入场将是两种策略的最佳选择。反转入场的一个示例见于[图
+    18.1](#figure18-1)，其思想是在价格停止并反转之前捕捉到一次向上或向下的波动。这使得这些策略成为一种均值回归类型，因为你是在逆趋势入场，并寄希望于它在转变为相反方向的趋势之前反转。
 - en: '![images](images/c18f001.jpg)'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c18f001.jpg)'
 - en: '[**FIGURE 18.1**](#figureanchor18-1) Reversal Entry Example'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 18.1**](#figureanchor18-1) 反转入场示例'
 - en: For strategy 1, the euro night strategy, the long entry is based on the average
     high of the previous X bars, reduced by a multiplier of the average true range.
     Of course, the exact opposite entry is true for a short entry. See [Figure 18.1](#figure18-1).
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于策略1，即欧元夜间策略，多头入场是基于之前X根K线的平均高点，减去平均真实范围的一个倍数。当然，短入场的确切相反也适用。见[图 18.1](#figure18-1)。
 - en: For strategy 2, the euro day strategy, when a highest high of the past Y bars
     is hit, and the X bar momentum is down, then a limit order to sell short will
     be placed Z ticks above the current high. The opposite logic holds for long trades.
     Thus, to get filled, the strategy is planning on one more price thrust before
     the price reverses. An example entry is shown in [Figure 18.2](#figure18-2).
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于策略2，即欧元日策略，当过去Y根K线的最高点被触及，且X根K线的动量向下时，将在当前高点上方Z个点设置卖空限价单。对于多头交易，逻辑正好相反。因此，为了成交，该策略计划在价格反转之前再进行一次价格推动。示例入场见于[图
+    18.2](#figure18-2)。
 - en: '![images](images/c18f002.jpg)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c18f002.jpg)'
 - en: '[**FIGURE 18.2**](#figureanchor18-2) Euro Day Strategy Entry Example'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 18.2**](#figureanchor18-2) 欧元日策略入场示例'
 - en: What do I think my edge actually is? Based on the reversal entries I am employing,
     I feel my edge is in identifying very-short-term (for night strategy 1) and medium-term
     (for day strategy 2) areas where the price is likely to reverse. By having limit
@@ -192,81 +262,117 @@
     me profit. Of course, if the rubber band keeps stretching after my order is filled,
     that means my premise was wrong, and I pay the price with a full stop-loss or
     a loss at the end of the trading session.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 我认为我的优势到底是什么？基于我所采用的反转入场策略，我觉得我的优势在于识别非常短期（针对夜间策略1）和中期（针对日间策略2）价格可能反转的区域。通过在当前市场远离的地方设置限价单，我将我的优势比作橡皮筋。它不断拉伸，直到我获得限价成交，然后反弹回来，为我带来利润。当然，如果橡皮筋在我的订单成交后继续拉伸，那就意味着我的前提是错误的，我将以全额止损或在交易结束时损失的代价付出。
 - en: With all the basic structure of the strategy, along with the entry and exit
     in place, I can now start the preliminary testing.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着策略的基本结构以及入场和出场到位，我现在可以开始初步测试。
 - en: '![images](images/gbox.jpg) Limited Testing'
+  id: totrans-34
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 有限测试'
 - en: For limited testing, I chose to look at the results for just 2009\. Since my
     full-size test will be 2009–present, I am using about 25 percent of the data to
     do my initial tests. This will give me a good indication of whether my strategy
     is viable. Remember, with these tests I am looking for a general indication that
     my entries, exits, and entries and exits combined are working well.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于有限测试，我选择只查看2009年的结果。由于我的全面测试将覆盖2009年至今，我使用大约25%的数据进行初步测试。这将为我的策略是否可行提供一个良好的指示。请记住，通过这些测试，我在寻找我的入场、退出以及入场和退出组合是否运作良好的总体指示。
 - en: '*Entry test—fixed-stop and target.* The results of this test, and all other
     limited tests are shown in [Table 18.1](#table18-1). All results are acceptable,
     which allows me to proceed to the in-depth testing phase.'
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: '*入场测试—固定止损和目标.* 此测试的结果以及所有其他有限测试的结果见[表18.1](#table18-1)。所有结果均可接受，这使我可以进入深入测试阶段。'
 - en: '[**TABLE 18.1**](#tableanchor18-1) Limited Testing Summary, Euro Day and Night
     System'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**表18.1**](#tableanchor18-1) 有限测试总结，欧元日和夜系统'
 - en: '|  | Euro Night | Euro Day |'
+  id: totrans-38
   prefs: []
   type: TYPE_TB
+  zh: '|  | 欧元夜 | 欧元日 |'
 - en: '| --- | --- | --- |'
+  id: totrans-39
   prefs: []
   type: TYPE_TB
+  zh: '| --- | --- | --- |'
 - en: '| **Entry Test—Fixed-Stop and Target** | 82% of optimizations profitable |
     76% of optimizations profitable |'
+  id: totrans-40
   prefs: []
   type: TYPE_TB
+  zh: '| **入场测试—固定止损和目标** | 82%的优化是盈利的 | 76%的优化是盈利的 |'
 - en: '| **Entry Test—Fixed-Bar Exit** | Exit after one to five bars >> good | Exit
     after one to five bars >> good |'
+  id: totrans-41
   prefs: []
   type: TYPE_TB
+  zh: '| **入场测试—固定条形退出** | 一到五根条形后退出 >> 良好 | 一到五根条形后退出 >> 良好 |'
 - en: '| **Exit Test—Similar- Approach Entry** | Generic mean reversion limit order
     entry >> acceptable | Generic mean reversion limit order entry >> acceptable |'
+  id: totrans-42
   prefs: []
   type: TYPE_TB
+  zh: '| **退出测试—相似方法入场** | 一般的均值回归限价入场 >> 可接受 | 一般的均值回归限价入场 >> 可接受 |'
 - en: '| **Core System Test** | 85% of optimizations profitable | 81% of optimizations
     profitable |'
+  id: totrans-43
   prefs: []
   type: TYPE_TB
+  zh: '| **核心系统测试** | 85%的优化是盈利的 | 81%的优化是盈利的 |'
 - en: '| **Monkey Testing** | Entry better than random | Entry better than random
     |'
+  id: totrans-44
   prefs: []
   type: TYPE_TB
+  zh: '| **猴子测试** | 入场优于随机 | 入场优于随机 |'
 - en: '|  | Exit better than random | Exit better than random |'
+  id: totrans-45
   prefs: []
   type: TYPE_TB
+  zh: '|  | 退出优于随机 | 退出优于随机 |'
 - en: '*Entry test—fixed-bar exit.* The results look good and lead me to think I possibly
     have some sort of edge here with my entry.'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: '*入场测试—固定条形退出.* 结果看起来不错，让我认为我的入场可能在某种程度上有优势。'
 - en: '*Exit test—similar-approach entry.* To test the exit, I created an entry condition
     similar in style (mean-reverting limit order) to the one I am using. If the results
     are good, it gives me just a bit more confidence in the exit I have chosen. Results
     do indeed look good.'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: '*退出测试—相似方法入场.* 为了测试退出，我创建了一个风格相似的入场条件（均值回归限价单）。如果结果良好，会让我对我选择的退出多一些信心。结果确实看起来不错。'
 - en: '*Core system test.* This test is a gentle optimization of the whole system,
     with entry and exit conditions working together. Results show that the system
     performs pretty well and is acceptable for further investigation.'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: '*核心系统测试.* 此测试是对整个系统的温和优化，入场和退出条件协同工作。结果表明系统表现良好，适合进一步研究。'
 - en: '*Monkey testing.* This random testing can be very useful it certain situations.
     Other times, it really doesn’t provide any additional information. Such is the
     case here.'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: '*猴子测试.* 这种随机测试在某些情况下非常有用。其他时候，它并没有提供任何额外信息。这里就是这种情况。'
 - en: '*Limited testing summary.* Both strategies passed all the tests I ran, so the
     strategies can proceed further through the process. Note that this is the exception,
     not the rule. Most times, the results will be so poor that no further testing
@@ -277,31 +383,45 @@
     will find that more and more of your strategies fall into this third category.
     At the start of your development journey, though, plan on discarding a lot of
     garbage strategies and adding rules and conditions to most of the rest.'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: '*有限测试总结.* 两种策略通过了我进行的所有测试，因此这些策略可以进一步推进。请注意，这是例外，而不是常规。大多数情况下，结果会差到不需要进一步测试，你可以直接进入下一个想法。在少数情况下，结果将是一般的，你可能会添加规则或过滤器以获得更好的结果。在非常少见的情况下，策略第一次通过时会是可接受的，这就是这里发生的情况。随着你在创建和测试想法方面积累经验，你会发现越来越多的策略会落入这个第三类。然而，在你发展旅程的开始，计划丢弃许多无用的策略，并对其余的大多数添加规则和条件。'
 - en: '![images](images/gbox.jpg) Walk-Forward Testing'
+  id: totrans-51
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 向前测试'
 - en: With the limited testing complete, I can now proceed to the detailed walk-forward
     testing. This consists of running a full optimization, and then running through
     the walk-forward analysis. [Figure 18.3](#figure18-3) shows the process.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 限定测试完成后，我现在可以进行详细的步进测试。这包括运行完整的优化，然后进行步进分析。[图 18.3](#figure18-3)展示了这个过程。
 - en: '![images](images/c18f003.jpg)'
+  id: totrans-53
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c18f003.jpg)'
 - en: '[**FIGURE 18.3**](#figureanchor18-3) Walk-Forward Testing, Euro Day and Night
     Strategy'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 18.3**](#figureanchor18-3) 步进测试，欧洲日间和夜间策略'
 - en: CHAPTER 19
+  id: totrans-55
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第 19 章
 - en: Monte Carlo Testing and Incubation
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 蒙特卡洛测试和孵化
 - en: With the walk-forward testing complete, based on the results I am confident
     I have a viable strategy. The equity curve for walk-forward testing looks nice,
     but at the same time I realize that there is no possible way the future equity
@@ -315,76 +435,110 @@
     drawdowns will likely be much more severe, the system will be harder to trade
     with position sizing, and the resulting equity curve will probably give you more
     ulcers.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 完成步进测试后，基于结果我确信我有一个可行的策略。步进测试的权益曲线看起来很好，但与此同时我意识到未来的权益曲线不可能与过去的权益曲线完全相同。我希望，以及此阶段所有开发者的希望，是权益曲线的组成部分（即，单个交易）与步进历史大致相同。想象这一点最简单的方法是考虑平均交易利润及其标准差（散布）。如果这两个值中的任何一个显著变化，系统在未来可能会失败。例如，如果平均交易变为负值，未来的表现显然会是负面的。同样，如果标准差增加，回撤可能会更加严重，系统在进行头寸管理时会更难操作，
+    resulting equity curve 可能会让你感到更多焦虑。
 - en: Assuming, then, that the walk-forward trade performance will continue in the
     future, it becomes useful to see how the future performance might vary over time.
     For this analysis, I simulate one year’s worth of trades with Monte Carlo analysis.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设步进交易表现将在未来持续，那么观察未来表现如何随时间变化将变得有用。对于这个分析，我通过蒙特卡洛分析模拟了一年的交易。
 - en: '![images](images/gbox.jpg) Euro Day Strategy'
+  id: totrans-59
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 欧洲日间策略'
 - en: 'As previously discussed in Chapter 7, the only information required to do a
     simple Monte Carlo analysis is:'
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 如第 7 章所述，进行简单蒙特卡洛分析所需的唯一信息是：
 - en: Starting equity
+  id: totrans-61
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 起始权益
 - en: Quitting-point equity
+  id: totrans-62
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 退出点权益
 - en: Number of trades in one year
+  id: totrans-63
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 一年中的交易次数
 - en: Individual trade results
+  id: totrans-64
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 单个交易结果
 - en: For any simulations that you run, you might want to simulate more than one year’s
     worth of trades, or you might want to include position sizing, or you may even
     want to eliminate the quitting-point equity—the point at which you stop trading.
     These particulars will be something you develop over time, as you determine what
     you like and don’t like in the simulation. The exact method I use may not suit
     you, and that is fine.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于你进行的任何模拟，你可能希望模拟超过一年的交易，或者你可能希望包含头寸管理，甚至可能希望消除退出点权益——即你停止交易的点。这些细节将是你随着时间推移逐渐发展出来的，因为你会确定你在模拟中喜欢和不喜欢的东西。我使用的确切方法可能不适合你，这没关系。
 - en: 'Once I have all the inputs for the Monte Carlo simulation, I simply enter them
     in the spreadsheet and press the “Calculate” button. Results are as shown in [Figure
     19.1](#figure19-1). For the day strategy, if I keep the risk of ruin below 10
     percent (my personal threshold for ruin), I find I need $6,250 to begin trading
     this system, and in an “average” year I can expect:'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦我获得了所有蒙特卡洛模拟的输入，我只需将它们输入电子表格并按下“计算”按钮。结果如[图 19.1](#figure19-1)所示。对于日间策略，如果我将破产风险保持在
+    10% 以下（这是我个人的破产阈值），我发现我需要 $6,250 来开始交易这个系统，并且在“平均”一年里，我可以期待：
 - en: 23.7 percent maximum drawdown
+  id: totrans-67
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 23.7% 的最大回撤
 - en: 129 percent return
+  id: totrans-68
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 129% 的收益率
 - en: 5.45 return/drawdown ratio
+  id: totrans-69
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 5.45 的收益/回撤比
 - en: '![images](images/c19f001.jpg)'
+  id: totrans-70
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c19f001.jpg)'
 - en: '[**FIGURE 19.1**](#figureanchor19-1) Monte Carlo Results, Euro Day Strategy'
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 19.1**](#figureanchor19-1) 蒙特卡洛结果，欧洲日间策略'
 - en: Other points of interest are that I have a 4 percent chance of ruin in that
     first year, where my equity would drop below $3,000\. I also have a 94 percent
     probability of making money in that first year (i.e., ending the year with more
     than $6,250).
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个值得关注的点是，我在第一年有4%的破产风险，这时我的资产会低于$3,000。我在第一年也有94%的赚钱概率（即年末超过$6,250）。
 - en: Based on my goals and objectives, all of these parameters are acceptable, and
     I consider the Monte Carlo simulation results successful. Note that, based on
     your goals and objectives, this system—with the $6,250 starting equity—may not
@@ -394,54 +548,76 @@
     I think it is so important that you come up with your own goals and objectives.
     In the end, you need to feel comfortable trading what you have developed, and
     trading something that does not fit you is a sure recipe for disaster.
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据我的目标和目的，所有这些参数都是可接受的，我认为蒙特卡罗模拟结果是成功的。请注意，基于你的目标和目的，这个系统——以$6,250的起始资本——可能对你来说不够好。例如，许多人希望破产风险接近0%。其他人可能觉得25.5%的最大回撤过高。关键在于，适合我的可能不适合你。这就是我认为制定自己目标和目的如此重要的原因。最终，你需要对自己制定的交易策略感到舒适，而交易不适合你的东西无疑是灾难的处方。
 - en: '![images](images/gbox.jpg) Euro Night Strategy'
+  id: totrans-74
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 欧元夜间策略'
 - en: 'Now, I will perform the exact same procedure on the euro night strategy. Results
     are as shown in [Figure 19.2](#figure19-2). For the night strategy, if I again
     keep the risk of ruin below 10 percent, I find I need $6,250 to begin trading
     this system, and in an “average” year I can expect:'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，我将对欧元夜间策略执行完全相同的程序。结果如[图19.2](#figure19-2)所示。对于夜间策略，如果我再次将破产风险保持在10%以下，我发现我需要$6,250来开始交易该系统，在“平均”年份中我可以预期：
 - en: 25.0 percent maximum drawdown
+  id: totrans-76
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 25.0%的最大回撤
 - en: 52 percent return
+  id: totrans-77
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 52%的回报率
 - en: 2.0 return/drawdown ratio
+  id: totrans-78
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 2.0的回报/回撤比
 - en: '![images](images/c19f002.jpg)'
+  id: totrans-79
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c19f002.jpg)'
 - en: '[**FIGURE 19.2**](#figureanchor19-2) Monte Carlo Results, Euro Night Strategy'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图19.2**](#figureanchor19-2) 蒙特卡罗结果，欧元夜间策略'
 - en: Other points of interest are that I have a 6 percent chance of ruin in that
     first year, where my equity would drop below $3,000\. I also have an 85 percent
     probability of making money in that first year (i.e., ending the year with more
     than $6,250).
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个值得关注的点是，我在第一年有6%的破产风险，这时我的资产会低于$3,000。我在第一年也有85%的赚钱概率（即年末超过$6,250）。
 - en: Note that this strategy is nowhere near as good as the euro day strategy. I
     expected this because of the goals of the night strategy. If you will recall,
     I was looking for a higher winning percentage strategy here, not one with necessarily
     a lot of profit. Even so, the night strategy by itself meets my goals, although
     the return/drawdown ratio of only 2.0 is on the low end of acceptability. But
     since it meets my criteria, I can proceed to the final Monte Carlo step.
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，这一策略远不如欧元日间策略好。我预料到这一点是因为夜间策略的目标。如果你还记得，我在寻找更高获胜率的策略，而不是一定要盈利的策略。尽管如此，夜间策略本身达到了我的目标，尽管其回报/回撤比只有2.0，处于可接受的低端。但由于它符合我的标准，我可以继续进行最后的蒙特卡罗步骤。
 - en: '![images](images/gbox.jpg) Euro Day and Night Strategy'
+  id: totrans-83
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 欧元日夜策略'
 - en: While it is nice to know that either strategy, by itself, meets my performance
     criteria, what really matters to me is how the combined day and night strategy
     performs. Before I perform the Monte Carlo analysis, however, I have to do some
@@ -451,76 +627,112 @@
     when I trade both strategies together? Some days, only one strategy will trade,
     and on other days, both strategies will trade. I want to preserve this with the
     combined simulation.
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然知道任一策略都满足我的绩效标准很不错，但对我而言，更重要的是日夜结合策略的表现。然而，在进行蒙特卡罗分析之前，我必须进行一些数据处理。在之前的模拟中，我使用了单个交易作为输入，这样工作得很好。但对于结合策略，我该如何确保正确的交易比例和分布，以反映当我同时交易这两种策略时实际发生的情况呢？有些日子，仅一种策略会交易，而在其他日子，两种策略都会交易。我希望在组合模拟中保留这一点。
 - en: The solution to combining strategies into one strategy is to use the daily results,
     instead of the individual trade results. Then the net results on a given day will
     be considered as the results of one system. An example of how that works is shown
     in the “Combined” column of [Table 19.1](#table19-1).
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 将策略结合为一个策略的解决方案是使用每日结果，而不是单个交易结果。这样在特定日的净结果将视为一个系统的结果。关于这一点的示例见于[表 19.1](#table19-1)的“结合”列。
 - en: '[**TABLE 19.1**](#tableanchor19-1) Combine Daily Results on Multiple Systems
     to Get “One” Combined System'
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**表 19.1**](#tableanchor19-1) 将多个系统的每日结果结合成“一个”系统'
 - en: '| Date | Euro Day | Euro Night | Combined |'
+  id: totrans-87
   prefs: []
   type: TYPE_TB
+  zh: '| 日期 | 欧元白天 | 欧元夜间 | 结合 |'
 - en: '| --- | --- | --- | --- |'
+  id: totrans-88
   prefs: []
   type: TYPE_TB
+  zh: '| --- | --- | --- | --- |'
 - en: '| 9/9/2013 | +$100 |  | +$100 |'
+  id: totrans-89
   prefs: []
   type: TYPE_TB
+  zh: '| 2013年9月9日 | +$100 |  | +$100 |'
 - en: '| 9/10/2013 |  | +$600 | +$600 |'
+  id: totrans-90
   prefs: []
   type: TYPE_TB
+  zh: '| 2013年9月10日 |  | +$600 | +$600 |'
 - en: '| 9/11/2013 | +$100 | +$250 | +$350 |'
+  id: totrans-91
   prefs: []
   type: TYPE_TB
+  zh: '| 2013年9月11日 | +$100 | +$250 | +$350 |'
 - en: '| 9/12/2013 | −$400 |   −$50 | −$450 |'
+  id: totrans-92
   prefs: []
   type: TYPE_TB
+  zh: '| 2013年9月12日 | −$400 | −$50 | −$450 |'
 - en: '| 9/13/2013 |  | +$100 | +$100 |'
+  id: totrans-93
   prefs: []
   type: TYPE_TB
+  zh: '| 2013年9月13日 |  | +$100 | +$100 |'
 - en: By utilizing this technique, we have preserved the characteristics of each strategy’s
     trades, and just combined them into daily trades. A similar approach can be used
     to combine any two or more systems into one strategy. Simply compile results into
     daily results, and use that in the simulation.
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过利用这个技术，我们保留了每个策略交易的特征，并将它们结合成每日交易。类似的方法可以用于将任意两个或多个系统合并为一个策略。只需将结果整理为每日结果，并在模拟中使用即可。
 - en: 'Once I have the trade data compiled into daily results, I can perform the Monte
     Carlo analysis on the combined euro day and night strategy. Results are as shown
     in [Figure 19.3](#figure19-3). For the combined strategy, if I again keep the
     risk of ruin below 10 percent, I find I need $6,250 to begin trading this system,
     and in an “average” year I can expect:'
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦我将交易数据整理为每日结果，就可以对结合的欧元白天和夜间策略进行蒙特卡洛分析。结果如[图 19.3](#figure19-3)所示。对于结合的策略，如果我再次将破产风险控制在10%以下，我发现我需要$6,250来开始交易该系统，并且在一个“平均”的年份，我可以期待：
 - en: 25.8 percent maximum drawdown
+  id: totrans-96
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 25.8%的最大回撤
 - en: 176 percent return
+  id: totrans-97
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 176%的回报率
 - en: 6.6 return/drawdown ratio
+  id: totrans-98
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 6.6的回报/回撤比
 - en: '![images](images/c19f003.jpg)'
+  id: totrans-99
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c19f003.jpg)'
 - en: '[**FIGURE 19.3**](#figureanchor19-3) Monte Carlo Results, Both Strategies Combined'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 19.3**](#figureanchor19-3) 蒙特卡洛结果，两种策略结合'
 - en: Other points of interest are that I have a 5 percent chance of ruin in that
     first year, where my equity would drop below $3,000\. I also have a 95 percent
     probability of making money in that first year (i.e., ending the year with more
     than $6,250).
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 其他有趣的点是，在第一年我有5%的破产风险，届时我的权益会降到$3,000以下。我在第一年还有95%的概率盈利（即，年末的金额超过$6,250）。
 - en: 'The most interesting aspect of this combined analysis is that the combined
     system is better than each system by itself. I’ll repeat that: *the combined system
     is better than each by itself.* This is due to the diversification effect, which
@@ -531,72 +743,98 @@
     experiencing a drawdown, the other might be hitting new equity highs (or at least
     not new maximum drawdowns). Diversification, by trading uncorrelated strategies,
     is what makes this possible.'
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 此次综合分析中最有趣的方面是，结合系统的表现优于单独每个系统。我再说一遍：*结合系统的表现优于单独每个系统。* 这归因于多样化效应，我在第15章中讨论过。回报与回撤比，我在蒙特卡洛分析中的主要指标，从5.5提高到6.6，这是一个相当大的增长。这是因为通过同时交易两个系统，我获得了策略的综合回报，但在下行方面，回撤并不会合并。相反，当一个策略经历回撤时，另一个策略可能正在达到新的权益高点（或者至少没有达到新的最大回撤）。通过交易不相关的策略实现多样化正是使这一切成为可能的原因。
 - en: 'Looking at the Monte Carlo analysis as a whole, all my performance goals and
     objectives are met for the combined system. Therefore, I consider this analysis
     a “pass” and can now proceed to the next step: incubation.'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 从整体上看蒙特卡洛分析，我的所有绩效目标和指标都在结合系统中得到了满足。因此，我将此分析视为“通过”，并可以继续下一步：孵化。
 - en: '![images](images/gbox.jpg) Incubation'
+  id: totrans-104
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 孵化'
 - en: At this point, I have 3.5 or so years of walk-forward back-test history. On
     top of that, I have about 5 months of “incubation” results, watching the euro
     day and night systems perform real time, with no changes to the original code
     (other than regularly scheduled reoptimizations).
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止，我大约有3.5年的走向前推回测历史。除此之外，我还有大约5个月的“孵化”结果，观察欧元白天和晚上的系统实时表现，且没有对原始代码做任何更改（除了定期重新优化）。
 - en: 'Walk-forward results: July 2009–March 2013'
+  id: totrans-106
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 走向前推结果：2009年7月–2013年3月
 - en: 'Incubation results: March 2013–August 2013'
+  id: totrans-107
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 孵化结果：2013年3月–2013年8月
 - en: If the incubation results of the last 5 months “look” similar to the walk-forward
     results, I should feel comfortable going live with the strategy.
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果过去5个月的孵化结果“看起来”与走向前推结果相似，我应该感到舒服地让策略上线。
 - en: '![images](images/gbox.jpg) Are Results Similar?'
+  id: totrans-109
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 结果相似吗？'
 - en: 'Here is how I determine if incubation and walk-forward data “match.” Keep in
     mind that I am not a statistician, so I tend to keep things simple, at the risk
     of not being 100 percent mathematically and scientifically rigorous. What I do
     passes a common-sense test, though. I use three methods to check for a match:'
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我判断孵化和走向前推数据是否“匹配”的方法。请记住，我不是统计学家，所以我倾向于保持简单，冒着没有100%数学和科学严谨的风险。不过，我所做的通过了常识测试。我使用三种方法检查匹配情况：
 - en: '*Student’s t distribution test.* This statistical test will tell you if two
     data groups (the walk-forward results and the incubation results) are significantly
     different from each other.'
+  id: totrans-111
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*学生t分布检验。* 这个统计检验将告诉你两个数据组（走向前推结果和孵化结果）是否显著不同。'
 - en: You can pretty easily do this in Excel (with the TTest function), or you can
     find on online t-test by searching with Google.
+  id: totrans-112
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 你可以很轻松地在Excel中做到这一点（使用TTest函数），或者通过谷歌搜索找到在线t检验。
 - en: When I run this test, it tells me that there is a 56 percent chance that these
     distributions are not different. This gives me reasonable assurance that the strategies
     are performing in real time as they did historically. If, however, the chances
     of the strategies being different were 0 to 20 percent, I might seriously wonder
     if I made a testing development mistake.
+  id: totrans-113
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 当我进行这个测试时，它告诉我这些分布不不同的概率为56%。这让我合理地相信这些策略在实时表现与历史表现相同。然而，如果策略不同的概率为0到20%，我可能会认真怀疑自己是否犯了测试开发错误。
 - en: '*Data distribution comparison.* I create two histograms of the data. The first
     one is the actual data, and I lay the walk-forward and the incubation results
     on top of each other. Do they look like they overlap? The second chart plots a
     theoretical normal curve histogram, based on the mean and standard deviation.
     I see a good amount of overlap in [Figure 19.4](#figure19-4).'
+  id: totrans-114
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*数据分布比较。* 我创建了两个数据的直方图。第一个是实际数据，我将走向前推和孵化结果叠加在一起。它们看起来重叠吗？第二个图表绘制了基于均值和标准差的理论正态曲线直方图。我在[图19.4](#figure19-4)中看到了一定程度的重叠。'
 - en: '*Equity curve comparison.* This is my favorite method, but it is not very scientific
     or mathematical. I simply plot all the data and create an equity curve. When I
     do that, can I see where the walk-forward ends and incubation begins? If I can,
@@ -605,43 +843,61 @@
     parameters, and then let it run live for a while. Most times, you’ll notice a
     change in the curve. I do not see a radical change in the incubation portion of
     the curve, shown in [Figure 19.5](#figure19-5). This is a good sign!'
+  id: totrans-115
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*权益曲线比较。* 这是我最喜欢的方法，但并不是非常科学或数学。我只是绘制所有数据并创建一条权益曲线。当我这样做时，我能否看到走向前推结束和孵化开始的地方？如果能，这表明孵化开始时发生了某些事情，这通常是个坏事。如果你对这个方法感到疑惑，只需创建一个带有优化参数的策略，然后让它运行一段时间。大多数时候，你会注意到曲线的变化。我在[图19.5](#figure19-5)中看到的孵化部分曲线没有剧烈变化，这是个好迹象！'
 - en: '![images](images/c19f004.jpg)'
+  id: totrans-116
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c19f004.jpg)'
 - en: '[**FIGURE 19.4**](#figureanchor19-4) Incubation Results—Data Distribution Comparison'
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图19.4**](#figureanchor19-4) 孵化结果—数据分布比较'
 - en: '![images](images/c19f005.jpg)'
+  id: totrans-118
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c19f005.jpg)'
 - en: '[**FIGURE 19.5**](#figureanchor19-5) Incubation Results—Equity Curve Comparison'
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图19.5**](#figureanchor19-5) 孵化结果—权益曲线比较'
 - en: Based on this analysis, I’d say the system is performing in incubation the same
     as it performed in its walk-forward test. In fact, incubation is better than walk-forward,
     which does concern me a bit (usually it is the other way around). But it is close
     enough to give me confidence that I did not screw up during testing in development.
     It does not guarantee that when I go live, the system will be profitable—that
     is important to remember.
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于这项分析，我可以说该系统在孵化阶段的表现与其前向测试时相同。实际上，孵化阶段的表现优于前向测试，这让我有点担忧（通常情况正好相反）。但它的接近程度让我有信心在开发测试中没有出错。这并不保证当我上线时系统会盈利——这点很重要。
 - en: '![images](images/gbox.jpg) Final Information'
+  id: totrans-121
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 最终信息'
 - en: Once all the tests are complete, I can make a decision on whether to proceed
     with trading the system. Even if the strategy passes all the development steps,
     I still might decide not to trade it. Position sizing and correlation with other
     strategies are two possible reasons I might decide not to trade a specific strategy.
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦所有测试完成，我就可以决定是否继续交易该系统。即使策略通过了所有开发步骤，我仍然可能决定不交易它。头寸规模和与其他策略的相关性是我可能决定不交易特定策略的两个原因。
 - en: '![images](images/gbox.jpg) Position Sizing'
+  id: totrans-123
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 头寸规模'
 - en: Although I discussed position sizing in more detail in Chapter 16, I did not
     design the strategy specifically for any position sizing method. Of course, it
     is an important item to think about before I start trading with real money. A
@@ -649,8 +905,10 @@
     it, it just may not be worth trading with real money. This can occur when single
     contract losses are too big, and the account size needed to trade the strategy
     is prohibitively large.
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管我在第16章中更详细地讨论了头寸规模，但我并没有为任何特定的头寸规模方法设计这个策略。当然，这是在我开始用真钱交易之前需要考虑的重要事项。一个策略可以很好，但如果无法合理应用头寸规模，可能就不值得用真钱交易。当单合约损失过大，而交易该策略所需的账户规模又极大时，这种情况就会发生。
 - en: An example of this is a system very similar to one I developed and have been
     trading for a number of years. This system wins $5,000 per contract on 50 percent
     of trades, and loses $3,000 per contract on the other 50 percent. The average
@@ -664,12 +922,16 @@
     Remember, this is trading only one contract. Using any kind of position sizing
     will make these drawdown and ruin numbers much worse. Thus, in your development
     process you may end up with a profitable system that you just can’t trade.
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个例子是一个与我开发并交易多年非常相似的系统。这个系统在50%的交易中每合约盈利$5,000，而在另外50%的交易中每合约亏损$3,000。因此，每笔交易的平均盈亏为$1,000，Tharp预期为0.33，显示出这是一个相当不错的系统。但要交易这样的系统需要多少钱？假设该策略每年交易20次，退出权益点为$3,000，你需要一个$20,000的账户才能仅有6%的破产几率。此外，你的最大回撤可能会达到33%。这对我们许多人来说太多了。为了将回撤降低到25%以下，需要一个$35,000的账户。这可能使这个系统超出大多数交易者的可及范围。请记住，这仅仅是交易一个合约。使用任何类型的头寸规模都会使这些回撤和破产数字变得更糟。因此，在你的开发过程中，你可能最终会得到一个盈利的系统，但你却无法交易。
 - en: '![images](images/gbox.jpg) Correlation with Other Strategies'
+  id: totrans-126
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 与其他策略的相关性'
 - en: Before I start trading a strategy live, I always check the performance of the
     new system with systems I am already trading. I run a simple correlation of daily
     returns. This will tell me if the new strategy is highly correlated to any of
@@ -678,12 +940,16 @@
     you may end up with too much exposure in a particular market or to a particular
     trading style. Many times, for strategies developed independently, this is not
     an issue, but it is always good to check.
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我开始实时交易策略之前，我总是会检查新系统的表现与我已经交易的系统。我进行每日收益的简单相关性分析。这将告诉我新策略是否与我现有的任何策略高度相关。显然，交易两个高度相关的策略并不是一个好主意，除非你将每个策略的仓位大小减半。否则，你可能会在特定市场或特定交易风格上面临过多的风险。对于独立开发的策略，这通常不是问题，但检查一下总是好的。
 - en: '![images](images/gbox.jpg) Monte Carlo—Consistency'
+  id: totrans-128
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 蒙特卡罗——一致性'
 - en: One of the interesting side benefits of performing Monte Carlo analysis is that
     you can get an idea of your profit consistency. Imagine you were manager of a
     casino. Over the course of five minutes, your casino might make or lose money
@@ -692,45 +958,59 @@
     of profitability go up, and eventually approach near certainty. Your casino probably
     makes money every week and almost certainly makes money every month—unless, of
     course, the criminal underworld is skimming from you!
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 进行蒙特卡罗分析的一个有趣的附带好处是你可以了解自己的盈利一致性。想象一下你是一个赌场的经理。在五分钟内，你的赌场可能在赌桌上赢或亏。结果存在一定的随机性，因此即使赌场在短时间内也可能会亏损。随着时间的增加，你的盈利机会会提高，最终接近于确定性。你的赌场每周可能都会赚钱，几乎可以肯定每个月都会赚钱——当然，前提是黑暗势力没有从你那里抽水！
 - en: The concept of a casino got me thinking that I’d really like to be profitable
     over a week, month, or year with my trading systems. Obviously, that is a function
     of my “roulette wheel”—my trading system and how much of an edge it provides.
     If I assume that my historical results will match my future results, I can use
     the Monte Carlo analysis to determine my odds of profitability. From that number,
     I can determine how consistently profitable I am over any given time period.
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 赌场的概念让我思考，我真的希望我的交易系统在一周、一个月或一年内都是盈利的。显然，这取决于我的“轮盘赌”——我的交易系统以及它提供的优势。如果我假设我的历史结果将与未来结果相匹配，我可以使用蒙特卡罗分析来确定我的盈利机会。从这个数字中，我可以确定自己在任何给定时间段内的盈利一致性。
 - en: 'Using this idea, I ran the analysis on my euro day and night system. Before
     I reveal the results, keep in mind that this system on average will generate $10,000
     to $12,000 profit per year. It is a pretty good system. But will it provide a
     steady return stream? Here is what the results show:'
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 运用这个想法，我对我的欧元昼夜系统进行了分析。在我揭示结果之前，请记住，这个系统平均每年将产生$10,000到$12,000的利润。这个系统相当不错。但它能否提供稳定的回报流？以下是结果显示的内容：
 - en: '*Weekly*—59.6 percent of weeks should be profitable. So, within one year’s
     time, I should make money 31 weeks and lose money 21 weeks. That’s okay, but not
     really a great way to try to make a living.'
+  id: totrans-132
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*每周*——59.6%的周应该是盈利的。因此，在一年内，我应该有31周赚钱，21周亏钱。这样可以，但并不是谋生的好方法。'
 - en: '*Monthly*—74.8 percent of months should be profitable. In one year, three months
     will be down months. Again, not very steady returns—what if all three down months
     came in a row?'
+  id: totrans-133
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*每月*——74.8%的月应该是盈利的。在一年中，有三个月会是亏损月。同样，这并不是非常稳定的回报——如果这三个月连续亏损怎么办？'
 - en: '*Quarterly*—86.2 percent of quarters should be profitable. I like that.'
+  id: totrans-134
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*每季度*——86.2%的季度应该是盈利的。我喜欢这个。'
 - en: '*Yearly*—98.8 percent of years should be profitable. One losing year in a 30-
     to 40-year trading career. That is very nice. The analysis says if I can live
     with the weekly and monthly uncertainty, then I’ll be rewarded almost every year
     with at least some profit.'
+  id: totrans-135
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*每年*——98.8%的年应该是盈利的。在30到40年的交易生涯中，只有一年亏损。这非常不错。分析表明，如果我能接受每周和每月的不确定性，那么几乎每年我都将获得至少一些利润。'
 - en: Obviously, before I ran this analysis I had to make some simplifying assumptions.
     For example, on average there are 151 trades per year in my trading system. That
     equates to three trades per week, on average. However, the actual number in any
@@ -738,8 +1018,10 @@
     week leads to some error. But I don’t think it would change the results by much.
     If I am looking for 90 percent of my weeks to be profitable, then my strategy
     obviously won’t cut it, regardless of the assumptions I made.
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 显然，在我进行这项分析之前，我必须做一些简化假设。例如，我的交易系统平均每年有151笔交易。这相当于平均每周三笔交易。然而，任何一周的实际交易数量可能为零、五笔或介于两者之间。每周强制三笔交易会导致一些误差。但我认为这不会对结果产生太大影响。如果我希望90%的周都是盈利的，那么显然我的策略就无法实现，无论我做了什么假设。
 - en: 'The next obvious question is: “What numbers should I require for each time
     period?” That will depend on the trader and his goals and objectives. A trader
     used to living paycheck to paycheck may require 95 percent winning weeks, or three
@@ -748,17 +1030,23 @@
     basis, so she might desire 95 percent of months to be profitable. A longer-term
     trader, though, might care only about winning quarters or winning years. It all
     depends on the trader’s circumstances.'
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 下一个显而易见的问题是：“我应该为每个时间段设定什么数字？”这将取决于交易者及其目标和目的。习惯于每月发工资的交易者可能需要95%的盈利周，或者每年不超过三周亏损。他可能知道，超过这个亏损周数会导致被驱逐。而专业的商品交易顾问（CTA）通常按月进行评估，因此她可能希望95%的月份是盈利的。不过，长期交易者可能只关心盈利的季度或盈利的年度。这一切都取决于交易者的具体情况。
 - en: To take the whole analysis a step further, as you add good systems to your portfolio,
     your chances for profitable periods goes up. Sort of like the casino adding new
     table games to complement the roulette wheel.
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了更进一步分析，随着你在投资组合中增加良好系统，盈利周期的机会也会增加。就像赌场增加新的桌面游戏以补充轮盘赌一样。
 - en: '![images](images/gbox.jpg) Eliminating Big Days'
+  id: totrans-139
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 消除大日子'
 - en: 'Eliminating the outlier trades from the history makes a huge difference in
     the results. In the history, there are 614 trading days represented. There are
     20 days of profits greater than $1,000\. In one year of trading, I’d expect to
@@ -771,46 +1059,64 @@
     anomaly or some back-test issue. Strategy 2 (euro day) was specifically set up
     to let profits run, and not to cap it. If I saw only a handful of large-profit
     trades, I might suspect some sort of data or back-test issue.'
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 从历史中消除异常交易对结果有很大影响。在历史中，共有614个交易日。盈利超过$1,000的交易日有20天。在一年交易中，我预计会看到5个这样的“大”日子。如果没有这些，系统的平均盈利能力将仅略有盈利。我的结论是，如果没有这些大盈利日，我将陷入严重困境。问题是：我是否有理由不期待未来会出现这种日子？也许我的系统规则和变量基本上是为了寻找这些大交易而进行了曲线拟合。考虑到10到20笔大交易，我想这是一个明显的可能性。然而，这些交易并不是由于数据异常或某些回测问题造成的。策略2（欧元日）是专门设定的，以让盈利持续，而不是进行限制。如果我只看到少量大盈利交易，我可能会怀疑存在某种数据或回测问题。
 - en: 'One other interesting question: since I am relying on these “outliers” to generate
     most of the profit, how likely is it that I even see many of them in a given year?'
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有一个有趣的问题：既然我依赖这些“异常值”来产生大部分盈利，那么在特定年份我能看到很多这样的交易的可能性有多大？
 - en: '![images](images/gbox.jpg) Outlier Days'
+  id: totrans-142
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 异常日'
 - en: 'Since I know that the performance of my system is going to be driven by large-winning
     trades (outliers), it is interesting to see how many of these I could expect in
     a trading year. Here’s what I found:'
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: 既然我知道我的系统表现将由大盈利交易（异常值）驱动，那么看看在一个交易年中我可以期望看到多少这样的交易就很有趣。以下是我发现的：
 - en: In a year’s time, I am likely to see four to six large-winning trades. That
     is only one large-winning trade every other month!
+  id: totrans-144
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 一年内，我可能会看到四到六笔大盈利交易。这意味着每隔一个月只有一笔大盈利交易！
 - en: There is less than a 10 percent (actually, 6.6 percent) chance of seeing eight
     or more large-winning trades in a year.
+  id: totrans-145
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 每年出现八笔或更多大盈利交易的机会不到10%（实际上是6.6%）。
 - en: There is a 13.6 percent chance that I will have only zero, one, or two big winners
     in a year’s time.
+  id: totrans-146
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在一年内，我只有零、一或两个大赢家的概率为13.6%。
 - en: 'This analysis is a bit sobering, and it does make one thing crystal clear:
     if I am to succeed with this system, I have to take every single trade because
     the one I miss just may be the big winner that only comes around once a year.'
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个分析有点令人清醒，它明确了一件事：如果我想在这个系统中取得成功，我必须参与每一笔交易，因为我错过的那一笔可能就是一年中仅出现一次的大赢家。
 - en: Based on this data, my expectation for the system is a lot of flat to slightly
     up or slightly down periods, punctuated by a large winner every once in a while.
     Why is this important to know? Having proper expectations is crucial to long-term
     success. I can’t get discouraged or lose confidence in the system when I am not
     immediately making money. Knowing what to expect will help me a great deal, especially
     if I see very little happening day to day.
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于这些数据，我对系统的期望是会有许多平稳或略微上升或下降的时期，偶尔会出现一个大赢家。知道这一点为什么重要？拥有正确的期望对长期成功至关重要。当我没有立即获利时，我不能感到沮丧或失去对系统的信心。知道该期待什么将对我大有帮助，尤其是在我看到每天发生的事情很少时。

@@ -1,38 +1,54 @@
 - en: PART VI
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第六部分
 - en: MONITORING A LIVE STRATEGY
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 监控实时策略
 - en: CHAPTER 23
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第23章
 - en: The Ins and Outs of Monitoring a Live Strategy
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 监控实时策略的来龙去脉
 - en: In factories, when a machine makes parts, the operations are closely monitored
     and the dimensions closely checked. The idea is to ensure that the part-making
     process is going smoothly, and to give an early warning signal when things are
     beginning to go bad. The same process holds true in evaluating live trading systems.
     I use a variety of tools to monitor strategies I am trading or that I am incubating.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在工厂中，当机器制造零件时，操作会受到严格监控，尺寸会被仔细检查。目的是确保零件制造过程顺利进行，并在情况开始恶化时发出早期警告信号。在评估实时交易系统时，同样的过程适用。我使用各种工具来监控我正在交易或孵化的策略。
 - en: The first chart I use is what I call a “bird’s-eye view” chart, as shown in
     [Figure 23.1](#figure23-1). It tells me, at a glance, how my strategy has performed
     historically and in real time. To keep consistency, I use the same data source
     for all the data. In my case, it is the Trade List provided by TradeStation. You
     can get similar data from just about every trading platform. *This is **not**
     actual real money data,* which will be covered in later charts and metrics.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我使用的第一个图表是我称之为“鸟瞰图”的图表，如[图23.1](#figure23-1)所示。它让我一目了然地看到我的策略在历史和实时中的表现。为保持一致性，我对所有数据使用相同的数据源。在我的案例中，是TradeStation提供的交易列表。你几乎可以从每个交易平台获取类似的数据。*这**不是**实际的真实资金数据，*将在后面的图表和指标中讨论。
 - en: '![images](images/c23f001.jpg)'
+  id: totrans-6
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c23f001.jpg)'
 - en: '[**FIGURE 23.1**](#figureanchor23-1) Bird’s-Eye Equity Chart'
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图23.1**](#figureanchor23-1) 鸟瞰权益图'
 - en: The point of this chart will be to gauge the general overall effectiveness of
     real-time performance (the portion of the curve on the right). Are the real-time
     data consistent with the historical test and the incubation period data? If not,
@@ -43,65 +59,93 @@
     Bad assumptions or strategy development technique up front may not show up in
     historical or incubation tests, but they certainly will be revealed when real
     money is on the line.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 此图表的目的是评估实时表现的整体有效性（右侧曲线部分）。实时数据是否与历史测试和孵化期数据一致？如果不一致，可能存在问题。也许由于市场条件，策略已停止正常工作。或者策略中关于限价单成交的假设并不现实。这在剥头皮策略中特别常见，尽管你可能需要实际的真实资金结果来验证这一点。错误的假设或策略开发技术在历史或孵化测试中可能不会显现，但在真实资金投入时肯定会被揭露。
 - en: I update this chart every few weeks and quickly review it. This gives me a general
     feeling whether my strategy is performing as expected. If it is, I can quickly
     move on to the next chart.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我每几周更新一次此图表，并迅速回顾。这让我大致了解我的策略是否按预期表现。如果是，我可以迅速转向下一个图表。
 - en: If you don’t know how to create an equity chart as shown in [Figure 23.1](#figure23-1),
     here is how to create it.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你不知道如何创建如[图23.1](#figure23-1)所示的权益图，这里是创建方法。
 - en: '![images](images/gbox.jpg) How to Build an Equity Curve (and a Drawdown Curve,
     Too!)'
+  id: totrans-11
   prefs:
   - PREF_H2
   type: TYPE_IMG
+  zh: '![images](images/gbox.jpg) 如何构建权益曲线（以及回撤曲线！）'
 - en: Sometimes, after 20-plus years of trading, some tasks become so rote and routine
     to me that I forget that I had to learn them at one point. Such is the case with
     creating equity and drawdown curves. It is simple to me, but to someone who has
     never done it before, it can be a daunting task. So, I’ll go through the math
     behind creating an equity curve and a drawdown curve.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时，在20多年交易之后，一些任务对我来说变得如此机械和常规，以至于我忘记了曾经需要学习它们。这就是创建权益和回撤曲线的情况。对我来说很简单，但对从未做过的人来说，这可能是一个艰巨的任务。因此，我将阐述创建权益曲线和回撤曲线的数学原理。
 - en: Equity Curve
+  id: totrans-13
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 权益曲线
 - en: The equity curve can be built on a closed trade-by-trade basis, or on any time
     scale you wish. I like using a daily equity chart, in part to eliminate the noise
     from intraday price changes. You can use your daily account statement to get your
     current equity balance.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 权益曲线可以在每笔交易的基础上构建，也可以根据你希望的任何时间尺度构建。我喜欢使用日权益图，部分原因是为了消除日内价格变化的噪音。你可以使用每日账户报表来获取当前的权益余额。
 - en: 'Here is exactly how to build an equity curve based on daily data:'
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是基于日数据构建权益曲线的具体步骤：
 - en: Day 0 equity = Initial starting balance
+  id: totrans-16
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 第0天权益 = 初始起始余额
 - en: Day 1 equity = Day 0 equity + Change in equity during day 1
+  id: totrans-17
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 第1天股权 = 第0天股权 + 第1天期间股权变化
 - en: Day 2 equity = Day 1 equity + Change in equity during day 2
+  id: totrans-18
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 第2天股权 = 第1天股权 + 第2天期间股权变化
 - en: And so on …
+  id: totrans-19
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 依此类推……
 - en: Then, you simply plot the day X equity values, and you have your equity curve.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，你只需绘制当天的X股权值，你就得到了你的股权曲线。
 - en: Drawdown Curve
+  id: totrans-21
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 回撤曲线
 - en: The drawdown curve is the difference, on any given day, between that day’s equity,
     and the *maximum* equity up to that point. So, let’s say an account starts out
     with $10,000 on day 0\. On day 1, it hits a new equity high of $10,500\. The drawdown
@@ -110,29 +154,40 @@
     so it goes through the rest of the days. On days where a new equity is reached,
     the drawdown will simply be $0\. On all other days, the drawdown will be the difference
     between that day’s equity and the maximum equity up until that point.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 回撤曲线是某一天的股权与*最大*股权之间的差值。所以，假设一个账户在第0天开始时有$10,000。在第1天，它达到了新的股权高点$10,500。由于这是新的股权高点，第1天的回撤为$0。在第2天，假设股权下降到$9,700。现在，第2天的回撤为$10,500
+    - $9,700 = $800。接下来的日子也是如此。在达到新的股权时，回撤将简单地为$0。在所有其他日子，回撤将是该天股权与截至那时的最大股权之间的差值。
 - en: Day X drawdown = Minimum of $0 or (Day X equity - Max equity from day 0 to day
     X)
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 第X天回撤 = $0或（第X天股权 - 从第0天到第X天的最大股权）中的最小值
 - en: A spreadsheet to create equity and drawdown curves is included at the web site
     ([www.wiley.com/go/algotradingsystems](http://www.wiley.com/go/algotradingsystems))
     and the resource web site for this book.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建股权和回撤曲线的电子表格已包含在网站上 ([www.wiley.com/go/algotradingsystems](http://www.wiley.com/go/algotradingsystems))，以及本书的资源网站。
 - en: '![images](images/gbox.jpg) Monthly Summary Chart'
+  id: totrans-25
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 月度总结图表'
 - en: When I used to work in aerospace (or the “real world,” as I sometimes refer
     to it), our small company ($250 million annual sales) would have a weekly sales
     and production meeting called “How We Doin’.” Incorrect grammar aside, it was
     an excellent way for the managers of the company to quickly see how sales were
     for the month and quarter, what quality and production problems were occurring,
     and just a general sense of where the company currently stood.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我曾在航空航天公司工作时（有时我称之为“现实世界”），我们的小公司（年销售额2.5亿美元）会举行一个名为“How We Doin’”的每周销售和生产会议。尽管语法不正确，但这是公司经理快速了解当月和季度销售情况、质量和生产问题，以及公司当前状况的绝佳方式。
 - en: Now, fast-forward a few years. I am trading full time, working alone. But I
     still want to see at a glance “how I’m doin’” with my strategies and trading.
     Obviously, my account statements and equity curve tell the overall story, but
@@ -140,37 +195,51 @@
     Of strategies I am incubating, how do they look? Should I make some changes in
     what I am trading? This “how I’m doin’” report can help me answer all of these
     questions.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，快进几年。我全职交易，独自工作。但我仍然希望一目了然地查看“我做得怎么样”与我的策略和交易。显然，我的账户报表和股权曲线讲述了整体故事，但对我来说这还不够详细。哪些策略表现良好？哪些策略表现不佳？我正在孵化的策略情况如何？我应该对我正在交易的内容做出一些改变吗？这个“我做得怎么样”的报告可以帮助我回答所有这些问题。
 - en: I developed a spreadsheet to help me with this task. It tells me at a glance
     how my strategies are performing, and I can easily drill down and see detail if
     I need to.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 我开发了一个电子表格来帮助我完成这个任务。它让我一目了然地看到我的策略表现如何，如果需要，我可以轻松深入查看细节。
 - en: First, there is a summary page, shown in [Figure 23.2](#figure23-2). I include
     every strategy I am trading live on this page. I also include, in another section,
     the strategies I am currently incubating. This summary sheet collects all the
     data I am interested in (of course, if you did this yourself, you’d likely pick
     different metrics than I did). This summary sheet gets the data from the individual
     sheets, which I will describe a bit later.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，有一个总结页面，如[图23.2](#figure23-2)所示。我在此页面上包含了我正在实时交易的每一个策略。我还在另一个部分中包括了我目前正在孵化的策略。这个总结表收集了我感兴趣的所有数据（当然，如果你自己做这件事，你可能会选择与我不同的指标）。这个总结表从各个单独的表格中获取数据，稍后我会详细描述。
 - en: '![images](images/c23f002.jpg)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c23f002.jpg)'
 - en: '[**FIGURE 23.2**](#figureanchor23-2) Monthly Summary Chart'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图23.2**](#figureanchor23-2) 月度总结图表'
 - en: To keep things simple, I base everything on one contract being traded, even
     though that is usually not what I am actually trading. Why? My goal with this
     spreadsheet is to see how my strategies are doing compared to how I thought (calculated)
     they’d be doing. If I included position sizing, it would muddy up the view for
     me.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了保持简单，我将所有内容基于一个合约进行交易，尽管这通常不是我实际交易的方式。为什么？我使用这个电子表格的目标是查看我的策略与我认为（计算）它们应该表现如何的对比。如果我包括头寸大小，这将使我的视图变得复杂。
 - en: 'Of all the numbers on this sheet, I am primarily interested in two columns:'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这张表中的所有数字中，我主要关注两列：
 - en: '*Return efficiency.* How am I doing, compared to my expectations? That is how
     I define return efficiency, and it is simply my actual return divided by my expected
     return. If my strategy is performing exactly as I had calculated, it will be 100
@@ -178,22 +247,28 @@
     when I take all the strategies together, I find my efficiency is somewhere between
     70 and 100 percent. So this says that if my historical testing says I should make
     $10 a year, I am actually making somewhere between $7 and $10.'
+  id: totrans-34
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*回报效率.* 我是如何与我的期望相比的？这就是我定义回报效率的方式，它仅仅是我的实际回报除以我的预期回报。如果我的策略表现完全符合我的计算，那么它将是100%。显然，我希望这个数字接近或超过100%。通常，当我将所有策略综合考虑时，我发现我的效率在70%到100%之间。因此，这意味着如果我的历史测试表明我应该每年赚取$10，我实际上赚取的在$7到$10之间。'
 - en: '*Drawdown efficiency.* This is how I am doing with regard to drawdown. Just
     like with return efficiency, I calculate this as my actual drawdown divided by
     my expected drawdown. I then subtract the result from 1, to make the number 100
     percent the ideal value. It is a bit backwards to do this, but I do it that way
     so that both efficiency numbers have 100 percent as their ideal value. Then, the
     closer the efficiencies get to zero, the worse off things are.'
+  id: totrans-35
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*回撤效率.* 这是我在回撤方面的表现。就像回报效率一样，我计算我的实际回撤除以我的预期回撤。然后我将结果减去1，以使数字100%成为理想值。这种做法有些反向，但我这样做是为了使两个效率数字都有100%作为理想值。然后，效率越接近零，情况就越糟糕。'
 - en: Once a month, I go through and update each of the individual system sheets with
     performance data, and that automatically updates the main sheet.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 每个月，我会逐一更新每个系统表的表现数据，这会自动更新主表。
 - en: The monthly summary sheet reveals my current performance for all strategies.
     It gets data from the individual strategy sheets. I have one page of my spreadsheet
     for each of the strategies I am currently trading or incubating. [Figure 23.3](#figure23-3)
@@ -201,78 +276,112 @@
     I can see at a quick glance how a strategy is performing, compared to my expectations
     (which, of course, are based on historical performance). When you have 30 to 50
     strategies to keep track of, a quick summary like this is really invaluable.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 月度总结表揭示了我所有策略的当前表现。它从各个策略表中获取数据。我为每个我当前交易或孵化的策略都有一页电子表格。[图23.3](#figure23-3)显示了各个策略的总结表。它相当简单，但效果显著。我可以快速查看某个策略的表现，与我的期望相比（当然，这些期望是基于历史表现的）。当你需要跟踪30到50个策略时，这样的快速总结确实非常宝贵。
 - en: '![images](images/c23f003.jpg)'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c23f003.jpg)'
 - en: '[**FIGURE 23.3**](#figureanchor23-3) Individual System Monthly Chart'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图23.3**](#figureanchor23-3) 单个系统月度图表'
 - en: For many strategies I trade, that is all the information I need—a quick view
     at performance. If something catches my eye, I can always dig deeper.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于我交易的许多策略，这就是我所需的所有信息——对表现的快速查看。如果有什么引起了我的注意，我总是可以进一步深入。
 - en: On a monthly basis, the only number I have to update is in the “actual” column.
     This represents the actual profit or loss for the strategy for that particular
     month. It can be taken from trading statements, after adjusting for the number
     of contracts, or it can be taken from the strategy performance report. I typically
     do the latter. The expected numbers can all be obtained from walk-forward historical
     testing.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 每月，我唯一需要更新的数字是在“实际”列中。这表示该策略在特定月份的实际利润或损失。可以根据交易报表进行调整后获得，或从策略表现报告中获取。我通常选择后者。预期的数字可以通过前期历史测试获得。
 - en: The max drawdown is obtained from the strategy report. Note that this is an
     intraday value, where the drawdown the spreadsheet calculates is on a monthly
     basis. This obviously is not totally correct, as ideally you would want to compare
     drawdowns over the same length of time. But for my purposes it is adequate.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 最大回撤来自策略报告。请注意，这是一个日内值，而电子表格计算的回撤是按月进行的。这显然不是完全正确的，因为理想情况下，你希望比较相同时间段内的回撤。但就我而言，这已经足够了。
 - en: One way that the individual monthly performance chart can be of great assistance
     is by identifying strategies that are performing too well. Too well? Yes, performance
     that is too good can be a bad thing.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 单个每月表现图表的一个重要用途是识别表现过于优秀的策略。过于优秀？是的，表现过于优秀可能是坏事。
 - en: An example is shown in [Figure 23.4](#figure23-4). I started incubating this
     strategy a while back, and it took off.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例见[图 23.4](#figure23-4)。我开始孵化这个策略有一段时间了，它开始起飞。
 - en: '![images](images/c23f004.jpg)'
+  id: totrans-45
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c23f004.jpg)'
 - en: '[**FIGURE 23.4**](#figureanchor23-4) Superb Incubation Performance'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 23.4**](#figureanchor23-4) 卓越的孵化表现'
 - en: It was “too good to be true”—way above its historical norm. For that reason
     I decided to keep incubating it. The next few months are shown in [Figure 23.5](#figure23-5).
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 它“太好以至于不真实”——远高于历史标准。因此，我决定继续孵化它。接下来的几个月见于[图 23.5](#figure23-5)。
 - en: '![images](images/c23f005.jpg)'
+  id: totrans-48
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c23f005.jpg)'
 - en: '[**FIGURE 23.5**](#figureanchor23-5) Most Strategies Eventually Revert to Their
     Mean'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 23.5**](#figureanchor23-5) 大多数策略最终会回归均值'
 - en: Now the strategy is in line with historical norms, but the standard deviation
     of monthly performance is a *killer* (look at the down-month performances). I
     looked into it further and saw that the system was not acting normal. So I decided
     to keep incubating. [Figure 23.6](#figure23-6) shows what happened.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在这个策略与历史标准一致，但每月表现的标准差是个*致命*因素（看看下跌月份的表现）。我进一步调查发现系统并没有正常运行。因此，我决定继续孵化。[图 23.6](#figure23-6)显示了发生的情况。
 - en: '![images](images/c23f006.jpg)'
+  id: totrans-51
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c23f006.jpg)'
 - en: '[**FIGURE 23.6**](#figureanchor23-6) Incubating Even Longer'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 23.6**](#figureanchor23-6) 孵化时间更长'
 - en: 'This is a good example of (1) performance that is too good being a bad thing,
     (2) standard deviation of results (high degree of variability seen from visual
     inspection) being an early warning sign that things were not quite right, and
     (3) the monthly performance report showing all this information in an easy-to-digest
     format. As an epilogue: I am still incubating this particular strategy but have
     not traded it with real money.'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个好的例子，说明（1）表现过于优秀是坏事，（2）结果的标准差（通过视觉检查发现的高变异性）是事情不太正常的早期警告信号，以及（3）每月表现报告以易于消化的格式显示所有这些信息。作为尾声：我仍在孵化这个特定策略，但尚未用真钱进行交易。
 - en: 'So far, I have discussed a few different ways to track the performance of a
     strategy. These tools are excellent for assessing the longer-term performance
     of a system—over a significant period of time (months to years), is the strategy
@@ -281,110 +390,155 @@
     the question: is my new strategy performing to expectations? I use a couple of
     different methods to review the shorter-term performance. There is a simple way
     and a complicated way. First, I’ll look at the simple way.'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止，我讨论了一些跟踪策略表现的不同方法。这些工具对于评估系统的长期表现非常出色——在一段显著的时间内（几个月到几年），策略是否按预期表现？虽然这种“从35000英尺的视角”是有用的，但你还需要在每周或每日层面上进行测量。这有助于回答这个问题：我的新策略是否达到了预期？我使用几种不同的方法来审查短期表现。有简单的方法，也有复杂的方法。首先，我将看看简单的方法。
 - en: The only data you need for this is the average trade or average daily result.
     If you have the standard deviation of this value, then you can do even more.
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 你所需的数据仅是平均交易或平均每日结果。如果你有这个值的标准差，那么你可以做更多。
 - en: All you do is plot your results, along with the equation “*n* * *avg*” where
     *n* is the trade number/day, and “*avg*” is the average value. You’ll get a chart
     like the one shown in [Figure 23.7](#figure23-7).
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 你只需绘制结果，并使用公式“*n* * *avg*”，其中*n*是交易数量/天，“*avg*”是平均值。你会得到一个类似于[图 23.7](#figure23-7)所示的图表。
 - en: '![images](images/c23f007.jpg)'
+  id: totrans-57
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c23f007.jpg)'
 - en: '[**FIGURE 23.7**](#figureanchor23-7) Daily Performance Review'
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 23.7**](#figureanchor23-7) 每日表现回顾'
 - en: If you are above the average line, your strategy is doing better than you thought.
     If you are below, your strategy is worse.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你高于平均线，你的策略表现比你想的要好。如果你低于平均线，你的策略就更糟糕。
 - en: 'This chart becomes really useful as time goes on. Over 30 or more periods,
     you’d expect the strategy to be right around the average line. That is how I use
     it. Then, at a quick glance, I know the general state of the strategy. This chart
     is very similar to the monthly tracking chart shown earlier. It is nice, but it
     doesn’t convey a lot of information, especially early on in the life of a live
     strategy. To get more insight, add two lines for the +/- standard deviation curves:'
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 这张图随着时间的推移变得非常有用。在超过30个周期中，你会期待策略接近平均线。这就是我的使用方式。然后，只需一瞥，我就能了解策略的一般状态。这张图与之前展示的每月跟踪图非常相似。它不错，但在活跃策略的早期并没有传达很多信息。为了获得更多见解，添加两条用于
+    +/- 标准差曲线的线：
 - en: 'Upper curve: *n* * *avg* + *sqrt*(*n*) * (*std dev*) * *X*'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 上曲线：*n* * *avg* + *sqrt*(*n*) * (*std dev*) * *X*
 - en: 'Avg curve: *n* * *avg*'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 平均曲线：*n* * *avg*
 - en: 'Lower curve: *n* * *avg* - *sqrt*(*n*) * (*std dev*) * *X*'
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 下曲线：*n* * *avg* - *sqrt*(*n*) * (*std dev*) * *X*
 - en: where
+  id: totrans-64
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 其中
 - en: '*n* = The trade number'
+  id: totrans-65
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*n* = 交易数量'
 - en: '*avg* = The average profit per trade'
+  id: totrans-66
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*avg* = 每笔交易的平均利润'
 - en: '*std dev* = Standard deviation of the avg trade'
+  id: totrans-67
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*std dev* = 平均交易的标准差'
 - en: '*X* = Standard deviation multiplier'
+  id: totrans-68
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*X* = 标准差乘数'
 - en: What this tells you is that roughly 68 percent (*X* = 1) or 95 percent (*X*
     = 2) of the time, your equity curve should be within the upper or lower bands.
     Most well-performing strategies will have their equity curve within the standard
     deviation bands. If the equity curve is outside of those bands, maybe there is
     something wrong with your strategy.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 这告诉你，大约68%（*X* = 1）或95%（*X* = 2）的时间里，你的权益曲线应该在上下带之间。大多数表现良好的策略将其权益曲线保持在标准差带内。如果权益曲线超出这些带，可能你的策略存在问题。
 - en: '[Figure 23.8](#figure23-8) shows a sample strategy, with *X* = 2 bands. The
     most interesting point here is the bottom curve, the -2 standard deviation line.
     Look as it starts negative and stays negative. Imagine that! A winning (positive
     expectancy) system can still have negative results for quite a while. Pure random
     chance (the order of trade results) can lead a winning system to appear to be
     a losing system.'
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图 23.8](#figure23-8) 显示了一个示例策略，其中 *X* = 2 个带。这里最有趣的一点是底部曲线，即 -2 标准差线。看看它是如何开始为负并保持为负的。想象一下！一个盈利（正期望）系统仍然可能在相当长一段时间内出现负结果。纯随机机会（交易结果的顺序）可能导致盈利系统看起来像一个亏损系统。'
 - en: '![images](images/c23f008.jpg)'
+  id: totrans-71
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c23f008.jpg)'
 - en: '[**FIGURE 23.8**](#figureanchor23-8) Daily Performance Review with Performance
     Bands'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 23.8**](#figureanchor23-8) 日常绩效审查与绩效带'
 - en: Of course, over time, the positive expectancy starts to dominate, and the lower
     curve will eventually turn positive. This has *huge* implications for the trader
     who “tweaks” his method if, after five trades, he is not showing a profit. He
     may well have just changed a winning system! This lower curve really shows that
     it takes time for even a winning system to show profits.
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，随着时间的推移，正的期望开始占主导地位，下曲线最终会变为正值。这对“微调”自己方法的交易者有*巨大*的影响，如果在五笔交易后没有显示盈利，他可能刚刚改变了一个盈利系统！这条下曲线真正表明，即使是盈利系统也需要时间才能显示出利润。
 - en: 'Here is a great quote that explains it better than I can. It is from the book
     *Trading Bases* by Joe Peta (Penguin Books, 2013):'
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有一个很好的引用，解释得比我更清楚。它出自乔·佩塔的书《交易基础》（企鹅出版社，2013年）：
 - en: Well, if you had the opportunity to invest in a venture with a positive expected
     value, like ownership of a roulette wheel, would you prefer to own it for one
     hour or nine and a half hours? Funny things can happen in one hour; there is no
     guarantee of a profit even with the house edge. But over nine and a half hours,
     the natural fluctuations inherent in the game will smooth out, and the chances
     of losing money will be very small, approaching zero over time.
+  id: totrans-75
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 好吧，如果你有机会投资于一个期望值为正的项目，比如拥有一个轮盘赌，你会选择拥有它一个小时还是九个半小时？在一个小时内可能发生有趣的事情；即使有庄家优势，也不能保证盈利。但在九个半小时内，游戏中固有的自然波动会平滑化，亏损的机会会非常小，随着时间的推移接近零。
 - en: Astute readers will recognize that the graph in [Figure 23.8](#figure23-8) uses
     standard deviation and therefore assumes the trade results have a normal distribution.
     In reality, most trading systems do not have a normal distribution. Rather, the
@@ -394,19 +548,28 @@
     real trading system histogram, versus the normally distributed version, is shown
     in [Figure 23.9](#figure23-9). Depending on the specifics of the actual trades,
     assuming a normal distribution may be a bad idea.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 精明的读者会注意到，[图 23.8](#figure23-8)中的图表使用了标准差，因此假设交易结果呈正态分布。实际上，大多数交易系统并不呈现正态分布。相反，分布可能在负值区域出现峰值，停损点可能位于此，而在利润方面则会有一个延长的尾部，或者在正值区域出现峰值，对应于利润目标。[图
+    23.9](#figure23-9)显示了一个真实交易系统的直方图与正态分布版本的对比。根据实际交易的具体情况，假设正态分布可能不是一个好主意。
 - en: '![images](images/c23f009.jpg)'
+  id: totrans-77
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c23f009.jpg)'
 - en: '[**FIGURE 23.9**](#figureanchor23-9) Histogram of a Typical Real Trading System'
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 23.9**](#figureanchor23-9) 典型真实交易系统的直方图'
 - en: To alleviate this concern, we can simply take the Monte Carlo results from numerous
     runs and use percentiles based on them. This will provide a more accurate representation
     of the expected bounds of the trading system.
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了缓解这个问题，我们可以简单地从多次运行中获取蒙特卡洛结果，并基于这些结果使用百分位数。这将提供交易系统预期边界的更准确表示。
 - en: A simple example can help explain this approach, before I apply it to the actual
     trading data. Assume that we have a trading system that averages $100 per day,
     with a standard deviation of plus or minus $50\. With two standard deviation bands,
@@ -418,89 +581,127 @@
     and representative of the actual trading system. The drawback is that the curves
     will not be smooth and could change if the simulation is rerun. Such are the penalties
     for using Monte Carlo analysis.
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 在将这种方法应用于实际交易数据之前，一个简单的例子可以帮助解释这种方法。假设我们有一个交易系统，每天的平均交易额为$100，标准差为正负$50。通过两个标准差的带，我们预计大约95%的值会落在上下曲线之间，或者在上端为97.7百分位数，在下端为2.3百分位数。如果我们对每笔交易逐日进行蒙特卡洛分析，那么在每个交易日，我们只需选择2.3%和97.7%的值。由于这些值使用了实际数据，而不是假设的正态分布，它们应该更加准确并且更能代表实际的交易系统。缺点是曲线不会平滑，并且如果重新运行模拟，曲线可能会发生变化。这就是使用蒙特卡洛分析的代价。
 - en: If we run the day-by-day Monte Carlo analysis on the euro trading system, how
     do the curves compare? There is a good, but not perfect, match between the standard
     deviation and the Monte Carlo lines. Either is probably acceptable for tracking
     purposes. I personally like the Monte Carlo version, since it does not make any
     assumptions about the underlying data.
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们对欧元交易系统进行逐日的蒙特卡洛分析，曲线之间的比较如何？标准差与蒙特卡洛线之间有良好的但不是完美的匹配。对于跟踪目的来说，任一方法都可能是可以接受的。我个人更喜欢蒙特卡洛版本，因为它不对基础数据做出任何假设。
 - en: '![images](images/gbox.jpg) How to Use This Graph'
+  id: totrans-82
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 如何使用此图表'
 - en: The daily tracking graph can be used to help you quit trading a system. For
     example, if the real-time performance of your strategy falls below the lower 10
     percent line, it could mean that your system is no longer working. After all,
     the odds were 90 percent that your strategy should be performing better than this.
     An example of a real-world system should make this crystal clear.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 日常跟踪图可以帮助你决定是否停止交易某个系统。例如，如果你的策略的实时表现低于下方10%的线，这可能意味着你的系统不再有效。毕竟，90%的概率表明你的策略应该表现得更好。一个真实系统的例子应该能清楚地说明这一点。
 - en: '[Figure 23.10](#figure23-10) shows a sample case of a real-world system I traded
     with my own money.'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图 23.10](#figure23-10) 显示了我用自己资金进行交易的一个真实系统的样本案例。'
 - en: '**Curve 1:** The system performance after 140 days. Barely positive, and close
     to the -1 Sigma line. That means, at that point, only 16 percent of the randomly
     generated equity curves, based on the historical back-test trades, would have
     been worse than this.'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: '**曲线 1：** 140天后的系统表现。几乎是正的，并且接近-1 Sigma线。这意味着，在那个时刻，基于历史回测交易随机生成的股权曲线中，只有16%的表现会比这个更差。'
 - en: '![images](images/c23f010.jpg)'
+  id: totrans-86
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c23f010.jpg)'
 - en: '[**FIGURE 23.10**](#figureanchor23-10) 140-Day Daily Performance'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图23.10**](#figureanchor23-10) 140天每日表现'
 - en: I’m sure most people would have stopped trading at this point. I did not, since
     I knew that even with the bad performance there was a chance that the system was
     not fundamentally broken.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 我相信大多数人到此时都会停止交易。但我没有，因为我知道即使在糟糕的表现下，这个系统也有可能并没有根本性的问题。
 - en: '**Curve 2:** The curve for the next 200+ days ([Figure 23.11](#figure23-11)).
     I kept the system running, and now it is performing closer to its expected value.'
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: '**曲线 2：** 接下来200多天的曲线（[图23.11](#figure23-11)）。我保持系统运行，现在它的表现更接近预期值。'
 - en: '![images](images/c23f011.jpg)'
+  id: totrans-90
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c23f011.jpg)'
 - en: '[**FIGURE 23.11**](#figureanchor23-11) 200-Day Daily Performance'
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图23.11**](#figureanchor23-11) 200天每日表现'
 - en: As I explained earlier, I use Monte Carlo simulation to determine if a strategy
     is performing to expectations. It is basically the same result as with using mean
     and standard deviation, except that you can include “boundary condition” effects
     with Monte Carlo (like quitting after a certain percentage drawdown or quitting
     when account gets blown out).
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我之前所解释的，我使用蒙特卡洛模拟来确定策略是否符合预期。这基本上与使用均值和标准差得到的结果相同，只是蒙特卡洛模拟可以考虑“边界条件”效应（比如在达到一定百分比的回撤后退出，或在账户亏损时退出）。
 - en: '![images](images/gbox.jpg) Tracking Expected and Actual Performance'
+  id: totrans-93
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 追踪预期与实际表现'
 - en: 'In all the examples I have shown in this chapter, I have used the performance
     numbers generated by the back-testing software, which was TradeStation in my case.
     These numbers have built in certain assumptions about:'
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中我展示的所有例子中，我使用的是由回测软件生成的表现数据，在我的案例中是TradeStation。这些数据内置了一些假设：
 - en: Amount of slippage per trade.
+  id: totrans-95
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 每笔交易的滑点金额。
 - en: Amount of commissions per trade.
+  id: totrans-96
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 每笔交易的佣金金额。
 - en: Fill logic for limit orders.
+  id: totrans-97
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 限价单的成交逻辑。
 - en: “Perfect” trading versus real-world trading.
+  id: totrans-98
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: “完美”交易与现实世界交易的对比。
 - en: Depending on your trading system and the values you put in the back-test software,
     you may or may not have a realistic view of how your system will perform in the
     real world. I’m sure you’ve experienced this—you see a terrific-looking equity
@@ -512,16 +713,20 @@
     trading simulators out there). Finally, you will have Internet outages, data delays,
     and all sorts of other little gremlins. The point is that the performance you
     expect is not the performance that you’ll get.
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据你的交易系统和你在回测软件中输入的数值，你可能对系统在现实世界中的表现有一个不切实际的看法。我相信你一定有过这种经历——你看到一个看起来非常不错的股权曲线，却在后来发现创作者没有在表现数据中包括佣金或滑点。或者你发现了一个针对迷你标准普尔的无敌剥头皮系统，但在进一步审查后发现，你的回测引擎假设限价单在价格刚触及时就成交，而不是在限价单价格被突破时（这是一个非常常见的错误，尤其是在许多所谓的交易模拟器中）。最后，你还会遭遇互联网中断、数据延迟以及各种其他小故障。关键是，你期待的表现并不是你所能获得的表现。
 - en: If you are treating your trading as a business, it is imperative that you track
     actual performance and compare it to predicted performance. After all, when your
     actual performance is below your expected performance, isn’t that akin to something
     or someone stealing from you? It sure feels that way to me—I fully anticipate
     to achieve the predicted performance or better, and when I don’t, I search for
     and correct the reason.
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你将交易视为一项业务，那么追踪实际表现并与预测表现进行比较是至关重要的。毕竟，当你的实际表现低于预期表现时，难道这不就像是什么东西或某个人在偷走你的利益吗？我确实有这种感觉——我完全期待能达到预测的表现或更好，当我没有做到时，我会寻找并纠正原因。
 - en: I track my actual performance on the daily tracking graph. I also keep a running
     table of actual versus predicted performance. Most of the time, the actual performance
     does slightly better than the predicted performance. This is a very good thing,
@@ -529,106 +734,146 @@
     bit on the conservative side. I’d rather be conservative in my estimates and be
     pleasantly surprised with actual performance, as opposed to underestimating slippage
     and later being disappointed.
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在每日跟踪图上记录我的实际表现。我还保持一个实际与预测表现的对照表。大多数时候，实际表现略好于预测表现。这是件非常好的事情，因为它表明我对佣金、滑点等的假设有点保守。我宁愿在估算上保持保守，实际表现让我感到惊喜，而不是低估滑点后感到失望。
 - en: CHAPTER 24
+  id: totrans-102
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第24章
 - en: Real Time
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 实时
 - en: When I take a new strategy live, I like to review the performance on an ongoing
     basis, to make sure things are going more or less as expected. For my euro day
     and night strategy, which I started live trading in late August 2013, here are
     my real-time updates every three to four weeks of trading it, for the first four
     months, along with a discussion of a few interesting events that came up along
     the way.
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我开始一个新策略时，我喜欢持续审查其表现，以确保一切大致如预期进行。对于我在2013年8月底开始实时交易的欧元日夜策略，以下是我在前四个月每三到四周的实时更新，以及讨论一些过程中出现的有趣事件。
 - en: '![images](images/gbox.jpg) Four-Week Review—September 13, 2013, End Date'
+  id: totrans-105
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 四周回顾—2013年9月13日，结束日期'
 - en: Week 4 of trading the euro day and night system with actual money is now complete.
     For the first few months of live trading, every four weeks or so, I review the
     current performance of the system as shown in [Figure 24.1](#figure24-1), and
     answer some standard questions. This information may be useful should the performance
     of the system become erratic—maybe there was something I could have seen earlier,
     or something I just plain out missed.
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在已完成使用真实资金交易欧元日夜系统的第四周。在前几个月的实时交易中，我每四周左右会审查一次系统的当前表现，如[图24.1](#figure24-1)所示，并回答一些标准问题。如果系统的表现变得不稳定，这些信息可能会很有用——也许我之前可以看到什么，或者我根本错过了什么。
 - en: '**Summary:** Well, after four weeks of trading this system live, I am right
     where I started—breakeven.'
+  id: totrans-107
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**总结：** 好吧，经过四周的实时交易，我的情况与起初相同——持平。'
 - en: '**Am I surprised at this result?** Absolutely not. It is well within expectations.'
+  id: totrans-108
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**我对这个结果感到惊讶吗？** 绝对不。它完全在预期之内。'
 - en: '**Am I disappointed in the results so far?** Yes. Anytime I start a new strategy
     I want to make money at the beginning.'
+  id: totrans-109
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**到目前为止，我对结果感到失望吗？** 是的。每当我开始一个新策略时，我希望一开始就能盈利。'
 - en: '**Are results in line with expectations?** Yes. The current profit is below
     the average I expect, and it is above the lower 10 percent line. So, while it
     is underperforming currently, I see no reason for alarm. Also, I have had two
     winning weeks and two losing weeks. Over time, I expect about 60 percent of my
     weeks to be profitable, so the performance is just as I expect.'
+  id: totrans-110
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**结果与预期一致吗？** 是的。目前的利润低于我期望的平均水平，但高于下方10%的线。因此，虽然当前表现不佳，但我没有理由感到担忧。此外，我经历了两个盈利周和两个亏损周。随着时间推移，我预计约60%的周会盈利，因此表现正如我所预期。'
 - en: '**Are fills and trades live comparable to TradeStation strategy report?** Yes,
     in fact, in most cases my fills are better than what I had anticipated. Slippage
     is usually less than I had expected.'
+  id: totrans-111
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**实际成交和交易与TradeStation策略报告可比吗？** 是的，实际上，在大多数情况下，我的成交情况比我预期的要好。滑点通常少于我预期。'
 - en: '**Do I see any reason to stop trading this system?** No.'
+  id: totrans-112
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**我有理由停止交易这个系统吗？** 没有。'
 - en: D**o I see any reason to change my position-sizing plan, that is, reduce or
     increase my risk?** No.
+  id: totrans-113
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**我有理由改变我的仓位规划吗，即减少或增加我的风险？** 没有。'
 - en: '![images](images/c24f001.jpg)'
+  id: totrans-114
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c24f001.jpg)'
 - en: '[**FIGURE 24.1**](#figureanchor24-1) Daily Performance, After Four Weeks of
     Live Trading'
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图24.1**](#figureanchor24-1) 每日表现，经过四周的实时交易'
 - en: '![images](images/gbox.jpg) Update after Week 7'
+  id: totrans-116
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 第七周后的更新'
 - en: 'Seven weeks into trading this system live, and things went bad this week, with
     a couple of large losing days. The cumulative equity is hovering right around
     the 10 percent line, which is generally a good warning sign that the system is
     not working the same as its historical test. If circumstances were different,
     I might consider stopping trading this system. The things working against the
     “quit now” idea are:'
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 在实时交易这个系统的七周里，本周情况变得糟糕，出现了几天大幅亏损。累计权益徘徊在10%的水平，这通常是一个很好的警告信号，表明系统的表现与历史测试不同。如果情况不同，我可能会考虑停止交易这个系统。阻碍“现在退出”想法的因素有：
 - en: There are only 18 days of live trading data—too short, in my mind, to make a
     decision to quit.
+  id: totrans-118
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 只有18天的实时交易数据——在我看来，这太短了，无法做出退出的决定。
 - en: Most important, when I laid out the criteria for stopping live trading, performance
     relative to the daily performance was not considered (sometimes I do consider
     this in my “when to quit” analysis). For this strategy, though, I used maximum
     drawdown as my stopping criteria.
+  id: totrans-119
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 最重要的是，当我制定停止实时交易的标准时，并没有考虑相对于每日表现的业绩（有时我会在“何时退出”的分析中考虑这个因素）。不过对于这个策略，我使用最大回撤作为我的停止标准。
 - en: I will keep on trading, realizing that things need to improve.
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 我会继续交易，意识到情况需要改善。
 - en: After seven weeks of live trading, is the system performing as designed? First,
     let’s look at the number of trades it has taken. A sharp increase or decrease
     in the number of trades, when compared to the walk-forward history, would suggest
@@ -643,8 +888,10 @@
     of days where an entry was missed by only a few ticks (the big Fed move day, September
     18, was a case in point). A little more volatility in the hours before the announcement
     and the system would have entered a big winner.
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 在七周的实时交易之后，系统的表现是否如设计所预期？首先，让我们看看它进行的交易数量。与前进历史相比，交易数量的急剧增加或减少将表明市场行为与历史市场不同，导致进行的交易数量比正常情况多得多或少得多。在七周后，系统交易了18天，占可能交易天数的53%。历史上，它每年大约交易151天，或占60%的天数。因此，系统的交易数量低于平均水平。但有些年份它交易的天数少至130天（51%），多达175天（70%）。基于这些情况，我得出结论，交易数量大体符合预期，尽管处于低端。根据经验，我感觉波动性比往常低。有几天仅仅错过了几个点就未能入场（例如，9月18日的美联储大幅波动就是一个例子）。如果在公告前的几个小时中波动性稍微大一点，系统就会抓住一个大赢家。
 - en: Second, let’s look at average performance versus actual performance. The average
     historical performance of the system gives $1,441 profit after 18 trading days.
     Actual performance, however, is at -$746\. This is a *huge* discrepancy, and the
@@ -654,8 +901,10 @@
     you got 70 heads, or 80, or 90? Even if you flipped 100 heads in a row, could
     you absolutely conclude that the coin is biased? No! There is a chance, albeit
     very, very small, that a fair coin could be flipped heads 100 consecutive times.
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 其次，我们来看一下平均表现与实际表现。该系统的历史平均表现是在18个交易日后获得$1,441的利润。然而，实际表现却是-$746。这是一个*巨大的*差异，显然得出的结论是系统的表现不如预期。但这里就变得棘手了。拿一枚硬币翻转100次。如果你得到了60次正面，你是否会得出这枚硬币“坏了”，也就是说，有偏见的结论？如果你得到了70次、80次或90次呢？即使你连续翻转100次正面，你能绝对得出这枚硬币有偏见的结论吗？不！有一种可能性，尽管非常非常小，公平的硬币也可能连续翻转100次正面。
 - en: It is the same way with a trading system. You can ask, “Is it broken?,” but
     the answer will always have some degree of uncertainty. That uncertainty sometimes
     makes all the difference to your conclusions and decisions. Some people take statistics
@@ -666,16 +915,20 @@
     would you like? I can make the data support your point of view, whatever it is.”
     I was astounded, but I never forgot the lesson—statistics can be manipulated very
     easily, so be careful making any conclusions based on them.
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于交易系统来说也是一样。你可以问：“它坏了吗？”但答案总会有一定程度的不确定性。这种不确定性有时会对你的结论和决策产生重大影响。有些人把统计数据视为真理，但我会分享一个我学到的小秘密。在我之前的职业生涯中，我有一个统计师为我工作。我给他分配了一个需要大量数据分析并得出某种结论的项目。在他审查完项目细节后，在他甚至开始工作之前，他问我：“你希望得出什么结论？我可以让数据支持你的观点，无论是什么。”我感到震惊，但我从未忘记这个教训——统计数据可以很容易地被操纵，所以在基于它们做出任何结论时要小心。
 - en: Right now, the actual system performance is at the 10th percentile of what was
     expected. The 50th percentile would be right at the average, so the 10 percent
     mark is pretty bad. But it is still within the realm of possible outcomes. If
     it were below the 0 percentile—let’s say the system had lost $8,000 through the
     first 18 days—then the system obviously would not be performing as expected. That
     would be an easy decision. It is where there is uncertainty that things get tough.
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，实际的系统表现处于预期的10百分位。50百分位正好是平均水平，因此10百分位的表现相当糟糕。但它仍然在可能结果的范围内。如果低于0百分位——假设在前18天内系统亏损了$8,000——那么显然系统表现不会如预期那样。那将是一个简单的决定。正是在存在不确定性时，事情才变得棘手。
 - en: There are statistical tests that could be run to show whether the current trades
     could be part of the historical distribution of trades, but even such advanced
     analysis is not definitive. There is always a gray area. So how do I navigate
@@ -687,116 +940,162 @@
     I’d be doing fine. For me, and for this particular system, earlier I decided that
     I would quit only when I hit a $5,000 drawdown. So I am not using the data in
     the tracking graph to decide when to quit. Sometimes I do use it, though.
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: 有一些统计测试可以用来显示当前的交易是否可能属于历史交易的分布，但即使这样的高级分析也不是绝对的。总有一个灰色区域。那么我该如何在这个灰色区域中导航呢？首先，我试图确定导致我停止交易某个系统的参数。我当然可以使用百分位数的方法，并制定一个退出规则，规定“如果在X天后，表现低于Y百分位数，我将停止交易。”X和Y将根据个人偏好由我自行决定。只要我遵循我最初制定的规则，我就会很好。对我而言，对这个特定系统而言，我之前决定只有在出现$5,000的回撤时才会退出。因此，我并没有使用跟踪图表中的数据来决定何时退出。不过，有时我确实会使用它。
 - en: 'To summarize:'
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 总结一下：
 - en: '**Is the system performing as expected?** No, not even close. It is performing
     much worse than expected.'
+  id: totrans-127
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**系统表现是否如预期？** 不，甚至远未达到预期。表现比预期糟糕得多。'
 - en: '**Is the system “broken?”** Maybe, maybe not. It depends on how you define
     broken. One cannot say definitively it is broken or it is not broken.'
+  id: totrans-128
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**系统“坏了吗？”** 也许是，也许不是。这取决于你如何定义“坏”。无法明确说它是坏的，或不是坏的。'
 - en: '**Am I going to quit?** No. My quit point, established earlier, calls for a
     single-contract drawdown of $5,000\. This was a well-thought-out amount, and I
     can’t just toss it out the window. I’m going to stick to the plan. I realize,
     though, that sticking to the plan might be akin to the captain sinking with the
     ship.'
+  id: totrans-129
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**我会退出吗？** 不会。我之前确立的退出点要求单合约回撤达到$5,000。这是一个经过深思熟虑的金额，我不能随意抛弃。我会坚持计划。不过，我意识到，坚持计划可能就像船长随船沉没一样。'
 - en: '![images](images/gbox.jpg) Week 8 Review'
+  id: totrans-130
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 第8周回顾'
 - en: Week 8 of trading the euro day and night system with actual money is now complete.
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，欧元昼夜交易系统的第8周已完成。
 - en: '**Summary:** First, let’s look at the big picture. I like to do this regularly,
     because at a glance I can tell if things are going as planned or not. From looking
     at [Figure 24.2](#figure24-2), a couple of things are clear:'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: '**总结：** 首先，让我们看看全局。我喜欢定期这样做，因为一眼就能看出事情是否按计划进行。从[图24.2](#figure24-2)来看，有几点很明显：'
 - en: Over the whole course of the system history (walk-forward, incubation, live),
     the system performance hasn’t changed much. I could draw a line from the start
     of walk-forward to the start of incubation, and then another line from the start
     of incubation until the present time, and the slopes of those two lines would
     be about the same. This gives me some reassurance that the system is behaving,
     subject to point 2.
+  id: totrans-133
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在整个系统历史（步行验证、孵化、实盘）过程中，系统性能变化不大。我可以从步行验证开始画一条线到孵化开始，然后再从孵化开始画一条线到现在，这两条线的斜率大致相同。这让我对系统的表现有了一些保证，符合第2点的要求。
 - en: In [Figure 24.3](#figure24-3), It is easy to see that the live trading (dark
     gray line with triangles) has not been up to par at all. The performance these
     past two months has been down, and while it has not crashed and burned, it certainly
     has been a disappointment.
+  id: totrans-134
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在[图24.3](#figure24-3)中，可以明显看到实时交易（带三角形的深灰色线）并没有达到预期。这过去两个月的表现下滑，虽然没有崩溃，但确实令人失望。
 - en: '![images](images/c24f002.jpg)'
+  id: totrans-135
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c24f002.jpg)'
 - en: '[**FIGURE 24.2**](#figureanchor24-2) Big Picture Equity Curve after Eight Weeks'
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图24.2**](#figureanchor24-2) 八周后的整体股权曲线'
 - en: '![images](images/c24f003.jpg)'
+  id: totrans-137
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c24f003.jpg)'
 - en: '[**FIGURE 24.3**](#figureanchor24-3) Daily Performance after Eight Weeks of
     Live Trading'
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图24.3**](#figureanchor24-3) 八周实盘交易后的每日表现'
 - en: After eight weeks of trading this system live, I am down about 5 percent from
     the start.
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 在八周的实盘交易后，我的损失大约为5%。
 - en: '**Am I surprised at this result?** Absolutely not. It is well within expectations.'
+  id: totrans-140
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**我对这个结果感到惊讶吗？** 绝对不。这完全在预期之内。'
 - en: '**Am I disappointed in the results so far?** Yes. After eight weeks, I had
     hoped to be making some money. The performance these past eight weeks is way behind
     the long-term average, so it is very disappointing.'
+  id: totrans-141
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**我对目前的结果感到失望吗？** 是的。八周后，我希望能盈利。这八周的表现远远低于长期平均水平，所以非常失望。'
 - en: '**Are results in line with expectations?** Yes. The current profit is below
     the average I expect, and it is right around lower 10 percent line. So it is underperforming
     currently, and I will be concerned if equity drops below that 10 percent line.
     Also, I have had four winning weeks and four losing weeks. Over time, I expect
     about 60 percent of my weeks to be profitable, so the performance is a bit behind
     in that regard. Plus, one week was really, really bad.'
+  id: totrans-142
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**结果是否符合预期？** 是的。目前的利润低于我预期的平均水平，接近下方10%的线。因此目前表现不佳，如果股权跌破10%线，我会感到担忧。此外，我有四个盈利周和四个亏损周。随着时间推移，我预计大约60%的周会盈利，因此在这方面表现稍显落后。而且，有一周的表现非常糟糕。'
 - en: '**Are fills and trades live comparable to TradeStation strategy report?** Yes,
     in fact, in most cases my fills are better than what I had anticipated. Slippage is
     usually less than I had expected.'
+  id: totrans-143
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**填充和交易的实时数据与TradeStation策略报告可比吗？** 是的，实际上在大多数情况下，我的填充效果比我预期的要好。滑点通常低于我所期待的。'
 - en: '**Do I see any reason to stop trading this system?** No.'
+  id: totrans-144
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**我是否看到停止交易这个系统的理由？** 不。'
 - en: '**Do I see any reason to change my position-sizing plan, that is, reduce or
     increase my risk?** No.'
+  id: totrans-145
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**我是否看到改变我的仓位规划的理由，也就是减少或增加风险？** 不。'
 - en: After eight weeks, I will keep on trading per the plan, but storm clouds are
     forming on the horizon. I need some sunshine instead!
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: 八周后，我将按照计划继续交易，但前方乌云密布。我需要一些阳光！
 - en: '![images](images/gbox.jpg) Week 9—Automated Trading Issues'
+  id: totrans-147
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 第9周——自动交易问题'
 - en: You’ve probably heard the phrase “automated trading does not mean unattended
     trading.” You’ve also probably read all the disclaimers that the brokerage throws
     at you before they allow you to turn automation on. With TradeStation, for example,
@@ -804,18 +1103,24 @@
     if you want to automate a strategy, there are two more disclaimers you have to
     click and accept. The first disclaimer is 397 words, and the second is a whopping
     593 words. That is a lot of legalese to wade through just to automate your trading.
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能听过“自动交易并不意味着无人值守交易”这句话。你也可能阅读过经纪公司在允许你开启自动化之前提供的所有免责声明。例如，在TradeStation开户时，你必须签署大量的免责声明，如果你想自动化某个策略，还需要点击并接受另外两个免责声明。第一个免责声明有397个字，第二个则有惊人的593个字。为了自动化你的交易，确实需要花费很多时间来阅读这些法律条款。
 - en: But all those warnings are there for a reason. Ignore them at your own risk.
     That’s what happened to me in week 9 of live trading. Let me explain.
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: 但所有这些警告都是有原因的。忽略它们的风险自负其责。这就是我在实际交易第9周所经历的情况。让我来解释一下。
 - en: My euro day and night strategies enter on limit orders, which are supposed to
     be active for the current bar only. After the bar closes, any open orders get
     canceled by the software. Depending on the strategy logic, another limit order
     may be placed for the current bar.
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 我的欧元日间和夜间策略是通过限价单进场的，这些单子应该只在当前蜡烛期间有效。在蜡烛关闭后，任何未成交的订单会被软件取消。根据策略逻辑，可能会为当前蜡烛下另一个限价单。
 - en: So, Monday night during week 9, my euro night strategy placed a limit order
     to buy, well below the market. It did not get filled during the bar, so it should
     have been canceled. For whatever reason, it was not canceled. This is the first
@@ -826,49 +1131,65 @@
     takeoffs and landings, two or three planes would crash *per day*. That’s where
     claims of 99 percent plus uptime, accuracy, whatever are meaningless. Anything
     less than 100 percent perfection runs the risk of costing you money.
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，在第9周的星期一晚上，我的欧元夜间策略下了一笔远低于市场的限价单。这笔订单在当根蜡烛期间没有成交，因此应该被取消。但出于某种原因，它没有被取消。这是我*第一次*见到这种情况。根据我的经验，软件自动取消订单的成功率应该超过99%。这非常出色，但错误是可能发生的。以航空业为例，每天大约有28,000个商业航班，即便99.99%的航班成功起飞和降落，每天也会有两到三架飞机坠毁*。*这就是声称99%加的正常运行时间、准确性等的无意义之处。任何低于100%的完美都存在让你损失金钱的风险。
 - en: The order rested at the exchange until 5 A.M. Tuesday morning, when it was filled.
     I noticed this rouge position Wednesday morning. Of course, with Murphy’s Law
     in effect here, I noticed it not when the position was profitable, but after it
     had gone negative. Then, to add insult to injury, while I investigated the issue—before
     I exited the position—I watched it drop another $125 or so. Once I confirmed that
     the position was wrong, I exited with about a $550 loss.
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 该订单在交易所挂单直到周二早上5点才被成交。我是在周三早上发现这个错误的。当然，根据墨菲定律，我不是在这个头寸盈利时发现它，而是在它变为亏损后才注意到。更糟糕的是，在我调查这个问题时——在我退出头寸之前——我看到它又下跌了大约125美元。一旦我确认这个头寸是错误的，我以约550美元的损失退出了。
 - en: 'Who’s to blame here? Well, the software did not do its job, since it should
     have canceled the order. But, ultimately, I can blame no one, and no thing (software,
     Internet connection, etc.), except myself for the error. I’ll repeat that: I am
     to blame! I am the caretaker, and if things go wrong, as they occasionally will,
     it is up to me to be aware of it and fix it. I take full responsibility for this
     screw up, and I added some steps to make sure it is not repeated:'
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: 该责怪谁呢？好吧，软件没有履行其职责，因为它应该取消订单。但最终，我不能责怪任何人和任何事物（软件、互联网连接等），只能怪自己。我再重复一遍：我该负责！我是监护人，如果事情出错，偶尔会发生，那就得由我来意识到并修复。我对这次失误承担全部责任，并采取了一些步骤确保不再发生：
 - en: Check statements every day. If I had checked it that first morning, I’d have
     probably exited with a $300 profit, instead of a $550 loss.
+  id: totrans-154
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 每天检查报表。如果我在那天早上第一时间检查，可能会以300美元的利润退出，而不是550美元的损失。
 - en: Check platform every few hours for uncanceled orders.
+  id: totrans-155
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 每隔几个小时检查平台上的未取消订单。
 - en: Improve checking of positions. I normally check my positions every few hours,
     but somehow this one slipped by me.
+  id: totrans-156
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 改进仓位检查。我通常每隔几个小时检查一次我的仓位，但这一次却滑过了我。
 - en: Make sure filled orders show up on the chart. For some reason, this fill did
     not—they usually do.
+  id: totrans-157
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 确保已填订单在图表上显示。出于某种原因，这个填充没有显示——它们通常会出现。
 - en: Not a killer loss, but enough for me to getting pretty upset at the situation!
     Percentage-wise, for this account, the losses were 7 percent, so that is pretty
     bad. Eventually, I want this strategy to get to 10 contracts, and at that point
     it would be some serious money.
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: 这不是致命的损失，但足以让我对这种情况感到相当沮丧！就这个账户而言，损失的百分比为7%，所以这真的很糟糕。最终，我希望这个策略能达到10个合约，到那时将会是一笔可观的资金。
 - en: I noticed the bad trade about 30 hours after I entered it. Then I exited at
     almost the worst time, with a $550 loss. Now, less than one hour later, I could
     have exited with less than a $100 loss. Is it just me, or does this kind of stuff
@@ -876,8 +1197,10 @@
     prices, and watching my positions, and deliberately doing things to maximize my
     losses! I can definitely see why people feel this way—at times, it surely feels
     like the market is out to get me personally!
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在入场约30小时后注意到了这个糟糕的交易。然后我几乎在最坏的时机退出，损失了$550。现在，不到一个小时后，我本可以以不到$100的损失退出。这只是我一个人的感觉，还是这种事情也会发生在你身上？如果我不太了解情况，我会发誓有人在操控价格，盯着我的仓位，并故意做一些事情来最大化我的损失！我完全可以理解人们为什么会有这样的感觉——有时，市场确实让我感觉是针对我的！
 - en: I’ve thought a lot about this occasional paranoia-type feeling. I know why some
     of this occurs. I tend to discount—not really notice or dwell on—every good thing
     that happens to me (mistakes in my favor, excellent news reports right after I
@@ -887,24 +1210,30 @@
     these “losing lessons” might be good to remember—today’s automated issue is a
     good example—but most should be forgotten just as easily as the money-making mistakes.
     That doesn’t happen for me, at least not usually.
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: 我对这种偶尔的偏执型感觉思考了很多。我知道其中一些发生的原因。我往往会忽视——并不真正注意或沉溺于——每一个发生在我身上的好事（对我有利的错误、入场后立刻的优秀新闻报道等）。赚钱的异常情况只是股权曲线中的一次闪烁。它们很不错，但我并不太记得它们。但我倾向于记住因错误而导致的损失，并将其保存在我的记忆库中。其中一些“亏损教训”可能值得记住——今天的自动化问题就是一个很好的例子——但大多数应该像赚钱错误一样容易被遗忘。对我来说，这种情况通常不会发生。
 - en: Last year I actually did a study of this psychological phenomenon. I added up
     all my winning mistakes and all my losing mistakes. The net impact, from a monetary
     basis, was just about zero. But from a psychological standpoint, it definitely
     was not breakeven. One would think this feeling (“the market is out to get me”)
     would have disappeared after 20-plus years of trading. But it hasn’t, and I suspect
     it never will!
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: 去年我实际上研究过这种心理现象。我把所有的盈利错误和亏损错误加起来。从货币的角度来看，净影响几乎为零。但从心理的角度来看，这绝对不是盈亏平衡。人们会认为这种感觉（“市场是针对我的”）在20多年交易后会消失。但并没有，我怀疑它永远不会消失！
 - en: By the end of the week, what should have been a decent winning week turned out
     to be a losing week, due to the entry “glitch” described earlier. That cost me
     $550\. I have taken some immediate steps to prevent it from happening again, and
     I think I am in the clear, at least for the time being. My actual performance
     now lags the perfect strategy performance, and the issue this past week is to
     blame for that.
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: 到本周结束时，本应是一个不错的盈利周，却因前面提到的入场“故障”变成了亏损周，这让我损失了$550。我已采取一些立即措施以防止再次发生，我认为我暂时是安全的。我的实际表现现在落后于完美策略的表现，而上周的问题正是导致这种情况的原因。
 - en: 'The problem ultimately comes down to this: if I am depending on a computer
     to place, cancel, and replace orders, unless someone is monitoring it at all times,
     there is always a possibility of something going haywire. The question is how
@@ -914,38 +1243,50 @@
     not occur? Plus, it is usually not the issues you know about, but the issues you
     don’t know about. This case was one of them. After thousands of automated trades
     over the years, this particular issue had never come up before!'
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: 问题归根结底在于：如果我依赖计算机来下单、取消和替换订单，除非有人始终监控，否则总会有一些意外情况发生。问题是，我的有限资源（毕竟只有我一个人）要投入多少精力来确保自动化不会出错？以往的努力并没有奏效——因为我刚损失了550美元——那么我什么时候才能确信这些问题不会再发生呢？而且，通常不是你已知的问题，而是你未知的问题。这一情况就是其中之一。经过多年的数千次自动交易，这个特定问题以前从未出现过！
 - en: Enough about that issue for now. Performance is still lagging, and the euro
     day system has not had a trade in two weeks (I think I can blame lower volatility
     for that). Regardless, I will “keep on trading!”
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: 先说到这里。表现仍然滞后，欧元日间策略在过去两周没有进行交易（我想我可以归咎于低波动性）。不管怎样，我会“继续交易！”
 - en: '![images](images/gbox.jpg) Week 9—Limit Order Fills (October 28, 2013)'
+  id: totrans-165
   prefs:
   - PREF_H2
   type: TYPE_IMG
+  zh: '![images](images/gbox.jpg) 第9周—限价订单成交（2013年10月28日）'
 - en: One of the tricks unscrupulous system vendors play is to assume that all limit
     orders are filled as soon as the price is touched. You can recognize this by looking
     at a price charts of their trades. If the method shows trades being bought at
     the exact low of a bar, and/or sold at the exact high of a bar, you can bet this
     game is being played.
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些不道德的系统供应商的把戏是认为所有限价订单在价格触及时就会立即成交。你可以通过查看他们交易的价格图表来识别这一点。如果方法显示交易在某根K线的最低点被买入，和/或在最高点被卖出，你可以肯定这个游戏正在进行中。
 - en: Of course, the reality is that it is hard to buy the low and sell the high.
     My experience is that, depending on the market and when your order is placed,
     you can probably do this 5–20 percent of the time. The other 80–95 percent of
     the time, price has to trade through your price to get you a fill at the limit
     price.
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，现实是很难在最低点买入和在最高点卖出。我的经验是，具体取决于市场和下单时间，你可能有5-20%的机会做到这一点。其余的80-95%的时间，价格必须穿过你的价格才能以限价成交。
 - en: This can be an issue with back testing. If your back-test engine assumes that
     limit orders are filled when touched, the results will be too optimistic. If the
     back-test engine assumes price must be penetrated to get a fill, then the back-test
     results will be a bit too pessimistic. I always go with the pessimistic approach.
     My actual results can then only be better than the back test.
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 这可能是回测中的一个问题。如果你的回测引擎假设限价订单在触及时就会成交，结果将过于乐观。如果回测引擎假设必须穿透价格才能成交，那么回测结果会显得过于悲观。我总是选择悲观的方式。我的实际结果只能比回测更好。
 - en: During trading for week 9, the euro day strategy bought the exact low of the
     bar on a limit order. Of course, part of the reason I was filled was that I was
     trading a 1 lot; if I were trading a 10 lot, I probably would have received only
@@ -956,16 +1297,22 @@
     the trade was a winner, it was a nice surprise for once! So this is roughly a
     $400 trade in my real account’s favor, when compared to the back-test engine.
     This makes up for the order problem that cost me $500 in the previous week.
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: 在第9周的交易中，欧元日间策略在限价订单上买入了K线的确切最低点。当然，我被成交的部分原因是我只交易了1手；如果我交易了10手，我可能只会收到部分成交。有趣的是，当我刷新图表时，根据策略引擎，交易消失了。由于价格没有低于我的限价，策略引擎假设没有交易。但我的真实账户显示有交易，因为我确实被成交了。由于这笔交易是获利的，这次真是个意外的好消息！所以与回测引擎相比，这大约是一笔400美元的盈利。这弥补了上周让我损失500美元的订单问题。
 - en: '![images](images/gbox.jpg) Week 12 Review'
+  id: totrans-170
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 第12周回顾'
 - en: '**Summary:** First, let’s look at the big picture, as I always do. From a look
     at [Figure 24.4](#figure24-4), a couple of things are clear:'
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: '**总结：** 首先，让我们像往常一样看大局。从[图24.4](#figure24-4)来看，有几点是明确的：'
 - en: Over the whole course of the system history (walk-forward, incubation, live),
     the system performance hasn’t changed much. Just as after week 8, I could draw
     a line from the start of walk-forward to the start of incubation, and then another
@@ -973,81 +1320,114 @@
     two lines would be about the same—with the slope from start of incubation to present
     being a little flatter. This gives me some reassurance that the system is behaving
     well on a longer-term basis.
+  id: totrans-172
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在整个系统历史（走向前、孵化、实盘）中，系统表现变化不大。正如第8周之后，我可以从走向前的开始绘制一条线到孵化的开始，然后再从孵化的开始绘制到现在，这两条线的斜率大致相同——从孵化开始到现在的斜率稍微平缓一些。这让我对系统在长期基础上的表现感到一些安慰。
 - en: It is easy to see that the live trading has been lagging long-term performance.
     The performance these past three months has been down, and while it has not crashed
     and burned, it certainly has been a disappointment.
+  id: totrans-173
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 很明显，实盘交易一直落后于长期表现。过去三个月的表现下降，尽管没有崩溃，但确实令人失望。
 - en: '![images](images/c24f004.jpg)'
+  id: totrans-174
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c24f004.jpg)'
 - en: '[**FIGURE 24.4**](#figureanchor24-4) Big Picture Equity Curve after 12 Weeks'
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图24.4**](#figureanchor24-4) 12周后的大局股权曲线'
 - en: After 12 weeks of trading this system live, I am down about 10 percent from
     the start for the strategy-calculated performance, and about 4.5 percent for the
     actual performance ([Figure 24.5](#figure24-5)).
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个系统实盘交易12周后，我的策略计算表现比开始时下降了约10%，实际表现下降了约4.5%（[图24.5](#figure24-5)）。
 - en: '**Am I surprised at this result?** Yes. I had expected better, certainly close
     to breakeven by now—at the very worst.'
+  id: totrans-177
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**我对这个结果感到惊讶吗？** 是的。我原本期望更好，确实希望现在至少接近盈亏平衡——最糟糕的情况也是如此。'
 - en: '**Am I disappointed in the results so far?** Very much so. The performance
     these past 12 weeks is way behind the long-term average, so it is very disappointing.'
+  id: totrans-178
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**我对目前的结果感到失望吗？** 非常失望。这过去12周的表现远低于长期平均水平，确实令人失望。'
 - en: '**Are results in line with expectations?** Just barely. Results are around
     the lower 10 percent line, which means the system in real time is close to being
     a different system than walk-forward and incubation. Not quite different yet,
     but getting close.'
+  id: totrans-179
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**结果是否符合预期？** 勉强算是。结果接近最低的10%线，这意味着实时系统与走向前和孵化的系统几乎不同。还不完全不同，但越来越接近。'
 - en: '**Are fills and trades live comparable to TradeStation strategy report?** No,
     but it is a good thing! I am doing about $550 better live than the strategy predicts
     because of (1) less slippage than I had planned for and (2) a few trades where
     I was filled in real life when price just touched, but did not exceed, my limit
     price.'
+  id: totrans-180
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**实盘交易的成交和交易是否与TradeStation策略报告可比？** 不，但这是一件好事！我实盘的表现比策略预测好约550美元，因为（1）滑点少于预期，(2)
+    有几笔交易在价格刚触及但未超过限价时成交。'
 - en: '**Do I see any reason to stop trading this system?** No.'
+  id: totrans-181
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**我是否看到停止交易该系统的理由？** 没有。'
 - en: '**Do I see any reason to change my position-sizing plan, that is, reduce or
     increase my risk?** No.'
+  id: totrans-182
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**我是否看到改变我的仓位计划的理由，也就是说，减少或增加风险？** 没有。'
 - en: '![images](images/c24f005.jpg)'
+  id: totrans-183
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c24f005.jpg)'
 - en: '[**FIGURE 24.5**](#figureanchor24-5) Daily Performance, After 12 Weeks of Live
     Trading'
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图24.5**](#figureanchor24-5) 12周实盘交易后的每日表现'
 - en: After 12 weeks, I will keep on trading per the plan, but this system is just
     kind of floundering. A couple of big winners, which is what the system is based
     on, are needed.
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: 经过12周，我将继续按计划交易，但该系统正在徘徊。需要几笔大赢家，这正是系统的基础。
 - en: '![images](images/gbox.jpg) Week 13—Time Limit Review'
+  id: totrans-186
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 第13周—时间限制回顾'
 - en: 'As my strategy continues to flounder around breakeven, I start to wonder: how
     long am I willing to put my capital at risk without any return? The answer for
     me involves the “next best alternative.”'
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着我的策略在盈亏平衡附近徘徊，我开始想：我愿意冒多长时间的资本风险而没有任何回报？对我来说，答案涉及“下一个最佳选择”。
 - en: Every six months or so, I look at every system I am trading, and also the systems
     waiting in the wings (ready to be traded live, but currently not trading live).
     If I find a better system than the one I am trading, and I don’t have enough capital
@@ -1055,8 +1435,10 @@
     both), I will replace it. Thus, even if the euro trading strategy is performing
     decently (making money as opposed to its current situation of near breakeven),
     I still might replace it with the “next best alternative.”
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: 每六个月左右，我会查看我正在交易的每个系统，以及在待命状态的系统（准备进行实盘交易，但目前未进行）。如果我发现一个比我当前交易的系统更好的系统，并且我没有足够的资金同时交易两个（或者因为相关性问题我不想同时交易两个），我会将其替换。因此，即使欧元交易策略表现尚可（盈利而非目前的接近盈亏平衡状态），我仍可能用“下一个最佳替代品”替换它。
 - en: I do this exercise only two times a year, in part because it is involved (complicated
     correlation studies, etc), but mainly because it is only fair to a new system
     going live to have some time to prove itself. Most people don’t have the patience
@@ -1065,17 +1447,23 @@
     as he gives up just one hit. As I showed earlier, even winning systems can be
     losers for quite a while, until the long-term positive expectancy really shows
     itself.
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: 我每年仅进行两次此类分析，部分原因是它复杂（涉及复杂的相关性研究等），但主要是出于对新系统进行实盘交易给予一些时间以证明自己是公平的。大多数人没有耐心去做这件事，他们不断在系统之间跳跃，根本不给任何系统一个公平的机会。这就像在棒球比赛中，投手一旦被击出一支安打就立即被换下场。正如我之前所展示的，即使是盈利的系统，也可能在相当长的一段时间内表现不佳，直到长期的正期望真正显现出来。
 - en: Of course, even with this twice-a-year analysis, my original quitting point
     is still in effect. If I hit that, I am out, regardless of the next best alternative
     (which may be cash).
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，即使在这每年两次的分析中，我的原始退出点仍然有效。如果我触及那个点，我就会退出，无论下一个最佳替代品是什么（可能是现金）。
 - en: '![images](images/gbox.jpg) Week 15 Review'
+  id: totrans-191
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 第15周回顾'
 - en: '**Summary:** After 15 weeks, the euro day and night trading strategies are
     finally doing better, as depicted in [Figures 24.6](#figure24-6) and [24.7](#figure24-7).
     By looking at the big picture, it is clear that the performance of the past few
@@ -1083,62 +1471,89 @@
     still has to improve performance, but things are certainly looking better. After
     15 weeks of trading this system live, I am up about 1 percent from the start for
     the strategy-calculated performance and about 9.0 percent for the actual performance.'
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: '**总结：** 在15周之后，欧元日夜交易策略终于表现得更好，如[图24.6](#figure24-6)和[24.7](#figure24-7)所示。通过大局来看，过去几周的表现使得实盘结果越来越接近历史回测。系统仍需改善表现，但情况显然正在好转。在进行15周的实盘交易后，我的策略计算表现上涨了约1%，实际表现上涨了约9.0%。'
 - en: '**Am I surprised at this result?** Obviously, I was hoping for better, but
     I am thankful that the system is showing a profit at this point.'
+  id: totrans-193
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**我对这个结果感到惊讶吗？** 显然，我希望能更好，但我很感激系统在此时展现了盈利。'
 - en: '**Are results in line with expectations?** Results are definitely more in line
     with expectations, especially in the past few weeks. But the strategy as a whole
     is still underperforming. As stated earlier, this approach relies on a handful
     of big profit trades per year, and so far in live trading there have not been
     any.'
+  id: totrans-194
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**结果是否符合预期？** 结果绝对更符合预期，尤其是在过去几周。但整体策略仍然表现不佳。如前所述，这种方法依赖于每年少数几笔大额盈利交易，而截至目前，在实盘交易中尚未出现任何。'
 - en: '**Are fills and trades live comparable to TradeStation strategy report?** No,
     and that is still good! I am doing about $700 better live than the strategy predicts
     because of (1) less slippage than planned and (2) multiple trades where I was
     filled in real life but not in the back-test engine (limit price penetration issues).'
+  id: totrans-195
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**实盘成交和交易是否可与TradeStation策略报告相比？** 不可以，但这仍然很好！我在实盘中的表现比策略预测好约$700，因为（1）滑点比预期少，(2)
+    发生了多笔交易，在实际中成交但在回测引擎中未成交（限价穿透问题）。'
 - en: '**Do I see any reason to stop trading this system?** No.'
+  id: totrans-196
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**我是否有理由停止交易这个系统？** 没有。'
 - en: '**Do I see any reason to change my position-sizing plan, that is, reduce or
     increase my risk?** No.'
+  id: totrans-197
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**我是否有理由改变我的仓位配置计划，即减少或增加风险？** 没有。'
 - en: '![images](images/c24f006.jpg)'
+  id: totrans-198
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c24f006.jpg)'
 - en: '[**FIGURE 24.6**](#figureanchor24-6) Big Picture Equity Curve after 12 Weeks'
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图24.6**](#figureanchor24-6) 12周后的整体股权曲线'
 - en: '![images](images/c24f007.jpg)'
+  id: totrans-200
   prefs: []
   type: TYPE_IMG
+  zh: '![images](images/c24f007.jpg)'
 - en: '[**FIGURE 24.7**](#figureanchor24-7) Daily Performance after 15 Weeks of Live
     Trading'
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**图 24.7**](#figureanchor24-7) 15 周实盘交易后的每日表现'
 - en: After 15 weeks, I will keep on trading per the plan, but this system is still
     underperforming, compared to original expectations. That is one drawback to a
     trading approach that requires large, but infrequent, winning trades. It might
     be a long time before this system really shows its capability.
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 15 周后，我将继续按照计划进行交易，但与最初的预期相比，这个系统仍然表现不佳。这是需要大额但不频繁获胜交易的交易方法的一个缺点。这个系统可能需要很长时间才能真正展现其能力。
 - en: '![images](images/gbox.jpg) Future Reviews'
+  id: totrans-203
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 未来评审'
 - en: This running diary will continue indefinitely, or until I stop trading the euro
     day and night system, at which point I’ll explain any reasons I had to stop live
     trading. Updates can be found at the web site ([www.wiley.com/go/algotradingsystems](http://www.wiley.com/go/algotradingsystems)).
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个交易日记将无限期持续，或者直到我停止昼夜交易欧元系统，届时我会解释停止实盘交易的原因。更新可以在网站上找到（[www.wiley.com/go/algotradingsystems](http://www.wiley.com/go/algotradingsystems)）。
