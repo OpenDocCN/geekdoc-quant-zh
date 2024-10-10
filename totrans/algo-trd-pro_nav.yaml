@@ -3,766 +3,919 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 目录
 - en: '[Title Page](part0001.xhtml)'
   id: totrans-1
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[封面](part0001.xhtml)'
 - en: '[Contents](part0002.xhtml)'
   id: totrans-2
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[目录](part0002.xhtml)'
 - en: '[Chapter 1: Introduction to Options Markets](part0003.xhtml)'
   id: totrans-3
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[第1章：期权市场简介](part0003.xhtml)'
 - en: '[1.2\. Options Basics](part0004.xhtml)'
   id: totrans-4
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[1.2\. 期权基础知识](part0004.xhtml)'
 - en: '[1.3\. Options Pricing Models](part0005.xhtml)'
   id: totrans-5
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[1.3\. 期权定价模型](part0005.xhtml)'
 - en: '[1.4\. Option Market Structure](part0006.xhtml)'
   id: totrans-6
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[1.4\. 期权市场结构](part0006.xhtml)'
 - en: '[1.5\. Risk and Portfolio Management with Options](part0007.xhtml)'
   id: totrans-7
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[1.5\. 使用期权进行风险与投资组合管理](part0007.xhtml)'
 - en: '[Chapter 2: Programming Fundamentals in Python](part0008.xhtml)'
   id: totrans-8
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[第2章：Python中的编程基础](part0008.xhtml)'
 - en: '[2.2\. Object-Oriented Programming in Python](part0009.xhtml)'
   id: totrans-9
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[2.2\. Python中的面向对象编程](part0009.xhtml)'
 - en: '[2.3\. Essential Python Libraries](part0010.xhtml)'
   id: totrans-10
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[2.3\. 基本Python库](part0010.xhtml)'
 - en: '[2.4 Advanced Python Features](part0011.xhtml)'
   id: totrans-11
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[2.4 高级Python特性](part0011.xhtml)'
 - en: '[2.5\. Development Environment Setup](part0012.xhtml)'
   id: totrans-12
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[2.5\. 开发环境设置](part0012.xhtml)'
 - en: '[Chapter 3: Time Series Analysis for Financial Data](part0013.xhtml)'
   id: totrans-13
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[第3章：金融数据的时间序列分析](part0013.xhtml)'
 - en: '[3.2\. Time Series Descriptive Statistics](part0014.xhtml)'
   id: totrans-14
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[3.2\. 时间序列描述统计](part0014.xhtml)'
 - en: '[3.3\. Time Series Visualization](part0015.xhtml)'
   id: totrans-15
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[3.3\. 时间序列可视化](part0015.xhtml)'
 - en: '[3.4 Time Series Decomposition in Python](part0016.xhtml)'
   id: totrans-16
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[3.4 在Python中的时间序列分解](part0016.xhtml)'
 - en: '[3.5\. Time Series Forecasting Models](part0017.xhtml)'
   id: totrans-17
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[3.5\. 时间序列预测模型](part0017.xhtml)'
 - en: '[Chapter 4: Data Retrieval and Preparation for Options Trading](part0018.xhtml)'
   id: totrans-18
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[第4章：期权交易的数据检索与准备](part0018.xhtml)'
 - en: '[4.2\. Data Cleaning and Preprocessing](part0019.xhtml)'
   id: totrans-19
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[4.2\. 数据清理与预处理](part0019.xhtml)'
 - en: '[4.3\. Data Storage and Management](part0020.xhtml)'
   id: totrans-20
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[4.3\. 数据存储与管理](part0020.xhtml)'
 - en: '[4.4 Options-Specific Data Challenges](part0021.xhtml)'
   id: totrans-21
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[4.4 特定于期权的数据挑战](part0021.xhtml)'
 - en: '[4.5\. Data Analysis and Feature Engineering](part0022.xhtml)'
   id: totrans-22
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[4.5\. 数据分析与特征工程](part0022.xhtml)'
 - en: '[Chapter 5: Implementing Options Pricing Models in Python](part0023.xhtml)'
   id: totrans-23
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[第5章：在Python中实现期权定价模型](part0023.xhtml)'
 - en: '[5.2 The Binomial Tree Model for Option Valuation](part0024.xhtml)'
   id: totrans-24
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[5.2 二项树模型用于期权定价](part0024.xhtml)'
 - en: '[5.3\. Monte Carlo Simulation for Options Pricing](part0025.xhtml)'
   id: totrans-25
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[5.3\. 期权定价的蒙特卡罗模拟](part0025.xhtml)'
 - en: '[5.4\. Volatility Modeling and the Greek](part0026.xhtml)'
   id: totrans-26
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[5.4\. 波动性建模与希腊值](part0026.xhtml)'
 - en: '[5.5 Numerical Methods and Optimization Techniques](part0027.xhtml)'
   id: totrans-27
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[5.5 数值方法与优化技术](part0027.xhtml)'
 - en: '[Chapter 6: Statistical Analysis and Machine Learning for Options Trading](part0028.xhtml)'
   id: totrans-28
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[第6章：期权交易的统计分析与机器学习](part0028.xhtml)'
 - en: '[6.2\. Regression Analysis for Option Pricing](part0029.xhtml)'
   id: totrans-29
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[6.2\. 期权定价的回归分析](part0029.xhtml)'
 - en: '[6.3 Classification Algorithms for Trade Signals](part0030.xhtml)'
   id: totrans-30
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[6.3 交易信号的分类算法](part0030.xhtml)'
 - en: '[6.4\. Unsupervised Learning Techniques](part0031.xhtml)'
   id: totrans-31
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[6.4\. 无监督学习技术](part0031.xhtml)'
 - en: '[6.5 Deep Learning for Options Strategies](part0032.xhtml)'
   id: totrans-32
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[6.5 深度学习在期权策略中的应用](part0032.xhtml)'
 - en: '[Chapter 7: Quantitative Risk Management for Options](part0033.xhtml)'
   id: totrans-33
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[第7章：期权的量化风险管理](part0033.xhtml)'
 - en: '[7.2\. Credit and Counterparty Risk](part0034.xhtml)'
   id: totrans-34
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[7.2\. 信用与对手风险](part0034.xhtml)'
 - en: '[7.3 Liquidity Risk and Management](part0035.xhtml)'
   id: totrans-35
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[7.3 流动性风险与管理](part0035.xhtml)'
 - en: '[7.4\. Operational Risk Management](part0036.xhtml)'
   id: totrans-36
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[7.4\. 操作风险管理](part0036.xhtml)'
 - en: '[7.5\. Integrating Risk with Portfolio Construction](part0037.xhtml)'
   id: totrans-37
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[7.5\. 将风险与投资组合构建集成](part0037.xhtml)'
 - en: '[Chapter 8: Option Trading Strategies and Profitability Analysis](part0038.xhtml)'
   id: totrans-38
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[第8章：期权交易策略与盈利分析](part0038.xhtml)'
 - en: '[8.2\. Evaluating Option Strategies](part0039.xhtml)'
   id: totrans-39
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[8.2\. 评估期权策略](part0039.xhtml)'
 - en: '[8.3\. Event-Driven Trading Strategies](part0040.xhtml)'
   id: totrans-40
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[8.3\. 事件驱动的交易策略](part0040.xhtml)'
 - en: '[8.4\. Tail Risk Hedging with Options](part0041.xhtml)'
   id: totrans-41
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[8.4\. 利用期权对冲尾部风险](part0041.xhtml)'
 - en: '[8.5\. Cost-Benefit Analysis of Tail Risk Hedges](part0042.xhtml)'
   id: totrans-42
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[8.5\. 尾部风险对冲的成本效益分析](part0042.xhtml)'
 - en: '[Chapter 9: Real-Time Data Feed and Trade Execution](part0043.xhtml)'
   id: totrans-43
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[第9章：实时数据馈送与交易执行](part0043.xhtml)'
 - en: '[9.2\. Building a Market Data Ticker Plant](part0044.xhtml)'
   id: totrans-44
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[9.2\. 构建市场数据行情播报系统](part0044.xhtml)'
 - en: '[9.3\. Trade Execution Syms](part0045.xhtml)'
   id: totrans-45
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[9.3\. 交易执行系统](part0045.xhtml)'
 - en: '[9.5\. Integrating with Brokers and Platforms](part0046.xhtml)'
   id: totrans-46
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[9.5\. 与经纪商和平台的集成](part0046.xhtml)'
 - en: '[Chapter 10: Optimizing Trading Strategies with Artificial](part0047.xhtml)'
   id: totrans-47
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[第10章：利用人工智能优化交易策略](part0047.xhtml)'
 - en: '[10.2 Neural Network Optimization Techniques](part0048.xhtml)'
   id: totrans-48
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[10.2 神经网络优化技术](part0048.xhtml)'
 - en: '[10.3\. Reinforcement Learning for Adaptive Trading](part0049.xhtml)'
   id: totrans-49
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[10.3\. 自适应交易的强化学习](part0049.xhtml)'
 - en: '[10.4\. Ensemble Methods for Robust Trading Decision](part0050.xhtml)'
   id: totrans-50
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[10.4\. 集成方法用于稳健交易决策](part0050.xhtml)'
 - en: '[10.5\. Strategy Improvement with Natural Language Processing](part0051.xhtml)'
   id: totrans-51
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[10.5\. 利用自然语言处理改进策略](part0051.xhtml)'
 - en: '[Additional Resources](part0052.xhtml)'
   id: totrans-52
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[附加资源](part0052.xhtml)'
 - en: Guide
   id: totrans-53
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 指南
 - en: '[Cover](part0000.xhtml)'
   id: totrans-54
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[封面](part0000.xhtml)'
 - en: '[Beginning](part0003.xhtml)'
   id: totrans-55
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[开始](part0003.xhtml)'
 - en: '[Contents](part0002.xhtml)'
   id: totrans-56
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[目录](part0002.xhtml)'
 - en: '[1](part0002.xhtml)'
   id: totrans-57
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[1](part0002.xhtml)'
 - en: '[2](part0003.xhtml)'
   id: totrans-58
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[2](part0003.xhtml)'
 - en: '[3](part0003.xhtml#page_3)'
   id: totrans-59
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[3](part0003.xhtml#page_3)'
 - en: '[4](part0003.xhtml#page_4)'
   id: totrans-60
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[4](part0003.xhtml#page_4)'
 - en: '[5](part0003.xhtml#page_5)'
   id: totrans-61
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[5](part0003.xhtml#page_5)'
 - en: '[6](part0003.xhtml#page_6)'
   id: totrans-62
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[6](part0003.xhtml#page_6)'
 - en: '[7](part0003.xhtml#page_7)'
   id: totrans-63
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[7](part0003.xhtml#page_7)'
 - en: '[8](part0003.xhtml#page_8)'
   id: totrans-64
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[8](part0003.xhtml#page_8)'
 - en: '[9](part0003.xhtml#page_9)'
   id: totrans-65
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[9](part0003.xhtml#page_9)'
 - en: '[10](part0003.xhtml#page_10)'
   id: totrans-66
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[10](part0003.xhtml#page_10)'
 - en: '[11](part0003.xhtml#page_11)'
   id: totrans-67
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[11](part0003.xhtml#page_11)'
 - en: '[12](part0003.xhtml#page_12)'
   id: totrans-68
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[12](part0003.xhtml#page_12)'
 - en: '[13](part0003.xhtml#page_13)'
   id: totrans-69
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[13](part0003.xhtml#page_13)'
 - en: '[14](part0003.xhtml#page_14)'
   id: totrans-70
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[14](part0003.xhtml#page_14)'
 - en: '[15](part0003.xhtml#page_15)'
   id: totrans-71
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[15](part0003.xhtml#page_15)'
 - en: '[16](part0004.xhtml)'
   id: totrans-72
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[16](part0004.xhtml)'
 - en: '[17](part0004.xhtml#page_17)'
   id: totrans-73
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[17](part0004.xhtml#page_17)'
 - en: '[18](part0004.xhtml#page_18)'
   id: totrans-74
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[18](part0004.xhtml#page_18)'
 - en: '[19](part0004.xhtml#page_19)'
   id: totrans-75
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[19](part0004.xhtml#page_19)'
 - en: '[20](part0004.xhtml#page_20)'
   id: totrans-76
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[20](part0004.xhtml#page_20)'
 - en: '[21](part0004.xhtml#page_21)'
   id: totrans-77
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[21](part0004.xhtml#page_21)'
 - en: '[22](part0004.xhtml#page_22)'
   id: totrans-78
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[22](part0004.xhtml#page_22)'
 - en: '[23](part0004.xhtml#page_23)'
   id: totrans-79
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[23](part0004.xhtml#page_23)'
 - en: '[24](part0004.xhtml#page_24)'
   id: totrans-80
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[24](part0004.xhtml#page_24)'
 - en: '[25](part0004.xhtml#page_25)'
   id: totrans-81
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[25](part0004.xhtml#page_25)'
 - en: '[26](part0004.xhtml#page_26)'
   id: totrans-82
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[26](part0004.xhtml#page_26)'
 - en: '[27](part0004.xhtml#page_27)'
   id: totrans-83
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[27](part0004.xhtml#page_27)'
 - en: '[28](part0005.xhtml)'
   id: totrans-84
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[28](part0005.xhtml)'
 - en: '[29](part0005.xhtml#page_29)'
   id: totrans-85
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[29](part0005.xhtml#page_29)'
 - en: '[30](part0005.xhtml#page_30)'
   id: totrans-86
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[30](part0005.xhtml#page_30)'
 - en: '[31](part0005.xhtml#page_31)'
   id: totrans-87
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[31](part0005.xhtml#page_31)'
 - en: '[32](part0005.xhtml#page_32)'
   id: totrans-88
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[32](part0005.xhtml#page_32)'
 - en: '[33](part0005.xhtml#page_33)'
   id: totrans-89
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[33](part0005.xhtml#page_33)'
 - en: '[34](part0005.xhtml#page_34)'
   id: totrans-90
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[34](part0005.xhtml#page_34)'
 - en: '[35](part0005.xhtml#page_35)'
   id: totrans-91
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[35](part0005.xhtml#page_35)'
 - en: '[36](part0005.xhtml#page_36)'
   id: totrans-92
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[36](part0005.xhtml#page_36)'
 - en: '[37](part0005.xhtml#page_37)'
   id: totrans-93
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[37](part0005.xhtml#page_37)'
 - en: '[38](part0005.xhtml#page_38)'
   id: totrans-94
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[38](part0005.xhtml#page_38)'
 - en: '[39](part0005.xhtml#page_39)'
   id: totrans-95
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[39](part0005.xhtml#page_39)'
 - en: '[40](part0005.xhtml#page_40)'
   id: totrans-96
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[40](part0005.xhtml#page_40)'
 - en: '[41](part0005.xhtml#page_41)'
   id: totrans-97
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[41](part0005.xhtml#page_41)'
 - en: '[42](part0005.xhtml#page_42)'
   id: totrans-98
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[42](part0005.xhtml#page_42)'
 - en: '[43](part0005.xhtml#page_43)'
   id: totrans-99
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[43](part0005.xhtml#page_43)'
 - en: '[44](part0005.xhtml#page_44)'
   id: totrans-100
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[44](part0005.xhtml#page_44)'
 - en: '[45](part0005.xhtml#page_45)'
   id: totrans-101
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[45](part0005.xhtml#page_45)'
 - en: '[46](part0006.xhtml)'
   id: totrans-102
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[46](part0006.xhtml)'
 - en: '[47](part0006.xhtml#page_47)'
   id: totrans-103
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[47](part0006.xhtml#page_47)'
 - en: '[48](part0006.xhtml#page_48)'
   id: totrans-104
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[48](part0006.xhtml#page_48)'
 - en: '[49](part0006.xhtml#page_49)'
   id: totrans-105
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[49](part0006.xhtml#page_49)'
 - en: '[50](part0006.xhtml#page_50)'
   id: totrans-106
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[50](part0006.xhtml#page_50)'
 - en: '[51](part0006.xhtml#page_51)'
   id: totrans-107
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[51](part0006.xhtml#page_51)'
 - en: '[52](part0006.xhtml#page_52)'
   id: totrans-108
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[52](part0006.xhtml#page_52)'
 - en: '[53](part0006.xhtml#page_53)'
   id: totrans-109
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[53](part0006.xhtml#page_53)'
 - en: '[54](part0006.xhtml#page_54)'
   id: totrans-110
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[54](part0006.xhtml#page_54)'
 - en: '[55](part0006.xhtml#page_55)'
   id: totrans-111
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[55](part0006.xhtml#page_55)'
 - en: '[56](part0006.xhtml#page_56)'
   id: totrans-112
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[56](part0006.xhtml#page_56)'
 - en: '[57](part0006.xhtml#page_57)'
   id: totrans-113
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[57](part0006.xhtml#page_57)'
 - en: '[58](part0006.xhtml#page_58)'
   id: totrans-114
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[58](part0006.xhtml#page_58)'
 - en: '[59](part0006.xhtml#page_59)'
   id: totrans-115
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[59](part0006.xhtml#page_59)'
 - en: '[60](part0006.xhtml#page_60)'
   id: totrans-116
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[60](part0006.xhtml#page_60)'
 - en: '[61](part0006.xhtml#page_61)'
   id: totrans-117
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[61](part0006.xhtml#page_61)'
 - en: '[62](part0006.xhtml#page_62)'
   id: totrans-118
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[62](part0006.xhtml#page_62)'
 - en: '[63](part0006.xhtml#page_63)'
   id: totrans-119
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[63](part0006.xhtml#page_63)'
 - en: '[64](part0006.xhtml#page_64)'
   id: totrans-120
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[64](part0006.xhtml#page_64)'
 - en: '[65](part0006.xhtml#page_65)'
   id: totrans-121
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[65](part0006.xhtml#page_65)'
 - en: '[66](part0007.xhtml)'
   id: totrans-122
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[66](part0007.xhtml)'
 - en: '[67](part0007.xhtml#page_67)'
   id: totrans-123
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[67](part0007.xhtml#page_67)'
 - en: '[68](part0007.xhtml#page_68)'
   id: totrans-124
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[68](part0007.xhtml#page_68)'
 - en: '[69](part0007.xhtml#page_69)'
   id: totrans-125
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[69](part0007.xhtml#page_69)'
 - en: '[70](part0007.xhtml#page_70)'
   id: totrans-126
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[70](part0007.xhtml#page_70)'
 - en: '[71](part0007.xhtml#page_71)'
   id: totrans-127
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[71](part0007.xhtml#page_71)'
 - en: '[72](part0007.xhtml#page_72)'
   id: totrans-128
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[72](part0007.xhtml#page_72)'
 - en: '[73](part0007.xhtml#page_73)'
   id: totrans-129
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[73](part0007.xhtml#page_73)'
 - en: '[74](part0007.xhtml#page_74)'
   id: totrans-130
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[74](part0007.xhtml#page_74)'
 - en: '[75](part0007.xhtml#page_75)'
   id: totrans-131
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[75](part0007.xhtml#page_75)'
 - en: '[76](part0007.xhtml#page_76)'
   id: totrans-132
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[76](part0007.xhtml#page_76)'
 - en: '[77](part0007.xhtml#page_77)'
   id: totrans-133
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[77](part0007.xhtml#page_77)'
 - en: '[78](part0007.xhtml#page_78)'
   id: totrans-134
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[78](part0007.xhtml#page_78)'
 - en: '[79](part0007.xhtml#page_79)'
   id: totrans-135
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[79](part0007.xhtml#page_79)'
 - en: '[80](part0007.xhtml#page_80)'
   id: totrans-136
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[80](part0007.xhtml#page_80)'
 - en: '[81](part0007.xhtml#page_81)'
   id: totrans-137
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[81](part0007.xhtml#page_81)'
 - en: '[82](part0007.xhtml#page_82)'
   id: totrans-138
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[82](part0007.xhtml#page_82)'
 - en: '[83](part0007.xhtml#page_83)'
   id: totrans-139
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[83](part0007.xhtml#page_83)'
 - en: '[84](part0007.xhtml#page_84)'
   id: totrans-140
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[84](part0007.xhtml#page_84)'
 - en: '[85](part0007.xhtml#page_85)'
   id: totrans-141
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[85](part0007.xhtml#page_85)'
 - en: '[86](part0007.xhtml#page_86)'
   id: totrans-142
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[86](part0007.xhtml#page_86)'
 - en: '[87](part0007.xhtml#page_87)'
   id: totrans-143
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[87](part0007.xhtml#page_87)'
 - en: '[88](part0007.xhtml#page_87)'
   id: totrans-144
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[88](part0007.xhtml#page_87)'
 - en: '[89](part0008.xhtml)'
   id: totrans-145
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[89](part0008.xhtml)'
 - en: '[90](part0008.xhtml#page_90)'
   id: totrans-146
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[90](part0008.xhtml)'
 - en: '[91](part0008.xhtml#page_91)'
   id: totrans-147
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[91](part0008.xhtml#page_91)'
 - en: '[92](part0008.xhtml#page_92)'
   id: totrans-148
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[92](part0008.xhtml#page_92)'
 - en: '[93](part0008.xhtml#page_93)'
   id: totrans-149
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[93](part0008.xhtml#page_93)'
 - en: '[94](part0008.xhtml#page_94)'
   id: totrans-150
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[94](part0008.xhtml#page_94)'
 - en: '[95](part0008.xhtml#page_95)'
   id: totrans-151
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[95](part0008.xhtml#page_95)'
 - en: '[96](part0008.xhtml#page_96)'
   id: totrans-152
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[96](part0008.xhtml#page_96)'
 - en: '[97](part0008.xhtml#page_97)'
   id: totrans-153
   prefs:
@@ -3120,981 +3273,1177 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[489](part0034.xhtml#page_489)'
 - en: '[490](part0034.xhtml#page_490)'
   id: totrans-546
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[490](part0034.xhtml#page_490)'
 - en: '[491](part0034.xhtml#page_491)'
   id: totrans-547
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[491](part0034.xhtml#page_491)'
 - en: '[492](part0034.xhtml#page_492)'
   id: totrans-548
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[492](part0034.xhtml#page_492)'
 - en: '[493](part0034.xhtml#page_493)'
   id: totrans-549
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[493](part0034.xhtml#page_493)'
 - en: '[494](part0034.xhtml#page_494)'
   id: totrans-550
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[494](part0034.xhtml#page_494)'
 - en: '[495](part0034.xhtml#page_495)'
   id: totrans-551
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[495](part0034.xhtml#page_495)'
 - en: '[496](part0034.xhtml#page_496)'
   id: totrans-552
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[496](part0034.xhtml#page_496)'
 - en: '[497](part0034.xhtml#page_497)'
   id: totrans-553
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[497](part0034.xhtml#page_497)'
 - en: '[498](part0034.xhtml#page_498)'
   id: totrans-554
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[498](part0034.xhtml#page_498)'
 - en: '[499](part0034.xhtml#page_499)'
   id: totrans-555
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[499](part0034.xhtml#page_499)'
 - en: '[500](part0034.xhtml#page_500)'
   id: totrans-556
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[500](part0034.xhtml#page_500)'
 - en: '[501](part0034.xhtml#page_501)'
   id: totrans-557
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[501](part0034.xhtml#page_501)'
 - en: '[502](part0034.xhtml#page_502)'
   id: totrans-558
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[502](part0034.xhtml#page_502)'
 - en: '[503](part0034.xhtml#page_503)'
   id: totrans-559
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[503](part0034.xhtml#page_503)'
 - en: '[504](part0034.xhtml#page_504)'
   id: totrans-560
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[504](part0034.xhtml#page_504)'
 - en: '[505](part0035.xhtml)'
   id: totrans-561
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[505](part0035.xhtml)'
 - en: '[506](part0035.xhtml#page_506)'
   id: totrans-562
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[506](part0035.xhtml#page_506)'
 - en: '[507](part0035.xhtml#page_507)'
   id: totrans-563
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[507](part0035.xhtml#page_507)'
 - en: '[508](part0035.xhtml#page_508)'
   id: totrans-564
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[508](part0035.xhtml#page_508)'
 - en: '[509](part0035.xhtml#page_509)'
   id: totrans-565
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[509](part0035.xhtml#page_509)'
 - en: '[510](part0035.xhtml#page_510)'
   id: totrans-566
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[510](part0035.xhtml#page_510)'
 - en: '[511](part0035.xhtml#page_511)'
   id: totrans-567
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[511](part0035.xhtml#page_511)'
 - en: '[512](part0035.xhtml#page_512)'
   id: totrans-568
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[512](part0035.xhtml#page_512)'
 - en: '[513](part0035.xhtml#page_513)'
   id: totrans-569
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[513](part0035.xhtml#page_513)'
 - en: '[514](part0035.xhtml#page_514)'
   id: totrans-570
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[514](part0035.xhtml#page_514)'
 - en: '[515](part0035.xhtml#page_515)'
   id: totrans-571
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[515](part0035.xhtml#page_515)'
 - en: '[516](part0035.xhtml#page_516)'
   id: totrans-572
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[516](part0035.xhtml#page_516)'
 - en: '[517](part0035.xhtml#page_517)'
   id: totrans-573
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[517](part0035.xhtml#page_517)'
 - en: '[518](part0035.xhtml#page_518)'
   id: totrans-574
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[518](part0035.xhtml#page_518)'
 - en: '[519](part0035.xhtml#page_519)'
   id: totrans-575
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[519](part0035.xhtml#page_519)'
 - en: '[520](part0035.xhtml#page_520)'
   id: totrans-576
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[520](part0035.xhtml#page_520)'
 - en: '[521](part0035.xhtml#page_521)'
   id: totrans-577
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[521](part0035.xhtml#page_521)'
 - en: '[522](part0035.xhtml#page_522)'
   id: totrans-578
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[522](part0035.xhtml#page_522)'
 - en: '[523](part0035.xhtml#page_523)'
   id: totrans-579
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[523](part0035.xhtml#page_523)'
 - en: '[524](part0035.xhtml#page_524)'
   id: totrans-580
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[524](part0035.xhtml#page_524)'
 - en: '[525](part0035.xhtml#page_524)'
   id: totrans-581
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[525](part0035.xhtml#page_524)'
 - en: '[526](part0038.xhtml)'
   id: totrans-582
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[526](part0038.xhtml)'
 - en: '[527](part0038.xhtml#page_527)'
   id: totrans-583
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[527](part0038.xhtml#page_527)'
 - en: '[528](part0038.xhtml#page_528)'
   id: totrans-584
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[528](part0038.xhtml#page_528)'
 - en: '[529](part0038.xhtml#page_529)'
   id: totrans-585
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[529](part0038.xhtml#page_529)'
 - en: '[530](part0038.xhtml#page_530)'
   id: totrans-586
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[530](part0038.xhtml#page_530)'
 - en: '[531](part0038.xhtml#page_531)'
   id: totrans-587
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[531](part0038.xhtml#page_531)'
 - en: '[532](part0038.xhtml#page_532)'
   id: totrans-588
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[532](part0038.xhtml#page_532)'
 - en: '[533](part0038.xhtml#page_533)'
   id: totrans-589
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[533](part0038.xhtml#page_533)'
 - en: '[534](part0038.xhtml#page_534)'
   id: totrans-590
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[534](part0038.xhtml#page_534)'
 - en: '[535](part0038.xhtml#page_535)'
   id: totrans-591
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[535](part0038.xhtml#page_535)'
 - en: '[536](part0038.xhtml#page_536)'
   id: totrans-592
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[536](part0038.xhtml#page_536)'
 - en: '[537](part0038.xhtml#page_537)'
   id: totrans-593
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[537](part0038.xhtml#page_537)'
 - en: '[538](part0038.xhtml#page_538)'
   id: totrans-594
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[538](part0038.xhtml#page_538)'
 - en: '[539](part0038.xhtml#page_539)'
   id: totrans-595
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[539](part0038.xhtml#page_539)'
 - en: '[540](part0038.xhtml#page_540)'
   id: totrans-596
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[540](part0038.xhtml#page_540)'
 - en: '[541](part0038.xhtml#page_541)'
   id: totrans-597
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[541](part0038.xhtml#page_541)'
 - en: '[542](part0038.xhtml#page_542)'
   id: totrans-598
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[542](part0038.xhtml#page_542)'
 - en: '[543](part0038.xhtml#page_543)'
   id: totrans-599
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[543](part0038.xhtml#page_543)'
 - en: '[544](part0038.xhtml#page_544)'
   id: totrans-600
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[544](part0038.xhtml#page_544)'
 - en: '[545](part0038.xhtml#page_545)'
   id: totrans-601
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[545](part0038.xhtml#page_545)'
 - en: '[546](part0038.xhtml#page_546)'
   id: totrans-602
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[546](part0038.xhtml#page_546)'
 - en: '[547](part0038.xhtml#page_547)'
   id: totrans-603
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[547](part0038.xhtml#page_547)'
 - en: '[548](part0038.xhtml#page_548)'
   id: totrans-604
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[548](part0038.xhtml#page_548)'
 - en: '[549](part0039.xhtml)'
   id: totrans-605
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[549](part0039.xhtml)'
 - en: '[550](part0039.xhtml#page_550)'
   id: totrans-606
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[550](part0039.xhtml#page_550)'
 - en: '[551](part0039.xhtml#page_551)'
   id: totrans-607
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[551](part0039.xhtml#page_551)'
 - en: '[552](part0039.xhtml#page_552)'
   id: totrans-608
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[552](part0039.xhtml#page_552)'
 - en: '[553](part0039.xhtml#page_553)'
   id: totrans-609
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[553](part0039.xhtml#page_553)'
 - en: '[554](part0039.xhtml#page_554)'
   id: totrans-610
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[554](part0039.xhtml#page_554)'
 - en: '[555](part0039.xhtml#page_555)'
   id: totrans-611
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[555](part0039.xhtml#page_555)'
 - en: '[556](part0039.xhtml#page_556)'
   id: totrans-612
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[556](part0039.xhtml#page_556)'
 - en: '[557](part0039.xhtml#page_557)'
   id: totrans-613
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[557](part0039.xhtml#page_557)'
 - en: '[558](part0039.xhtml#page_558)'
   id: totrans-614
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[558](part0039.xhtml#page_558)'
 - en: '[559](part0039.xhtml#page_559)'
   id: totrans-615
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[559](part0039.xhtml#page_559)'
 - en: '[560](part0039.xhtml#page_560)'
   id: totrans-616
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[560](part0039.xhtml#page_560)'
 - en: '[561](part0039.xhtml#page_561)'
   id: totrans-617
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[561](part0039.xhtml#page_561)'
 - en: '[562](part0039.xhtml#page_562)'
   id: totrans-618
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[562](part0039.xhtml#page_562)'
 - en: '[563](part0039.xhtml#page_563)'
   id: totrans-619
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[563](part0039.xhtml#page_563)'
 - en: '[564](part0039.xhtml#page_564)'
   id: totrans-620
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[564](part0039.xhtml#page_564)'
 - en: '[565](part0039.xhtml#page_565)'
   id: totrans-621
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[565](part0039.xhtml#page_565)'
 - en: '[566](part0039.xhtml#page_566)'
   id: totrans-622
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[566](part0039.xhtml#page_566)'
 - en: '[567](part0039.xhtml#page_567)'
   id: totrans-623
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[567](part0039.xhtml#page_567)'
 - en: '[568](part0039.xhtml#page_568)'
   id: totrans-624
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[568](part0039.xhtml#page_568)'
 - en: '[569](part0039.xhtml#page_569)'
   id: totrans-625
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[569](part0039.xhtml#page_569)'
 - en: '[570](part0039.xhtml#page_570)'
   id: totrans-626
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[570](part0039.xhtml#page_570)'
 - en: '[571](part0039.xhtml#page_571)'
   id: totrans-627
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[571](part0039.xhtml#page_571)'
 - en: '[572](part0040.xhtml)'
   id: totrans-628
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[572](part0040.xhtml)'
 - en: '[573](part0040.xhtml#page_573)'
   id: totrans-629
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[573](part0040.xhtml#page_573)'
 - en: '[574](part0040.xhtml#page_574)'
   id: totrans-630
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[574](part0040.xhtml#page_574)'
 - en: '[575](part0040.xhtml#page_575)'
   id: totrans-631
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[575](part0040.xhtml#page_575)'
 - en: '[576](part0040.xhtml#page_576)'
   id: totrans-632
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[576](part0040.xhtml#page_576)'
 - en: '[577](part0040.xhtml#page_577)'
   id: totrans-633
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[577](part0040.xhtml#page_577)'
 - en: '[578](part0040.xhtml#page_578)'
   id: totrans-634
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[578](part0040.xhtml#page_578)'
 - en: '[579](part0040.xhtml#page_579)'
   id: totrans-635
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[579](part0040.xhtml#page_579)'
 - en: '[580](part0040.xhtml#page_580)'
   id: totrans-636
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[580](part0040.xhtml#page_580)'
 - en: '[581](part0040.xhtml#page_581)'
   id: totrans-637
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[581](part0040.xhtml#page_581)'
 - en: '[582](part0040.xhtml#page_582)'
   id: totrans-638
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[582](part0040.xhtml#page_582)'
 - en: '[583](part0040.xhtml#page_583)'
   id: totrans-639
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[583](part0040.xhtml#page_583)'
 - en: '[584](part0040.xhtml#page_584)'
   id: totrans-640
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[584](part0040.xhtml#page_584)'
 - en: '[585](part0040.xhtml#page_585)'
   id: totrans-641
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[585](part0040.xhtml#page_585)'
 - en: '[586](part0040.xhtml#page_586)'
   id: totrans-642
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[586](part0040.xhtml#page_586)'
 - en: '[587](part0040.xhtml#page_587)'
   id: totrans-643
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[587](part0040.xhtml#page_587)'
 - en: '[588](part0040.xhtml#page_588)'
   id: totrans-644
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[588](part0040.xhtml#page_588)'
 - en: '[589](part0040.xhtml#page_589)'
   id: totrans-645
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[589](part0040.xhtml#page_589)'
 - en: '[590](part0040.xhtml#page_590)'
   id: totrans-646
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[590](part0040.xhtml#page_590)'
 - en: '[591](part0040.xhtml#page_591)'
   id: totrans-647
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[591](part0040.xhtml#page_591)'
 - en: '[592](part0040.xhtml#page_592)'
   id: totrans-648
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[592](part0040.xhtml#page_592)'
 - en: '[593](part0041.xhtml)'
   id: totrans-649
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[593](part0041.xhtml)'
 - en: '[594](part0041.xhtml#page_594)'
   id: totrans-650
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[594](part0041.xhtml#page_594)'
 - en: '[595](part0041.xhtml#page_595)'
   id: totrans-651
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[595](part0041.xhtml#page_595)'
 - en: '[596](part0041.xhtml#page_596)'
   id: totrans-652
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[596](part0041.xhtml#page_596)'
 - en: '[597](part0041.xhtml#page_597)'
   id: totrans-653
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[597](part0041.xhtml#page_597)'
 - en: '[598](part0041.xhtml#page_598)'
   id: totrans-654
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[598](part0041.xhtml#page_598)'
 - en: '[599](part0041.xhtml#page_599)'
   id: totrans-655
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[599](part0041.xhtml#page_599)'
 - en: '[600](part0041.xhtml#page_600)'
   id: totrans-656
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[600](part0041.xhtml#page_600)'
 - en: '[601](part0041.xhtml#page_601)'
   id: totrans-657
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[601](part0041.xhtml#page_601)'
 - en: '[602](part0041.xhtml#page_602)'
   id: totrans-658
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[602](part0041.xhtml#page_602)'
 - en: '[603](part0041.xhtml#page_603)'
   id: totrans-659
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[603](part0041.xhtml#page_603)'
 - en: '[604](part0041.xhtml#page_604)'
   id: totrans-660
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[604](part0041.xhtml#page_604)'
 - en: '[605](part0041.xhtml#page_605)'
   id: totrans-661
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[605](part0041.xhtml#page_605)'
 - en: '[606](part0041.xhtml#page_606)'
   id: totrans-662
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[606](part0041.xhtml#page_606)'
 - en: '[607](part0041.xhtml#page_606)'
   id: totrans-663
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[607](part0041.xhtml#page_606)'
 - en: '[608](part0043.xhtml)'
   id: totrans-664
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[608](part0043.xhtml)'
 - en: '[609](part0043.xhtml#page_609)'
   id: totrans-665
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[609](part0043.xhtml#page_609)'
 - en: '[610](part0043.xhtml#page_610)'
   id: totrans-666
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[610](part0043.xhtml#page_610)'
 - en: '[611](part0043.xhtml#page_611)'
   id: totrans-667
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[611](part0043.xhtml#page_611)'
 - en: '[612](part0043.xhtml#page_612)'
   id: totrans-668
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[612](part0043.xhtml#page_612)'
 - en: '[613](part0043.xhtml#page_613)'
   id: totrans-669
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[613](part0043.xhtml#page_613)'
 - en: '[614](part0043.xhtml#page_614)'
   id: totrans-670
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[614](part0043.xhtml#page_614)'
 - en: '[615](part0043.xhtml#page_615)'
   id: totrans-671
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[615](part0043.xhtml#page_615)'
 - en: '[616](part0043.xhtml#page_616)'
   id: totrans-672
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[616](part0043.xhtml#page_616)'
 - en: '[617](part0043.xhtml#page_617)'
   id: totrans-673
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[617](part0043.xhtml#page_617)'
 - en: '[618](part0043.xhtml#page_618)'
   id: totrans-674
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[618](part0043.xhtml#page_618)'
 - en: '[619](part0043.xhtml#page_619)'
   id: totrans-675
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[619](part0043.xhtml#page_619)'
 - en: '[620](part0043.xhtml#page_620)'
   id: totrans-676
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[620](part0043.xhtml#page_620)'
 - en: '[621](part0043.xhtml#page_621)'
   id: totrans-677
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[621](part0043.xhtml#page_621)'
 - en: '[622](part0043.xhtml#page_622)'
   id: totrans-678
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[622](part0043.xhtml#page_622)'
 - en: '[623](part0043.xhtml#page_623)'
   id: totrans-679
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[623](part0043.xhtml#page_623)'
 - en: '[624](part0043.xhtml#page_624)'
   id: totrans-680
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[624](part0043.xhtml#page_624)'
 - en: '[625](part0043.xhtml#page_625)'
   id: totrans-681
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[625](part0043.xhtml#page_625)'
 - en: '[626](part0043.xhtml#page_626)'
   id: totrans-682
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[626](part0043.xhtml#page_626)'
 - en: '[627](part0044.xhtml)'
   id: totrans-683
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[627](part0044.xhtml)'
 - en: '[628](part0044.xhtml#page_628)'
   id: totrans-684
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[628](part0044.xhtml#page_628)'
 - en: '[629](part0044.xhtml#page_629)'
   id: totrans-685
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[629](part0044.xhtml)'
 - en: '[630](part0044.xhtml#page_630)'
   id: totrans-686
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[630](part0044.xhtml#page_630)'
 - en: '[631](part0044.xhtml#page_631)'
   id: totrans-687
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[631](part0044.xhtml#page_631)'
 - en: '[632](part0044.xhtml#page_632)'
   id: totrans-688
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[632](part0044.xhtml#page_632)'
 - en: '[633](part0044.xhtml#page_633)'
   id: totrans-689
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[633](part0044.xhtml#page_633)'
 - en: '[634](part0044.xhtml#page_634)'
   id: totrans-690
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[634](part0044.xhtml#page_634)'
 - en: '[635](part0044.xhtml#page_635)'
   id: totrans-691
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[635](part0044.xhtml#page_635)'
 - en: '[636](part0044.xhtml#page_636)'
   id: totrans-692
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[636](part0044.xhtml#page_636)'
 - en: '[637](part0044.xhtml#page_637)'
   id: totrans-693
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[637](part0044.xhtml#page_637)'
 - en: '[638](part0044.xhtml#page_638)'
   id: totrans-694
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[638](part0044.xhtml#page_638)'
 - en: '[639](part0044.xhtml#page_639)'
   id: totrans-695
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[639](part0044.xhtml#page_639)'
 - en: '[640](part0044.xhtml#page_640)'
   id: totrans-696
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[640](part0044.xhtml#page_640)'
 - en: '[641](part0044.xhtml#page_641)'
   id: totrans-697
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[641](part0044.xhtml#page_641)'
 - en: '[642](part0044.xhtml#page_642)'
   id: totrans-698
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[642](part0044.xhtml#page_642)'
 - en: '[643](part0044.xhtml#page_643)'
   id: totrans-699
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[643](part0044.xhtml#page_643)'
 - en: '[644](part0044.xhtml#page_644)'
   id: totrans-700
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[644](part0044.xhtml#page_644)'
 - en: '[645](part0044.xhtml#page_645)'
   id: totrans-701
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[645](part0044.xhtml#page_645)'
 - en: '[646](part0044.xhtml#page_646)'
   id: totrans-702
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[646](part0044.xhtml#page_646)'
 - en: '[647](part0044.xhtml#page_647)'
   id: totrans-703
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[647](part0044.xhtml#page_647)'
 - en: '[648](part0044.xhtml#page_648)'
   id: totrans-704
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[648](part0044.xhtml#page_648)'
 - en: '[649](part0044.xhtml#page_649)'
   id: totrans-705
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[649](part0044.xhtml#page_649)'
 - en: '[650](part0045.xhtml)'
   id: totrans-706
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[650](part0045.xhtml)'
 - en: '[651](part0045.xhtml#page_651)'
   id: totrans-707
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[651](part0045.xhtml#page_651)'
 - en: '[652](part0045.xhtml#page_652)'
   id: totrans-708
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[652](part0045.xhtml#page_652)'
 - en: '[653](part0045.xhtml#page_653)'
   id: totrans-709
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[653](part0045.xhtml#page_653)'
 - en: '[654](part0045.xhtml#page_654)'
   id: totrans-710
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[654](part0045.xhtml#page_654)'
 - en: '[655](part0045.xhtml#page_655)'
   id: totrans-711
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[655](part0045.xhtml#page_655)'
 - en: '[656](part0045.xhtml#page_656)'
   id: totrans-712
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[656](part0045.xhtml#page_656)'
 - en: '[657](part0045.xhtml#page_657)'
   id: totrans-713
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[657](part0045.xhtml#page_657)'
 - en: '[658](part0045.xhtml#page_658)'
   id: totrans-714
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[658](part0045.xhtml#page_658)'
 - en: '[659](part0045.xhtml#page_659)'
   id: totrans-715
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[659](part0045.xhtml#page_659)'
 - en: '[660](part0045.xhtml#page_660)'
   id: totrans-716
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[660](part0045.xhtml#page_660)'
 - en: '[661](part0045.xhtml#page_661)'
   id: totrans-717
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[661](part0045.xhtml#page_661)'
 - en: '[662](part0045.xhtml#page_662)'
   id: totrans-718
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[662](part0045.xhtml#page_662)'
 - en: '[663](part0045.xhtml#page_663)'
   id: totrans-719
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[663](part0045.xhtml#page_663)'
 - en: '[664](part0045.xhtml#page_664)'
   id: totrans-720
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[664](part0045.xhtml#page_664)'
 - en: '[665](part0045.xhtml#page_665)'
   id: totrans-721
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[665](part0045.xhtml#page_665)'
 - en: '[666](part0045.xhtml#page_666)'
   id: totrans-722
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[666](part0045.xhtml#page_666)'
 - en: '[667](part0045.xhtml#page_667)'
   id: totrans-723
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[667](part0045.xhtml#page_667)'
 - en: '[668](part0045.xhtml#page_668)'
   id: totrans-724
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[668](part0045.xhtml#page_668)'
 - en: '[669](part0045.xhtml#page_669)'
   id: totrans-725
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[669](part0045.xhtml#page_669)'
 - en: '[670](part0045.xhtml#page_670)'
   id: totrans-726
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[670](part0045.xhtml#page_670)'
 - en: '[671](part0045.xhtml#page_671)'
   id: totrans-727
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[671](part0045.xhtml#page_671)'
 - en: '[672](part0045.xhtml#page_672)'
   id: totrans-728
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[672](part0045.xhtml#page_672)'
 - en: '[673](part0045.xhtml#page_673)'
   id: totrans-729
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[673](part0045.xhtml#page_673)'
 - en: '[674](part0045.xhtml#page_674)'
   id: totrans-730
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[674](part0045.xhtml#page_674)'
 - en: '[675](part0045.xhtml#page_675)'
   id: totrans-731
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[675](part0045.xhtml#page_675)'
 - en: '[676](part0045.xhtml#page_676)'
   id: totrans-732
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[676](part0045.xhtml#page_676)'
 - en: '[677](part0045.xhtml#page_677)'
   id: totrans-733
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[677](part0045.xhtml#page_677)'
 - en: '[678](part0045.xhtml#page_678)'
   id: totrans-734
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[678](part0045.xhtml#page_678)'
 - en: '[679](part0045.xhtml#page_679)'
   id: totrans-735
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[679](part0045.xhtml#page_679)'
 - en: '[680](part0045.xhtml#page_680)'
   id: totrans-736
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[680](part0045.xhtml#page_680)'
 - en: '[681](part0045.xhtml#page_681)'
   id: totrans-737
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[681](part0045.xhtml#page_681)'
 - en: '[682](part0045.xhtml#page_682)'
   id: totrans-738
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[682](part0045.xhtml#page_682)'
 - en: '[683](part0045.xhtml#page_683)'
   id: totrans-739
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[683](part0045.xhtml#page_683)'
 - en: '[684](part0045.xhtml#page_684)'
   id: totrans-740
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '[684](part0045.xhtml#page_684)'
 - en: '[685](part0045.xhtml#page_685)'
   id: totrans-741
   prefs:
