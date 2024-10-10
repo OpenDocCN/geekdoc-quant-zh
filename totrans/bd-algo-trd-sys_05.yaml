@@ -1,0 +1,1293 @@
+- en: PART V
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: CONSIDERATIONS BEFORE GOING LIVE
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 20
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Account and Position Sizing
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now that I’ve developed a strategy, watched it in real time for a while, and
+    decided to trade it with my own money, then what? How do I determine how much
+    to fund the account with? How do I position size? Do I start small or big? Do
+    I have a position-sizing scheme? If things go bad, when do I quit trading the
+    system?
+  prefs: []
+  type: TYPE_NORMAL
+- en: At the end of the incubation period in mid-August 2013, I truly have no idea
+    how this system will do over the next few months. My hope, as always, is that
+    it will do great, but as with any strategy, I am always prepared to cut my losses
+    and stop trading it if need be.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To avoid confusion later on, here is a summary of my strategies:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Two Trading Strategies in Euro Trading System:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Strategy 1: Euro Night.* Trades overnight session, has high winning percentage,
+    lots of little wins, and an occasional big loser. Uses 105-minute bars.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Strategy 2: Euro Day.* Trades day session, lower win percentage, primary profit
+    generator. Uses 60-minute bars.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Both strategies are independent, and I’ll be in only one at any given time.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Market: Euro Currency Futures (6E).'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) When to Quit'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Now that I have decided to start trading my euro strategies live starting on
+    Monday, August 20, 2013, I have to address the question that everyone likes to
+    avoid when starting to trade a new strategy: if things go bad, when do I quit
+    trading the strategy?'
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are probably a million different conditions you could use as a basis for
+    quitting a trading system. You could set a dollar amount or possibly wait until
+    you get a margin call, or wait until you run out of money. You could stop after
+    X losers in a row, or X losing months. There is no “one” right or wrong answer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'But there are three keys to setting a quitting point:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It should be based on the system you are trading. It makes no sense, for example,
+    to quit after a 10 percent drawdown, if historically the system had 25 percent
+    drawdowns before. This seems obvious, but you’d be amazed at how many people make
+    arbitrary decisions like this, without taking the characteristics of the actual
+    system into account.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Write it down. Refer to it often. Remember it. This may save you from disaster
+    one day.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Follow it. If/when the written criteria are (unfortunately) met, *stop trading.*
+    This is a simple, but *very* difficult, step to follow.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'I don’t always use the same criteria for finding my quitting point, but here
+    is how I am doing it for the euro system:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Look at walk-forward history, and find the worst drawdown that occurred (daily
+    basis). Multiply it by 1.5, since the worst drawdown is almost always in the future.
+    For my system, that worst drawdown comes out to be $3,265\. Multiply this by 1.5
+    to get $4,898.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Use Monte Carlo simulation to find the 95 percent level max drawdown. That means,
+    in a year’s worth of trading, 95 percent of the time my maximum drawdown will
+    be less than this amount. This turns out to be $5,082\. (If I wanted to be more
+    conservative, I could use the 99 percent level. That drawdown is $6,512.)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: I should point out those drawdown figures assume one contract being traded the
+    whole time. Yet, I will hopefully be trading more than one contract as time goes
+    on. This could get confusing—my actual drawdown (with multiple contracts) could
+    be a lot bigger than my drawdown limit (based on one contract). I just have to
+    remember to calculate the one-contract drawdown, and compare than to the $5,000
+    limit. This will be clearer later, when I set up my monitoring system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using results from points A and B above, I will take the average, and stop trading
+    when the single contract drawdown reaches $5,000 (slightly rounded). I have followed
+    points 1 and 2 above. Time will tell if I follow point 3— I better if I need to!
+  prefs: []
+  type: TYPE_NORMAL
+- en: For this particular system, the only quit point I am considering is the single-contract
+    drawdown. This is simple, and pretty robust. If I am trading the system years
+    from now, with many contracts (my hope, of course), I will still have that $5,000
+    maximum drawdown per contract limit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the past, I have used the Monte Carlo simulation results to help me decide
+    when to quit. I have also examined, but never implemented, a temporary quit point
+    based on market volatility. When the market gets super-crazy, it may be best to
+    take a break. I don’t think there is a wrong metric or combination of metrics
+    to use to decide when to quit trading. There is probably no “one size fits all”
+    optimum, either. The key, in my mind, is to select some criteria that you are
+    comfortable with, write it down, and then follow it exactly. Then, if your system
+    fails, there should be no tears. You knew the system could break, and you quit
+    at a preordained spot.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I think where people get in trouble is in not having a “quit point,” or their
+    quit point is when their money runs out. Speaking from personal experience in
+    the late 1990’s, having to quit trading when your money is gone is not a pleasant
+    way to quit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What happens when the system performance isn’t bad enough to hit your quitting
+    point, and it is not great either, but is somewhere in between? Maybe it is making
+    money, or breaking even, and it is within the bounds of what Monte Carlo simulation
+    says is possible. When do you quit, or otherwise cease trading the system? My
+    general philosophy is to watch the downside and let the upside take care of itself.
+    In this case, I watch the max drawdown and, as long as that is not hit, let the
+    system perform. I do this because I never know month to month or year to year
+    what particular systems I am trading will do good, which will do bad, and which
+    will just tread water. Normally, I’ll just let system be and not turn them off
+    or on.
+  prefs: []
+  type: TYPE_NORMAL
+- en: But a couple of times a year I rebalance systems I am trading—add in new ones
+    and cull the underperformers and possibly adjust the position sizing. If capital
+    becomes an issue, I might very well stop trading and swap out a mildly profitable
+    but underperforming system for a system that I feel has more potential. The analysis
+    details are never the same, and I don’t have strict rules on this. I might, for
+    example, stop trading a system because I no longer like it for some reason—maybe
+    it just doesn’t fit me anymore.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I realize that I am sort of talking out both sides of my mouth here. On one
+    side I say, “Maximum drawdown is my only quitting criteria.” On the other side
+    I say, “Unless I come up with another legitimate reason to cease trading it.”
+    I rationalize this by saying the maximum drawdown is a hard, solid, worst-case
+    criterion and will not be violated. At the same time, though, other circumstances
+    may arise that cause the system to fall out of favor. These circumstances might
+    cause me to quit earlier. That is a big gray area, as unfortunately most things
+    are with trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I can say my plan at the start of trading includes only maximum drawdown as
+    the sole criterion for quitting. With the small size and account size I am using
+    to trade this system, I can’t foresee needing the capital for a better system.
+    But I am also flexible enough to realize that circumstances may cause me to alter
+    my quitting point at some time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Minimum Funding Size'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: At this point, I have figured out (1) that I will begin live trading the euro
+    day and night system, and (2) I will quit trading if my single-contract drawdown
+    hits $5,000\. Now I will determine account size. This point is pretty important.
+    Too little capital to start, and I may run out of money before the quitting point.
+    Too much capital and I will have a lower rate of return, as well as an inefficient
+    allocation of capital. Currently, the exchange initial margin on euro currency
+    is $2,750\. So, add this to my “quitting point” drawdown, and I get $7,750\. This
+    is the minimum account size I should start with. This will allow me to trade up
+    until my max drawdown is reached.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'A few important points to consider:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: I am assuming my broker requires exchange margin, even for day trading. If I
+    had access to day-trading rates, I could get by with less. This is always a risky
+    proposition, though, since many people just increase their size because of the
+    lower day-trade margin rates. This is usually not a good idea.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Margins can and do change. If the exchange required margin goes up, I may be
+    forced to stop trading before hitting my quitting point.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: I am assuming that I am trading a single contract all the time.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: As it turns out, I will want more than $7,750 in my account, for position-sizing
+    reasons. I am going to use $8,500, for reasons that will be revealed later.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Position Sizing'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'If you have a good trading system, eventually you will want to start trading
+    it with multiple contracts. There are tons of position-sizing schemes out there
+    (Van Tharp wrote a huge book on the topic), so there is no right way to do it.
+    There is no Holy Grail position-sizing technique, though, where you get more reward
+    for no extra risk. The simple way to put it is this way: if you trade more contracts,
+    your reward goes up, but so does your risk.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is what I am doing (at least for a while; hopefully, once my size gets
+    big, I’ll become less aggressive):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: As always, I start out with only one contract. Why? Going live almost always
+    reveals issues that back tests, sim tests, and incubation tests keep hidden. For
+    example, if my strategy is automated, what if some quirk in my code sends multiple
+    orders or otherwise goofs up? Or what if my slippage estimates are way off, and
+    real-world slippage actually makes my strategy unprofitable? My experience is
+    that starting with one contract is the cheapest way to find out and correct any
+    live trading issues.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A second reason I like starting with one contract is that I want to remain emotionally
+    detached as much as possible from the strategy performance. One-contract profit-and-loss
+    swings won’t impact me or my emotions. Ten contracts, right off the bat, would
+    freak me out a bit—I’d be watching the system too much and have too emotion invested
+    in it. As profits (hopefully) accumulate, I can add contracts at a comfortable
+    level, and not be emotionally disturbed by it. If things go really well, in six
+    months or even a year or two, trading 10 contracts at a time with this proven
+    system will seem natural to me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Some people would say, “If you have an edge, exploit it fast and furiously by
+    trading maximum size right off the bat. Edges disappear, so take advantage while
+    it exists.” That is a good argument, and I understand the concept. But I also
+    know how I best operate, and going “all in” at the start is not good psychologically
+    for me. Of course, you should choose the approach that you feel most comfortable
+    with.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A final reason I like starting with one contract is that I like the strategy
+    to be self-generating—profits will build the account, leading to more contracts,
+    building it further, leading to even more contracts, and so on. No profits mean
+    no increase in size. That just makes sense to me; why allocate more money to a
+    system that isn’t generating profits?
+  prefs: []
+  type: TYPE_NORMAL
+- en: One drawback to this approach is that it can take a long time to add that second
+    contract. For example, if you decide to trade one contract for each $10,000 in
+    your account, you will have to have 100 percent return to add one contract. Then
+    you’ll need another 50 percent gain to add a third contract. That can take a long
+    time. Some position-sizing techniques take this into account (fixed ratio sizing
+    comes to mind), but these approaches have some negative characteristics I do not
+    like. I get around this dilemma by sizing my account for roughly 1.5 to 2 contracts
+    at the start. This would be equivalent to starting with $15,000 in the example
+    I gave just above. Then, I need only a 50 percent gain to add a second contract.
+    This still forces the system to perform well, but at the same time I get contract
+    growth sooner. For me, it is a great trade-off.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'With all that in mind, here are the details:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: For my euro system, I have decided to use fixed fractional sizing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*N*[contracts] = *X* * Equity/BigLoss'
+  prefs: []
+  type: TYPE_NORMAL
+- en: where
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*N*[contracts] = Integer number of contracts, always round numbers down.'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*X* = Fixed fraction, which I determined through Monte Carlo analysis. For
+    this system, I am using 0.175 (I’ll explain later how I got this value).'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Equity = Current equity value.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: BigLoss = Largest daily loss, $885 for my euro system.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Using the preceding, I can create [Table 20.1](#table20-1).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**TABLE 20.1**](#tableanchor20-1) Position-Sizing Table'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| ff = | 0.175 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Equity | *N*[contracts] |'
+  prefs: []
+  type: TYPE_TB
+- en: '| < $10,114 | 1 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| $10,114 | 2 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| $15,171 | 3 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| $20,229 | 4 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| $25,286 | 5 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| $30,343 | 6 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| $35,400 | 7 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| $40,457 | 8 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| $45,514 | 9 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| $50,571 | 10 |'
+  prefs: []
+  type: TYPE_TB
+- en: Note that my fixed fraction of 0.175 might seem awfully high. It may be for
+    most people. I determine it based on risk of ruin, annual return, and max drawdown.
+    I use my Monte Carlo spreadsheet to calculate all that. Based on the position-sizing
+    analysis so far, I determined that using fixed fractional sizing with *X* = ff
+    = 0.175 was my best alternative. Please realize that this is my personal preference,
+    based on my personal goals and objectives, and that amount probably would not
+    be right for you.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The question is, how did I arrive at this figure? Why not just trade one contract
+    all the time, or use a fixed fractional value of .01 or .02 or 0.10 or 0.50? To
+    determine the position-sizing scheme that is right for me, I use my Monte Carlo
+    simulator, the basic (one-contract) version of which you can download for free
+    at the web site ([www.wiley.com/go/algotradingsystems](http://www.wiley.com/go/algotradingsystems)).
+    For a given trading system, it will estimate the probabilities of risk of ruin,
+    median max drawdown, and median annual return for the first year of trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The baseline version of this calculator assumes one contract traded throughout
+    the year, but the macro code can be edited to simulate different position-sizing
+    techniques, which is what I am doing here.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'There are four performance numbers I look at:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Risk of ruin.* How likely am I to hit my defined lower cash balance. I want
+    this number low.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Median maximum drawdown.* I have roughly a 50 percent chance of hitting this
+    maximum drawdown sometime during the year. That of course means my maximum drawdown
+    could be much greater than this value, and it could be less. I want it as low
+    as possible, with a personal upper limit I have determined from doing this exercise
+    a bunch of times.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Annual return.* As with drawdown, I have a 50 percent chance of reaching this
+    annual return, and it could be much higher or much lower. I want it as high as
+    possible, but I have no lower-limit threshold acceptable value (although 40 percent
+    is a good value).'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Return/Drawdown ratio.* Astute readers will recognize this as the Calmar ratio,
+    although true Calmar is calculated over three years, not just one year. I want
+    this value as high as possible, and I have a lower limit for acceptability. (Just
+    for reference, for professional Commodity Trading Advisors a Calmar above 1 is
+    considered pretty good. That means if you want 25 percent annual return, you have
+    to be willing to accept a 25 percent drawdown).'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Using these criteria, I can try a few different position-sizing approaches,
+    with some different parameter values. Note that this is not all-encompassing;
+    I have not analyzed many other potential position-sizing schemes. Maybe one would
+    work better than what I chose.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Before I reveal the results, I should mention that I played around with the
+    starting balance a bit, although I am not showing those interim results. Basically,
+    by adjusting the initial account size, I was striking a balance between having
+    too much money in the account, being able to add on a second contract relatively
+    quickly (without doubling my account size first), and keeping risk of ruin low.
+    I eventually settled on $8,500 as the start balance, a good trade-off among all
+    competing metrics.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Here are the results, with the one I chose highlighted (“ff” is the fixed fractional
+    amount) (see [Figure 20.1](#figure20-1)).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c20f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 20.1**](#figureanchor20-1) Position-Sizing Results'
+  prefs: []
+  type: TYPE_NORMAL
+- en: My selection meets all my criteria, and I am comfortable with it. This position
+    scheme is the right one for me, right now. *But,* depending on how things go,
+    I might change it down the road, either to a different scheme altogether, or a
+    smaller value of ff (i.e., I will become less aggressive as the account grows).
+    I’ll let the performance of the system dictate if and when that happens.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With the fixed fractional sizing I have chosen, results say that in an “average”
+    year (meaning, 50 percent of years will be worse, and 50 percent of years will
+    be better), I expect to make $30,735 profit in that year and hit a maximum drawdown
+    of 38.1 percent sometime during the year. That profit number seems a little too
+    good to be true … and my motto is “if something seems too good to be true, it
+    probably is.” And that profit number does seem too good to be true—362 percent
+    rate of return in that first year seems too high, and that makes me suspicious.
+    Remember, though, the actual rate of return could be just about anywhere on the
+    spectrum. It is just that the 362 percent is the median value.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I now look at a histogram of possible returns, shown in [Figure 20.2](#figure20-2).
+    It will be interesting to see if the year 1 results are anywhere close to the
+    median ending equity (black vertical line). If they are, I will be very happy.
+    I’ll still be happy if I even hit the 25 percent mark, which is a final equity
+    of about $21,000, or a 147 percent return for the year. Almost in “too good to
+    be true” region, but it is a possibility.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c20f002.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 20.2**](#figureanchor20-2) Histogram of Possible First Year Returns'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Unequal Position Sizing'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: I am using the same position sizing for the two strategies in my euro day and
+    night system, even though strategies 1 and 2 are for the most part different.
+    The only thing they have in common is the stop-loss point, around $425 (34 ticks)
+    per contract. Given their different trade distributions, is the equal position
+    size approach correct? Maybe the position sizing should be different for the two
+    strategies. Possibly, that would improve overall performance metrics.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As with any trading idea or thought that pops up, I reserve judgment on it until
+    I test and analyze it. The numbers will tell me if this is a good thing to do
+    or not. No emotion is the point, I suppose. I’ll spare you some of the minutiae
+    of my analysis, but I primarily looked at “trade two contracts of strategy 1 for
+    every one contract of strategy 2.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Results**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Current method (identical sizing, both strategies)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Acct size: $8,500'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Max DD: 38.1 percent'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Annual return: 362 percent'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 2/1 Sizing method
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Acct size: $12,500'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Max DD: 38.3 percent (same as current method)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Annual return: 255 percent'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Conclusion:** I would need more money in the account to trade a 2-to-1 ratio,
+    and my annual return would go down. So it does not make sense.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Note:* I performed a pretty simple analysis to conclude this. Really, what
+    I should do is let the fixed fractional sizing for each strategy float, and find
+    the optimum for each.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 21
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Trading Psychology
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Frequently, I hear from discretionary traders, and the conversation goes something
+    like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Discretionary Trader:** “I am sick of losing. I am too emotional to trade
+    and make trading decisions at the same time. I want to try algorithmic trading.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Me:** “That is good you realized a need to change your losing ways. Why do
+    you think algorithmic trading will work?”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Discretionary Trader:** “Because I can be a brain-dead button pusher and
+    just follow the system. Kind of like that episode of *The Simpsons,* where Homer
+    sets up a drinking bird to continuously tap the “y” key on his keyboard, so he
+    would not have to do any actual work. I want to be the drinking bird, just following
+    the system.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Me:** “You do realize that the drinking bird eventually stopped and almost
+    caused a nuclear meltdown, right?”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Discretionary Trader:** “Huh?”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: That pretty much sums it up—many people think there is no emotion involved in
+    mechanical trading. Emotions manifest differently in algorithmic trading, as opposed
+    to discretionary trading, but they are there, in many different aspects of trading.
+    The nice thing about algorithmic trading is that your emotions theoretically should
+    not matter for entry and exit signals. The key word, of course, is theoretically.
+    In reality, emotions can creep in many different areas of mechanical, 100 percent
+    rules-based trading. In this chapter, I’ll point out some of these major areas
+    and provide tips for how to minimize their impact because, just as with discretionary
+    trading, emotions can really kill the performance of an algorithmic trader.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) When to Begin Trading'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Most people, when deciding to go live with an algorithmic strategy, never think
+    about when to actually enter that first position until they do it. But, as I’ve
+    said before, entering a position in the middle of an open trade can be emotional.
+    Also, what if your system had six consecutive winners—do you wait for a losing
+    trade or two before you start trading? There are really two questions to address:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Should you start trading your system after looking at its equity curve?
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Should you start trading your system in the middle of a trade, or wait for the
+    next new entry signal?
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: As with most decisions in trading, there is no absolute right or wrong answer.
+    But if you look at the problem beforehand and make consistent decisions, you can
+    eliminate much of the emotion when starting out.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let’s say you’ve created a trading system with the equity curve shown in [Figure
+    21.1](#figure21-1) (it is from an actual system I have traded with real money).
+    This is a pretty good equity curve for a walk-forward test, and it passed the
+    incubation test you just ran for a few months. The system is at an equity peak,
+    and you are very excited (there is the emotional part!) to begin trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c21f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 21.1**](#figureanchor21-1) Sample Walk-Forward Equity Curve'
+  prefs: []
+  type: TYPE_NORMAL
+- en: At first glance, you see the new high and immediately think, “It is a runaway
+    train, I have to get on now!” That is certainly understandable. At some point,
+    though, that train will slow down or even reverse direction. It is a terrible
+    feeling to start trading a new system at an equity high, only to endure a drawdown
+    right off the bat. So maybe it is better to wait for a small pullback in the equity
+    curve and then begin trading. Of course, you run the risk of there never being
+    a significant pullback, and then think of all the profits you’ll miss out on!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Both approaches, starting at or near a new high, or starting after a pullback,
+    have their emotional advantages and disadvantages. On any given system, no one
+    really knows the best approach to take. Over many systems, it probably does not
+    matter all that much—some strategies will continue being profitable right after
+    you start, and other strategies will immediately go into drawdown. For me personally,
+    it seems that most systems go immediately into drawdown, but I think that I forget
+    about the ones whose equity curve takes off and just remember the immediate drawdown
+    systems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given the emotional charge inherent in either approach, the simplest thing to
+    do is to make a decision for all future systems you start trading and then stick
+    to it. For example, you could decide to begin trading after four months of successful
+    incubation, regardless of whether the equity curve is at an equity high, recovering
+    from a drawdown, or somewhere in between. That way, sometimes you’ll be right,
+    and sometimes you’ll be wrong, but it should be an emotionless task to begin trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once you have decided on an approach to start trading, you’ll realize that there
+    is an existing position that needs to be accounted for. Should you wait for the
+    next new signal? Or should you enter the current winning or losing position? Again,
+    emotion can enter into this decision. As with the equity curve decision, it is
+    best to decide up front and keep emotion out of it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Part of the decision to enter an existing trade depends on your software and
+    your trading style. Some automated platforms may have trouble recognizing a manually
+    entered position. This could lead to your exit signal’s not being triggered. If
+    this is the case with your software, it is best to just wait for the next fresh
+    entry signal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Your trading style also plays a role in entering an existing position. In a
+    fast-paced day-trading system, with multiple trades per day, the answer is easy:
+    just wait for the next entry signal. Since they happen often, there will be little
+    to be gained or lost. A different story exists, though, for strategies that have
+    positions on for days, weeks, or months at a time. What is the best approach here?
+    If the position is close to breakeven, just enter it manually. It may cost you
+    or make you a few extra dollars, but in the long run it does not matter.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The decision gets a little trickier with open positions that are currently big
+    winners or big losers. What approach is best here? Some people will want to enter
+    an open winning trade, on the theory that winning trades will keep on winning.
+    That makes sense, except that you may be incurring much more risk to enter a winner.
+    Let’s look at an example. Let’s say your trade is set up to yield either a $500
+    profit or a $250 loss, and you never change the profit target or stop-loss. It
+    is now midway through the trade, and you have a $300 open profit. Should you enter?
+    Well, initially you had a 2:1 reward-to-risk ratio, and by entering mid-trade,
+    you have a 200:550 or 0.36:1 reward-to-risk ratio. Although the likelihood of
+    your getting a $200 gain before a $550 loss is much better than the original likelihood
+    of $500 gain or $250 loss, I’d focus more on the downside. Instead of losing $250
+    on the trade, you could lose $550\. Ask yourself whether you want to risk that
+    extra loss.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The same logic applies to open losing trades. In this case, however, your loss
+    would be less by entering midtrade, and your potential gain could be a lot larger.
+    This is the approach I use when starting to trade a new system: if the current
+    open trade is a loser, I enter it. If it is a winning trade, I wait for the next
+    signal, or until the position pull backs in profit to near breakeven. This is
+    the approach that makes me comfortable. I am not emotional about it, I don’t worry
+    if I made the right decision, I just consistently execute the plan. To me, that
+    is the important point.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you can see, going “live” with an algorithmic system leaves you with a few
+    conundrums and questions. Over the years, I have probably fiddled with all combinations
+    of the choices of when to start trading a strategy. I’ve been through the sheer
+    disappointment of waiting for a pullback in the equity curve, only to see the
+    system go up for months on end. I’ve also entered open positions and suffered
+    losses right off the bat, when waiting for the next entry signal would have been
+    better. Similarly, sometimes the opposite occurred, and I “won” at these decisions.
+    Overall, I don’t think it has improved my situation at all but has definitely
+    led to lost emotional capital. So now I have a plan, known in advance, and I start
+    every system the same way. This eliminates all emotion from the equation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) When to Quit'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Once you’ve settled on an approach to start trading a system, you’ve completed
+    half the battle. But, do you know when you’ll stop following that new system?
+    Emotions can play a huge role here. Whether you are following your own trading
+    system or following an adviser, newsletter, or some other service, if you don’t
+    have an exit plan for discontinuing it, you really need to.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Why? Studies have shown that when people are under stress, many times they make
+    poor decisions. Certainly, if you were losing money with your systems, you would
+    be stressed. Consequently, you might make a knee-jerk reaction to the losses,
+    or you may stick your head in the sand and avoid a decision all together. Both
+    scenarios can be dangerous. So the time when you are losing is a bad time to determine
+    when to stop trading a strategy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Ideally, you determined when to stop trading when you first decided to trade
+    the system. If not, it is not too late. Just determine the metric(s) that are
+    most important to you. They could include such things as:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Maximum drawdown.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Consecutive losers in a row.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Amount lost in a week/month/year.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Overall profit after X months.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Overall winning percentage dips below XX percent.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Significant break in your personal equity trend line or equity moving average.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: New highs, or breaking of another “good” metric (yes, some people try to quit
+    at the top).
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Anything that can be measured and monitored.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Statistical Process Control techniques—for advanced users only.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The exact condition you select probably is not as important as writing it down
+    and sticking to it. That is the key. It needs to be solid, definitive, and written
+    down. Ideally, you’ll also tell your spouse or a friend, too, since it is harder
+    to back out when you make the proclamation public.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I’ve heard that one money management firm’s exit criterion is 1.5 times the
+    maximum drawdown, and a 24-month commitment. Those aren’t bad, but the best one
+    is the one that you feel comfortable with—one you can stick with.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You’ll definitely worry less about your system’s performance if you write down
+    and follow your exit plan.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Once you have decided on an approach to start with real money trading of a
+    strategy, and formulated an approach to cease trading should things go bad, all
+    you have to do is turn on the system and let it run, right? You can sleep well,
+    go to your day job, and just let the system run, without any emotional expenditure
+    on your part, correct? Certainly, that is how the gurus selling automated “robots”
+    or “advisers” make it sound. That’s how they lure many people in: the siren song
+    of emotionless trading. Unfortunately, much like the sailors in ancient Greece
+    who lost their lives sailing to the sound, many a trader has been undone by the
+    emotions involved in so-called emotionless algorithmic trading.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Emotions bubble to the surface in mechanical trading in many different ways.
+    The most common time for emotions to come into play is in the decision to take
+    every trade or not. Clearly, if you’ve tested a strategy and concluded it is worthwhile,
+    then you need to follow it exactly as tested. That sounds easy until a drawdown
+    is incurred, or a number of consecutive losing trades occurs. That is when doubt
+    and fear creep in. “The last five trades have been losers, and that only happened
+    two times in the walk-forward back-test historical testing,” says the little voice
+    in your head. “Skip this trade, and wait for a winner first.” Unfortunately, this
+    is how the mind works, at least for me. It takes nerves of steel sometimes to
+    overrule the voice in your head. But for any chance of long-term success, you
+    need to keep taking signals without question. Otherwise, by picking and choosing
+    which trades to take, and which to reject, you have completely invalidated all
+    the testing and analysis behind the system. In other words, you are just gambling,
+    and that almost never ends well.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once you get a good feel for your strategy, you’ll begin to know ahead of time
+    when a signal is likely to be triggered. For example, at the close of each bar
+    if you are expecting a buy on an upward moving average cross, if the current bar
+    is trending higher, you’ll know the cross will occur at the close of the current
+    bar. Greed can take hold here—why not enter now, before the bar closes? Extra
+    profit might be yours, with no real additional risk. But just like “cherry picking”
+    certain trades, this “jumping the gun” scenario is a really bad idea. There will
+    be times where it doesn’t work out, and times it will. You can waste a lot of
+    emotional capital stressing over whether to enter (or exit) early or not. Just
+    remember, though, that when you don’t take the entries and exits exactly as your
+    system says, you should not rely on historical results at all. What you’ve created
+    is a new strategy, with no real historical basis.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In both of the preceding scenarios, emotions can come in when you make decisions
+    contrary to the strategy rules. So in both of these cases, the emotions can be
+    eliminated by strict discipline—following the rules of the system without question,
+    without fail. This discipline takes time to develop, especially if you are trading
+    only one strategy. Your tendency will be to watch that strategy carefully, think
+    about it often, and inevitably ponder overruling the strategy. My advice in this
+    case is to trade multiple strategies if you can. Once you are trading three or
+    more strategies, it becomes hard *not* to follow the rules. This is akin to the
+    serial liar, who tells so many lies to so many people that eventually the truth
+    comes out. You’ll get so confused by what you are actually doing and what you
+    should be doing that just following the rules will be much, much easier.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In automated trading, I occasionally have to deal with emotions at a stressful
+    time—when something goes wrong. It could be an Internet connection lost, a manual
+    order placed incorrectly, a broker issue, forgetting to roll over, or one of a
+    thousand different “gotchas” that can spring up. Once you notice the issue, or
+    the position mismatch, your stress level goes through the roof. At least mine
+    does. What should I do—exit everything, wait for a better price and reenter, do
+    nothing, run around the room babbling like an idiot? These are all possible reactions
+    to an unforeseen problem; heaven knows I’ve done my share of incoherent screaming
+    and shouting at times. Emotions can take hold, and terrible decisions can be made
+    in the heat of the moment.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The solution to eliminating emotions at stressful times like this is surprisingly
+    simple, yet many times tough to implement. Simply sync your real-world position
+    and your strategy’s position as quickly as possible. Don’t try to get a better
+    price, finesse the order, or any nonsense like that. Just get back in with market
+    orders. Don’t think about this decision, don’t react to any external stimuli—just
+    execute and get positions to match. Sounds simple, yes, but in reality it can
+    be impossible to do. Just keep it unemotional, and in the long run you’ll be much
+    better off.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'I’ve mentioned it before, but it bears repeating: the key to successful algorithmic
+    trading is discipline. You need to be disciplined enough to follow signals without
+    fail. You have to avoid the temptation to enter early or jump the gun and exit
+    early. Plus, when things go wrong, you absolutely need to get your system back
+    in line with its rules as soon as possible. Your ability to do this will be determined
+    by the amount of discipline you have. Just remember, though, when your emotions
+    take over and you do not follow the rules, you are basically just gambling. Gamblers
+    in the market usually lose.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 22
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Other Considerations before Going Live
+  prefs: []
+  type: TYPE_NORMAL
+- en: In addition to starting with the right account size, knowing when to quit, and
+    setting up a position-sizing scheme, there are other considerations that you must
+    think about before going live. The list of potential items is long, so here I
+    just highlight some of the issues I have found most important when going live.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Accounting, Trading Brokers'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: I trade multiple systems live right now, and I use various accounts at various
+    brokers. I do this for a few reasons. First, doing all the bookkeeping and accounting
+    gets confusing when multiple systems are all lumped into the same account. More
+    than once, “orphan” positions that I forgot to close pop up. Having one trading
+    system per trading account makes things a lot easier from a management standpoint.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The second reason I use multiple brokers is that sometimes brokers go belly
+    up or walk away with your money. I lost some money when PFG Best went out of business
+    in 2012, when its founder revealed he had been forging bank statements for years.
+    I still have only gotten back about a third of my money, and I doubt I’ll ever
+    see it all. I’m no longer mad about it, but when I go back and look at the interview
+    I did on Fox Business Channel right when the scandal broke ([http://video.foxbusiness.com/v/1729212213001/pfgbest-victim-unable-to-trade-with-account-frozen](http://video.foxbusiness.com/v/1729212213001/pfgbest-victim-unable-to-trade-with-account-frozen)),
+    it is clear to me I was in a pissed-off state of mind. I do not need that aggravation
+    again. To me, spreading my risk around will keep me trading even if one broker
+    fails.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The drawbacks to my approach are obvious. If I am worried about brokers failing,
+    having more accounts with more brokers just increases the chances of my running
+    into a bad broker, right? My approach may not be better than finding the best
+    broker and just putting all my eggs in that basket. The second drawback is that
+    using multiple brokers leads to a less-than-optimal use of capital (margin) situation.
+    This leads to less return, since more of my money is not put to use. That, to
+    me, is an acceptable trade-off.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, for my euro day and night system, I will open a new trading account.
+  prefs: []
+  type: TYPE_NORMAL
+- en: After looking at my automation requirements, and the fact that all my code is
+    written in TradeStation Easy Language, it makes the most sense to either use TradeStation
+    as the broker or a NinjaTrader broker. For the Ninja option, there is a neat little
+    feature in NinjaTrader that will take TradeStation-generated signals, run them
+    thru NinjaTrader, and then send the signals on to a Ninja Broker. I’ve used it
+    before with success, so it is a good option. The TradeStation option is the cleanest
+    and easiest, of course.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Automation, Unattended, VPS, Where Are Orders Kept?'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Here are some other topics I had to consider when taking my euro day and night
+    strategy live:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Backup Plans
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: In an ideal world, computers never crash, Internet connections never go down,
+    your broker always is up, and so on. In the real world, lots of things can go
+    wrong. Some things to consider—do you need any of these?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Backup PC
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Backup data storage (offsite and onsite)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Backup Internet provider
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Backup power supply
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Backup phone line
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Backup broker
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Backup trading desk
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: There is more, I know, but having backups (and possibly even backups for the
+    backups) for everything on this list will get you a long way.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To Automate or Not to Automate?
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: During incubation, I manually traded my strategies in simulation mode for a
+    while. I had to have TradeStation alert me, after which I would manually place
+    orders in another platform. Over time, I missed a few trades, made a few mistakes,
+    forgot to cancel open orders, and so on. Overall, I don’t think these mistakes
+    cost me any simulation “money.” In fact, they may have saved me a few bucks. But
+    that isn’t the point. The point is that I want to trade the system as I developed
+    it. So, automation makes the most sense for me. Therefore, I will trade it automated.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Attended, Unattended?
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: TradeStation always warns its clients that “automated trading does not mean
+    unattended trading.” This is pretty sound advice, since issues pop up from time
+    to time, Internet connections go down, orders get missed, and so on. I plan on
+    usually being around the PC when this strategy is running, so I’d say it qualifies
+    as “semiattended.” If my account grows and my contract size gets significant,
+    I’ll revisit this approach.
+  prefs: []
+  type: TYPE_NORMAL
+- en: VPS
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Many people use virtual private servers (VPSs) for their trading, to keep the
+    downtime and data lag to a minimum, and their reliability high. I personally do
+    not use any VPS services currently, but I am always monitoring my situation for
+    reasons to use it. In the past year, I’ve lost Internet connection only twice,
+    and once was on a weekend. If my systems traded more than a few times a day, or
+    if I were running a high-speed scalping strategy, I’d definitely use a VPS.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Where Orders Are Kept
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: I bring this up because many people don’t know where their orders are. When
+    your automated strategy fires an order, is it kept on your machine? On the broker’s
+    servers? At the exchange? Plus, different types of orders (limit, stop) may have
+    different routing. For example, limit orders might be sent directly to the exchange,
+    but stop orders may be held at the broker.
+  prefs: []
+  type: TYPE_NORMAL
+- en: My point in bringing this up is that you should know where your orders are and
+    have plans in place in case something goes wrong. You might think you have an
+    order at the exchange, but after your Internet goes down and a fill was missed,
+    you might realize it was really held on your PC. Emergency situations are not
+    a good time to find out answers to these questions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Rollover Considerations'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Many traders have difficulties accounting for rollovers. They wrongly assume
+    they’ll have to “eat” the premium between the old and new months, or that they’ll
+    pay multiple spreads to accomplish the roll. If you do it correctly, you don’t
+    have to pay a premium, but you may have to pay two bid/ask spread costs instead
+    of one, and you’ll have to pay the equivalent of one round turn commission. A
+    lot of people are under the mistaken impression that they always lose or gain
+    premium during a rollover. While this might be true for strategies such as scale
+    trading, it does not have to be true for algorithmic systems with a simple rollover.
+    I’ll explain all of that with a real-world example.
+  prefs: []
+  type: TYPE_NORMAL
+- en: First, it is worth explaining *why* a rollover is necessary. For intraday traders,
+    where positions are closed at the end of each trading day, rollover should never
+    be an issue. On the day of rollover, those traders simply start trading the new
+    front contract month. For swing traders, however, the situation is a bit more
+    complicated. Before first notice day or last trading day, whichever comes first,
+    the trader must “roll” his position from the old contract month into the new contract
+    month. For instance, if you are long September euros, you’ll want to sell the
+    September euros, closing you out of that position, and buy the December euros.
+    Not surprisingly, the devil is in the details, and an example is the best way
+    to show the process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let’s say I have a system that trades the euro. I use the back-adjusted continuous
+    contract to calculate all parameters for the strategy. I am currently trading
+    the September contract, but let’s say I roll to December this afternoon
+  prefs: []
+  type: TYPE_NORMAL
+- en: Based on the signal from my continuous contract chart, I bought the September
+    contract at 1.3272 a few days ago. At that time, September was the front month;
+    the continuous contract thinks I entered at 1.3272.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This system has a $625 stop-loss, and a $1,250 profit target. So my stop loss
+    is at 1.3222, and my profit target is at 1.3372\. Both of those are based on the
+    September contract, which is what was the lead contract at initial entry.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now, a few days later, I have to roll the position into December. Let’s first
+    look at the math, and what happens to the continuous contract, and why I don’t
+    lose the premium (difference) between the two contracts when I roll over. Right
+    at rollover, let’s say December was at 1.3303, while September was at 1.3299\.
+    This is a difference of .0004, which is what the back-adjusted continuous contract
+    needs to know. To adjust the continuous contract to have December as the front
+    month, you simply have to add .0004 to each price point in the existing continuous
+    contract. So we do this and now have a continuous contract, with December as the
+    front month.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now, if you have your trading strategy applied to the updated continuous contract,
+    the strategy will think you bought at 1.3276, with a stop-loss at 1.3226 and a
+    profit target of 1.3376\. “But wait!” you say. “I didn’t buy at 1.3276\. I somehow
+    got screwed!” Here’s the math, neglecting the bid/ask spread and the commission
+    costs, just for this example.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Real World—What Your Actual Trading Account Sees
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: You bought September at 1.3272\. You sold September at 1.3299\. Profit = $337.50.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: You bought December at 1.3303\. Current price is 1.3303\. Profit = $0.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: In the real world, you have a closed profit of $337.50, an open profit of $0.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: If your new stop-loss gets hit, you will lose (1.3226 - 1.3303) * 125,000 =
+    -962.50\. Add that to the previously closed profit of $337.50, and your total
+    loss is $625.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: If your new profit target gets hit, you will gain (1.3376 - 1.3303) * 125,000
+    = +912.50\. Add that to the previously closed profit of $337.50, and your total
+    gain is $1,250.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Strategy World—What Your Strategy, Acting on a Back-Adjusted Continuous Contract,
+    Thinks Is Happening
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: For the original continuous contract scenario, the continuous contract thinks
+    I entered at 1.3272.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: This system has a $625 stop-loss, and a $1,250 profit target. So my stop-loss
+    is at 1.3222, and my profit target is at 1.3372.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: For the new rolled-over continuous contract scenario, the continuous contract
+    thinks I entered at 1.3276.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: This system has a $625 stop loss, and a $1,250 profit target. So my stop loss
+    is at 1.3226, and my profit target is at 1.3376.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: As you can see, the profit and loss from the real world and the strategy world
+    is exactly the same.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Suppose you are long the September euro contract at 1.3222, and it is getting
+    to the time in mid-September when you must roll over to the December contract.
+    When you have to perform this rollover in an algorithmic strategy, how do you
+    actually accomplish it? I usually do it one of three different ways. Each one
+    has its advantages and disadvantages.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Method 1: Quick Roll (Most Expensive Typically)'
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'In this approach, you enter a sell order at the market in September euro, and
+    enter a buy order at the market in December euro. Since both orders are market
+    orders, they will be immediately executed. Using the prices above, here is the
+    math:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sell September at 1.3299 (bid price)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Buy December at 1.3304 (ask price)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Closed profit = $962.50 - $5.00 commission = $957.50
+  prefs: []
+  type: TYPE_NORMAL
+- en: Open profit = Long from 1.3304
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Advantages: Guaranteed fill, quick, easy'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Disadvantages: You pay two bid/ask spreads, and if you are not quick with second
+    order, market could run away from you, costing you money.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Method 2: Leg in Roll (Cheapest Method Typically if Done Correctly)'
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'In this approach, you enter a sell order at the market in September euro, and
+    try to work a buy order at the bid price in December euro. The sell is immediately
+    executed, and the buy is a limit order, which hopefully will get filled at the
+    price you want. You could also do this in reverse: sell on a limit order, and
+    then when you are filled, immediately buy with a market order. You probably should
+    use the limit order on the side with the biggest spread, and the market order
+    on the tight spread. Using the prices above, here is the math:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sell September at 1.3299 (bid price)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Buy December at 1.3303 (bid price)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Closed profit = $962.50 - $5.00 commission = $957.50
+  prefs: []
+  type: TYPE_NORMAL
+- en: Open profit = Long from 1.3303
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Advantages: You save yourself $12.50 by getting in the December contract one
+    tick better than you did with method 1.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Disadvantages: More complicated, plus you may have to chase the market up to
+    get the December fill. You can easily lose more than one tick by trying to be
+    too greedy with your limit order.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Method 3: Exchange Supported Spread Roll (Cost Usually between Methods 1 and
+    2)'
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'The exchanges have a great tool to help spreaders—a dedicated quote feed and
+    tradable symbol for executing spread orders, which is what a rollover is. In this
+    case, you are buying or selling the spread, not the individual legs. You get simultaneously
+    filled on both legs at the same time. Using the prices above, here is the math:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Buy spread at 4.5 (ask price). Note that this doesn’t tell you the actual execution
+    prices. You’ll see these on your statement, and they are really irrelevant. So,
+    we will just assume some prices, keeping the spread fill price correct:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sell September at 1.3329
+  prefs: []
+  type: TYPE_NORMAL
+- en: Buy December at 1.3329 + .00045 = 1.33035
+  prefs: []
+  type: TYPE_NORMAL
+- en: Closed profit = $962.50 - $5.00 commission = $957.50
+  prefs: []
+  type: TYPE_NORMAL
+- en: Open profit = Long from 1.33035
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Advantages: Simple, no chance of only one leg executing, cost usually in between
+    methods 1 and 2.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Disadvantages: Some brokers don’t support this. For example, TradeStation’s
+    main platform for automated trading does not allow this. You can do it manually
+    in TradeStation Futures 4.0 platform, but that platform is not made for algorithmic
+    strategies. It is also easy to screw up the order, and buy the spread instead
+    of selling it. You have to be careful. Also, don’t think that just because you
+    are trading the spread symbol, you’ll pay only one commission. Some people think
+    this is true, and I guess those folks don’t read their statements very closely.
+    When the brokerage does its accounting, it splits the spread into a separate buy
+    and sell fill for each leg. When this happens, commission is charged for each.
+    There is no free lunch, commission-wise, with this method!'
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can see from the above example there is $12.50 cost difference between all
+    three methods, with method 1 being the most expensive, method 2 being the cheapest,
+    and method 3 in between the other two. This is not always the case, but is true
+    in general.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One method I did not mention above is to use limit orders on both sides of the
+    spread. Astute readers have probably already thought about this method, and how
+    it could save the spread on each side of the rollover. There is a reason I have
+    not included it, and that is because it is a *terrible* thing to do. In theory,
+    the approach saves you two spreads, but in reality one spread will be filled and
+    the price will more often than not run away from your second limit order, leaving
+    you with half a rollover (in other words, flat). Thus, the times this approach
+    does work are completely overshadowed by times the approach does not work. In
+    the end, it will cost you much more to try and save a few dollars in spread costs.
+    Therefore, I recommend one of the three methods above, completing the rollover
+    quickly, and then moving on to other trading endeavors.
+  prefs: []
+  type: TYPE_NORMAL
+- en: That is how a rollover is actually accomplished. Whenever I can, I use the exchange-supported
+    spreads to do my rollovers. I can do this with systems where I enter orders manually.
+    For my fully automated systems, I generally use method 1, even though it is the
+    most expensive. When I use method 2, I sometimes find myself chasing the market
+    with my order, or worse yet, I forget about the rollover for a while, leaving
+    me temporarily doubly exposed, until I fix it.
+  prefs: []
+  type: TYPE_NORMAL

@@ -1,0 +1,209 @@
+- en: INTRODUCTION
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: I wanted to throw up. The bile in my stomach had reached an unsustainable level,
+    but there was no bathroom near me. Speeding down the freeway at 75 miles per hour,
+    with no exit in sight, I’d have to swallow hard and accept my fate. I really wanted
+    to just curl up and die. Well, not exactly. I wanted to vomit first, *then* curl
+    up and die.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Was it trichinosis from eating pork not cooked to shoe leather consistency,
+    as my Mom always predicted would happen? Nope. An undercooked juicy red hamburger
+    laced with *E. coli?* Not exactly. It was meat that was the culprit, but in the
+    form of live cattle. Live cattle futures, to be exact. Live cattle, all 40,000
+    pounds of them, had led to my sudden urge to vomit. Specifically, bovine spongiform
+    encephalopathy, more commonly known as mad cow disease. I didn’t have the disease,
+    but my ill-fated speculative investment did.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This was at the end of December 2003, a month that had started with great personal
+    and professional promise. I recently had been promoted to vice president of quality
+    assurance at Argo-Tech, the midsize aerospace firm I was lucky enough to be part
+    of, before it was bought out by a soulless mammoth corporation. I also had been
+    honored as a “40 Under 40” recipient from *Crain’s Cleveland Business* magazine—recognized
+    as one of Cleveland, Ohio’s, up-and-coming business stars under the age of 40\.
+    My futures trading account was doing pretty well, to the point where I felt confident
+    I knew what I was doing (many times that feeling is soon followed by a slap in
+    the face by the market, but I digress). Finally, my first child was on the way
+    in a few months. All things considered, I was on a roll.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Then disaster struck. Three times. Quickly.
+  prefs: []
+  type: TYPE_NORMAL
+- en: On December 12, 2003, my beautiful and amazing wife Amy and I had our first
+    son, Anthony. He was two months premature and was stillborn. The joy of planning
+    for the arrival of our firstborn suddenly and tragically became planning for a
+    funeral and burial. It is nearly impossible to understand the gut-wrenching pain
+    that comes with losing a child, until it happens to you. I certainly was not prepared
+    for it. Dreams were destroyed that day, life suddenly became unfair, hope and
+    joy seemed a distant memory. Needless to say, Amy and I were both mentally, physically,
+    and emotionally devastated.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Less than a week later, on December 17, the second calamity hit. My father passed
+    away on his 75th birthday. Ironically, after three open-heart bypass surgeries
+    over the previous 30 years, it was not his clogged arteries that got him, but
+    cancer—a nasty cancer that is common to chimney sweepers. That made sense, I suppose,
+    since he was a firefighter, and in his prime chased many raccoons out of chimneys,
+    as the co-owner of a pest control company. After watching him lying in bed while
+    life slowly left his body, my head began spinning like a top. To say I could not
+    think straight was an understatement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With two such life-changing events within a week, you probably would guess that
+    I would not be trading or taking up any other type of mental and emotional task.
+    But you’d be wrong. I was still trading. Looking back on it now, I was completely
+    crazy to trade. Yet I did. On December 23, about an hour or so before the close,
+    on a whim I decided that I should buy live cattle futures. I’m sure I had my reasons,
+    but I am equally sure that those reasons were contrived by my mind in order to
+    justify the trade. I wasn’t in my right mind at all. I had no business trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I’m sure you know how this story ends. After the close on December 23, the U.S.
+    Department of Agriculture announced that a case of mad cow disease was found in
+    the United States. The impact on the market would be terribly negative. Since
+    I was long cattle futures, and the market was certainly headed for a free fall,
+    my account was in for a slow death, temporarily slowed only by the daily limits
+    in the futures markets. I could only lose $600 per day per contract, at least
+    until the exchange expanded the daily downside limit. For my account size, having
+    a “locked limit” down even with one contract was extremely painful.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/intf0001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**FIGURE 0.1** Mad Cow Disease Causes Live Cattle Futures to Collapse'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A week later, after three days of a locked limit down market—where I could not
+    exit at any price—I was finally able to liquidate, with a $5,400 loss.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This was about seven times the maximum loss I had expected, and as a percentage
+    of my account, it was brutal. Not the end of the world, but it really made me
+    wonder. Was the past month just the start of a prolonged losing streak, both in
+    trading and in life? What was I doing trading anyhow, after all the recent emotional
+    hits to my psyche? And trading on a whim, a hunch? When was I going to stop such
+    destructive behavior? Could I stop such destructive behavior and finally turn
+    into a winning trader? Could this series of unfortunate events provide the impetus
+    to rise from the ashes, to turn my trading around? So many questions—ones I had
+    no answer for.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As it turns out, as bad as this trade was, mad cow disease probably saved my
+    trading life. This book documents that trading story, warts and all. Along the
+    way, I got better and better at developing mechanical trading systems, and later
+    in the book I show you the process I use to develop winning algorithmic trading
+    systems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Who Can Benefit from This Book?'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Regardless of the type of trader you are, or your experience level with trading,
+    I think you’ll find something in this book that resonates for you.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For beginner traders, I hope this book is an eye-opener for you. I can’t, and
+    I won’t, fill your head with thoughts of trading profits raining down from the
+    sky. Anyone who tells you trading is easy is flat-out lying to you. Sure, you
+    can make lots of money trading, but you also need to be prepared for a lot of
+    losing, a lot of drawdowns, and a lot of risk. Whenever someone tells me trading
+    is a piece of cake, I always suspect that they are half-baked. My story, as painful
+    as it is at times, is a realistic journey for many retail traders. Of course,
+    as I tell all beginners, read what I have written, but then read books by other
+    traders, too. Keep an open mind to everything. After a lot of reading, you’ll
+    be able to make solid judgment calls on what is correct, what is BS, and what
+    you like and don’t like. The amount of misinformation about trading is staggering,
+    so all beginners must be wary.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For intermediate or slightly experienced but struggling traders, maybe your
+    failures up until this point aren’t a result of psychology or confidence. Many
+    trading books nowadays put a lot of emphasis on the mental aspect, but all the
+    mental preparation in the world won’t help you if you are developing strategies
+    incorrectly. If you’ve ever lost money after you started trading a strategy right
+    after optimizing it, then you probably realize you were doing something wrong.
+    The process detailed in this book should be right up your alley, since it will
+    steer you in the right direction.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For expert traders, most of what I present here you’ll have already seen before
+    in some fashion. Certainly, there are many great trading books that discuss many
+    of the issues and problems that I address here. But there is always something
+    new to learn, a different approach to try, and a different way to think. You probably
+    find many items in this book that are different from your current method, and
+    you’ll likely benefit from incorporating these new ideas in your trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Although the book is designed around algorithmic or mechanical trading, which
+    is what I primarily do, discretionary traders can benefit from the concepts detailed
+    in this book. Maybe there are parts of your discretionary approach that can be
+    statistically tested. For example, let’s say your discretionary entry consists
+    of a moving average crossover, combined with your intuition. It might be impossible
+    to test your intuition, but a moving average crossover can be walk-forward tested
+    and gently optimized. Or perhaps you want to evaluate breakeven or moving stops
+    for your exit. There are many wrong ways to test this, but only a few correct
+    ways. You’ll learn a correct way in this book. Therefore, utilizing the concepts
+    in this book, you can improve your discretionary approach a great deal, all because
+    you’ll know how to properly design and test a trading system. Whether it is a
+    100 percent mechanical strategy, or a part mechanical and part discretionary system,
+    putting actual performance numbers to entries and exits can only give you confidence
+    and make for a better trading approach.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'I have organized *Building Winning Algorithmic Trading Systems* into seven
+    parts. In all seven sections of the book, you’ll see me use certain terms interchangeably:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Strategy or trading system*—the approach used to trade. This can be rigid
+    rules, general guidelines and principles, or flat-out random guessing. The net
+    result is your strategy or trading system.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Mechanical or rule-based trading or algorithmic trading*—a style of trading
+    in which all the rules are defined 100 percent. There is no discretion involved,
+    no decisions to be made by the trader.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Hybrid or mixed trading system*—a style of trading that includes aspects of
+    algorithmic trading, along with discretionary trading. An example would be a mechanical
+    system that gives entry and exit signals, but gives the trader the option to accept
+    or reject the signal.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'In Part I, I walk you through my trading history. I think my early ups and
+    downs—mostly downs—are pretty typical of new or beginning traders. I paid “tuition”
+    to the market for many years. But I was able to persevere, winning the World Cup
+    Championship of Futures Trading^® in 2006, and finishing second in 2005 and 2007\.
+    After those successes, I reached the point all part-time, hobby shop, retail traders
+    dream of: I was able to leave a promising career and live the dream of trading
+    full time.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the second part of this book, I tell you how I currently do things. From
+    evaluating trading systems to designing new trading systems, I lay out my process.
+    It is not perfect, and it is ever evolving, but it contains crucial information
+    that I wish I had when I started out. Even if you just follow bits and pieces
+    of what I do, you should be able to save thousands in market tuition.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In Parts III-VII, I build a trading system, from concept to live trading. It
+    is a good trading system, but by no means the Holy Grail (which, by the way, does
+    not exist). I also discuss in this section what I think is the closest one can
+    get to the Holy Grail—diversification. Finally, I discuss how I monitor my strategies
+    in real time, with a real-time diary of my trading progress through a number of
+    months.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I hope that by reading my story, you’ll be able to avoid my mistakes and learn
+    from them. Trust me because, as you’ll see, I’ve made a ton of them.
+  prefs: []
+  type: TYPE_NORMAL

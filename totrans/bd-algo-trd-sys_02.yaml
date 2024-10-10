@@ -1,0 +1,1435 @@
+- en: PART II
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: YOUR TRADING SYSTEM
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 5
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Testing and Evaluating a Trading System
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you are going to design trading systems, it is critical that you know how
+    to evaluate the performance metrics of a trading system. This is not always as
+    easy as it sounds. To show you what I mean, take a look at [Figure 5.1](#figure5-1).
+    This equity curve is for a futures trading system, typical of what you might produce
+    if you tested strategies yourself, or one you might find publicly available on
+    the Internet. This curve was produced with TradeStation software, but results
+    from other popular programs, such as MultiCharts and NinjaTrader, are basically
+    the same. All good trading software gives you a variety of important (and, in
+    my opinion, many unimportant) metrics to review and examine. Most of the time,
+    the equity curve and performance report bring up more questions than they answer.
+    Are the results good or bad? Are the results believable? Do the results have any
+    predictive value? Finally, how do you separate the wheat from the chaff? I’ll
+    answer these questions and more in this chapter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c05f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 5.1**](#figureanchor5-1) Trading System Results—Is This Believable?'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first point to realize and understand when looking at performance reports,
+    equity curves, or trade data is the old adage “if it is too good to be true, it
+    probably is.” As a general rule, future performance of a trading system is almost
+    never as good as its historical performance. In fact, the better a trading system
+    tests historically, the less likely it is to perform that well in the future.
+    Of course, there are exceptions to this rule, and after developing trading strategies
+    for a while, these exceptions become easier to find.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Why do historical test results usually look better than future results? Some
+    of it has to do with survivorship bias, meaning only the good historical trading
+    systems are typically shown. Why would a vendor sell a system with poor historical
+    performance? Why would you trade a poor system that you created yourself? The
+    simple answer is that in both cases the bad results would be discarded, leaving
+    only the remaining good results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is also possible that the historical test results are indeed valid and that
+    the system developer has uncovered a true edge in the market. Over time, though,
+    this edge may disappear, either due to others finding it, market changes, or a
+    host of different reasons. The trading system will then revert to the mean, which
+    would be a breakeven strategy before commissions and trading costs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Historical test results also can look better than future results due to the
+    method of the historical testing. Most people test and evaluate systems incorrectly.
+    Later in the book, you’ll learn one correct way to test and evaluate systems,
+    but for now just realize that the standard accepted way of testing is wrong. This
+    faulty testing leads to overoptimistic results and trading systems that are sure
+    to disappoint the end user. Of course, experienced traders know how to test systems.
+    The question is: when looking at historical results, how do you know what to believe?'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 5.2](#figure5-2) depicts what I call a “BS” meter for performance results.
+    It gives you an idea of who, if anyone, you can trust with providing you trading
+    results.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c05f002.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 5.2**](#figureanchor5-2) BS Meter for Trading System Results'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'At the very top of the scale—the group with the most BS to sling—are trading
+    system vendors. I put this group at the top, even though I have been part of this
+    group (although I trade my systems with my own money, unlike most in this group).
+    In general, any performance information you receive from someone wanting to sell
+    you signals, a black box system, a subscription, trading room, and so on should
+    *not* be trusted. An excellent general rule is: don’t believe any of it.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This approach is extreme, I realize, but given the probability of a vendor’s
+    selling a great trading system, as opposed to a vendor’s selling you a good-looking
+    but actually terrible system, this is sound advice. You will save a lot of money
+    by avoiding anyone offering you a fantastic trading system. Anyone offering a
+    great trading system for only a little money just doesn’t pass my “smell” test—the
+    vendor should be trading it himself, raking in the big bucks, not hawking the
+    system on the Internet for pennies. That is why trading system vendors top the
+    BS list.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Since trading system vendors typically provide worthless junk, you may be inclined
+    to go the “do-it-yourself” (DIY) route. For the DIYers out there, there are dozens
+    of trading platforms that will help you analyze, test, and optimize any type of
+    trading system you want to create. On the surface, this seems to be a great way
+    to go, relying just on yourself, your ideas, and the trading software. The problem,
+    to be discussed in great detail later, is that developing trading systems is not
+    as easy as the software vendors would lead you to believe. In fact, new developers
+    following the approach suggested by the software will inevitably create an overoptimized,
+    curve-fit trading system. Such a system will produce a great back test, but will
+    almost never perform well in the real-time future. So novice DIY developers rank
+    just below trading system vendors on the BS scale.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If buying from a vendor is fraught with hazard, and novice DIYers not much better,
+    what options are left? If you are convinced that you have to have someone else
+    provide you with a trading system or signals, using a broker-supplied system or
+    a Commodity Trading Advisor (CTA) system is a much better approach. Let’s take
+    a quick look at what they offer, and the advantages and disadvantages.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Many futures brokers now offer what they call “Broker Assist” or “Follow the
+    Signals”–type services. Two groups that offer these services are Striker Securities
+    ([www.striker.com](http://www.striker.com)) and World Cup Advisor ([www.worldcupadvisor.com](http://www.worldcupadvisor.com)).
+    (Full disclosure: I have in the past, or plan in the future, to offer signals
+    through these two brokers. Based on my personal experience, I believe they are
+    reputable.) For a monthly fee, you can “follow” trading signals from a signal
+    provider. The signals provider will typically have an account at the broker and
+    will be placing live trades. So the results shown are typically actual results,
+    a *huge* step above the nonsense most trading system vendors show as “real.”'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Of course, just because the results provided by these services are from a traded
+    account, it does not mean you will get the same results. Even real results should
+    be treated as hypothetical. In fact, my general rule is that unless the results
+    actually happened in your account, you *must* treat the results as hypothetical.
+    As you well know, hypothetical leaves the door open for a lot of variation in
+    actual results, which you should be prepared for. That is one disadvantage of
+    the broker services.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another possible disadvantage of a broker-supplied signal service is that something
+    can go wrong with either the developer providing the signals to the broker or
+    the broker itself. For example, if the developer uses a discretionary approach
+    to trade, a personal crisis might throw his/her trading off, and a trading approach
+    that was once good now becomes bad. On the broker side, a quick and sudden fraud,
+    à la the PFG Best corruption and bankruptcy in 2012, might put your account at
+    risk.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you choose to follow a CTA, it is reassuring to know that the group is audited
+    by regulators and accounting firms and that trading results shown are by-and-large
+    accurate. Of course, some unethical bad apples always slip into the bunch, and
+    they may produce stellar results for many years, before being destroyed in an
+    explosion of fraud and deceit. Bernie Madoff and his firm, while not a CTA, is
+    a good example of a trusted investment company actually being a complete fraud.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you can’t believe trading system vendors, with inexperienced DIY trading
+    system developers not being much better, and brokers and CTAs being much better
+    but not without risk, what can you do? What is the low group on the BS totem pole?
+  prefs: []
+  type: TYPE_NORMAL
+- en: My opinion is that an experienced DIY trading system developer is the least
+    susceptible to BS or otherwise invalid performance reports. I claim this for a
+    few reasons. First, an experienced developer knows his trading back-test software
+    and knows all the ways to fool it. He knows to avoid these software limitations,
+    where many trading system vendors actively seek out these limitations and use
+    them to produce their faulty, extremely good-looking performance reports.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A second reason an experienced developer, creating his own systems, is lowest
+    on the BS scale, is that he is in charge of the process. He can eliminate many
+    potential issues, such as faulty or missing market data, incorrect forward-looking
+    rules, and overoptimization and curve fitting. Being in charge of the complete
+    process is an enormous responsibility, but an experienced developer will be quick
+    to fix issues, since he ultimately is solely responsible for his results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Of course, just developing trading systems for many years does not make one
+    an expert. The key is to develop systems and then verify the performance in real
+    time. Over the course of a few years, a good developer will get better and better
+    at producing historical results for trading systems that have a better and better
+    chance of holding up in the future. Certainly, when done correctly, an experienced
+    DIY developer can be pretty low on the BS scale.
+  prefs: []
+  type: TYPE_NORMAL
+- en: At this point, a few readers are probably asking, “Why even bother testing?
+    All it does is prove something worked in the past. It has no bearing on future
+    performance.” This is an argument that has some validity, up to a point. It is
+    definitely true that “past performance is not indicative of future results,” which
+    is why the U.S. government requires this disclaimer when discussing trading system
+    performance. But does it therefore mean that historical testing has *no* validity?
+    I don’t think so.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Here is a case in point. Let’s say you want to build a model of the sun rising.
+    Every day for a month, you get up before dawn, and wait for the sun to appear.
+    Every day, it rises in the east. So, you build you model, run it for tomorrow,
+    and it “predicts” the sun will rise in the east. Will it? Who knows for certain?
+    Some strange axis switching or earth rotation reversing could occur overnight,
+    and the sun could rise in the north, south, or west. Highly unlikely, yes, but
+    so was the flash crash of 2010 or the financial crisis of 2008\. Outlier and unexpected
+    events can and do happen.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If such a calamity occurs, does it mean that the model is useless and never
+    should have been built? No, but certainly you’d have to now take into account
+    that the world you modeled has changed dramatically. It is the same for trading
+    systems. Completely new market conditions could render your trading strategy useless
+    tomorrow, or next week or next month, or maybe not at all. But I contend that
+    having a model based on history is much better than completely guessing. With
+    guessing, you are likely to be looking the wrong way when the sun rises tomorrow
+    morning.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In evaluating trading systems and their performance report and equity curves,
+    it is important to distinguish *how* the results were obtained. There are four
+    main ways to produce results:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Historical back testing
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Out-of-sample testing
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Walk-forward testing
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Real-time testing
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Each of these is discussed in turn next.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Historical Back Testing'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Historical back testing is the most common method of testing. It is also the
+    easiest to perform, and the easiest to abuse and misuse. The developer simply
+    enters the start date and the end date (usually today’s date), includes any parameters
+    to optimize, and then lets the strategy engine do all the calculations. The end
+    result will be the best set of parameters for that period of time, which can then
+    be used in real live trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Unfortunately, there is a major problem when performing a back test in this
+    manner. Assuming that the results are not due to overoptimization—too many rules,
+    too many parameters, and/or too many parameter values—the historical results are
+    by definition going to look great. After all, those results come from optimizing!
+    There is virtually no chance that the results in the future will be close to the
+    optimized results. The results are just too “tuned” to the data used in the test.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'A great example of this is shown in [Figure 5.3](#figure5-3). Looking at just
+    the optimized results of a simple trading system, it looks like this is a viable
+    system. But this is because what you see was optimized. Take any other set of
+    parameters and the system will look worse. Going forward, which result do you
+    think is more likely—the one optimized good result or the many poor results? I
+    hope the answer is crystal clear: the poor results are a truer reflection of the
+    actual system performance. The deceiving part in all this is that sometimes these
+    systems perform well for a time after optimizing. In general, though, the more
+    optimization that is done, the less likely the system will work well going forward.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c05f003.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 5.3**](#figureanchor5-3) Optimized Results Frequently Fall Apart
+    after Testing'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Out-of-Sample Testing'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Only the most inexperienced and naive developers test and optimize their trading
+    system over the whole historical data set. If that has been your approach up until
+    now, this statement may make you mad. But odds are that your real-time trading
+    results have not been good, or at least not consistently good. Much of that can
+    be attributed to evaluating the strategy’s performance on the same data it was
+    optimized on. It is just not a very good practice. Trust me, I know—I used to
+    do it all the time before the market told me, via taking money out of my account,
+    that I was doing things incorrectly!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Some developers get around this by including an out-of-sample period. This is
+    shown in [Figure 5.4](#figure5-4). An out-of-sample period will be 10 to 20 percent
+    of the data reserved for review after optimization. Typically, the data left for
+    out-of-sample testing will be the most recent data. I have, however, seen people
+    apply it to data before their optimization data. The theory behind that alternative
+    approach is that the optimization should include the most recent data, so the
+    strategy is “tuned” to current market conditions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c05f004.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 5.4**](#figureanchor5-4) Out-of-Sample Testing Results'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conducting a test with out-of-sample data is a magnitude or two better than
+    optimizing over all the data, especially if the out-of-sample period has a significant
+    number of trades in it. If the optimized results look good with the out-of-sample
+    data, there is much more confidence in the optimized results. It will likely perform
+    better in real time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One problem with the out-of-sample approach is that the optimized parameters
+    are set forever. So, for example, if you optimize your trading system and get
+    values X, Y, and Z as the best inputs to your system, those inputs should never
+    change. But, perhaps due to changing market conditions, you do want the ability
+    to change your input parameters, or at least check them on an ongoing basis. In
+    this manner, the out-of-sample test idea can be taken one step further. The resulting
+    analysis, walk-forward analysis, is much better, and much closer to reality.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Walk-Forward Analysis'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Walk-forward analysis is much more cumbersome than traditional back tests, but
+    the results are usually worth the effort. Walk-forward analysis can be done by
+    hand, in conjunction with trading software optimization. This was the method I
+    used to be a top finisher in the World Cup contest, and I encourage you to try
+    it by hand a few times to fully understand the process. After that, many trading
+    software packages now include walk-forward analysis in their available tools.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The idea behind walk-forward analysis is simple: the performance results and
+    the optimized results are based on two different data sets. This can be seen in
+    [Figure 5.5](#figure5-5). Walk-forward analysis is simply the aggregate of many
+    out-of-sample periods, stitched together.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c05f005.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 5.5**](#figureanchor5-5) Walk-Forward Analysis'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Results of walk-forward analysis, when done correctly, can be much closer to
+    reality than a simple optimized test. A sample of this is given in [Figure 5.6](#figure5-6),
+    which shows that the walk-forward analysis, and the live results are pretty comparable.
+    There is no dramatic shift in performance between live and walk-forward results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c05f006.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 5.6**](#figureanchor5-6) Walk-Forward Testing Results'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Walk-forward analysis is a great tool when there are a lot of historical data
+    to analyze. It is my recommended method. But in cases where there is not much
+    historical data, the best approach may be to test and evaluate the trading system
+    in real time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Real-Time Analysis'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Some very successful traders eschew all forms of back testing due to inherent
+    conflicts and issues in such testing. These folks simply test strategies in real
+    time, possibly even with real money. The obvious advantage to such a method is
+    that fitting rules to past data and using hindsight bias is just not possible.
+    One big disadvantage is that you can only gather data at market speed. It is impossible
+    to gather statistics over many years until you have tested in real time for many
+    years. Most people do not have the patience to wait for such a test to complete.
+    Another disadvantage is that anytime the strategy is changed, the clock goes back
+    to zero, and the evaluation starts fresh. This can really prolong the test period.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For the reasons cited, most people do not consider real-time testing, even with
+    its advantages, as a viable solution. In the trading system development method
+    shown later in this book, however, real-time analysis is used and provides useful
+    verification of a trading system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 6
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Preliminary Analysis
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now that we have examined the primary ways to test a trading strategy and produce
+    a trading performance report, I’ll share with you what I think is important in
+    these reports. A typical summary performance report is shown in [Figure 6.1](#figure6-1).
+    A complete TradeStation-produced performance report spans at least seven pages
+    and includes hundreds of calculated parameters, trade lists, and performance graphs.
+    The amount of information supplied is frankly overwhelming. Most of the results,
+    it turns out, are not all that important when time comes to evaluate the trading
+    system. Maybe a performance metric for “drawdown—coefficient of variation” matters
+    to some people but certainly not to me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c06f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 6.1**](#figureanchor6-1) Sample Performance Report'
+  prefs: []
+  type: TYPE_NORMAL
+- en: As with most aspects of trading, I try to keep my performance report analysis
+    simple. A few numbers are typically all that I need to conduct a cursory review
+    of any trading system. Once I find something I like, then I will delve deeper.
+  prefs: []
+  type: TYPE_NORMAL
+- en: First, a few ground rules are in order. The performance report should be based
+    either on live data or on a walk-forward test. Optimized back tests should not
+    even be analyzed, as their results are bogus and misleading. Next, there should
+    be multiple years of data, with a multitude of trades. A good rule of thumb is
+    5 to 10 years of data, and 30 to 100 trades for each trading rule in the system.
+    Third, I usually review performance reports without position sizing applied. As
+    you review many performance reports, it will be important to compare “apples to
+    apples.” If you look at one performance report based on single-contract trades
+    and try to compare it to another report that uses multiple-contract-position sizing,
+    a fair comparison is all but impossible. Plus, a bad strategy can be made to look
+    appealing by position sizing. To keep it simple, I look at position sizing only
+    after I feel confident the strategy is viable trading one contract at a time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Finally, accurate assumptions for commission and slippage must be included
+    in the report. Many times I see performance reports without these values added
+    in, with the flippant response from the creator, “Those costs can be added in
+    later, no problem.” Not including commissions and slippage, beyond being highly
+    unethical—if not immoral—due to the way these costs impact a trading system, suggests
+    that the developer doesn’t really understand proper strategy development. It can
+    easily be shown how testing without commissions and slippage leads one to select
+    trading systems that trade more often, with lower average profit per trade. For
+    example, if you optimize based on net profit or something similar, the optimizer
+    will usually give you a best set of parameters that make you trade too much. Here
+    is an example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Without Slippage or Commission
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Parameter Setting 1: Gross profit/trade = $25, 1,000 trades, gross profit =
+    $25,000'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Parameter Setting 2: Gross profit/trade = $50, 300 trades, gross profit = $15,000'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The optimizer will select Setting 1 as superior.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With $25 Slippage and Commission
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Parameter Setting 1: Net profit/trade = $0, 1,000 trades, gross profit = $0'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Parameter Setting 2: Net profit/trade = $25, 300 trades, net profit = $7,500'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The optimizer will now select Setting 2 as superior.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Which approach is better? Well, in the first scenario, such a system in the
+    real world will churn the average trader until his account is depleted. It is
+    definitely not as simple as “you can add commissions and slippage in later.” The
+    second scenario, however, produces a result that is far more realistic and believable.
+    So, all other things being equal, optimizing with slippage and commissions is
+    an approach much closer to reality and should always be used.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With these basic ground rules in place, the first number I look at is the total
+    net profit. This seems self-evident, since if there is no profit, why bother looking
+    at the report any further? It may be that the net profit shown is not worthwhile,
+    either due to the time period involved or the drawdown that has to be endured,
+    but there should be profit nonetheless. In my experience, with a walk-forward
+    back test, the annual net profit should be $5,000 per year per contract minimum,
+    preferably $10,000 or more. Any amount less than this will likely not be worthwhile
+    on a risk-adjusted basis or will not have enough trades to be significant.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Profit factor is the next number I review. Obviously, higher numbers are better
+    here. Many people say that only profit factors greater than 2.0 are acceptable,
+    but I don’t share this view. To me, anything over 1.0 has at least some merit,
+    so I don’t discard any systems between 1.0 and 2.0 just based on this number.
+    I do find that profit factors below 1.5 generally have a hard time making it through
+    the rest of the steps in the development process, though.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I always review total number of trades to ensure that enough trades are being
+    taken during the test period. If, for example, the report contains only 5 trades,
+    just how valid can the results actually be? I generally use a rough guide of 30
+    to 100 trades minimum per strategy rule. So, for example, if I have four strategy
+    rules, I’d like to see at least 120 to 400 trades in the report. Obviously, the
+    more trades the better.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Average trade net profit is the next performance number I look at. Since this
+    number is after commissions and slippage, it is a great and easy way to compare
+    trading systems. I generally like to see $50 or more per trade average, based
+    on trading one contract. For average trade values less than $50, the system might
+    still be viable, but the closer you ride to that $0 breakeven line, the less leeway
+    you allow for errors, mistakes, slight changes in performance, and the like.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The next number I review is average losing trade, which I combine with the average
+    trade net profit to calculate expectancy. There is a lot of confusion about expectancy
+    and how to calculate it, so I will explain it here.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Many traders calculate expectancy in this way:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Expectancy = average $ winners * win % + average $ losers * lose % = average
+    trade
+  prefs: []
+  type: TYPE_NORMAL
+- en: where average $ losers is a negative number
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that this is also the average trade net profit. So calculating an expectancy
+    using this equation does not provide any additional information beyond what is
+    already known with the average trade net profit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'An alternative expectancy can be calculated as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Expectancy = (average $ winners * win % + average $ losers * lose %)/ (-average
+    $ losers)
+  prefs: []
+  type: TYPE_NORMAL
+- en: This metric is useful since it is a risk-adjusted value. It basically states
+    for every dollar you risk, what is your expected return? So with an expectancy
+    of 0.2, you’d expect to receive 20 cents in gains for every $1 you put at risk.
+    This expectancy has been heavily touted by trading psychologist and educator Dr.
+    Van Tharp, so to avoid future confusion, I will refer to this calculation as “Tharp
+    Expectancy.” To me, it is much more valuable than the first method of calculating
+    expectancy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For the Tharp Expectancy, I generally look for values greater than 0.1\. Anything
+    below this threshold will be difficult to trade and likely will demand too much
+    risk for too little reward.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The next numbers I look at in the performance report are total slippage and
+    total commission. If the numbers are $0, I immediately discard the report and
+    ignore all other results I may have seen. There is no such thing as cost-free
+    trading, so any performance report showing that is bogus. In general, I need to
+    see $5 per round turn trade per contract for commissions. That is a typical value
+    charged by a discount broker, after all exchange fees, National Futures Association
+    fees, and so on are added in. Commissions can be less than this, especially if
+    you do a lot of volume or if you are an exchange member, but the $5 figure is
+    appropriate for most retail traders.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Total slippage is an even more critical number than total commission. Many
+    developers, especially those who have never traded before, consistently underestimate
+    the amount of slippage experienced in the real world. I define slippage as the
+    difference between what the software strategy back-test engine gives for fills
+    and what your actual fills are. For example, many strategy engines assume buy
+    fills at the bid, when in real trading you’ll buy at the ask. The difference is
+    what I consider slippage. Based on my experience, I assume the following slippage
+    values for heavily traded markets:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Market orders: 1 to 2 ticks slippage per round turn.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Stop orders: 1 to 2 ticks slippage per round turn.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Limit orders: 0 ticks slippage.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The tricky part is that a typical trading strategy will have some mix of market,
+    limit, and stop orders. In that case, if you can apply only one slippage value
+    to each trade, what should it be? I find being conservative in this situation
+    helps. I will generally apply 1.5 to 2.0 ticks of slippage per round turn trade
+    for these mixed-order-type strategies. I find this generally a bit pessimistic,
+    but it is better than underestimating the slippage costs and being disappointed
+    with real-world results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The final number I look at in the performance report is maximum drawdown. I
+    have no set criteria for a drawdown limit, but if I see a $10,000 maximum drawdown
+    for a strategy that produces only $15,000 net profit, alarm bells go off. In the
+    back of my mind, I look at the drawdown knowing that I can expect to see an even
+    larger drawdown at some point during live trading. If I can’t handle the drawdown,
+    I’ll discard the system immediately. Otherwise, I know that high risk, low rewards
+    will be tossed out during later steps, so I don’t eliminate the strategy just
+    yet.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are arguably other important numbers in the performance report, to be
+    certain. Many people, for example, put a lot of faith in winning percentage, or
+    Sharpe ratio, or one of the hundreds of other metrics. The fact is that all metrics
+    are important to an extent, and the developer should try to find ones he or she
+    is comfortable with. Ultimately, any metrics relied upon should prove themselves
+    by leading to successful real-time strategies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Once I am done reviewing the performance report, I generally take a look at
+    some of the trade graphs. I am interested in one chart in particular: the closed
+    trade equity graph. If you are a visual learner, just looking at an equity curve—either
+    a closed trade equity curve or a daily equity curve (shown in [Figure 6.2](#figure6-2))—might
+    tell you all you need to know. Here are the main things I look for in an equity
+    chart.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c06f002.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 6.2**](#figureanchor6-2) Sample Equity Curve'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first thing I look for in an equity curve is the slope. If the chart is
+    not steadily going from lower left to upper right, it may not be a very good strategy.
+    The problem is that the chart can be distorted by the scaling used. So it is also
+    important to look at the end equity, and then divide that by the number of years
+    in the curve. That will give you an annual average profit and a good indication
+    of whether the strategy is at all worthwhile.
+  prefs: []
+  type: TYPE_NORMAL
+- en: After the slope, I like to look for flat periods. Flat periods are obviously
+    better than periods of drawdown, but many periods, punctuated by rapid rises,
+    should be cause for concern. Such an equity curve suggests that the strategy may
+    have caught only a few good trades, possibly because of curve fitting or overoptimization.
+    Flat periods could also be caused by government intervention, for example the
+    United States quantitative easing programs (QE, QE2, QE3) in the 2009–2013 time
+    frame. In this case, it might be okay to assume that performance will improve
+    when government intervention ends. Of course, when, if ever, will some sort of
+    government intervention end, and who can predict it?
+  prefs: []
+  type: TYPE_NORMAL
+- en: The third major item I look for is drawdown periods. How severe are the drawdowns,
+    and how long does the strategy take to recover from these drawdowns? Answers to
+    these questions will give you an idea of what to expect if you trade this strategy
+    for real. Drawdowns in the future may be more severe, and may last longer—your
+    position sizing and money management should assume that both of these things will
+    happen—but you can at least get a sense of what to expect.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The absence of any drawdowns on the equity curve should also be cause for concern.
+    I know of no real system, except for money deposited in a savings account, that
+    has only a small or no drawdown. Again, the curve has to “look” realistic. Reward
+    with no risk is not realistic.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'A final item I review on equity charts is the “fuzziness” of the curve. This
+    cannot be seen on a closed equity chart, but it can be seen on a daily equity
+    chart. The fuzzier the curve, the more the daily results jump around, moving up
+    and down short term, even if the longer-term trend is up. Curves that are very
+    fuzzy are harder to trade, harder to position size, and harder to emotionally
+    deal with. Think about it: if System A gains $200 on day 1, loses $200 on day
+    2, and gains $75 on day 3, is that preferable to System B, which gains a steady
+    $25 per day? Both have the same end result, but the fuzziness of System A makes
+    it less appealing than System B.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Obviously, just looking at an equity curve is by no means a very scientific
+    or very rigorous way to evaluate a trading system. But it can be useful for preliminary
+    analysis. There is no need to look at performance report details if you do not
+    like the look of the equity curve. In those cases, you can save a lot of time
+    by spending a few seconds staring at the equity curve and then rejecting a system
+    you do not like.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The discussion thus far has focused on simple, quick numbers and methods to
+    evaluate the performance of a trading system. Such analysis is useful in the early
+    stages of development, where most strategies are junk, and a fast, cursory review
+    can eliminate them, freeing up more time for you as the developer to create new
+    systems. But, eventually, you will need to do in-depth analysis of performance
+    results. That is a whole different animal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 7
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Detailed Analysis
+  prefs: []
+  type: TYPE_NORMAL
+- en: As the development of a trading strategy progresses, the analysis also progresses,
+    and the performance hurdles a strategy must meet to be considered viable get more
+    stringent. My primary method of analysis at the later stages is Monte Carlo analysis.
+    But before I explain how I run the analysis and what I look for in results, I’ll
+    first briefly describe the process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) What Is Monte Carlo Analysis?'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Monte Carlo analysis, or simulation, sounds like a daunting topic, but actually
+    it is not. With the Monte Carlo spreadsheet I created, which you can download
+    for free ([www.wiley.com/go/algotradingsystems](http://www.wiley.com/go/algotradingsystems)),
+    the analysis is pretty simple. But what is it actually?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Think about the individual trades in your strategy. These trades taken sequentially,
+    in the order they occurred, yield the strategy equity curve. But what if the order
+    of those was different? Could the drawdown become more severe? Could the end equity
+    be different? These are the questions Monte Carlo analysis can answer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In its simplest form, you can think of it this way: First, get a number of
+    little pieces of paper, one for each trade in your strategy. Then, write down
+    one trade result on each piece of paper. Once you have all trades accounted for,
+    put all the pieces in a hat. Randomly choose one. That is your first trade. Record
+    it, adding it to your initial equity, and then put the piece of paper back in
+    the hat (this is referred to as random sampling with replacement). Then, pick
+    another piece of paper, record its value, and add it to the existing equity curve
+    you are building.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you do this for a number of trades, you’ll have a possible equity curve.
+    If you perform the whole analysis many, many times, you’ll have a family of equity
+    curves. Each one represents a possible way that trades in your strategy could
+    have occurred. Using the family of possible curves, you can get statistics about
+    your trading system. These statistics can help you evaluate a strategy, determine
+    a position sizing approach, and give you realistic scenarios for what you might
+    face if you actually trade the strategy live. Of course, this all assumes that
+    the historically derived trades will be the same as the trades in the future.
+    If your historical trades are based on flawed development, future results will
+    be garbage.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Obviously, there are some potentially serious drawbacks to this analysis. First,
+    the analysis assumes that the trades in your performance report are the only possible
+    trades that can happen. This is obviously false, since when you start trading
+    live, any result is possible for a particular trade. But, if the distribution
+    (overall mean and standard deviation) of the trades is accurate, then the Monte
+    Carlo approach can yield meaningful results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A second drawback is that this analysis assumes that each trade is independent
+    of the previous trade, a condition commonly referred to as serial or auto correlation.
+    For most trading strategies, this is not an issue. However, if you have a strategy
+    in which the trade results depend on each other, simple Monte Carlo analysis is
+    not appropriate. An example of such a situation would be if the trade B signal
+    is dependent on the outcome of the previous trade A. You ideally should check
+    for it before using the Monte Carlo analysis. One method for checking for serial
+    correlation is the Durbin Watson statistic. Although it is beyond the scope of
+    this book, you can find details, examples, and spreadsheets on this calculation
+    on the Internet.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you find that your trades do exhibit serial correlation, the simple Monte
+    Carlo analysis may not be appropriate to use. In such cases, you could try to
+    use a Monte Carlo simulation that included serial correlation effects, or you
+    could gather statistics from a method called “start trade analysis” or “moving
+    start analysis.” In this analysis, you simulate the start of trading at each trade,
+    and gather the statistics for return and drawdown. For example, if you have 10
+    trades, *i*, *i + 1, … i + 9* in your sample, you’d first create an equity curve
+    starting with trade *i*. From the resulting curve, you could get the drawdown
+    *d[i]*. Then, start the equity curve at trade *i + 1*. This curve would give you
+    the drawdown *d[i]*[+1]. If you continue through all the trades, you can analyze
+    the set of drawdowns *d.* This method may be a bit more cumbersome than Monte
+    Carlo, but it is a better way to analyze the data when you have serial correction,
+    since trade sequence will be mostly preserved.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Assuming you can live with the drawbacks listed, Monte Carlo can help you answer
+    the following questions:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: What is my risk of ruin for a given account size?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: What are the chances of my system’s having a maximum drawdown of X percent?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: What kind of annual return can I expect from this trading system?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Is the risk I am taking to trade this strategy appropriate for the return I
+    am receiving?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Each of these questions will be addressed in the discussion that follows. To
+    simplify the narrative, I will assume the reader is using my Monte Carlo spreadsheet.
+    Any Monte Carlo simulator available to the public should be able to give the same
+    results, although some of the terminology and assumptions used may be different.
+    Therefore, whether you use the simulator or not, the discussion will still be
+    useful for you.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Inputs to Monte Carlo Simulator'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: There are only a few required inputs to perform Monte Carlo simulation. These
+    are listed below, and are shown in [Figure 7.1](#figure7-1).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c07f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 7.1**](#figureanchor7-1) Monte Carlo Simulator Inputs'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Base Starting Equity.* This is the starting amount of your account, in dollars.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Stop Trading if Equity Drops Below $.* This is the amount of capital below
+    which you will cease trading. For example, if you enter $3,500 here, once your
+    equity, on a closed-trade basis, drops below $3,500, you will not be permitted
+    to trade anymore. Your account will be considered “ruined.” At a minimum, this
+    value must be greater than the initial margin for one contract of the instrument
+    your system is trading. In the preceding example, you could trade only products
+    that had an initial margin below $3,500\. If you wanted to trade a higher-margin
+    instrument, such as gold (currently at $8,800 initial margin), you would have
+    to increase this minimum amount. As a rule, I never recommend trading with only
+    enough capital to just meet the margin requirement, but for this simulation, the
+    assumption is acceptable.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*# Trades, 1 Year.* This is simply the number of trades that your system takes
+    in a one-year period. My simulator is designed to trade for only one year, so
+    each equity curve generated will consist of this number of trades. That is, of
+    course, assuming the ruin point is not hit first.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Individual Trade Results.* This column of data contains all the trade data,
+    one trade per row. All trades should be based on the same reference point, that
+    is, per contract, per day, and so on. You cannot mix some trades that were based
+    on one contract with trades that had multiple contracts.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Limitations of the Simulator'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: To keep things simple, the simulator makes a few assumptions. First, it is assumed
+    that one contract is traded for each trade. There is no position sizing built
+    into the simulator. Second, the simulator assumes one year of trading. Both of
+    these assumptions can be changed in the Excel macro code by anyone who understands
+    macro programming language.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the discussion that follows, a “run” or iteration is defined as the generation
+    of one single equity curve. In a “simulation,” there will be a number of runs—in
+    the simulator discussed, this is 2,500 runs. To generate statistics, such as risk
+    of ruin or median return, the results of a simulation (2,500 individual runs)
+    are used.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Simulator Output'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Once the simulator runs, a table of output values and corresponding curves will
+    be generated, as depicted in [Figure 7.2](#figure7-2). Following is an explanation
+    of each output value, how to interpret it, and what values I consider appropriate
+    for a tradable system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c07f002.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 7.2**](#figureanchor7-2) Monte Carlo Simulator Outputs'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Starting Equity
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This is the size of your account at the start of the Monte Carlo analysis. All
+    rates of return are calculated based on this number, and risk of ruin and maximum
+    drawdown are both heavily influenced by it. The simulator uses a range of different
+    starting equities in order to generate the table and the output curves.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Risk of Ruin
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This statistic tells you the chances (probability) that within a year’s time,
+    your account will be wiped out (i.e., fall below the “Stop Trading if Equity Drops
+    Below $”). For example, if the risk of ruin is 12 percent, that means within the
+    first year of trading the system, you have a 12 percent chance of having to cease
+    trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Risk of ruin is an extremely important statistic, especially for traders with
+    small accounts. The risk of ruin can be significant for small accounts, even if
+    the system is a winning system! Here is an example that should make that clear:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let’s say you have a very good day trading system. It trades two times a day.
+    Winning trades are $200 after all costs, 50 percent of the time. When it loses
+    the other 50 percent of the time, it loses $175 net.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Per day, on average, you’d make $25 a day. In a year, you’d make $6,300 per
+    contract. If you traded this with a $10,000 account, always with one contract,
+    you’d make a 63 percent annual return, with somewhere around 15 percent maximum
+    drawdown. By most measures that is really good.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now, let’s say you take this positive expectancy system and trade it with a
+    small account, $5,000 and under. Let’s say your broker allows $500 day trading
+    margin, so that is your “ruin” point—if your account drops below $500, you are
+    ruined and you quit trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In one year of trading, how likely are you to be ruined (drop below $500 and
+    cease trading)? The results, depicted in [Figure 7.3](#figure7-3), might surprise
+    you.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c07f003.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 7.3**](#figureanchor7-3) Account Size and Risk of Ruin'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The question is: where do you feel most comfortable being on this curve? The
+    person with $1,500 is probably panicking after each loss, since he doesn’t have
+    much wiggle room. But the trader with $5,000—still a small account, only 3.3 times
+    the first trader’s account—is 20 times less likely to be ruined.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The conclusion is that being underfunded can be disastrous, *even with a winning
+    system.* So I pay a lot of attention to the risk-of-ruin number that the simulator
+    outputs. Any value above 10 percent means, for me, that I am trying to trade the
+    system with too little capital, and that I should increase the amount of capital
+    to get below 10 percent. Obviously, systems with 0 to 1 percent probability of
+    ruin are the best, but as with anything in trading, it is a trade-off with rate
+    of return. In my experience, I have found that simulation results with less than
+    10 percent risk of ruin are fairly safe, while still providing an acceptable rate
+    of return.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Median Drawdown
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This statistic can be a bit confusing at first. It is actually the median value
+    of the maximum drawdown. Are you confused yet? Perhaps breaking it into pieces
+    will help.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'First, the maximum drawdown is the maximum percentage drop in account size
+    from an equity peak. It should always be measured from the previous equity peak.
+    [Figure 7.4](#figure7-4) gives an example of three different drawdowns:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Drawdown 1: $5,000 drawdown, after peak equity of $20,000 = $5,000/ $20,000
+    = 25 percent drawdown'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Drawdown 2: $10,000 drawdown, after peak equity of $30,000 = $10,000/ $30,000
+    = 33 percent drawdown'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Drawdown 3: $15,000 drawdown, after peak equity of $60,000 = $15,000/ $60,000
+    = 25 percent drawdown'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/c07f004.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 7.4**](#figureanchor7-4) Maximum Drawdown Explained'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this example, the maximum percentage drawdown occurs during drawdown 2 and
+    is 33 percent. It is interesting to note that it is the maximum percentage drawdown,
+    not the absolute dollar maximum drawdown (drawdown 3, in dollar amounts, is higher
+    than drawdown 2).
+  prefs: []
+  type: TYPE_NORMAL
+- en: For every simulation run, there will be a corresponding maximum percentage drawdown.
+    Over a great number of simulation runs, there will be a distribution of maximum
+    drawdowns, varying from 0 percent (no drawdown at all, a hopelessly pie-in-the-sky
+    case), to 100 percent (a complete ruin from the peak equity point, down to $0
+    equity). This distribution will have a median value, which means that 50 percent
+    of the drawdown values exceed the median, and 50 percent are below it. Therefore,
+    in the term “median maximum drawdown,” the word *maximum* refers to the largest
+    drawdown in a particular simulation run, and *median* refers to the midpoint of
+    maximum drawdowns over a large number of simulation runs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There is no magic in selecting the median maximum drawdown to be the output
+    value for the simulation. It could easily be the 30 percent, 60 percent, 90 percent,
+    and so on, percentile value, too. I chose the median value just to use for comparison
+    purposes to other systems. If I instead wanted a worst-case value, I could have
+    used the 95th percentile value of drawdown, meaning only 5 percent of maximum
+    drawdowns are worse than this value.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Based on my own personal preference, I generally accept up to a 40 percent median
+    maximum drawdown. That is, within 1 year I have a 50 percent chance of reaching
+    a 40 percent maximum drawdown. This may be too extreme for most people, but it
+    suits my objectives and my personality.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'One thing to keep in mind with maximum drawdown is that traders, especially
+    new traders, have a tendency to greatly overestimate their ability to withstand
+    a drawdown. Based on my conversations with various traders, I have found that
+    traders can generally handle half the maximum drawdown they think they can handle.
+    For instance, if a trader decides before trading a system that he can handle a
+    30 percent maximum drawdown, when real money is on the line, he will start to
+    panic, and likely quit or change the system, at the 15 percent drawdown point.
+    I have coined a phrase for this phenomenon: “half of what you think it is.” Just
+    remember to keep this in mind when you establish your personal maximum allowable
+    drawdown.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Median $ Profit, Median Return
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: As with the drawdown, over a full simulation of 2,500 runs, there will be a
+    distribution of results. This distribution is used to calculate the median profit
+    and median return. Median $ profit is simply the final equity minus the initial
+    equity, after one year’s worth of trades. Over the course of 2,500 runs, a median
+    level can be calculated. This is the median $ profit. The median return is calculated
+    in a similar fashion, although it is the final equity divided by the initial equity,
+    in order to get it into percentage terms.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For my personal trading, I have no set goal for median $ profit. I do like to
+    see median returns above 50 percent, especially since I stated earlier that I
+    would allow up to 40 percent median drawdown values. It would not be wise of me
+    to set the return threshold at 20 percent with a 40 percent drawdown. To keep
+    me aware of this relationship between risk and reward, I also calculate the return/drawdown
+    ratio.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Return/Drawdown
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Of all the statistics produced by the Monte Carlo analysis, I feel this number
+    is the most important. It is referred to in financial literature as the Calmar
+    ratio when it is calculated over a three-year period. Since I am only simulating
+    one year of performance, the simulator result is not exactly a Calmar ratio. The
+    spreadsheet-produced number is simply the median annual percentage return divided
+    by the median maximum percentage drawdown.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One way to think about this ratio is “it takes Y risk to make X.” In this case,
+    Y is the drawdown, and X is the profit return. Obviously, high values of this
+    ratio are better. I generally look for return/drawdown ratios above 2.0, although
+    I will accept lower values in special circumstances. In my experience, I find
+    that ratios above 2.0 will usually produce acceptable results in the real world
+    of trading live.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Prob > 0
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This gives you the probability, expressed as a percentage, that the system will
+    make money in the first year of trading. For example, if Prob > 0 equals 89 percent,
+    that means you will have an 89 percent chance of showing profit in the first year.
+    Of course, this is all based on your historical test results, so if they are not
+    accurate, this result will not be either.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Summary'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Now that we have discussed the performance report, equity curve, and Monte Carlo
+    simulator, we can summarize the uses of all the values and threshold values for
+    acceptability ([Table 7.1](#table7-1)).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**TABLE 7.1**](#tableanchor7-1) Important Performance Parameters'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Parameter | Source | Utilized During | Threshold |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- | --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Total net profit | Performance report | Initial review | ∼$10K per year per
+    contract |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Profit factor | Performance report | Initial review | >1.0 OK, >1.5 ideal
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Average trade net profit | Performance report | Initial review | >$50 per
+    contract |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Tharp Expectancy | Performance report | Initial review | >0.10 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Slippage and commission | Performance report | Initial review | Discard if
+    $0, otherwise $5 commission 1–2 ticks slippage per round turn |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Maximum drawdown | Performance report | Initial review | Should be much smaller
+    than total net profit |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Equity curve slope | Equity curve | Initial review | Ideally rises at 45-degree
+    angle |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Equity curve flat periods | Equity curve | Initial review | Short in duration
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Equity curve drawdown, depth and duration | Equity curve | Initial review
+    | Proportional to overall curve |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Equity curve fuzziness | Equity curve | Initial review | Small is ideal |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Risk of ruin | Monte Carlo simulation | Detailed review | <10% |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Median maximum drawdown | Monte Carlo simulation | Detailed review | <40%
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Median % return | Monte Carlo simulation | Detailed review | >40% |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Return/drawdown ratio | Monte Carlo simulation | Detailed review | >2.0 |'
+  prefs: []
+  type: TYPE_TB
+- en: CHAPTER 8
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Designing and Developing Systems
+  prefs: []
+  type: TYPE_NORMAL
+- en: With the vast multitude of trading system software packages now available, designing
+    your own trading system has never been easier. Of course, the popularity of packages
+    such as TradeStation, NinjaTrader, and MultiCharts is both a blessing and a curse.
+    These simple-to-use software programs make turning ideas into strategies easier
+    than ever before. What used to take weeks to accomplish in Microsoft Excel or
+    in a hardcore programming language (such as C, C++, Visual Basic, or, for those
+    older programmers out there, Fortran) now takes minutes or even seconds. Life
+    is certainly easier in that respect.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The downside to this modern software—besides the fact that many people are testing
+    millions of trading ideas every day and will likely discover any “edge” you find,
+    eventually rendering it useless—is that trading software makes it too easy. Simply
+    look a chart, insert a strategy—possibly one of the many standard strategies that
+    come with the software—and you can quickly analyze and optimize to your heart’s
+    content.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Unfortunately, it is this simplicity that is also the Achilles’ heel of the
+    software. It is nearly impossible to create a viable strategy in the simplistic
+    manner that trading software products describe. Taking the easy way may indeed
+    give you a strategy with a terrific-looking back test, but when the strategy starts
+    running live, all statistics turn bad. Perhaps this has happened to you, as it
+    did to me in my earlier development days. I was adept at producing back tests
+    that looked like the left side of Figure 5.3, only to turn them loose on the live
+    market and experience the right side of the equity curve, which inevitably lost
+    money.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another drawback to the simplicity of ease of use of these “retail” trading
+    software packages is that many professional traders can’t or won’t use them. That
+    should give pause to every retail trader who thinks the well-known, commercially
+    available package is the best. The fact is that many professionals are typically
+    using far more sophisticated programming and analysis tools, such as R, Python,
+    Matlab, and so on. Or they are developing their own platforms, from the ground
+    up, using open source code available on the Internet. I’m not trying to imply
+    that only professional software tools are good; rather, I am trying to alert traders
+    to the fact that there are limitations and shortcomings to all trading software.
+    If something does not provide the capability you need, either from an analysis,
+    strategy development, or automation point of view, chances are very good that
+    another, likely more expensive, software tool out there does provide it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Over the years, I’ve progressed from evaluating systems by hand to analyzing
+    them via spreadsheet, to creating strategy evaluators in Fortran (the engineer
+    in me) and Visual Basic, to primarily using TradeStation and NinjaTrader today.
+    Along the way, I made many mistakes developing trading systems and had to pay
+    the market “tuition” in the form of trading losses. Eventually, I finally got
+    smart in how I developed trading systems. Now, I follow a multistep approach,
+    as shown in [Figure 8.1](#figure8-1). At each point of the process, there is a
+    “gate”—criteria that a strategy must satisfy in order to advance to the next step.
+    For strategies that fail along the way, small adjustments can be made to the strategy
+    when appropriate. In most cases, however, it is better to place the strategy on
+    the scrap heap and just move on to the next idea. Why? Many times, when a strategy
+    doesn’t work the first time through the process, changes to it may inadvertently
+    introduce curve fitting, hindsight bias, or one of a million other strategy no-nos.
+    The deceiving part is that the back test will look better—possibly a great deal
+    better. But remember that the goal is not to create a superb back test; rather,
+    the goal is to create a back test that will reflect the future performance of
+    the strategy. Waterboarding or otherwise torturing your strategy until it gives
+    great results is not a successful approach.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c08f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 8.1**](#figureanchor8-1) My Strategy Development Process'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Back in the old days, before I developed the process I now use, I did what
+    most other people do: I picked a market, selected a bar interval and time period,
+    put a few rules in a strategy, and then optimized. Whatever turned out to be best
+    is what I started to trade with live. The magic of the computer, with its ability
+    to quickly do millions of iterations, uncovered what I was sure would be riches.
+    Boy, was I ever disappointed!'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Those early failures led me to a more involved, robust, and ideally trouble-free
+    development process. I can’t take credit for any of the individual concepts—certainly,
+    many traders before me long ago developed most of the steps of my process. One
+    great classic reference on system development is the “bible” of system design:
+    *The Evaluation and Optimization of Trading Strategies*, by Robert Pardo (John
+    Wiley and Sons, 1992). I have simply tailored all I have learned and read to create
+    something that feels right to me, and by and large it has yielded good results
+    in real time.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: That is not to say it is an easy process for strategies to pass. When I first
+    started using the basic process I use today (I have enhanced and refined it over
+    the years, and if anything it is more stringent today than it was a few years
+    ago), it probably took me about 100 to 200 trading ideas for entries and exits
+    before I found something worth trading. With time and experience, that number
+    has dropped significantly, but coming up with tradable strategies is not an easy
+    task.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Traders that are new to using walk-forward analysis, Monte Carlo analysis,
+    and the like frequently are frustrated by the difficulty of discovering a strategy.
+    My answer to that dilemma usually is: “But that is how it is supposed to be!”
+    Think about it for a second—if it were easy to find a strategy, don’t you think
+    others would have already found it and exploited it? There are thousands of traders
+    and researchers out there every day looking for edges, mining data, and running
+    tests. I guarantee you that all the easy strategies either no longer work or have
+    been long ago discovered.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'My good trader friend, who is a Commodity Trading Advisor (CTA), once told
+    me that if he finds one new strategy a year to trade, he is a happy camper. He
+    should be, since even one strategy, with proper money management, can make you
+    rich. But to get that one strategy per year takes a lot of work. I frequently
+    think of the strategy development process as a factory. At the receiving door
+    of the factory are your trading ideas and strategies, the raw material you constantly
+    need to run the factory. Your analysis tools, back-test software, and walk-forward
+    algorithms are the machines in the factory. You, of course, are the skilled labor
+    running the machines, monitoring the quality of the product. The output usually
+    fills a big garbage bin right outside your factory, unfortunately. But what isn’t
+    thrown away as garbage is pure gold: your tradable strategy.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The factory metaphor is appropriate because strategy development is tough work.
+    Factory workers are among the toughest people I know of, and that is how you need
+    to be to develop strategies. I am always amazed by educators out there who gloss
+    over strategy development. Instead, they focus on such nonsense as getting in
+    touch with your feelings or writing everything down in a journal. Don’t get me
+    wrong—those items have their time and place in trading, but they are no substitute
+    for having a strategy with an edge. If you don’t have a good strategy, all the
+    journaling in the world will not save you. As an aside, it is ironic, though,
+    that many times “soft” skills such as psychology or journaling will be indispensable
+    to a trader with an edge. You really do need both to succeed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Since strategy development is a factory, you need to keep the factory running
+    at all times. Here are some tips that I use or have used to keep things humming
+    along:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Any time you see a trading idea that intrigues you, write it down. Keep a list
+    of ideas you want to test.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Look for ideas anywhere. Trading books, magazines, and Internet forums are all
+    good sources of raw ideas. I would not recommend taking an idea as presented and
+    trading it exactly as is, though. I’d look to modify it first, and put your own
+    unique spin on it.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: No idea is too silly, too stupid, or too dumb. The only dumb ideas are the ones
+    you never test.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: If you make a big mistake in your coding, test it anyway. I’m a big proponent
+    of “accidental” mistakes. Maybe they are really serendipitous creations of your
+    subconscious. It sounds crazy, I realize, but I have successfully traded, with
+    real money, more than one of my programming mistakes.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: If things are going bad, try the opposite. Buy when you think you should sell,
+    and vice versa. Maybe something interesting will develop from your opposite idea.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: If you are a goal setter, try to test one to five strategies per week, at a
+    minimum. It may take six months to a year of rigorous testing, but eventually
+    you’ll find something.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'If you run out of ideas, pull up random charts and just stare at them. You
+    can even add an indicator or two. After staring a while, but not thinking, walk
+    away from those charts and revisit them a few days or a week later. Then start
+    to think: do you see anything in the relationship of the indicator to the chart
+    or in the chart itself? Write down what you see, program it, and test it.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Find other traders at roughly the same skill level as you. Offer to swap ideas
+    or strategies. Take what these traders have, and then build strategies around
+    their idea. I do this frequently with some of my fellow World Cup Championship
+    of Futures Trading winners.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Change your criteria. Maybe you are being too restrictive in what you consider
+    acceptable. Open the door a bit to strategies that meet most, but not all, of
+    your criteria. You can always tighten the criteria once your factory starts producing.
+    If you loosen your criteria, don’t necessarily trade the first strategy that passes.
+    The point of that really is to give you more experience and confidence in developing
+    “passing” systems. Then, tighten the criteria slowly, and ideally by then you’ll
+    be able to improve your systems to meet the tighter challenge. Keep repeating
+    this, and eventually you’ll have a strategy that meets your original criteria.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Isn’t It All Just Optimizing?'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'After reading the next few chapters about my process, you might wonder to yourself,
+    “Isn’t strategy development just all about optimizing?” That is a fair question,
+    and in a way, all strategy development is. If you start out with 10 million strategies
+    to test, chances are good that at least a few will make it through whatever performance
+    hurdles you put in place, and emerge after incubation as a potential winning strategy.
+    At that point, a few possibilities emerge regarding the strategy:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: You have a true edge, and you will be profitable trading it for at least a little
+    while, until the edge disappears.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: You have overoptimized and overfit the strategy to pass all the tests, but you
+    have nothing that will really work in real time (this happens a lot to inexperienced
+    developers).
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: You have tested so many strategies that sooner or later one was bound to pass
+    all your tests. You think this strategy has an edge, but it really doesn’t. It
+    is just random chance that you tried this particular strategy. Like a blind squirrel
+    finding a nut once in a while, you simply got lucky!
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Obviously, you are looking for strategies that fit into scenario 1\. My process
+    will help you avoid strategies in scenario 2 (although you can stretch the guidelines
+    I give and end up overoptimizing). Scenario 3 is, in my mind, the scary alternative.
+    With this scenario, you think you have an edge, but you really just got incredibly
+    lucky. You’ll never know for sure if this scenario applies. You could trade successfully
+    for years with a lucky strategy, or you could lose money from day 1\. You just
+    never know what will happen.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'My advice to avoid scenario 3—finding a “lucky” strategy:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Have a logical basis for your strategy. Think about your entries and exits and
+    how they can give you an edge. Use your brain to exploit what you see in the market.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Keep things as simple as possible. Typically, more rules and conditions lead
+    to a greater chance that the strategy will not work in the future.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Don’t just stick random indicators together until you find something that actually
+    works. If you do enough of these tests, you will eventually find something, but
+    it is probably just a lucky catch. There are products out there that use this
+    technique, and they can be very useful if used correctly. Just don’t expect the
+    computer to do all your strategy thinking for you.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Gently optimize whatever you do.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Sometimes I liken the strategy development process to fishing. If you want to
+    catch a catfish, one way would be to get a huge net, capture thousands of fish,
+    and then just pick your catfish out of the pile of fish stuck in the net. That
+    would be comparable to randomly testing a million strategies, and finding a few
+    seemingly great ones. A better way might be to think about what catfish like,
+    and tailor your bait and fishing method to what you think might catch one. This
+    is akin to developing an edge and then creating rules to exploit that edge. All
+    things being equal, your chances of long-term success are probably better with
+    the latter method.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the chapters that follow, I detail the process I currently use to design
+    and develop trading systems. Feel free to follow this exact process yourself,
+    or just extract bits and pieces that apply to your situation. In either case,
+    your development skills will improve by following what works for me.
+  prefs: []
+  type: TYPE_NORMAL

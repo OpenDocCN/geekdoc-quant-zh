@@ -1,0 +1,816 @@
+- en: PART IV
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: CREATING A SYSTEM
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 18
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Goals, Initial and Walk-Forward Testing
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now that I’ve walked you through the strategy development process I use, I think
+    it will be instructive and informative for me to walk you through the development
+    of two strategies I created in March 2013 and started real-money trading in August
+    2013\. If you go to the web site ([www.wiley.com/go/algotradingsystems](http://www.wiley.com/go/algotradingsystems))
+    you will see updates for these strategies, assuming I am still trading them, or
+    a post-mortem analysis if I decide to stop trading them.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The next chapters will walk you through the process, and after that Chapter
+    24 will give running commentary and updates as I trade it live.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Developing a New Strategy'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'As with all new trading strategies, first I start out with a SMART goal:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “I want to create a trading system for the euro currency that is an intraday
+    strategy that can earn 50 percent annual return with a median maximum drawdown
+    (determined by Monte Carlo simulation) of 25 percent or less, which is a return
+    to drawdown ratio of 2.0 or better. The system (which may include more than one
+    independent strategy) should make money on 55 percent or more of the days it trades.
+    This trading system will take no more than two trades per day. I will give myself
+    one month of development to complete this task (end of March 2013), and if I do
+    not have a system at that time, I will move on to the next idea.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Is this goal sufficient for a SMART goal? Let’s take a look:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '***S****pecific.* Intraday euro strategy, with specific performance goals.
+    Yes, it is specific. In fact, it may be too specific—it is a pretty long goal
+    statement.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '***M****easurable.* 50 percent annual return, less than 25 percent drawdown,
+    return/drawdown ratio greater than 2.0, 55 percent winning days. Yes, it will
+    easy to measure performance against these benchmarks.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '***A****ttainable.* 50 percent annual return, less than 25 percent drawdown,
+    return/drawdown ratio greater than 2.0\. When I first started developing systems,
+    these goals were very ambitious. It turns out that developing a strategy the *correct*
+    way is pretty difficult. Many people will scoff at these numbers, since they seem
+    small compared to what a decent optimized strategy looks like. Remember, though,
+    that a great-looking back test does not always mean too much. So, yes, the goals
+    here are attainable. The toughest part will be making the system an intraday strategy.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '***R****elevant.* Everything in my goal statement relates to development of
+    this system. Yes, it is relevant.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '***T****ime bound.* Since I limit myself to one month of development time,
+    this is a time-bound goal. This time limit will also prevent me from making too
+    many changes to a decent strategy, which will prevent overfitting and other bad
+    development habits.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Once I had the SMART goal identified, I could proceed to developing my trading
+    idea.
+  prefs: []
+  type: TYPE_NORMAL
+- en: From past development experience, I know that intraday systems are difficult
+    to develop, much more so than a longer-term swing system. The best intraday systems,
+    in my experience, are those that trade infrequently and tend to ride winners (trends)
+    as long as possible. That leads me in the direction of a strategy that cuts losses
+    relatively quickly, but keeps winners until the end of the day. To get the biggest
+    bang for the buck, then, this system should trade during the U.S. day session,
+    as many of the big moves occur during this very liquid time period. The problem
+    with this approach is that a system with many small losses and a few big winners
+    will inevitably have a low winning percentage. To counteract this, I will likely
+    need another strategy, one that has small winners, larger losers, and a high winning
+    percentage.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'As you can see, just thinking about the kind of system I want really helped
+    me figure out the best way to proceed. After some more thought, I ended up with
+    the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Create two strategies for the euro currency, using continuous contract @EC:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Strategy 1: Nighttime strategy “euro night.”* Runs on 105-minute bars, from
+    6 P.M. ET to 7 A.M. ET. All trades are exited by 7 A.M., so they do not interfere
+    with strategy 2\. This strategy will focus on small wins, larger losses, and will
+    initiate trades only until 1 A.M. ET (I have to sleep sometime, in case I do not
+    automate this strategy).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Strategy 2: Daytime strategy “euro day.”* Runs on 60-minute bars from 7 A.M.
+    to 3 P.M. ET, with all trades exited by 3 P.M. The end of the trading day is 5
+    P.M., but I am closing all trades at 3 P.M., since trading volume is a lot less
+    from 3 P.M. to 5 P.M.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: For the test period, since I am using small bars, I will test back only to January
+    1, 2009\. Typically, for swing systems I use 5 to 10 years of historical data,
+    which means this is a slightly different approach for me. This also avoids my
+    having to test during the 2008 financial crisis, which would likely make development
+    tougher. So note that, in a way, I am taking some shortcuts with this strategy
+    development, since I am (1) using only about 4 years of historical data, and (2)
+    avoiding a major market event. I realize that these shortcuts will lead to a system
+    that is not as robust as it could be, but that is a sacrifice I am willing to
+    accept. Strategy development is full of these trade-offs, and there is not always
+    a correct way to resolve them. Sometimes you just have to try and see what happens,
+    and that is what I am doing here.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now that I have the preliminary information established, I can go ahead with
+    the entry and exit rules. I’ll start with the exit rules, since those will be
+    relatively fixed, compared to the entries. For both strategies, I want to lose
+    no more than $450 per trade, after slippage and commission of $17.50 per trade.
+    This equates to a loss of 34 ticks. When I go to detailed development, I will
+    allow this stop amount to be lower than 34 ticks, but never more.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For profit, with both strategies I will allow the profit target to be optimized
+    for euro night strategy, and fixed at $5,000 for the euro day strategy. Since
+    there has never been a $5,000 intraday move in euro, the $5,000 limit is effectively
+    saying, “Go for as much profit as you can, and hold until the end of the trading
+    session.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: The final exit for both strategies will be to close all open trades at the end
+    of the session. This will be a rigid exit, with no optimization needed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With the simple exits firmly established, the trick to making these strategies
+    successful will lie in the entries. After some cursory examination and testing,
+    it became apparent that reversal-type entries would be the best thing for both
+    strategies. With a reversal entry, an example of which is shown in [Figure 18.1](#figure18-1),
+    the idea is to catch an excursion up or down, before it stops and reverses. This
+    makes these strategies a type of mean reversion, since you are entering against
+    a trend and banking on its reversing before turning into a trend in the opposing
+    direction.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c18f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 18.1**](#figureanchor18-1) Reversal Entry Example'
+  prefs: []
+  type: TYPE_NORMAL
+- en: For strategy 1, the euro night strategy, the long entry is based on the average
+    high of the previous X bars, reduced by a multiplier of the average true range.
+    Of course, the exact opposite entry is true for a short entry. See [Figure 18.1](#figure18-1).
+  prefs: []
+  type: TYPE_NORMAL
+- en: For strategy 2, the euro day strategy, when a highest high of the past Y bars
+    is hit, and the X bar momentum is down, then a limit order to sell short will
+    be placed Z ticks above the current high. The opposite logic holds for long trades.
+    Thus, to get filled, the strategy is planning on one more price thrust before
+    the price reverses. An example entry is shown in [Figure 18.2](#figure18-2).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c18f002.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 18.2**](#figureanchor18-2) Euro Day Strategy Entry Example'
+  prefs: []
+  type: TYPE_NORMAL
+- en: What do I think my edge actually is? Based on the reversal entries I am employing,
+    I feel my edge is in identifying very-short-term (for night strategy 1) and medium-term
+    (for day strategy 2) areas where the price is likely to reverse. By having limit
+    orders away from the current market, I liken my edge to a rubber band. It keeps
+    stretching and stretching until I get my limit fill, then it bounces back, giving
+    me profit. Of course, if the rubber band keeps stretching after my order is filled,
+    that means my premise was wrong, and I pay the price with a full stop-loss or
+    a loss at the end of the trading session.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With all the basic structure of the strategy, along with the entry and exit
+    in place, I can now start the preliminary testing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Limited Testing'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: For limited testing, I chose to look at the results for just 2009\. Since my
+    full-size test will be 2009–present, I am using about 25 percent of the data to
+    do my initial tests. This will give me a good indication of whether my strategy
+    is viable. Remember, with these tests I am looking for a general indication that
+    my entries, exits, and entries and exits combined are working well.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Entry test—fixed-stop and target.* The results of this test, and all other
+    limited tests are shown in [Table 18.1](#table18-1). All results are acceptable,
+    which allows me to proceed to the in-depth testing phase.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**TABLE 18.1**](#tableanchor18-1) Limited Testing Summary, Euro Day and Night
+    System'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '|  | Euro Night | Euro Day |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| **Entry Test—Fixed-Stop and Target** | 82% of optimizations profitable |
+    76% of optimizations profitable |'
+  prefs: []
+  type: TYPE_TB
+- en: '| **Entry Test—Fixed-Bar Exit** | Exit after one to five bars >> good | Exit
+    after one to five bars >> good |'
+  prefs: []
+  type: TYPE_TB
+- en: '| **Exit Test—Similar- Approach Entry** | Generic mean reversion limit order
+    entry >> acceptable | Generic mean reversion limit order entry >> acceptable |'
+  prefs: []
+  type: TYPE_TB
+- en: '| **Core System Test** | 85% of optimizations profitable | 81% of optimizations
+    profitable |'
+  prefs: []
+  type: TYPE_TB
+- en: '| **Monkey Testing** | Entry better than random | Entry better than random
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '|  | Exit better than random | Exit better than random |'
+  prefs: []
+  type: TYPE_TB
+- en: '*Entry test—fixed-bar exit.* The results look good and lead me to think I possibly
+    have some sort of edge here with my entry.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Exit test—similar-approach entry.* To test the exit, I created an entry condition
+    similar in style (mean-reverting limit order) to the one I am using. If the results
+    are good, it gives me just a bit more confidence in the exit I have chosen. Results
+    do indeed look good.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Core system test.* This test is a gentle optimization of the whole system,
+    with entry and exit conditions working together. Results show that the system
+    performs pretty well and is acceptable for further investigation.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Monkey testing.* This random testing can be very useful it certain situations.
+    Other times, it really doesn’t provide any additional information. Such is the
+    case here.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Limited testing summary.* Both strategies passed all the tests I ran, so the
+    strategies can proceed further through the process. Note that this is the exception,
+    not the rule. Most times, the results will be so poor that no further testing
+    is required, and you can simply move on to the next idea. In a minority of situations,
+    the results will be so-so, and you may add a rule or filter to get better results.
+    In very rare cases, strategies will be acceptable the first time through, which
+    is what happened here. As you develop experience creating and testing ideas, you
+    will find that more and more of your strategies fall into this third category.
+    At the start of your development journey, though, plan on discarding a lot of
+    garbage strategies and adding rules and conditions to most of the rest.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Walk-Forward Testing'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: With the limited testing complete, I can now proceed to the detailed walk-forward
+    testing. This consists of running a full optimization, and then running through
+    the walk-forward analysis. [Figure 18.3](#figure18-3) shows the process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c18f003.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 18.3**](#figureanchor18-3) Walk-Forward Testing, Euro Day and Night
+    Strategy'
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 19
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Monte Carlo Testing and Incubation
+  prefs: []
+  type: TYPE_NORMAL
+- en: With the walk-forward testing complete, based on the results I am confident
+    I have a viable strategy. The equity curve for walk-forward testing looks nice,
+    but at the same time I realize that there is no possible way the future equity
+    curve will look exactly like the past equity curve. My hope, and the hope of all
+    developers at this stage, is that the components of the equity curve (i.e., individual
+    trades) are roughly the same as the walk-forward history. The easiest way to imagine
+    this is to think about the average trade profit and its standard deviation (scatter).
+    If either of these values significantly changes, the system might fail in the
+    future. If, for example, the average trade turns negative, future performance
+    will obviously be negative. Similarly, if the standard deviation increases, the
+    drawdowns will likely be much more severe, the system will be harder to trade
+    with position sizing, and the resulting equity curve will probably give you more
+    ulcers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Assuming, then, that the walk-forward trade performance will continue in the
+    future, it becomes useful to see how the future performance might vary over time.
+    For this analysis, I simulate one year’s worth of trades with Monte Carlo analysis.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Euro Day Strategy'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'As previously discussed in Chapter 7, the only information required to do a
+    simple Monte Carlo analysis is:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Starting equity
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Quitting-point equity
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Number of trades in one year
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Individual trade results
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: For any simulations that you run, you might want to simulate more than one year’s
+    worth of trades, or you might want to include position sizing, or you may even
+    want to eliminate the quitting-point equity—the point at which you stop trading.
+    These particulars will be something you develop over time, as you determine what
+    you like and don’t like in the simulation. The exact method I use may not suit
+    you, and that is fine.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Once I have all the inputs for the Monte Carlo simulation, I simply enter them
+    in the spreadsheet and press the “Calculate” button. Results are as shown in [Figure
+    19.1](#figure19-1). For the day strategy, if I keep the risk of ruin below 10
+    percent (my personal threshold for ruin), I find I need $6,250 to begin trading
+    this system, and in an “average” year I can expect:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 23.7 percent maximum drawdown
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 129 percent return
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 5.45 return/drawdown ratio
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/c19f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 19.1**](#figureanchor19-1) Monte Carlo Results, Euro Day Strategy'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Other points of interest are that I have a 4 percent chance of ruin in that
+    first year, where my equity would drop below $3,000\. I also have a 94 percent
+    probability of making money in that first year (i.e., ending the year with more
+    than $6,250).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Based on my goals and objectives, all of these parameters are acceptable, and
+    I consider the Monte Carlo simulation results successful. Note that, based on
+    your goals and objectives, this system—with the $6,250 starting equity—may not
+    be good enough for you. For example, many people want a near 0 percent chance
+    of risk of ruin. Others may feel that 25.5 percent maximum drawdown is too high.
+    The point is that what is right for me might not be right for you. That is why
+    I think it is so important that you come up with your own goals and objectives.
+    In the end, you need to feel comfortable trading what you have developed, and
+    trading something that does not fit you is a sure recipe for disaster.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Euro Night Strategy'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Now, I will perform the exact same procedure on the euro night strategy. Results
+    are as shown in [Figure 19.2](#figure19-2). For the night strategy, if I again
+    keep the risk of ruin below 10 percent, I find I need $6,250 to begin trading
+    this system, and in an “average” year I can expect:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 25.0 percent maximum drawdown
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 52 percent return
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 2.0 return/drawdown ratio
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/c19f002.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 19.2**](#figureanchor19-2) Monte Carlo Results, Euro Night Strategy'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Other points of interest are that I have a 6 percent chance of ruin in that
+    first year, where my equity would drop below $3,000\. I also have an 85 percent
+    probability of making money in that first year (i.e., ending the year with more
+    than $6,250).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that this strategy is nowhere near as good as the euro day strategy. I
+    expected this because of the goals of the night strategy. If you will recall,
+    I was looking for a higher winning percentage strategy here, not one with necessarily
+    a lot of profit. Even so, the night strategy by itself meets my goals, although
+    the return/drawdown ratio of only 2.0 is on the low end of acceptability. But
+    since it meets my criteria, I can proceed to the final Monte Carlo step.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Euro Day and Night Strategy'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: While it is nice to know that either strategy, by itself, meets my performance
+    criteria, what really matters to me is how the combined day and night strategy
+    performs. Before I perform the Monte Carlo analysis, however, I have to do some
+    data manipulation. In the previous simulations, I used individual trades for the
+    inputs, which worked fine. But with the combined strategy, how do I ensure that
+    the correct ratio and distribution of trades is taken to reflect what really occurs
+    when I trade both strategies together? Some days, only one strategy will trade,
+    and on other days, both strategies will trade. I want to preserve this with the
+    combined simulation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The solution to combining strategies into one strategy is to use the daily results,
+    instead of the individual trade results. Then the net results on a given day will
+    be considered as the results of one system. An example of how that works is shown
+    in the “Combined” column of [Table 19.1](#table19-1).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**TABLE 19.1**](#tableanchor19-1) Combine Daily Results on Multiple Systems
+    to Get “One” Combined System'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Date | Euro Day | Euro Night | Combined |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- | --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 9/9/2013 | +$100 |  | +$100 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 9/10/2013 |  | +$600 | +$600 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 9/11/2013 | +$100 | +$250 | +$350 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 9/12/2013 | −$400 |   −$50 | −$450 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 9/13/2013 |  | +$100 | +$100 |'
+  prefs: []
+  type: TYPE_TB
+- en: By utilizing this technique, we have preserved the characteristics of each strategy’s
+    trades, and just combined them into daily trades. A similar approach can be used
+    to combine any two or more systems into one strategy. Simply compile results into
+    daily results, and use that in the simulation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Once I have the trade data compiled into daily results, I can perform the Monte
+    Carlo analysis on the combined euro day and night strategy. Results are as shown
+    in [Figure 19.3](#figure19-3). For the combined strategy, if I again keep the
+    risk of ruin below 10 percent, I find I need $6,250 to begin trading this system,
+    and in an “average” year I can expect:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 25.8 percent maximum drawdown
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 176 percent return
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 6.6 return/drawdown ratio
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/c19f003.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 19.3**](#figureanchor19-3) Monte Carlo Results, Both Strategies Combined'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Other points of interest are that I have a 5 percent chance of ruin in that
+    first year, where my equity would drop below $3,000\. I also have a 95 percent
+    probability of making money in that first year (i.e., ending the year with more
+    than $6,250).
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The most interesting aspect of this combined analysis is that the combined
+    system is better than each system by itself. I’ll repeat that: *the combined system
+    is better than each by itself.* This is due to the diversification effect, which
+    I discussed in Chapter 15\. The return-to-drawdown ratio, my primary metric in
+    Monte Carlo analysis, increases from 5.5 to 6.6, which is a considerable increase.
+    This is because by trading both systems, I get the combined return of the strategies,
+    but on the downside the drawdowns do not combine. Rather, when one strategy is
+    experiencing a drawdown, the other might be hitting new equity highs (or at least
+    not new maximum drawdowns). Diversification, by trading uncorrelated strategies,
+    is what makes this possible.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Looking at the Monte Carlo analysis as a whole, all my performance goals and
+    objectives are met for the combined system. Therefore, I consider this analysis
+    a “pass” and can now proceed to the next step: incubation.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Incubation'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: At this point, I have 3.5 or so years of walk-forward back-test history. On
+    top of that, I have about 5 months of “incubation” results, watching the euro
+    day and night systems perform real time, with no changes to the original code
+    (other than regularly scheduled reoptimizations).
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Walk-forward results: July 2009–March 2013'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Incubation results: March 2013–August 2013'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: If the incubation results of the last 5 months “look” similar to the walk-forward
+    results, I should feel comfortable going live with the strategy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Are Results Similar?'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Here is how I determine if incubation and walk-forward data “match.” Keep in
+    mind that I am not a statistician, so I tend to keep things simple, at the risk
+    of not being 100 percent mathematically and scientifically rigorous. What I do
+    passes a common-sense test, though. I use three methods to check for a match:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Student’s t distribution test.* This statistical test will tell you if two
+    data groups (the walk-forward results and the incubation results) are significantly
+    different from each other.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: You can pretty easily do this in Excel (with the TTest function), or you can
+    find on online t-test by searching with Google.
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: When I run this test, it tells me that there is a 56 percent chance that these
+    distributions are not different. This gives me reasonable assurance that the strategies
+    are performing in real time as they did historically. If, however, the chances
+    of the strategies being different were 0 to 20 percent, I might seriously wonder
+    if I made a testing development mistake.
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '*Data distribution comparison.* I create two histograms of the data. The first
+    one is the actual data, and I lay the walk-forward and the incubation results
+    on top of each other. Do they look like they overlap? The second chart plots a
+    theoretical normal curve histogram, based on the mean and standard deviation.
+    I see a good amount of overlap in [Figure 19.4](#figure19-4).'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Equity curve comparison.* This is my favorite method, but it is not very scientific
+    or mathematical. I simply plot all the data and create an equity curve. When I
+    do that, can I see where the walk-forward ends and incubation begins? If I can,
+    that suggests something happened when incubation started, and that is usually
+    a bad thing. If you wonder about this method, just create a strategy with optimized
+    parameters, and then let it run live for a while. Most times, you’ll notice a
+    change in the curve. I do not see a radical change in the incubation portion of
+    the curve, shown in [Figure 19.5](#figure19-5). This is a good sign!'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![images](images/c19f004.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 19.4**](#figureanchor19-4) Incubation Results—Data Distribution Comparison'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c19f005.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 19.5**](#figureanchor19-5) Incubation Results—Equity Curve Comparison'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Based on this analysis, I’d say the system is performing in incubation the same
+    as it performed in its walk-forward test. In fact, incubation is better than walk-forward,
+    which does concern me a bit (usually it is the other way around). But it is close
+    enough to give me confidence that I did not screw up during testing in development.
+    It does not guarantee that when I go live, the system will be profitable—that
+    is important to remember.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Final Information'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Once all the tests are complete, I can make a decision on whether to proceed
+    with trading the system. Even if the strategy passes all the development steps,
+    I still might decide not to trade it. Position sizing and correlation with other
+    strategies are two possible reasons I might decide not to trade a specific strategy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Position Sizing'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Although I discussed position sizing in more detail in Chapter 16, I did not
+    design the strategy specifically for any position sizing method. Of course, it
+    is an important item to think about before I start trading with real money. A
+    strategy can be great, but if reasonable position sizing cannot be applied to
+    it, it just may not be worth trading with real money. This can occur when single
+    contract losses are too big, and the account size needed to trade the strategy
+    is prohibitively large.
+  prefs: []
+  type: TYPE_NORMAL
+- en: An example of this is a system very similar to one I developed and have been
+    trading for a number of years. This system wins $5,000 per contract on 50 percent
+    of trades, and loses $3,000 per contract on the other 50 percent. The average
+    profit/loss per trade is therefore $1,000, and the Tharp expectancy is 0.33, which
+    is indicative of a pretty good system. But how much money do you need to trade
+    such a system? Assuming the strategy trades 20 times per year, and the quitting
+    equity point is $3,000, you need a $20,000 account to have only a 6 percent chance
+    of ruin. Plus, your maximum drawdown is likely to be 33 percent. That is just
+    too much for many of us. To get a drawdown below 25 percent, one would need a
+    $35,000 account. This probably puts this system out of reach for most traders.
+    Remember, this is trading only one contract. Using any kind of position sizing
+    will make these drawdown and ruin numbers much worse. Thus, in your development
+    process you may end up with a profitable system that you just can’t trade.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Correlation with Other Strategies'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Before I start trading a strategy live, I always check the performance of the
+    new system with systems I am already trading. I run a simple correlation of daily
+    returns. This will tell me if the new strategy is highly correlated to any of
+    my existing strategies. Obviously, trading two strategies that are highly correlated
+    isn’t a good idea unless you cut the position sizing of each in half. Otherwise,
+    you may end up with too much exposure in a particular market or to a particular
+    trading style. Many times, for strategies developed independently, this is not
+    an issue, but it is always good to check.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Monte Carlo—Consistency'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: One of the interesting side benefits of performing Monte Carlo analysis is that
+    you can get an idea of your profit consistency. Imagine you were manager of a
+    casino. Over the course of five minutes, your casino might make or lose money
+    at the gambling tables. There is some randomness to the results, so even the house
+    could lose money in a given short time frame. As the time increases, your chances
+    of profitability go up, and eventually approach near certainty. Your casino probably
+    makes money every week and almost certainly makes money every month—unless, of
+    course, the criminal underworld is skimming from you!
+  prefs: []
+  type: TYPE_NORMAL
+- en: The concept of a casino got me thinking that I’d really like to be profitable
+    over a week, month, or year with my trading systems. Obviously, that is a function
+    of my “roulette wheel”—my trading system and how much of an edge it provides.
+    If I assume that my historical results will match my future results, I can use
+    the Monte Carlo analysis to determine my odds of profitability. From that number,
+    I can determine how consistently profitable I am over any given time period.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Using this idea, I ran the analysis on my euro day and night system. Before
+    I reveal the results, keep in mind that this system on average will generate $10,000
+    to $12,000 profit per year. It is a pretty good system. But will it provide a
+    steady return stream? Here is what the results show:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Weekly*—59.6 percent of weeks should be profitable. So, within one year’s
+    time, I should make money 31 weeks and lose money 21 weeks. That’s okay, but not
+    really a great way to try to make a living.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Monthly*—74.8 percent of months should be profitable. In one year, three months
+    will be down months. Again, not very steady returns—what if all three down months
+    came in a row?'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Quarterly*—86.2 percent of quarters should be profitable. I like that.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Yearly*—98.8 percent of years should be profitable. One losing year in a 30-
+    to 40-year trading career. That is very nice. The analysis says if I can live
+    with the weekly and monthly uncertainty, then I’ll be rewarded almost every year
+    with at least some profit.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Obviously, before I ran this analysis I had to make some simplifying assumptions.
+    For example, on average there are 151 trades per year in my trading system. That
+    equates to three trades per week, on average. However, the actual number in any
+    week could be zero, five, or anywhere in between. Forcing it to be three every
+    week leads to some error. But I don’t think it would change the results by much.
+    If I am looking for 90 percent of my weeks to be profitable, then my strategy
+    obviously won’t cut it, regardless of the assumptions I made.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The next obvious question is: “What numbers should I require for each time
+    period?” That will depend on the trader and his goals and objectives. A trader
+    used to living paycheck to paycheck may require 95 percent winning weeks, or three
+    losing weeks per year. He might know that more losing weeks than that will lead
+    to eviction. A professional Commodity Trading Advisor (CTA) is measured on a monthly
+    basis, so she might desire 95 percent of months to be profitable. A longer-term
+    trader, though, might care only about winning quarters or winning years. It all
+    depends on the trader’s circumstances.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: To take the whole analysis a step further, as you add good systems to your portfolio,
+    your chances for profitable periods goes up. Sort of like the casino adding new
+    table games to complement the roulette wheel.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Eliminating Big Days'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Eliminating the outlier trades from the history makes a huge difference in
+    the results. In the history, there are 614 trading days represented. There are
+    20 days of profits greater than $1,000\. In one year of trading, I’d expect to
+    see 5 of those “big” days. If they don’t come, the system on average becomes only
+    slightly profitable. My conclusion is that I am in deep trouble without those
+    big winning days. The question is: is there a reason why I should not expect these
+    kinds of days in the future? Maybe my system rules and variables basically were
+    curve fit to find these big trades. With 10 to 20 big trades, I suppose that is
+    a distinct possibility. However, it is not like these trades are due to a data
+    anomaly or some back-test issue. Strategy 2 (euro day) was specifically set up
+    to let profits run, and not to cap it. If I saw only a handful of large-profit
+    trades, I might suspect some sort of data or back-test issue.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'One other interesting question: since I am relying on these “outliers” to generate
+    most of the profit, how likely is it that I even see many of them in a given year?'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Outlier Days'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Since I know that the performance of my system is going to be driven by large-winning
+    trades (outliers), it is interesting to see how many of these I could expect in
+    a trading year. Here’s what I found:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In a year’s time, I am likely to see four to six large-winning trades. That
+    is only one large-winning trade every other month!
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: There is less than a 10 percent (actually, 6.6 percent) chance of seeing eight
+    or more large-winning trades in a year.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: There is a 13.6 percent chance that I will have only zero, one, or two big winners
+    in a year’s time.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'This analysis is a bit sobering, and it does make one thing crystal clear:
+    if I am to succeed with this system, I have to take every single trade because
+    the one I miss just may be the big winner that only comes around once a year.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Based on this data, my expectation for the system is a lot of flat to slightly
+    up or slightly down periods, punctuated by a large winner every once in a while.
+    Why is this important to know? Having proper expectations is crucial to long-term
+    success. I can’t get discouraged or lose confidence in the system when I am not
+    immediately making money. Knowing what to expect will help me a great deal, especially
+    if I see very little happening day to day.
+  prefs: []
+  type: TYPE_NORMAL

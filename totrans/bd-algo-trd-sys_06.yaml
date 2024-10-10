@@ -1,0 +1,1144 @@
+- en: PART VI
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: MONITORING A LIVE STRATEGY
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 23
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The Ins and Outs of Monitoring a Live Strategy
+  prefs: []
+  type: TYPE_NORMAL
+- en: In factories, when a machine makes parts, the operations are closely monitored
+    and the dimensions closely checked. The idea is to ensure that the part-making
+    process is going smoothly, and to give an early warning signal when things are
+    beginning to go bad. The same process holds true in evaluating live trading systems.
+    I use a variety of tools to monitor strategies I am trading or that I am incubating.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first chart I use is what I call a “bird’s-eye view” chart, as shown in
+    [Figure 23.1](#figure23-1). It tells me, at a glance, how my strategy has performed
+    historically and in real time. To keep consistency, I use the same data source
+    for all the data. In my case, it is the Trade List provided by TradeStation. You
+    can get similar data from just about every trading platform. *This is **not**
+    actual real money data,* which will be covered in later charts and metrics.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c23f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 23.1**](#figureanchor23-1) Bird’s-Eye Equity Chart'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The point of this chart will be to gauge the general overall effectiveness of
+    real-time performance (the portion of the curve on the right). Are the real-time
+    data consistent with the historical test and the incubation period data? If not,
+    there may be something amiss. Maybe the strategy has stopped working correctly,
+    due to market conditions, for example. Or maybe the assumptions made in the strategy
+    about limit order fills are not realistic. This could especially be true in scalping-type
+    strategies, although really you may need actual real-money results to check that.
+    Bad assumptions or strategy development technique up front may not show up in
+    historical or incubation tests, but they certainly will be revealed when real
+    money is on the line.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I update this chart every few weeks and quickly review it. This gives me a general
+    feeling whether my strategy is performing as expected. If it is, I can quickly
+    move on to the next chart.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you don’t know how to create an equity chart as shown in [Figure 23.1](#figure23-1),
+    here is how to create it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) How to Build an Equity Curve (and a Drawdown Curve,
+    Too!)'
+  prefs:
+  - PREF_H2
+  type: TYPE_IMG
+- en: Sometimes, after 20-plus years of trading, some tasks become so rote and routine
+    to me that I forget that I had to learn them at one point. Such is the case with
+    creating equity and drawdown curves. It is simple to me, but to someone who has
+    never done it before, it can be a daunting task. So, I’ll go through the math
+    behind creating an equity curve and a drawdown curve.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Equity Curve
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The equity curve can be built on a closed trade-by-trade basis, or on any time
+    scale you wish. I like using a daily equity chart, in part to eliminate the noise
+    from intraday price changes. You can use your daily account statement to get your
+    current equity balance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is exactly how to build an equity curve based on daily data:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Day 0 equity = Initial starting balance
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Day 1 equity = Day 0 equity + Change in equity during day 1
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Day 2 equity = Day 1 equity + Change in equity during day 2
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: And so on …
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Then, you simply plot the day X equity values, and you have your equity curve.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Drawdown Curve
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The drawdown curve is the difference, on any given day, between that day’s equity,
+    and the *maximum* equity up to that point. So, let’s say an account starts out
+    with $10,000 on day 0\. On day 1, it hits a new equity high of $10,500\. The drawdown
+    on day 1, since it is a new equity high, is $0\. On day 2, let’s say the equity
+    falls to $9,700\. Now, the drawdown on day 2 is $10,500 - $9,700 = $800\. And
+    so it goes through the rest of the days. On days where a new equity is reached,
+    the drawdown will simply be $0\. On all other days, the drawdown will be the difference
+    between that day’s equity and the maximum equity up until that point.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Day X drawdown = Minimum of $0 or (Day X equity - Max equity from day 0 to day
+    X)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A spreadsheet to create equity and drawdown curves is included at the web site
+    ([www.wiley.com/go/algotradingsystems](http://www.wiley.com/go/algotradingsystems))
+    and the resource web site for this book.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Monthly Summary Chart'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: When I used to work in aerospace (or the “real world,” as I sometimes refer
+    to it), our small company ($250 million annual sales) would have a weekly sales
+    and production meeting called “How We Doin’.” Incorrect grammar aside, it was
+    an excellent way for the managers of the company to quickly see how sales were
+    for the month and quarter, what quality and production problems were occurring,
+    and just a general sense of where the company currently stood.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now, fast-forward a few years. I am trading full time, working alone. But I
+    still want to see at a glance “how I’m doin’” with my strategies and trading.
+    Obviously, my account statements and equity curve tell the overall story, but
+    that is not enough detail for me. What strategies are doing well? Which are underperforming?
+    Of strategies I am incubating, how do they look? Should I make some changes in
+    what I am trading? This “how I’m doin’” report can help me answer all of these
+    questions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I developed a spreadsheet to help me with this task. It tells me at a glance
+    how my strategies are performing, and I can easily drill down and see detail if
+    I need to.
+  prefs: []
+  type: TYPE_NORMAL
+- en: First, there is a summary page, shown in [Figure 23.2](#figure23-2). I include
+    every strategy I am trading live on this page. I also include, in another section,
+    the strategies I am currently incubating. This summary sheet collects all the
+    data I am interested in (of course, if you did this yourself, you’d likely pick
+    different metrics than I did). This summary sheet gets the data from the individual
+    sheets, which I will describe a bit later.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c23f002.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 23.2**](#figureanchor23-2) Monthly Summary Chart'
+  prefs: []
+  type: TYPE_NORMAL
+- en: To keep things simple, I base everything on one contract being traded, even
+    though that is usually not what I am actually trading. Why? My goal with this
+    spreadsheet is to see how my strategies are doing compared to how I thought (calculated)
+    they’d be doing. If I included position sizing, it would muddy up the view for
+    me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Of all the numbers on this sheet, I am primarily interested in two columns:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Return efficiency.* How am I doing, compared to my expectations? That is how
+    I define return efficiency, and it is simply my actual return divided by my expected
+    return. If my strategy is performing exactly as I had calculated, it will be 100
+    percent. Obviously, I want this to be close to or above 100 percent. Typically,
+    when I take all the strategies together, I find my efficiency is somewhere between
+    70 and 100 percent. So this says that if my historical testing says I should make
+    $10 a year, I am actually making somewhere between $7 and $10.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Drawdown efficiency.* This is how I am doing with regard to drawdown. Just
+    like with return efficiency, I calculate this as my actual drawdown divided by
+    my expected drawdown. I then subtract the result from 1, to make the number 100
+    percent the ideal value. It is a bit backwards to do this, but I do it that way
+    so that both efficiency numbers have 100 percent as their ideal value. Then, the
+    closer the efficiencies get to zero, the worse off things are.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Once a month, I go through and update each of the individual system sheets with
+    performance data, and that automatically updates the main sheet.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The monthly summary sheet reveals my current performance for all strategies.
+    It gets data from the individual strategy sheets. I have one page of my spreadsheet
+    for each of the strategies I am currently trading or incubating. [Figure 23.3](#figure23-3)
+    shows the individual strategy summary sheet. It is pretty simple, yet pretty effective.
+    I can see at a quick glance how a strategy is performing, compared to my expectations
+    (which, of course, are based on historical performance). When you have 30 to 50
+    strategies to keep track of, a quick summary like this is really invaluable.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c23f003.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 23.3**](#figureanchor23-3) Individual System Monthly Chart'
+  prefs: []
+  type: TYPE_NORMAL
+- en: For many strategies I trade, that is all the information I need—a quick view
+    at performance. If something catches my eye, I can always dig deeper.
+  prefs: []
+  type: TYPE_NORMAL
+- en: On a monthly basis, the only number I have to update is in the “actual” column.
+    This represents the actual profit or loss for the strategy for that particular
+    month. It can be taken from trading statements, after adjusting for the number
+    of contracts, or it can be taken from the strategy performance report. I typically
+    do the latter. The expected numbers can all be obtained from walk-forward historical
+    testing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The max drawdown is obtained from the strategy report. Note that this is an
+    intraday value, where the drawdown the spreadsheet calculates is on a monthly
+    basis. This obviously is not totally correct, as ideally you would want to compare
+    drawdowns over the same length of time. But for my purposes it is adequate.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One way that the individual monthly performance chart can be of great assistance
+    is by identifying strategies that are performing too well. Too well? Yes, performance
+    that is too good can be a bad thing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: An example is shown in [Figure 23.4](#figure23-4). I started incubating this
+    strategy a while back, and it took off.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c23f004.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 23.4**](#figureanchor23-4) Superb Incubation Performance'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It was “too good to be true”—way above its historical norm. For that reason
+    I decided to keep incubating it. The next few months are shown in [Figure 23.5](#figure23-5).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c23f005.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 23.5**](#figureanchor23-5) Most Strategies Eventually Revert to Their
+    Mean'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now the strategy is in line with historical norms, but the standard deviation
+    of monthly performance is a *killer* (look at the down-month performances). I
+    looked into it further and saw that the system was not acting normal. So I decided
+    to keep incubating. [Figure 23.6](#figure23-6) shows what happened.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c23f006.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 23.6**](#figureanchor23-6) Incubating Even Longer'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This is a good example of (1) performance that is too good being a bad thing,
+    (2) standard deviation of results (high degree of variability seen from visual
+    inspection) being an early warning sign that things were not quite right, and
+    (3) the monthly performance report showing all this information in an easy-to-digest
+    format. As an epilogue: I am still incubating this particular strategy but have
+    not traded it with real money.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'So far, I have discussed a few different ways to track the performance of a
+    strategy. These tools are excellent for assessing the longer-term performance
+    of a system—over a significant period of time (months to years), is the strategy
+    performing as it should? While this “view from 35,000 feet” is useful to have,
+    you also need to have measurements at the weekly or daily level. This helps answer
+    the question: is my new strategy performing to expectations? I use a couple of
+    different methods to review the shorter-term performance. There is a simple way
+    and a complicated way. First, I’ll look at the simple way.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The only data you need for this is the average trade or average daily result.
+    If you have the standard deviation of this value, then you can do even more.
+  prefs: []
+  type: TYPE_NORMAL
+- en: All you do is plot your results, along with the equation “*n* * *avg*” where
+    *n* is the trade number/day, and “*avg*” is the average value. You’ll get a chart
+    like the one shown in [Figure 23.7](#figure23-7).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c23f007.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 23.7**](#figureanchor23-7) Daily Performance Review'
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you are above the average line, your strategy is doing better than you thought.
+    If you are below, your strategy is worse.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This chart becomes really useful as time goes on. Over 30 or more periods,
+    you’d expect the strategy to be right around the average line. That is how I use
+    it. Then, at a quick glance, I know the general state of the strategy. This chart
+    is very similar to the monthly tracking chart shown earlier. It is nice, but it
+    doesn’t convey a lot of information, especially early on in the life of a live
+    strategy. To get more insight, add two lines for the +/- standard deviation curves:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Upper curve: *n* * *avg* + *sqrt*(*n*) * (*std dev*) * *X*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Avg curve: *n* * *avg*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Lower curve: *n* * *avg* - *sqrt*(*n*) * (*std dev*) * *X*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: where
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*n* = The trade number'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*avg* = The average profit per trade'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*std dev* = Standard deviation of the avg trade'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*X* = Standard deviation multiplier'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: What this tells you is that roughly 68 percent (*X* = 1) or 95 percent (*X*
+    = 2) of the time, your equity curve should be within the upper or lower bands.
+    Most well-performing strategies will have their equity curve within the standard
+    deviation bands. If the equity curve is outside of those bands, maybe there is
+    something wrong with your strategy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 23.8](#figure23-8) shows a sample strategy, with *X* = 2 bands. The
+    most interesting point here is the bottom curve, the -2 standard deviation line.
+    Look as it starts negative and stays negative. Imagine that! A winning (positive
+    expectancy) system can still have negative results for quite a while. Pure random
+    chance (the order of trade results) can lead a winning system to appear to be
+    a losing system.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c23f008.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 23.8**](#figureanchor23-8) Daily Performance Review with Performance
+    Bands'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Of course, over time, the positive expectancy starts to dominate, and the lower
+    curve will eventually turn positive. This has *huge* implications for the trader
+    who “tweaks” his method if, after five trades, he is not showing a profit. He
+    may well have just changed a winning system! This lower curve really shows that
+    it takes time for even a winning system to show profits.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is a great quote that explains it better than I can. It is from the book
+    *Trading Bases* by Joe Peta (Penguin Books, 2013):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Well, if you had the opportunity to invest in a venture with a positive expected
+    value, like ownership of a roulette wheel, would you prefer to own it for one
+    hour or nine and a half hours? Funny things can happen in one hour; there is no
+    guarantee of a profit even with the house edge. But over nine and a half hours,
+    the natural fluctuations inherent in the game will smooth out, and the chances
+    of losing money will be very small, approaching zero over time.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Astute readers will recognize that the graph in [Figure 23.8](#figure23-8) uses
+    standard deviation and therefore assumes the trade results have a normal distribution.
+    In reality, most trading systems do not have a normal distribution. Rather, the
+    distribution will likely have a spike in negative territory, where a stop loss
+    might be placed, and they will have an extended tail on the profit side, or a
+    spike in positive territory, corresponding to a profit target. An example of a
+    real trading system histogram, versus the normally distributed version, is shown
+    in [Figure 23.9](#figure23-9). Depending on the specifics of the actual trades,
+    assuming a normal distribution may be a bad idea.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c23f009.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 23.9**](#figureanchor23-9) Histogram of a Typical Real Trading System'
+  prefs: []
+  type: TYPE_NORMAL
+- en: To alleviate this concern, we can simply take the Monte Carlo results from numerous
+    runs and use percentiles based on them. This will provide a more accurate representation
+    of the expected bounds of the trading system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A simple example can help explain this approach, before I apply it to the actual
+    trading data. Assume that we have a trading system that averages $100 per day,
+    with a standard deviation of plus or minus $50\. With two standard deviation bands,
+    we expect roughly 95 percent of the values to fall in between the upper and lower
+    curves, or the 97.7 percentile on the upper end and 2.3 percentile on the lower
+    end. If we then run Monte Carlo analysis on a trade-by-trade basis, for each trading
+    day we simply select the values at the 2.3 and 97.7 percentiles. Since these values
+    use the actual data, not an assumed normal distribution, they should be more accurate
+    and representative of the actual trading system. The drawback is that the curves
+    will not be smooth and could change if the simulation is rerun. Such are the penalties
+    for using Monte Carlo analysis.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If we run the day-by-day Monte Carlo analysis on the euro trading system, how
+    do the curves compare? There is a good, but not perfect, match between the standard
+    deviation and the Monte Carlo lines. Either is probably acceptable for tracking
+    purposes. I personally like the Monte Carlo version, since it does not make any
+    assumptions about the underlying data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) How to Use This Graph'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The daily tracking graph can be used to help you quit trading a system. For
+    example, if the real-time performance of your strategy falls below the lower 10
+    percent line, it could mean that your system is no longer working. After all,
+    the odds were 90 percent that your strategy should be performing better than this.
+    An example of a real-world system should make this crystal clear.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 23.10](#figure23-10) shows a sample case of a real-world system I traded
+    with my own money.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Curve 1:** The system performance after 140 days. Barely positive, and close
+    to the -1 Sigma line. That means, at that point, only 16 percent of the randomly
+    generated equity curves, based on the historical back-test trades, would have
+    been worse than this.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c23f010.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 23.10**](#figureanchor23-10) 140-Day Daily Performance'
+  prefs: []
+  type: TYPE_NORMAL
+- en: I’m sure most people would have stopped trading at this point. I did not, since
+    I knew that even with the bad performance there was a chance that the system was
+    not fundamentally broken.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Curve 2:** The curve for the next 200+ days ([Figure 23.11](#figure23-11)).
+    I kept the system running, and now it is performing closer to its expected value.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c23f011.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 23.11**](#figureanchor23-11) 200-Day Daily Performance'
+  prefs: []
+  type: TYPE_NORMAL
+- en: As I explained earlier, I use Monte Carlo simulation to determine if a strategy
+    is performing to expectations. It is basically the same result as with using mean
+    and standard deviation, except that you can include “boundary condition” effects
+    with Monte Carlo (like quitting after a certain percentage drawdown or quitting
+    when account gets blown out).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Tracking Expected and Actual Performance'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'In all the examples I have shown in this chapter, I have used the performance
+    numbers generated by the back-testing software, which was TradeStation in my case.
+    These numbers have built in certain assumptions about:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Amount of slippage per trade.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Amount of commissions per trade.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Fill logic for limit orders.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: “Perfect” trading versus real-world trading.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Depending on your trading system and the values you put in the back-test software,
+    you may or may not have a realistic view of how your system will perform in the
+    real world. I’m sure you’ve experienced this—you see a terrific-looking equity
+    curve only to find out later that the creator did not include commissions or slippage
+    in the performance data. Or you discovered an unbeatable scalping system for the
+    mini S&P, only to discover, upon further review, that your back-test engine assumed
+    limit order fills as soon as the price was just touched, not when the limit order
+    price was exceeded (this is a very common mistake, especially with many so-called
+    trading simulators out there). Finally, you will have Internet outages, data delays,
+    and all sorts of other little gremlins. The point is that the performance you
+    expect is not the performance that you’ll get.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you are treating your trading as a business, it is imperative that you track
+    actual performance and compare it to predicted performance. After all, when your
+    actual performance is below your expected performance, isn’t that akin to something
+    or someone stealing from you? It sure feels that way to me—I fully anticipate
+    to achieve the predicted performance or better, and when I don’t, I search for
+    and correct the reason.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I track my actual performance on the daily tracking graph. I also keep a running
+    table of actual versus predicted performance. Most of the time, the actual performance
+    does slightly better than the predicted performance. This is a very good thing,
+    as it shows that my assumptions for commissions, slippage, and the like were a
+    bit on the conservative side. I’d rather be conservative in my estimates and be
+    pleasantly surprised with actual performance, as opposed to underestimating slippage
+    and later being disappointed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 24
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Real Time
+  prefs: []
+  type: TYPE_NORMAL
+- en: When I take a new strategy live, I like to review the performance on an ongoing
+    basis, to make sure things are going more or less as expected. For my euro day
+    and night strategy, which I started live trading in late August 2013, here are
+    my real-time updates every three to four weeks of trading it, for the first four
+    months, along with a discussion of a few interesting events that came up along
+    the way.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Four-Week Review—September 13, 2013, End Date'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Week 4 of trading the euro day and night system with actual money is now complete.
+    For the first few months of live trading, every four weeks or so, I review the
+    current performance of the system as shown in [Figure 24.1](#figure24-1), and
+    answer some standard questions. This information may be useful should the performance
+    of the system become erratic—maybe there was something I could have seen earlier,
+    or something I just plain out missed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Summary:** Well, after four weeks of trading this system live, I am right
+    where I started—breakeven.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Am I surprised at this result?** Absolutely not. It is well within expectations.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Am I disappointed in the results so far?** Yes. Anytime I start a new strategy
+    I want to make money at the beginning.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Are results in line with expectations?** Yes. The current profit is below
+    the average I expect, and it is above the lower 10 percent line. So, while it
+    is underperforming currently, I see no reason for alarm. Also, I have had two
+    winning weeks and two losing weeks. Over time, I expect about 60 percent of my
+    weeks to be profitable, so the performance is just as I expect.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Are fills and trades live comparable to TradeStation strategy report?** Yes,
+    in fact, in most cases my fills are better than what I had anticipated. Slippage
+    is usually less than I had expected.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Do I see any reason to stop trading this system?** No.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: D**o I see any reason to change my position-sizing plan, that is, reduce or
+    increase my risk?** No.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/c24f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 24.1**](#figureanchor24-1) Daily Performance, After Four Weeks of
+    Live Trading'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Update after Week 7'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Seven weeks into trading this system live, and things went bad this week, with
+    a couple of large losing days. The cumulative equity is hovering right around
+    the 10 percent line, which is generally a good warning sign that the system is
+    not working the same as its historical test. If circumstances were different,
+    I might consider stopping trading this system. The things working against the
+    “quit now” idea are:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are only 18 days of live trading data—too short, in my mind, to make a
+    decision to quit.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Most important, when I laid out the criteria for stopping live trading, performance
+    relative to the daily performance was not considered (sometimes I do consider
+    this in my “when to quit” analysis). For this strategy, though, I used maximum
+    drawdown as my stopping criteria.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: I will keep on trading, realizing that things need to improve.
+  prefs: []
+  type: TYPE_NORMAL
+- en: After seven weeks of live trading, is the system performing as designed? First,
+    let’s look at the number of trades it has taken. A sharp increase or decrease
+    in the number of trades, when compared to the walk-forward history, would suggest
+    that the market action is different than the historical market, causing many more,
+    or far fewer, trades to be taken than normal. After seven weeks, the system has
+    traded for 18 days, or 53 percent of possible days. Historically, it trades about
+    151 days per year, or 60 percent of days. So the system is trading less than the
+    average. But some years it has traded as few as 130 days (51 percent) and as many
+    as 175 days (70 percent). Based on all this, I’d conclude that the number of trades
+    is generally in line with expectations, although at the low end. Anecdotally,
+    I have felt that the volatility has been lower than usual. There have been a handful
+    of days where an entry was missed by only a few ticks (the big Fed move day, September
+    18, was a case in point). A little more volatility in the hours before the announcement
+    and the system would have entered a big winner.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Second, let’s look at average performance versus actual performance. The average
+    historical performance of the system gives $1,441 profit after 18 trading days.
+    Actual performance, however, is at -$746\. This is a *huge* discrepancy, and the
+    conclusion obviously is that the system is not performing as well as it should.
+    But here is where is gets tricky. Take a coin and flip it 100 times. If you get
+    60 heads, do you conclude that the coin is “broken,” that is, biased? What if
+    you got 70 heads, or 80, or 90? Even if you flipped 100 heads in a row, could
+    you absolutely conclude that the coin is biased? No! There is a chance, albeit
+    very, very small, that a fair coin could be flipped heads 100 consecutive times.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is the same way with a trading system. You can ask, “Is it broken?,” but
+    the answer will always have some degree of uncertainty. That uncertainty sometimes
+    makes all the difference to your conclusions and decisions. Some people take statistics
+    as gospel, but I’ll relate a little secret I learned. Back in my previous career,
+    I had a statistician who worked for me. I assigned a project to him that required
+    a lot of data analysis and then some sort of conclusion. After he reviewed the
+    details of the project, before he even started work, he asked me, “What conclusion
+    would you like? I can make the data support your point of view, whatever it is.”
+    I was astounded, but I never forgot the lesson—statistics can be manipulated very
+    easily, so be careful making any conclusions based on them.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Right now, the actual system performance is at the 10th percentile of what was
+    expected. The 50th percentile would be right at the average, so the 10 percent
+    mark is pretty bad. But it is still within the realm of possible outcomes. If
+    it were below the 0 percentile—let’s say the system had lost $8,000 through the
+    first 18 days—then the system obviously would not be performing as expected. That
+    would be an easy decision. It is where there is uncertainty that things get tough.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are statistical tests that could be run to show whether the current trades
+    could be part of the historical distribution of trades, but even such advanced
+    analysis is not definitive. There is always a gray area. So how do I navigate
+    the gray area? First, I try to determine the parameters that will cause me to
+    quit trading a system. I could certainly use the percentile number approach and
+    have a quitting rule that says, “If after X days the performance is below the
+    Yth percentile, I will cease trading.” X and Y would be at my discretion, based
+    on personal preferences. As long as I stick to the rule I create at the start,
+    I’d be doing fine. For me, and for this particular system, earlier I decided that
+    I would quit only when I hit a $5,000 drawdown. So I am not using the data in
+    the tracking graph to decide when to quit. Sometimes I do use it, though.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To summarize:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Is the system performing as expected?** No, not even close. It is performing
+    much worse than expected.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Is the system “broken?”** Maybe, maybe not. It depends on how you define
+    broken. One cannot say definitively it is broken or it is not broken.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Am I going to quit?** No. My quit point, established earlier, calls for a
+    single-contract drawdown of $5,000\. This was a well-thought-out amount, and I
+    can’t just toss it out the window. I’m going to stick to the plan. I realize,
+    though, that sticking to the plan might be akin to the captain sinking with the
+    ship.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Week 8 Review'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Week 8 of trading the euro day and night system with actual money is now complete.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Summary:** First, let’s look at the big picture. I like to do this regularly,
+    because at a glance I can tell if things are going as planned or not. From looking
+    at [Figure 24.2](#figure24-2), a couple of things are clear:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Over the whole course of the system history (walk-forward, incubation, live),
+    the system performance hasn’t changed much. I could draw a line from the start
+    of walk-forward to the start of incubation, and then another line from the start
+    of incubation until the present time, and the slopes of those two lines would
+    be about the same. This gives me some reassurance that the system is behaving,
+    subject to point 2.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In [Figure 24.3](#figure24-3), It is easy to see that the live trading (dark
+    gray line with triangles) has not been up to par at all. The performance these
+    past two months has been down, and while it has not crashed and burned, it certainly
+    has been a disappointment.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![images](images/c24f002.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 24.2**](#figureanchor24-2) Big Picture Equity Curve after Eight Weeks'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c24f003.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 24.3**](#figureanchor24-3) Daily Performance after Eight Weeks of
+    Live Trading'
+  prefs: []
+  type: TYPE_NORMAL
+- en: After eight weeks of trading this system live, I am down about 5 percent from
+    the start.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Am I surprised at this result?** Absolutely not. It is well within expectations.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Am I disappointed in the results so far?** Yes. After eight weeks, I had
+    hoped to be making some money. The performance these past eight weeks is way behind
+    the long-term average, so it is very disappointing.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Are results in line with expectations?** Yes. The current profit is below
+    the average I expect, and it is right around lower 10 percent line. So it is underperforming
+    currently, and I will be concerned if equity drops below that 10 percent line.
+    Also, I have had four winning weeks and four losing weeks. Over time, I expect
+    about 60 percent of my weeks to be profitable, so the performance is a bit behind
+    in that regard. Plus, one week was really, really bad.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Are fills and trades live comparable to TradeStation strategy report?** Yes,
+    in fact, in most cases my fills are better than what I had anticipated. Slippage is
+    usually less than I had expected.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Do I see any reason to stop trading this system?** No.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Do I see any reason to change my position-sizing plan, that is, reduce or
+    increase my risk?** No.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: After eight weeks, I will keep on trading per the plan, but storm clouds are
+    forming on the horizon. I need some sunshine instead!
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Week 9—Automated Trading Issues'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: You’ve probably heard the phrase “automated trading does not mean unattended
+    trading.” You’ve also probably read all the disclaimers that the brokerage throws
+    at you before they allow you to turn automation on. With TradeStation, for example,
+    there are tons of disclaimers you have to sign when you open an account, and then
+    if you want to automate a strategy, there are two more disclaimers you have to
+    click and accept. The first disclaimer is 397 words, and the second is a whopping
+    593 words. That is a lot of legalese to wade through just to automate your trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: But all those warnings are there for a reason. Ignore them at your own risk.
+    That’s what happened to me in week 9 of live trading. Let me explain.
+  prefs: []
+  type: TYPE_NORMAL
+- en: My euro day and night strategies enter on limit orders, which are supposed to
+    be active for the current bar only. After the bar closes, any open orders get
+    canceled by the software. Depending on the strategy logic, another limit order
+    may be placed for the current bar.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, Monday night during week 9, my euro night strategy placed a limit order
+    to buy, well below the market. It did not get filled during the bar, so it should
+    have been canceled. For whatever reason, it was not canceled. This is the first
+    time I have *ever* seen this occur. The success rate of the software auto-canceling
+    orders, from my experience, has to be well over 99 percent. That is excellent,
+    but errors can and do occur. Just look at the airline industry, for example. There
+    are roughly 28,000 commercial flights per day, and if even 99.99 percent had successful
+    takeoffs and landings, two or three planes would crash *per day*. That’s where
+    claims of 99 percent plus uptime, accuracy, whatever are meaningless. Anything
+    less than 100 percent perfection runs the risk of costing you money.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The order rested at the exchange until 5 A.M. Tuesday morning, when it was filled.
+    I noticed this rouge position Wednesday morning. Of course, with Murphy’s Law
+    in effect here, I noticed it not when the position was profitable, but after it
+    had gone negative. Then, to add insult to injury, while I investigated the issue—before
+    I exited the position—I watched it drop another $125 or so. Once I confirmed that
+    the position was wrong, I exited with about a $550 loss.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Who’s to blame here? Well, the software did not do its job, since it should
+    have canceled the order. But, ultimately, I can blame no one, and no thing (software,
+    Internet connection, etc.), except myself for the error. I’ll repeat that: I am
+    to blame! I am the caretaker, and if things go wrong, as they occasionally will,
+    it is up to me to be aware of it and fix it. I take full responsibility for this
+    screw up, and I added some steps to make sure it is not repeated:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Check statements every day. If I had checked it that first morning, I’d have
+    probably exited with a $300 profit, instead of a $550 loss.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Check platform every few hours for uncanceled orders.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Improve checking of positions. I normally check my positions every few hours,
+    but somehow this one slipped by me.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Make sure filled orders show up on the chart. For some reason, this fill did
+    not—they usually do.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Not a killer loss, but enough for me to getting pretty upset at the situation!
+    Percentage-wise, for this account, the losses were 7 percent, so that is pretty
+    bad. Eventually, I want this strategy to get to 10 contracts, and at that point
+    it would be some serious money.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I noticed the bad trade about 30 hours after I entered it. Then I exited at
+    almost the worst time, with a $550 loss. Now, less than one hour later, I could
+    have exited with less than a $100 loss. Is it just me, or does this kind of stuff
+    happen to you, too? If I did not know better, I’d swear that someone was controlling
+    prices, and watching my positions, and deliberately doing things to maximize my
+    losses! I can definitely see why people feel this way—at times, it surely feels
+    like the market is out to get me personally!
+  prefs: []
+  type: TYPE_NORMAL
+- en: I’ve thought a lot about this occasional paranoia-type feeling. I know why some
+    of this occurs. I tend to discount—not really notice or dwell on—every good thing
+    that happens to me (mistakes in my favor, excellent news reports right after I
+    enter a position, etc.). Money-making anomalies become just a blip in the equity
+    curve. They are nice, but I don’t really remember them too well. But I tend to
+    remember losses due to mistakes and keep them filed in my memory bank. Some of
+    these “losing lessons” might be good to remember—today’s automated issue is a
+    good example—but most should be forgotten just as easily as the money-making mistakes.
+    That doesn’t happen for me, at least not usually.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Last year I actually did a study of this psychological phenomenon. I added up
+    all my winning mistakes and all my losing mistakes. The net impact, from a monetary
+    basis, was just about zero. But from a psychological standpoint, it definitely
+    was not breakeven. One would think this feeling (“the market is out to get me”)
+    would have disappeared after 20-plus years of trading. But it hasn’t, and I suspect
+    it never will!
+  prefs: []
+  type: TYPE_NORMAL
+- en: By the end of the week, what should have been a decent winning week turned out
+    to be a losing week, due to the entry “glitch” described earlier. That cost me
+    $550\. I have taken some immediate steps to prevent it from happening again, and
+    I think I am in the clear, at least for the time being. My actual performance
+    now lags the perfect strategy performance, and the issue this past week is to
+    blame for that.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The problem ultimately comes down to this: if I am depending on a computer
+    to place, cancel, and replace orders, unless someone is monitoring it at all times,
+    there is always a possibility of something going haywire. The question is how
+    much of my limited resources (it is just me, after all) do I devote to the effort
+    to make the automation goof-proof? Doing the usual amount of effort hasn’t worked—since
+    I just lost $550—but at what point will I be confident that those issues will
+    not occur? Plus, it is usually not the issues you know about, but the issues you
+    don’t know about. This case was one of them. After thousands of automated trades
+    over the years, this particular issue had never come up before!'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Enough about that issue for now. Performance is still lagging, and the euro
+    day system has not had a trade in two weeks (I think I can blame lower volatility
+    for that). Regardless, I will “keep on trading!”
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Week 9—Limit Order Fills (October 28, 2013)'
+  prefs:
+  - PREF_H2
+  type: TYPE_IMG
+- en: One of the tricks unscrupulous system vendors play is to assume that all limit
+    orders are filled as soon as the price is touched. You can recognize this by looking
+    at a price charts of their trades. If the method shows trades being bought at
+    the exact low of a bar, and/or sold at the exact high of a bar, you can bet this
+    game is being played.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Of course, the reality is that it is hard to buy the low and sell the high.
+    My experience is that, depending on the market and when your order is placed,
+    you can probably do this 5–20 percent of the time. The other 80–95 percent of
+    the time, price has to trade through your price to get you a fill at the limit
+    price.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This can be an issue with back testing. If your back-test engine assumes that
+    limit orders are filled when touched, the results will be too optimistic. If the
+    back-test engine assumes price must be penetrated to get a fill, then the back-test
+    results will be a bit too pessimistic. I always go with the pessimistic approach.
+    My actual results can then only be better than the back test.
+  prefs: []
+  type: TYPE_NORMAL
+- en: During trading for week 9, the euro day strategy bought the exact low of the
+    bar on a limit order. Of course, part of the reason I was filled was that I was
+    trading a 1 lot; if I were trading a 10 lot, I probably would have received only
+    a partial fill. The interesting thing is that when I refreshed the chart, the
+    trade went away, according to the strategy engine. Since the price did not go
+    one tick below my limit price, the strategy engine assumes there was no trade.
+    But my real account says there was a trade because I was indeed filled. Since
+    the trade was a winner, it was a nice surprise for once! So this is roughly a
+    $400 trade in my real account’s favor, when compared to the back-test engine.
+    This makes up for the order problem that cost me $500 in the previous week.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Week 12 Review'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '**Summary:** First, let’s look at the big picture, as I always do. From a look
+    at [Figure 24.4](#figure24-4), a couple of things are clear:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Over the whole course of the system history (walk-forward, incubation, live),
+    the system performance hasn’t changed much. Just as after week 8, I could draw
+    a line from the start of walk-forward to the start of incubation, and then another
+    line from the start of incubation until the present time, and the slopes of those
+    two lines would be about the same—with the slope from start of incubation to present
+    being a little flatter. This gives me some reassurance that the system is behaving
+    well on a longer-term basis.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: It is easy to see that the live trading has been lagging long-term performance.
+    The performance these past three months has been down, and while it has not crashed
+    and burned, it certainly has been a disappointment.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![images](images/c24f004.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 24.4**](#figureanchor24-4) Big Picture Equity Curve after 12 Weeks'
+  prefs: []
+  type: TYPE_NORMAL
+- en: After 12 weeks of trading this system live, I am down about 10 percent from
+    the start for the strategy-calculated performance, and about 4.5 percent for the
+    actual performance ([Figure 24.5](#figure24-5)).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Am I surprised at this result?** Yes. I had expected better, certainly close
+    to breakeven by now—at the very worst.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Am I disappointed in the results so far?** Very much so. The performance
+    these past 12 weeks is way behind the long-term average, so it is very disappointing.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Are results in line with expectations?** Just barely. Results are around
+    the lower 10 percent line, which means the system in real time is close to being
+    a different system than walk-forward and incubation. Not quite different yet,
+    but getting close.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Are fills and trades live comparable to TradeStation strategy report?** No,
+    but it is a good thing! I am doing about $550 better live than the strategy predicts
+    because of (1) less slippage than I had planned for and (2) a few trades where
+    I was filled in real life when price just touched, but did not exceed, my limit
+    price.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Do I see any reason to stop trading this system?** No.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Do I see any reason to change my position-sizing plan, that is, reduce or
+    increase my risk?** No.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/c24f005.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 24.5**](#figureanchor24-5) Daily Performance, After 12 Weeks of Live
+    Trading'
+  prefs: []
+  type: TYPE_NORMAL
+- en: After 12 weeks, I will keep on trading per the plan, but this system is just
+    kind of floundering. A couple of big winners, which is what the system is based
+    on, are needed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Week 13—Time Limit Review'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'As my strategy continues to flounder around breakeven, I start to wonder: how
+    long am I willing to put my capital at risk without any return? The answer for
+    me involves the “next best alternative.”'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Every six months or so, I look at every system I am trading, and also the systems
+    waiting in the wings (ready to be traded live, but currently not trading live).
+    If I find a better system than the one I am trading, and I don’t have enough capital
+    to trade both (or perhaps because of correlation issues I do not want to trade
+    both), I will replace it. Thus, even if the euro trading strategy is performing
+    decently (making money as opposed to its current situation of near breakeven),
+    I still might replace it with the “next best alternative.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: I do this exercise only two times a year, in part because it is involved (complicated
+    correlation studies, etc), but mainly because it is only fair to a new system
+    going live to have some time to prove itself. Most people don’t have the patience
+    to do this, and they jump from system to system, never giving any system a fair
+    chance. It would almost like pulling a pitcher in baseball from the game as soon
+    as he gives up just one hit. As I showed earlier, even winning systems can be
+    losers for quite a while, until the long-term positive expectancy really shows
+    itself.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Of course, even with this twice-a-year analysis, my original quitting point
+    is still in effect. If I hit that, I am out, regardless of the next best alternative
+    (which may be cash).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Week 15 Review'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '**Summary:** After 15 weeks, the euro day and night trading strategies are
+    finally doing better, as depicted in [Figures 24.6](#figure24-6) and [24.7](#figure24-7).
+    By looking at the big picture, it is clear that the performance of the past few
+    weeks is getting the live results closer to the historical back test. The system
+    still has to improve performance, but things are certainly looking better. After
+    15 weeks of trading this system live, I am up about 1 percent from the start for
+    the strategy-calculated performance and about 9.0 percent for the actual performance.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Am I surprised at this result?** Obviously, I was hoping for better, but
+    I am thankful that the system is showing a profit at this point.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Are results in line with expectations?** Results are definitely more in line
+    with expectations, especially in the past few weeks. But the strategy as a whole
+    is still underperforming. As stated earlier, this approach relies on a handful
+    of big profit trades per year, and so far in live trading there have not been
+    any.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Are fills and trades live comparable to TradeStation strategy report?** No,
+    and that is still good! I am doing about $700 better live than the strategy predicts
+    because of (1) less slippage than planned and (2) multiple trades where I was
+    filled in real life but not in the back-test engine (limit price penetration issues).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Do I see any reason to stop trading this system?** No.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Do I see any reason to change my position-sizing plan, that is, reduce or
+    increase my risk?** No.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/c24f006.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 24.6**](#figureanchor24-6) Big Picture Equity Curve after 12 Weeks'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c24f007.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 24.7**](#figureanchor24-7) Daily Performance after 15 Weeks of Live
+    Trading'
+  prefs: []
+  type: TYPE_NORMAL
+- en: After 15 weeks, I will keep on trading per the plan, but this system is still
+    underperforming, compared to original expectations. That is one drawback to a
+    trading approach that requires large, but infrequent, winning trades. It might
+    be a long time before this system really shows its capability.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Future Reviews'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: This running diary will continue indefinitely, or until I stop trading the euro
+    day and night system, at which point I’ll explain any reasons I had to stop live
+    trading. Updates can be found at the web site ([www.wiley.com/go/algotradingsystems](http://www.wiley.com/go/algotradingsystems)).
+  prefs: []
+  type: TYPE_NORMAL

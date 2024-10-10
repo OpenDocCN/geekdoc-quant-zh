@@ -1,0 +1,3642 @@
+- en: PART III
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: DEVELOPING A STRATEGY
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 9
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Strategy Development–Goals and Objectives
+  prefs: []
+  type: TYPE_NORMAL
+- en: When you go on a long trip in your car, do you have a map or global positioning
+    system to guide you? Or do you just “wing it” and hope to find your destination
+    by reading signs and going on instinct? Most people, of course, would have a map.
+    It makes the journey so much easier. And it is the same with developing a trading
+    system. You should know where you want to end up before you even start. It all
+    starts with goals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You’ve probably heard it a million times during your life: if you want to accomplish
+    something, you must have goals. Unfortunately, after hearing it so many times,
+    many people just list goals to say they did it, or list vague goals that have
+    no way of being measured or realized.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To develop a good trading system, you absolutely need goals. To do that, I
+    employ the SMART technique ([Figure 9.1](#figure9-1)). SMART is a little mnemonic
+    trick to assist in remembering all the important parts of a goal. Here is how
+    I apply it to trading:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c09f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 9.1**](#figureanchor9-1) SMART Goals'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Specific.* The goal must be specific, not vague. For example, it is not enough
+    to say, “I want a trading system that makes me a lot of money” or “I want a trading
+    system that has no risk.” Such vague goals, besides being unrealistic, are just
+    too general. How will you even know when you reach such a nebulous goal? The simple
+    fact is that you won’t know if you ever reach it.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Measurable.* How will you know you’ve created a trading system that meets
+    your goals unless the goal can be measured? That is the second key to a solid
+    goal. At the end of the development process, you want to have a trading system
+    with certain performance metrics, and compare them to the goals you set at the
+    outset. It is a very simple concept, but you’d be amazed how many people develop
+    goals that aren’t measurable, such as “I want to create a trading system that
+    makes my family proud.” An admirable quality in a trading system, to be sure,
+    but how do you measure this? Maybe if your teenage kids walk alongside you in
+    a public place, rather than 10 feet in front or behind you, you’ll know they are
+    proud of you. But what if you don’t have teenagers?'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Attainable.* The “A” in SMART stands for attainable. There is absolutely no
+    sense in saying, “I need to develop a trading system that will provide 500 percent
+    annual return with less than 2 percent maximum drawdown.” That is not reality.
+    You need to strive for a goal that is attainable. Otherwise, you will just become
+    disappointed over and over, since you will be unable to create a trading system
+    that meets such lofty goals. In the end, most people with unrealistic goals end
+    up cutting corners by cheating in order to reach their goal. They’ll produce an
+    ultra-optimized back test, curve fit to the extreme, that shows them reaching
+    their unrealistic goals. But as I’ve said before, “If it seems too good to be
+    true, it probably is.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Relevant.* If you set goals for developing a trading system that aren’t relevant
+    to the topic at hand, the whole goal exercise will be a waste of time. For example,
+    let’s say you hate creating trading systems and hate the whole development process.
+    Is it even worthwhile for you to pursue creating trading systems? Meaning, is
+    the whole process even worthwhile to you? If not, you should probably just quit
+    right now. To be successful in this field, your heart and mind must be fully committed.
+    Trust me, there are thousands of professional traders committed to the cause.
+    In a fight between committed traders and noncommitted traders, who do you think
+    will win?'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Time bound.* Creating a trading system takes time and consumes your free and
+    working time, so having a time-based aspect to the goal is a great idea. It might
+    be a certain amount of time you give yourself to create a strategy or a time limit
+    for how long you’ll spend evaluating a single idea. The idea will be to keep the
+    process moving at all times. As you’ll find out, it gets really difficult to find
+    time and motivation to test new strategy ideas, especially when the last 100 ideas
+    all failed.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Now that we have the framework for a goal, let’s look at some examples:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*“I will create a trading system that meets my performance objectives.”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Specific? No. Measurable? Not as written. Attainable? Possibly. Relevant? Yes.
+    Time bound? No. This kind of goal needs a lot of work.
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '*“I will create a trading system in six months that meets my performance objectives.”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Is this a SMART goal? Yes and no. The first part is specific and measurable
+    (“create a trading system in six months”), but the phrase “meets performance objectives”
+    is too vague. It can’t be measured either. The beginning of the goal is very attainable—six
+    months of hard work should yield a decent trading system, with subsequent systems
+    developed even more quickly. It is also relevant and time bound. All in all it
+    is a good goal, except for the last few words. Let’s try to improve it.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*“I will create a trading system in six months, one that trades the euro currency,
+    returns an average of 50 percent per year, with a maximum drawdown of 30 percent,
+    a winning percentage of 45 percent or higher, and follows all the steps in a well-defined
+    development process.”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Bingo! That goal meets all the requirements of a SMART goal. You can easily
+    compare any system you create to those goals.
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Once you have a SMART goal, and after you attempt to develop a few trading systems,
+    you might find that what you felt were attainable goals are not that attainable.
+    This usually hits people when they have annual returns and maximum drawdown listed
+    in the goal. Sure, 100 percent annual returns is indeed possible (I am living
+    proof!), but such returns are unrealistic if you also want a 10 percent maximum
+    drawdown. Sometimes it is easy to see in advance that a goal is not attainable,
+    but other times you’ll learn this only by running through the development process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In such cases, you’ll want to turn your SMART goals into SMARTER goals. All
+    that means is that after you try to reach the goal, if need be, you EVALUATE and
+    REEVALUATE your goals. You adapt them to the situation at hand. This might seem
+    to some like giving up—if your goal can’t be reached, just lower the goal—but
+    it can also improve your chances of succeeding and finding a good trading system.
+    If you find yourself in a situation where your goals can never be met, you can
+    either walk away from the process and find a new hobby or career, or you can evaluate
+    and adjust your goals to something more relevant and attainable.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Your goal in developing a trading system should be only one or two sentences,
+    enough to be SMART. But what about some of your wants and desires for a trading
+    system? How do you handle them? They might not easily fit into your goal, but
+    they are important nonetheless. Examples of this could be the market you trade,
+    the time of day you trade, or any other feature you deem important.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To accommodate characteristics and traits I want in a trading system, but that
+    are not important enough to include in the SMART goal, I create what I call a
+    “wish list.” It is as simple as it sounds; it is a checklist of features I want
+    in my trading system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What kinds of items can be in a wish list? [Figure 9.2](#figure9-2) gives an
+    example of a checklist I once created. This was for a mini S&P futures (symbol
+    ES) strategy I was trying to develop. They say that the strategy must fit your
+    personality, and that is what I was attempting to do here. By detailing my likes
+    and dislikes, and having them written down, it was easy for me to sketch out what
+    my trading system should look like.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c09f002.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 9.2**](#figureanchor9-2) Sample Trading System “Wish List”'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Of course, the longer the list of wishes, the tougher it will be to create a
+    trading system. It will be very likely that you will not be able to satisfy all
+    your wishes. That’s okay, though—just like everything in life is a compromise,
+    so it is in trading development. Compromising on your wish list forces you to
+    determine what is really important, and then just keep those items. Things you
+    thought were important maybe are not all that important. In the end, though, the
+    more wishes you can meet with your strategy, the more likely you will trade it
+    with confidence and resolution. This confidence and resolve, sooner or later,
+    will really be of value to you.
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 10
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Trading Idea
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Once you have firmly established goals, you are ready to start developing a
+    trading system. At the end of the process, you’ll have a trading system ready
+    to test. To get to that point, however, you first have to address the following
+    topics:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Entry rules
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Exit rules
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Market selection
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Time frame/bar size
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Programming
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Data considerations
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The important points in each of these areas are discussed in the next two chapters.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) How Will You Enter a Market?'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Entry rules are the easiest part of designing a trading system for most people.
+    Think of all the trading articles, advertisements, and information you have seen
+    recently. What is usually the focus? “80 percent winning signals!” “Unique neural
+    network entry techniques!” “Never-fail indicators!” “A former rocket scientist
+    develops a foolproof technique for finding winning stocks!” The list goes on and
+    on. Most traders are obsessed with getting the proper entry. Solve that problem,
+    and everything else is a piece of cake, or so they think. The entry lovers love
+    to point to the stock market and say, “Look what would have happened if you had
+    bought Microsoft way back when.” These folks tend to ignore the drawdowns during
+    the trade, as long as the entry was correct.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There is an even more fundamental reason, I believe, for entries being the focus
+    of most traders. The time before entry is really the only time you feel in complete
+    control. You tell the market, “Mr. Market, you must do this, that, and the other
+    before I place a trade to enter. If you do not follow my rules, Mr. Market, I
+    will not enter a trade. I am in charge here.” That feels nice, as opposed to the
+    time spent in a trade, where many times you hope and pray the market roller coaster
+    will go your way!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Entries, of course, are just one piece of the trading strategy puzzle. For ages,
+    people have argued that entries were the most important aspect of a system, or
+    that entries were the least important part. Dr. Van Tharp did a study years ago
+    with random entries, and created successful trading systems by carefully designing
+    the exits. However, I’m sure some people have also created good systems with random
+    exits.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In my experience, the importance of the entry is directly related to the time
+    you spend in a trade. If you are a long-term swing trader, with trades lasting
+    weeks to months, you don’t need pinpoint accuracy on the entry. An entry a few
+    days early or a few days late will probably not ruin the profitability of your
+    strategy. If you are scalping, however, then entry becomes very important. An
+    entry off by a tick or two could turn a winning system into a piece of garbage.
+    Keep that in mind when you design your system. Know how exact your entry needs
+    to be before you develop it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Many people have trouble developing entry ideas, and that is a shame because
+    entry ideas are all around us. I have a very good trader friend who uses magazine
+    covers as part of his decision process. When he sees a few magazine covers talking
+    about the upcoming drought or the shortage of physical gold, for example, he knows
+    this might be a great time to enter the impacted markets—in the opposite direction,
+    of course!
+  prefs: []
+  type: TYPE_NORMAL
+- en: I provided some sources for entries in an earlier chapter, and I suggest you
+    keep the list handy when you run out of inspiration. The key, once you have this
+    list of ideas, is to turn them into solid entries that can be back tested. This
+    is where discretion has no place. An algorithmic strategy, by definition, consists
+    of an algorithm, a set of rules that define behavior. If your entry rules cannot
+    be defined rigidly, then creating an algorithmic system is not appropriate.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Once you have your entry idea, you need to convert it to computer language.
+    If you do not know how to program in your trading back-test software, you will
+    likely have to hire someone to do the work for you. Before you do that, it is
+    best to put the rule into what is called *pseudo code.* This is simply the entry
+    instruction, given in plain English. Here is an example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: If close this bar is the highest close of last X bars, then buy next bar at
+    market.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Converting to a language such as TradeStation’s Easy Language would yield the
+    following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: If close = highest (close, X) then buy next bar at market.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Creating pseudo code is a really important step, since it will help you clarify
+    your entry rule, and help you identify any important variables that you want to
+    optimize (“X” in the preceding example).
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'A few pointers on creating a good entry:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Keep it simple.* If you cannot explain the rule in plain English, you will
+    have a tough time converting it to computer code, and chances are that what you
+    program may not be what you really want.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Limit the number of input parameters.* If you have two or three conditions
+    to your entry, it is easy to have 5, 10, or even more parameters you feel should
+    be optimized. Remember, though, that for every parameter you optimize, the more
+    you run the risk of overfitting your model. Keep it simple. I personally like
+    to use only 1 or 2 optimizable parameters for my entries.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Try to think differently.* Moving average crossovers have been tested ad nauseum
+    by professionals and amateurs alike. Try to develop an entry unlike any you’ve
+    ever seen—one that very few others might have tried.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Use a single rule at first.* If you want an entry with multiple conditions,
+    first start out with just one condition. Then, slowly add new conditions only
+    if they significantly improve performance. You will likely find that many entry
+    conditions you thought were important really were not.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) How Will You Exit a Market?'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Compared to entries, exits are the red-headed stepchildren of trading strategies.
+    Most people, myself included from time to time, pay very little attention to exits.
+    I suppose it has to do with the lack of control mentioned earlier, since during
+    a trade Mr. Market is in control. It can also be uneasy for many people to think
+    of different ways to escape a losing trade, since the whole point of trading is
+    to have money making trades, right?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Exits, simply put, have a huge impact on overall profitability, and a trader
+    really needs to spend a great deal of time preparing proper exits. Just as with
+    entries, there are many different ways to exit. The most common ways are listed
+    below:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Stop and reverse.* Your entry signal for a new position also becomes your
+    exit signal for your existing position. Many people like to be in the market at
+    all times, and this method accomplishes just that.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Technical-based exits.* Support/resistance lines, moving averages, candlestick
+    patterns, and the like can all be formed into viable exit rules. The key with
+    using such rules is to make sure they coordinate with the entry rules. Otherwise,
+    exits could trigger immediately after entries triggered.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Breakeven stops.* Many people swear by a breakeven stop, where as soon as
+    practical, you move the stop-loss to a breakeven level. This may indeed be useful
+    for the psyche of discretionary traders or for those obsessed with “winning,”
+    who don’t want to see a winning trade turn into a loser. In my experience, though,
+    breakeven stops always seem to limit profit potential, since they typically exit
+    on a retracement, with the market then resuming its earlier trend.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Stop-losses.* Some people swear *by* stop-losses, and some people swear *at*
+    stop-losses. I look at it this way: if a stop-loss, even one far away from your
+    entry, significantly reduces your strategy’s performance, perhaps your entry signal
+    is the real problem. Stop-losses, when coupled with good entries, can help prevent
+    catastrophe. Can you imagine trading the mini S&P, without a stop, right before
+    a terrorist attack? True, you can get excessive slippage with stop-losses, but
+    barring a market shutdown, at least you can get out, and live to trade another
+    day. Stop-losses can be dollar based, chart based (i.e., exit near support/resistance),
+    or based on parameters such as average true range. A simple stop-loss can become
+    very complicated, indeed.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Profit targets.* The old adage “let your profits run” is a tried-and-true
+    trading malapropism. But letting profits run is not always the optimum way to
+    trade. Sometimes it is better to hit a target, profit based or chart based, and
+    then set up for the next entry signal. I tend to test with profit targets, but
+    I also allow for a huge profit on the upper end. Many times, this becomes the
+    best alternative.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Trailing stops.* As the market rises in your favor, you keep a certain percentage
+    of the profit. This really is a moving stop-loss, but instead of the stop leading
+    to a loss, it leads to a smaller profit. The one problem with trailing stops is
+    that they can have many parameters that need optimization. The extra parameters
+    may not be worth the effort in live trading, although they will certainly make
+    a back test look better.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) What Markets Will You Trade?'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: One of the toughest decisions you will make when designing your system is which
+    market or markets to trade. There are really two schools of thought in this area,
+    and I’ll describe the advantages and disadvantages of each.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The first method is to design a system for all markets. This would be a “one
+    size fits all” approach, where the rules for the system never change as you move
+    from market to market. The parameters, though, could be tuned (or not) for each
+    market. The advantage to this approach is that if one single strategy works well
+    on all markets, then it likely has a high degree of robustness. This may make
+    the system less vulnerable to market changes, since the system has likely seen
+    many types of different markets across the tested history. The big disadvantage
+    to such an approach is that development becomes infinitely more difficult. Designing
+    a system for one market is tough enough. If you now demand that the system work
+    for many markets, you will struggle to find an acceptable strategy. In such situations,
+    developers typically do one of two things: (1) they relax their acceptance criteria,
+    or (2) they test on all markets, and then select the best 5 to 10 performers to
+    trade.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Realize that both of these compromises, while likely necessary to create a multimarket
+    system, are very bad. Relaxing acceptance criteria will lead you to abandon the
+    system early, as you realize with real money that the strategy does not meet your
+    initial objectives. Testing on multiple markets, and then “cherry picking” the
+    best performers to trade, is just another, albeit sneaky, way of optimizing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Creating a strategy for one particular market is the other popular approach.
+    One advantage to this method is that it can be customized to the characteristics
+    of the market. For example, it is known that currencies tend to trend well, so
+    maybe a breakout-type system is appropriate. Or, for the equity markets, a mean-reverting
+    strategy with a long bias might be best. Another advantage is that, as mentioned
+    earlier, it is always easier to create a system for one market than for multiple
+    markets. That doesn’t mean it is a better system, though; it just means it is
+    easier to create. The disadvantage to creating a single-market system is that
+    when you create a system knowing the characteristics of the market, you are assuming
+    those characteristics will remain the same forever. While that may be true, what
+    if it isn’t? How will your trend-following currency system perform when currencies,
+    for whatever reason, become mean-reverting markets?
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you can see, there are valid points for and against each approach to market
+    selection. I personally have used both over the years. When I finished first or
+    second in the World Cup Championship of Futures Trading three straight years,
+    I used a “one size fits all” system, traded on roughly a half-dozen to a dozen
+    markets. That worked well. Currently, about half of the systems I trade are of
+    this variety. I also like single-market systems, not only because they are easier
+    to create, but also because I can mix and match them for diversification. In any
+    given year, some of these systems will underperform, some will be around breakeven,
+    and some will outperform. Having a multitude of single-market approaches makes
+    this more manageable, especially when strategies have to be retired.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) What Type of System Do You Want?'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Whenever I begin looking at a new strategy, I almost always see if it can be
+    made into a day-trading strategy. I define “day trading” as in and out of a trade,
+    or multiple trades, in a single session. There are some nice benefits to such
+    a strategy:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: No overnight risk from unexpected events, since you are flat.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Reduced margin requirements, making it easier to trade with large size (although
+    most people should not be doing this, as the higher leverage can lead to a greater
+    chance of disaster).
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: A “working job”–type feeling. You fire up the computer in the morning, trade
+    a while, make your daily nut, turn off the computer, and go home and play with
+    your kids the rest of the day—a very satisfying way to live.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Usually, when I start development, I select short time frame bars (one- to five-minute),
+    throw in the “set exit on close” statement to exit at the end of the day, and
+    jump into development. Nine times out of 10, though, the strategy fails. Regardless
+    of the entry idea (trend, countertrend, whatever) and exit scheme (fixed stops,
+    moving stops, breakeven stops, profit targets, etc.), nothing ever seems to work
+    consistently.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Inevitably, if I like the strategy idea, I’ll then open up the time frame to
+    60-minute bars, 240-minute bars, daily bars. I want to see if my idea has any
+    validity at all. What almost always happens? Performance gets better! Maybe the
+    performance still doesn’t meet my goals, but the performance on a daily chart
+    is almost always better than on a 1-minute chart. I’ve seen it enough times to
+    realize it is more than a coincidence. The question then becomes: why do I see
+    this behavior? Here’s what I have come up with:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Number of trades and trading costs. Let’s say I have a daily bar strategy that
+    trades 1 time per month, or once every 20 bars. That will cost me roughly $25
+    in trading costs. If I go down to 1-minute bars, the same strategy might trade
+    10 times per day (once every 120 bars), leading to $250 in trading costs. That
+    is a huge difference in costs that must be overcome. Add in the fact that 1-minute
+    moves are smaller than daily moves, and it gets even harder.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: There seems to be more randomness in the data as you go to smaller time frame
+    bars. Look at a 1-minute chart of the mini S&P futures (symbol ES) and most days
+    it is just narrow range noise. It is harder to find the true price path when the
+    random noise level is high. Daily bars, as an alternative, seem to have more trends.
+    Of course, where I see random noise in data could just be due to other biases
+    I have floating around in my brain.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Entry and exits become a much more important part of the system when you have
+    small stops and targets, as most day-trading systems are set up to be. So I must
+    have really great entries and exits, ones with very good edges. But the better
+    the entry, the harder it is to find during development. Plus, miss the entry by
+    a tick, and you may lose a good percentage of your profit. If you are swing trading
+    with daily bars, a tick or two at entry probably won’t mean as much, relative
+    to overall size of an average trade.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: With tick charts or 1- to 5-minute charts, think about who you are trading against.
+    Many times, it is high-frequency trading firms, which probably have better entries
+    than you and have a speed advantage over you. I feel that the impact of the pros
+    is less noticeable at higher time frames, although I realize many pros trade daily
+    bars, too.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'With most strategies, as I mentioned before, I find the fewer trades there
+    are, the better. This could be due to trading costs, but it also could be due
+    to a very bad reason: maybe you think you have an edge, but with fewer trades,
+    the statistical confidence that you have an edge is a lot lower. Put another way,
+    if I had 2 strategies that averaged a $50 profit per trade, and one had 100 trades
+    over the past 10 years, and another had 1,000, I’d always pick the 1,000-trade
+    strategy (so would every rational person). But the reality is that the 100-trade
+    strategies are a lot easier to find—maybe because they aren’t really edges at
+    all, but just temporarily lucky strategies?'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: I really wish that all my strategies were day-trading-type strategies. In actuality,
+    probably 9 out of 10 are the exact opposite. My best strategy over the past four
+    or five years holds a position for weeks to months—definitely not a day-trading
+    approach.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) What Time Frame/Bar Size Will You Trade?'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Almost as important as the market you will trade is the time frame(s) you select.
+    For most people who look at bar charts, this is simply the length of time for
+    each bar. Of course, strategies will perform radically differently on different
+    time frames, so it is best to select a time frame that meets your objectives.
+    Do you want to be in and out quickly? Maybe a 1-minute or a tick-based chart is
+    best. Do you prefer long-term swing trading? If so, maybe a daily or even weekly
+    time frame is what you need. The point is to select a time frame that matches
+    your interest.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One important factor to realize with time frame is that typically shorter time
+    frames lead to more trades. If you have small transaction costs, with many quick
+    trades, this is terrific—just witness the success of all the high-frequency trading
+    firms. Even a small edge can yield big profits when repeated enough times. But,
+    for most of us retail traders, higher transactions costs are just part of the
+    game, making quick strategies that much tougher to succeed with.
+  prefs: []
+  type: TYPE_NORMAL
+- en: When settling on a time size for a bar, an approach that many developers use
+    is what I call *time frame contraction and dilation.* The concept is to test a
+    strategy with a 10-minute time frame. If it is successful, the thinking goes,
+    then testing on a 9-minute bar and an 11-minute bar should also be profitable.
+    One minute either way should not destroy the strategy, and good performance in
+    these contraction and dilated periods suggests robustness.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I personally have had little success with this approach, and I believe there
+    are two reasons for it. First, by changing the time length of a bar, over the
+    course of a day there are now a different number of bars to evaluate. In the preceding
+    example, changing a 10-minute bar by 1 minute leads to 9 percent more bars or
+    fewer bars. This can heavily influence the performance of indicators you may employ.
+    The other issue I have with this approach is that many traders make their decisions
+    on the close of a standard period bar. Think of all the people trading off charts,
+    most of them using standard time periods of 5, 10, 15, or more minutes. If your
+    system is trading at a different time, your results can vary widely from the results
+    with a standard (i.e., 10-minute) bar.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Putting my personal objections aside, if you have success with 9-, 10-, and
+    11-minute charts, then I’d agree that your system has robustness in it. It would
+    give me extra confidence. At the same time, though, if 10-minute performance was
+    good, but 9- and 11-minute performances were awful, I would not necessarily throw
+    out the baby with the bathwater.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you decide to test with tick charts, one important consideration with bar
+    size and time frame is the amount of historical data available. I discuss the
+    question “how much data to use” in a later section, but for now realize that many
+    data vendors provide only six months of data. This can also be an issue with short
+    time frame bars (1- to 5-minute), where orders are triggered intrabar. Tick data
+    are also important for specialty bars, such as point-and-figure charts, Kase bars,
+    Renko bars, and so on. The important point is that if you rely on tick charts
+    or tick data, think carefully about the implications of limited historical data
+    before you test.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One final important consideration involves the daily settlement price and the
+    daily last price traded, which is important if you are using daily bars. “What
+    is the problem,” you ask, “aren’t closing/settlement prices and the last price
+    traded the same thing?” In some markets, yes, and in some markets no. Plus, the
+    meaning of these terms has changed with the advent of 24-hour trading. The gold
+    market is a good example. Back in the days when gold was only pit traded (which
+    may easily be part of your historical testing period), the market closed at 1:30
+    P.M. Eastern time, and the last trade of the day was usually very close, but not
+    necessarily identical to, the exchange published settlement price. Now, however,
+    the gold market trades electronically, and it trades until 5:00 P.M. Eastern time.
+    Unfortunately, the exchange settlement price is derived from the trading that
+    occurs from 1:28 to 1:30 P.M. You can imagine how the price at 1:29 P.M., the
+    settlement time, can vary widely from the last price traded at 5:00 P.M. The price
+    action on Wednesday, September 18, 2013, is a great example, as shown in [Figure
+    10.1](#figure10-1). A Federal Reserve announcement at 2:00 P.M., after the settlement
+    price had been established, roiled the markets. The settlement price and the last
+    traded price were dramatically different!
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c10f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 10.1**](#figureanchor10-1) Don’t Assume that Settlement Price = Last
+    Price Traded'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Data vendors differ on how they treat settlement prices and last traded prices.
+    As of the time of this writing, TradeStation, for example, uses the exchange settlement
+    as the closing price for daily and weekly bars. For X minute bars, the close of
+    the last bar of the day is also the last traded price. Kinetick, a provider for
+    NinjaTrader, follows the same approach. Another popular data vendor, CQG, however,
+    uses the last price traded as its daily bar close.
+  prefs: []
+  type: TYPE_NORMAL
+- en: How can this be a problem in your testing? Well, say, for example, you are testing
+    with daily bars, and your strategy uses the instruction “sell the bar at close.”
+    Your strategy dutifully executes the command at 4:59 P.M., and you are filled.
+    But later, when the exchange settlement price is applied to the data, the strategy
+    will think you were filled at the settlement price (which is now the daily bar
+    closing price), but you were actually filled near the last traded price. This
+    is just one of the ways back-test results can fool you.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) How Will You Program the Strategy?'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Once you have your basic entry and exit rules thought out; you have selected
+    a market, time frame, and bar size to test; and you have obtained the desired
+    amount of historical data, it is time to put together your strategy for testing.
+    The question for most people at this point is “can I program the strategy myself?”
+    The answer for a true do-it-yourselfer is undoubtedly “yes.” But if you have never
+    programmed before in the language of your strategy-testing software, you might
+    find this to be a daunting task. Here are a few tips that might help you out.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you are completely clueless about computer programming, and you have no desire
+    to learn how to do it, your programming tasks are best left in the hands of professionals.
+    You can hire an expert at an hourly rate or even a team of experts so that no
+    one developer knows all your trading secrets. The drawback here is that every
+    time you need a code change, even a small one, you will have to wait for the developer
+    to do it, and you’ll likely be charged extra for the privilege. The extra time
+    and cost associated with changes, updates, enhancements, and the like can add
+    up quickly. If you still feel that a programmer is the right choice, you can find
+    them at various trading forums, or by contacting your software vendor.
+  prefs: []
+  type: TYPE_NORMAL
+- en: An alternative is to partner with a programming expert, ideally someone who
+    will be interested in trading the finished project. You won’t have to worry about
+    your partner’s stealing your idea, and the collaboration can lead to far more
+    profitable systems. I have done this before, usually as the programming expert,
+    and it is really satisfying when it works. The problem is in finding people you
+    can trust enough to help you.
+  prefs: []
+  type: TYPE_NORMAL
+- en: My preferred and recommended approach is that you should program everything
+    by yourself. All the trading software packages out there have classes, books,
+    online tutorials, and sample strategies to help you develop your skills. By going
+    this route, you will not have to worry about people stealing your “secret sauce.”
+    Plus, as you learn the programming aspect, you will get more familiar with the
+    idiosyncrasies of the back-test engine. This is really important when results
+    look too good to be true. Once you know the software and programming well enough,
+    you’ll never have to wonder if you have only fooled the back-test engine but not
+    the real world.
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 11
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Let’s Talk about Data
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'With the entry, exit, market, and time frame/bar length decided, now comes
+    one of the most important, most underappreciated, yet least understood aspects
+    of testing: market data. People take data for granted, and that can be a big mistake.
+    I’ve seen huge differences in strategy performance just due to different data
+    sources. I’ll make the grand assumption that your data are clean, without bad
+    data points, missing data, and so on. Of course, that is not the case at all,
+    practically regardless of vendor. But most people understand that data may have
+    errors; what most do not understand is the impact behind the answers to these
+    data-related questions:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: How much data should you use?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Should you use pit data or electronic data?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Should you use continuous contract data?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Did the advent of electronic trading impact market data?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: How do you test with foreign exchange (forex) data?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Now, before you start testing, is the time to look at all these issues, and
+    make some decisions. To go back and retest with different a data structure typically
+    means you will be using tainted data, and that is not good.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) How Much?'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: If you are like me, you’ve probably done the “eyeball” test more than a few
+    times. You look at a chart and, knowing your entry and exit criteria, perform
+    a quick test of the past few days or weeks of data. After a few trades, if you
+    see a lot of profit, you get excited and venture into more in-depth testing. If
+    you have losses, you either abandon the strategy or tweak it a bit and try again.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Hopefully, you realize the futility of such a simple test. Not enough trades,
+    not enough market conditions, just not enough of anything to make an informed
+    decision—period. To attain long-term success, you must look at more data than
+    this.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So what is an acceptable amount of data? When I am asked this question, I almost
+    always reply, “As much as possible.” More data provides more market conditions—more
+    bull markets, more bear markets, more flat markets. It also provides more quiet
+    periods and more volatile periods. As you make more trades, and your system remains
+    profitable, it becomes less and less likely that the results were due to just
+    chance. Think of a coin flip. If you flip it once, chances are 50/50 that it will
+    be heads. If you flip a coin 10 times, the chances of heads’ coming up at least
+    once is quite good. Flip the coin 100 times, and you are practically guaranteed
+    that heads will appear at least once. More flips leads to more certainty, just
+    as more trades leads to more confidence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For daily bar systems, which tend to be swing systems (trades lasting days to
+    weeks), I find that 10 years of data is a good compromise. It allows your strategy
+    to see many different market conditions and works well with walk-forward testing
+    (which requires some initialization time).
+  prefs: []
+  type: TYPE_NORMAL
+- en: For intraday or short-term systems, I also like using 10 years of data. Practical
+    considerations, though, such as the introduction of electronic data, may make
+    this a difficult task. So, in many cases I will use only 5 years of data, realizing
+    that my results may not be as robust as a 10-year tested system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For some people, 5 to 10 years of data is too long a time period to test, or
+    the data are not available. In such cases, I recommend the following rules of
+    thumb: for each rule and parameter you have in your strategy, have at least 30
+    to 100 trades. As an example, consider a strategy with two entry conditions, and
+    two exit conditions. For such a system, I’d like to see 120 to 400 trades. Anything
+    less than this might be acceptable but also runs the risk of the strategy’s being
+    “matched” or fitted to the data.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The drawback to using as much data as possible is that it makes development
+    much tougher. Let’s face it—at best, most trading systems out there are probably
+    breakeven before commissions and slippage. This means the longer you test it,
+    the more likely it is that gross profits will revert back to zero. I’m sure you
+    witnessed this before, when a strategy has fantastic performance in a one-, three-,
+    or six-month period, only to give it all back in the next period. So, in the end,
+    ask yourself if you want a long-running positive system, or do you want a great
+    performer over a short period of time? The former is much tougher to find, and
+    the latter is much more likely to lead to real-time losses.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Pit or Electronic Data?'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Back in the old days of pit trading, knowing what data to use was easy—just
+    use the pit data because that was all there was! Today, with electronic data taking
+    over, there are multiple options:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Pit data only
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Electronic data only
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Pit and electronic data together
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Data during traditional pit times only
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Data during all hours
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Data during day session/evening session
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The choice for data going forward might be easy—electronic data are the best
+    because that is where the volume currently is, but what do you do when you are
+    historically testing a strategy?
+  prefs: []
+  type: TYPE_NORMAL
+- en: I’ll give you a simple example to highlight the dilemma. Let’s say you are trading
+    gold, and you want to use 20 years (excellent choice!) of data, with 60-minute
+    bars. Twenty years ago, the pit was the only data source, so you have to use that.
+    In a daily pit session, there were probably six to eight bars roughly (since pit
+    trading hours over the years changed, the number of 60-minute bars per day will
+    change, too). For your strategy, let’s say you use a 14-period moving average.
+    This will typically represent two trading days.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now, fast-forward to today’s electronic markets. Today’s markets trade for roughly
+    23 hours per day. If you still use a 14-period moving average, that will only
+    equate to a half trading day, instead of the previous two trading days. Do you
+    think that can radically influence your historical tests? It sure can!
+  prefs: []
+  type: TYPE_NORMAL
+- en: How do you handle this? Typically, I rely heavily on daily data, especially
+    the daily settlement prices. Pit and electronic settlements are identical. I do
+    not like using daily highs and lows, since the average range between pit high
+    and low will usually be less than electronic day high and low. If this sounds
+    confusing, just think of an overnight price shock that lasts for an hour before
+    reverting to the previous price level. In the old pit days, such a shock would
+    never have shown up in the data, since it happened overnight. For electronic data,
+    though, the daily high would include this price shock. Therefore, your strategy
+    may perform quite a bit differently in the old days versus today’s market.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One trick that helps make all the data the same is to select a standard daily
+    session time, and apply it to your complete historical database. For currencies,
+    for example, the pit used to be open from 8:20 A.M. to 3:00 P.M. Eastern time.
+    To keep this time intact in the electronic era, I simply create a special “currency
+    pit” session from 8:20 A.M. to 3:00 P.M. for all the historical data. Then all
+    my data are consistent.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With all the available options with data, I highly recommend you take time and
+    think about the data you are using. Making sure it is consistent throughout your
+    test history is definitely the best way to test. It may not be that easy to create
+    those data, though.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Continuous Contracts'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: One concept that stymies most junior system developers is the use of continuous
+    contracts in futures market testing. Continuous contracts are needed because each
+    futures contract has a limited life, and continuous contracts create a never-ending
+    data stream. The concept is simple—just artificially stitch together expiring
+    futures contracts to create one continuous data stream—but the implementation
+    path is peppered with pitfalls, just waiting to catch the unwary. I’ll discuss
+    these pitfalls for the three major techniques of futures data selection.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The purest way to test with futures data is just to use the raw contract data.
+    Then you don’t have to worry about continuous contracts at all. The problem is
+    that most trading software is not set up to easily accomplish this. Let’s say,
+    for example, that you want to test a strategy on the euro currency. If you were
+    testing in 2013, from January 1 to approximately March 15, you would use the March
+    contract, 6EH13\. From March 15 to June 15, you’d use the June contract, 6EM13\.
+    In this way, you’d progress through all the years of your data. But you’d have
+    some problems in testing this way. First, you’d have to put in logic to (1) determine
+    the proper end date for each contract (i.e., before first notice day or last trading
+    day, whichever comes first) and (2) “roll over” the current position from the
+    current contract to the new contract. Certainly, this could be accomplished, but
+    it would require some detailed programming. The bigger issue is if you wanted
+    to optimize the strategy over all these contracts. Most trading software requires
+    an optimization on one chart of data. With multiple contracts of data, you cannot
+    optimize without doing it manually, a tedious and painstaking process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To get around these limitations of testing with the individual contracts, many
+    people splice the contract data together in a continuous contract. There are two
+    primary (and numerous less popular) ways to create a continuous contract, and,
+    of course, both have some serious pitfalls. The first type of continuous contract
+    is a nonadjusted continuous contract. Using the preceding example, on March 15
+    the contract data would switch from March to June. The nice thing about this method
+    is that the original data are preserved—no adjustments have been made to the data.
+    The pitfall with these data is that, at rollover, rarely if ever will the two
+    contracts be the exact same price. Frequently, the front month will have a significant
+    discount or premium to the next month. An example of this is shown in [Figure
+    11.1](#figure11-1). Using these data as is will create false signals and false
+    profits and losses. Assume you are long November soybeans, and then you roll over
+    to the May soybeans. With a spread of 38 points, with an unadjusted continuous
+    contract, a trading strategy will think that gap is real and that you profited
+    from it. The reality, though, is that you would not actually benefit from the
+    gap. The gap exists only because the contract month has changed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c11f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 11.1**](#figureanchor11-1) Contract Prices Will Be Different for
+    Different Months'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Many people get around this artificial gap by using what is called a *back-adjusted
+    contract.* With this type of contract, the gaps are subtracted out, and all previous
+    data are adjusted appropriately. An example would be as follows: Suppose on March
+    15, June euro closes at 1.3512, and March euro closes at 1.3516, a difference
+    of .0004\. To remove this gap of .0004, all data from March and before must have
+    .0004 added to it. This will remove the gap from all data, and provide a nice
+    continuous data stream. It seems like the ideal solution.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Of course, no method is perfect, and this technique has a couple of problems,
+    one of which practically no one talks about, at least that I’ve ever seen. The
+    first problem is that constantly accounting for gaps at every rollover leads to
+    a situation where the historical data actually become negative. An example of
+    this is shown in [Figure 11.2](#figure11-2). Clearly, crude oil never had a negative
+    price, but that is what the continuous contract shows and what your strategy will
+    test with. Although the continuous data may seem strange (don’t show your friends
+    your “Holy Grail” trading system with these market data, since they’ll think you
+    are crazy for testing with negative prices!), the results are accurate, provided
+    you do not fall victim to the second pitfall.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c11f002.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 11.2**](#figureanchor11-2) Back-Adjusted Continuous Contracts Can
+    Have Negative Prices'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The second pitfall with continuous back-adjusted contracts is also the issue
+    most likely to lead to invalid trading results. In a nutshell, you cannot have
+    any indicators that divide or multiply prices when you use back-adjusted contracts.
+    An example best shows the point:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suppose you have a strategy that uses the percentage change in day-to-day close,
+    close[i]/close [i -1]. On March 10, you are using the March contract, and the
+    close is 1.3500\. The previous day close is 1.3420\. The percentage change calculation
+    is then 1.3500/1.3420 = 1.00596.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fast-forward to March 20, when the June contract is the front contract. When
+    you performed the continuous contract back adjusting, .0030 was added to it. This
+    is an extreme amount for rollover adjustment, just to prove my point. Thus, now
+    the March 10 close is 1.353, the previous day close is 1.345, and the ratio is
+    now 1.353/1.345 = 1.00595\. The ratio for the same date has changed! Plus, it
+    will change again at every rollover in the future. This means that when you back
+    test a strategy with ratios, your back-test signals will be different than real-time
+    signals. The difference may not be much, but it will certainly be there. The question
+    will then be “can you rely on performance histories that you know will change
+    in the future?”
+  prefs: []
+  type: TYPE_NORMAL
+- en: If this seems like a subtle distinction, just imagine what happens when the
+    price data approach zero, the other known pitfall on back-adjusted data. Dividing
+    by zero or a number close to zero will lead to a huge result! Clearly, that would
+    never happen in real time—unless, of course, the actual price of the instrument
+    in question went to zero. Just do not count on that ever happening!
+  prefs: []
+  type: TYPE_NORMAL
+- en: The only way around this pitfall is to take special care that division or multiplication
+    is not used with price data in back-adjusted continuous contracts. Both ratios
+    of prices and percentage changes in prices are no-nos. If you choose not to follow
+    this rule, do not be surprised when (1) your historical performance results change
+    over time and (2) that your historical results and future results do not match.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) The Impact of Electronic Markets'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Many trading system developers test strategies only on electronic data. They
+    ignore any pit data, so their strategies typically only test for the past few
+    years. Their reasoning is that the markets fundamentally changed when electronic
+    markets came on the scene, so strategies that work now don’t necessarily have
+    to work in the long-forgotten pit era. To that argument, I both agree and disagree.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Electronic markets have undoubtedly changed the futures markets. Without a pit
+    full of traders, the whole dynamic of pricing has been altered. In fact, many
+    former pit traders, who made a very good living while on the floor, struggled
+    mightily when they moved to electronic trading. Most were trying to trade as they
+    did on the floor, and the market had changed enough that those techniques were
+    no longer profitable. Add in today’s high-frequency trading firms, and the short-term
+    market is certainly different than the old pit trading days.
+  prefs: []
+  type: TYPE_NORMAL
+- en: On a longer-term scale, though, almost all commodities are dictated by the law
+    of supply and demand. The venue for trading—electronic, pit, or a combination
+    of the two—doesn’t have a long-term impact. It doesn’t make sense to think that
+    high-frequency traders, who are in a trade for only a few seconds, have an impact
+    on the price two or three months from now.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With those contrasting views in mind, I still use pit-traded data, and the history
+    they provide, for my longer-term swing-trading development. That way, my strategy
+    is able to experience more market conditions. If a strategy I develop for soybeans
+    works well in the 1990s, 2000s, and 2010s, I am more confident and impressed with
+    the system. Some people would even go back to the 1970s and 1980s! For shorter-term
+    systems, especially intraday ones, using only the electronic data may make sense.
+    If it also works on pit data, that is great, but I probably would not make it
+    a requirement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Testing with Forex Data'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: If you are testing a forex system, there are two major concerns you need to
+    be aware of. The first issue is that not all forex data are the same. In fact,
+    since the forex is decentralized, there is no official price stream like there
+    is for futures markets. That means that each broker will have its own unique price
+    data set. Of course, if you back test with the same data source that you will
+    use going forward, then there is no issue. But if you test with data from broker
+    A, and then want to trade it live with broker B, the system will now have different
+    data to deal with. In that case, you can basically toss all your back tests out
+    the window, as they are no longer valid. Depending on the data differences, your
+    results might be better, and they might be worse. The point is, though, that you
+    have invalidated all your testing by changing data sources.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The second issue with testing forex data is in the types of orders you use.
+    If you are testing your system with forex data, you really need to be careful
+    with how your strategy places orders. Because of the issue I show later, I only
+    use market orders for entry and exits. My forex strategies never have limit or
+    stop orders in them. Of course, I always add the spread cost into the final profit/loss
+    on each trade, but by using market orders, I never have to worry about “phantom”
+    fills.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What is the pitfall to using limit and/or stop orders with forex data? In futures
+    markets, there is one price data stream, which always represents the traded price.
+    With forex, however, there is both a bid data stream and an ask data stream. The
+    difference between these two data streams is the current spread, which is typically
+    a few pips. By definition, you can only buy at the ask and sell at the bid.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The problem with testing a trading strategy with forex data is that the data
+    stream shown on the chart is typically the bid data stream. Although you could
+    alternatively show the ask data stream (if available), most trading software back-test
+    engines can use only one to calculate trade results. If your trading software
+    can calculate fills using bid and ask data simultaneously, you may not encounter
+    this issue. For example, non-object-oriented TradeStation can only test with bid
+    *or* ask data. MultiCharts, on the other hand, can test with both bid *and* ask
+    data. It is a good idea to check your software first, though, before assuming
+    this is not a potential issue for you. If it is a potential issue for you, here
+    is an example of how it could be a problem:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suppose you are trading the EURUSD forex pair. The current price is 1.3502/1.3505
+    (I am using an unrealistically high three-pip spread for this example, but the
+    principle holds for even smaller spreads). That means the bid is at 1.3502, and
+    the ask is at 1.3505\. Remember, you can buy at the ask but not below, and you
+    can sell at the bid but not above. Let’s also assume your trading software shows
+    you the bid data, so currently it shows 1.3502.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For this example, your strategy places an order to buy at 1.3500\. Shortly after
+    your order, the price drops to 1.3499/1.3502\. Since the price on the chart is
+    now 1.3499, and your buy price is 1.3500, the software strategy engine thinks
+    you were filled at 1.3500\. It thinks you are currently long, but the ask price
+    only hit 1.3502, so in real life you would never be filled.
+  prefs: []
+  type: TYPE_NORMAL
+- en: “Big deal!” you might say. “How often can this possibly happen?” Well, it will
+    never happen for losing trades, since for losers the price will keep falling and
+    you will get filled in real life, just as your back-test engine got filled. But
+    for winning trades that turn profitable before the ask price hits 1.3500, you
+    will never get filled. Depending on your trading methodology, it could lead to
+    a huge discrepancy between back-test engine results and real-world results. At
+    the very least, your back-test report will *always* be on the optimistic side.
+    Since you use that information to develop your strategy, you could be basing your
+    trading decisions on some very suspect results. Although the example I presented
+    is for limit orders, the same type of situation occurs with stop orders. You will
+    have stops filled at prices that never show up on the bid data chart.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To get around this issue, you cannot just add slippage to each trade like you
+    can with futures. This is because the bid/ask problem is not a situation of slightly
+    worse fills—it is a case of fills or no fills. Or your software platform may offer
+    advanced order techniques and methods (TradeStation refers to the method as “price
+    series providers”). The key is to be able to back test the same way you trade
+    live. That is precisely why I use market orders for all my forex strategies. Since
+    I use orders such as “sell next bar at market,” I can have some losses that are
+    much bigger than a stop-loss would be, and that is the big disadvantage of market
+    orders. Just imagine, for example, how much the price could change in a five-minute
+    bar around a Federal Reserve announcement. In the long run, though, I know market
+    orders will always be filled, and they back test the same, after accounting for
+    the spread, as they trade in live accounts. Therefore, I have found this situation
+    to be acceptable, since it provides back-test results that match real market fills
+    fairly well.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Summary'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: As you can see, the issues behind market data are much more complex than the
+    trading software leads you to believe. It is critical that you put in the time
+    and effort up front to examine and understand the market data you are using. Utilizing
+    the wrong data, or using the right data incorrectly, can lead to completely bogus
+    test results. In most cases, unfortunately, you will not even realize there is
+    an issue at all. I recommend that you spend as much time in the beginning reviewing
+    your market data as you do in formulating your entry and exit criteria.
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 12
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Limited Testing
+  prefs: []
+  type: TYPE_NORMAL
+- en: At this point, I’ll assume you have the strategy coded, debugged, and ready
+    to test. Unfortunately, when they get to this step, many traders will just test
+    the strategy over the whole market history that they are interested in and see
+    how profitable the strategy is. Some will go a step beyond this and actually run
+    thousands or even millions of optimization iterations as part of this. What better
+    way to see how good strategy can be than by running it to its extreme?
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you may have guessed, I am firmly against running these kinds of comprehensive
+    tests. These tests may lead to a few great-looking optimized back tests but will
+    almost always fail in real-time trading. Since successful real-time trading is
+    the goal, shouldn’t that be our success criteria, rather than a nice-looking back
+    test?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The other major problem with testing on all the data is that once you test
+    the data, you “burn” it. This means that any subsequent retests will be just a
+    bit more curve fit, a bit more optimized. Think about it: You run strategy A over
+    all your data. It looks good, but not great. You make a few minor tweaks and rule
+    changes to your strategy and then test the new strategy B. Now, it yields much
+    better results. You are ecstatic. But do you realize you just optimized? No, you
+    did not optimize in the sense of running strategy A with optimized parameters,
+    which is how most trading software describes optimization. But you certainly did
+    optimize, as you tested both strategy A and strategy B, and picked the best one.
+    Even though in this case strategy B has a better back test than strategy A, I’d
+    believe the results of strategy A more (unless strategy B is much, much better
+    than A), since A was run with untouched data.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Theoretically, you should run a strategy on a set of data one time, and one
+    time only. If it works, great, but if it doesn’t work, you should just move on
+    to the next data set or instrument. That original data are tainted by your testing,
+    to a degree. This is the point where theory and practice deviate. In actual practice,
+    you will eventually test multiple strategies over the same data, maybe not right
+    away, but eventually it is inevitable. That is why you need to be careful. In
+    my testing, I like to follow the teachings of Don Juan described in the book *Journey
+    to Itxlan: The Lessons of Don Juan* (Simon & Schuster, 1972): “He taps it lightly,
+    stays for as long as he needs to, and then swiftly moves away leaving hardly a
+    mark.”'
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you treat the data as fragile, you are more likely to avoid this issue. Treat
+    your data with utmost care!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Since testing with all the data is a no-no, what is a reasonable and acceptable
+    way to test a strategy? On one hand, you want to see if the core idea you developed
+    has any merit to it; but on the other hand, you want the ability to add or change
+    rules to the strategy, without falling victim to curve fitting or hindsight bias.
+    Also, you want to leave as much data in your dataset untouched as possible, since
+    this will create a better and more realistic walk-forward test (walk-forward testing
+    will be discussed in the next chapter).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given all these competing forces, I have found it best to do preliminary testing
+    on a chunk of historical data, but not the whole data set. For example, if I have
+    10 years of data for my full test, I will do the preliminary limited testing described
+    below on one or two years’ worth of data. I try to use as little as possible,
+    while still getting enough trades to be statistically meaningful. I will try to
+    take the two years of data at random, not using the same data all the time or
+    favoring any particular years.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Some traders advocate testing first on the “most interesting” data. For most
+    commodities and futures, that would be the 2007–2009 time frame, when the world
+    markets nearly collapsed. Their point is that if a system performs badly at this
+    time, it will likely perform poorly at the next market shock. While I understand
+    their approach, I respectfully disagree. I would try to avoid preliminary testing
+    during the financial crisis, since it may lead me to a system that performs well
+    only during severe shocks and panics. While a system such as this might be nice
+    at those times, I’d fear that the system would lose a lot more during the more
+    prevalent “normal” times.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If I take my two-year chunk of data and adhere to the following process, I’ll
+    end up fairly certain whether my idea has any merit. The objective at the limited
+    testing phase isn’t to determine if a system is tradable; rather, it is used as
+    a hurdle to see if the trading system has any potential. Frequently, I have trading
+    strategies that survive the limited two-year test but later fail the more rigorous
+    tests. Only infrequently does the reverse occur, where I dismiss a strategy because
+    of the limited results, and it turns out later to be a fantastic strategy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Entry Testing'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The first thing I usually want to know when testing a trading system is whether
+    the entry has any usefulness. Many times, what looks like a good entry appears
+    that way only because of the exits. Frequently it is difficult to know the true
+    impact of entries when tested as a whole system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'When I evaluate entries by themselves, I typically perform the analysis three
+    ways:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fixed-stop and target exit
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Fixed-bar exit
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Random exit
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Fixed-Stop and Target Exit
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: For the fixed-stop and target exit test, I simply choose a set stop-loss and
+    profit target that is appropriate for the instrument and time frame I am trading.
+    For a swing-type system lasting a few days, $500 to $1,500 is a reasonable amount
+    for a stop-loss. Similarly, I set an appropriate profit target. All things being
+    equal, if you set the stop and target to the same dollar amount, before commissions
+    and slippage you should prevail on 50 percent of your trades, assuming that your
+    entry is no better than random. Using set dollar amounts for stop and profit,
+    I simply create a strategy with my entry signal, set stop-loss, and set profit
+    target.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fixed-Bar Exit
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: For the fixed-bar exit test, I create an exit condition that closes the trade
+    after X number of bars pass. The idea behind this is that most good trades show
+    profit right away and could be exited with a profit almost immediately. If your
+    entries don’t show profit until 10 or more bars, for example, perhaps your entry
+    is too early and should be delayed. This test really helps to check if the entry
+    signal gets you going in the correct direction.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Random Exit
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: For the random exit test, I typically use this as part of the “monkey test”
+    process, described later. However, sometimes I use it right at the beginning of
+    testing. The concept is based on eliminating the impact of any exit and just seeing
+    the ability of the entry to generate winning trades. If an entry is always profitable
+    with a randomly generated exit, then chances are much better that there is an
+    edge there.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Entry Evaluation Criteria
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: For each of the three test techniques just described, there are a few ways to
+    look at and analyze the results. Winning percentage, for example, is a very valid
+    way to compare entries. If you test without slippage and commissions, your entry
+    should be able to win more than 50 percent of the time, since that is what a random
+    entry would give you. In my experience, I have found that 52 to 60 percent is
+    achievable, and values that high suggest a worthwhile entry technique is present.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The counterargument to using winning percentage is that, while it is nice to
+    be right, it is even better to make money. A 60 percent winning percentage might
+    make less money than a 40 percent winning percentage, especially if the entry
+    is a trend-following entry. Trend-following entries, such as breakouts and moving
+    average crossovers, are generally much lower winning percentage systems. They
+    get their revenge on high-win-percentage systems by yielding few big winners and
+    many small losers, with the win amount easily outpacing the loss amount. In these
+    situations, therefore, the average profit per trade becomes useful.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Since both winning percentage and average profit give meaningful information,
+    I use them both. Since this is preliminary testing, I do not worry about drawdown
+    or any other metric. All I want to know at this point is if my entry seems to
+    have any edge. These two metrics can help tell me that.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You may be wondering about optimization at this point. Should you use it? I
+    will, but when I look at the results, I will not just look at the best iterations.
+    Instead, I look at all of them. For example, let’s say I run 100 iterations, with
+    various values for my entry input parameters. If only a handful of iterations
+    are profitable or have a winning percentage above 50 percent, I will likely discard
+    that system. But, if 70 percent or more of the iterations are favorable, then
+    I will consider the entry as having successfully passed the test.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Exit Testing'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: In a similar fashion to entry testing, there are a few different ways to test
+    an exit. Where it gets complicated is when the exit is tied to the entry is some
+    fashion. An example of this might be using support lines for entries, and resistance
+    lines for exits. It is hard to separate the two. In these cases, I might choose
+    not to even test exits by themselves, and rather proceed to a complete system
+    test, discussed later.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'When I do evaluate exits by themselves, I typically perform the analysis two
+    ways:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Similar-approach entry
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Random entry
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Similar-Approach Entry
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The core idea behind testing exits by themselves is to see if they can help
+    give you an edge. Most people see edges as being applicable only when you enter,
+    but really, exits have just as much, if not more, impact on the bottom line. A
+    carefully designed exit, it has been shown, can make even bad entry systems profitable!
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Since I will be testing the actual entry with the actual exit a bit later,
+    at this point I want to see how the exit performs. To do this, I create an entry
+    similar to the entry I want to use. This usually falls in one of two primary categories:
+    trend following and countertrend following. Since I know what type of entry I
+    have, I just create a generic one similar to it. For a trend-following approach,
+    for example, I may just employ an X-bar breakout strategy. For a countertrend
+    strategy, maybe I will use a relative strength index (RSI)-based entry. In either
+    case, I create an entry that is comparable to my actual entry. Then I test it
+    with my exit strategy. A robust exit strategy that is profitable to my similar-approach
+    entries will likely also be profitable with my actual entry. This is a way to
+    test an exit without involving the entry.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Random Entry
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Discussed in a later section, if you have an exit strategy that works well with
+    a random entry, you might have a really good system when you combine it with a
+    solid entry technique. I do not use this approach as much as I used to, but occasionally
+    I do like to see how a new exit technique works with random, no-edge entries.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Exit Evaluation Criteria'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: When I test exits by themselves, I generally do not look at winning percentages
+    at all, and just focus on overall profitability. In addition, I will use maximum
+    favorable excursion (MFE) and maximum adverse excursion (MAE) as measurement criteria.
+    With these metrics, the idea is that you do not want the exit to get you into
+    too much trouble (adverse excursion), and you do not want it to give back too
+    much of the potential profit (found by comparing actual profit to the favorable
+    excursion). The trouble with these metrics, I have found, is that it becomes too
+    easy to design just to these values, and in my experience that doesn’t necessarily
+    lead to better systems. They are good, though, to see the potential of your system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Core System Testing'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Although there are benefits to testing the entry and exit signals by themselves
+    (one being that you can always file away good entries and exits for use with another
+    system), the interaction of entries and exits, as previously mentioned, is usually
+    quite important. Regardless of whether I test entries and exits by themselves,
+    I always test the complete core system during the preliminary phase.
+  prefs: []
+  type: TYPE_NORMAL
+- en: My objective in testing the whole system is to see whether, on a limited history
+    of data, the strategy performs well. The main criteria I use at this point is
+    net profit, and I like to see profitable results over a wide range of variables
+    and over most of the iterations. For example, if I have a simple breakout with
+    10 possible values of the breakout amount, and 10 stop-loss/profit values, that
+    creates 10 × 10 = 100 iterations. I would expect a good strategy to be profitable
+    over 70 or more of these iterations on the small data set. If I do see this type
+    of behavior, I generally will run the monkey test shown later, and then go on
+    to more in-depth testing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Most of the time, the number of profitable iterations is on the order of 30
+    to 70 percent of total cases. This puts me in a “no man’s land”—obviously, the
+    strategy is not good enough as is, but there may be something there to work with.
+    In situations like this, I may decide to add a rule, a filter, or otherwise change
+    the entry and exit. Unfortunately, there is no set protocol for doing this. Many
+    times, I’ll use extra rules or conditions that I have had previous success with.
+    Once I make some minor changes, I reevaluate my sample results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The downside to this iterative process of modifying the rules is that you run
+    the risk of fitting the system to the historical data. One or two modifications
+    may be okay, but if you spend a lot of time modifying your strategy to get better
+    results, you may very well fall into the “create a great-looking back test, but
+    the real world performance suffers”–type scenario. Most times, if the first or
+    second modification doesn’t dramatically improve things, then the strategy is
+    best left for the scrap heap.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'As I have stated, when I do the preliminary testing with limited optimization,
+    I like to see 70 percent or higher of cases with net profit, and I will work with
+    the 30 to 70 percent cases a bit to see if I can improve them. But, what about
+    strategies that are just awful, with less than 30 percent of iterations generating
+    any profit? In these cases I use the George Costanza approach: if everything I
+    built is bad, then the opposite must be good! I will reverse the signals and buy
+    when I was selling, and vice versa. Depending on the strategy logic, this doesn’t
+    always produce the exact opposite result, but in many cases it is close. Without
+    a doubt, though, this opposite effect is really apparent only before commissions
+    and slippage are added in. Why is that? Well, take a trading system that has -$50
+    average profit per trade, after $30 commissions and slippage. That might be a
+    decent candidate for an opposite approach, since many people will assume that
+    it would average $50 - $30 = $20 per trade. But in reality, the opposite trade
+    would be a -$10 loser. When reversing systems, you must add in double the commissions
+    and slippage. Here is the math:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: -$50 average trade, after slippage and commissions
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: +$30 commission and slippage
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: -$20 average trade, no slippage or commissions
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Now flip the system to produce the opposite result, and then add commissions
+    and slippage back in
+  prefs: []
+  type: TYPE_NORMAL
+- en: +$20 average trade, no slippage or commissions
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: -$30 commission and slippage
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: -$10 average trade, opposite system, with slippage and commissions
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: I believe when people ponder trading the opposite system, they neglect to add
+    in the commissions and slippage correctly. This is why most “opposite” systems,
+    while appealing on the surface, rarely if ever work in the real world.
+  prefs: []
+  type: TYPE_NORMAL
+- en: At this point in the process, if my strategy has performed successfully, I will
+    have tested the entry, the exit, and the core system, with all results suggesting
+    that a tradable system *might* be achievable (remember, we have many more steps
+    to go through before deciding a system is indeed tradable). This is just preliminary
+    testing, the first hurdle, but when I even make it this far, I am somewhat encouraged.
+    At this point, it is on to the last step in the preliminary process. This step
+    involves animals, at least on a figurative level.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Monkey See, Monkey Do'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: One of the last tests I like to run is what I call “Monkey See, Monkey Do.”
+    The essence of the test is to see if my strategy does better than a dart-throwing
+    monkey. In 1973, a book by Burton Malkiel claimed that “throwing darts at a newspaper’s
+    financial pages could select a portfolio that would do just as well as one carefully
+    selected by experts.” The book, “*A Random Walk Down Wall Street”* (W. W. Norton,
+    1973), is a classic for investors and traders, and the monkey idea resonated with
+    many people. After all, no one wants to perform worse than a monkey! I personally
+    don’t subscribe to all the talk about markets being random—if I did, I would really
+    have no business searching for a trading edge. Since prolonged edges would not
+    exist in random markets, I find the monkey test a very useful one.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With any strategy I create, the strategy’s performance better be significantly
+    improved over what any monkey could do by just throwing darts. If it is not, then
+    I have no desire to trade such a strategy. I use three different monkey tests
+    and two different time frames for testing. Passing all of the tests gives me confidence
+    I have something better than random.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Test 1: “Monkey Entry”'
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The first test I run is to see if the entry I developed is better than random.
+    I simply replace the entry in my strategy with an entry than creates a randomly
+    generated entry. I run the random entry, with the rest of my strategy intact,
+    8,000 times. This generates 8,000 unique performance reports, since each run will
+    have different randomly generated entries. By adjusting the frequency of the entry
+    signals, I ensure that I get close to the same number of trades as my walk-forward
+    history. Also, I try to match the percentage of long and short trades. These two
+    conditions mean that the “monkey” trades as often as my system does, and in roughly
+    the same proportion of long and short trades.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Typically, a good strategy will beat the monkey 9 times out of 10 in net profit
+    and in maximum drawdown. For my 8,000 monkey trials, that means approximately
+    7,200 must have net profit worse than my results, and the same number of runs
+    with higher maximum drawdown than my walk-forward results. If I don’t reach these
+    goals, I really have to wonder if my entry is truly better than random.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Test 2: “Monkey Exit”'
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The second test I run is to see if the exit I developed is better than random.
+    It is much like the entry test, obviously, except in this case the monkey randomly
+    exits the position. I control the random exit primarily by keeping the number
+    of bars in a trade the same as my walk-forward history. For example, if my walk-forward
+    history has an average of four bars per trade and always exits at the end of the
+    day, I will tune the random exit to be on average the same. Also, it will always
+    exit at the end of the day, if that is my criterion.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As with the monkey entry, I look for my walk-forward results to be better than
+    90 percent of the monkey exits.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Test 3: “Monkey Entry, Monkey Exit”'
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: After determining that my strategy is better than both a monkey entry and a
+    monkey exit, I like to see that my strategy is better than a monkey entry *and*
+    exit. I do this because sometimes my edge is in the interaction of the entry and
+    exit. For example, it might be that my entry is valid only because I set the exit
+    near a support or resistance zone. It might be that the entry, taken alone, or
+    the exit, taken alone, isn’t enough without the other.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this test, I replace all entry and exit code with random monkey code. I
+    adjust the parameters of the random entry and exit to match my strategy in the
+    following ways:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Number of trades
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Ratio of long trades to short trades
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Average bars spent in a trade
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Note that these conditions are the same I apply to the other monkey tests. Then
+    I run the monkey entry, monkey exit strategy 8,000 times, just like the other
+    tests, and compare results the same way.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Time Frames
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The first time I run the monkey tests is in the development stage, as one more
+    hurdle for a strategy to overcome. Most of the time, though, running these tests
+    over the walk-forward time frame will almost always yield good results. This is
+    because bad strategies will likely never get this far in the development process.
+    Still, though, I like to see my strategy pass this test. It gives me confidence
+    that I may indeed have an edge.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The other time frame I use to run the monkey tests is when running the strategy
+    live. I take the results of the past 6 to 12 months (3 months may also be a good
+    number, although the validity may be questionable if the number of trades is low).
+    If, in that 6- to 12-month time period, the monkeys became a lot better, I know
+    that my assumed edge has either degraded or disappeared completely. It might then
+    be time for me to quit trading that system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Monkey Testing—Example
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: To give you an idea of how the monkey test works, in both the walk-forward history
+    and the real-time history, I will provide an example in this section.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 12.1](#figure12-1) shows the walk-forward performance of the as-developed
+    system, along with the performance after initial development. The system did quite
+    well for a while, but eventually endured some significant drawdowns. The question
+    is: could the 6-month monkey test have shown that the edge in this system was
+    gone, and that trading should have ceased? To answer that question, I will perform
+    monkey tests at the points shown on the graph.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c12f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 12.1**](#figureanchor12-1) Sample System Walk-Forward Performance'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The code, in TradeStation Easy Language, for the baseline strategy, and the
+    three monkey strategies, are shown in Appendix A.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first step in creating random strategies that are comparable to the baseline
+    strategy is to gather the pertinent statistics of the baseline strategy. These
+    are shown in [Table 12.1](#table12-1).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**TABLE 12.1**](#tableanchor12-1) Baseline Performance'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Parameter | Value |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Time period | 3/19/2007–11/1/2011 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Net profit | $72,650 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Maximum intraday drawdown | -$22,270 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Number of trades | 430 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Percentage of long trades | 40 percent |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Average bars in trade | 2.5 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Number of trading days | 1,165 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Number of trades/Number of trading days | 0.37 |'
+  prefs: []
+  type: TYPE_TB
+- en: All of the information in [Table 12.1](#table12-1) can be obtained from the
+    performance report. The two parameters I will use to compare to random strategies
+    are the net profit and the maximum intraday drawdown. All other parameters listed
+    will be used to “tune” the random strategy. The goal with tuning is to have roughly
+    the same numbers of trades, the same percentage of long and short trades, and
+    the same average time in trades for the random strategy as for the baseline strategy.
+    Doing this will allow a fair comparison of the two strategies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once the random strategies all yield roughly the same number of trades as the
+    baseline strategy, I can run each random strategy 8,000 times. Then I can compare
+    the results. These results are shown in [Table 12.2](#table12-2).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**TABLE 12.2**](#tableanchor12-2) Random “Monkey” Test 1'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Test Period: 3/19/2007 to 11/1/2011 | Percentage of Cases with Net Profit
+    Worse than Baseline Case | Percentage of Cases with Maximum Intraday Drawdown
+    Worse than Baseline Case |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Random entry, baseline exit | 100% | 99% |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Baseline entry, random exit | 99% | 94% |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Random entry, random exit | 99% | 99% |'
+  prefs: []
+  type: TYPE_TB
+- en: The results are pretty clear—the baseline strategy is much, much better than
+    any random strategy. Score one for the humans over the monkeys! Based on this
+    information, the baseline strategy clearly passes the random test.
+  prefs: []
+  type: TYPE_NORMAL
+- en: But how does the baseline strategy compare to the random strategies a few months
+    later? Referring to [Figure 12.1](#figure12-1), the baseline strategy ran into
+    some difficulty around February–March 2012\. Assuming an end date of March 1,
+    2012, over the previous 12 months, the strategy had a net profit of $780, and
+    a maximum intraday drawdown of -$15,680\. How does that compare with the random
+    strategies? After 8,000 runs, here are the results (see [Table 12.3](#table12-3)).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**TABLE 12.3**](#tableanchor12-3) Random “Monkey” Test 2'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Test Period: 3/1/2011 to 3/1/2012 | Percentage of Random Cases with Net Profit
+    Worse than Baseline Case ($780) | Percentage of Random Cases with Maximum Intraday
+    Drawdown Worse than Baseline Case (–$15,680) |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Random entry, baseline exit | 49% | 73% |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Baseline entry, random exit | 99% | 100% |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Random entry, random exit | 60% | 95% |'
+  prefs: []
+  type: TYPE_TB
+- en: The results should present some cause for concern. Clearly, the baseline strategy
+    has performed only slightly better than a random strategy, depending on the number
+    you focus on. Personally, I look at all the numbers as a group, and if I see most
+    of them at or below 60 to 70 percent, I become concerned. If most of the numbers
+    are below 50 percent, I become very concerned, since by all measures, my strategy
+    is not performing better than the monkeys.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this particular case, with only one value below 50 percent, and two values
+    below 70 percent, I’d probably let the strategy continue trading. More conservative
+    traders might decide to stop trading at this point, and that is a reasonable decision,
+    too.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The next time the baseline strategy caused concern was in May 2013\. Over the
+    year ending May 1, 2013, the baseline strategy lost -$1,105, with a maximum intraday
+    drawdown of -$15,100\. How does that compare to the random monkey systems? See
+    [Table 12.4](#table12-4).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**TABLE 12.4**](#tableanchor12-4) Random “Monkey” Test 3'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Test Period: 5/1/2012 to 5/1/2012 | Percentage of Random Cases with Net Profit
+    Worse than Baseline Case (–$1,105) | Percentage of Random Cases with Maximum Intraday
+    Drawdown Worse than Baseline Case (–$15,100) |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Random entry, baseline exit | 50% | 64% |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Baseline entry, random exit | 1% | 1% |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Random entry, random exit | 49% | 72% |'
+  prefs: []
+  type: TYPE_TB
+- en: The results here are much clearer now. On average, the monkey systems are equal
+    to or better than the baseline strategy. This indicates that any edge the strategy
+    originally had is gone or is certainly on hiatus. Wise traders would stop trading
+    this system near the beginning of May 2013\. In this case, judging from the performance
+    of the baseline strategy after May 1, 2013, that was a good decision.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Comparison of your strategy to randomly generated strategies can be useful,
+    too. In the preceding example system, the analysis was able to show that the strategy
+    as developed was significantly better than a random, monkey-throwing-darts system.
+    That is nice to know, as it gives you confidence as you begin to trade.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Unfortunately, running this analysis when you develop the strategy tells you
+    nothing about how well the strategy will work going forward. The strategy itself
+    could be defective, leading to real-time losses. Or the characteristics of the
+    market may have changed, and your strategy cannot adapt to it. In either case,
+    periodically comparing the baseline strategy results to the random monkey results
+    can help you decide whether the strategy is broken. As the earlier analysis shows,
+    the random test can be an early warning detection method of sorts, and can suggest
+    that you stop trading the strategy until performance becomes better than random.
+    Thus, it can be a useful tool in deciding when to stop trading a strategy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 13
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In-Depth Testing/Walk-Forward Analysis
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Once I have a trading system that I believe has some sort of edge to it, and
+    it passes all the preliminary tests I throw at it, then I feel comfortable going
+    on to more in-depth testing. As stated earlier, there are four primary ways of
+    testing:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Historical back testing—all in-sample
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Out-of-sample testing
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Walk-forward testing
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Real-time testing
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Over the years I have successfully and unsuccessfully used each one of these
+    approaches. Currently, I believe that walk-forward analysis offers the best combination
+    of amount of history that can be tested, degree of match between historical and
+    real-time results, and sensitivity to changing market conditions. During the in-depth
+    testing phase described in this chapter, I will use only walk-forward testing.
+    But before we get into a discussion about walk-forward testing, what if you don’t
+    have any parameters to optimize?
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) No Parameters'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Occasionally, you may develop a system that has no parameters to optimize at
+    all. For example, your entry may be based on a specific candlestick chart pattern,
+    and your exit might be a set-dollar-amount stop-loss, with a set profit target.
+    For whatever reason, you may decide that you never want to change these values
+    for stop-loss and target, and you do not want to change the entry. Your philosophy
+    may be “no optimization, ever,” which is certainly one way to avoid curve fitting
+    or overfitting of the system to the data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In situations such as this, your in-depth analysis will simply consist of one
+    historical test through the data. If the results meet your goals, you can simply
+    move on to the next step. If not, you should discard the strategy and move on
+    to the next idea.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One important point is that if your optimizationless strategy does not work,
+    you should not go back and tweak the strategy, followed by rerunning it. For example,
+    if you run it the first time and are displeased with the results, you should not
+    change the entry to a different candlestick pattern and try again. That is just
+    an optimization of the entry, done a different way. But it is still optimization.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If you think this technique might apply to you, you can turn these two unique
+    strategies into one optimizable strategy, following the pseudo code technique
+    shown below:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Strategy 1**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Enter long with candlestick pattern A
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Stop-loss $X, profit target $Y
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Strategy 2**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Enter long with candlestick pattern B
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Stop-loss $X, profit target $Y
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Strategy 3—strategies 1 and 2 combined**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: For i = 1 to 2
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: If i = 1, enter long with candlestick pattern A
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: If i = 2, enter long with candlestick pattern B
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Stop-loss $X, profit target $Y
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The benefit of such an approach is that you know up front that you are optimizing
+    (no hidden or forgotten optimizations to taint your results), and it may very
+    well be that a combination of strategies (e.g., strategy 1 might be better in
+    year 1, but strategy 2 might be better in year 2) might be better than either
+    by itself.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you truly decide that you have no parameters to optimize, simply substitute
+    the walk-forward analysis shown later for a single-run historical analysis. If
+    the results are favorable, you can then proceed to the next step. In most situations,
+    though, you will have at least one parameter to optimize, and for those cases
+    walk-forward analysis is the best way to go.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) A Walk-Forward Primer'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Many people are confused by walk-forward testing and how it really is different
+    from traditional optimization. I think understanding the walk-forward concept
+    has been made even more difficult to understand by the introduction of it in most
+    trading software packages. In the “old” days, without specialized software or
+    a spreadsheet, walk-forward testing had to be performed by hand or custom computer
+    programming. In fact, when I had my successful run in the World Cup trading contest,
+    I relied on strategies developed with walk-forward testing conducted by hand.
+    It was difficult and tedious, but it gave me a clear understanding of how the
+    process works.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To bring the concept down to earth, I will first demonstrate the process on
+    a simple breakout trading system. In this way, you can see step by step how the
+    walk-forward analysis is done.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'First, some simple definitions regarding the walk-forward analysis are in order:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*In period.* This is the chunk of historical data that will be optimized.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Out period.* This is the chunk of historical data that will be evaluated using
+    optimized results from the adjacent in period.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Fitness factor.* This is the criterion used to determine the “best” result,
+    allowing us to select the optimized parameters.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Anchored/Unanchored test.* This tells us whether or not the in period start
+    date shifts with time, or if the start date is always the same.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Although I will discuss the details of how to select these parameters a bit
+    later, for our test case we will use a 5-year in period, a 1-year out period,
+    fitness factor of net profit, and an unanchored test.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Our strategy will be a very simple one: a countertrend breakout-type system:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Enter short if the close is an “X”-day high close
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Enter long if the close is a “Y”-day low close
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Stop-loss of “Z”
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'In TradeStation Easy Language, the system code becomes:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: For this example, we will use the continuous contract for the mini S&P (ES),
+    and use 10 years of data, from January 1, 2000, to January 1, 2010\. We will use
+    daily bars and include $25 slippage and commission per round trip trade.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For comparison purposes, first we will optimize over all the data from 2000
+    to 2010\. Using net profit as our fitness function criteria, we get the optimum
+    values:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: X = 9
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Y = 5
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Z = $600
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: This complete optimization produces a net profit of $55,162 over the 10-year
+    period.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Now, we will run the walk-forward analysis. Since we are running a 5-year optimization
+    period, we will first optimize from January 1, 2000, to January 1, 2005\. When
+    we do this, we get the following parameters for the highest net profit case:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: X = 7
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Y = 17
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Z = $600
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: That completes out first in-sample evaluation. Now we apply the preceding parameters
+    to our first out-of-sample period, January 1, 2005, to January 1, 2006\. Note
+    that it is considered out-of-sample because it was not in the first optimization
+    period. The results of this first out-of-sample yields a loss of $3,138.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In a similar fashion, we then run the in-sample optimizations, and the out-of-sample
+    performance runs for each of the rows shown in [Table 13.1](#table13-1).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**TABLE 13.1**](#tableanchor13-1) Sample Walk-Forward Test Results'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| In-Sample Test Period | Best Parameters X, Y, Z | Out-of-Sample Period |
+    Out-of-Sample Result |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- | --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 1/1/2000–1/1/2005 | 7,17,600 | 1/1/2005–1/1/2006 | -$3,138 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 1/1/2001–1/1/2006 | 7,45,100 | 1/1/2006–1/1/2007 | -$2,325 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 1/1/2002–1/1/2007 | 49,7,600 | 1/1/2007–1/1/2008 | +$5,963 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 1/1/2003–1/1/2008 | 21,11,1000    | 1/1/2008–1/1/2009 | -$19,113 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 1/1/2004–1/1/2009 | 9,5,600 | 1/1/2009–1/1/2010 | +$8,675 |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Once we are complete, we have our walk-forward analysis. To create a complete
+    performance report of the walk-forward data, we can create a strategy where the
+    values change every time the walk-forward period changes. Such a strategy looks
+    like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'This will allow us to compare the walk-forward results to the optimized results.
+    This is shown in [Figure 13.1](#figure13-1). The interesting points of this comparison
+    are:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The optimized equity curve is much, much better than the walk-forward curve.
+    This is to be expected, since the optimized curve is a result of optimization.
+    This should tell you that practically any strategy can be made to look good, if
+    you optimize the parameters over the time period you are interested in.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The walk-forward results are not very good. Walk-forward analysis is a tough
+    test for a strategy to “pass.” Most strategies fail at this analysis. But since
+    this simulates real life more than fully optimized results do, it is a more accurate
+    method of analysis.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/c13f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 13.1**](#figureanchor13-1) Walk-Forward Results vs. Optimized Results,
+    as Developed'
+  prefs: []
+  type: TYPE_NORMAL
+- en: I have mentioned it a few times, but you still might be wondering, “How do you
+    know walk-forward analysis is more representative of future performance that the
+    fully optimized test?” I claim this based on my experience. The current system
+    is a good example of this performance difference. For the analysis just completed,
+    here is how the optimized and walk-forward analysis performed from January 1,
+    2010, to November 14, 2013\. As you can see in [Figure 13.2](#figure13-2), for
+    the optimized case, the performance during the out-of-sample period 2010–2013
+    was flat. It looks nothing at all like the optimized portion of the curve from
+    2005 to 2009, where the average annual gain was approximately $10,000\. It is
+    a different story for the walk-forward analysis, as depicted in [Figure 13.2](#figure13-2).
+    The years 2010–2013 were flat for the walk-forward equity curve also, but it mimics
+    the 2005–2009 walk-forward results. In other words, the performance of the walk-forward
+    system did not change through the years—it was consistently flat to down most
+    of the years.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c13f002.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 13.2**](#figureanchor13-2) Walk-Forward Results vs. Optimized Results,
+    Before and After Development'
+  prefs: []
+  type: TYPE_NORMAL
+- en: While one example does not make it a rule, in general this is the kind of performance
+    you can expect from optimized back tests and walk-forward back tests. Optimized
+    results, when applied to out of sample data, generally degrade. This is why so
+    many people get frustrated with systems sold by unscrupulous vendors. These vendors
+    show optimized results, and the performance in the future is almost never as good
+    as the back test. Walk-forward results, however, should perform about the same
+    throughout the whole test period. This is why many traders prefer walk-forward
+    results. Walk-forward analysis tends to produce equity curves that are more stable
+    going forward. Again, that is not a rule, but it is my experience that this is
+    generally true.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Walk-Forward Inputs'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'If we are performing the analysis by hand, as described above, we must know
+    the following parameters *before* we start the analysis:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In period
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Out period
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Fitness function
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Method: anchored or unanchored'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: In you are using software to perform the analysis (as I currently do), you do
+    not necessarily have to know these values in advance. That is both a blessing
+    and a curse. It is good because you only have to run the optimization once and
+    not keep repeating the walk-forward analysis over and over. It is bad because
+    these parameters can be optimized, just like any traditional input parameter in
+    your strategy. It may not seem like an optimization, at least in the traditional
+    sense, but if you, for example, look at two values of in period, and choose the
+    one with better results, that is still optimizing. You want to make the decision
+    before you do the analysis.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Assuming you will be choosing the walk-forward inputs beforehand (we will examine
+    an alternative method to this later), how do we choose values for each of them?
+    A method for determining each value is described below.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In Period
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: For the in period, the goal is to get enough trades to make a meaningful conclusion
+    as to the best parameters to use for each period. It makes sense, then, to get
+    a certain amount of trades per input variable in your in period. For example,
+    if you have four inputs to optimize, then you might want 100 to 200 trades in
+    your in period, which would be equivalent to 25 to 50 trades per input. Unfortunately,
+    there is no set number of trades per input that is “best,” although many people
+    say that 30 is a good number for statistical significance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Out Period
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: As crazy as it sounds, I know people who do walk-forward analysis every day,
+    which means their out period is one day. Personally, I think this is extreme,
+    but who am I to argue if they are having success? There are a couple of factors
+    at play in the selection of an out period. First, if you set the out period too
+    big, you might only have one or two out periods for your walk-forward analysis,
+    which means the test becomes similar to a single-period out-of-sample test. Second,
+    if you set the out period too small, you will be conducting reoptimizations on
+    a daily or weekly basis. This might not be sustainable given the limited time
+    you likely have to develop and trade, if you have many systems to reoptimize.
+    Knowing that there are boundaries to the out period, I generally set my out period
+    to between 10 to 50 percent of the in period. So, if my in period is 1,000 days,
+    my out period might be in the range of 100 to 500 days. This is a very wide range,
+    but with robust systems you will generally see that the final results are not
+    extremely sensitive to out period. A 100-day out period may very well perform
+    about the same as a 500-day out period.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Fitness Function'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Of all the parameters in walk-forward analysis, the fitness function is the
+    most contentious. I’m sure that raucous debate by two developers over the fitness
+    function has at some time resulted in physical violence (such dedication to the
+    cause!). I don’t want to stir the pot by going into the pros and cons of various
+    fitness functions, but I will tell you the ones I have had the most success with.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Net Profit
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'For many people, this is the default choice, and it is a pretty good one. After
+    all, without profit at the end of the test, all other parameters are meaningless.
+    I personally use this fitness factor the most, since it is easy to understand
+    and implement. But it does not take into account another important results: drawdown.
+    My experience, however, has been that in general high net profit runs hand in
+    hand with low maximum drawdown. If you decide drawdown is a must have, then one
+    of the fitness function below should suit you.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Linearity of Equity Curve
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'Think for a minute of your ideal equity curve. The equity would go up every
+    day, and it would be consistent. A real-world example is interest on a banking
+    or money market account. Interest earned might be very small, but with a bank
+    account, you make money every day, and there is never a day where you lose money.
+    If only you could design a futures system that made money every day, with never
+    a drawdown! A linear, upward-sloping equity curve is the ideal, and is a great
+    parameter to optimize for. The problem is that, unless your software includes
+    this fitness function as a set choice, it may be difficult in actual practice
+    to actually optimize for it. Also, it may be difficult to implement in a nonanchored
+    walk-forward test. Finally, this method of optimization may select very low net
+    profit iterations as the optimum, since they may exhibit the most linearity. There
+    are two potential problems with the low-profit cases: first, since there is not
+    much profit, if you underestimate your slippage and commissions, you might actually
+    be selecting a real-time losing strategy. Second, if the end result is very small
+    average profit per trade, minor changes in the market may render your effective
+    ineffective.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: One big plus to using a linear equity curve as your optimization criteria is
+    that it is very good for position sizing. Think about a strategy where your drawdowns
+    are minimal and your profits are slow and steady. Such an approach would be ideal
+    for aggressive position sizing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Return on Account
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'If you explicitly use maximum drawdown in your fitness function, then return
+    on account is a good option. Although some software packages vary in their definition,
+    return on account is generally defined as:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Return on Account = Net Profit/(Maximum Drawdown + Required Margin)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Since required margin varies over time, many people just eliminate this from
+    the calculation by assuming it is equal to zero or some other arbitrary value.
+    As a fitness function, return on account is nice to use, since it takes into account
+    both the profit, and the risk it took to get that profit. The biggest drawback
+    to using it is that it can give wildly different results from period to period
+    using unanchored walk-forward analysis.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Anchored/Unanchored'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'One subtle aspect of walk-forward analysis is the optimization window. You
+    can go one of two ways with this window: you can move it with time, or you can
+    keep the start point anchored. [Figure 13.3](#figure13-3) shows the difference
+    between these two approaches.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c13f003.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 13.3**](#figureanchor13-3) Anchored vs. Unanchored Walk-Forward Analysis'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In general, the two methods will give similar results, especially at the beginning
+    of the analysis. But as time goes on, the results will tend to diverge. This is
+    because the anchored walk-forward is always taking into account results over the
+    whole data set, while the unanchored results include results for only the most
+    recent window. There may be times where one is more appropriate than the other,
+    but I tend to use the unanchored method much more. I like that approach, since
+    it ensures that only the most recent data is included in the optimization. I don’t
+    necessarily want results from 10 years ago still impacting my optimization results
+    today.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One point of caution with using unanchored data, with certain fitness functions,
+    is that the results you get might be faulty, depending on your walk-forward analysis
+    software. If you are using a manual method, this should not be a problem, but
+    if you use software, make sure that the calculations are based on the start and
+    end dates in question, not on difference in fitness functions during the period.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A simple example explains it well. Suppose you have the optimized results shown
+    in [Table 13.2](#table7-1).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**TABLE 13.2**](#tableanchor7-1) Many Performance Metrics Are Not Additive'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Optimization Period | Net Profit | Max Drawdown | Return on Account = Net
+    Profit/ Max Drawdown |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- | --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Year 1 | $12,000 | $6,000 | 2.0 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Year 2 |   $6,000 | $4,000 | 1.5 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Year 1– Year 2 | $18,000 | $6,000 | 3.0 |'
+  prefs: []
+  type: TYPE_TB
+- en: Note in this example that while net profit is additive (the net profit in year
+    1 plus the net profit in year 2 equals the combined net profit for year 1 + year
+    2), the maximum drawdown and return on account are not. Some walk-forward software
+    packages may assume your fitness function is additive (like net profit), so make
+    sure you understand how the software works when using unanchored results. Your
+    analysis could be completely flawed depending on the fitness function you choose.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Running the Analysis'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Once you have all your walk-forward inputs defined, you simply run the analysis
+    manually as I have shown in the earlier example, or automatically with the software.
+    Either way, in the end, you will have the completed walk-forward analysis and
+    equity curve for your strategy. At this point, you have to compare the results
+    to your goals and objectives. If the system passes, you of course go on to the
+    next step. If it fails, theoretically you should discard the strategy and start
+    with something different. In reality, of course, that is extremely difficult to
+    do. You have already invested a great deal of time in preliminary testing and
+    in-depth testing, and it seems a shame that you should just discard your work.
+    This is especially true if the results are close to your goal. Maybe lowering
+    the goal or making a small change to the strategy and rerunning walk-forward might
+    be the path to success. Or does that just lead to more bad habits and decisions?
+  prefs: []
+  type: TYPE_NORMAL
+- en: In general, I normally would discard a strategy at this point, rather than compromise
+    my goals or change my strategy. But sometimes I do one or both of these things.
+    Occasionally, that turned out to be a good decision, but likely more often than
+    not it did not work out well. Remember, the more you touch (test) historical data,
+    the more likely you are to fit your system to the data. Plus, when you relax your
+    standards, you end up with something you really did not want. When real money
+    is on the line, this may become a major point of contention for your psyche—why
+    continue to trade a currently losing system that you had doubts about in the first
+    place?
+  prefs: []
+  type: TYPE_NORMAL
+- en: One common mistake during walk-forward analysis is to surreptitiously optimize
+    the *in* and *out* periods. Say, for example, that you run the walk-forward analysis
+    with four-year in period, and one-year out period. Walk-forward results for that
+    case are good, but not great, so you think “maybe I should use four years in,
+    with two years out.” That case is 200 percent better and meets all your goals,
+    so you decide “that’s the combination to use. Let’s go!”
+  prefs: []
+  type: TYPE_NORMAL
+- en: Stop.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Do you realize what just happened? As soon as you selected a second set of
+    in/out parameters, reran the results, and selected the best case, you just optimized.
+    Sure, it is not a full optimization, since you only compared two cases, but it
+    was optimization nevertheless. Remembering the rule that optimized results can’t
+    be trusted, you have a dilemma here: accept the first run (4 year/1 year), and
+    then discard the strategy because it did not meet your goals, or accept the second
+    run, and pretend you never optimized.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once again, I’ll admit to doing the above on occasion, although I can’t recall
+    it ever ending well. The big question in all this is “is there a way to test multiple
+    in/out periods, and select the best one, while still maintaining walk-forward
+    integrity?” The answer, thankfully, is yes. The way to do it is to create, in
+    essence, a second walk-forward analysis inside of the first. The way to do this
+    is to run the walk-forward analysis, as usual, but leave the last few years of
+    data untouched. I typically will leave three years untouched. Then, with the walk-forward
+    data I have, I select the best in/out pair I have, and then run it on the last
+    three years of data. If it passes, then I go on to the next step. If it doesn’t,
+    I discard the strategy. But, in either case, at least I have made some effort
+    to select the best in/out combination. The downside to this approach is that you
+    have optimized, and the more optimization you do, the worse off you generally
+    are.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This process would look like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 1\. Years 2000–2008 >> run walk-foward analysis for different combinations of
+    in/out periods, select the best in/out.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 2\. Years 2009–present >> run walk-forward analysis, using best in/out determined
+    from Step 1.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 3a. If walk-forward results from 2009–present look good, continue with development.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 3b. If results do not look good, it is probably best to abandon strategy, rather
+    than try again with another in/out pair.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Figure 13.4](#figure13-4) depicts the approach of optimizing in/out periods,
+    compared to a traditional walk-forward analysis.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c13f004.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 13.4**](#figureanchor13-4) Walk-Forward Test, Inside Another Walk-Forward
+    Test'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Put the Walk-Forward Strategy Together'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Once you have completed the walk-forward analysis, analyzed the results, and
+    found that your results compare favorably to your objectives, you are almost ready
+    for the next step. There is just one more check to run, and that is with the completed
+    walk-forward history strategy. The difference between the walk-forward history
+    strategy and the optimizable strategy is shown next:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Optimizable Strategy**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: '**Walk-Foward History Strategy**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE3]'
+  prefs: []
+  type: TYPE_PRE
+- en: The strategy with the walk-forward history changes the variables based on the
+    date. In this way, you will have a seamless history for your strategy to run;
+    you will not have to cut and paste results together to create the walk-forward
+    history.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that the results you get from this strategy might be different from the
+    results of a piece-by-piece analysis method. This is especially true for swing
+    strategies that last for days or weeks. The reason this is so is that, based on
+    the walk-forward parameters, variables might change in the middle of a trade,
+    causing trades to be exited or reversed. To see if this is important for your
+    strategy, then, it becomes critical to create a stand-alone walk-forward history
+    strategy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 14
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Monte Carlo Analysis and Incubation
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once you have the walk-forward strategy set up, and you are satisfied with the
+    results, it is time to evaluate the strategy in a Monte Carlo simulation. This
+    is an important step because random simulations may show dramatically different
+    profits and drawdown. It may be that the way the historical trades lined up, the
+    maximum drawdown was very small. But since history isn’t likely to repeat itself,
+    it is important to see what type of maximum drawdown you could possibly incur
+    trading this strategy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As stated earlier in Chapter 7, I use an Excel spreadsheet to do the Monte Carlo
+    analysis. You can download this tool for yourself at the book resource web site
+    ([www.wiley.com/go/algotradingsystems](http://www.wiley.com/go/algotradingsystems)).
+    There are also numerous free and paid Monte Carlo simulators available on the
+    Internet, should you choose to go that route. One good free simulator is Equity
+    Monaco by NeoTick ([equitymonaco.software.informer.com/](http://equitymonaco.software.informer.com/)).
+    A good pay tool is @Risk ([www.palisade.com/](http://www.palisade.com/)). All
+    of these choices will give you the same basic results, and you might prefer the
+    presentation of results and capabilities of one over the other. The key is to
+    get simulation results that you can base your decision on.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you use the simulator spreadsheet I created, you simply copy trade results
+    from your strategy performance report, paste them in the spreadsheet, enter your
+    initial capital, quitting-point capital, and number of trades in a year, and then
+    press calculate. The spreadsheet will calculate the simulated equity curves for
+    2,500 iterations, and present you with summary results. These results will be
+    based on one year of trading. Sample output of the spreadsheet was shown earlier
+    in Figure 7.2\. I typically focus on the return to max drawdown ratio (ret/DD),
+    and I like to see values above 2.0 for an acceptable strategy. Anything below
+    2.0 suggests that the strategy is taking on too much risk for the reward attained
+    and might not be worth trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you are proficient in writing macros in Excel, you can easily take the Monte
+    Carlo spreadsheet I have created and modify it to suit your own needs. You could
+    add position sizing, for example, or you could change which results are presented.
+    In the end, the point of the simulation is to give you results that you can understand
+    and interpret. I have told you what works for me; maybe that will work for you,
+    but maybe you’ll think of something better.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Incubation'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'One of the most crucial steps in strategy development, in my opinion, is also
+    the toughest psychologically to implement. Before I discuss this last step, let’s
+    review where we have been in the strategy development process:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: We have established goals and objectives for our completed strategy and also
+    goals for the steps along the way. In this manner, we can quickly eliminate strategies
+    before spending too much time on them.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: We have developed a trading idea for our strategy that we feel has an edge.
+    We have also defined the market, time frame, and other important factors for our
+    testing.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: We have performed limited testing with the strategy, and we are happy with the
+    results. We believe we might have an edge.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: We have conducted in-depth testing, using walk-forward testing if possible.
+    Again, we are happy with the performance results obtained.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: We have performed Monte Carlo testing, to help us establish probabilities for
+    the strategy performance and also to give us realistic future scenarios of performance.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: These completed five steps represent a lot of work and likely caused us to discard
+    tens or hundreds of strategies before finding success. To get through the last
+    step, Monte Carlo testing, is certainly an accomplishment. When this happens,
+    you likely will be so excited you will want to trade immediately! That, of course,
+    would be the wrong thing to do. Incubation is the right thing to do.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What exactly is incubation? Simply put, it is watching and waiting. With incubation,
+    you wait three to six months before you start live trading. During this time,
+    you occasionally monitor the performance of the strategy, as if it is another
+    out-of-sample test period. I like to check on my incubated strategies once per
+    month.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Why is it important to incubate a strategy? Here are a few reasons:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: When you finish Monte Carlo testing, you are at an emotional high. Your “baby”
+    has survived and has a lot of promise. You have a lot of emotional capital invested
+    in this strategy, as well as your time and effort. You want it to succeed. You
+    may even *need* it to succeed. Of course, this leads to a fragile emotional state.
+    If you immediately start trading it with real money, you might not think clearly
+    if things start out bad for the strategy, as so often seems to happen. This could
+    lead you to quit the strategy early, or worse yet, haphazardly increase size when
+    performance starts out bad (“doubling down”).
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: By waiting for a while before live trading, you will forget about the blood,
+    sweat, and tears you expended to create the strategy, and you will look at it
+    more objectively. If it passes incubation, great—but if it doesn’t, you won’t
+    be distraught. Remember, short-term hardship is sometimes the price for long-term
+    success, and that definitely holds true with trading systems.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: As I have shown, the system development process is difficult and complicated.
+    There are probably a thousand different mistakes you can make along the way. Some
+    can be blatant, like overoptimizing, while others may be subtle, such as using
+    hindsight bias to develop your strategy rules. The point is that, because of development
+    mistakes, there can be no way to know for sure if you have done something wrong
+    until you test your strategy on live, unseen data. Major mistakes will show up
+    in live results almost immediately, and by keeping your cash on the sidelines
+    during this period, you will save a great deal of money.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Incubating gives you a chance to see how a strategy performs in real time. You
+    may find out that you do not like the strategy, even if it makes money. For example,
+    maybe your strategy sells every pivot high. In historical back testing, that may
+    not bother you. But in real time, watching your strategy fight every market high
+    might not be your cup of tea. It is far better to realize that now, rather than
+    after you commit money to trading it.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: I generally perform incubation without real money. This is because, over time,
+    I have concluded that the way I place orders, the bar types I use, and so on all
+    can be fairly well replicated by the strategy back-test engine. There are times,
+    however, where you may want to commit real money on a small scale. For example,
+    if your strategy relies on limit orders for entries, you may want to test with
+    real money to ensure that your fills match strategy engine fills. With some software
+    packages, this might not be the case. Also, if you use exotic bar types, back-test
+    results and real-money results can be totally different. You might need a live
+    real-money test to check this, but once you confirm an issue, you will be able
+    to avoid those bar types in later strategies. Sometimes the only way to see if
+    a back test is accurate is by testing the strategy with real money.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'As I mentioned, I normally do not need to perform real-money testing during
+    incubation. One reason is that I avoid back tests that show or contain the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Any buy fills at the low of a bar or sell fills at the high of a bar. Rare will
+    be the day this occurs in real life, but many unscrupulous system vendors and
+    naive developers develop strategies that frequently show this phenomenon.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Limit orders that fill when price is touched. On occasion, maybe 0 to 30 percent
+    of the time, you will get filled at your limit price, when it is just touched.
+    Most of the time, though, the price has to penetrate your price to guarantee a
+    fill.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Any exotic bars, such as Renko, Kase, and even point-and-figure. Due to the
+    way the bars are built from history, your strategy fills many times cannot be
+    believed. Better to just avoid these bars, except for real-time discretionary
+    trading.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Strategies that exit on same bar as entry or that have stops and targets so
+    tight that a profit and loss exit could occur on the same bar. My experience is
+    that it is easy to trick a strategy engine, even with tick data, when exits or
+    entry and exits occur on the same bar. This is due to the assumptions the strategy
+    engine must make regarding price travel. Usually, the results will be overly optimistic
+    when compared to real live trading.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Evaluating Incubation'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: My goals with incubation are to give me reasonable assurance that I made no
+    major mistakes during development, to remove my emotions from the process, and
+    also to see if real-time performance is appealing enough to trade. Later in this
+    book, I’ll share some techniques I use to see if these goals are indeed met.
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 15
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Diversification
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you progress through the trading system development process numerous times,
+    you’ll start to realize that you have an algorithmic strategy factory on your
+    hands. Raw material comes in the door as strategy ideas for entry and exit. Machines,
+    such as limited testing, walk-forward testing, and Monte Carlo simulation, work
+    on your ideas and either shape it into a better product, or tear it to shreds.
+    At the end of your factory, you end up with trading systems you can trade or garbage
+    destined for the scrap heap. If you do this over and over, you’ll create a lot
+    of garbage, but you’ll also have a stack of strategies to trade. That’s where
+    diversification can be a big contributor.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I’m sure you’ve heard the old saw, “Put your eggs in one basket, then watch
+    that basket!” In trading, this would be analogous to finding one trading system
+    (the basket) and then putting all your money (eggs) into it. That is great if
+    it works. I’m sure there are traders out there who concentrate on trading one
+    system. I’m not one of them, though, and I do not recommend that you try to be
+    one either. Why not? Well, the simple fact is that trading systems fail, and very
+    few, if any, trading systems last forever. In addition, all trading systems go
+    through drawdowns, and sometimes they recover and sometimes they don’t. Do you
+    really want your money tied to the fortunes (or misfortunes) of one trading strategy?
+    I sure don’t!
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To get around this issue, I take the opposite approach and use diversification.
+    Instead of one basket (trading system), I spread my capital among numerous, uncorrelated
+    trading systems. In effect, I have many baskets, and although it takes more effort
+    to watch and track each basket, the benefits are clear:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Less worry about a system’s failing.* When you trade one system, you are at
+    the mercy of that system or the approach behind the system. If you have a trend-following
+    approach and the market goes flat for a few years, you will be in drawdown until
+    the market starts to trend. When you trade multiple systems with different styles,
+    it is very likely that your countertrend systems will do good when your trend
+    systems do bad, and vice versa.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Fewer fill issues.* In trading one system, as your capital grows, so will
+    your trading size. Eventually, your size will become large enough to affect your
+    fills. Even trading 10 contracts in gold, for example, is enough that any stop-loss
+    orders you have will likely experience a few extra ticks of slippage as your 10
+    lot gets filled. However, if you trade numerous systems, your size on any one
+    trade will be smaller, making fills less of an issue.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Smoother equity curve.* When you diversify correctly, you will have different
+    styles, different markets, and different time frames with your trading systems.
+    These differences come together to produce a smoother equity curve, many times
+    reducing drawdown, and almost always reducing overall volatility.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Diversification, done properly, is probably the closest thing I’ve ever seen
+    to the so-called trading “Holy Grail.” The tricks behind diversification are then
+    (1) how to design systems with diversification in mind and (2) how to measure
+    that you actually have diversification. I’ll discuss each of these topics in this
+    chapter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Designing with Diversification in Mind'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: In the next section, I describe simple ways to measure diversification, but
+    I use these measures after the fact, not during the design process. This is because
+    it is difficult to look at a trading system, identify its weak points, and then
+    design a second complementary system to smooth the first one. It can be done,
+    but I think that is the tough way. I take a much simpler approach, and it seems
+    to work quite well.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If you look back at the initial stages of strategy development, you’ll recall
+    that we identify certain characteristics of the system we are trading:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Market
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Bar type/size
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Any custom time sessions
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Entry
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Exit
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: As it turns out, taking an initial strategy and varying a couple of these strategy
+    characteristics will likely produce an uncorrelated system. It becomes as simple
+    as doing something different with your trading idea!
+  prefs: []
+  type: TYPE_NORMAL
+- en: A good example of this is with the two euro futures strategies I design in Part
+    IV of this book. Although the market traded is exactly the same, I altered the
+    bar size (105-minute bars versus 60-minute bars), the time session (one strategy
+    trades at night, the other during the day), the entries (completely different
+    entries for each strategy) and exits (different exits, where one system strives
+    for small profits, and the other goes for outsized gains). These change cause
+    completely different system behavior, leading to different results, and consequently
+    diversification.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Measuring Diversification'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Once we have two or more systems, how do we check that trading these two systems
+    actually increase diversification? I generally use four methods to check.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Daily Return Correlation
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'With this method, you simply run a correlation analysis in Excel on the daily
+    returns of each system. For intraday systems, you could run the analysis on shorter
+    time period bars, such as hourly. When I use daily results, I generally check
+    the correlation over the entire history, and then over six-month to one-year periods.
+    This analysis can easily be performed in Excel. I take the daily strategy results
+    for each strategy, plot one as X and one as Y, and calculate the R² correlation
+    coefficient. The lower the correlation coefficient, the better the diversification.
+    If in all cases the correlation is much less than 1.0, I can safely assume the
+    correlation is low, and therefore the diversification is high. One caveat, though:
+    because of the fact that the longer term correlation is low does not mean that
+    the systems will never be correlated. There could be weeks or months where the
+    results are highly correlated. If you are aggressive with position sizing, you
+    need to be extra careful—strategies that you assume are not correlated can suddenly
+    become correlated and, instead of reducing your risk, may actually amplify it.
+    A good example of this occurred during the financial crisis of 2008, where heretofore
+    uncorrelated markets and approaches suddenly all moved in lockstep. Diversification
+    might not help you much in periods of crisis.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Linearity of Equity Curve
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: As I have stated previously, a perfectly linear equity curve is the ideal curve
+    for a trading system. It is also a terrific way to measure the diversification
+    effect. All you have to do is take the strategy’s equity curve, run a linear regression
+    on it (which can be done in Excel), and report the correlation coefficient R²
+    value. An R² value of 1 is ideal, as it represents a perfectly linear equity curve.
+    An example of this measurement is shown in [Table 15.1](#table15-1) for the euro
+    systems, which are discussed in later chapters. As you can see, the R² value for
+    the combined equity is better than the R² for each of the pieces. Thus, combining
+    these strategies into one system provides diversification, resulting in a smoother
+    equity curve.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**TABLE 15.1**](#tableanchor15-1) Using Correlation Measures for Diversification
+    Check'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Strategy | R² Correlation Coefficient |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Euro night | 0.9370 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Euro day | 0.9745 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Euro day + night | 0.9817 |'
+  prefs: []
+  type: TYPE_TB
+- en: Maximum Drawdown
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Another way to measure the impact of diversification is through the maximum
+    drawdown. Although trading multiple systems might not always lead to a reduced
+    maximum drawdown, especially on an absolute basis, many times it does. This is
+    easy to check if you have the equity curve for each system and the combined system.
+    This is shown in [Table 15.2](#table15-2) for the euro systems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**TABLE 15.2**](#tableanchor15-2) Utilizing Drawdown for Diversification Check'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Strategy | Maximum Drawdown |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Euro night | $3,008 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Euro day | $3,523 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Euro day + night | $3,265 |'
+  prefs: []
+  type: TYPE_TB
+- en: In this case, the drawdown for the combined system is in between that of the
+    euro day and euro night systems. This makes it a bit unclear as to whether diversification
+    is occurring. But once we look at reward relative to risk, the answer is clear.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Monte Carlo, Return/Drawdown
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Since measuring the drawdown by itself doesn’t always give a clear answer, I
+    use Monte Carlo analysis to see whether the combined system is better on a risk-adjusted
+    basis. I measure this by looking at the annual percentage return divided by the
+    max percentage drawdown. Higher values mean that I am getting more reward for
+    my risk. I also look at the probability of making money in a year for confirmation.
+    When I run this analysis, the results are clear (see [Table 15.3](#table15-3)).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**TABLE 15.3**](#tableanchor15-3) Using Return/Drawdown and Probability of
+    Profit for Diversification Check'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Strategy | Return/Drawdown | Probability of Profit in One Year |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Euro night | 2.2 | 89% |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Euro day | 5.2 | 97% |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Euro day + night | 6.7 | 98% |'
+  prefs: []
+  type: TYPE_TB
+- en: 'When looking at all the analysis results, note that the conclusion is pretty
+    obvious: combining the two systems produces a smoother equity curve, smaller drawdown
+    than the worst system by itself, a better return-to-risk ratio, and increased
+    probability of profit. Clearly, diversification made the combined system better
+    than each of its parts.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The really nice thing about this diversification technique is that it did not
+    take any real mathematical effort to ensure that the systems were diversified.
+    By simply taking care to make the strategies different, by some combination of
+    different entries, exits, and other general parameters, diversification was practically
+    ensured. This might not always be the case, but this is true enough of the time
+    to make it a useful and simple technique.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One final benefit of diversification will help you increase the output of your
+    strategy development factory. As I have shown, two good systems became a lot better
+    by trading them together. Thus, it might mean that your individual system performance
+    goals can be relaxed a bit, since diversification will later improve the performance.
+    In this manner, you might be more successful creating many “decent” or “just good
+    enough” strategies, rather than one “super-terrific” strategy. Since it is much,
+    much easier to create good, but not great systems, you might get to your overall
+    goal much more quickly by employing diversification.
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 16
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Position Sizing and Money Management
+  prefs: []
+  type: TYPE_NORMAL
+- en: Up until this point I haven’t discussed position sizing or money management
+    in any detail. That isn’t to say I don’t value it; I agree in large part with
+    position-sizing guru and author Ralph Vince, who states that position sizing is
+    one of the most important things in trading. The problem is some people take that
+    view to the extreme, and believe that position sizing is the only thing that matters.
+    That is simply not true. Use superb position sizing with a losing strategy, and
+    you’ll still lose in the long run.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Many people have written books about position sizing and money management, and
+    just like with general trading books, some are good and some are bad. The best
+    ones I have found include Van Tharp’s *The Definitive Guide to Position Sizing*
+    (Van Tharp Institute, 2013 [2nd ed.]) and the numerous books by Ralph Vince. Vince’s
+    books are more mathematically based, and tough for inexperienced traders to understand
+    and follow, but the underlying messages he puts forth are usually good ones. So
+    in this chapter I won’t try to recreate the wheel; I’ll instead refer you to those
+    authors for more in-depth information. In this chapter, I’ll discuss how I employ
+    position sizing, both for a single system and on a portfolio level. But first,
+    I’ll share with you my thoughts on general position-sizing issues.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) No Optimum Position Sizing'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: In all my studies on position sizing, I have determined there is no optimum
+    or one and only one correct way to position size, regardless of trading system.
+    Some trading books out there claim that their unique method is the best, and then
+    prove it to you through an example or two. This, of course, is bogus. For any
+    given equity curve, you can try different position-sizing models and find one
+    that is the best for that particular curve. But, you can’t then say that is the
+    best way to position size for any system. A good case in point was a book written
+    a while back (I will not mention the title) that developed a new position-sizing
+    method. This method basically took more risk at the start of trading and, as the
+    account grew, scaled back the position sizing. This works great when the equity
+    curve does well at the beginning, which is what most of the book’s examples showed.
+    What most people don’t know is that same author applied his “superb” method in
+    real time and quickly blew out numerous accounts. This was likely because his
+    account started out going down instead of up. So, don’t assume that a position-sizing
+    method that works well with one trading system will work well with all trading
+    systems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Risk and Reward Are a Team'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Many people look for a magic position-sizing technique that provides extra reward,
+    without any extra risk. In general, though, reward and risk go hand in hand—if
+    you want more reward, you have to be willing to risk more. Where this gets a bit
+    murky is in reviewing results. Based on the return and drawdown shown in an equity
+    curve, it may look like you received a lot of extra reward (return) for no extra
+    risk (drawdown). But you must remember that the risk taken at the start of the
+    trade won’t show up in an equity curve. The risk is there; it was just never realized.
+    No matter what the final results say, in the long run you’ll be better off assuming
+    that when you want more reward, you have to be willing to risk more.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Position Sizing Can Be Optimized'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Many traders will develop a strategy, run it through all the development steps,
+    and afterwards, test out 5 or 10 different position-sizing techniques, picking
+    the best one. Many of these same people don’t realize that they have just optimized—not
+    on a particular entry or exit parameter, but instead on the position-sizing method
+    itself. Just as with optimizing trading strategies, just because one method was
+    optimum on past data, it does not mean it will be optimum going forward. In fact,
+    chances are it will not be the best. If you are dead set on testing different
+    position-sizing techniques on a trading strategy, make sure you use Monte Carlo
+    analysis. This will give you a much better indication as to which position-sizing
+    method, if any, is better.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Losing Systems Cannot Become Winners'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: No matter what type of position-sizing approach you use, if your core trading
+    strategy is a loser, no position-sizing method will save you. That is where it
+    gets confusing, when certain trading gurus state that position sizing is all that
+    matters. While they are espousing the importance of position sizing, they are
+    not saying you can win with a losing system. If this idea was true, you would
+    have more rich casino gamblers out there. No one, to my knowledge, has ever used
+    position sizing to succeed long term in any casino game where they don’t have
+    an edge. This doesn’t include cheating, or card counting, or any other method
+    that gives you an advantage or edge. In those cases position sizing can help you
+    immensely. If you have a terrible strategy, in the long run the choice of position-sizing
+    technique is irrelevant; you will lose no matter how you size. Start with a strategy
+    that gives you an edge, then apply position sizing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Winning Systems Can Become Losers'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'You would think that since loser trading systems cannot become winning systems
+    through position sizing, the opposite is also true: winning trading systems can
+    never become losers when employing position sizing. Nothing, and I mean nothing,
+    could be further from the truth. It is exceedingly easy to take a winning system,
+    apply an overly aggressive or inappropriate position-sizing method, and still
+    lose all your money. Over the years, I have seen many people do this. Most think
+    that when they have a winning system, they must push “the pedal to the metal”
+    and trade as aggressively as they can. Most of these same people crash in spectacular
+    fashion during an inevitable future drawdown.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) The Fantasy of Size'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Almost every two-bit huckster out there selling a trading system will have
+    some sort of sales pitch that goes like this: “If you use my method, you can get
+    $5,000 profit per contract per year. So if you trade 100 contracts—all it takes
+    is adding a few zeros to your order quantity—you’ll soon be making a very good
+    living!” If you can’t immediately see through the transparency of this claim,
+    I’ll explain the fallacy. First, the huckster assumes you’ll have enough margin
+    in your account to actually trade 100 contracts. If you have determined that a
+    $10,000 account is appropriate to trade one contract (which, by the way, is already
+    considered aggressive by many traders), then you would need a $1 million trading
+    account. If you had that much money in your account, you’d probably be smart enough
+    to never listen to the huckster’s pitch in the first place! Remember, drawdown
+    is always possible, and your account needs to consider that.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The second fallacy in the “trade 100 contracts” scenario is that most people
+    could not handle it psychologically. Sure, if the equity curve is always increasing,
+    trading 100 contracts and banking $500,000 a year is easy. But when you have 5
+    losing trades in a row, and you lose $100,000, psychologically that could be a
+    killer. Your best bet, therefore, is to ignore the hucksters and position size
+    so that you slowly add on contracts, and acclimate yourself to the dollar amounts
+    involved before you increase size again.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Short Term—Go for Broke'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: If your edge is small, and you want to trade for only a very short time, just
+    go crazy with position sizing. Chances are, over the short run, you probably will
+    win. In the long run, you’ll be toast, but in the short run you’ll be profitable.
+    A classic example of this is with a Martingale betting strategy. You begin by
+    betting one coin. Every time you lose, you double your bet (two, four, eight,
+    etc. coins). When you eventually win, you win back all your original bets, plus
+    $1 profit. The interesting thing about this approach is that if you play it just
+    once with no bet limit, you will almost always make $1 (i.e., winning one betting
+    sequence). But if you play it over and over, your odds of overall success go to
+    zero because eventually there will be a betting run of consecutive losses you
+    cannot recover from. Of course, betting one sequence and then walking away is
+    impossible for most people. Still, it is an option that is usually successful.
+    When you add in bet limits for Martingale, the approach becomes even less attractive.
+    I know quite a few former traders who tried Martingale over the years; note I
+    described them as “former.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) No Position Sizing = No Good!'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Whether it is fear of loss, lack of confidence or some other issue, many people
+    who have winning trading systems never position size. Instead, they continue to
+    trade the same size for years. This to me is almost as bad as being too aggressive
+    with sizing. When you have a winning system, you have the goose with the golden
+    egg. Take care of that goose, learn what it can eat to maximize egg production,
+    but don’t overdo it. After all, you need to make full use of the goose while you
+    have it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Strategy, Then Position Size, or Strategy and Position
+    Size Together?'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: For most of my development career, I have developed the strategy first, based
+    on always trading a single contract. After development is completed, I then apply
+    position sizing. This is a good way to go, especially when your final position
+    sizing is for a portfolio of systems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Fellow trader Andrea Unger, who also trades for a living, disagrees with my
+    approach. Considering that he has won the World Cup Championship of Futures Trading
+    four times, I think I am safe in listening to him. His argument is as follows:
+    when you develop a system trading a single contract, you’ll get a good system,
+    but maybe not one that takes advantage of position sizing. For example, if you
+    include position sizing in your development process, you are likely to end up
+    with smaller losing trades, since that will allow you to trade with more contracts,
+    leading to a higher net profit. This definitely makes sense, based on my own experience.
+    One of my favorite trading systems I developed was based on one contract being
+    traded. Unfortunately, that system has relatively large losses ($2,000 to $3,000
+    per contract), making it tough to position size, unless the account is very large.
+    Just think of the account size you need if you want to trade 10 contracts, where
+    a $30,000 loss on one trade is possible. With a $300,000 account, one losing trade
+    would lead to a 10 percent account loss. This is much too large a loss, even for
+    the most reckless of traders. Therefore, in this case, maybe developing the system
+    with position sizing would have suggested a parameter set where $500 maximum loss
+    was optimum. This system would be much easier to apply position sizing for a smaller
+    account.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, even though I prefer not using position sizing during development, recognize
+    that at least one (and probably many more) great traders do develop with position
+    sizing. It might be worth trying both approaches on your development projects,
+    to see which one you like the best.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Positioning Size—Single System'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Whenever I begin trading a new strategy, I almost always start at the smallest
+    size possible, typically only one contract. Many people think the exact opposite;
+    if you have an edge, you need to exploit it with big size as soon as possible.
+    After all, what if the edge disappears? That is a good point, but in my experience,
+    starting small is better. First, even with all the development, testing, and incubation,
+    the system still might not have an edge, even though I think it does. Trading
+    small will limit my loss in such a case. Second, I always become emotionally invested
+    in strategies when I start trading—after all, I want to see my creation succeed—so
+    trading a small size takes any emotion out of the equation. This new strategy
+    becomes just another strategy in my portfolio. My final reason for starting small
+    is that I want to increase size based on the profits of the strategy. If the strategy
+    makes money, it will ramp up in size. If it stays flat or loses money, my downside
+    is limited.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Even though I start with one contract, I always know in advance what my sizing
+    scheme will be as I build equity. Most of the time, I just use fixed fractional
+    sizing:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*N* = *int*(*x* * Equity/Largest Loss)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: where
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*N* = Integer number of contracts (always round down)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*int* = Integer function'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*x* = Fraction of equity to bet on each trade'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Equity = Current account equity
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Largest loss = Largest historical loss from walk-forward back testing
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The only variable that is at my discretion is the fixed fraction *x.* Many traders
+    will say that *x* can be no more than .02, or some other value. While I can’t
+    argue with keeping the value of *x* low, I prefer to use Monte Carlo simulation
+    to show me the best value of *x,* which for me is one that maximizes my return/drawdown
+    ratio. This is, of course, subject to other constraints such as risk of ruin and
+    maximum allowable drawdown. An example will make this clearer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To look at the impact of fixed fractional sizing, I use the Monte Carlo simulation
+    analysis of the euro system I will present later. I run the analysis with various
+    values of the fixed fraction *x,* and look at the following charts:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Median rate of return—I want as high as possible.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Return/DD ratio—I want as high as possible.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Median max drawdown—I want this as low as possible.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Risk of ruin—I want this as low as possible.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Obviously, since I am trying to maximize return and minimize drawdown, there
+    has to be a happy medium somewhere. This depends not only on the results but also
+    my personal preferences. For instance, if I did not care what the drawdown or
+    risk of ruin was, I’d select the peak point on the return or return/DD chart.
+    This corresponds to *x* = 0.32, and also is Ralph Vince’s optimal *f.* But, with
+    *x* = 0.32, I’d have a 50 percent chance of having a max drawdown equal to or
+    greater than 67.4 percent. Plus, my risk of ruin would be 21 percent. Wow! Those
+    values are too high for me. But I will accept a 45 percent maximum drawdown and
+    a 10 percent risk of ruin. Eliminating all chart points that do not meet these
+    criteria result in a max value of *x* = 0.175, as shown in [Figure 16.1](#figure16-1).
+    Therefore, I will use this value of *x* in my trading for this particular system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c16f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 16.1**](#figureanchor16-1) Single-System Position Sizing'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Positioning Size—Multiple Systems'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Since I am trading multiple systems at any one time, I have to respect any correlation
+    between the results. That is, I can’t independently determine the value of *x*
+    for each system, and then just trade them together. Instead, I analyze all the
+    systems together, and try all values of *x* for each of them. Just as with the
+    single system, I want values of *x* for each system (each system will indeed have
+    a different value of *x*) that maximizes my return/DD ratio, subject to maximum
+    allowable drawdown and risk of ruin. An example of this process is shown in [Figure
+    16.2](#figure16-2), where five different systems are traded at the same time.
+    The values for *x* for each system maximizes the return/DD, subject to the loss
+    constraints I have chosen.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c16f002.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 16.2**](#figureanchor16-2) Position Sizing, Multiple Systems'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Obviously, I have just scratched the surface with position sizing, but I have
+    given you an idea of how I approach it. As stated earlier, my philosophy is to
+    go slow at first and let the system profits generate most of the extra capital
+    needed for position sizing. This helps me keep the risk at a manageable level.
+    Since I use fixed fractional sizing, you might wonder how you could employ a different
+    sizing technique in your analysis. Simply take what I have shown here and modify
+    it for your sizing approach, and conduct the same analysis. You’ll then have a
+    logical analysis for whatever position-sizing method you decide to employ.
+  prefs: []
+  type: TYPE_NORMAL
+- en: CHAPTER 17
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Documenting the Process
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you can imagine, keeping track of all the strategies you create and run through
+    this development process can quickly become a nightmare. Proper documentation
+    is the key to successfully managing this effort. Currently, I use an Excel spreadsheet
+    to manage my strategies. This is available on the book resource web site ([www.wiley.com/go/algotradingsystems](http://www.wiley.com/go/algotradingsystems))
+    for you to download and use, and is also shown in [Figures 17.1](#figure17-1)
+    and [17.2](#figure17-2). I have set it up to identify the items I feel are the
+    most important. Of course, as you progress in system development, you will likely
+    have different items you want to track. In that case, simply edit the spreadsheet
+    to fit your own needs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c17f001.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 17.1**](#figureanchor17-1) Documenting the Development Process'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/c17f002.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[**FIGURE 17.2**](#figureanchor17-2) Documenting the Development Process'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The items I track with the spreadsheet will be discussed in this chapter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Trading Goals'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: I list all my goals for profit, drawdown, rate of return, number of trades,
+    and so on. I find it much more difficult to accept systems that do not meet my
+    goals when the goals are clearly written at the start!
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Trading Idea'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Here I list all the particulars of the strategy I am testing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Strategy name.* Sounds simple, but having a unique name for every strategy
+    helps you keep track of things. I use a standard naming convention, which allows
+    me to easily find it in my trading software’s list of strategies.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: KJD2013-10 BrkOut A
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'where:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: KJD = My initials—in a list of 1,000 strategies, you want to easily find the
+    ones you wrote.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 2013-10 = Year, followed by two-digit month. I created this strategy in October
+    2013.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: BrkOut = A simple description of the strategy. This example would be a breakout
+    strategy.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: A = Version of strategy. If I later change or add rules, the next version would
+    be “B.” This serves a couple of purposes. First, it helps you keep track of how
+    the strategy changed over time. Second, it reminds you how many changes you made
+    to the strategy. If you consistently find yourself testing up to version “M,”
+    for example, you are probably spending too much time revising your strategy. Remember,
+    the risk of overfitting goes up with each version.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: As part of this naming, I will also add a “W” to the end if the walk-forward
+    version has a different code than the baseline version, and I will use “H” at
+    the end to signify a historical walk-forward version of the strategy.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Strategy—general description.* In simple words, I will describe my strategy.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Edge.* What do I think my edge is? Enter it here. This is a good warning sign—if
+    you do not have a clue what your edge is, you probably do not have one!'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Markets to test.* List the market or markets you plan to examine.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Bar size.* Enter the type of bar you are testing with.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Historical test period.* List the start and end dates for your analysis.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Market data streams.* List the data identifier you are using. For example,
+    if I wanted to test the continuous gold contract, in TradeStation I would use
+    “@GC.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Market data customization.* If you use any special session times or anything
+    else unique, enter it here.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Entry rules.* Describe your entry rules. You can use plain English, pseudo
+    code, or actual code. The idea is to archive the entry method for later reference.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Exit rules.* Describe your exit rules in the same manner as your entry rules.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Limited Testing'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Here I list all the particulars of the limited testing phase:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Test period.* The one or two-year sample of historical data that I am using
+    to perform the limited testing.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Entry testing.* Here, I will record the general results (e.g., excellent,
+    good, poor) for the entry testing (fixed stop, fixed target, and/or fixed bar).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Exit testing.* Here, I will record the general results (e.g., excellent, good,
+    poor) for the exit testing (similar-approach entry).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Core system testing.* General results of the whole system.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Monkey testing.* If I perform any random “monkey” testing, I will record the
+    results here.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Limited testing—overall.* Based on all the limited tests run, does the system
+    pass or fail?'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Walk-Forward Testing'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Assuming the strategy passes the limited testing phase, I now move on to the
+    walk-forward testing step.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*In period.* The number of trading days in the in-sample periods.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Out period.* The number of trading days in the out-sample periods.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Fitness function.* List the fitness function used.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Anchored/Unanchored.* Identify whether you are using anchored testing or unanchored
+    testing.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Optimum in/out.* If you optimize the in/out periods, identify that here, and
+    also provide information on the true out-of-sample date range.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Walk-forward historical strategy created.* If you create a strategy version
+    specifically with walk-forward history, identify it here. I signify this by putting
+    the letter “H” on the end of the strategy.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Walk-forward testing—overall.* Based on all the walk-forward testing, does
+    the system pass or fail?'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Monte Carlo Testing'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Assuming the strategy passes the walk-forward testing phase, I now move on
+    to the Monte Carlo testing step:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Start equity.* Enter the starting equity you are using for the simulation.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Quit equity.* Enter the equity level below which you will quit trading the
+    strategy.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Number trades, 1 year.* Number of trades in one year of trading.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Return/DD ratio.* Enter this result from the Monte Carlo simulation.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Monte Carlo testing—overall.* Based on all the Monte Carlo testing, does the
+    system pass or fail?'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Incubation Testing'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Assuming the strategy passes the Monte Carlo phase, I now move on to the incubation
+    testing step:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Meets goals.* Did the strategy pass or fail incubation?'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Diversification Check'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Applicable only to strategies that you plan to trade with other strategies.
+    Was the current strategy developed with diversification in mind?
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Meets goals.* Did the strategy pass or fail diversification?'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Position-Sizing Check'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Since I usually test a strategy with “one trade per contract” rules, this is
+    an easy check. If, however, I used a particular position sizing during development,
+    it should not be the outcome of optimization and should be identified here (especially
+    if it will be traded with other systems).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Meets goals.* Was the strategy developed using one contract per trade, or
+    some other position-sizing technique that did *not* involve optimization?'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) Final Notes'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: After testing and development is completed, enter any information you feel is
+    appropriate. For example, you could list the date you started trading. If the
+    strategy does not pass but you like the entry or exit rules, you could always
+    identify that fact here. I have had strategies that failed, but I still liked
+    a particular aspect of it. With the notes at the end, you can always refer to
+    it later and easily remember, “Oh yes, I wanted to test this entry with soybeans,
+    due to its high volatility.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![images](images/gbox.jpg) One Final List'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The individual sheets provide an excellent way to manage each strategy. In addition,
+    I also keep a list of entry and exit ideas. These might not be fully formed strategies,
+    but they are ideas I can take and later use in a strategy. For example, if I see
+    an intriguing entry idea in a book or trading magazine, and I cannot immediately
+    test it, I’ll just add it to my entry list. This list serves two purposes. First,
+    it functions as an idea manager, saving any idea you have for future testing.
+    Second, having this list means you will never run out of ideas to test. Trust
+    me, the list will grow far faster than you can test!
+  prefs: []
+  type: TYPE_NORMAL
