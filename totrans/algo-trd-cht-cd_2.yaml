@@ -1,0 +1,908 @@
+- en: 'IntroductionIf you are new to algo trading, or don’t even know what algorithmic
+    trading is, just stop reading now.  This book is not for you – yet.  Maybe try
+    my “Intro To Algo Trading” book instead.Also, if you are a seasoned expert algo
+    trader, and you are perfectly happy with your risk adjusted performance, you might
+    not find a whole lot of new information in this book.  It might be better just
+    to keep doing what you are doing.However, if you somewhere between beginner and
+    expert, like most of us are, you are in luck. This book is really for the majority
+    of traders stuck somewhere in the middle – experienced algo traders just looking
+    for ideas and tips to improve their trading.  That is exactly the type of trader
+    this book is for.In this book, I reveal a lot of the research I’ve done in the
+    past year or two – research I have used to improve my algo trading.  By using
+    the results of my work, you can use my findings to improve your strategies, too.Note
+    that I do not discuss position sizing, psychology, portfolio management or other
+    important topics here.  Why not?  Although I definitely think they are important,
+    my objective in this book is to help traders get better at their algo trading
+    system development.  Psychology is VERY important, but will not help you if you
+    have terrible algo strategies!For me, successful trading starts with edges that
+    you exploit via your algo trading systems.Perhaps an analogy will help.If you
+    play blackjack in a casino, in the long run you will lose – pretty much guaranteed. 
+    This is regardless of your position sizing, your money management approach, your
+    psychology and discipline (even wisely avoiding the mind numbing free alcoholic
+    drinks!).But, let’s say you learn to card count, which gives you a demonstrated
+    edge.  With that edge, along with good psychology and money management, you can
+    be a long term winner – that’s why the casinos will eventually ban you from playing
+    – as they do not like players who have an edge!The same applies with trading. 
+    When you have an edge, then all those other pieces of trading become important. 
+    Simply put, it all starts with a good strategy, and that is why I focus on algo
+    strategy improvement techniques in this book.I’ve broken this book into 4 major
+    sections:General Tips And Helpful Advice:Chapter 1 – Is Algo Trading Getting Harder?
+    – What does algo trading look like these days, compared to the past? And what
+    does the future hold?Chapter 2 – Full Time Algo Trading – Can it be done?  What
+    is some helpful advice to help you in this area?Chapter 3 – 15 Algo Trading Tips
+    – Tips I’ve learned over the years that will help you in your trading.Improving
+    Your Entries:Chapter 4 – Bar Size Study – What bar size is the best?  Which is
+    the worst?  And why?Chapter 5 – Mean Reversion Study – I test out some popular
+    (and not so popular) mean reversion approaches.  How can they be used to create
+    good strategies?Improving Your Existing Strategies:Chapter 6 – Risk Protection
+    Techniques – How can you take an existing strategy, and make it more risk adverse?Chapter
+    7 – Bull Bear Regime Trading – Does “macro environment” filtering of trades actually
+    work?  If so, how can you do it?Improving Your Exits:Chapter 8 – Which Exit Is
+    Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk Study –
+    Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10 – Exiting
+    After Profitable (Or Unprofitable) Bars – Is this a good exit approach to use?For
+    each chapter, I give you what I call “Algo Trading Cheat Codes.”  I boiled down
+    thousands of research hours into actionable ideas.  This is really the essence
+    of the book – taking what I’ve found, and putting it to use in your own testing
+    and trading – without the need for you to do everything from scratch.There are
+    a few other topics that did not make it into this book, which you can find at
+    my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with Dollar
+    based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!If you are new to algo trading, or
+    don’t even know what algorithmic trading is, just stop reading now.  This book
+    is not for you – yet.  Maybe try my “Intro To Algo Trading” book instead.Also,
+    if you are a seasoned expert algo trader, and you are perfectly happy with your
+    risk adjusted performance, you might not find a whole lot of new information in
+    this book.  It might be better just to keep doing what you are doing.However,
+    if you somewhere between beginner and expert, like most of us are, you are in
+    luck. This book is really for the majority of traders stuck somewhere in the middle
+    – experienced algo traders just looking for ideas and tips to improve their trading. 
+    That is exactly the type of trader this book is for.In this book, I reveal a lot
+    of the research I’ve done in the past year or two – research I have used to improve
+    my algo trading.  By using the results of my work, you can use my findings to
+    improve your strategies, too.Note that I do not discuss position sizing, psychology,
+    portfolio management or other important topics here.  Why not?  Although I definitely
+    think they are important, my objective in this book is to help traders get better
+    at their algo trading system development.  Psychology is VERY important, but will
+    not help you if you have terrible algo strategies!For me, successful trading starts
+    with edges that you exploit via your algo trading systems.Perhaps an analogy will
+    help.If you play blackjack in a casino, in the long run you will lose – pretty
+    much guaranteed.  This is regardless of your position sizing, your money management
+    approach, your psychology and discipline (even wisely avoiding the mind numbing
+    free alcoholic drinks!).But, let’s say you learn to card count, which gives you
+    a demonstrated edge.  With that edge, along with good psychology and money management,
+    you can be a long term winner – that’s why the casinos will eventually ban you
+    from playing – as they do not like players who have an edge!The same applies with
+    trading.  When you have an edge, then all those other pieces of trading become
+    important.  Simply put, it all starts with a good strategy, and that is why I
+    focus on algo strategy improvement techniques in this book.I’ve broken this book
+    into 4 major sections:General Tips And Helpful Advice:Chapter 1 – Is Algo Trading
+    Getting Harder? – What does algo trading look like these days, compared to the
+    past? And what does the future hold?Chapter 2 – Full Time Algo Trading – Can it
+    be done?  What is some helpful advice to help you in this area?Chapter 3 – 15
+    Algo Trading Tips – Tips I’ve learned over the years that will help you in your
+    trading.Improving Your Entries:Chapter 4 – Bar Size Study – What bar size is the
+    best?  Which is the worst?  And why?Chapter 5 – Mean Reversion Study – I test
+    out some popular (and not so popular) mean reversion approaches.  How can they
+    be used to create good strategies?Improving Your Existing Strategies:Chapter 6
+    – Risk Protection Techniques – How can you take an existing strategy, and make
+    it more risk adverse?Chapter 7 – Bull Bear Regime Trading – Does “macro environment”
+    filtering of trades actually work?  If so, how can you do it?Improving Your Exits:Chapter
+    8 – Which Exit Is Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk
+    Study – Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10
+    – Exiting After Profitable (Or Unprofitable) Bars – Is this a good exit approach
+    to use?For each chapter, I give you what I call “Algo Trading Cheat Codes.”  I
+    boiled down thousands of research hours into actionable ideas.  This is really
+    the essence of the book – taking what I’ve found, and putting it to use in your
+    own testing and trading – without the need for you to do everything from scratch.There
+    are a few other topics that did not make it into this book, which you can find
+    at my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with
+    Dollar based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Also, if you are a seasoned expert
+    algo trader, and you are perfectly happy with your risk adjusted performance,
+    you might not find a whole lot of new information in this book.  It might be better
+    just to keep doing what you are doing.However, if you somewhere between beginner
+    and expert, like most of us are, you are in luck. This book is really for the
+    majority of traders stuck somewhere in the middle – experienced algo traders just
+    looking for ideas and tips to improve their trading.  That is exactly the type
+    of trader this book is for.In this book, I reveal a lot of the research I’ve done
+    in the past year or two – research I have used to improve my algo trading.  By
+    using the results of my work, you can use my findings to improve your strategies,
+    too.Note that I do not discuss position sizing, psychology, portfolio management
+    or other important topics here.  Why not?  Although I definitely think they are
+    important, my objective in this book is to help traders get better at their algo
+    trading system development.  Psychology is VERY important, but will not help you
+    if you have terrible algo strategies!For me, successful trading starts with edges
+    that you exploit via your algo trading systems.Perhaps an analogy will help.If
+    you play blackjack in a casino, in the long run you will lose – pretty much guaranteed. 
+    This is regardless of your position sizing, your money management approach, your
+    psychology and discipline (even wisely avoiding the mind numbing free alcoholic
+    drinks!).But, let’s say you learn to card count, which gives you a demonstrated
+    edge.  With that edge, along with good psychology and money management, you can
+    be a long term winner – that’s why the casinos will eventually ban you from playing
+    – as they do not like players who have an edge!The same applies with trading. 
+    When you have an edge, then all those other pieces of trading become important. 
+    Simply put, it all starts with a good strategy, and that is why I focus on algo
+    strategy improvement techniques in this book.I’ve broken this book into 4 major
+    sections:General Tips And Helpful Advice:Chapter 1 – Is Algo Trading Getting Harder?
+    – What does algo trading look like these days, compared to the past? And what
+    does the future hold?Chapter 2 – Full Time Algo Trading – Can it be done?  What
+    is some helpful advice to help you in this area?Chapter 3 – 15 Algo Trading Tips
+    – Tips I’ve learned over the years that will help you in your trading.Improving
+    Your Entries:Chapter 4 – Bar Size Study – What bar size is the best?  Which is
+    the worst?  And why?Chapter 5 – Mean Reversion Study – I test out some popular
+    (and not so popular) mean reversion approaches.  How can they be used to create
+    good strategies?Improving Your Existing Strategies:Chapter 6 – Risk Protection
+    Techniques – How can you take an existing strategy, and make it more risk adverse?Chapter
+    7 – Bull Bear Regime Trading – Does “macro environment” filtering of trades actually
+    work?  If so, how can you do it?Improving Your Exits:Chapter 8 – Which Exit Is
+    Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk Study –
+    Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10 – Exiting
+    After Profitable (Or Unprofitable) Bars – Is this a good exit approach to use?For
+    each chapter, I give you what I call “Algo Trading Cheat Codes.”  I boiled down
+    thousands of research hours into actionable ideas.  This is really the essence
+    of the book – taking what I’ve found, and putting it to use in your own testing
+    and trading – without the need for you to do everything from scratch.There are
+    a few other topics that did not make it into this book, which you can find at
+    my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with Dollar
+    based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!However, if you somewhere between beginner
+    and expert, like most of us are, you are in luck. This book is really for the
+    majority of traders stuck somewhere in the middle – experienced algo traders just
+    looking for ideas and tips to improve their trading.  That is exactly the type
+    of trader this book is for.In this book, I reveal a lot of the research I’ve done
+    in the past year or two – research I have used to improve my algo trading.  By
+    using the results of my work, you can use my findings to improve your strategies,
+    too.Note that I do not discuss position sizing, psychology, portfolio management
+    or other important topics here.  Why not?  Although I definitely think they are
+    important, my objective in this book is to help traders get better at their algo
+    trading system development.  Psychology is VERY important, but will not help you
+    if you have terrible algo strategies!For me, successful trading starts with edges
+    that you exploit via your algo trading systems.Perhaps an analogy will help.If
+    you play blackjack in a casino, in the long run you will lose – pretty much guaranteed. 
+    This is regardless of your position sizing, your money management approach, your
+    psychology and discipline (even wisely avoiding the mind numbing free alcoholic
+    drinks!).But, let’s say you learn to card count, which gives you a demonstrated
+    edge.  With that edge, along with good psychology and money management, you can
+    be a long term winner – that’s why the casinos will eventually ban you from playing
+    – as they do not like players who have an edge!The same applies with trading. 
+    When you have an edge, then all those other pieces of trading become important. 
+    Simply put, it all starts with a good strategy, and that is why I focus on algo
+    strategy improvement techniques in this book.I’ve broken this book into 4 major
+    sections:General Tips And Helpful Advice:Chapter 1 – Is Algo Trading Getting Harder?
+    – What does algo trading look like these days, compared to the past? And what
+    does the future hold?Chapter 2 – Full Time Algo Trading – Can it be done?  What
+    is some helpful advice to help you in this area?Chapter 3 – 15 Algo Trading Tips
+    – Tips I’ve learned over the years that will help you in your trading.Improving
+    Your Entries:Chapter 4 – Bar Size Study – What bar size is the best?  Which is
+    the worst?  And why?Chapter 5 – Mean Reversion Study – I test out some popular
+    (and not so popular) mean reversion approaches.  How can they be used to create
+    good strategies?Improving Your Existing Strategies:Chapter 6 – Risk Protection
+    Techniques – How can you take an existing strategy, and make it more risk adverse?Chapter
+    7 – Bull Bear Regime Trading – Does “macro environment” filtering of trades actually
+    work?  If so, how can you do it?Improving Your Exits:Chapter 8 – Which Exit Is
+    Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk Study –
+    Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10 – Exiting
+    After Profitable (Or Unprofitable) Bars – Is this a good exit approach to use?For
+    each chapter, I give you what I call “Algo Trading Cheat Codes.”  I boiled down
+    thousands of research hours into actionable ideas.  This is really the essence
+    of the book – taking what I’ve found, and putting it to use in your own testing
+    and trading – without the need for you to do everything from scratch.There are
+    a few other topics that did not make it into this book, which you can find at
+    my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with Dollar
+    based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!In this book, I reveal a lot of the
+    research I’ve done in the past year or two – research I have used to improve my
+    algo trading.  By using the results of my work, you can use my findings to improve
+    your strategies, too.Note that I do not discuss position sizing, psychology, portfolio
+    management or other important topics here.  Why not?  Although I definitely think
+    they are important, my objective in this book is to help traders get better at
+    their algo trading system development.  Psychology is VERY important, but will
+    not help you if you have terrible algo strategies!For me, successful trading starts
+    with edges that you exploit via your algo trading systems.Perhaps an analogy will
+    help.If you play blackjack in a casino, in the long run you will lose – pretty
+    much guaranteed.  This is regardless of your position sizing, your money management
+    approach, your psychology and discipline (even wisely avoiding the mind numbing
+    free alcoholic drinks!).But, let’s say you learn to card count, which gives you
+    a demonstrated edge.  With that edge, along with good psychology and money management,
+    you can be a long term winner – that’s why the casinos will eventually ban you
+    from playing – as they do not like players who have an edge!The same applies with
+    trading.  When you have an edge, then all those other pieces of trading become
+    important.  Simply put, it all starts with a good strategy, and that is why I
+    focus on algo strategy improvement techniques in this book.I’ve broken this book
+    into 4 major sections:General Tips And Helpful Advice:Chapter 1 – Is Algo Trading
+    Getting Harder? – What does algo trading look like these days, compared to the
+    past? And what does the future hold?Chapter 2 – Full Time Algo Trading – Can it
+    be done?  What is some helpful advice to help you in this area?Chapter 3 – 15
+    Algo Trading Tips – Tips I’ve learned over the years that will help you in your
+    trading.Improving Your Entries:Chapter 4 – Bar Size Study – What bar size is the
+    best?  Which is the worst?  And why?Chapter 5 – Mean Reversion Study – I test
+    out some popular (and not so popular) mean reversion approaches.  How can they
+    be used to create good strategies?Improving Your Existing Strategies:Chapter 6
+    – Risk Protection Techniques – How can you take an existing strategy, and make
+    it more risk adverse?Chapter 7 – Bull Bear Regime Trading – Does “macro environment”
+    filtering of trades actually work?  If so, how can you do it?Improving Your Exits:Chapter
+    8 – Which Exit Is Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk
+    Study – Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10
+    – Exiting After Profitable (Or Unprofitable) Bars – Is this a good exit approach
+    to use?For each chapter, I give you what I call “Algo Trading Cheat Codes.”  I
+    boiled down thousands of research hours into actionable ideas.  This is really
+    the essence of the book – taking what I’ve found, and putting it to use in your
+    own testing and trading – without the need for you to do everything from scratch.There
+    are a few other topics that did not make it into this book, which you can find
+    at my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with
+    Dollar based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Note that I do not discuss position
+    sizing, psychology, portfolio management or other important topics here.  Why
+    not?  Although I definitely think they are important, my objective in this book
+    is to help traders get better at their algo trading system development.  Psychology
+    is VERY important, but will not help you if you have terrible algo strategies!For
+    me, successful trading starts with edges that you exploit via your algo trading
+    systems.Perhaps an analogy will help.If you play blackjack in a casino, in the
+    long run you will lose – pretty much guaranteed.  This is regardless of your position
+    sizing, your money management approach, your psychology and discipline (even wisely
+    avoiding the mind numbing free alcoholic drinks!).But, let’s say you learn to
+    card count, which gives you a demonstrated edge.  With that edge, along with good
+    psychology and money management, you can be a long term winner – that’s why the
+    casinos will eventually ban you from playing – as they do not like players who
+    have an edge!The same applies with trading.  When you have an edge, then all those
+    other pieces of trading become important.  Simply put, it all starts with a good
+    strategy, and that is why I focus on algo strategy improvement techniques in this
+    book.I’ve broken this book into 4 major sections:General Tips And Helpful Advice:Chapter
+    1 – Is Algo Trading Getting Harder? – What does algo trading look like these days,
+    compared to the past? And what does the future hold?Chapter 2 – Full Time Algo
+    Trading – Can it be done?  What is some helpful advice to help you in this area?Chapter
+    3 – 15 Algo Trading Tips – Tips I’ve learned over the years that will help you
+    in your trading.Improving Your Entries:Chapter 4 – Bar Size Study – What bar size
+    is the best?  Which is the worst?  And why?Chapter 5 – Mean Reversion Study –
+    I test out some popular (and not so popular) mean reversion approaches.  How can
+    they be used to create good strategies?Improving Your Existing Strategies:Chapter
+    6 – Risk Protection Techniques – How can you take an existing strategy, and make
+    it more risk adverse?Chapter 7 – Bull Bear Regime Trading – Does “macro environment”
+    filtering of trades actually work?  If so, how can you do it?Improving Your Exits:Chapter
+    8 – Which Exit Is Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk
+    Study – Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10
+    – Exiting After Profitable (Or Unprofitable) Bars – Is this a good exit approach
+    to use?For each chapter, I give you what I call “Algo Trading Cheat Codes.”  I
+    boiled down thousands of research hours into actionable ideas.  This is really
+    the essence of the book – taking what I’ve found, and putting it to use in your
+    own testing and trading – without the need for you to do everything from scratch.There
+    are a few other topics that did not make it into this book, which you can find
+    at my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with
+    Dollar based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!For me, successful trading starts with
+    edges that you exploit via your algo trading systems.Perhaps an analogy will help.If
+    you play blackjack in a casino, in the long run you will lose – pretty much guaranteed. 
+    This is regardless of your position sizing, your money management approach, your
+    psychology and discipline (even wisely avoiding the mind numbing free alcoholic
+    drinks!).But, let’s say you learn to card count, which gives you a demonstrated
+    edge.  With that edge, along with good psychology and money management, you can
+    be a long term winner – that’s why the casinos will eventually ban you from playing
+    – as they do not like players who have an edge!The same applies with trading. 
+    When you have an edge, then all those other pieces of trading become important. 
+    Simply put, it all starts with a good strategy, and that is why I focus on algo
+    strategy improvement techniques in this book.I’ve broken this book into 4 major
+    sections:General Tips And Helpful Advice:Chapter 1 – Is Algo Trading Getting Harder?
+    – What does algo trading look like these days, compared to the past? And what
+    does the future hold?Chapter 2 – Full Time Algo Trading – Can it be done?  What
+    is some helpful advice to help you in this area?Chapter 3 – 15 Algo Trading Tips
+    – Tips I’ve learned over the years that will help you in your trading.Improving
+    Your Entries:Chapter 4 – Bar Size Study – What bar size is the best?  Which is
+    the worst?  And why?Chapter 5 – Mean Reversion Study – I test out some popular
+    (and not so popular) mean reversion approaches.  How can they be used to create
+    good strategies?Improving Your Existing Strategies:Chapter 6 – Risk Protection
+    Techniques – How can you take an existing strategy, and make it more risk adverse?Chapter
+    7 – Bull Bear Regime Trading – Does “macro environment” filtering of trades actually
+    work?  If so, how can you do it?Improving Your Exits:Chapter 8 – Which Exit Is
+    Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk Study –
+    Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10 – Exiting
+    After Profitable (Or Unprofitable) Bars – Is this a good exit approach to use?For
+    each chapter, I give you what I call “Algo Trading Cheat Codes.”  I boiled down
+    thousands of research hours into actionable ideas.  This is really the essence
+    of the book – taking what I’ve found, and putting it to use in your own testing
+    and trading – without the need for you to do everything from scratch.There are
+    a few other topics that did not make it into this book, which you can find at
+    my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with Dollar
+    based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Perhaps an analogy will help.If you
+    play blackjack in a casino, in the long run you will lose – pretty much guaranteed. 
+    This is regardless of your position sizing, your money management approach, your
+    psychology and discipline (even wisely avoiding the mind numbing free alcoholic
+    drinks!).But, let’s say you learn to card count, which gives you a demonstrated
+    edge.  With that edge, along with good psychology and money management, you can
+    be a long term winner – that’s why the casinos will eventually ban you from playing
+    – as they do not like players who have an edge!The same applies with trading. 
+    When you have an edge, then all those other pieces of trading become important. 
+    Simply put, it all starts with a good strategy, and that is why I focus on algo
+    strategy improvement techniques in this book.I’ve broken this book into 4 major
+    sections:General Tips And Helpful Advice:Chapter 1 – Is Algo Trading Getting Harder?
+    – What does algo trading look like these days, compared to the past? And what
+    does the future hold?Chapter 2 – Full Time Algo Trading – Can it be done?  What
+    is some helpful advice to help you in this area?Chapter 3 – 15 Algo Trading Tips
+    – Tips I’ve learned over the years that will help you in your trading.Improving
+    Your Entries:Chapter 4 – Bar Size Study – What bar size is the best?  Which is
+    the worst?  And why?Chapter 5 – Mean Reversion Study – I test out some popular
+    (and not so popular) mean reversion approaches.  How can they be used to create
+    good strategies?Improving Your Existing Strategies:Chapter 6 – Risk Protection
+    Techniques – How can you take an existing strategy, and make it more risk adverse?Chapter
+    7 – Bull Bear Regime Trading – Does “macro environment” filtering of trades actually
+    work?  If so, how can you do it?Improving Your Exits:Chapter 8 – Which Exit Is
+    Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk Study –
+    Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10 – Exiting
+    After Profitable (Or Unprofitable) Bars – Is this a good exit approach to use?For
+    each chapter, I give you what I call “Algo Trading Cheat Codes.”  I boiled down
+    thousands of research hours into actionable ideas.  This is really the essence
+    of the book – taking what I’ve found, and putting it to use in your own testing
+    and trading – without the need for you to do everything from scratch.There are
+    a few other topics that did not make it into this book, which you can find at
+    my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with Dollar
+    based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!If you play blackjack in a casino,
+    in the long run you will lose – pretty much guaranteed.  This is regardless of
+    your position sizing, your money management approach, your psychology and discipline
+    (even wisely avoiding the mind numbing free alcoholic drinks!).But, let’s say
+    you learn to card count, which gives you a demonstrated edge.  With that edge,
+    along with good psychology and money management, you can be a long term winner
+    – that’s why the casinos will eventually ban you from playing – as they do not
+    like players who have an edge!The same applies with trading.  When you have an
+    edge, then all those other pieces of trading become important.  Simply put, it
+    all starts with a good strategy, and that is why I focus on algo strategy improvement
+    techniques in this book.I’ve broken this book into 4 major sections:General Tips
+    And Helpful Advice:Chapter 1 – Is Algo Trading Getting Harder? – What does algo
+    trading look like these days, compared to the past? And what does the future hold?Chapter
+    2 – Full Time Algo Trading – Can it be done?  What is some helpful advice to help
+    you in this area?Chapter 3 – 15 Algo Trading Tips – Tips I’ve learned over the
+    years that will help you in your trading.Improving Your Entries:Chapter 4 – Bar
+    Size Study – What bar size is the best?  Which is the worst?  And why?Chapter
+    5 – Mean Reversion Study – I test out some popular (and not so popular) mean reversion
+    approaches.  How can they be used to create good strategies?Improving Your Existing
+    Strategies:Chapter 6 – Risk Protection Techniques – How can you take an existing
+    strategy, and make it more risk adverse?Chapter 7 – Bull Bear Regime Trading –
+    Does “macro environment” filtering of trades actually work?  If so, how can you
+    do it?Improving Your Exits:Chapter 8 – Which Exit Is Best? – Results of my extensive
+    test on exits.Chapter 9 – Reward/Risk Study – Is there an optimum Reward to Risk
+    ratio?  If so, what is it?Chapter 10 – Exiting After Profitable (Or Unprofitable)
+    Bars – Is this a good exit approach to use?For each chapter, I give you what I
+    call “Algo Trading Cheat Codes.”  I boiled down thousands of research hours into
+    actionable ideas.  This is really the essence of the book – taking what I’ve found,
+    and putting it to use in your own testing and trading – without the need for you
+    to do everything from scratch.There are a few other topics that did not make it
+    into this book, which you can find at my website:Dollar vs ATR Stops – I have
+    ATRs stop losses battle it out with Dollar based stop losses.  Who will be the
+    winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!But, let’s say you learn to card count,
+    which gives you a demonstrated edge.  With that edge, along with good psychology
+    and money management, you can be a long term winner – that’s why the casinos will
+    eventually ban you from playing – as they do not like players who have an edge!The
+    same applies with trading.  When you have an edge, then all those other pieces
+    of trading become important.  Simply put, it all starts with a good strategy,
+    and that is why I focus on algo strategy improvement techniques in this book.I’ve
+    broken this book into 4 major sections:General Tips And Helpful Advice:Chapter
+    1 – Is Algo Trading Getting Harder? – What does algo trading look like these days,
+    compared to the past? And what does the future hold?Chapter 2 – Full Time Algo
+    Trading – Can it be done?  What is some helpful advice to help you in this area?Chapter
+    3 – 15 Algo Trading Tips – Tips I’ve learned over the years that will help you
+    in your trading.Improving Your Entries:Chapter 4 – Bar Size Study – What bar size
+    is the best?  Which is the worst?  And why?Chapter 5 – Mean Reversion Study –
+    I test out some popular (and not so popular) mean reversion approaches.  How can
+    they be used to create good strategies?Improving Your Existing Strategies:Chapter
+    6 – Risk Protection Techniques – How can you take an existing strategy, and make
+    it more risk adverse?Chapter 7 – Bull Bear Regime Trading – Does “macro environment”
+    filtering of trades actually work?  If so, how can you do it?Improving Your Exits:Chapter
+    8 – Which Exit Is Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk
+    Study – Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10
+    – Exiting After Profitable (Or Unprofitable) Bars – Is this a good exit approach
+    to use?For each chapter, I give you what I call “Algo Trading Cheat Codes.”  I
+    boiled down thousands of research hours into actionable ideas.  This is really
+    the essence of the book – taking what I’ve found, and putting it to use in your
+    own testing and trading – without the need for you to do everything from scratch.There
+    are a few other topics that did not make it into this book, which you can find
+    at my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with
+    Dollar based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!The same applies with trading.  When
+    you have an edge, then all those other pieces of trading become important.  Simply
+    put, it all starts with a good strategy, and that is why I focus on algo strategy
+    improvement techniques in this book.I’ve broken this book into 4 major sections:General
+    Tips And Helpful Advice:Chapter 1 – Is Algo Trading Getting Harder? – What does
+    algo trading look like these days, compared to the past? And what does the future
+    hold?Chapter 2 – Full Time Algo Trading – Can it be done?  What is some helpful
+    advice to help you in this area?Chapter 3 – 15 Algo Trading Tips – Tips I’ve learned
+    over the years that will help you in your trading.Improving Your Entries:Chapter
+    4 – Bar Size Study – What bar size is the best?  Which is the worst?  And why?Chapter
+    5 – Mean Reversion Study – I test out some popular (and not so popular) mean reversion
+    approaches.  How can they be used to create good strategies?Improving Your Existing
+    Strategies:Chapter 6 – Risk Protection Techniques – How can you take an existing
+    strategy, and make it more risk adverse?Chapter 7 – Bull Bear Regime Trading –
+    Does “macro environment” filtering of trades actually work?  If so, how can you
+    do it?Improving Your Exits:Chapter 8 – Which Exit Is Best? – Results of my extensive
+    test on exits.Chapter 9 – Reward/Risk Study – Is there an optimum Reward to Risk
+    ratio?  If so, what is it?Chapter 10 – Exiting After Profitable (Or Unprofitable)
+    Bars – Is this a good exit approach to use?For each chapter, I give you what I
+    call “Algo Trading Cheat Codes.”  I boiled down thousands of research hours into
+    actionable ideas.  This is really the essence of the book – taking what I’ve found,
+    and putting it to use in your own testing and trading – without the need for you
+    to do everything from scratch.There are a few other topics that did not make it
+    into this book, which you can find at my website:Dollar vs ATR Stops – I have
+    ATRs stop losses battle it out with Dollar based stop losses.  Who will be the
+    winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!I’ve broken this book into 4 major
+    sections:General Tips And Helpful Advice:Chapter 1 – Is Algo Trading Getting Harder?
+    – What does algo trading look like these days, compared to the past? And what
+    does the future hold?Chapter 2 – Full Time Algo Trading – Can it be done?  What
+    is some helpful advice to help you in this area?Chapter 3 – 15 Algo Trading Tips
+    – Tips I’ve learned over the years that will help you in your trading.Improving
+    Your Entries:Chapter 4 – Bar Size Study – What bar size is the best?  Which is
+    the worst?  And why?Chapter 5 – Mean Reversion Study – I test out some popular
+    (and not so popular) mean reversion approaches.  How can they be used to create
+    good strategies?Improving Your Existing Strategies:Chapter 6 – Risk Protection
+    Techniques – How can you take an existing strategy, and make it more risk adverse?Chapter
+    7 – Bull Bear Regime Trading – Does “macro environment” filtering of trades actually
+    work?  If so, how can you do it?Improving Your Exits:Chapter 8 – Which Exit Is
+    Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk Study –
+    Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10 – Exiting
+    After Profitable (Or Unprofitable) Bars – Is this a good exit approach to use?For
+    each chapter, I give you what I call “Algo Trading Cheat Codes.”  I boiled down
+    thousands of research hours into actionable ideas.  This is really the essence
+    of the book – taking what I’ve found, and putting it to use in your own testing
+    and trading – without the need for you to do everything from scratch.There are
+    a few other topics that did not make it into this book, which you can find at
+    my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with Dollar
+    based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!General Tips And Helpful Advice:Chapter
+    1 – Is Algo Trading Getting Harder? – What does algo trading look like these days,
+    compared to the past? And what does the future hold?Chapter 2 – Full Time Algo
+    Trading – Can it be done?  What is some helpful advice to help you in this area?Chapter
+    3 – 15 Algo Trading Tips – Tips I’ve learned over the years that will help you
+    in your trading.Improving Your Entries:Chapter 4 – Bar Size Study – What bar size
+    is the best?  Which is the worst?  And why?Chapter 5 – Mean Reversion Study –
+    I test out some popular (and not so popular) mean reversion approaches.  How can
+    they be used to create good strategies?Improving Your Existing Strategies:Chapter
+    6 – Risk Protection Techniques – How can you take an existing strategy, and make
+    it more risk adverse?Chapter 7 – Bull Bear Regime Trading – Does “macro environment”
+    filtering of trades actually work?  If so, how can you do it?Improving Your Exits:Chapter
+    8 – Which Exit Is Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk
+    Study – Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10
+    – Exiting After Profitable (Or Unprofitable) Bars – Is this a good exit approach
+    to use?For each chapter, I give you what I call “Algo Trading Cheat Codes.”  I
+    boiled down thousands of research hours into actionable ideas.  This is really
+    the essence of the book – taking what I’ve found, and putting it to use in your
+    own testing and trading – without the need for you to do everything from scratch.There
+    are a few other topics that did not make it into this book, which you can find
+    at my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with
+    Dollar based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Chapter 1 – Is Algo Trading Getting
+    Harder? – What does algo trading look like these days, compared to the past? And
+    what does the future hold?Chapter 2 – Full Time Algo Trading – Can it be done? 
+    What is some helpful advice to help you in this area?Chapter 3 – 15 Algo Trading
+    Tips – Tips I’ve learned over the years that will help you in your trading.Improving
+    Your Entries:Chapter 4 – Bar Size Study – What bar size is the best?  Which is
+    the worst?  And why?Chapter 5 – Mean Reversion Study – I test out some popular
+    (and not so popular) mean reversion approaches.  How can they be used to create
+    good strategies?Improving Your Existing Strategies:Chapter 6 – Risk Protection
+    Techniques – How can you take an existing strategy, and make it more risk adverse?Chapter
+    7 – Bull Bear Regime Trading – Does “macro environment” filtering of trades actually
+    work?  If so, how can you do it?Improving Your Exits:Chapter 8 – Which Exit Is
+    Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk Study –
+    Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10 – Exiting
+    After Profitable (Or Unprofitable) Bars – Is this a good exit approach to use?For
+    each chapter, I give you what I call “Algo Trading Cheat Codes.”  I boiled down
+    thousands of research hours into actionable ideas.  This is really the essence
+    of the book – taking what I’ve found, and putting it to use in your own testing
+    and trading – without the need for you to do everything from scratch.There are
+    a few other topics that did not make it into this book, which you can find at
+    my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with Dollar
+    based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Chapter 2 – Full Time Algo Trading
+    – Can it be done?  What is some helpful advice to help you in this area?Chapter
+    3 – 15 Algo Trading Tips – Tips I’ve learned over the years that will help you
+    in your trading.Improving Your Entries:Chapter 4 – Bar Size Study – What bar size
+    is the best?  Which is the worst?  And why?Chapter 5 – Mean Reversion Study –
+    I test out some popular (and not so popular) mean reversion approaches.  How can
+    they be used to create good strategies?Improving Your Existing Strategies:Chapter
+    6 – Risk Protection Techniques – How can you take an existing strategy, and make
+    it more risk adverse?Chapter 7 – Bull Bear Regime Trading – Does “macro environment”
+    filtering of trades actually work?  If so, how can you do it?Improving Your Exits:Chapter
+    8 – Which Exit Is Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk
+    Study – Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10
+    – Exiting After Profitable (Or Unprofitable) Bars – Is this a good exit approach
+    to use?For each chapter, I give you what I call “Algo Trading Cheat Codes.”  I
+    boiled down thousands of research hours into actionable ideas.  This is really
+    the essence of the book – taking what I’ve found, and putting it to use in your
+    own testing and trading – without the need for you to do everything from scratch.There
+    are a few other topics that did not make it into this book, which you can find
+    at my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with
+    Dollar based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Chapter 3 – 15 Algo Trading Tips –
+    Tips I’ve learned over the years that will help you in your trading.Improving
+    Your Entries:Chapter 4 – Bar Size Study – What bar size is the best?  Which is
+    the worst?  And why?Chapter 5 – Mean Reversion Study – I test out some popular
+    (and not so popular) mean reversion approaches.  How can they be used to create
+    good strategies?Improving Your Existing Strategies:Chapter 6 – Risk Protection
+    Techniques – How can you take an existing strategy, and make it more risk adverse?Chapter
+    7 – Bull Bear Regime Trading – Does “macro environment” filtering of trades actually
+    work?  If so, how can you do it?Improving Your Exits:Chapter 8 – Which Exit Is
+    Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk Study –
+    Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10 – Exiting
+    After Profitable (Or Unprofitable) Bars – Is this a good exit approach to use?For
+    each chapter, I give you what I call “Algo Trading Cheat Codes.”  I boiled down
+    thousands of research hours into actionable ideas.  This is really the essence
+    of the book – taking what I’ve found, and putting it to use in your own testing
+    and trading – without the need for you to do everything from scratch.There are
+    a few other topics that did not make it into this book, which you can find at
+    my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with Dollar
+    based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Improving Your Entries:Chapter 4 –
+    Bar Size Study – What bar size is the best?  Which is the worst?  And why?Chapter
+    5 – Mean Reversion Study – I test out some popular (and not so popular) mean reversion
+    approaches.  How can they be used to create good strategies?Improving Your Existing
+    Strategies:Chapter 6 – Risk Protection Techniques – How can you take an existing
+    strategy, and make it more risk adverse?Chapter 7 – Bull Bear Regime Trading –
+    Does “macro environment” filtering of trades actually work?  If so, how can you
+    do it?Improving Your Exits:Chapter 8 – Which Exit Is Best? – Results of my extensive
+    test on exits.Chapter 9 – Reward/Risk Study – Is there an optimum Reward to Risk
+    ratio?  If so, what is it?Chapter 10 – Exiting After Profitable (Or Unprofitable)
+    Bars – Is this a good exit approach to use?For each chapter, I give you what I
+    call “Algo Trading Cheat Codes.”  I boiled down thousands of research hours into
+    actionable ideas.  This is really the essence of the book – taking what I’ve found,
+    and putting it to use in your own testing and trading – without the need for you
+    to do everything from scratch.There are a few other topics that did not make it
+    into this book, which you can find at my website:Dollar vs ATR Stops – I have
+    ATRs stop losses battle it out with Dollar based stop losses.  Who will be the
+    winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Chapter 4 – Bar Size Study – What bar
+    size is the best?  Which is the worst?  And why?Chapter 5 – Mean Reversion Study
+    – I test out some popular (and not so popular) mean reversion approaches.  How
+    can they be used to create good strategies?Improving Your Existing Strategies:Chapter
+    6 – Risk Protection Techniques – How can you take an existing strategy, and make
+    it more risk adverse?Chapter 7 – Bull Bear Regime Trading – Does “macro environment”
+    filtering of trades actually work?  If so, how can you do it?Improving Your Exits:Chapter
+    8 – Which Exit Is Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk
+    Study – Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10
+    – Exiting After Profitable (Or Unprofitable) Bars – Is this a good exit approach
+    to use?For each chapter, I give you what I call “Algo Trading Cheat Codes.”  I
+    boiled down thousands of research hours into actionable ideas.  This is really
+    the essence of the book – taking what I’ve found, and putting it to use in your
+    own testing and trading – without the need for you to do everything from scratch.There
+    are a few other topics that did not make it into this book, which you can find
+    at my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with
+    Dollar based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Chapter 5 – Mean Reversion Study –
+    I test out some popular (and not so popular) mean reversion approaches.  How can
+    they be used to create good strategies?Improving Your Existing Strategies:Chapter
+    6 – Risk Protection Techniques – How can you take an existing strategy, and make
+    it more risk adverse?Chapter 7 – Bull Bear Regime Trading – Does “macro environment”
+    filtering of trades actually work?  If so, how can you do it?Improving Your Exits:Chapter
+    8 – Which Exit Is Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk
+    Study – Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10
+    – Exiting After Profitable (Or Unprofitable) Bars – Is this a good exit approach
+    to use?For each chapter, I give you what I call “Algo Trading Cheat Codes.”  I
+    boiled down thousands of research hours into actionable ideas.  This is really
+    the essence of the book – taking what I’ve found, and putting it to use in your
+    own testing and trading – without the need for you to do everything from scratch.There
+    are a few other topics that did not make it into this book, which you can find
+    at my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with
+    Dollar based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Improving Your Existing Strategies:Chapter
+    6 – Risk Protection Techniques – How can you take an existing strategy, and make
+    it more risk adverse?Chapter 7 – Bull Bear Regime Trading – Does “macro environment”
+    filtering of trades actually work?  If so, how can you do it?Improving Your Exits:Chapter
+    8 – Which Exit Is Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk
+    Study – Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10
+    – Exiting After Profitable (Or Unprofitable) Bars – Is this a good exit approach
+    to use?For each chapter, I give you what I call “Algo Trading Cheat Codes.”  I
+    boiled down thousands of research hours into actionable ideas.  This is really
+    the essence of the book – taking what I’ve found, and putting it to use in your
+    own testing and trading – without the need for you to do everything from scratch.There
+    are a few other topics that did not make it into this book, which you can find
+    at my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with
+    Dollar based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Chapter 6 – Risk Protection Techniques
+    – How can you take an existing strategy, and make it more risk adverse?Chapter
+    7 – Bull Bear Regime Trading – Does “macro environment” filtering of trades actually
+    work?  If so, how can you do it?Improving Your Exits:Chapter 8 – Which Exit Is
+    Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk Study –
+    Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10 – Exiting
+    After Profitable (Or Unprofitable) Bars – Is this a good exit approach to use?For
+    each chapter, I give you what I call “Algo Trading Cheat Codes.”  I boiled down
+    thousands of research hours into actionable ideas.  This is really the essence
+    of the book – taking what I’ve found, and putting it to use in your own testing
+    and trading – without the need for you to do everything from scratch.There are
+    a few other topics that did not make it into this book, which you can find at
+    my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with Dollar
+    based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Chapter 7 – Bull Bear Regime Trading
+    – Does “macro environment” filtering of trades actually work?  If so, how can
+    you do it?Improving Your Exits:Chapter 8 – Which Exit Is Best? – Results of my
+    extensive test on exits.Chapter 9 – Reward/Risk Study – Is there an optimum Reward
+    to Risk ratio?  If so, what is it?Chapter 10 – Exiting After Profitable (Or Unprofitable)
+    Bars – Is this a good exit approach to use?For each chapter, I give you what I
+    call “Algo Trading Cheat Codes.”  I boiled down thousands of research hours into
+    actionable ideas.  This is really the essence of the book – taking what I’ve found,
+    and putting it to use in your own testing and trading – without the need for you
+    to do everything from scratch.There are a few other topics that did not make it
+    into this book, which you can find at my website:Dollar vs ATR Stops – I have
+    ATRs stop losses battle it out with Dollar based stop losses.  Who will be the
+    winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Improving Your Exits:Chapter 8 – Which
+    Exit Is Best? – Results of my extensive test on exits.Chapter 9 – Reward/Risk
+    Study – Is there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10
+    – Exiting After Profitable (Or Unprofitable) Bars – Is this a good exit approach
+    to use?For each chapter, I give you what I call “Algo Trading Cheat Codes.”  I
+    boiled down thousands of research hours into actionable ideas.  This is really
+    the essence of the book – taking what I’ve found, and putting it to use in your
+    own testing and trading – without the need for you to do everything from scratch.There
+    are a few other topics that did not make it into this book, which you can find
+    at my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with
+    Dollar based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Chapter 8 – Which Exit Is Best? – Results
+    of my extensive test on exits.Chapter 9 – Reward/Risk Study – Is there an optimum
+    Reward to Risk ratio?  If so, what is it?Chapter 10 – Exiting After Profitable
+    (Or Unprofitable) Bars – Is this a good exit approach to use?For each chapter,
+    I give you what I call “Algo Trading Cheat Codes.”  I boiled down thousands of
+    research hours into actionable ideas.  This is really the essence of the book
+    – taking what I’ve found, and putting it to use in your own testing and trading
+    – without the need for you to do everything from scratch.There are a few other
+    topics that did not make it into this book, which you can find at my website:Dollar
+    vs ATR Stops – I have ATRs stop losses battle it out with Dollar based stop losses. 
+    Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Chapter 9 – Reward/Risk Study – Is
+    there an optimum Reward to Risk ratio?  If so, what is it?Chapter 10 – Exiting
+    After Profitable (Or Unprofitable) Bars – Is this a good exit approach to use?For
+    each chapter, I give you what I call “Algo Trading Cheat Codes.”  I boiled down
+    thousands of research hours into actionable ideas.  This is really the essence
+    of the book – taking what I’ve found, and putting it to use in your own testing
+    and trading – without the need for you to do everything from scratch.There are
+    a few other topics that did not make it into this book, which you can find at
+    my website:Dollar vs ATR Stops – I have ATRs stop losses battle it out with Dollar
+    based stop losses.  Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Chapter 10 – Exiting After Profitable
+    (Or Unprofitable) Bars – Is this a good exit approach to use?For each chapter,
+    I give you what I call “Algo Trading Cheat Codes.”  I boiled down thousands of
+    research hours into actionable ideas.  This is really the essence of the book
+    – taking what I’ve found, and putting it to use in your own testing and trading
+    – without the need for you to do everything from scratch.There are a few other
+    topics that did not make it into this book, which you can find at my website:Dollar
+    vs ATR Stops – I have ATRs stop losses battle it out with Dollar based stop losses. 
+    Who will be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!For each chapter, I give you what I
+    call “Algo Trading Cheat Codes.”  I boiled down thousands of research hours into
+    actionable ideas.  This is really the essence of the book – taking what I’ve found,
+    and putting it to use in your own testing and trading – without the need for you
+    to do everything from scratch.There are a few other topics that did not make it
+    into this book, which you can find at my website:Dollar vs ATR Stops – I have
+    ATRs stop losses battle it out with Dollar based stop losses.  Who will be the
+    winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!There are a few other topics that did
+    not make it into this book, which you can find at my website:Dollar vs ATR Stops
+    – I have ATRs stop losses battle it out with Dollar based stop losses.  Who will
+    be the winner?  [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Dollar vs ATR Stops – I have ATRs stop
+    losses battle it out with Dollar based stop losses.  Who will be the winner? 
+    [https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html](https://www.kjtradingsystems.com/algo-trading-tip-dollar-vs-atr-stop-losses.html)15
+    Price Patterns That Work – The title really says it all.  You can use these as
+    a starting point for your own testing. [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!15 Price Patterns That Work – The title
+    really says it all.  You can use these as a starting point for your own testing.
+    [https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html](https://www.kjtradingsystems.com/15-algo-trading-price-patterns.html)Should
+    You Just Buy and Hold Instead Of Algo Trading? – A legitimate question, especially
+    given the nearly always upward trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Should You Just Buy and Hold Instead
+    Of Algo Trading? – A legitimate question, especially given the nearly always upward
+    trend in the stock market since 2009.  [https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html](https://www.kjtradingsystems.com/algo-trade-or-buy-and-hold.html)Other
+    research I share on my YouTube channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!Other research I share on my YouTube
+    channel: [https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ](https://www.youtube.com/channel/UCjTZtWVBchDTJuxy_7GjySQ)By
+    the time you finish this book, you likely will see other new research I have completed
+    and posted to my website.  What can I say, I LOVE studying algo trading!So, let’s
+    not waste any more time, let’s get started!By the time you finish this book, you
+    likely will see other new research I have completed and posted to my website. 
+    What can I say, I LOVE studying algo trading!So, let’s not waste any more time,
+    let’s get started!So, let’s not waste any more time, let’s get started!'
+  prefs: []
+  type: TYPE_NORMAL
