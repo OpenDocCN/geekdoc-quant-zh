@@ -1,6 +1,8 @@
 - en: Introduction
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 引言
 - en: 6:20 AM Saturday morning could not come quickly enough.  That was usually the
     time I would hear the familiar “thunk” of a rolled up copy of the Los Angeles
     Times newspaper hitting my condo’s front door.  That was if the delivery person
@@ -8,148 +10,216 @@
     open arms (branches?) instead.  Other days the newspaper never arrived at all.
     But on this Saturday I heard the paper hit the door, and when I did, I knew it
     was time to prepare for Monday’s trading.
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 星期六早上6:20再也等不及了。那时我通常会听到熟悉的“咚”的一声，卷起的《洛杉矶时报》报纸击打我公寓的前门。前提是送报员今天瞄得准。有些日子，附近的灌木丛会热情迎接报纸（树枝？）。而其他日子报纸根本就没有到达。但在这个星期六，我听到了报纸撞门的声音，知道是时候准备星期一的交易了。
 - en: 'Scrambling out of bed, I opened the door, grabbed the newspaper, and tore it
     apart until I found the Business section.  Towards the back was the data I was
     looking for – the information that would, in a short time, make me fabulously
     wealthy (or so I thought): the daily commodity prices for the previous day.'
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我急匆匆地起床，打开门，抓起报纸，撕开它，直到找到商业版块。后面的数据正是我所寻找的信息——在短时间内使我变得富有（或者我认为是这样）：前一天的每日商品价格。
 - en: As you may have guessed, this was back before computers took over and daily
     and intraday data was accessible with a few keystrokes.  This was old school to
     the max – everything was on paper!
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如你所猜测的，这一切发生在电脑统治之前，日常和盘中数据只需几个按键就能获取。这是一种极其传统的方式——所有东西都是纸质的！
 - en: 'Anyhow, I scanned the commodity prices and found the prices for Live Hogs,
     as it was called back then (it is Lean Hogs now).  I took the closing price for
     the nearest month’s contract, and copied it to a paper sheet that had 6 columns
     in it: date, closing price, 4 period average, 9 period average, 14 period average
     and signal.'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 无论如何，我扫描了商品价格，找到了当时称为“活猪”的价格（现在是瘦肉猪）。我记录了最近一个月合约的收盘价，并将其复制到一张有6列的纸上：日期、收盘价、4周期均线、9周期均线、14周期均线和信号。
 - en: 'I diligently calculated each average by hand – remember, I had no computer
     to help me back then – and then I compared the results to my rules:'
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我认真地手动计算每一个均线——记住，那时我没有电脑可以帮我——然后将结果与我的规则进行比较：
 - en: 9 period average greater than the 14 period average?  Yes!
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 9周期均线高于14周期均线？ 是的！
 - en: 4 period average greater than the 9 period average?  Yes!!
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 4周期均线高于9周期均线？ 是的！！
 - en: Closing price crossing above the 4 period average? Yes!!!!
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 收盘价突破4周期均线？是的！！！！
 - en: That was it – everything was yes and I had a long signal!  Monday morning, I
     would place an order to buy 1 live hog contract at the market.  I dutifully wrote
     “GO LONG” in the signal column, cementing the trade in my mind.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 就这样——一切都是“是”，我有了一个明确的信号！星期一早上，我会下单购买1个活猪合约。我郑重其事地在信号栏中写下“做多”，在我脑海中巩固了这笔交易。
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig01.jpg](../images/00001.jpeg)'
+  id: totrans-10
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig01.jpg](../images/00001.jpeg)'
 - en: Figure 1- Old School Algo Trading, By Hand!
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 图1 - 旧派算法交易，手动进行！
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig02.jpg](../images/00002.jpeg)'
+  id: totrans-12
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig02.jpg](../images/00002.jpeg)'
 - en: Figure 2- Algo Buy Signal, With Modern Technology
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2 - 算法买入信号，现代技术助力
 - en: I was nervous, excited and in a dream state the rest of the weekend – my first
     real commodity trade!
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 周末的剩余时间里，我紧张、兴奋，仿佛置身梦中——这是我第一次真正的商品交易！
 - en: I did not know it, but even back in those old days I was trading algorithmically,
     or “algo” trading.  I was trading according to a precise set a rules, which when
     you boil it down, is all algorithmic trading really is.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 我之前并不知道，但即使在那段旧时光，我也在进行算法交易，或称为“算法”交易。我是根据一套精确的规则进行交易，归根结底，这就是算法交易的本质。
 - en: Back then, traders referred to it as systematic trading, mechanical trading
     or rules based trading.  A few years ago, many people spoke of robot or “bot”
     trading.  But until recently, very few used the term algorithmic.  Yet, it is
     all basically the same thing.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 当时，交易员称之为系统交易、机械交易或基于规则的交易。几年前，很多人提到了机器人或“机器人”交易。但直到最近，很少有人使用算法交易这个术语。然而，所有这些基本上都是同一种东西。
 - en: 'So, realize whenever someone mentions one of these terms – mechanical, systematic,
     rule based or algorithmic trading - they are likely referring to the same thing:
     a set of rules that tell you when to enter and exit a trade.  These rules could
     be on a computer, in your head, or as was the case for me in the early days, written
     on good ol’ paper.'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，当有人提到这些术语时——机械的、系统化的、基于规则或算法的交易——他们很可能指的是同样的事：一套规则，告诉你何时进出交易。这些规则可以存在于计算机上、你的脑海中，或者像我早期一样，写在老纸上。
 - en: That is the first lesson of this book – algo trading = rules to trade by.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是本书的第一课——算法交易 = 交易规则。
 - en: 'There are many more lessons in this book, all designed to introduce you to
     the world of algorithmic trading.  This type of trading applies for many different
     instruments: stocks, ETFs, forex, futures, and options to name a few.  Don’t let
     the terms algorithmic or algo scare you; in this book I’ll walk you through the
     basics of algorithmic trading:'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 这本书中还有许多其他课程，旨在引导你进入算法交易的世界。这种交易适用于许多不同的工具：股票、ETF、外汇、期货和期权等。不要让“算法”或“算法交易”这些术语吓到你；在这本书中，我将带你了解算法交易的基础：
 - en: A Discussion of What Exactly Algo Trading Is, and What It Is Not
+  id: totrans-20
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 对算法交易到底是什么，以及它不是什么的讨论
 - en: The Basics of Algo Trading, For Beginner to Intermediate Traders
+  id: totrans-21
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 算法交易的基础，适合初学者到中级交易者
 - en: Figuring Out If Algo Trading Is Something You Should Consider
+  id: totrans-22
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 了解算法交易是否是你应该考虑的事情
 - en: The Many Advantages of Algo Trading
+  id: totrans-23
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 算法交易的诸多优点
 - en: The Disadvantages of Algo Trading
+  id: totrans-24
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 算法交易的缺点
 - en: How To Begin Algo Trading On Your Own
+  id: totrans-25
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如何开始自己的算法交易
 - en: Selecting a Trading Software Platform
+  id: totrans-26
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择一个交易软件平台
 - en: Learning the Basics Of Your Platform
+  id: totrans-27
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 学习你平台的基础知识
 - en: Learning To Program In Your Platform’s Language
+  id: totrans-28
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 学习在你平台上的编程语言
 - en: A Simple Algo To Get You Started
+  id: totrans-29
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 一个简单的算法让你入门
 - en: Tips For Successful Algorithmic Trading
+  id: totrans-30
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 成功算法交易的提示
 - en: Steps To Take After You Read This Book
+  id: totrans-31
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 阅读完这本书后的步骤
 - en: The intent of this book is not to teach you the basics of trading in general;
     there are plenty of other books available on that subject.  This book is intended
     to get you started with algo trading, with the assumption you know some trading
     basics.  I feel strongly that algo trading is a great way for smaller retail traders
     to compete against professional traders.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 本书的目的是不教你一般交易的基础；在这个主题上有很多其他书籍可供选择。本书旨在让你入门算法交易，假设你了解一些交易基础。我坚信算法交易是小型零售交易者与专业交易者竞争的好方式。
 - en: By the end of the book, you won’t be scared off when people talk about trading
     algos.  You’ll know the basics, and also have a plan for your future endeavors
     in algorithmic trading.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 到书的最后，你不会对人们谈论交易算法感到害怕。你将了解基础知识，并为未来的算法交易努力制定计划。
 - en: With that, let’s get started on the journey!
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么，让我们开始这段旅程吧！

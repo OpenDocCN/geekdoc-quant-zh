@@ -1,245 +1,337 @@
 - en: Chapter 3 - Is Algo Trading For You?
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第三章 - 算法交易适合你吗？
 - en: “You don’t have enough experience.”
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: “你的经验不足。”
 - en: “You are just not the right person for the job.”
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: “你并不适合这个职位/我们的组织。”
 - en: “You would not be a good fit for this position / for our organization.”
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: “你不适合这个职位/我们的组织。”
 - en: If you have ever looked for a job, chances are you heard one or more of these
     excuses from a potential employer.  The problem is how do you know that what they
     are saying is true, without even giving you a chance to prove yourself?
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你曾经找过工作，可能听过潜在雇主说出一个或多个这样的借口。问题是，你怎么知道他们说的是否真实，甚至不给你机会证明自己？
 - en: Algo trading is the same way, except that eventually you will find out if algo
     trading is right for you.  Unfortunately, though, the way traders find out is
     by the market extracting money from your account!
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法交易也是如此，最终你会发现算法交易是否适合你。不幸的是，交易者发现的方法是市场从你的账户中提取资金！
 - en: I am going to shortcut that painful process for you.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将为你简化这一痛苦的过程。
 - en: In later chapters, I’ll help with the first rejection – experience.  This book
     will help you get the experience you need to start to algo trade.  You’ll be on
     the right path, although there will be a lot more to do.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 在后面的章节中，我将帮助解决第一个拒绝——经验。本书将帮助你获得开始进行算法交易所需的经验。你将走在正确的道路上，尽管还有很多事情需要做。
 - en: For the other two rejections – knowing if you are the right person for algo
     trading, and if this type of trading “fits” your personality – in this chapter
     I’ll discuss some of the important personality characteristics and traits I think
     are important (or not important) to be a successful algo trader.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 关于另外两种拒绝——知道你是否是适合算法交易的人，以及这种交易方式是否与你的个性“匹配”——在这一章我将讨论一些我认为对成功的算法交易者重要（或不重要）的性格特征。
 - en: Remember, you are a small retail trader, and the trading world is full of professional
     “sharks.”  If you want to compete, you first have to know if algo trading fits
     you.  This chapter is a great way to find out.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 记住，你是一个小型零售交易者，交易世界里充满了专业的“鲨鱼”。如果你想竞争，首先要知道算法交易是否适合你。本章是一个很好的了解途径。
 - en: My advice is to get a piece of paper, write down each of the traits I list,
     and then after I explain it, grade yourself on each one.  You’ll soon see if algorithmic
     trading fits you!
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我的建议是拿一张纸，写下我列出的每个特征，然后在我解释之后，对每一项进行自我评分。你很快就会看到算法交易是否适合你！
 - en: Analytical Thinking
+  id: totrans-11
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 分析性思维
 - en: Scientists say there are two types of people in the world, left brain thinkers
     and right brain thinkers.  Left brain people tend to be more analytical, numbers
     oriented.  Typically, these people are found in positions like doctors, lawyers,
     accountants, scientists, engineers, computer programmers, etc.  Rules appeal to
     these sorts of people.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 科学家说，世界上有两种人，左脑思考者和右脑思考者。左脑的人倾向于更具分析性，注重数字。通常，这些人会在医生、律师、会计师、科学家、工程师、计算机程序员等职位上工作。这类人喜欢规则。
 - en: Right brain people, on the other hand, tend to be more free thinkers.  Artists,
     musicians, sales people, marketing folk and other “soft skill” careers tend to
     be their domain.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一方面，右脑的人倾向于更自由的思考者。艺术家、音乐家、销售人员、市场营销人员和其他“软技能”职业通常属于他们的领域。
 - en: Both types of people are important to the world.  Think of life without artists
     like Monet, composers like Beethoven, brilliant logical thinkers like Einstein. 
     The world would be a sad place without a mix.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 这两类人对世界都很重要。想象一下没有像莫奈这样的艺术家，没有像贝多芬这样的作曲家，没有像爱因斯坦这样的杰出逻辑思考者的生活。没有多样性的世界将会是一个悲伤的地方。
 - en: In trading, certain areas seem to work better for lefties and righties.  Right
     brain traders may be more in tune with visual chart trading, and discretionary
     trading.  Most traders I have worked with for algo trading tend to be more left
     brain thinkers.  Over the years, I have done algo work with many doctors and scientists,
     but not so many artists.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 在交易中，某些领域似乎更适合左撇子和右撇子。右脑交易者可能更擅长视觉图表交易和自主交易。我所接触的算法交易者大多是左脑思考者。多年来，我与许多医生和科学家做过算法工作，但艺术家并不多。
 - en: Now I realize I have really oversimplified things here.  But in general, the
     analytical type left brain thinkers are more likely to find algo trading appealing,
     and are more likely to succeed at it.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我意识到我真的过于简单化了。但一般来说，分析型的左脑思考者更有可能发现算法交易的吸引力，并更有可能在其中获得成功。
 - en: Give yourself one point if you are primarily a left brain, analytical thinker.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你主要是左脑的分析型思考者，给自己一分。
 - en: Control Freak?
+  id: totrans-18
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 控制狂？
 - en: A while back, I met a trader for coffee.  He was going to go live with his forex
     system the next week.  He had years of favorable backtests, solid and 100% defined
     rules, and he had automation all set up.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 不久前，我和一位交易者喝咖啡。他下周将上线他的外汇系统。他有多年有利的回测、明确的规则，而且已经设置好自动化。
 - en: So, a week later, I asked him how things went.  He told me he made $500 that
     first week, on a $5,000 account.  Nice, I told him.  But he shook his head and
     sheepishly replied “Not really.  I turned the system on and off a few times during
     the week.  Had I just let it run, I would have made $2,500!”
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 一周后，我问他情况如何。他告诉我，他在第一个星期赚了500美元，账户为5000美元。我告诉他不错。但他摇头害羞地说：“其实不然。我这周把系统开关了几次。如果我让它正常运行，我本可以赚2500美元！”
 - en: He was a classic control freak.  But he is not that unusual.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 他是一个典型的控制狂。但他并不算特别异常。
 - en: Many traders like to have “their finger on the button” – to always be ready
     to enter or exit a trade at a moment’s notice when something does not feel right. 
     The idea of letting a computer alone control entries and exits is anathema to
     what these people are all about.  These traders want, and actually crave, the
     ultimate control over trades.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 很多交易者喜欢“掌握主动权”——随时准备在感觉不对时进入或退出交易。让电脑独自控制进出交易的想法对这些人来说是不可接受的。这些交易者想要，并且确实渴望对交易拥有终极控制。
 - en: A good non-trading example of this is with “helicopter” parents.  These are
     parents who hover over their children, ready to swoop in at a moment’s notice
     to “save” their progeny, no matter their age.  I have even heard of these helicopter
     control freaks e-mailing college professors and employers on behalf of their children! 
     Control freaks, to the max.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个很好的非交易例子就是“直升机”父母。这些父母总是围着孩子，随时准备出手“拯救”他们的后代，无论他们的年龄。我甚至听说这些控制狂父母会代孩子给大学教授和雇主发邮件！控制狂，到了极点。
 - en: Algo trading, on the other hand, is all about letting go.  It is about preparing,
     testing, and setting up the trading strategy, but when the time comes, letting
     go and letting the backtest proven algorithm do its job.  It is not easy to do,
     especially at first.  But it is essential to proper algorithmic trading.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 而算法交易则完全是关于放手。它是关于准备、测试和设置交易策略，但当时机来临时，要放手，让经过回测验证的算法发挥作用。这并不容易，尤其是刚开始时。但这是进行适当算法交易所必需的。
 - en: If you are NOT a control freak, give yourself one point.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你不是控制狂，给自己一点分数。
 - en: Tinkerers/Perfectionists
+  id: totrans-26
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 动手者/完美主义者
 - en: Do you have the need to be right, to be perfect?  That is a great attribute
     to have in school, and also in many “analytical” type careers.  But it is awful
     to have in trading!
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 你是否有想要正确、完美的需求？这在学校和许多“分析型”职业中是一个很好的特质。但在交易中，这却是个坏事！
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig07.jpg](../images/00007.jpeg)'
+  id: totrans-28
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig07.jpg](../images/00007.jpeg)'
 - en: 'Figure 7- Should This Be Your Goal When Backtesting? (Answer: “No!”)'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 图7- 这应该是你回测时的目标吗？（答案：“不！”）
 - en: Why?  Why shouldn’t we, as traders, aim for terrific looking historical backtests,
     for trading perfection?
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 为什么？作为交易者，我们为什么不应该追求看起来出色的历史回测，追求交易的完美呢？
 - en: The answer might come as a shock – NOOOOO!
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 答案可能让人震惊——不！
 - en: Looking for perfection, tinkering with a trading algorithm until it produces
     a great backtest, is actually about the worst thing you can do.  You actually
     trick yourself, thinking that by continually testing, you make things better (notice
     a bit of control freakiness in that?).
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 追求完美，不断调试交易算法直到产生良好的回测，实际上是你能做的最糟糕的事情。你实际上是在自我欺骗，以为通过不断测试可以改善事物（注意到那点控制狂特质了吗？）。
 - en: But the best traders only test as much as they absolutely need to.  They realize
     perfection is impossible, so they do not try to achieve it.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 但最优秀的交易者只会进行他们绝对需要的测试。他们意识到完美是不可能的，因此不会试图追求它。
 - en: Think of things you do outside trading – if you always strive to be perfect,
     or always try to improve things, that is an algo trading warning sign.  Give yourself
     1 point if you are NOT a perfectionist or tinkerer.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 想想你在交易之外所做的事情——如果你总是努力追求完美，或总是尝试改善事物，这就是算法交易的警告信号。如果你不是完美主义者或动手者，给自己1分。
 - en: Emotionally Charged People
+  id: totrans-35
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 情绪驱动的人
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig08.jpg](../images/00008.jpeg)'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig08.jpg](../images/00008.jpeg)'
 - en: Figure 8- Does This Keg Of Dynamite Describe Your Typical Emotional State? 
     Not Good For A Trader!
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
 - en: Some folks, by nature, are very excitable.  They cheer the loudest, they boo
     the loudest, they wear their hearts on their sleeve.  You almost always know where
     they stand on an issue.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
 - en: On the other hand, some folks are calm under pressure, never get rattled, never
     get too high, or too low – regardless of what happens.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
 - en: Which are you?  Give yourself two points if you consider yourself calm, cool
     and collected most of the time.  It is a great way to be when you are algo trading.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
 - en: Patient People
+  id: totrans-41
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: Take a minute and google the phrase “trading system quick wealth.”  You’ll find
     over 2,000,000 matches.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
 - en: Then google “trading system slow wealth” – you will only see about 300,000 matches.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
 - en: Clearly, most people want wealth quickly – I mean, who really wants to wait? 
     Yet waiting and patience is a big key to success.  You are not going to create
     a dozen algorithms the first week after you start algo trading.  And your algos
     likely will not make you rich overnight.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
 - en: Good trading is about being patient, letting trades play out, letting strategies
     play out.  Have you ever tried a new strategy, then abandoned it after a week
     of losing money?  Maybe your strategy was indeed a loser, but maybe it just had
     an unlucky week.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
 - en: Think of trading like running a long foot race.  Many runners start sprinting
     from the start.  Some pull a hamstring because they weren’t properly warmed up. 
     Others get off to a big lead, but then they realize – they are in a marathon race
     of 26.2 miles, not a 100 yard dash!
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
 - en: Treat trading as a marathon.  Take your time, be patient.  As they say “Rome
     was not built in one day.”  Give yourself 1 point if you are able to take things
     slowly.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
 - en: Rule Followers
+  id: totrans-48
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: Have you ever seen little kids color in a coloring book?  Some will neatly stay
     within the lines.  Others will treat the lines as a guideline only, and draw whatever
     the heck they want.  Both can create beautiful final masterpieces though!
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig09.jpg](../images/00009.jpeg)'
+  id: totrans-50
   prefs: []
   type: TYPE_IMG
 - en: Figure 9- How Do You Color?
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
 - en: Earlier, I spoke about left brain and right brain people.  I would guess that
     rule followers tend to be more left brain oriented, but not always.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
 - en: Good algo traders tend to be rule followers.  Give yourself one point if you
     consider yourself a rule follower.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
 - en: Frequently Frustrated Folk
+  id: totrans-54
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -247,88 +339,123 @@
     many times my youngest comes up short.  The problem?  He gets easily frustrated. 
     As soon as a roadblock appears in his way, he gives up, or pouts, gets mad and
     then gives up.
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
 - en: He’d be a terrible algo trader, at least right now.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
 - en: How “frustration free” are you?  Developing algo strategies is chock full of
     frustration.  If you cannot handle setbacks, roadblocks and near constant frustration,
     you will be in trouble.  Algo trading system development is not easy – if it was
     everyone would do it!
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
 - en: Give yourself two points if you can handle and overcome frustration easily.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你能够轻松处理和克服挫折，就给自己两分。
 - en: Process Oriented Practitioners
+  id: totrans-59
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 过程导向的交易者
 - en: How do you currently evaluate potential strategies?  Do you evaluate each one
     the same, running through the same steps?  If so, give yourself one point – following
     a defined process is good for algo traders.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 你目前如何评估潜在的策略？你是否以相同的方式评估每一个，经过相同的步骤？如果是，给自己一分——遵循明确的流程对算法交易者来说是好的。
 - en: If you don’t have a process, whether that be for finding and testing trading
     strategies, actual trading or analysis of your trading results after the fact,
     give yourself zero points.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你没有一个流程，无论是寻找和测试交易策略、实际交易还是事后分析你的交易结果，都给自己零分。
 - en: The best algo traders tend to be the most process oriented.  They consistently
     adhere to their approach to the markets, and in how they go about trading.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 最优秀的算法交易者往往是最注重流程的。他们始终坚持自己的市场交易方法和交易方式。
 - en: Why is this important?  Simply put, there is no right way to trade, but there
     are a million wrong ways.  By being a consistent, process oriented trader, one
     can more easily make in-course adjustments.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 为什么这很重要？简单来说，没有正确的交易方式，但有无数错误的方式。通过成为一个一致的、过程导向的交易者，可以更容易地进行课程调整。
 - en: 'In the field of Quality Assurance, it is known as the Plan Do Check Act cycle. 
     In the Act phase, a trader will figure out ways to improve upon what he or she
     is doing.  Imagine how hard it is to make changes when there is no set process! 
     (Hint: it is really impossible.  Having a process lends itself to making improvements).'
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 在质量保证领域，这被称为计划-执行-检查-行动循环。在行动阶段，交易者会找出改进自己所做事情的方法。想象一下，没有固定流程时，改变是多么困难！(提示：这实际上是不可行的。有了流程，改进变得更容易。)
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig10.jpg](../images/00010.jpeg)'
+  id: totrans-65
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig10.jpg](../images/00010.jpeg)'
 - en: Figure 10- Plan Do Check Act Quality Improvement Tool
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10- 计划-执行-检查-行动质量改进工具
 - en: Add one point to your total if you are process oriented.
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你注重流程，就在总分上加一分。
 - en: Grand Total
+  id: totrans-68
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 总分
 - en: How did you do?  There were 10 possible points with this exercise.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 你做得怎么样？这次练习总共可以得10分。
 - en: If you hit 9 or 10 points, congrats!  You have most of the skills and traits
     necessary to conquer algo trading.
+  id: totrans-70
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果你得了9或10分，恭喜你！你拥有征服算法交易所需的大部分技能和特质。
 - en: If you hit 6-8 points, you are close to being algo ready, but you are not quite
     there yet.  Take some time, and work on the areas where you fall short.
+  id: totrans-71
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果你得了6-8分，你接近于具备算法交易的准备，但还没有完全到位。花些时间，努力改进你不足的领域。
 - en: If you scored 5 or fewer points, take a step back and re-evaluate your situation. 
     Is algo trading really what you want to do?  It is not for everyone, and certainly,
     it is better to find out now that your personality does not mesh with algo trading,
     rather than down the road, after a lot of likely wasted time and wasted money. 
     Algo trading is not for everyone, so if your personality does not support it,
     I recommend you look at a different type of trading.
+  id: totrans-72
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果你得分为5分或更少，退一步重新评估你的情况。算法交易真的适合你吗？这并不适合每个人，当然，现在发现你的个性与算法交易不匹配总比以后浪费大量时间和金钱要好。算法交易并不适合每个人，因此如果你的个性不支持它，我建议你考虑其他类型的交易。
 - en: The Good News
+  id: totrans-73
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 好消息
 - en: The good news is if you are really excited about the possibilities of algo trading,
     with a little effort you can turn each of your liabilities into an asset.  For
     example, if you do not have a set process for trading, go create one, and most
@@ -337,5 +464,7 @@
     time, but before you even think about algo trading, spend some time working on
     yourself.  Once you can score 9 or 10 on the exercise, then you’ll be in good
     shape to start taking part in the many advantages of algorithmic trading.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 好消息是，如果你对算法交易的可能性感到非常兴奋，经过一点努力，你可以将每个缺点转变为资产。例如，如果你没有一个固定的交易流程，就去创建一个，最重要的是，遵循它。如果你容易感到挫败，或者你是一个情绪化的火药桶，意识到这一点是改变的第一步。这需要一些时间，但在你考虑算法交易之前，先花一些时间来提升自己。一旦你在练习中得分达到9或10分，你就会准备好参与算法交易的众多优势。

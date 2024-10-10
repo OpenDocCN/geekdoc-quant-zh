@@ -1,175 +1,255 @@
 - en: Chapter 1 - The Different Types of Trading
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第1章 - 不同类型的交易
 - en: “Algos” and “algorithms.”  These two words strike fear into the hearts of many
     a trader.  Visions of computer programs running wild, buying and selling with
     reckless abandon, are a common nightmare.  A trader goes to sleep flat, and wakes
     up to find a rogue robot algorithm frittered away his or her account, buying and
     selling all night, due to a simple programming bug.
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: “算法”和“算法”。这两个词让许多交易员心生畏惧。计算机程序失控，肆意买卖的情景，常常是噩梦。一个交易员平静入睡，却发现一个流氓算法在夜间耗尽了他的账户，因一个简单的编程错误买卖不止。
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig03.jpg](../images/00003.jpeg)'
+  id: totrans-2
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig03.jpg](../images/00003.jpeg)'
 - en: Figure 3- A Trading Robot Run Amuck?
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3 - 一个失控的交易机器人？
 - en: Or worse yet, the trader wakes up to find he is short 100 ES (mini S&P) contracts,
     when he only wanted to be short one contract!
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 更糟的是，交易员醒来发现自己空头100份ES（迷你S&P）合约，而他只想空头一份合约！
 - en: Maybe instead your nightmare vision is of hedge funds, executing “killer bot”
     algos with lightning speed, draining the accounts of all the slower traders.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许你的噩梦是对冲基金以闪电般的速度执行“杀手机器人”算法，耗尽所有较慢交易员的账户。
 - en: The truth, of course, is that trading algos can do those things, and worse. 
     Horror stories abound of these sorts of account killing computer codes.  These
     exact nightmare scenarios have happened.  But, properly designed algos can also
     be friendly, too.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，事实是交易算法可以做这些事情，甚至更糟。关于这些毁灭账户的计算机代码的恐怖故事屡见不鲜。这些确切的噩梦情境确实发生过。但设计得当的算法也可以是友好的。
 - en: I obviously will focus on the friendly algos!
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 我显然会关注友好的算法！
 - en: But before I dive into details of algos, it is important to discuss some of
     the different types of trading.  That will help you understand what an algo is,
     what it can do, and most importantly, what it cannot do.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 但在我深入讨论算法的细节之前，重要的是要讨论一些不同类型的交易。这将帮助你理解算法是什么，它能做什么，最重要的是，它不能做什么。
 - en: Discretionary Trading
+  id: totrans-9
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 自由裁量交易
 - en: Most retail people out there are discretionary traders.  Discretionary simply
     means traders use some sort of judgment to enter and exit trades.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 大多数零售交易员都是自由裁量交易员。自由裁量意味着交易员在进出交易时使用某种判断。
 - en: For example, a trader hears about a hot stock on CNBC, and immediately decides
     to buy some.  That is discretionary trading.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，一位交易员在CNBC上听说了一只热门股票，立刻决定买入。这就是自由裁量交易。
 - en: Another trader has a chart that she stares at all day.  It may be filled with
     indicators, trendlines, moving averages, etc.  Or it may be naked, except for
     price data.  Once that trader makes a trade decision based on all she sees, that
     is a discretionary trade.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一位交易员有一张她整天盯着的图表。它可能充满了指标、趋势线、移动平均线等，或者可能只有价格数据。 一旦该交易员基于她所看到的做出交易决策，那就是一次自由裁量交易。
 - en: Our third trader has a DOM ladder only, a visual tool which shows all the resting
     buy and sell orders along with prices.  He trades based on this tool.  He is likely
     a discretionary trader, too.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的第三位交易员只有一个DOM梯子，这是一种可视化工具，显示所有挂单买卖订单和价格。他是根据这个工具进行交易的。他很可能也是一位自由裁量交易员。
 - en: At the end of the day, if you asked any of these traders about why they took
     certain trades, and why they avoided taking other trades (that may have looked
     exactly the same), they might give you a “deer in the headlights” look, or a vague
     response like “I don’t know, it just felt right!”
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 在一天结束时，如果你问这些交易员为何做出某些交易，或为何避免其他看似完全相同的交易，他们可能会给你一个“呆若木鸡”的表情，或像“我不知道，感觉就是对的！”这样模糊的回答。
 - en: The truth is discretionary traders may or may not have rules, they may or may
     not follow these rules, and they may not be consistent in applying these rules. 
     Heck, they might not even be able to describe the rules that caused them to trade.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 事实上，自由裁量交易员可能有或没有规则，他们可能遵循或不遵循这些规则，且在应用这些规则时可能不一致。哎，他们甚至可能无法描述促使他们交易的规则。
 - en: 'I remember being in a trading room with a “price action” guru a while back. 
     He was calling the market live, and it went something like this: “yes, the market
     is looking weak, and there is a short setup here that I usually take, so I am
     just waiting for a short entry…waiting…waiting…no, it’s a long trade!  I just
     got out with a profit!”'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 我记得前一段时间在一个“价格行为”大师的交易室里。他在实时预测市场，内容大致是这样的：“是的，市场看起来很弱，这里有一个我通常会采取的空头设置，所以我只是等待短期入场……等待……等待……不，这是一个多头交易！我刚刚获利出局！”
 - en: Huh?
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 啊？
 - en: When asked about it later, the guru could not explain how a textbook (according
     to him) short entry suddenly turned into a profitable long scalp trade.  “It just
     felt right,” he explained.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 后来当被问起时，导师无法解释他认为的教科书式（短线）入场是如何突然变成一个盈利的长线套利交易的。“感觉就是对的，”他解释道。
 - en: It made me wonder if he was even live trading, but that is another story.  The
     point is that he was trading (likely simulated trading) in a discretionary fashion.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 我开始想知道他是否在进行真实交易，但这是另一个故事。关键是，他在以自由裁量的方式进行交易（可能是模拟交易）。
 - en: Discretionary trading, then, involves trading decisions that involve some degree
     of human judgment.  Maybe it is intuition, or a sixth sense, or even random guessing,
     but the trade selection usually includes something that can’t quite be defined
     or tested.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，自由裁量交易涉及一些人类判断的交易决策。也许是直觉，或者第六感，甚至是随机猜测，但交易选择通常包含一些无法明确界定或测试的内容。
 - en: Now, that type of trading might sound wrong to you (“who trades based on intuition?”)
     or it may sound appealing (“great, I get to use my brain to help me decide!”). 
     But the fact is many people do it, and some people are successful at it.  It is
     a legitimate way to trade.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，这种交易可能听起来对你不对劲（“谁会根据直觉交易？”）或者可能听起来很吸引人（“太好了，我可以用我的大脑来帮助我决策！”）。但事实是，很多人确实这样做，并且一些人也取得了成功。这是一种合法的交易方式。
 - en: Yet discretionary trading is definitely NOT algorithmic trading.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，自由裁量交易绝对不是算法交易。
 - en: I’m guessing, if you are reading this book, chances are you might have already
     tried and failed at discretionary trading.  Don’t feel bad, I count myself in
     your ranks – I was never a good discretionary trader.  That is the main reason
     I dove into algo trading.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 我猜，如果你在读这本书，可能已经尝试过自由裁量交易但失败了。别觉得沮丧，我也算是你们中的一员——我从来不是一个好的自由裁量交易者。这就是我深入算法交易的主要原因。
 - en: Algorithmic Trading
+  id: totrans-24
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 算法交易
 - en: Algo trading is all about rules.  In fact, it is nothing but rules.  No discretion. 
     No human judgment.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法交易完全是关于规则。事实上，它就是规则。没有自由裁量。没有人类判断。
 - en: Trading algorithms can be as simple as you want, or as complicated as you want.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 交易算法可以简单，也可以复杂，随你选择。
 - en: 'How simple?  Here is a basic 2 line strategy:'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 有多简单？这里有一个基本的两行策略：
 - en: If close < average close of last 5 bars, go long
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果收盘价 < 最近5根K线的平均收盘价，就买入
 - en: If close > average close of last 5 bars, go short
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果收盘价 > 最近5根K线的平均收盘价，就卖出
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig04.jpg](../images/00004.jpeg)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig04.jpg](../images/00004.jpeg)'
 - en: Figure 4- Buy/Sell Signals For A Simple Algo
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4- 简单算法的买卖信号
 - en: Over the past 13 years, this strategy would have made over $92,000 after slippage
     and commissions, trading just one contract!  And it makes money on both the long
     and short side!  Don’t get too excited though, the last few years have not been
     kind to this strategy…
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 在过去13年里，这个策略在扣除滑点和佣金后，仅仅交易一个合约就赚了超过92,000美元！而且在多头和空头方面都能盈利！不过别太兴奋，过去几年对这个策略并不友好……
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig05.jpg](../images/00005.jpeg)'
+  id: totrans-33
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig05.jpg](../images/00005.jpeg)'
 - en: Figure 5- A Simple (But Not Consistently Profitable) Algo Equity Curve
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 图5- 一个简单（但不稳定盈利）的算法收益曲线
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig06.jpg](../images/00006.jpeg)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig06.jpg](../images/00006.jpeg)'
 - en: Figure 6- Typical Algo Performance Report
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 图6- 典型的算法绩效报告
 - en: That was a very simple algo.  In contrast, algorithmic strategies can also be
     extremely complicated, too.  There are traders with single algorithms that run
     25,000 lines of code or more – real rocket science stuff!
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是一个非常简单的算法。相比之下，算法策略也可以极其复杂。有些交易者的单一算法运行的代码行数超过25,000行——真正的火箭科学！
 - en: 'There are two keys to trading algorithms:'
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 交易算法有两个关键：
 - en: 1.  They can be tested.  Most algorithms can be historically tested, commonly
     referred to as a backtest.  This turns out to be a major advantage of creating
     algorithms, which I’ll describe later.  For algos that cannot be historically
     tested, they almost always can be live tested in simulation mode, with proper
     precautions and some caveats.  In either case, the trader can usually determine
     the acceptability of the strategy BEFORE trading it with real money.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 1. 它们可以被测试。大多数算法可以进行历史测试，通常称为回测。这被认为是创建算法的主要优势之一，稍后我会描述。对于无法进行历史测试的算法，几乎总是可以在模拟模式下进行实时测试，但需要适当的预防措施和一些注意事项。在这两种情况下，交易者通常可以在用真钱交易之前确定策略的可接受性。
 - en: 2.  Algorithms are rigidly defined.  If the algorithm sees a long setup today,
     it will tell you to go long.  If it sees that same setup tomorrow, it will tell
     you to go long again.  The algo only looks at what it was programmed to look at. 
@@ -177,37 +257,52 @@
     care that Jim Cramer screamed that a certain stock was a buy last night – unless,
     of course, you program those types of rules into your algorithm.  The algo is
     consistent in how it follows the rules.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 2. 算法被严格定义。如果算法今天看到一个看涨的信号，它会告诉你做多。如果明天看到同样的信号，它会再次告诉你做多。算法只关注其编程时设定的内容。它不关心美联储的想法，不关心新闻，也不关心吉姆·克莱默昨晚大喊某只股票是买入
+    – 除非你将这些类型的规则编入算法中。算法在遵循规则方面是一致的。
 - en: Many traders speak of “black boxes,” a special type of algorithm.  With black
     boxes, the rules (the algorithm) remain hidden to the trader.  He or she only
     gets the entry and exit signals, and has no idea how those signals were produced.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 许多交易者谈论“黑箱”，这是一种特殊类型的算法。对于黑箱，规则（算法）对交易者是隐藏的。他或她仅仅得到进出场信号，并不知道这些信号是如何产生的。
 - en: That type of algorithm might sound unappealing or scary, but many people like
     that approach.  It is really hard to interfere with computer code you cannot even
     see!
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种类型的算法可能听起来不吸引人或令人害怕，但许多人喜欢这种方法。干扰你根本看不见的计算机代码是非常困难的！
 - en: Some Examples Of Algo Trading
+  id: totrans-43
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 一些算法交易的示例
 - en: 'So what does an algo trader look like?  Here are some typical examples:'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么，算法交易者是什么样的呢？以下是一些典型的示例：
 - en: -  A retail trader, trading at home.  He works full time, so trading is his
     hobby.  Every night, he downloads the latest prices, calculates his signals either
     by hand or on a computer, and places trades according to the rules.  He may or
     may not check positions during the day, but since he places orders during non-work
     hours, he knows he is following his strategies each and every day.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 一位在家进行交易的零售交易者。他全职工作，因此交易是他的爱好。每晚，他下载最新的价格，要么手动计算信号，要么在计算机上完成，然后根据规则进行交易。他可能在白天检查仓位，也可能不检查，但由于他在非工作时间下单，他知道自己每天都在遵循策略。'
 - en: -  A prop trader, trading full time.  He enters and exits trades all day long,
     again according to set rules.  He never, ever deviates from the rules, since he
     knows his boss spot checks his trades for adherence to the rules.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 一位全职的自营交易员。他全天进出交易，同样根据设定的规则。他从不偏离规则，因为他知道他的老板会抽查他的交易以确保遵循规则。'
 - en: -  A hedge fund computer code, written by numerous PhDs in math, statistics
     and physics.  The computer code they run has 50,000 lines of code, and does everything
     – enter trades, exits trades, calculates position sizing, automatically performs
@@ -215,78 +310,106 @@
     a malfunction, but the computer controls the show.  The strategies they run can
     be on the order of microseconds (in and out quickly), to day trades of a few hours,
     to swing trades lasting weeks.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 一段由众多数学、统计学和物理学博士编写的对冲基金计算机代码。他们运行的计算机代码有50,000行，能够完成一切 – 进出交易、计算仓位、自动执行滚仓等。一位初级交易员始终在附近监控交易，以防发生故障，但计算机控制整个过程。他们运行的策略可以是微秒级的（快速进出），也可以是持续几小时的日内交易，或持续几周的波段交易。'
 - en: -  A professional retail trader, using a standard retail platform, Tradestation. 
     He creates strategies, then lets Tradestation run those strategies automated. 
     He is usually closely monitoring positions, because as Tradestation personnel
     say “automated trading does not mean unattended trading.”  He can trade quite
     a few automated strategies, assuming he has enough capital, and if his strategies
     are diversified enough.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 一位使用标准零售平台Tradestation的专业零售交易者。他创建策略，然后让Tradestation自动运行这些策略。他通常会密切监控仓位，因为Tradestation的工作人员表示“自动交易并不意味着无人值守交易”。他可以进行相当多的自动化策略交易，前提是他有足够的资本，并且他的策略足够多样化。'
 - en: What makes these people algorithmic traders is that they follow strict rules
     for entry and exit.  That is the real key – they are 100% rule followers.  With
     those strict rules, they can historically backtest their approaches, and while
     “past performance is not indicative of future results” (as a U.S. government disclaimer
     correctly states), it is very nice to realize that the strategies traded have
     worked in the past.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些人之所以被称为算法交易者，是因为他们遵循严格的进场和出场规则。这才是关键——他们是100%的规则遵循者。凭借这些严格的规则，他们可以对自己的方法进行历史回测，尽管“过去的表现并不能预示未来的结果”（正如美国政府免责声明所正确指出的那样），但很高兴地意识到，所交易的策略在过去是有效的。
 - en: Many traders can’t commit to 100% rule following, so they fall into the last
     major category – hybrid trading.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 很多交易者无法做到100%遵循规则，因此他们落入最后一个主要类别——混合交易。
 - en: Hybrid Trading
+  id: totrans-51
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 混合交易
 - en: Now that I have discussed discretionary trading, and algorithmic trading, it
     is time to bring another type of trading into the mix – what I call hybrid trading.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我已经讨论了自主交易和算法交易，是时候引入另一种交易类型——我称之为混合交易。
 - en: 'Hybrid trading is simply a mix of discretionary and algo trading.  Some examples:'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 混合交易仅仅是自主交易和算法交易的结合。一些例子：
 - en: Entries are based on technical indicators and rules, but exits are left to the
     discretion of the trader
+  id: totrans-54
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 进场是基于技术指标和规则，但退出则留给交易者自行决定。
 - en: Entries are based on trader judgment, but once in a trade, an automated exit
     “bot” controls the trade, with no trader intervention
+  id: totrans-55
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 进场是基于交易者的判断，但一旦进入交易，自动退出“机器人”就控制了交易，不需要交易者干预。
 - en: Entries and exits are both well defined by rules, but the trader has discretion
     to overrule.  For example, a trader might decide to ignore long stock signals
     after a natural or manmade disaster.  Or a trader might decide to go flat before
     major world events (Brexit vote, Trump election night).
+  id: totrans-56
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 进场和出场都由规则明确界定，但交易者有权决定是否遵循这些规则。例如，交易者可能会在自然灾害或人为灾难后选择忽视多头信号。或者，交易者可能会在重大世界事件（如英国脱欧投票、特朗普选举之夜）之前选择平仓。
 - en: The advantage in hybrid trading is that the trader can still have some discretionary
     influence on the trade.  That is also a disadvantage!  One thing I have noticed
     with my own algo trading is that some of my best algo trades turn out to be ones
     that my “human judgment” absolutely hated!  If I treated those trades as hybrid
     trades, I would have negated all the good effects of the algo.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 混合交易的优势在于交易者仍然可以对交易有一定的自主影响。这也是一个劣势！我在自己的算法交易中注意到的一点是，我一些最好的算法交易实际上是我“人类判断”绝对不喜欢的交易！如果我把这些交易当作混合交易，我将消除所有算法带来的良好效果。
 - en: '*****'
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: '*****'
 - en: Reading the last section, you might wonder “what are the professional traders
     out there doing, and how can I possibly compete with them?”  Great question! 
     Pros are using all of the methods detailed above.  You can compete by treating
     trading as a serious endeavor.  Don’t wish for “I have 15 minutes a day for trading”
     type systems.  Wish for being the best you can be at trading – then you’ll be
     good competition for the pros.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 读到最后一节时，你可能会想，“那些专业交易者在做什么，我该如何与他们竞争？”这是个好问题！专业交易者使用上面详细介绍的所有方法。你可以通过将交易视为一项严肃的事业来竞争。不要幻想“我每天有15分钟来进行交易”类型的系统。希望成为最优秀的交易者——那样你就能与专业人士竞争。
 - en: Of all these types of trading, it is hard to decide which trading route is for
     you.  Throughout the book, I’ll discuss some of the characteristics and traits
     that make for good algorithmic traders, but for now I will assume that you already
     know algo trading is the path you want to pursue.  If you still aren’t sure, though,
     keep reading and maybe by the end of the book you will be sure!
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 在所有这些交易类型中，很难决定哪种交易方式适合你。在整本书中，我将讨论一些优秀算法交易者的特点和特征，但现在我假设你已经知道算法交易是你想追求的道路。如果你仍然不确定，继续阅读，也许在书的最后你会确定！

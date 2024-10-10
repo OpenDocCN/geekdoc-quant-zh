@@ -1,35 +1,55 @@
 - en: APPENDIX A
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 附录 A
 - en: Monkey Trading Example, TradeStation Easy Language Code
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 猴子交易示例，TradeStation 简易语言代码
 - en: '![images](images/gbox.jpg) Strategy 1: Baseline Strategy (No Randomness)'
+  id: totrans-2
   prefs:
   - PREF_H2
   type: TYPE_IMG
+  zh: '![images](images/gbox.jpg) 策略 1：基线策略（无随机性）'
 - en: '[PRE0]'
+  id: totrans-3
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: '![images](images/gbox.jpg) Strategy 2: Random Entry, Baseline Exit Strategy'
+  id: totrans-4
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 策略 2：随机入场，基线出场策略'
 - en: '[PRE1]'
+  id: totrans-5
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: '![images](images/gbox.jpg) Strategy 3: Baseline Entry, Random Exit Strategy'
+  id: totrans-6
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 策略 3：基线入场，随机出场策略'
 - en: '[PRE2]'
+  id: totrans-7
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: '![images](images/gbox.jpg) Strategy 4: Random Entry, Random Exit Strategy'
+  id: totrans-8
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '![images](images/gbox.jpg) 策略 4：随机入场，随机出场策略'
 - en: '[PRE3]'
+  id: totrans-9
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
