@@ -1,9 +1,13 @@
 - en: Chapter 5\. Developing Advanced Algorithms for Trading
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第五章\. 开发高级交易算法
 - en: Types of Trading Algorithms
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 交易算法类型
 - en: Algorithmic trading has entered the mainstream of the financial markets with
     a profound impact on market practices, participants' strategies, and the overall
     trading landscape. So, what adds to the mettle of algorithmic trading? The answer
@@ -12,251 +16,355 @@
     each algorithm built with a specific purpose and market condition in mind. Let's
     explore the various types of trading algorithms that have carved their niches
     in the financial markets.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法交易已进入金融市场的主流，对市场实践、参与者策略和整体交易环境产生了深远的影响。那么，是什么增强了算法交易的韧性呢？答案在于交易算法的多样性和适应性。算法交易并不是一刀切的策略；它是无数可能性的领域，每个算法都是针对特定目的和市场条件构建的。让我们深入探索在金融市场中占据一席之地的各种类型的交易算法。
 - en: 1\. Momentum-Based Algorithms
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 基于动量的算法
 - en: Momentum refers to the speed of change in securities' prices in the financial
     markets. The momentum-based algorithms identify the speed and strength of price
     movements and take positions based on market momentum projections. These algorithms
     often factor in technical indicators like Moving Average Convergence Divergence
     (MACD) and Relative Strength Index (RSI) to identify profitable trading opportunities.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 动量指的是金融市场中证券价格变化的速度。基于动量的算法识别价格变动的速度和强度，并根据市场动量预测采取仓位。这些算法通常考虑技术指标，如移动平均收敛发散（MACD）和相对强弱指数（RSI），以识别盈利的交易机会。
 - en: 2\. Mean Reversion Algorithms
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 均值回归算法
 - en: 'These algorithms operate on the statistical concept of reversion to the mean,
     which assumes that price fluctuations are temporary and the price of a security
     will eventually return to its mean or intrinsic value over time. They usually
     involve a two-step process. Step one: identify deviations from the mean. Step
     two: take positions that bet on return to the mean.'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些算法基于均值回归的统计概念，假设价格波动是暂时的，证券的价格最终会随着时间的推移回到其均值或内在价值。它们通常涉及一个两步过程。第一步：识别与均值的偏差。第二步：采取押注于回归均值的仓位。
 - en: 3\. Statistical Arbitrage Algorithms
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 统计套利算法
 - en: Statistical arbitrage is a broad set of market strategies where decisions to
     buy or sell securities are made on the premise of statistical and mathematical
     modeling. Factors such as historical price relationships, correlations, and market
     inefficiencies form the basis of these strategies. For instance, in pair trading
     (a form of stat arb), the correlation between a pair of stocks is calculated and
     trading decisions are made based on the divergence from this correlation.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 统计套利是一套广泛的市场策略，其买卖证券的决策基于统计和数学建模的前提。历史价格关系、相关性和市场低效性等因素构成了这些策略的基础。例如，在配对交易（统计套利的一种形式）中，计算一对股票之间的相关性，并根据该相关性的偏离做出交易决策。
 - en: 4\. Sentiment Analysis Algorithms
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 4\. 情绪分析算法
 - en: These algorithms leverage the power of big data and machine learning to analyze
     market sentiment from various sources like news articles, social media posts,
     and financial reports, and make trading decisions accordingly. Such an algorithm
     typically processes unstructured data, decides a sentiment (positive, negative,
     neutral), and then makes a trading decision based on the aggregate market sentiment.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些算法利用大数据和机器学习的力量，从新闻文章、社交媒体帖子和财务报告等各种来源分析市场情绪，并相应做出交易决策。这样的算法通常处理非结构化数据，决定情绪（积极、消极、中性），然后基于总体市场情绪做出交易决策。
 - en: 5\. High-Frequency Trading (HFT) Algorithms
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 5\. 高频交易（HFT）算法
 - en: High-frequency trading (HFT) is a subset of algorithmic trading where securities
     are bought and sold in extremely short timeframes, usually milliseconds or microseconds.
     The aim here is to capitalize on minuscule price differences that may exist momentarily.
     HFT algorithms usually involve sophisticated infrastructure setups and close proximity
     to exchange servers to minimize latency.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 高频交易（HFT）是算法交易的一个子集，在极短的时间内（通常是毫秒或微秒）买卖证券。其目的是利用瞬时存在的微小价格差异。HFT算法通常涉及复杂的基础设施设置，并与交易所服务器保持紧密接触，以最小化延迟。
 - en: 6\. Machine Learning (ML) Algorithms
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 6\. 机器学习（ML）算法
 - en: As we advance technologically, AI and ML are becoming integral parts of algorithmic
     trading. ML algorithms learn from historical data and adapt to new data without
     being explicitly programmed to do so. They are capable of identifying complex
     patterns and making predictions, thus enabling dynamic strategy planning and implementation.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着技术的进步，人工智能和机器学习正成为算法交易不可或缺的一部分。机器学习算法从历史数据中学习，并能够适应新数据，而无需显式编程。它们能够识别复杂模式并进行预测，从而实现动态策略规划和实施。
 - en: 'Let''s demonstrate a basic mean-reversion algorithm using Python:'
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们使用Python演示一个基本的均值回归算法：
 - en: '[PRE0]'
+  id: totrans-16
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: As this example illustrates, we can combine Python's capabilities with financial
     knowledge to create effective trading strategies. It's vital to note that the
     performance of an algorithm is contingent upon the market conditions it's designed
     to thrive in. Therefore, it's essential to understand each type to effectively
     use them according to the trading horizon, risk appetite, and market outlook.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如这个例子所示，我们可以将Python的能力与金融知识结合起来，创造有效的交易策略。值得注意的是，算法的表现取决于其设计所适应的市场条件。因此，了解每种类型对于根据交易视野、风险偏好和市场前景有效使用它们至关重要。
 - en: Trading algorithms have become the beating heart of financial markets around
     the world and mastering them can prove to be lucrative. As the journey moves forward,
     we'll be diving deeper into specific trading algorithms to unfold the secrets
     they hold within their code. Hold tight as we embark on this fascinating voyage,
     next into the realm of moving average strategies.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 交易算法已成为全球金融市场的核心，掌握它们可以带来丰厚的收益。随着旅程的推进，我们将深入研究具体的交易算法，揭开它们代码中蕴藏的秘密。请紧紧握住，我们即将踏上这段迷人的旅程，探索移动平均策略的领域。
 - en: Moving Average Strategies
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 移动平均策略
 - en: The moving average is a cornerstone of technical analysis in the financial markets,
     with its simplicity and versatility vastly employed by traders worldwide. It tempts
     with its ability to evolve with the markets, adapting to their intrinsic characteristics
     like volatility, momentum, and trading volume. Let's delve into the dynamic world
     of moving average strategies.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 移动平均是金融市场技术分析的基石，因其简单性和多功能性，被全球交易者广泛使用。它的魅力在于能够随着市场的发展而演变，适应市场的内在特性，如波动性、动量和交易量。让我们深入探讨移动平均策略的动态世界。
 - en: The Backbone of Moving Average Strategies
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 移动平均策略的基础
 - en: At its core, the moving average is a method to analyze data points by creating
     a series of averages of different subsets of the overall data set. In the context
     of trading, it depicts the average price of a security over a specific period.
     Some prevalent types of moving averages include the Simple Moving Average (SMA),
     the Exponential Moving Average (EMA), and Weighted Moving Average (WMA).
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 移动平均的核心是一种通过创建总体数据集不同子集的平均值系列来分析数据点的方法。在交易的背景下，它描绘了特定时间段内证券的平均价格。一些常见的移动平均类型包括简单移动平均（SMA）、指数移动平均（EMA）和加权移动平均（WMA）。
 - en: 1\. Simple Moving Average (SMA) Strategy
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 简单移动平均（SMA）策略
 - en: The most straightforward type of moving average strategy utilizes the Simple
     Moving Average (SMA). The SMA calculates the average price over a specified number
     of periods, such as 50, 100, or 200 days, typically closing prices. This strategy
     goes long when the price moves above its SMA and short when it moves below, assuming
     that the price will revert to the mean over time.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 最简单的移动平均策略利用简单移动平均（SMA）。SMA计算指定期间内的平均价格，例如50天、100天或200天，通常是收盘价。当价格高于SMA时，这一策略做多；当价格低于SMA时，做空，假设价格会随着时间回归均值。
 - en: '[PRE1]'
+  id: totrans-25
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: In this Python implementation, a crossover strategy using a 50-day SMA and a
     200-day SMA is showcased. The 'signal' is generated based upon these moving averages;
     if the 50-day SMA goes above the 200-day SMA, the signal turns positive, indicating
     a potential bullish market.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个Python实现中，展示了一种使用50天SMA和200天SMA的交叉策略。根据这些移动平均生成“信号”；如果50天SMA上升至200天SMA之上，信号转为正，表示潜在的牛市。
 - en: 2\. Exponential Moving Average (EMA) Strategy
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 指数移动平均（EMA）策略
 - en: The EMA gives more weight to recent prices, thereby making it more responsive
     to current price action. Traders often use it in fast-paced markets to catch trends
     early. EMA strategies are similar to SMA strategies but can generate signals faster
     due to their increased sensitivity to recent prices changes.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: EMA（指数移动平均）对近期价格给予更多权重，从而使其对当前价格走势更为敏感。交易者常在快速变化的市场中使用它，以便及早捕捉趋势。
 - en: '[PRE2]'
+  id: totrans-29
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: The code above implements an EMA crossover strategy using a 12-day EMA and a
     26-day EMA. The signal is generated when the 12-day EMA crosses the 26-day EMA,
     providing trading signals in a way similar to the SMA crossover strategy.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 上述代码实现了一种EMA交叉策略，使用12日EMA和26日EMA。当12日EMA穿越26日EMA时会生成信号，提供与SMA交叉策略类似的交易信号。
 - en: While the simplicity of moving averages invites traders, it also serves as a
     battleground of false signals and potential losses. Many moving average strategies
     can lead to launching into action too hastily or leaving too late, thereby eroding
     potential profits. It is where other components, such as volume and momentum indicators,
     can be leveraged to construct a robust trading strategy.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管移动平均的简单性吸引了交易者，但它也成为了虚假信号和潜在损失的战场。许多移动平均策略可能导致过于匆忙地采取行动或错过时机，从而侵蚀潜在利润。在此，其他因素，如交易量和动量指标，可以被利用来构建强大的交易策略。
 - en: Treading ahead, we aspire to unfold the secrets of more intricate world of algorithmic
     trading, from arbitrage strategies to mystical realms of sentiment-based algorithms.
     As we delve deeper, the narratives of success in algorithmic trading become less
     about mathematics and more about understanding the rhythm of the markets. Be ready
     as we step into the fascinating world of arbitrage strategies next.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 前进的过程中，我们希望揭示更复杂的算法交易世界的秘密，从套利策略到基于情绪的算法的神秘领域。随着我们深入，算法交易的成功故事变得不再只是数学，而是关于理解市场的节奏。准备好进入下一个迷人的套利策略世界吧。
 - en: Arbitrage Strategies
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 套利策略
 - en: Arbitrage trading operates on the very essence of financial markets revolving
     around the concept of buying an asset at a low price and selling it at a higher
     one. It furnishes a near certainty associated with profits that beckon towards
     an alluring world of risk-free trading, albeit laced with complexities. Let's
     decode some prevalent arbitrage strategies.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 套利交易的核心在于金融市场的本质，即以低价买入资产并以高价卖出。它提供了与利润几乎相关的确定性，吸引着人们进入一个似乎无风险的交易世界，尽管其中充满了复杂性。让我们解码一些常见的套利策略。
 - en: The Pillars of Arbitrage Strategies
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 套利策略的支柱
 - en: Arbitrage trading doesn't depend on whether the market is rising, falling, or
     flat, but relies heavily on timely detection and execution of trading opportunities.
     In essence, it seeks to exploit price differences of a similar asset across different
     markets or in various forms. Most crucial are high-speed execution and real-time
     data due to the fleetingly transient nature of arbitrage opportunities.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 套利交易并不依赖于市场是上涨、下跌还是平稳，而是非常依赖于及时发现和执行交易机会。本质上，它寻求利用同一资产在不同市场或各种形式中的价格差异。高效执行和实时数据至关重要，因为套利机会的性质是瞬息万变的。
 - en: 1\. Spatial Arbitrage
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 空间套利
 - en: Spatial arbitrage involves taking advantage of price differences of the same
     asset across different markets or exchanges. It is the most straightforward form
     of arbitrage and is extensively used in the Forex and equities market.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 空间套利涉及利用同一资产在不同市场或交易所之间的价格差异。这是最简单的套利形式，并在外汇和股票市场中广泛使用。
 - en: '[PRE3]'
+  id: totrans-39
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: 'In the above Python code snippet, we assume two exchanges with different prices
     for the same asset. The strategy here is straightforward: if the price on the
     second exchange is higher, we buy on the first exchange and sell on the second,
     pocketing the difference as profit.'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上述Python代码片段中，我们假设两个交易所对同一资产的价格不同。这里的策略很简单：如果第二个交易所的价格更高，我们就在第一个交易所买入，在第二个交易所卖出，赚取差价作为利润。
 - en: 2\. Statistical Arbitrage
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 统计套利
 - en: Statistical arbitrage involves complex mathematical models to detect hundreds
     or thousands of mispricings in the market. Usually, high-speed algorithms are
     employed to exploit these minute price imbalances.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 统计套利涉及复杂的数学模型来检测市场中数百或数千个错误定价。通常，采用高速算法来利用这些微小的价格失衡。
 - en: The tendency of a security price to revert to its mean forms the basis for many
     statistical arbitrage strategies, such as pairs trading and mean reversion.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 证券价格回归均值的倾向构成了许多统计套利策略的基础，例如配对交易和均值回归。
 - en: _pairs trading strategy_
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: _配对交易策略_
 - en: '[PRE4]'
+  id: totrans-45
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: In this Python code, a simple pairs trading strategy on two cointegrated assets
     is demonstrated. If the spread between the assets falls beyond a certain threshold,
     we take a long position assuming it will revert to the mean. Conversely, if the
     spread rises beyond a certain threshold, we take a short position.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这段Python代码中，展示了在两个协整资产上的简单配对交易策略。如果资产之间的价差超出某一阈值，我们就会采取多头头寸，假设其会回归均值。相反，如果价差超过某一阈值，我们则采取空头头寸。
 - en: 3\. Triangular Arbitrage
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 三角套利
 - en: Triangular arbitrage is primarily used in the Forex markets to exploit discrepancies
     between currency exchange rates. A trader has to trade three currency pairs in
     a round-robin manner to realize the arbitrage profit. However, in today's high-speed
     trading world, such opportunities are scarce and may only last for fractions of
     a second.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 三角套利主要用于外汇市场，以利用货币汇率之间的差异。交易者必须以轮流的方式交易三种货币对，以实现套利利润。然而，在今天的高速交易世界中，这样的机会十分稀少，可能只持续几分之一秒。
 - en: _enforcing triangular arbitrage_
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: _执行三角套利_
 - en: '[PRE5]'
+  id: totrans-50
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: The Python code example calculates a total rate by multiplying exchange rates
     for a round-robin trade with three currency pairs. If the total rate is greater
     than 1, then taking a position along the round-robin yields a profit.
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 该Python代码示例通过将三种货币对的汇率相乘来计算一轮交易的总汇率。如果总汇率大于1，那么沿着该轮交易采取头寸将获得利润。
 - en: The world of arbitrage does promise free lunches but remember, there's no such
     thing as an effortless profit. These opportunities are fleeting and require advanced
     infrastructure for timely detection and execution. As we move forward, we shall
     uncover the mysteries of complex trading strategies like statistical arbitrage
     and explore the significant players of algorithmic trading. Fasten your seat belts
     as the ride gets noxious with the twists and turns of the trading world.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 套利的世界确实承诺有“免费午餐”，但请记住，轻松获利并不存在。这些机会稍纵即逝，需要先进的基础设施以便及时检测和执行。随着我们前进，将揭示统计套利等复杂交易策略的奥秘，并探索算法交易的重要参与者。系好安全带，因为在交易世界的曲折变化中，旅程将充满挑战。
 - en: Statistical Arbitrage
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 统计套利
 - en: The concept of arbitrage may give an impression of mundane operations rooted
     in the simplicity of buying low and selling high; however, the statistical arbitrage
     unravels the more complex and sophisticated layer of algorithmic trading. Statistical
@@ -265,66 +373,93 @@
     methods. This strategy primarily seeks short-term trading opportunities based
     on mean reversion models which theorize that asset prices and returns eventually
     revert back to their average or mean values.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 套利的概念可能给人一种基于简单买低卖高的普通操作印象；然而，统计套利揭示了算法交易更复杂和精细的层面。统计套利起源于1980年代的华尔街，严重依赖复杂的定量模型，并利用广泛的统计和预测方法。这种策略主要寻求基于均值回归模型的短期交易机会，均值回归模型理论认为资产价格和收益最终会回归到其平均值或均值。
 - en: Statistical arbitrage involves complex mathematical models and high-powered
     computation to identify and exploit relative mispricings in the market. Unlike
     pure arbitrage, which promises risk-free benefits by exploiting clear price discrepancies,
     statistical arbitrage benefits are hypothesized on statistical mispricing, which
     might not necessarily materialize.
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 统计套利涉及复杂的数学模型和高性能计算，以识别和利用市场中的相对错误定价。与纯套利不同，纯套利通过利用明显的价格差异承诺无风险收益，而统计套利的收益是基于统计错误定价的假设，这种假设可能并不一定实现。
 - en: Components of Statistical Arbitrage Strategy
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 统计套利策略的组成部分
 - en: 'A typical statistical arbitrage strategy encompasses three components: model,
     signal and execution.'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个典型的统计套利策略包含三个组成部分：模型、信号和执行。
 - en: 1\. Model – Identifies potential opportunities utilising mathematical modelling
     and statistical analysis. This stage involves significant data processing, statistical
     correlation and cointegration tests, and time series analysis.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 模型 – 利用数学建模和统计分析识别潜在机会。此阶段涉及大量数据处理、统计相关性和协整检验，以及时间序列分析。
 - en: 2\. Signal Generation – Upon identification of potential opportunities, algorithms
     generate trading signals, i.e., provide recommendations to take positions in the
     market based on predictions.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 信号生成 – 一旦识别出潜在机会，算法就会生成交易信号，即根据预测提供市场持仓的建议。
 - en: 3\. Execution – Execution algorithms then react to these signals and execute
     trades as quickly as possible before the trading opportunity disappears. In today's
     trading world, high-frequency trading (HFT) firms use statistical arbitrage to
     trade at lightning-fast speeds.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 执行 – 执行算法随后对这些信号作出反应，并尽可能快地执行交易，以便在交易机会消失之前完成。在当今的交易世界中，高频交易（HFT）公司利用统计套利以闪电般的速度进行交易。
 - en: Traders employ a plethora of algorithms to implement statistical arbitrage strategies.
     Common algorithms range from those involving simple linear relationships, like
     pairs trading, to those involving complex machine learning models.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 交易者使用众多算法来实施统计套利策略。常见算法从简单线性关系的配对交易，到涉及复杂机器学习模型的策略，种类繁多。
 - en: An Exemplar of Pairs Trading - A Type of Statistical Arbitrage
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 配对交易的典范 - 一种统计套利的形式
 - en: One of the most intuitive and commonly used statistical arbitrage strategies
     is pairs trading. Pairs trading assumes that if two stocks have high historical
     price correlation, then any substantial divergences among the pair are likely
     to revert to the mean over time, thereby creating a trading opportunity.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 最直观且常用的统计套利策略之一是配对交易。配对交易假设如果两只股票之间存在高度的历史价格相关性，那么该对之间的任何实质性偏离在时间上都可能回归到均值，从而创造交易机会。
 - en: Consider a pair of historically correlated stocks - A and B. If the price of
     stock A increases while the price of B remains unchanged, a trading opportunity
     develops. A trader would short sell stock A (anticipating a decrease in price)
     and buy stock B (anticipating an increase in price), assuming that the prices
     will revert to their historical correlation.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 考虑一对历史相关的股票 - A 和 B。如果股票 A 的价格上涨而股票 B 的价格保持不变，就会出现交易机会。交易者会卖空股票 A（预计价格会下跌），同时买入股票
+    B（预计价格会上涨），假设价格会回归到它们的历史相关性。
 - en: 'The following Python code suggests a simplistic representation of a pairs trading
     algorithm:'
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下 Python 代码展示了配对交易算法的简单表示：
 - en: '[PRE6]'
+  id: totrans-66
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: The above Python code creates a simple pairs trading strategy. It calculates
     the spread between two assets (asset_A and asset_B), assuming they are cointegrated.
     We then determine entry and exit thresholds for our spread based on different
@@ -333,19 +468,25 @@
     the spread will decrease. On the other hand, a 'long' signal (1.0) is generated
     when the spread is less than the exit threshold, assuming that the spread will
     increase.
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 上述 Python 代码创建了一个简单的配对交易策略。它计算两个资产（asset_A 和 asset_B）之间的价差，假设它们是协整的。我们根据不同的百分位数值确定价差的进出阈值，并相应生成交易信号。当价差大于进场阈值时，生成“卖空”信号（-1.0），假设价差会减少。另一方面，当价差小于出场阈值时，生成“买入”信号（1.0），假设价差会增加。
 - en: Executing statistical arbitrage strategies seamlessly requires sophisticated
     infrastructure, powerful mathematical models, and a thorough understanding of
     financial markets. As we move forward on this exciting journey of algorithmic
     trading, we will uncover more such strategies and untangle the complex world of
     trading. Stay tuned as we delve deeper into an exciting array of topics including
     market-making algorithms, sentiment-based algorithms, and multi-factor models.
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 无缝执行统计套利策略需要复杂的基础设施、强大的数学模型，以及对金融市场的透彻理解。当我们在这个令人兴奋的算法交易旅程中前行时，我们将发现更多这样的策略，并理清复杂的交易世界。请继续关注，我们将深入探讨包括市场制造算法、基于情绪的算法和多因子模型在内的一系列激动人心的话题。
 - en: Market-Making Algorithms
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 市场制造算法
 - en: Market-making is a familiar tradition in the world of trading and finance. However,
     the onset of technology and increased digitization has significantly evolved the
     process of market-making. As we navigate the fast-paced and competitive landscape
@@ -353,93 +494,131 @@
     shift from traditional to algorithmic methods have brought reliability, speed,
     and additional liquidity to the financial markets, ultimately resulting in increased
     profitability.
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 做市在交易和金融界是一种熟悉的传统。然而，随着技术的出现和数字化的加速，做市的过程得到了显著的发展。在我们应对快速和竞争激烈的交易环境时，做市算法已被证明是游戏规则的改变者。从传统方法到算法方法的超越性转变，为金融市场带来了可靠性、速度和额外的流动性，*最终导致了盈利能力的提升*。
 - en: In its elementary form, market-making involves quoting both buy (bid) and sell
     (ask) prices for a financial instrument, thereby 'making a market'. While traditional
     market-makers fulfilled this manually, the high-speed, data-driven world of electronic
     trading today calls for the use of market-making algorithms.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 在其基本形式中，做市涉及为金融工具报价，包括买入（bid）和卖出（ask）价格，从而“创造市场”。虽然传统做市商是手动完成这一工作的，但今天高速、数据驱动的电子交易世界要求使用做市算法。
 - en: Understanding Market-Making Algorithms
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 理解做市算法
 - en: Market-making algorithms are designed with an intent to profit from the bid-ask
     spread and market depth. The basic principle involves posting limit orders on
     both sides of the order book and creating profits from executed trades on either
     side. Market-making algorithms capture the spread between the bid-and-ask prices,
     profiting from the market's liquidity requirements.
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 做市算法的设计目的是从买卖差价和市场深度中获利。基本原则是在订单簿的两侧发布限价单，并从两侧的已执行交易中获取利润。做市算法捕获买入和卖出价格之间的差价，从市场的流动性需求中获利。
 - en: Market-Making Algorithms hold significant importance as they facilitate liquidity,
     tighten spreads, and contribute to efficient price discovery. By providing a constant
     supply and demand for securities, they create an active market for traders.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 做市算法具有重要意义，因为它们促进了流动性、缩小了价差，并有助于高效的价格发现。通过为证券提供持续的供求，它们为交易者创造了一个活跃的市场。
 - en: The Workflow of Market-Making Algorithms
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 做市算法的工作流程
 - en: The operation of a market-making algorithm revolves around a continual loop
     of actions involving quoting, hedging, and position management.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 做市算法的运作围绕着一个持续的循环动作，包括报价、对冲和头寸管理。
 - en: '1\. Quoting: The algorithm begins by posting bid and ask quotes, thereby creating
     a two-sided market.'
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 报价：算法通过发布买入和卖出报价，创建双边市场。
 - en: '2\. Execution: Upon execution of an order, the algorithm updates the quote
     and replaces the consumed liquidity.'
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 执行：在订单执行后，算法更新报价并替换消耗的流动性。
 - en: '3\. Hedging: The algorithm continually adjusts its risk exposure by real-time
     hedging. This implies either buying or selling the underlying asset or a related
     financial instrument to offset the risk associated with the filled orders.'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 对冲：算法通过实时对冲不断调整其风险敞口。这意味着要么购买，要么出售基础资产或相关金融工具，以抵消已成交订单的风险。
 - en: '4\. Position Management: The algorithm manages accumulated positions and found
     market-making opportunities based on real-time analysis of market conditions.'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 4\. 头寸管理：算法根据市场条件的实时分析管理积累的头寸和发现的做市机会。
 - en: An Illustrative Python script for a Market-Making Algorithm
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个市场做市算法的示例Python脚本
 - en: Now, let's conceptualize how a simple market-making algorithm might function
     in python.
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，让我们构思一个简单的做市算法在Python中的运行方式。
 - en: '[PRE7]'
+  id: totrans-83
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE7]'
 - en: The simple market-making algorithm class depicted above initiates with a bid
     price and an ask price. The execution price is then compared to the current bid
     or ask, and the bid and ask prices are adjusted based on the execution quantity.
     In essence, the algorithm skews the market towards the executed side in the anticipation
     of the next trade.
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 上述简单的做市算法类以买入价和卖出价开始。执行价格随后与当前买入或卖出价格进行比较，并根据执行数量调整买入和卖出价格。实质上，算法将市场倾斜向已执行的一侧，以预测下一笔交易。
 - en: This rudimentary example illustrates a simplified version of the strategies
     used by market-making algorithms. However, professional market-makers harness
     a variety of complex algorithms, factoring in parameters such as stock correlations,
     volatility, depth of the order book, and timing of the trades.
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个基本示例展示了市场制作算法使用策略的简化版本。然而，专业市场制造商利用多种复杂算法，考虑诸如股票相关性、波动性、订单簿深度和交易时机等参数。
 - en: While market-making algorithms might seem to promise lucrative trading opportunities,
     it is imperative to assess the risks and challenges involved. Understanding and
     managing market risk, adverse selection risk, and inventory risks are critical
     to strategize effective market-making algorithms. At the core, it is the synergistic
     interplay of mathematical modelling, computational power, and profound financial
     insights that facilitate successful algorithmic market-making.
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管市场制作算法似乎承诺了丰厚的交易机会，但评估相关风险和挑战是至关重要的。理解和管理市场风险、不利选择风险以及库存风险对有效策划市场制作算法至关重要。核心在于数学建模、计算能力和深厚金融洞察力的协同作用，推动成功的算法市场制作。
 - en: Our next venture into the troves of algorithmic trading will introduce us to
     sentiment-based algorithms. Stay tuned as we uncover how modern trading bots use
     data from social media, financial news, and other sources to anticipate market
     movements.
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们下一步将深入探索算法交易的宝藏，介绍情绪基础算法。敬请关注，我们将揭示现代交易机器人如何利用社交媒体、金融新闻和其他来源的数据来预测市场动向。
 - en: Sentiment-Based Algorithms
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 情绪基础算法
 - en: In the digital era, where data is akin to the new oil, sentiments have emerged
     as an intriguing and profound source of information. In the financial markets,
     sentiments refer to the collective attitudes or feelings of market participants
@@ -447,386 +626,552 @@
     central to the strategic endeavors of traders and investors. The advent of sentiment-based
     algorithms, programmed to analyze and respond to market sentiments, has revolutionized
     algorithmic trading.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 在数字时代，数据如同新石油，情感成为了一种有趣而深刻的信息源。在金融市场中，情感指的是市场参与者对特定资产的集体态度或感觉。理解和利用这些情感是交易者和投资者战略努力的核心。情绪基础算法的出现，能够分析和响应市场情感，彻底改变了算法交易。
 - en: Understanding Sentiment-Based Algorithms
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 理解情绪基础算法
 - en: Sentiment-based algorithms use sentiment analysis, also known as opinion mining,
     to decipher the emotional tones behind trading data. These algorithms analyze
     a wide array of unstructured data sources such as social media feeds, financial
     news, market commentary, and even conference call transcripts. Leveraging machine
     learning and natural language processing techniques, sentiment-based algorithms
     can dissect complex human emotions into actionable investment signals.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 情绪基础算法使用情绪分析，也称为意见挖掘，以解读交易数据背后的情感基调。这些算法分析广泛的非结构化数据源，如社交媒体动态、金融新闻、市场评论，甚至是电话会议记录。通过利用机器学习和自然语言处理技术，情绪基础算法能够将复杂的人类情感分解为可操作的投资信号。
 - en: At its crux, sentiment analysis classifies sentiments as positive, negative,
     or neutral. Such classification doesn't merely remain confined to identifying
     the polarity of expressions. Advanced sentiment analysis also involves understanding
     the intensity of sentiments. For instance, identifying 'good' as a positive sentiment
     and 'excellent' as an even stronger positive sentiment. Sentiment-based algorithms
     use the findings from sentiment analysis to make informed trading decisions.
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 情绪分析的核心在于将情感分类为正面、负面或中立。这种分类不仅仅局限于识别表达的极性。高级情绪分析还涉及理解情感的强度。例如，将“好”识别为正面情感，将“优秀”识别为更强的正面情感。情绪基础算法利用情绪分析的结果做出明智的交易决策。
 - en: Institutional traders often use sentiment-based algorithms to gauge the market
     mood before deciding on their trading positions. For instance, negative sentiments
     on a stock could prompt an algorithm to short it, while positive sentiments could
     lead to buying positions.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 机构交易者经常使用情绪基础算法在决定交易头寸之前评估市场情绪。例如，对某只股票的负面情感可能促使算法做空，而正面情感可能导致买入头寸。
 - en: The Workflow of Sentiment-Based Algorithms
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 情绪基础算法的工作流程
 - en: 'The functioning of sentiment-based algorithms involves three critical stages:
     collecting data, analyzing sentiments, and making trading decisions.'
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于情感的算法的运行涉及三个关键阶段：收集数据、分析情感和做出交易决策。
 - en: '1\. Data Collection: The algorithm collects relevant data from various sources,
     including social media platforms, financial news portals, blogs, and financial
     reports.'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 数据收集：算法从各种来源收集相关数据，包括社交媒体平台、金融新闻门户、博客和财务报告。
 - en: '2\. Sentiment Analysis: The algorithm processes the gathered information using
     natural language processing and machine learning techniques. It identifies and
     categorizes the sentiments into positive, negative, or neutral.'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 情感分析：算法使用自然语言处理和机器学习技术处理收集的信息。它将情感识别和分类为积极、消极或中立。
 - en: '3\. Trading Decisions: Based on the insights derived from sentiment analysis,
     the algorithm decides on the specific trades to make.'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 交易决策：基于情感分析得出的见解，算法决定具体的交易行为。
 - en: An Illustrative Python script for a Sentiment-Based Algorithm
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于情感的算法的示例 Python 脚本
 - en: Let's consider a simplified Python script for a sentiment-based trading algorithm.
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们考虑一个简化的基于情感的交易算法的 Python 脚本。
 - en: '[PRE8]'
+  id: totrans-101
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE8]'
 - en: The SentimentTrader class starts by initializing the data source and the sentiment
     intensity analyzer from the nltk library. The `get_sentiment` method returns a
     sentiment score for the provided text. The `make_trade_decision` method then decides
     whether to buy, sell, or hold, based on the compound sentiment score.
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: SentimentTrader 类首先初始化数据源和来自 nltk 库的情感强度分析器。`get_sentiment` 方法返回所提供文本的情感分数。然后，`make_trade_decision`
+    方法根据复合情感分数决定是买入、卖出还是持有。
 - en: While the example illustrates a rudimentary form of sentiment-based trading
     algorithm, real-world applications often involve more sophisticated techniques
     and factors.  Furthermore, though sentiment-based algorithms present novel opportunities
     to decode market movements, they pose unique challenges, including dealing with
     the noise in social media feeds and the risk of manipulated sentiments, and the
     rapid shift in sentiments.
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管这个示例展示了一种简单的基于情感的交易算法，但实际应用通常涉及更复杂的技术和因素。此外，尽管基于情感的算法为解码市场动态提供了新机会，但它们也带来了独特挑战，包括处理社交媒体信息中的噪音、情感操控的风险以及情感的快速变化。
 - en: 'The exploration of algorithmic trading strategies will continue with our next
     topic: multi-factor models. These models consider multiple factors to predict
     the outcomes of financial markets and are an integral part of modern algorithmic
     trading. Stay tuned for more.'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们接下来的主题将深入探讨算法交易策略：多因子模型。这些模型考虑多个因素来预测金融市场的结果，是现代算法交易不可或缺的一部分。敬请期待更多内容。
 - en: Multi-Factor Models
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 多因子模型
 - en: Multiple sources of data, diverse indicators, and an array of market sentiments
     together form the complex space of financial markets; each element seemingly holding
     the key to profitable trades. Amidst this convoluted landscape, multi-factor models
     emerge as a strategic approach for making sense of these multiple influences and
     unlocking the profitability hidden within them.
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 多种数据来源、多样化指标和市场情绪的结合形成了金融市场复杂的空间；每个元素似乎都掌握着盈利交易的关键。在这个错综复杂的景观中，多因子模型作为一种战略方法，帮助我们理解这些多重影响，并揭示隐藏的盈利潜力。
 - en: Harnessing the Power of Multi-Factor Models
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 利用多因子模型的力量
 - en: Multi-factor models take into consideration multiple factors or variables, each
     influencing the price of a financial instrument, to make an informed prediction
     about its future price movements. Instead of relying on a singular modelling strategy,
     as in single-factor models, they integrate insights from multiple strategies,
     providing a more comprehensive perspective.
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 多因子模型考虑多个因素或变量，每个因素影响金融工具的价格，以对其未来价格走势做出明智的预测。与单因子模型依赖单一建模策略不同，多因子模型整合了多种策略的见解，提供了更全面的视角。
 - en: Each factor in a multi-factor model corresponds to a particular characteristic
     or set of characteristics that affect the trading asset’s price, such as macroeconomic
     indicators, company fundamentals, or technical trading indicators. By considering
     a host of factors simultaneously, these models help traders devise more nuanced
     and effective trading strategies.
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 多因子模型中的每个因素对应于影响交易资产价格的特定特征或特征集，例如宏观经济指标、公司基本面或技术交易指标。通过同时考虑多种因素，这些模型帮助交易者制定更细致和有效的交易策略。
 - en: The effectiveness of a multi-factor model relies heavily on the selection of
     relevant factors. The chosen factors should be significant determinants of price
     movement, not merely noise. Additionally, these factors should complement each
     other, providing a multifaceted picture of the market conditions.
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 多因子模型的有效性在很大程度上依赖于相关因子的选择。所选择的因子应该是价格波动的重要决定因素，而不仅仅是噪音。此外，这些因子应相互补充，提供市场状况的多维视角。
 - en: Building Blocks of Multi-Factor Models
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 多因子模型的构建模块
 - en: 'A multi-factor model involves three major components: Factor Selection, Model
     Building, and Backtesting.'
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 多因子模型涉及三个主要组成部分：因子选择、模型构建和回测。
 - en: '1\. Factor Selection: This involves picking the relevant factors that will
     form the foundation of the model. These could range from company''s earnings,
     dividend payouts, to macroeconomic indicators like inflation rate and GDP growth.'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 因子选择：这涉及选择将构成模型基础的相关因子。这些因子可以包括公司的收益、股息支付，以及通货膨胀率和GDP增长等宏观经济指标。
 - en: '2\. Model Building: Factors identified are then used to build a predictive
     model. This involves creating a mathematical relationship between the factors
     and the price of the asset.'
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 模型构建：识别出的因子随后被用来构建预测模型。这涉及在因子与资产价格之间创建数学关系。
 - en: '3\. Backtesting: Once the predictive model is built, it''s tested on historical
     data. This phase helps evaluate the efficacy of the model and fine-tune it further.'
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 回测：一旦构建了预测模型，就在历史数据上进行测试。此阶段有助于评估模型的有效性并进一步优化它。
 - en: Illustrating Multi-Factor Models through Python Code (Sample)
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过 Python 代码说明多因子模型（示例）
 - en: Let's consider a simplistic Python script to understand how multi-factor models
     can be implemented in an algorithmic trading strategy.
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们考虑一个简单的 Python 脚本，以理解多因子模型如何在算法交易策略中实施。
 - en: '[PRE9]'
+  id: totrans-118
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE9]'
 - en: Here, the MultiFactorModel class begins by initializing the dataset. This dataset
     includes various factors (factor_1, factor_2, etc.) and the corresponding asset
     prices. The `build_model` method splits the data for training and testing purposes
     and constructs a linear regression model. The `trade_decision` method then uses
     this trained model to predict future prices and make trading decisions.
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，MultiFactorModel 类首先初始化数据集。该数据集包括各种因子（factor_1、factor_2 等）及相应的资产价格。`build_model`
+    方法将数据分割为训练和测试数据，并构建线性回归模型。然后，`trade_decision` 方法利用这个训练好的模型预测未来价格并做出交易决策。
 - en: A Step Towards Complexity
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 迈向复杂性的一步
 - en: Multi-factor models often form the core of sophisticated algorithmic trading
     strategies. By integrating various market information sources, they offer a robust
     and comprehensive trading tool. However, they also require more computational
     resources and intricate calibration. Careful selection of factors, accurate modelling,
     and diligent backtesting are key to leveraging the prowess of multi-factor models.
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 多因子模型通常构成复杂算法交易策略的核心。通过整合各种市场信息来源，它们提供了一个强大且全面的交易工具。然而，它们也需要更多的计算资源和复杂的校准。谨慎选择因子、准确建模以及认真回测是充分利用多因子模型优势的关键。
 - en: 'The journey into the labyrinthine domain of algorithmic trading continues.
     Moving from the complexity of multi-factor models, our next stop is a yet another
     innovative realm of trading: Reinforcement Learning in Trading. Unravel its intricacies
     and offer a fresh perspective to your trading strategies.'
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 进入复杂的算法交易领域之旅继续。从多因子模型的复杂性出发，我们的下一站是交易的另一个创新领域：交易中的强化学习。揭开其复杂性，为你的交易策略提供新的视角。
 - en: Reinforcement Learning in Trading
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 交易中的强化学习
 - en: In the world of trading, decisions are influenced by a multitude of variables.
     Assessing and acting upon these variables in real-time can prove to be a challenge
     for even the most seasoned traders. This is where Reinforcement Learning (RL)
     - a cutting-edge branch of Machine Learning - comes into play.
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 在交易的世界中，决策受到众多变量的影响。实时评估和处理这些变量对即便是经验丰富的交易者来说也是一项挑战。这就是强化学习（RL）——一种前沿的机器学习分支——发挥作用的地方。
 - en: Fuelled by the Power of Reinforcement Learning
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过强化学习的力量推动
 - en: RL, essentially, is a type of Machine Learning where an agent learns to behave
     in an environment, by performing actions and discovering errors or rewards. In
     the context of trading, the 'environment' is the financial market, the 'agent'
     is the automated trading system, and the 'actions' are trade-related decisions.
     The aim is to strategize trading actions in a way that the total reward, which
     in this context would be financial return, is maximized.
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 强化学习本质上是一种机器学习，代理通过执行动作和发现错误或奖励来学习如何在环境中行动。在交易的背景下，“环境”是金融市场，“代理”是自动化交易系统，而“动作”是与交易相关的决策。目标是以最大化总奖励（在这个背景下即财务回报）为目标，策划交易行动。
 - en: Reinforcement Learning is characterized by the lack of a clearly labeled dataset,
     since it learns from the environment through interaction, it continually improves
     itself. This key feature provides RL with a unique edge, enabling it to adapt
     quickly and efficiently to the dynamic nature of financial markets.
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 强化学习的特点是缺乏明确标记的数据集，因为它通过与环境的互动进行学习，并不断自我改进。这一关键特性赋予了强化学习独特的优势，使其能够快速有效地适应金融市场的动态特性。
 - en: The Building Blocks of Reinforcement Learning in Trading
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 强化学习在交易中的构建模块
 - en: The primary components of a Reinforcement Learning system in trading are the
     Agent, State, Action, Reward, and Policy.
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 强化学习交易系统的主要组成部分是代理、状态、动作、奖励和策略。
 - en: '1\. Agent: This is the algorithmic trading system which interacts with the
     environment i.e., the financial market.'
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 代理：这是与环境（即金融市场）互动的算法交易系统。
 - en: '2\. State: The state represents the condition of the markets at a given point,
     which includes price, volume, volatility and other financial indicators.'
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 状态：状态表示市场在某一时点的条件，包括价格、成交量、波动性及其他金融指标。
 - en: '3\. Action: The action is a decision made by the agent, which in the trading
     context could be to buy, sell, or hold a financial instrument.'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 动作：动作是代理做出的决策，在交易上下文中可以是买、卖或持有金融工具。
 - en: '4\. Reward: Each action yields a reward or penalty, which is associated with
     the profit or loss generated from the action.'
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 4\. 奖励：每个动作产生一个奖励或惩罚，与由该动作产生的利润或损失相关。
 - en: '5\. Policy: Defines the learning aspect of the system. It gives instructions
     on what action the agent needs to take under specific states in the environment.'
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 5\. 策略：定义了系统的学习方面。它提供了在特定状态下，代理需要采取的行动指令。
 - en: Techniques in Reinforcement Learning for Trading
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 强化学习在交易中的技术
 - en: There are several well-known approaches in RL used for trading, including Q-Learning,
     Deep Q-Networks (DQN), and Policy Gradient methods.
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 在强化学习中，有几种众所周知的交易方法，包括Q-Learning、深度Q网络（DQN）和策略梯度方法。
 - en: '- Q-Learning uses a table-based method to optimize a value function, which
     can be imagined as a table each cell representing a state-action pair''s predicted
     reward.'
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: Q-Learning使用基于表格的方法来优化价值函数，可以想象成一个表格，每个单元格代表一个状态-动作对的预测奖励。
 - en: '- Deep Q-Networks extend Q-learning to scenarios where state and action spaces
     are too large for a table representation. Instead, a neural network is used to
     approximate the value function.'
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 深度Q网络将Q-Learning扩展到状态和动作空间过大而无法用表格表示的场景。相反，使用神经网络来逼近价值函数。'
 - en: '- Policy Gradient methods directly optimize the policy function without requiring
     a value function. Instead, they adjust parameters of the trading policy to maximize
     expected return.'
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: '- 策略梯度方法直接优化策略函数，而不需要价值函数。相反，它们调整交易策略的参数，以最大化预期收益。'
 - en: Python Example of a Simple Reinforcement Learning Trading Strategy
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: Python示例：简单的强化学习交易策略
 - en: 'Here, we illustrate a simple trading strategy powered by the Q-Learning technique
     using Python:'
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们用Python展示一个简单的交易策略，基于Q-Learning技术：
 - en: '[PRE10]'
+  id: totrans-142
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE10]'
 - en: In this example, a trading environment is created where the agent, a Q-Learning
     model, interacts. The outcome of each action by the agent (buy, sell or hold)
     is computed in the step function of the trading environment. The Q-Learning agent
     uses a neural network model to predict action from the given state.
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个示例中，创建了一个交易环境，代理（一个Q-Learning模型）在其中进行互动。代理每个动作（买、卖或持有）的结果在交易环境的步骤函数中计算。Q-Learning代理使用神经网络模型从给定状态预测动作。
 - en: While implementation of Reinforcement Learning in trading shows promise, it
     also presents challenges including handling the vast and complex financial market
     data, and dealing with the dynamic nature of the market which makes grasping the
     financial environment difficult.
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管在交易中实施强化学习显示出前景，但也面临着诸如处理庞大且复杂的金融市场数据以及应对市场动态性所带来的挑战，这使得把握金融环境变得困难。
 - en: Despite its complexities, Reinforcement Learning undoubtedly holds the potential
     to revolutionize the narrative of algorithmic trading, providing a fresh perspective
     for traders and financial analysts.
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管有其复杂性，强化学习无疑具有颠覆算法交易叙事的潜力，为交易者和金融分析师提供了全新的视角。
 - en: In the world of algorithmic trading strategies, exploring, learning, and growing
     never really ceases. With that, we move onto our next stop in this exciting journey,
     venturing into the intriguing world of evolutionary algorithms. A new avenue waits
     to be explored...embark on it, decode its intricacies, and weave your own web
     of profitable trades.
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: 在算法交易策略的世界里，探索、学习和成长永无止境。因此，我们迈向这段激动人心旅程的下一站，深入探讨进化算法的迷人世界。一条新的道路等待被探索……踏上它，解码其复杂性，编织你自己盈利交易的网络。
 - en: Evolutionary Algorithms
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 进化算法
 - en: As the saga of algorithmic trading continues to unfold, it liberates a novel
     cluster of strategies – the evolutionary algorithms. Born from the fascination
     of natural selection and the desire to replicate its efficiency, these algorithms
     bring the principles of evolution into the realm of trading, driving profits through
     intelligent adaptation and continuous learning.
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着算法交易的故事不断展开，它解放了一组新颖的策略——进化算法。出于对自然选择的迷恋和复制其效率的愿望，这些算法将进化的原则引入交易领域，通过智能适应和持续学习驱动盈利。
 - en: The Origin of Evolutionary Algorithms
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: 进化算法的起源
 - en: Evolutionary Algorithms (EA), the poster child of bio-inspired computing, take
     inspiration from natural evolution. They represent a family of optimization algorithms
     based on the principles of genetics and natural selection, such as mutation, crossover
     (recombination), and selection. In trading, EAs are utilised to optimise various
     aspects of a trading strategy and find the configuration that garners the most
     profit or the least risk.
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 进化算法（EA），生物启发计算的代表，汲取自然进化的灵感。它们代表了一类基于遗传学和自然选择原则的优化算法，诸如变异、交叉（重组）和选择。在交易中，EA被用来优化交易策略的各个方面，并找到获取最大利润或最小风险的配置。
 - en: Components of Evolutionary Algorithms in Trading
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: 交易中的进化算法组成部分
 - en: 'The beauty of using EAs in trading lies in their adaptability and resilience,
     much like in the wild. A typical evolutionary algorithm used in a trading context
     involves the following elements:'
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 在交易中使用EA的美在于其适应性和韧性，就像在野外一样。一个典型的在交易环境中使用的进化算法包含以下元素：
 - en: '1\. Population: A group of potential solutions to the problem. In the sphere
     of trading, each individual can be seen as a trading strategy with a unique set
     of parameters.'
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 种群：潜在解决方案的一组。在交易领域，每个个体可以被视为具有独特参数集合的交易策略。
 - en: '2\. Fitness Function: A function that evaluates how ''fit'', or successful,
     an individual (in our case, a trading strategy) is. This can be defined as the
     net profit, Sharpe ratio, or any other measure of success.'
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 适应度函数：评估个体（在我们的例子中是交易策略）“适应性”或成功程度的函数。这可以定义为净利润、夏普比率或任何其他成功的衡量标准。
 - en: '3\. Selection Mechanism: A technique used to pick the best individuals, based
     on the fitness function, to pass their genes to the next generation.'
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 选择机制：一种根据适应度函数挑选最佳个体的技术，以便将它们的基因传递给下一代。
 - en: '4\. Crossover/Mutation: Methods used to generate new individuals (strategies)
     by recombining or slightly altering the existing strategies.'
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: 4\. 交叉/变异：通过重组或稍微改变现有策略来生成新个体（策略）的方法。
 - en: Success with Survival of the Fittest
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: 成功与适者生存
 - en: As the EA process iterates, weakly performing strategies are gradually weeded
     out and replaced by stronger ones, much akin to the survival of the fittest in
     the wild. Over time, this evolutionary progression fine-tunes the algorithm and
     cultivates an array of strategies that are equipped to tackle a diverse spectrum
     of market conditions delicately and yield profits.
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着EA过程的迭代，表现不佳的策略逐渐被淘汰，取而代之的是更强的策略，类似于自然界中的优胜劣汰。随着时间的推移，这种进化进程微调了算法，并培养出一系列能够灵活应对多种市场条件并获得利润的策略。
 - en: A Python Example of Evolutionary Algorithm in Trading
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: Python中进化算法在交易中的示例
 - en: Below Python pseudocode offers a glimpse into how a simple EA might look. For
     broccoli of code, we implement a simple genetic algorithm as an optimisation tool
     for an algorithmic trading strategy.
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下Python伪代码展示了一个简单的EA可能的样子。对于代码的“西兰花”，我们实现了一个简单的遗传算法作为算法交易策略的优化工具。
 - en: '[PRE11]'
+  id: totrans-161
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE11]'
 - en: 'In this ilustrative script, the necessary components of a genetic algorithm
     are set up using the DEAP library:'
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个说明性脚本中，使用DEAP库设置遗传算法所需的组件：
 - en: 1\. An Individual class represents a trading strategy.
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. Individual类表示一个交易策略。
 - en: 2\. A Fitness class is used to measure the success of a strategy.
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. Fitness类用于衡量策略的成功。
 - en: 3\. The evaluation function 'evaluateStrategy' is used to test each strategy
     in the population.
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 评估函数'evaluateStrategy'用于测试种群中的每个策略。
 - en: 4\. The population is then evolved over generations using mutation and crossover
     until the strongest trading strategy survives.
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: 4\. 然后，种群通过突变和交叉在代际中进化，直到最强的交易策略存活下来。
 - en: 'Future: Uncharted Terrain Explored'
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 未来：探索未知领域
 - en: Intriguing and powerful as they may be, EAs are still a relatively new entrant
     to the trading ecosystem, and the field lies rich with uncharted terrain. They
     bring an additional layer of sophistication to algorithmic trading, where traditional
     and rigid models make way for adaptive and dynamic strategies, capable of evolving
     and learning.
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管EA引人入胜且功能强大，但它们在交易生态系统中仍然是相对较新的参与者，且该领域充满未知的领域。它们为算法交易带来了额外的复杂性，让传统和僵化的模型让位于适应性和动态策略，这些策略能够进化和学习。
 - en: Now, having traversed the landscapes of Reinforcement Learning and Evolutionary
     Algorithms, we prepare ourselves to delve into measuring the potency of our deciphered
     algorithms. As we steer forward, we brace ourselves to assess the performance
     of our crafted trading algorithms and to optimise their robustness for the tumult
     of the financial markets. The land of performance metrics awaits exploration...ready
     yourself to unearth its hidden gems.
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，经过强化学习和进化算法的探索，我们准备深入评估我们解码算法的有效性。当我们向前推进时，我们准备评估我们打造的交易算法的性能，并优化它们在金融市场动荡中的稳健性。性能指标的领域等待探索……准备好发掘其隐藏的宝藏。
 - en: Algorithm Performance Metrics
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法性能指标
 - en: When it comes to algorithmic trading, designing and implementing an algorithm
     is only part of the mission. After crafting an exquisite trading bot, how do you
     evaluate its success? What are the metrics to measure its performance and robustness?
@@ -834,11 +1179,15 @@
     we need certain quantifiable metrics to analyse the strength and effectiveness
     of our algorithm. Here, in the depths of chapter five, we give you the toolbox
     of algorithm performance metrics.
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: 在算法交易中，设计和实现一个算法只是任务的一部分。打造出精致的交易机器人后，如何评估其成功？有哪些指标可以衡量其性能和稳健性？就像熟练的外科医生在复杂手术后检查病人，我们需要某些可量化的指标来分析我们算法的强度和有效性。在第五章的深处，我们为你提供算法性能指标的工具箱。
 - en: 'Lift-off: Introduction to Algorithm Performance Metrics'
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: 起飞：算法性能指标简介
 - en: Algorithmic performance metrics or often referred to as trading performance
     metrics, offer quantifiable parameters to assess the effectiveness and robustness
     of your trading algorithm. Without these tactical measures, one can only speculate
@@ -846,66 +1195,96 @@
     waters without a compass. Thus, the significance of performance metrics is paramount
     since they guide the trading strategies toward profitability and sustainability,
     providing crucial benchmarks for comparing different algorithms.
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法性能指标，或称为交易绩效指标，为评估交易算法的有效性和稳健性提供了可量化的参数。没有这些战术措施，人们只能推测交易模型的工作能力——就像在无指南针的情况下航行于未知水域。因此，性能指标的重要性至关重要，因为它们引导交易策略走向盈利和可持续性，为比较不同算法提供了关键基准。
 - en: 'The Lifeblood of Algorithmic Trading: Key Performance Metrics'
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法交易的命脉：关键绩效指标
 - en: 'The world of algorithmic trading presents a cloud of several key performance
     metrics, each offering a unique perspective on the robustness and profitability
     of your trading algorithm. Let''s dissect the primary metrics:'
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法交易的世界呈现出几种关键绩效指标的复杂云朵，每种指标都为交易算法的稳健性和盈利能力提供了独特的视角。让我们深入分析主要指标：
 - en: '1\. Net Profit/Loss: The fundamental measure of your trading algorithm’s performance
     — the total profit or loss it has generated over a specific period.'
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 净利润/损失：衡量交易算法表现的基本指标——在特定时期内产生的总利润或损失。
 - en: '2\. Annualised Returns: The yearly average rate of return that the algorithm
     yields.'
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 年化收益：算法产生的年度平均回报率。
 - en: '3\. Sharpe Ratio: A measure of risk-adjusted return, which reflects the additional
     return per unit of risk assumed by the trader.'
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 夏普比率：一种风险调整后收益的指标，反映交易者承担每单位风险所获得的额外收益。
 - en: '4\. Sortino Ratio: Similar to the Sharpe ratio, but focuses only on negative
     volatility, providing a more nuanced perspective on risk.'
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: 4\. 索提诺比率：类似于夏普比率，但仅关注负波动性，提供对风险更细致的视角。
 - en: '5\. Maximum Drawdown: The largest decrease in portfolio value, indicative of
     the risk potential of the algorithm.'
+  id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: 5\. 最大回撤：投资组合价值的最大减少，表明算法的风险潜力。
 - en: '6\. Winning Rate: The percentage of trades that resulted in a profit.'
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: 6\. 胜率：获利交易所占的百分比。
 - en: '7\. Alpha and Beta: Measures of the algorithm''s performance against the broader
     market, with alpha representing the algorithm’s excess return and beta its market
     sensitivity.'
+  id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: 7\. 阿尔法和贝塔：衡量算法与更广泛市场的表现，阿尔法代表算法的超额收益，贝塔则是其市场敏感度。
 - en: 'Fanning out the Metrics: Python at your Fingertips'
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: 扩展指标：让Python触手可及
 - en: Python, with its treasure of financial and statistical libraries, makes conducting
     performance metric analysis a breeze. Here is a Python pseudocode snippet consisting
     of functions to calculate the key performance metrics. It uses the `pandas` library
     for data manipulation and handling, and `numpy` library for numerical calculations.
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: Python凭借其丰富的金融和统计库，使得进行性能指标分析变得轻而易举。以下是一个Python伪代码片段，包含计算关键绩效指标的函数。它使用`pandas`库进行数据处理和管理，以及`numpy`库进行数值计算。
 - en: '[PRE12]'
+  id: totrans-185
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE12]'
 - en: A New Horizon
+  id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: 新的视野
 - en: Navigating through the dense forest of designing and developing algorithms,
     we now find ourselves equipped with the comprehensive toolbox of performance metrics.
     Like skilled doctors interpreting patient diagnostic reports, we are now proficient
     in analysing the health of an algorithm through its quantitative metrics — taking
     us one step closer to ultimate algorithmic trading.
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: 在设计和开发算法的茂密森林中，我们现在已装备齐全，拥有全面的性能指标工具箱。就像熟练的医生解读患者的诊断报告，我们现在能够通过定量指标分析算法的健康状况——让我们更接近终极的算法交易。
 - en: Although these metrics provide profound insights, they are not the holy grail
     of your trading strategy. Just as a doctor's diagnosis, based on vital health
     metrics, leaves room for human intuition and experience, the interpretation of
@@ -914,9 +1293,13 @@
     grow and evolve through backtesting, optimisation, and real-world experience—a
     journey we will further unfold as we tread deeper into the world of algorithmic
     trading.
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管这些指标提供了深刻的洞察，但它们并不是你交易策略的终极秘诀。就像医生的诊断基于重要的健康指标一样，也留有人为直觉和经验的空间，交易表现指标的解读并不是一门精确的科学。它与交易者的经验和直觉密切相关。而且，像任何优秀的学徒一样，交易算法通过回测、优化和实际经验不断成长和演变——这是我们在深入算法交易的世界时将进一步探讨的旅程。
 - en: Now, brace yourself to dive into the next thrilling exploit of backtesting your
     trading strategies with Python! Onwards we sail.
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，准备好深入探讨使用Python回测你的交易策略的下一个激动人心的冒险吧！让我们扬帆起航。

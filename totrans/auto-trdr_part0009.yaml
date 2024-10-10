@@ -1,9 +1,13 @@
 - en: Chapter 6\. Backtesting Your Trading Strategies with Python
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第6章\. 用Python回测您的交易策略
 - en: What is Backtesting?
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 什么是回测？
 - en: If the algorithm is the heart of our trading system, backtesting is undoubtedly
     the heartbeat that keeps it ticking. It's like a time machine for traders, turning
     the past into a practice field, a dress rehearsal space for their algorithms before
@@ -11,11 +15,15 @@
     world of backtesting, its importance in algorithmic trading, and how it helps
     transform an algorithm from a mathematical ensemble to a practical, profitable,
     and sustainable trading model.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果算法是我们交易系统的核心，回测无疑是保持其运转的心跳。这就像是交易者的时光机器，将过去变成练习场，为他们的算法进行彩排，然后再走上实时交易的舞台。本章深入探讨回测的迷人世界，它在算法交易中的重要性，以及如何将算法从数学集合转变为实用、盈利和可持续的交易模型。
 - en: 'Diving into the Depths: Unravelling Backtesting'
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 深入探索：揭示回测
 - en: Backtesting is a simulation technique used to test a trading strategy against
     historical market data. This time travelling technique helps traders understand
     how a strategy would have performed in the past and therefore, infer how it may
@@ -23,135 +31,189 @@
     enables us to turn the past into a virtual training ground by feeding our trading
     algorithm with historical data and letting it run through years of market conditions,
     whether calm or stormy, in a matter of minutes.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 回测是一种模拟技术，用于测试交易策略在历史市场数据中的表现。这种时间旅行技术帮助交易者了解策略在过去的表现，从而推测其未来表现。花一点时间感受其中的魔力——这项技术使我们能够将过去转化为虚拟训练场，通过历史数据给我们的交易算法喂养，并让其在数分钟内经历多年的市场条件，无论是平静还是动荡。
 - en: The DNA of Backtesting
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 回测的DNA
 - en: 'At its core, backtesting involves three crucial components: historical data,
     a trading strategy or algorithm, and a backtesting platform. The historical data
     is the seed, providing countless possibilities of market scenarios. The trading
     strategy, translated into an algorithm, is the life form, ready to evolve and
     adapt. The backtesting platform is the environment, providing a living space for
     the algorithm to grow, learn, and evolve.'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 从本质上讲，回测涉及三个关键组成部分：历史数据、交易策略或算法，以及回测平台。历史数据是种子，提供无数市场场景的可能性。交易策略转化为算法，是生命体，准备好进化和适应。回测平台是环境，为算法提供生长、学习和演变的空间。
 - en: 'In the Universe of Algorithmic Trading: Importance of Backtesting'
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 在算法交易的宇宙中：回测的重要性
 - en: 'Backtesting validates trading systems. It grinds down our algorithms against
     various market scenarios, unveiling strengths and weaknesses. Here are a few points
     outlining the significance of backtesting in algorithmic trading:'
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 回测验证交易系统。它将我们的算法在各种市场场景下进行测试，揭示优缺点。以下是一些概述回测在算法交易中重要性的要点：
 - en: '1\. Performance Assessments: Backtesting is a solid KPPI - Key Performance
     Potential Indicator, providing insights about the possible performance of your
     trading strategy.'
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 性能评估：回测是一个可靠的KPPI - 关键绩效潜力指标，为您的交易策略可能的表现提供洞察。
 - en: '2\. Risk Management: It helps identify possible risks and vulnerabilities linked
     to your algorithm, providing a chance to fortify your strategy beforehand.'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 风险管理：它帮助识别与您的算法相关的可能风险和脆弱性，提供机会在此之前强化您的策略。
 - en: '3\. Parameter Tuning: It offers scope to fine-tune the parameters, optimizing
     your trading model by learning from the historical data lessons.'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 参数调整：它提供了微调参数的空间，通过学习历史数据的教训来优化您的交易模型。
 - en: 'Python''s Puppeteer: The Pythonic Act of Backtesting'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: Python的操控者：Pythonic回测的行为
 - en: 'Python, owing to its data-friendly nature and powerful financial libraries,
     is an ideal choice for backtesting. With libraries such as `pandas`, `numpy`,
     `matplotlib`, and `pyfolio`, not only can you conduct backtesting, but also visualize
     results, and conduct performance analysis. Here is a simplified pseudo code to
     illustrate how one might setup a basic backtesting system in Python:'
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于Python的数据友好特性和强大的金融库，它是回测的理想选择。借助`pandas`、`numpy`、`matplotlib`和`pyfolio`等库，您不仅可以进行回测，还能可视化结果和进行性能分析。以下是一个简化的伪代码，说明如何在Python中设置一个基本的回测系统：
 - en: '[PRE0]'
+  id: totrans-14
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: On a Passing Note - Backtesting, a Compelling Necessity
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 顺便提一下 - 回测，令人信服的必要性
 - en: Backtesting in algorithmic trading is more than a technical formality - it breathes
     life into our strategies, putting them through the grind, and refining them to
     shine through in the live markets. Backtesting is the master key that decrypts
     the potential of an algorithm, revealing how it might perform when the stakes
     are high. With each algorithmic refinement, we inch closer to unravelling the
     ultimate trading model, and to helping you unlock the code to fortune.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 在算法交易中，回测不仅仅是一种技术形式——它为我们的策略注入生命，让它们经历磨练，并在实际市场中精炼出光彩。回测是解锁算法潜力的万能钥匙，揭示其在高风险情况下的表现。随着每次算法的优化，我们逐步接近揭示终极交易模型，帮助您解锁财富之门。
 - en: We've only just dipped our toes into backtesting's vast ocean. Hold tight as
     we journey deeper into the art of building your own backtesting engine, discovering
     the magic of open-source backtesting libraries, and the secret sauce of strategy
     performance evaluation. Here's to charting the uncharted territories of backtesting!
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们才刚刚触碰回测的广阔海洋。请紧紧抓住，让我们更深入地探索构建自己的回测引擎的艺术，发现开源回测库的魔力，以及策略绩效评估的秘密配方。让我们一起绘制回测的未知领域！
 - en: Building Your Own Backtesting Engine
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 构建您自己的回测引擎
 - en: The success of our trading strategies hinges on the grindstone of backtesting
     - an intricate piece of the puzzle that stresses the algorithm, pushing it to
     its limits, leading to pivotal revelations about its dynamic nature. Here, we
     delve deeper into the spellbinding realm of backtesting and introduce an art form
     that flexes the muscle of programming prowess - building your own backtesting
     engine.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的交易策略成功依赖于回测的磨刀石——这是一块复杂的拼图，考验着算法，推动它达到极限，从而揭示其动态特性的重要真相。在这里，我们将深入探讨回测这个迷人的领域，并介绍一种展现编程能力的艺术形式——构建自己的回测引擎。
 - en: Turning Ideas into Actions - Building a Backtesting Engine
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 将想法变为行动 - 构建回测引擎
 - en: Before you start coding your backtesting engine, you need a blueprint - a well-thought-out
     plan outlining the features and components your engine should have. This design
     process involves understanding your trading strategy requirements, crunching through
     historical data, and integrating critical performance metrics.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 在开始编码回测引擎之前，您需要一个蓝图——一个经过深思熟虑的计划，概述您的引擎应具备的特性和组件。这个设计过程涉及理解您的交易策略需求，处理历史数据，并整合关键的绩效指标。
 - en: The backtesting engine acts as a sandbox for your trading strategies, giving
     them a controlled environment to test their mettle against an onslaught of historical
     data. Like a maestro conducting a symphony, the backend engine conducts each part
     of the algorithm through the process, making sure the symphony plays harmoniously
     towards the pinnacle of profit.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 回测引擎充当您交易策略的沙盒，提供一个受控环境，以便在历史数据的冲击下测试它们的能力。就像指挥家指挥交响乐一样，后端引擎通过这一过程引导算法的各个部分，确保交响乐和谐演奏，达到利润的巅峰。
 - en: 'Coding the Symphony: Translating Trading Strategies into Python'
+  id: totrans-23
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 编写交响乐：将交易策略转化为Python
 - en: Below is a simplified example of a backtesting engine built with Python. The
     codes take advantage of Python's data-friendly libraries like 'pandas' and 'numpy'
     to transform the theoretical algorithms into executable commands.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是一个用Python构建的简化版回测引擎示例。这些代码利用了Python友好的数据处理库，如'pandas'和'numpy'，将理论算法转化为可执行命令。
 - en: '[PRE1]'
+  id: totrans-25
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: Remember that the code above represents an over-simplistic version of a backtesting
     engine. A production-ready backtesting engine involves much more sophistication,
     handling trade executions, transaction costs, risk management, and a lot more.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 请记住，上面的代码代表了一个过于简化的回测引擎版本。一个可投入生产的回测引擎涉及更复杂的功能，处理交易执行、交易成本、风险管理等更多内容。
 - en: 'Fine-tuning: Optimizing the Musicians of Our Symphony'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 微调：优化我们交响乐的演奏者
 - en: Developing a backtesting engine is an iterative process. It's like creating
     an artwork, carving out unimportant chunks of code, and polishing the essential
     ones. The initial draft is half the battle. The real litmus test lies in fine-tuning
     the engine, becoming a symbiotic apparatus with the strategy, complementing its
     potential, and uncovering the risks.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 开发回测引擎是一个迭代的过程。就像创作艺术品，雕刻掉不重要的代码部分，并打磨关键部分。初稿是战斗的一半。真正的考验在于微调引擎，使其与策略形成共生装置，补充其潜力，并揭示风险。
 - en: 'On the Horizon: The Trails of Our Expedition Ahead'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 地平线上：我们前方探险的轨迹
 - en: We've now embarked on our journey to build a backtesting engine, an imperative
     companion to our trading strategy. However, our expedition has just begun. The
     path ahead is lined with the scintillating landscapes of open-source backtesting
     libraries, the invaluable treasure troves of strategy performance evaluation,
     and a fascinating terrain of risk assessment in backtesting. Keep your explorer's
     hat on - our adventure has exciting findings in store at every turn!
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们现在已开始构建回测引擎的旅程，这是我们交易策略的重要伴侣。然而，我们的探险才刚刚开始。前方的道路布满了开源回测库的迷人风景、战略绩效评估的宝贵宝藏，以及回测中风险评估的迷人领域。保持你的探索者帽子——我们的冒险在每一个转角都有激动人心的发现！
 - en: To sum it up, the prowess of a backtesting engine lies in its adept orchestration
     of translating our theoretical trading strategies into efficient, executable commands.
     The magic of backtesting comes from its symphony of variables, historical data,
@@ -159,11 +221,15 @@
     dance of trades, aiming towards profitability. The power of backtesting has the
     potential to turn your algorithmic trading strategies from underdogs to overachievers
     - tune into the next  to amplify that power!
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 总而言之，一个回测引擎的实力在于其熟练地将我们的理论交易策略转化为高效、可执行的指令。回测的魔力源于变量、历史数据和 Python 的计算能力的交响乐，所有这些元素在交易的节奏舞蹈中同步，目标是盈利。回测的力量有潜力将你的算法交易策略从黑马变为优胜者——请关注下一步以增强这一力量！
 - en: Open Source Backtesting Libraries
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 开源回测库
 - en: After immersing ourselves into the intriguing world of creating our personalized
     backtesting engine, an exciting revelation is on the horizon. It's time to shift
     gears and embrace the robust world of open-source backtesting libraries. The versatility
@@ -171,205 +237,289 @@
     journey from traditional approaches to state-of-the-art methodologies. Welcome
     to the adrenaline-pumping ride of exploring, integrating, and leveraging open-source
     backtesting libraries.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 在沉浸于创建个性化回测引擎的迷人世界后，一个激动人心的启示即将到来。是时候转变思路，拥抱开源回测库的强大世界。这些库的多样性和效率可以引导算法交易者从传统方法转变为尖端方法论。欢迎来到探索、整合和利用开源回测库的刺激旅程。
 - en: 'The Open-Source Ecosystem: A Treasure Trove of Backtesting Libraries'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 开源生态系统：回测库的宝藏
 - en: Open-source backtesting libraries are quintessential tools in an algorithmic
     trader's repertoire. They are pre-built software packages replete with rich features
     and intuitive interfaces, equipped to take your trading strategies on a test drive
     on the high-speed highway of historical data.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 开源回测库是算法交易者工具库中的典范工具。它们是预构建的软件包，充满丰富的功能和直观的界面，能够让你的交易策略在历史数据的高速公路上进行试驾。
 - en: These libraries are the brainchild of the most ingenious minds in the trading
     industry, which have generously shared their technical prowess with the world.
     With big-hearted contributions from experts worldwide, these libraries have evolved
     into a robust and evolving ecosystem, catering to various trading strategies,
     asset classes, and levels of trading sophistication.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些库是交易行业最聪明头脑的结晶，他们慷慨地将其技术才华分享给世界。凭借来自全球专家的慷慨贡献，这些库演变成一个强大且不断发展的生态系统，适应各种交易策略、资产类别和交易复杂性水平。
 - en: 'The Market Leaders: Backtrader, PyAlgoTrade, and Zipline'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 市场领军者：Backtrader、PyAlgoTrade 和 Zipline
 - en: Among the open-source backtesting libraries, certain names shine brighter than
     the rest, courtesy of their unparalleled functionality, easy-to-navigate interfaces,
     and modular structure. Backtrader, PyAlgoTrade, and Zipline are indeed worth their
     weight in gold in the world of algorithmic trading. Let's delve deeper into each
     of these gems.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 在开源回测库中，一些名字因其无与伦比的功能、易于导航的界面和模块化结构而格外闪耀。Backtrader、PyAlgoTrade 和 Zipline 在算法交易的世界中确实值得其黄金的分量。让我们深入探索这些瑰宝。
 - en: 'Backtrader: Versatility at its Best'
+  id: totrans-39
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: Backtrader：最佳多样性
 - en: Backtrader is hailed as one of the most user-friendly yet powerful backtesting
     libraries. Its brooding charm lies in its minimalist code structure, intuitive
     programming logic, and the capability to backtest and live trade with the same
     script. Moreover, with its ability to handle multiple data feeds, implement various
     order types, and provide detailed trading statistics, Backtrader promises an impeccable
     experience to trading enthusiasts.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: Backtrader被誉为最用户友好而又强大的回测库之一。它迷人的魅力在于简约的代码结构、直观的编程逻辑以及使用同一脚本进行回测和实时交易的能力。此外，凭借处理多个数据源、实施各种订单类型和提供详细交易统计的能力，Backtrader为交易爱好者承诺了完美的体验。
 - en: 'Here is a simplistic example of a moving average crossover strategy backtest
     conducted using Backtrader:'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面是一个使用Backtrader进行的简单移动平均交叉策略回测示例：
 - en: '[PRE2]'
+  id: totrans-42
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: 'PyAlgoTrade: Unleashing Robustness'
+  id: totrans-43
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: PyAlgoTrade：释放强大
 - en: PyAlgoTrade prides itself on its robustness and flexibility. It provides an
     unmatched range of features like support for multiple data feed formats, strategy
     optimization, technical indicator libraries, and easy integration with live trading
     on various platforms.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: PyAlgoTrade以其强大和灵活性而自豪。它提供无与伦比的功能范围，如支持多种数据源格式、策略优化、技术指标库以及与各种平台的实时交易的简单集成。
 - en: 'Zipline: Riding the High Wave'
+  id: totrans-45
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: Zipline：乘风破浪
 - en: 'Zipline, developed by Quantopian, is a highly sophisticated backtesting library
     that is extensively used for large scale, production-ready backtesting. It provides
     the ultimate flexibility, supporting several types of trading: equities, futures,
     options, and more. Furthermore, it has exclusive features like a rich set of built-in
     factors, complex event handling, large-dataset handling capabilities, and performance
     metrics like the Sharpe ratio and drawdown analytics.'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: Zipline由Quantopian开发，是一个高度复杂的回测库，广泛用于大规模、生产就绪的回测。它提供了*终极*灵活性，支持多种类型的交易：股票、期货、期权等。此外，它还具有独特的功能，如丰富的内置因子、复杂的事件处理、大数据集处理能力，以及夏普比率和回撤分析等表现指标。
 - en: 'Manifesting Success: Open-Source Backtesting Libraries, The Winning Edge'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 显现成功：开源回测库，制胜的优势
 - en: Open-source backtesting platforms democratize the algorithmic trading landscape,
     making it accessible to enthusiasts of all experience levels. As we march ahead
     on our journey into the exhilarating world of algorithmic trading, let's not forget
     these remarkable tools that have been instrumental in making the domain what it
     is today. Stay tuned as we explore more captivating dimensions of backtesting
     in our upcoming s.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 开源回测平台使算法交易领域民主化，让所有经验水平的爱好者都能接触到。在我们迈向激动人心的算法交易世界的旅程中，别忘了这些在塑造这个领域中发挥重要作用的卓越工具。敬请关注，我们将在即将到来的系列中探讨更多迷人的回测维度。
 - en: To conclude, the use of open-source backtesting libraries propels your strategies
     towards extraordinary heights. The power of these platforms encapsulates the ideals
     of the trading world, where transparency meets sophistication, allowing traders
     to conquer the markets with unparalleled precision and prowess.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，开源回测库的使用将你的策略推向非凡的高度。这些平台的力量体现了交易世界的理想，透明与复杂的交汇使交易者能够以无与伦比的精准和能力征服市场。
 - en: Evaluating Strategy Performance
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 评估策略表现
 - en: Wins and losses, profits and declines, it's all part of the algorithmic trading
     game. But to separate a winning strategy from a losing one, we need robust performance
     evaluation techniques. As traders, we can't rest on our laurels after devising
     a seemingly stellar strategy. The real battle begins now, evaluating its efficacy
     and potential to bring in windfall gains.
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 胜利与损失、利润与下降，这都是算法交易游戏的一部分。但要将获胜策略与失败策略区分开来，我们需要强大的表现评估技术。作为交易者，我们不能在制定出一个看似出色的策略后自满。真正的战斗从现在开始，评估其有效性和带来暴利的潜力。
 - en: 'Profits, Pips and Percentages: What Matters Most?'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 利润、点差和百分比：什么最重要？
 - en: When it comes to trading, numbers don't lie. Initially, profits might seem like
     the most plausible measure of success. However, a careful trader knows it's not
     just about the amount earned, but also the risk undertaken, the drawdown experienced,
     and the consistency of returns. It's within this complex web of performance metrics
     that you truly gauge your strategy's worth.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 在交易中，数字不会说谎。起初，利润似乎是成功的最可信衡量标准。然而，细心的交易者知道，这不仅仅关乎赚取的金额，还包括承担的风险、经历的回撤以及回报的一致性。在这复杂的表现指标网络中，你才能真正评估策略的价值。
 - en: 'Measuring the Mettle: Key Performance Indicators'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 衡量能力：关键绩效指标
 - en: 'Different traders vouch by different metrics, depending on their trading philosophies
     and risk appetite. However, some commonly revered performance indicators include:'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 不同的交易者根据他们的交易哲学和风险偏好，使用不同的指标。然而，一些常被尊重的绩效指标包括：
 - en: Win/Loss Ratio
+  id: totrans-56
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 胜/负比率
 - en: This ratio compares the number of winning trades to the number of losing trades.
     It's a compelling measure of the frequency of profitable trades, but it doesn't
     account for the magnitude of gains or losses.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个比率比较了获胜交易的数量与失败交易的数量。它是一个引人注目的利润交易频率的衡量标准，但并未考虑收益或损失的大小。
 - en: Average Win to Average Loss Ratio
+  id: totrans-58
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 平均赢利与平均亏损比率
 - en: This ratio takes into account not just the count, but also the size of the profits
     and losses. It divides the average profit per successful trade by the average
     loss per unsuccessful trade. A value over unity indicates that the strategy, on
     average, wins more than it loses.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个比率不仅考虑数量，还考虑利润和损失的大小。它将每笔成功交易的平均利润除以每笔失败交易的平均损失。超过1的数值表明该策略在平均上获胜次数多于失败次数。
 - en: Profit Factor
+  id: totrans-60
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 盈利因子
 - en: The profitability factor takes the ratio of gross profit to gross loss. Essentially,
     it's the total amount won divided by the total amount lost. A value over one is
     what all traders aspire for!
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 盈利因子是总利润与总亏损的比率。实质上，它是总获利金额除以总亏损金额。一个超过一的数值是所有交易者所追求的！
 - en: Drawdown and Maximum Drawdown
+  id: totrans-62
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 回撤和最大回撤
 - en: Drawdown reflects the peak-to-trough decline of your trading equity, indicating
     your strategy's riskiness. Maximum drawdown, the biggest such decline, provides
     insights about the worst-case scenario to prepare for.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 回撤反映了你的交易资本从峰值到谷底的下降，表明你的策略风险程度。最大回撤是最大的一次下降，它提供了关于最坏情况的见解，以便做好准备。
 - en: 'Beyond the Simple Measurements: Sharpe and Sortino Ratios'
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 超越简单测量：夏普和索提诺比率
 - en: While the above metrics are simple and straightforward to understand, more sophisticated
     measures exist that consider risk-adjusted returns.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然上述指标简单明了，但还有更复杂的度量标准考虑风险调整后的收益。
 - en: Sharpe Ratio
+  id: totrans-66
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 夏普比率
 - en: The Sharpe ratio, named after Nobel laureate William F. Sharpe, measures the
     excess return per unit of deviation in investment. A higher Sharpe ratio indicates
     a more desirable, less risky strategy.
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 夏普比率是以诺贝尔奖获得者威廉·F·夏普命名的，它衡量每单位投资偏差的超额收益。更高的夏普比率表明策略更具吸引力，风险更低。
 - en: Sortino Ratio
+  id: totrans-68
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 索提诺比率
 - en: The Sortino ratio is a variant of the Sharpe ratio, except that it only considers
     downside risk rather than total risk. It's an advanced metric preferred by traders
     averse to downside risk.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 索提诺比率是夏普比率的一个变体，除了它仅考虑下行风险而非总风险。这是一个高级指标，受到厌恶下行风险的交易者的青睐。
 - en: 'When Do You Stop: Drawdown Limit and Stop Loss'
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 你何时停止：回撤限制和止损
 - en: While failure is the stepping stone to success, knowing when to accept failure
     and move on is an essential part of trading prudence. Setting a drawdown limit
     and a stop loss price level can prevent cascading losses that can wipe out your
     trading capital.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然失败是通往成功的垫脚石，但知道何时接受失败并继续前进是交易谨慎的重要组成部分。设定回撤限制和止损价格水平可以防止连锁损失，进而抹去你的交易资金。
 - en: Python Libraries for Performance Analytics
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 用于绩效分析的Python库
 - en: Python, as always, comes to the aid of traders by offering libraries like Pyfolio
     and Ffn for performance analysis and visualisation. These tools empower traders
     to conduct sophisticated analyses with ready to use functions and easy customisation.
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 一如既往，Python通过提供像Pyfolio和Ffn这样的库，帮助交易者进行绩效分析和可视化。这些工具使交易者能够使用现成的函数和简单的自定义，进行复杂的分析。
 - en: As we trudge further down the road of algorithmic trading, remember that the
     mean streets of markets don't spare amateurs. Strategy performance evaluation
     is your armour that shields you from fatal losses and guides you towards sunshine
     returns. So, don your analytical hat, scrutinise your performance metrics, and
     keep refining your strategies.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们在算法交易的道路上不断前行时，请记住，市场的严酷不会饶恕业余交易者。策略绩效评估是你抵御致命损失的盔甲，指引你走向阳光收益。因此，戴上你的分析帽，仔细审视你的绩效指标，并不断完善你的策略。
 - en: To wrap up, evaluating the performance of your trading strategy is a critical
     step in your journey. It provides a robust check and balance that ensures your
     algorithm is up to the standard and capable of sustaining the market's ups and
@@ -377,33 +527,45 @@
     trading approach into focus. Join me in the next , our risk management, where
     we will learn to deal with the inherent risks associated with back testing. Stay
     tuned and happy trading!
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，评估你的交易策略的表现是你旅程中的关键一步。它提供了一种强有力的检查和平衡，确保你的算法达到标准，并能够承受市场的起伏。这是一种细致的视角，使你的交易方法的有效性或缺陷变得清晰。在下一节中加入我，我们将学习如何应对与回测相关的固有风险。敬请期待，祝你交易愉快！
 - en: Risk Assessment in Backtesting
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 回测中的风险评估
 - en: Risk, the unwelcomed guest on our trading journey, accompanies us at every milestone
     and crossroad. While we can't banish it entirely due to the inherent uncertainties
     of financial markets, we can certainly assess, manage, and minimize it. In this
     context, backtesting emerges as a vital tool. Far from being just a canvas to
     sketch our strategy's performance, backtesting turns into our risk radar, helping
     us detect, measure and navigate the risky terrains of trading.
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 风险，这位在我们交易旅程中不受欢迎的客人，伴随着我们走过每一个里程碑和十字路口。虽然我们无法完全驱逐它，因为金融市场固有的不确定性，但我们确实可以评估、管理和最小化它。在这个背景下，回测成为一个重要的工具。回测远不止是勾勒我们策略表现的画布，它还变成了我们的风险雷达，帮助我们探测、衡量和应对交易中的风险领域。
 - en: 'The Sunset Seat of Backtesting: Where Strategy Meets Reality'
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 回测的黄昏座位：策略与现实的交汇处
 - en: Backtesting, much like a trading time machine, enables us to transport our strategies
     to past market conditions, observe its performance, and fine-tune it innovatively.
     While we enjoy the privilege of knowing the past market behavior, it comes with
     the peril of overlooking the future uncertainties that twist and turn the market
     trajectory. Hence, it's essential that amidst the glory of our strategy's past
     successes, we don't turn oblivious to its potential future risks.
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 回测，就像一台交易时光机，使我们能够将策略带回到过去的市场条件，观察其表现，并进行创新性的微调。虽然我们享有了解过去市场行为的特权，但这也伴随着忽视未来不确定性可能扭转市场轨迹的风险。因此，在我们策略过去成功的荣耀中，重要的是不要对其未来潜在风险视而不见。
 - en: 'Aversion to the Reversion: Understanding the Concept of Overfitting'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 对回归的厌恶：理解过拟合的概念
 - en: A pitfall to heed during backtesting is the trap of overfitting. You may come
     across a model that fits the data so snugly, it may seem a match made in the algorithmic
     heavens. But beware! Remember, we are dealing with financial time series data
@@ -411,68 +573,98 @@
     data might over-complicate the strategy and will most certainly falter under future
     scenarios. Therefore, a model that leaves a bit of room for statistical noise
     and uncertainty often fares better.
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 在回测过程中需要注意的一个陷阱是过拟合的陷阱。你可能会遇到一个模型，它与数据契合得如此紧密，仿佛是算法天才的杰作。但请当心！记住，我们在处理金融时间序列数据，而这类数据以其非平稳性而臭名昭著。一个针对过去数据微调的模型可能会使策略过于复杂，并且在未来场景中肯定会表现不佳。因此，一个留有一些统计噪声和不确定性的模型往往表现得更好。
 - en: 'Cross-Validation: A Friend of Strategy Builders'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 交叉验证：策略构建者的朋友
 - en: A powerful weapon to counter overfitting in your strategy-building arsenal is
     cross-validation. Cross-validation, ideally in a walk-forward setting, not only
     tests the robustness of your strategy across different market conditions but also
     prevents the overfitting blight from spoiling your trading strategy.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 交叉验证是应对过拟合的强大武器，理想情况下在前向行走的设置中，交叉验证不仅测试你的策略在不同市场条件下的稳健性，还能防止过拟合对你的交易策略造成的损害。
 - en: 'Evaluating the Risk Metrics: The Gauges to Glance'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 评估风险指标：一瞥即知的测量工具
 - en: 'While backtesting, several risk measures can provide valuable insights into
     the risk associated with our trading strategy. Here are a few noteworthy ones:'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 在回测过程中，几种风险指标可以为我们提供关于交易策略相关风险的宝贵见解。以下是一些值得注意的指标：
 - en: Maximum Drawdown
+  id: totrans-86
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 最大回撤
 - en: This metric represents the largest single drop from peak to bottom in your equity,
     indicating the highest amount you could potentially lose with your trading strategy.
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个指标代表了你资金从峰值到谷底的最大单次跌幅，表明你可能在交易策略中损失的最高金额。
 - en: Value at Risk (VaR)
+  id: totrans-88
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 风险价值（VaR）
 - en: VaR represents a standard measure of risk and illustrates the maximum loss you
     can incur with a certain level of confidence (for example, 95% or 99%) over a
     specific period.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: VaR代表风险的标准测量，说明在特定期间内，您可以在某个置信水平下（例如95%或99%）承受的最大损失。
 - en: Conditional Value at Risk (CVaR)
+  id: totrans-90
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 条件风险价值（CVaR）
 - en: While VaR considers the maximum loss within a predictable region of risk, CVaR,
     also known as expected shortfall, gives a pessimistic gauge by considering the
     average of losses that occur beyond the VaR cutoff.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: VaR考虑的是在可预测的风险区域内的最大损失，而CVaR（也称为预期短缺）通过考虑超过VaR截点的损失平均值，提供了一种悲观的评估。
 - en: Stress Tests and Scenario Analysis
+  id: totrans-92
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 压力测试与情景分析
 - en: By putting your trading strategy through radical market changes or hypothetical
     events, you can assess its resilience and sensitivity under extreme conditions.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过将你的交易策略置于激烈的市场变动或假设事件中，你可以评估其在极端条件下的韧性和敏感性。
 - en: Python Libraries for Backtesting and Risk Assessment
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: Python库用于回测与风险评估
 - en: The simplicity yet powerful versatility of Python again shines bright when it
     comes to backtesting and risk analysis. Libraries such as PyAlgoTrade, bt, and
     zipline provide intuitive interfaces and diverse capabilities for backtesting
     strategies. To evaluate risk, libraries like Pyfolio can spring easy-to-understand
     visualizations of risk metrics from the data.
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: Python的简单性与强大灵活性在回测和风险分析方面再次熠熠生辉。像PyAlgoTrade、bt和zipline这样的库提供直观的接口和多样的回测策略能力。为了评估风险，像Pyfolio这样的库能够从数据中快速生成易于理解的风险指标可视化。
 - en: As systemically significant banks know all too well, a robust risk management
     framework is not only for survival but also for thriving in the choppy market
     waters. It is no different for us, individual traders or algorithm makers, in
@@ -483,11 +675,15 @@
     next, we uncover the dangers and biases in data snooping and curb fitting—two
     hurdles on our path to successful backtesting. Until then, code right, trade tight,
     and be light on your risk appetite!
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为系统重要性银行非常清楚，强健的风险管理框架不仅是生存之道，更是在人潮涌动的市场中茁壮成长的基础。对于我们这些个体交易者或算法开发者来说，情况也是如此。在这广阔的交易海洋中，经历了数百年的金融市场，对过于聪明的行为并不友好，尤其是当这些聪明来自于在波动风暴中无法承受的模型时。因此，每次跳上你的回测时间机时，不要忘记随身携带风险雷达和风险计。接下来，我们将揭示数据窥探和曲线拟合中的危险和偏见——这是成功回测路上的两个障碍。在此之前，代码要正确，交易要紧凑，保持轻盈的风险胃口！
 - en: Data Snooping and Curve Fitting
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据窥探与曲线拟合
 - en: As algorithmic traders, we have to navigate through unsteady trading waters
     fraught with risks, the hidden rocks of data snooping and whirlpools of curve
     fitting being some of the many perils. Business, science, art, and, indeed, trading
@@ -496,118 +692,164 @@
     through backtesting, an appropriate balance needs to be struck between the 'stick
     to what works' and 'break the mould' approaches. This is where the concepts of
     data snooping and curve fitting come into play.
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为算法交易员，我们必须在充满风险的波动交易环境中航行，数据窥探的隐患和曲线拟合的漩涡是许多危险中的一部分。商业、科学、艺术，以及交易——无论我们选择何处观察，规则和创新之间的永恒斗争无处不在。然而，当涉及通过回测优化交易策略时，必须在“坚持有效的方法”和“打破常规”之间找到适当的平衡。这就是数据窥探和曲线拟合概念发挥作用的地方。
 - en: 'The Artful Dodger: Data Snooping'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 巧妙的逃避者：数据窥探
 - en: Data snooping refers to the process of trying out various model forms or parameter
     values on the same dataset until an over-optimistic result is achieved. It's a
     bit like trying every key on your keychain until you find the one that opens the
     lock. While this might solve the immediate problem at hand, it provides no guarantee
     that the chosen key (read model) will unlock other doors (read future datasets).
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据窥探指的是在同一数据集上尝试各种模型形式或参数值，直到获得过于乐观的结果。这有点像试图用钥匙链上的每把钥匙，直到找到能够打开锁的那一把。虽然这可能解决了眼前的问题，但并不能保证所选择的钥匙（即模型）能够打开其他的门（即未来的数据集）。
 - en: The illusion of a great performing model shatters when it's time to predict
     unseen data. The main reason for this is that by extensively experimenting on
     the historical data, you might have accidentally captured noise and anomalies
     specific to that dataset, which may not hold for future data.
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 当需要预测未见数据时，优秀模型的幻觉会破灭。主要原因在于，过度实验历史数据可能无意中捕捉到了该数据集特有的噪声和异常，而这些可能在未来数据中并不适用。
 - en: 'Paint to Grain: Curve Fitting'
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 从画到粒：曲线拟合
 - en: Close on the heels of data snooping is the problem of curve fitting. Curve fitting
     is developing a trading strategy that fits the previous data incredibly well but
     fails to perform on new, unseen data. The risk is that by adjusting a model intricately
     to fit specific features of historical data, we construct a curve that matches
     the past but is possibly ill-suited for the future.
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据窥探后紧接着是曲线拟合的问题。曲线拟合是指开发一个在历史数据上表现极佳但在新数据上却无法表现的交易策略。风险在于，通过对模型进行复杂调整以适应历史数据的特定特征，我们可能构建了一个与过去相匹配但对未来可能不适用的曲线。
 - en: The problem is akin to designing a glove that precisely mimics every crease
     and line on a hand. It would fit the model hand perfectly but might be too over-specific
     to fit other hands.
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个问题类似于设计一只精确模仿手部每个褶皱和线条的手套。它可能完美适合模型手，但可能过于具体，无法适应其他手。
 - en: 'Staying on Charted Waters: Preventing Data Snooping and Curve Fitting'
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 保持在已知水域：防止数据窥探和曲线拟合
 - en: Now that we've understood the challenges, let's arm ourselves with the tools
     to address them.
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们已经了解了挑战，让我们装备自己以应对这些挑战的工具。
 - en: Out-of-Sample Testing
+  id: totrans-107
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 超样本测试
 - en: A workaround to combat these hurdles lies in splitting your data into 'in-sample'
     and 'out-sample.' The 'in-sample' data is for developing and optimizing your trading
     strategy while the 'out-sample' data tests its mettle to predict future trends.
     If your strategy excels in both these datasets, you can have more confidence in
     its robustness.
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 解决这些难题的一种方法是将数据分为“样本内”和“样本外”。“样本内”数据用于开发和优化你的交易策略，而“样本外”数据则测试其预测未来趋势的能力。如果你的策略在这两个数据集上都表现出色，你可以更有信心它的稳健性。
 - en: Cross-Validation Techniques
+  id: totrans-109
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 交叉验证技术
 - en: Techniques like 'k-fold cross-validation' take this a step further by dividing
     the dataset into 'k' segments. The model is trained on 'k-1' segments and tested
     on the remaining one. This process is repeated 'k' times, and the model's performance
     is an average of these 'k' runs. Cross-validation helps ensure your strategy is
     holistic enough to not be a prisoner of certain dataset characteristics.
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 类似于“k折交叉验证”的技术通过将数据集分成“k”个部分，进一步提升了这一点。模型在“k-1”个部分上训练，在剩下的一个部分上测试。这个过程重复进行“k”次，模型的表现是这“k”次运行的平均值。交叉验证有助于确保你的策略足够全面，不会成为某些数据集特征的囚徒。
 - en: Regularization
+  id: totrans-111
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 正则化
 - en: Another guard against curve fitting is regularization. Regularization prevents
     overly complex models by penalizing models with excessive parameters or overly
     complex forms. Less complex models tend to be more generalized and therefore are
     better at predicting the inherent 'signal' rather than the 'noise' from past data.
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一种防止曲线拟合的方法是正则化。正则化通过惩罚过于复杂的模型，防止过于复杂的参数或形式。较简单的模型往往更具泛化能力，因此在预测过去数据的固有“信号”而非“噪声”时表现更佳。
 - en: '#                               Simulation'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: '#                               模拟'
 - en: Finally, you can resort to Monte Carlo simulations to test your strategy under
     various market conditions and pre-determined levels of uncertainty.
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，你可以借助蒙特卡洛模拟来测试你的策略在各种市场条件和预先设定的不确定性水平下的表现。
 - en: In the end, the journey to profitable algorithmic trading involves not just
     constructing high performing models but also ensuring they are robust and generalized
     enough to work in real-time markets. Striking this balance between innovation
     and caution, between the old and new, is all part of the game.
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 最终，盈利的算法交易之旅不仅涉及构建高性能模型，还要确保它们足够稳健和泛化，能够在实时市场中运作。在创新与谨慎、旧与新之间取得这种平衡，正是游戏的一部分。
 - en: Up next, we deal with an important aspect of backtesting that often slips under
     the radar - the critical difference between real-world trading and backtesting.
     A gap that every algorithmic trader needs to be aware of, so put on your thinking
     caps as we delve deeper into the nuances of backtesting.
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我们将讨论一个常被忽视的重要回测方面——现实交易与回测之间的关键差异。这是每个算法交易者都需要意识到的差距，所以请认真思考，因为我们将深入探讨回测的细微差别。
 - en: Importance of Out-of-Sample Testing
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 未来市场测试的重要性
 - en: Walking on a tightrope is a daring display of balance and control. Similar is
     the journey through financial markets, where thorny paths are paved with promising
     riches on one side and steep falls towards losses on the other. Among these thorny
     paths, algorithmic traders often grapple with a compelling question - how well
     would their strategy fare in the future? To circumnavigate this uncertainty, we
     must illuminate our path with the flashlight of robust 'out-of-sample' testing.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 在钢丝上行走是一种大胆的平衡与控制的展示。金融市场的旅程亦然，荆棘满布的道路一侧是丰厚的财富，另一侧则是陡峭的损失。面对这些荆棘丛生的道路，算法交易者常常困扰于一个令人信服的问题——他们的策略在未来的表现如何？为了解决这种不确定性，我们必须用强有力的'超出样本'测试的手电筒照亮我们的道路。
 - en: But first, let's take a step back and understand the importance of 'out-of-sample'
     testing in algorithmic trading. If in-sample data is the training ground where
     our strategies learn and train, out-of-sample data is where they run the real
     race. It's the pièce de résistance that substantiates the power of a trading approach
     in unfamiliar territories.
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 但首先，让我们退一步，理解'超出样本'测试在算法交易中的重要性。如果样本内数据是我们的策略学习和训练的训练场，那么超出样本数据则是它们进行真正比赛的地方。这是证明交易方法在陌生领域中威力的关键所在。
 - en: 'Going a Step Beyond: Trading Performance in the Unseen World'
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 更进一步：未见世界中的交易表现
 - en: '''Out-of-sample'' performance thrives on the foundation of unseen data that
     hasn''t been touched during the model-building process. It tests your trading
     model''s aptitude to extrapolate from past learning in conditions that were kept
@@ -615,11 +857,15 @@
     who has trained in the default weather conditions of his training ground to compete
     in an extreme weather condition. It tests the flexibility, sustainability, and
     generalization power of the athlete''s training.'
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: '''超出样本''表现基于未在模型构建过程中触及的未知数据。它测试你的交易模型在故意隐藏的条件下从过去的学习中推断的能力。这就像一名精英运动员在他训练场的常规天气条件下训练，却在极端天气条件下比赛。这考验了运动员训练的灵活性、可持续性和概括能力。'
 - en: 'The Lighthouse in the Fog: Guiding the Ship of Future Performance'
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 雾中的灯塔：引导未来表现的船只
 - en: The crux of the matter lies in realizing that future markets stand as an enigma
     shrouded in uncertainty and randomness. This conundrum is augmented by market
     drivers, that are complex, often abrupt, and beyond human control. Amidst this
@@ -627,33 +873,45 @@
     the fog of uncertainty. It provides a snapshot of how your meticulously created
     trading strategy would be expected to perform on unseen future data - given its
     past learning.
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 关键在于认识到，未来市场如同笼罩在不确定性和随机性的谜团。这一困境因市场驱动因素而加剧，这些因素复杂、常常突发，并超出人类控制。在这片随机性中，'超出样本'评估如同你的灯塔，指引你穿越不确定性的迷雾。它提供了一个快照，展示你精心制定的交易策略在未见的未来数据上预期的表现——基于其过去的学习。
 - en: 'Out-of-Sample: Trust but Verify'
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 超出样本：信任但需验证
 - en: But there's a rider! The essence of out-of-sample testing lies in religiously
     keeping a sample of data aside, untouched from the optimization juggernaut. If
     you continuously tweak your model to perform well on out-of-sample data, it defeats
     the purpose as your 'out-of-sample' becomes, in effect, your 'in-sample'. In other
     words, you need to treat the out-of-sample data as sacrosanct, shielded from any
     biases, overfitting, and over-optimisation.
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: 但这里有一个前提！超出样本测试的本质在于严格地将一部分数据留作旁观者，避免被优化过程影响。如果你不断调整模型以便在超出样本数据上表现良好，那就违背了目的，因为你的'超出样本'实际上变成了你的'样本内'。换句话说，你需要将超出样本数据视为神圣的，保护其免受任何偏见、过拟合和过度优化的影响。
 - en: The Trade-off Between In-Sample and Out-of-Sample
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 样本内与超出样本之间的权衡
 - en: However, we should be cautious not to discard in-sample performance entirely.
     Too much emphasis on out-of-sample data might lead to overlooking the underlying
     patterns and learning ingrained in the historical data. In the trading world,
     this implies focusing our efforts on uncharted waters and losing sight of what
     we already know about the sea. What we need is a balance, a nuanced understanding
     that respects in-sample patterns but also appreciates the out-of-sample generalization.
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，我们应该小心不要完全忽视样本内的表现。过于强调样本外数据可能导致忽视历史数据中固有的模式和学习。在交易世界中，这意味着我们把精力集中在未知领域，反而失去了对已知海域的视线。我们需要的是一种平衡，一种尊重样本内模式的细致理解，同时也欣赏样本外的概括。
 - en: Walk-Forward Optimization
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 步进优化
 - en: When attempting to find the optimal solution in a dynamic system, you cannot
     simply determine the best steps and repeat them indefinitely. The music changes;
     the rhythm shifts. You must recalibrate your steps in response. For traders, this
@@ -661,225 +919,313 @@
     dancer. How does he keep tempo with the ever-changing beats and dynamical shifts
     of the market rhythm? This is where Walk-Forward Optimization (WFO), a key strategy
     that can be used by algorithmic traders, takes the stage.
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 在动态系统中寻找最佳解决方案时，你不能仅仅确定最佳步骤并无止境地重复。音乐在变化，节奏在转变。你必须根据这些变化重新调整自己的步伐。对于交易者而言，这种节奏就是金融市场。现在，让我们把算法交易者视为我们的舞者。他是如何跟上市场节奏中不断变化的拍子和动态变化的呢？这正是“步进优化”（WFO）这个关键策略可以派上用场的地方。
 - en: The Dynamic Rhythm in Financial Markets
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 金融市场中的动态节奏
 - en: The financial markets are an orchestra of volatility and movement. Prices rise
     and dip, trends form and dissolve, and assets fluctuate in response to numerous
     external influences, seemingly on their whim. Like transient melodies, these fluctuations
     create a dynamic, ever-changing environment.
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 金融市场就像是一场波动与运动的交响乐。价格起伏，趋势形成又消散，资产在众多外部影响下波动，似乎随心所欲。这些波动如同瞬息万变的旋律，创造了一个动态且不断变化的环境。
 - en: This is where traditional strategies, which locate optimal parameters based
     on historical data, often fall short. They over-optimize the set, fitting their
     steps to a singular, previously recorded rhythm. While they may hit every beat
     of that song with perfect precision, they cannot adapt to the music's changes.
     They are out of sync when the tempo increases, or a new tune takes over.
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是传统策略的不足之处，它们通常根据历史数据寻找最佳参数。它们过度优化设定，将步骤适配于单一的、先前记录的节奏。虽然它们可能完美地击中那首歌的每一个节拍，但无法适应音乐的变化。当节奏加快或新的旋律占据主导时，它们就会失去同步。
 - en: 'Setting the Stage: What is Walk Forward Optimization?'
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 设置舞台：什么是步进优化？
 - en: Enter, Walk-Forward Optimization (WFO). WFO is a sequential optimization process,
     a process that is not only aware of the past beat but can also adapt to the new
     one. It does not hold on tightly to a single rhythm but loosens its grip and moves
     with the flow. This creates a choreography that harmonizes with the market's tune,
     past, present, and future alike.
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 这时，步进优化（WFO）登场。WFO是一种序列优化过程，这一过程不仅关注过去的节拍，还能够适应新的节拍。它不会紧紧抓住单一的节奏，而是放松束缚，随波而动。这创造了一种与市场旋律和谐的编舞，既包括过去，也包括现在和未来。
 - en: 'The method involves dividing the dataset into two distinct parts: the in-sample
     (IS) and out-of-sample (OOS) data. In this scenario, keep in mind that the metaphorical
     "walk" here is the movement from the past (IS) to the future (OOS).'
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 该方法涉及将数据集分为两个不同的部分：样本内（IS）和样本外（OOS）数据。在这种情况下，请记住这里的比喻“步行”是从过去（IS）到未来（OOS）的移动。
 - en: 'The Dance Steps: Implementing Walk-Forward Optimization'
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 舞步：实施步进优化
 - en: Now, how do we implement this flexible, dynamic dance that is WFO? We start
     the dance with the in-sample data, optimizing our strategy to align with the past
     rhythm. Once perfected, we test our steps on a small chunk of the out-of-sample
     data, the future rhythm.
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么，我们如何实施这种灵活的动态舞蹈——WFO呢？我们从样本内数据开始舞蹈，优化我们的策略以适应过去的节奏。一旦完善，我们会在一小部分样本外数据上测试我们的步伐，即未来的节奏。
 - en: This forms one round of our dance. What's next? We repeat the process. But importantly,
     we "walk forward". We move our in-sample period forward by the same length as
     the just tested out-of-sample period, and the preceding in-sample data becomes
     the new out-of-sample data. We keep moving, keep dancing, from the past through
     to the future, optimizing, testing, then optimizing again through this dynamic
     shift.
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: 这形成了我们舞蹈的一轮。接下来呢？我们重复这个过程。但重要的是，我们要“向前走”。我们将样本内的时间段向前推进，与刚测试过的样本外时间段相同，之前的样本内数据变成新的样本外数据。我们不断前行，不断舞动，从过去到未来，优化、测试，然后通过这种动态转变再次优化。
 - en: 'The Spotlight: The Key Takeaway'
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 重点：关键要点
 - en: The key takeaway here is the word "dynamic". WFO stands out because it doesn't
     believe in stagnation. It understands that the markets' rhythm is dynamic, changing
     its tune as new influences act upon it. It understands that to keep up with the
     rhythm, to perform a flawless dance, our strategies need to be dynamic, too.
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里的关键要点是“动态”这个词。WFO的突出之处在于它不相信停滞。它理解市场的节奏是动态的，随着新影响的作用而改变旋律。它明白要跟上这个节奏，表演一场完美的舞蹈，我们的策略也需要是动态的。
 - en: But it's vital to remember that with WFO, just like any dance, the steps should
     not be hurried or forced. Overfitting and over-optimization can lead to disastrous
     consequences, turning our elegant waltz into a clumsy jitterbug. So, ensure a
     careful, guided application and revel in the beauty of this well-crafted financial
     dance!
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 但重要的是要记住，使用WFO时，和任何舞蹈一样，步骤不应匆忙或强迫。过拟合和过度优化可能导致灾难性的后果，将我们的优雅华尔兹变成笨拙的吉特巴。因此，确保谨慎、引导的应用，尽情享受这场精心编排的金融舞蹈之美！
 - en: Monte Carlo Simulation
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 蒙特卡洛模拟
 - en: 'Nestled in the archives of mathematical history lays a concept that provides
     a unique dimension to financial decision making: Monte Carlo simulation (MCS).
     Think of any pivotal decision made at the inter of various complex variables,
     deeply rooted in the uncertainty of outcomes. That''s where Monte Carlo simulation
     steps in, providing us with an invaluable tool to delve into these layers of multidimensional
     uncertainties in financial analysis.'
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: 数学历史的档案中藏着一个为金融决策提供独特维度的概念：蒙特卡洛模拟（MCS）。想象一下在多个复杂变量交汇点上做出的任何关键决策，这些决策深深根植于结果的不确定性中。蒙特卡洛模拟正是在这种情况下提供了一个无价的工具，让我们深入探讨金融分析中多维不确定性的层次。
 - en: 'Shaping Probabilities: An Understanding'
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: 形塑概率：理解
 - en: With its roots in fields as diverse as nuclear physics and the gambling scene
     of Monaco, Monte Carlo simulation is driven by random sampling. It's a computational
     method that syncretizes statistics and probability with the mechanics of numerical
     integrations to evaluate uncertain outcomes.
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: 蒙特卡洛模拟起源于核物理和摩纳哥赌博场等多种领域，依靠随机抽样驱动。这是一种计算方法，将统计学和概率与数值积分的机制结合，以评估不确定的结果。
 - en: In the financial arena, Monte Carlo simulation is akin to creating a 'possible
     futures' matrix. It empowers traders to model the likelihood of different financial
     results by testing a spectrum of probable variables.
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: 在金融领域，蒙特卡洛模拟类似于创建一个“可能的未来”矩阵。它使交易者能够通过测试一系列可能的变量来建模不同金融结果的可能性。
 - en: 'Monte Carlo in Action: The Steps to Execution'
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 蒙特卡洛的实际应用：执行步骤
 - en: While the idea of Monte Carlo simulation might seem lofty, its implementation,
     intriguingly, is practically straightforward. It kicks off with defining a model
     that links the variables under study. For a trader, it could be a model that forecasts
     the future price of an asset.
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然蒙特卡洛模拟的概念看似高深，但其实施实际上相当简单。它的开始是定义一个将研究变量联系起来的模型。对于交易者来说，这可能是一个预测资产未来价格的模型。
 - en: Next, markets are inhabited by an ardent uncertainty, and thus we need to acknowledge
     the random nature of the variables. By determining the probability distribution
     that governs these variables (normal, homoscedastic, heteroscedastic, and more),
     we are set for the next phase.
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，市场充满热切的不确定性，因此我们需要承认变量的随机性。通过确定支配这些变量的概率分布（如正态分布、同方差、异方差等），我们为下一阶段做好准备。
 - en: In the final stage, we generate a myriad of random inputs based on the prescribed
     statistical distribution and run them through the preestablished model. These
     iterations of inherent randomness mimic the uncertainty of real-world possibilities,
     giving us a spread of outcomes.
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 在最后阶段，我们根据规定的统计分布生成大量随机输入，并通过预设模型进行处理。这些固有随机性的迭代模拟了现实世界可能性的的不确定性，为我们提供了一系列结果。
 - en: 'The Fruits of Simulation: Interpretation of Results'
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: 模拟的果实：结果的解读
 - en: So, what does a Monte Carlo simulation achieve in the end? The results of this
     intensive process are usually illustrated in terms of probability distributions.
     These portrayals allow for insightful answers to pressing financial inquiries.
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么，蒙特卡洛模拟最终实现了什么？这个密集过程的结果通常以概率分布的形式呈现。这些图像为紧迫的金融问题提供了深刻的答案。
 - en: For instance, consider a trader struggling to decide on the execution of a particular
     trading strategy. A Monte Carlo simulation will project a probability distribution
     of potential returns, tell the trader the likelihood of a loss, or quantify the
     risk involved. It doesn't predict the future, but it illuminates the landscape
     of potential futures, making decisions less about guesswork and more about calculated,
     probabilistic understanding.
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，考虑一个交易者在决定执行某个交易策略时的挣扎。蒙特卡洛模拟将预测潜在收益的概率分布，告诉交易者亏损的可能性或量化风险。这并不预测未来，但揭示了潜在未来的全景，使决策更少依赖猜测，更依赖于计算和概率理解。
 - en: The Art and Science of Financial Forecasts
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 财务预测的艺术与科学
 - en: However, as we embark on this journey of understanding with Monte Carlo, it's
     crucial not to equate the realms of possibilities with predictions. There's an
     inherent difference between foreseeing a future and the likelihood of many futures.
     Stopping at its probabilistic conclusions will be an underuse of its profound
     capabilities. Monte Carlo is not just a tool; it is a mindset shift to perceive
     the future as a spectrum of possibilities rather than a single projected point.
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，当我们踏上这段理解之旅时，利用蒙特卡洛方法，重要的是不要将可能性领域等同于预测。预见未来与许多未来的可能性之间存在根本差异。停留在概率结论将是对其深远能力的低估。蒙特卡洛不仅是工具；它是一种心态转变，让我们将未来视为可能性的光谱，而不是单一的预测点。
 - en: Real World vs. Backtesting
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: 现实世界与回测
 - en: There resides a volatile space between the theoretical tranquillity of backtesting
     and the unanticipated squalls of the real-world markets. It’s a realm that often
     magnifies the subtle differences, downplayed during backtesting, into monumental
     trading predicaments. Welcome to a deep dive into the dialectic of Real World
     vs Backtesting.
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: 在回测的理论平静与现实市场意外风暴之间，存在一个动荡的空间。这个领域常常将回测中被轻视的微妙差异放大成重大的交易困境。欢迎深入探讨现实世界与回测的辩证法。
 - en: 'A Tale of Two Worlds: Defining the Territory'
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: 两个世界的故事：定义领土
 - en: Backtesting, as we learned, serves as a time machine allowing traders to travel
     into the historically rich landscapes of market dynamics. In this retrospective
     journey, trading strategies are put to the test, with their performance gauged
     across various market scenarios of the past.
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们所学，回测作为时光机，让交易者穿越历史丰富的市场动态。在这次回顾之旅中，交易策略经受考验，其在过去各种市场情景下的表现被评估。
 - en: But then, there's the 'theatre of the moment', the real-time market, where live
     action unfolds. Here, strategies vetted by backtesting encounter real-world variables.
     Although backtesting seeks to simulate the real world, occasionally there emerge
     certain untamed aspects. Let’s trace these outlines of difference.
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，还有“瞬间剧场”，实时市场，现场行动展开。在这里，通过回测验证的策略会遇到现实世界的变量。尽管回测试图模拟现实世界，但偶尔会出现某些不可控的因素。让我们追踪这些差异的轮廓。
 - en: 'Endearing Uncertainties: Market Liquidity'
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: 可爱的不确定性：市场流动性
 - en: Liquidity, a vital market attribute, often undergoes dramatic changes. While
     backtesting, liquidity is generally assumed as infinite or consistent, a far cry
     from reality. When trading in the real world, a considerable purchase or sale
     can impact the market, shifting the price unfavorably. This 'price slippage' often
     remains unaccounted for during backtesting.
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: 流动性是市场的重要属性，常常经历剧烈变化。在回测中，流动性通常被假设为无限或一致，这与现实相去甚远。在真实交易中，一笔可观的买入或卖出会影响市场，导致价格不利变动。这种“价格滑点”在回测中往往被忽视。
 - en: 'The Haste of Live Markets: Latency'
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: 现场市场的急迫：延迟
 - en: In the realm of algorithmic trading, speed is the name of the game. Delayed
     market data or a languid order execution can significantly offset profits. While
     backtesting might assume immediate execution, real-world trading must skirmish
     with such speed bumps.
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: 在算法交易的领域中，速度至关重要。延迟的市场数据或缓慢的订单执行会显著削弱利润。虽然回测可能假设立即执行，现实交易必须与这些速度障碍抗衡。
 - en: 'The Dexterity of Adaptation: Changing Market Conditions'
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: 适应的灵活性：变化的市场条件
 - en: Market conditions are dynamic, evolving in response to geopolitical events,
     economic shifts, or technological advances. These changes also affect the underlying
     assumptions of a trading strategy, which are usually kept constant and unchallenged
     during backtesting.
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: 市场条件是动态的，随着地缘政治事件、经济变化或技术进步而演变。这些变化也会影响交易策略的基本假设，而这些假设通常在回测期间保持不变且不受挑战。
 - en: 'Unforeseen Shocks: Extreme Market Events'
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 意外冲击：极端市场事件
 - en: While backtesting usually operates within the realms of 'normal' market conditions
     and fluctuations, the actual market pulses to its own unpredictable rhythm. It
     has its moments of extreme turbulence, testing the resilience of even the most
     thoroughly backtested strategies. Such rare but impactful events often get scant
     attention in a retrospective analysis.
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然回测通常在“正常”市场条件和波动范围内运作，但实际市场却以自己不可预测的节奏脉动。它有极端动荡的时刻，考验着即使是经过充分回测的策略的韧性。这种罕见但影响深远的事件在回顾性分析中往往得不到应有的关注。
 - en: 'Uncanny Realities: Overfitting and Curve Fitting'
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: 不可思议的现实：过拟合与曲线拟合
 - en: A key caveat of backtesting is the risk of overfitting, where a model performs
     exceptionally well on historical data but falters in real-time trading. Overfitting,
     born out of excessive optimization, produces a complex model that is tuned meticulously
     to past data but lacks the robustness to adapt to new data.
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 回测的一个关键警告是过拟合的风险，即模型在历史数据上表现极佳，但在实时交易中却表现不佳。过拟合源于过度优化，产生了一个复杂的模型，这个模型经过精细调整以适应过去的数据，但缺乏适应新数据的鲁棒性。
 - en: Curve fitting is another pitfall where a trading system is tweaked to generate
     good results for a particular set of historical data. While it may excel in backtesting,
     curve-fitted models often fail to hold their own in the uncertainty of live markets.
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: 曲线拟合是另一个陷阱，在这种情况下，交易系统被调整以在特定的历史数据集上生成良好的结果。尽管在回测中可能表现优异，但曲线拟合的模型在实时市场的不确定性中往往难以立足。
 - en: 'The Leap of Faith: From Backtesting to Real-World Trading'
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: 信仰的飞跃：从回测到现实交易
 - en: Transiting from backtesting to real-world trading is a leap of faith, one that
     urges traders to trust their strategies while staying attuned to market realities.
     It's about appreciating backtesting as a reliable compass to navigate trading
@@ -888,5 +1234,7 @@
     plan becomes a financial narrative inked with risks, rewards, and critical money
     management rules. This shift is as much about algorithmic precision as it is about
     the intuitive understanding of the market's pulse.
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: 从回测过渡到现实交易是一种信仰的飞跃，这促使交易者在信任自己策略的同时，保持对市场现实的敏感。这意味着欣赏回测作为一个可靠的指南，以帮助做出交易决策，同时理解其局限性。从回测到实盘交易的过程不仅仅是切换平台。这是一个旅程，在这个旅程中，交易计划成为一个充满风险、回报和关键资金管理规则的金融叙事。这一转变不仅关乎算法的精确性，还涉及对市场脉搏的直观理解。
