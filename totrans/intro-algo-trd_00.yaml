@@ -1,0 +1,155 @@
+- en: Introduction
+  prefs: []
+  type: TYPE_NORMAL
+- en: 6:20 AM Saturday morning could not come quickly enough.  That was usually the
+    time I would hear the familiar “thunk” of a rolled up copy of the Los Angeles
+    Times newspaper hitting my condo’s front door.  That was if the delivery person
+    had good aim that day.  Some days the bushes nearby would welcome the paper with
+    open arms (branches?) instead.  Other days the newspaper never arrived at all.
+    But on this Saturday I heard the paper hit the door, and when I did, I knew it
+    was time to prepare for Monday’s trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Scrambling out of bed, I opened the door, grabbed the newspaper, and tore it
+    apart until I found the Business section.  Towards the back was the data I was
+    looking for – the information that would, in a short time, make me fabulously
+    wealthy (or so I thought): the daily commodity prices for the previous day.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you may have guessed, this was back before computers took over and daily
+    and intraday data was accessible with a few keystrokes.  This was old school to
+    the max – everything was on paper!
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Anyhow, I scanned the commodity prices and found the prices for Live Hogs,
+    as it was called back then (it is Lean Hogs now).  I took the closing price for
+    the nearest month’s contract, and copied it to a paper sheet that had 6 columns
+    in it: date, closing price, 4 period average, 9 period average, 14 period average
+    and signal.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'I diligently calculated each average by hand – remember, I had no computer
+    to help me back then – and then I compared the results to my rules:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 9 period average greater than the 14 period average?  Yes!
+  prefs: []
+  type: TYPE_NORMAL
+- en: 4 period average greater than the 9 period average?  Yes!!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Closing price crossing above the 4 period average? Yes!!!!
+  prefs: []
+  type: TYPE_NORMAL
+- en: That was it – everything was yes and I had a long signal!  Monday morning, I
+    would place an order to buy 1 live hog contract at the market.  I dutifully wrote
+    “GO LONG” in the signal column, cementing the trade in my mind.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig01.jpg](../images/00001.jpeg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 1- Old School Algo Trading, By Hand!
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig02.jpg](../images/00002.jpeg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 2- Algo Buy Signal, With Modern Technology
+  prefs: []
+  type: TYPE_NORMAL
+- en: I was nervous, excited and in a dream state the rest of the weekend – my first
+    real commodity trade!
+  prefs: []
+  type: TYPE_NORMAL
+- en: I did not know it, but even back in those old days I was trading algorithmically,
+    or “algo” trading.  I was trading according to a precise set a rules, which when
+    you boil it down, is all algorithmic trading really is.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Back then, traders referred to it as systematic trading, mechanical trading
+    or rules based trading.  A few years ago, many people spoke of robot or “bot”
+    trading.  But until recently, very few used the term algorithmic.  Yet, it is
+    all basically the same thing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'So, realize whenever someone mentions one of these terms – mechanical, systematic,
+    rule based or algorithmic trading - they are likely referring to the same thing:
+    a set of rules that tell you when to enter and exit a trade.  These rules could
+    be on a computer, in your head, or as was the case for me in the early days, written
+    on good ol’ paper.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: That is the first lesson of this book – algo trading = rules to trade by.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'There are many more lessons in this book, all designed to introduce you to
+    the world of algorithmic trading.  This type of trading applies for many different
+    instruments: stocks, ETFs, forex, futures, and options to name a few.  Don’t let
+    the terms algorithmic or algo scare you; in this book I’ll walk you through the
+    basics of algorithmic trading:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A Discussion of What Exactly Algo Trading Is, and What It Is Not
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The Basics of Algo Trading, For Beginner to Intermediate Traders
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Figuring Out If Algo Trading Is Something You Should Consider
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The Many Advantages of Algo Trading
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The Disadvantages of Algo Trading
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: How To Begin Algo Trading On Your Own
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Selecting a Trading Software Platform
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Learning the Basics Of Your Platform
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Learning To Program In Your Platform’s Language
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: A Simple Algo To Get You Started
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Tips For Successful Algorithmic Trading
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Steps To Take After You Read This Book
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The intent of this book is not to teach you the basics of trading in general;
+    there are plenty of other books available on that subject.  This book is intended
+    to get you started with algo trading, with the assumption you know some trading
+    basics.  I feel strongly that algo trading is a great way for smaller retail traders
+    to compete against professional traders.
+  prefs: []
+  type: TYPE_NORMAL
+- en: By the end of the book, you won’t be scared off when people talk about trading
+    algos.  You’ll know the basics, and also have a plan for your future endeavors
+    in algorithmic trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With that, let’s get started on the journey!
+  prefs: []
+  type: TYPE_NORMAL

@@ -1,0 +1,335 @@
+- en: Chapter 7 - Selecting a Trading Software Platform
+  prefs: []
+  type: TYPE_NORMAL
+- en: Back when I started using a retail trading platform (Tradestation), there really
+    weren’t too many choices out there.  And Tradestation was far and away the best;
+    it had the most features, its backtesting was the most accurate, support was superb
+    and its user group was active and helpful.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fast forward to today, and the retail software platform landscape is a bit different. 
+    Now, there are dozens of trading platforms, and most are pretty good.  Each one
+    has some specific “niche” areas it tries to address, usually areas that Tradestation
+    was traditionally not as good at.  Of course, Tradestation has responded, and
+    is continually building a better platform.  The competition is raising the standard
+    for all platforms, which is tremendous.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is all great for the retail trader – more competition, better features,
+    lower costs – but it can be overwhelming!  Which platform is the best?  Which
+    platform has the features you are looking for?  Which platform is the easiest
+    to build with?  The list of questions goes on and on.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, I’m not going to try to tell you which platform to use in this chapter,
+    but I will identify some “must haves” that you want for algo trading.  In the
+    next chapter, I’ll also tell you the most popular platforms, based on trader surveys
+    I have done of the past few years.  You might think popularity is a poor criteria
+    to use, but I think it is important.  You want a trading platform that will be
+    around for years and years, since transferring your algos from a defunct platform
+    will be cumbersome.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, I’ll give you contact information for some of the major platforms,
+    so you can begin to investigate them yourself.  It is a personal choice, and you
+    want to feel comfortable with the software you choose, because you will be spending
+    a lot of time with your software choice, building algos!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Charting Capabilities
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Theoretically, a pure algo trader and developer does not need price charts of
+    any type.  After all, why would that be necessary?  Algo rules are what counts,
+    not how things look on a chart.  While this is true, a platform with a good charting
+    platform is really good to have.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Many times, during the idea creation phase, an algo trader will want to see
+    his or her idea – an indicator, histogram, bar patterns, whatever – in action. 
+    A good charting module in the software will help with that.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig19.jpg](../images/00020.jpeg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 19- Charts Can Help You Visualize Aspects Of Your Algorithms
+  prefs: []
+  type: TYPE_NORMAL
+- en: The key with properly using charting is NOT to make any judgments or decisions
+    based on what you see in the chart.  Chances are, you are only seeing a small
+    snippet of time on the chart, and the small piece of time can be highly misleading. 
+    So concluding that a new indicator or chart pattern is bad, based on a visual
+    examination, is really a terrible thing to do.
+  prefs: []
+  type: TYPE_NORMAL
+- en: On the other hand, using a chart to visually check for correct coding is a great
+    thing to do.  A complicated chart pattern might be easy to see, but hard to program
+    algorithmically, so verifying the code by inspecting a chart can be really helpful.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I would recommend good charting capabilities as a definite “must have” for any
+    trading platform.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Broker Integration
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Some retail platforms, such as Tradestation, are tied directly to one brokerage
+    (in this case, Tradestation Brokerage).  Other platforms, such as NinjaTrader,
+    have a few limited choices in brokers.  Finally, some platforms (like Multicharts)
+    have a huge selection of brokers to choose from.   There are pros and cons to
+    each approach.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, searching for a trading platform might also be a search for the proper broker. 
+    Personally, I have used many brokers over the years, and two times I’ve had solid,
+    reputable brokers try to steal my money (Refco, PFG).  This means you should be
+    careful with whatever broker you choose, because many can, and do, go out of business.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In all cases, have a backup plan and backup brokers in place, ready to go.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Ease of Programming
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Most good platforms offer you the ability to create your own indicators, strategies,
+    etc. – in addition to providing standard indicators with parameters you can change
+    and optimize.  If you cannot create your own indicators, I suggest you look elsewhere
+    for a package, since you will definitely be programming your own creations at
+    some point.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Assuming your software allows custom work, there are three main ways to produce
+    custom code.  The first way is take existing code, and just modify it to meet
+    your specifications.  Once you understand the basics of the programming language,
+    this is pretty easy.  I have trader friends who do nothing but this – they have
+    never programmed an original strategy in their career, but they have taken thousands
+    of strategies from others and modified the code to suit their needs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The second way to produce custom algo code is to start from scratch.  This involves
+    a bit more work, but once you get the hang of programming, it is fairly easy to
+    do.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A final way to program code is offered by some platforms, and that is a visual
+    drag and drop code creation approach.  You basically move blocks for indicators,
+    patterns, if…then logic, stop losses and more and connect the blocks.  Once you
+    are done, the software then turns your visual depiction into code.  This is a
+    way around the line by line programming of strategies, but even so, it still involves
+    quite a bit of learning to get up to speed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is up to you to decide which approach appeals the most to you. Of course,
+    to make your decision even tougher, each programming language has its own style
+    and format.  Some are built off of “professional” heavy duty programming languages
+    like C#, and some of them are built off of “old time” languages like Basic.  So
+    programming even a simple strategy can be very easy, or very complicated, depending
+    on the language used.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One way to investigate some different platforms and see different programming
+    languages is to pick up a recent copy of the magazine “Technical Analysis of Stocks
+    and Commodities.”  Almost every month, the editors pick one article (with a new
+    indicator, algo strategy, etc) and have experts from major software platforms
+    create code in their language.  This can be found in the “Trader’s Tips” section
+    in the back of the magazine.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig20.jpg](../images/00021.jpeg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 20- "Technical Analysis Of Stocks and Commodities" Magazine "Trader'
+    Tips" Section - A Great Way To Compare Various Programming Languages
+  prefs: []
+  type: TYPE_NORMAL
+- en: In a recent issue, 11 different trading platforms provided code for a new RSI
+    indicator produced by John Ehlers, a well-respected developer.  By taking a look
+    at each unique code, a new algo trader can get an idea of the structure and complexity
+    of each of the programming languages.  This might help you make a decision on
+    which language to pursue.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'As an example, here is how simple Tradestation’s Easy Language is.  Suppose
+    I want to buy the next bar if today’s close is the highest close of the past 2
+    weeks (10 bars).  In Easy Language, that becomes:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: If close=highest(close,10) then buy next bar at market;
+  prefs: []
+  type: TYPE_NORMAL
+- en: Not all languages are that simple!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Regardless of the method of programming, and the programming language you decide
+    on, at some point you’ll want to pick one method, and one platform, and get good
+    at developing algos with it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Of all the topics discussed in this section, I think this is the most important. 
+    Having a programming language you can easily learn, and feel comfortable with,
+    is a big deal.  Spend a lot of time upfront investigating what is best for you,
+    and it will pay dividends down the road.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Integrating With Market Data
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Most of the premier trading platforms these days integrate well with market
+    data.  Most require you to have a subscription with a 3rd party data provider,
+    although others, such as Tradestation, have their own data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Two important points to watch out for.  First, make sure your data is delivered
+    automatically and includes intraday data.  Nothing is worse than having to schedule
+    data downloads every evening.  That used to be the norm back in the days of dial
+    up modems, but in today’s instant world, you should have immediate access to data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another important point is to make sure you trust both the data source and the
+    platform.  Not all data providers supply data to all platforms, so if you have
+    a preferred data vendor in mind, your choice of platforms may be somewhat limited.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Market data integration is not a major point, but it is one that can trip you
+    up if you ignore it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Standard Indicators and Studies
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Starting out with a new platform, the last thing you want to do is recreate
+    standard technical studies like moving averages, RSI, ADX, stochastics, etc. 
+    You want to just reference them in your code, without programming them first.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Before selecting a platform, make sure it has a long list of indicators and
+    functions already programmed in.  Most platforms do, but it is always good to
+    check first.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Programming Capabilities
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Earlier I discussed the ease of programming, which I think is critical.  But
+    many times, programming might be easy because the language itself is limited in
+    scope.  Some of the simple languages cannot do some of the complicated tasks you
+    might require.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Tradestation, for example, is a good example of this.  It uses a language called
+    Easy Language, which is indeed easy.  But since it was develop decades ago, primarily
+    for backtesting, there are certain limitations with the language in today’s computerized
+    trading world.  So, Tradestation now includes an additional language, Object Oriented
+    Easy Language (OOEL), to provide a ton of additional capabilities.  Of course,
+    OOEL is a more complicated language as a result (FYI: I don’t even use OOEL in
+    my algo work).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: MultiCharts platform has done the same thing as Tradestation, adding a new language
+    in the .NET version of the platform.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you have a complicated algo idea, and you are unsure if you can program it,
+    I recommend you talk to experts at each vendor or in the software’s user group,
+    to see if what you need can be coded in the software.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Optimization
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: If your code has any parameters or numbers in it, for example the number of
+    bars in a moving average, or the buy threshold in a RSI calculation, chances are
+    at some point you will want to optimize that number.  While too much optimization
+    is definitely a bad thing, you at least will want the capability to do it in the
+    software.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I consider this a must have, and most platforms provide this.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Walkforward Analysis
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: In my algo development work, I use a technique called walkforward testing to
+    create “out-of-sample” results.  These results tend to mimic live trading better
+    than traditional “plug and chug” backtest optimizations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Walkforward testing is an advanced topic, one that a new algo trader might not
+    need right away.  But it is a good feature for trading software to have.  Otherwise,
+    you may have to purchase a third party tool to conduct the analysis, or (gasp!)
+    do the analysis manually.  Having spent years doing it manually in the old days,
+    I can safely say that manual walkforward testing is not a good long term solution!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Trader Community
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Having a large and active trading community is critical for any software platform
+    you choose.  The technical support people at most software vendors are overworked,
+    understaffed and most importantly usually not even traders.  So, when you have
+    questions, many times you will be talking to someone with less knowledge than
+    you have!
+  prefs: []
+  type: TYPE_NORMAL
+- en: If there is a strong community, there will be plenty of regular users willing
+    and able to help you with questions.  For example, I volunteer some of my time
+    on the Tradestation user forum, and have contributed an average of 5 posts per
+    week for the past 14 years to the community (over 3500 posts!).  And there are
+    a lot of others who help out even more than I do.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The other nice thing about a big user community is that there will also be a
+    lot of code available for you to borrow.  I have gotten some of my best ideas
+    and algos from free code I have found on the internet.  With a popular platform,
+    chances are whatever you want to code has already been done for you, and you just
+    might only need to modify it to suit your needs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A vibrant community is a definite plus, and should be a very important part
+    of your search criteria.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Live Trading & Automation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Once you create and test your algo, the last thing you want to do is convert
+    it or move it to a different platform in order to trade it live or automate it. 
+    That, unfortunately, is still the case with some trading packages.  These packages
+    have not fully integrated the testing and actual trading pieces of their software.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You want a package that does it all: development, test and automated trading. 
+    If you settle for less than this, you will find yourself doing a lot of extra
+    work eventually.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Picking a Platform – Conclusion
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Hopefully in this chapter I have given you some things to think about as you
+    pick a platform.  There are obviously other important factors to consider (cost,
+    availability in your country) that I have not mentioned, but I tried to highlight
+    some of the big areas of concern.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There is no “one size fits all” solution, and while having many platforms to
+    choose from is nice, it can be overwhelming.  Don’t let this dissuade you.  Do
+    some research, pick what you feel is the best choice, and then jump into it. 
+    The sooner you do that, the sooner you’ll be creating trading algos!
+  prefs: []
+  type: TYPE_NORMAL

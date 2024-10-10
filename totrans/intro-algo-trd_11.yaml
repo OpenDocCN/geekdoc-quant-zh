@@ -1,0 +1,137 @@
+- en: Chapter 11 - Tips For Successful Algo Trading
+  prefs: []
+  type: TYPE_NORMAL
+- en: Successful algo trading, unfortunately, is a lot more than just learning a trading
+    platform and a programming language.  After trading algos in the futures markets
+    for the last 25 years or so, here are some of my best tips on how to succeed. 
+    Hopefully they will help you, like they have helped me!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Have Realistic Expectations
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Nothing is worse than the person with only $500 in his trading account who thinks
+    he can make $50,000 per year via algo trading.  Maybe one person in a million
+    can do that, but the rest of us will never come close.  Too many people enter
+    trading with dollar signs in their eyes.  Most end up blowing out their accounts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Make sure, before you start trading, that you understand the potential rewards,
+    but more importantly, the potential risks, inherent in algo trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Start With Enough Risk Capital
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'The amount of capital you start with can really influence your success rate. 
+    Traders with small amounts of capital run a higher risk of ruin, and that is a
+    mathematical fact.  In you only have a few thousand (or fewer) dollars in your
+    trading account, here is what I recommend:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Trade with microforex (1/100 of a standard lot) at first.  Don’t worry about
+    the money, worry about developing proper trading practices.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Gather more trading capital from outside sources.  Get a second job, for example.
+    Try to get your risk capital up to $10,000 or more, as a minimum.  Give yourself
+    a fighting chance against the professionals.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Learn Proper Strategy Development
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Most people develop strategies incorrectly.  They overoptimize, they curve fit,
+    they have too many rules – the list of mistakes goes on and on.  Learn how to
+    develop strategies in a proper, time proven, scientific manner.  Earlier, I suggested
+    some authors who can help with that.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Test With A Lot Of Historical Data
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Running a historical backtest on the last 3 months of market data is not enough. 
+    Markets continually change, and your algo strategy needs to be able to survive
+    in most or all markets.  So, you should test with as much data as you can.  I
+    generally test with about 10 years of data, and in some markets, more than 20
+    years.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Testing with many years of history makes finding a strategy much, much harder. 
+    But, it is the right thing to do.  You want to find a long term edge, not a short
+    term strategy that has worked for only the last 3 months – such “edges” might
+    just be due to random luck.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Be Sure To Include Slippage and Commissions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: I am amazed at how many people neglect commissions, and especially slippage,
+    when they test a trading algo.  The ironic thing is most strategies will show
+    a profit, until you include these two frictional costs.  Once these costs of trading
+    are included, most strategies fail to make money.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The amount of slippage varies from market to market, but generally, for futures
+    markets $25-50 per round trip trade per contract is a good rule of thumb.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Run Test With Out-Of-Sample Or Walkforward Periods
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The education charlatans like to dazzle prospects with terrific looking equity
+    curves.  The key thing is most of those curves are based on optimized, in-sample
+    data.  They were optimized, so of course they look good!
+  prefs: []
+  type: TYPE_NORMAL
+- en: For any algo you create, make sure you include an out-of-sample verification. 
+    Better yet, use the approach I employ, which is walkforward testing.  Walkforward
+    is a more complicated test method, but it gives you a lot of out-of-sample results
+    to evaluate.  This type of test is much more realistic than an optimized backtest.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Remember That Simple Is Usually Best
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: I remember a few years ago a Tradestation user was asking for advice for a new
+    trading computer.  He was lamenting the fact that his strategy took all weekend
+    to optimize!  He had about 300 variables he was optimizing, and he wanted to do
+    it more quickly.  I suggested instead of a new computer, maybe what he needed
+    was a simpler strategy to test.  He disregarded and mocked my advice, and soon
+    disappeared from the trading community.  Coincidence?
+  prefs: []
+  type: TYPE_NORMAL
+- en: The fact is that simpler strategies tend to work better on unseen, future market
+    data.  Anyone can create enough rules to perfectly fit history, but these strategies
+    almost never work in the future.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Keep your strategies simple.  They won’t look as good in backtest, but is that
+    really the objective?  Some misguided traders think it is, and they are wrong.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Know When To Quit
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: You will struggle with algo trading, we all have and will continue to.  Trading
+    is hard.  So, you have to know when to change your approach, change your strategies,
+    or just quit trading altogether.  Have a plan for all the bad things that can
+    happen.  Then, follow that plan.  Hopefully you’ll never need it, but knowing
+    when to quit is a requirement in this field.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I have heard too many sad stories of broken marriages, lost retirement accounts
+    and financial struggles as a result of losing trading.  Many of these may have
+    been avoided if the person quit before things got too bad.
+  prefs: []
+  type: TYPE_NORMAL

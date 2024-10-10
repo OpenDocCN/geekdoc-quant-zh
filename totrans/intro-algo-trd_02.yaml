@@ -1,0 +1,326 @@
+- en: Chapter 2 - Algo Trading Basics
+  prefs: []
+  type: TYPE_NORMAL
+- en: “I believe rules are meant to be broken.” – Film producer Robert Evans (likely
+    NOT a successful trader)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Anytime you trade, whether you are a beginner, intermediate or expert, you are
+    using rules to trade.  You might not realize the rules, the rules may change from
+    day to day, or hour to hour, but there are rules.  The rule is your decision making
+    process – how you decide whether to enter or exit any particular trade.  It might
+    be chaotic and disjointed, but there is a rule somewhere in there.  Maybe your
+    rule is “rules are made to be broken!”
+  prefs: []
+  type: TYPE_NORMAL
+- en: So when the goofy talking head on CNBC screams “buy this stock!” and you follow
+    his recommendation?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'RULE: Blowhard says buy, you buy.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Your cousin calling you with the hot tip?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'RULE: Crazy cousin says he has “inside” info, you buy only if his last tip
+    was profitable.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using technical indicators?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'RULE: If the price is above 20 period average, and the RSI value is below 20,
+    Sell short.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The list is never ending – there are an infinite number of rules to buy and
+    sell.  But when they are written down, followed exactly, and not subject to judgment
+    or discretion, then those rules can be transformed into an algorithm.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What Is In A Typical “Algo?”
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Let’s take a look at the components of a typical trading algorithm.  I’ll also
+    give some simple examples, in plain English and in Tradestation Easy Language.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Long Entry
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is an absolute requirement – how are you going to enter the market on the
+    long (buy) side?  You have to have criteria, or a set of criteria, to enter the
+    market.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'An example of this could be a simple momentum type entry:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Pseudo Code: Enter long on the open of the next bar if current closing price
+    is greater than the closing price 5 bars ago.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Tradestation Easy Language Code: if close>close[5] then buy next bar at market;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Short Entry
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you are trading stocks, you may not want to be short the market ([https://www.investopedia.com/terms/s/shortselling.asp](https://www.investopedia.com/terms/s/shortselling.asp)). 
+    But for futures and forex, you almost certainly will want to be able to go short
+    – to benefit from a price decline.  In that case, you will want a short entry
+    rule.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now, this rule could be the exact opposite of the long entry rule, or it could
+    be something completely different.  That is the neat thing about creating your
+    own algorithm – you can set it up however you wish.  This ability to customize
+    algos to your preferences has a hidden benefit – I have found it much easier to
+    adhere to the rules of a strategy I created, compared to a strategy where someone
+    else dictated the rules.  And remember, good algorithmic trading is all about
+    following the rules.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'An example of a short entry could be a simple moving average crossover:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Pseudo Code: Enter short on the next bar if the closing prices crosses below
+    the 7 period moving average.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Tradestation Easy Language Code: if close crosses below average(close,7) then
+    sell short next bar at market;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Long Exit
+  prefs: []
+  type: TYPE_NORMAL
+- en: Obviously, if you have a long entry rule, you also need a long exit rule.  This
+    exit could be based on the current position’s profit or loss (see “stop loss”
+    and “profit target” on the next few pages), or it could be based on a technical
+    indicator, chart pattern, etc.  It is just some trigger to tell you to exit the
+    long position.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'An example of a long exit could be a chart pattern – exit after 2 consecutive
+    down closes:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Pseudo Code: Exit long position if close of this bar is less than close of
+    previous bar, and close of previous bar is less than close of 2 bars ago.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Tradestation Easy Language Code: if close<close[1] and close[1]<close[2] then
+    sell next bar at market;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Short Exit
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you have a short entry, you will likely want a short exit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'An example of a short exit could to close every Thursday:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Pseudo Code: Exit short if today is Thursday.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Tradestation Easy Language Code: if dayofweek(Date)=4 then buytocover next
+    bar at market;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Stop And Reverse
+  prefs: []
+  type: TYPE_NORMAL
+- en: For the long and short exits above, the current position would be closed, leaving
+    the trader flat.  But what if you wanted to reverse the position?  Let’s say you
+    were long, and if certain criteria is met, you want to exit your long AND go short
+    at the same time?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'An example would be to reverse long and go short if a new low was hit:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Pseudo Code: Exit long, and go short, if the current bar low is the lowest
+    low of last 12 bars.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Tradestation Easy Language Code: if low=lowest(low,12) then sellshort next
+    bar at market;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Stop Loss
+  prefs: []
+  type: TYPE_NORMAL
+- en: Most algo traders want to protect themselves in case of an adverse price move. 
+    The thinking is that at some point it makes sense to exit the market, regardless
+    of what the technical indicators, chart pattern or whatever entry signal used
+    indicates.  That can be achieved by a simple stop loss.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Pseudo Code: Exit position if the loss of the current position hits -$500.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Tradestation Easy Language Code: SetStopLoss(500);'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Profit Target
+  prefs: []
+  type: TYPE_NORMAL
+- en: As with the stop loss, most algo traders want to exit if price goes in their
+    favor.  When a certain profit level is hit, they want to exit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Pseudo Code: Exit position if the profit of the current position hits +$2500.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Tradestation Easy Language Code: SetProfitTarget(2500);'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Position Sizing
+  prefs: []
+  type: TYPE_NORMAL
+- en: As an optional feature, you may want the algorithm to determine how many shares
+    or contracts to buy/sell.  This includes the concept of position sizing, which
+    is a whole topic onto itself!  Some common position sizing techniques include
+    fixed fractional and fixed ratio, along with the simple “trade x contracts per
+    $y of equity.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Pseudo Code: Trade 1 contract for every $10,000 in current equity (starting
+    equity plus profits to date)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Tradestation Easy Language Code: ncons = int((startingequity+NetProfit)/10000);
+    buy ncons contracts next bar at market;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Order Types
+  prefs: []
+  type: TYPE_NORMAL
+- en: The types of orders that can be placed by your algorithm depend in part on the
+    trading platform.  The three most common types are market orders, stop orders
+    and limit orders.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Tradestation Easy Language Code:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: //Market order
+  prefs: []
+  type: TYPE_NORMAL
+- en: Buy Next Bar At Market;
+  prefs: []
+  type: TYPE_NORMAL
+- en: //Stop Order
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sell Next Bar at XXXX stop;  //where XXXX=price you want to exit at, below the
+    current market price
+  prefs: []
+  type: TYPE_NORMAL
+- en: //Limit Order
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sell Next Bar at XXXX limit;  //where XXXX=price you want to exit at, above
+    the current market price
+  prefs: []
+  type: TYPE_NORMAL
+- en: Big Order Fill Algos
+  prefs: []
+  type: TYPE_NORMAL
+- en: All of the algo components I have just mentioned can all be used by retail traders. 
+    Large professional traders have their own algos, which you may have heard about. 
+    These include various types of “fill” algos – schemes to trade large quantities
+    of an instrument.  When you are trading 1000 contracts of something like the mini
+    S&P futures, you can’t just submit a market order for 1,000 contracts – it will
+    disrupt the market, and give you a poor average fill price.  The order needs to
+    be “worked,” that is broken down into small chunks, and fill over a specific time
+    or around a specific price.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You likely will never need these types of algos, but you should be aware that
+    they exist.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Higher Level Algos
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the example components just given, it was assumed that the trader was trading
+    a single algorithm.  But what happens when the trader has 10, 20 or more algorithms? 
+    How do things work then?
+  prefs: []
+  type: TYPE_NORMAL
+- en: The answer is that once one codes a single algorithm, these algos can stand
+    alone, or they can “talk” to each other.  Perhaps you will want to limit the number
+    of open positions arising from different algos, or maybe base your position sizing
+    on profits to date from all algorithms.  The possibilities can be mind boggling,
+    and go beyond the scope of this introductory book.  But it is worthwhile to understand
+    these “add ons” to a simple one market algorithm exist.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For many traders, to keep things simple, they treat each algo as if it is in
+    its own little world.  Then, they use outside analysis (perhaps in Excel) to put
+    the algos in a portfolio, to determine proper risk exposure, proper position sizing,
+    etc.  It is an exercise a beginning algo trader will not have to worry about just
+    yet, but should at least be aware of.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Putting It All Together
+  prefs: []
+  type: TYPE_NORMAL
+- en: Here is a simple example of an algo that goes long and short, has a stop loss
+    and profit target, can stop and reverse and also can go flat.  It includes a simple
+    position sizing approach, too.  I do not recommend it (since you personally have
+    not tested and verified this algo is a money maker), but you could put this in
+    your trading platform and start trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Tradestation Easy Language Code:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Input: StartingCapital (10000);'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Var: Ncons(1);'
+  prefs: []
+  type: TYPE_NORMAL
+- en: //position sizing calculation
+  prefs: []
+  type: TYPE_NORMAL
+- en: Ncons=Round(((StartingCapital+NetProfit)/10000),0);
+  prefs: []
+  type: TYPE_NORMAL
+- en: //long and short entries, will stop and reverse
+  prefs: []
+  type: TYPE_NORMAL
+- en: If close>close[5] then buy Ncons contracts next bar at market;
+  prefs: []
+  type: TYPE_NORMAL
+- en: If close<close[5] then sellshort Ncons contracts next bar at market;
+  prefs: []
+  type: TYPE_NORMAL
+- en: //long and short technical type exits
+  prefs: []
+  type: TYPE_NORMAL
+- en: If close=lowest(close,3) then sell next bar at market;
+  prefs: []
+  type: TYPE_NORMAL
+- en: If close=highest(close,3) then buytocover next bar at market;
+  prefs: []
+  type: TYPE_NORMAL
+- en: //standard dollar based stop loss and profit target
+  prefs: []
+  type: TYPE_NORMAL
+- en: Setstopcontract;
+  prefs: []
+  type: TYPE_NORMAL
+- en: SetStopLoss(500);
+  prefs: []
+  type: TYPE_NORMAL
+- en: SetProfitTarget(2000);
+  prefs: []
+  type: TYPE_NORMAL

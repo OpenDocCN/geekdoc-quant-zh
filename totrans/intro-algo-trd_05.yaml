@@ -1,0 +1,297 @@
+- en: Chapter 5 – The Disadvantages and Misconceptions of Algo Trading
+  prefs: []
+  type: TYPE_NORMAL
+- en: After reading the previous chapter, the world of algo trading might seem to
+    be a nirvana, compared to your current method of trading.  Unfortunately, it is
+    anything but.  Algo trading, like any type of trading, is extremely tough and
+    full of pitfalls.  It is important that you realize some of the major disadvantages
+    before you embark on your algorithmic trading career.  These disadvantages might
+    just change your mind about wanting to algo trade.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Disadvantage #1 – Emotions Are Still A Part Of Trading'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: I still vividly remember my first “algo” trade, the same one I talk about in
+    the introduction.  No one called it algorithmic trading back then, but that is
+    what it was.  I had rules, I followed the rules, and I should have been emotionless,
+    like a robot.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Instead, I was scared to death!
+  prefs: []
+  type: TYPE_NORMAL
+- en: I called the broker every 15 minutes and asked “can I get the last price for
+    June Live Hogs?”  Then I’d calculate my open position profit or loss based on
+    the latest number.  For the next 15 minutes, I’d either be euphoric because I
+    was making money, or depressed because I was losing money.  The broker started
+    getting annoyed with my constant calls.  There was no online way to check prices
+    then, if you recall those olden days.  If there would have been online quotes,
+    I’m sure I would have refreshed that quote page every minute.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So why was I scared to death, acting like a crazy person?  After all, so many
+    people say that when you trade with rules, it takes the emotion out of trading. 
+    I should have been a calm, cool, collected robot.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Except I wasn’t – I was a bundle of stomach wrenching nerves!
+  prefs: []
+  type: TYPE_NORMAL
+- en: The truth is that ANY time you are trading with money, emotions enter into the
+    equation.  The rapid gain or loss of capital is what brings on the emotion, not
+    the style of trading.  Algo trading, discretionary trading, random guessing trading
+    – it does not matter which approach you take- is emotional once money is involved.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, how come so many “gurus” out there recommend algo trading because it is
+    supposedly emotionless?  I believe it is all a sales ploy by these crooks.  The
+    charlatans know that emotions ruin a lot of traders, and that traders are looking
+    to avoid emotion, so they claim that algo trading solves the emotion problem.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Except it doesn’t.  As I said, emotions are because of the money involved, not
+    the type of trading.  My personal guess is that people who say algo trading is
+    emotionless either 1) trade only on a simulator, or 2) do not trade at all, in
+    any fashion.  They clearly do not trade with real money.
+  prefs: []
+  type: TYPE_NORMAL
+- en: That being said, the emotions experienced by algo trading are a bit different
+    than the emotions of discretionary trading.  Gone is the panic feeling of wondering
+    if you should enter or exit a trade.  But, that is replaced with the panic feeling
+    of wondering if you should turn an algo on or off.  Basically, for every event
+    in discretionary trading that causes emotion, there is likely a similar, but different,
+    parallel emotion in algo trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So the first misconception in algo trading – that there is no emotion - is also
+    the first disadvantage.  Trading with real money involves emotion.  You must learn
+    to accept that.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Disadvantage #2 – Computer Programming'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: If the thought of having to program a computer scares you, then maybe algo trading
+    is not for you.  Although there are visual programming tools out there to assist,
+    to really be a good algo trader, you need to be able to program your trading rules. 
+    True, you could just hire someone to do that for you, but since most algos fail
+    testing, paying someone to program will get expensive very quickly.  Programming
+    thousands of algos is a big task.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, if you decide to algo, just convince yourself right now that you will learn
+    to program.  Once you start doing it, knowing how to program will move this from
+    a disadvantage to an advantage.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Disadvantage #3 – The Past Is Not The Future'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: If you have seen ads for trading education, trading systems, brokers, etc. you
+    have undoubtedly seen the U.S. government required disclaimer “past performance
+    is not necessarily indicative of future results.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is a great warning for all traders.  It simply means that no matter what
+    historical testing shows, it does not mean the performance will continue in the
+    future.  In fact, many times the opposite happens, sort of a reversion to the
+    mean situation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This presents a conundrum for algo traders, who almost always historically backtest
+    their approaches before commencing with live trading.  Why even backtest if the
+    past performance doesn’t correlate with future performance?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Obviously, backtesting an algo presents a sticky situation.  A trader wants
+    the reassurance that an algo did work historically, and yet at the same time must
+    realize that everything could fall apart from day one of live trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The trick, it turns out, is to have a development method that has been proven
+    to work in historical testing and real time testing.  It is not as simple as just
+    optimizing parameters, as most trading platforms would make you believe.  This
+    will be discussed in more detail later.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Historical testing, then, is like walking a tightrope over a pit of molten lava. 
+    Once false move, and death awaits.  But when done correctly, the crowd cheers
+    in awe.  Our goal will obviously be the latter result!
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Disadvantage #4 – Tweaking Is Fun'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: When I first drafted the book, one female proof reader asked me “why is twerking
+    a disadvantage?  Twerking is fun, and I love to do it, but I don’t get what it
+    has to do with trading.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: Well, that might be true, although I am a little too old to be twerking (trust
+    me!).  And besides, the word is TWEAKING.  Changing one letter makes a big difference!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Tweaking is the natural tendency to want to change and improve things.  As I
+    showed earlier, making improvements is an important part of trading.  But, it
+    is not a desired part of algo development.  Tweaking can really cause problems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is an example: I have a trader friend who has been developing and tweaking
+    his strategy for over 5 years.  Every time he has a losing trade, he examines
+    it closely, and finds a reason why that trade was invalid.  He then creates a
+    rule – a tweak – to eliminate that trade.  His backtest looks better, since that
+    pesky trade will never occur again, and he is happy.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Happy, of course, until the next tweak is needed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, for over five years, his strategy has been tweaked to death.  In fact, I’d
+    wager that his algo has much more tweaking code than original strategy code. 
+    And, unfortunately, his real time results never get better.  There is always one
+    more tweak to be done.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Tweaking your code is easy.  But it is wrong to do, and that makes it a big
+    disadvantage for algo trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Disadvantage #5 – I’m The Boss Here!'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Earlier, I wrote about having a business with employees.  With trading, the
+    only employee is typically yourself.  This can be a major advantage – no employees
+    to coddle or stress over – but it can also be a major disadvantage.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If your algo strategies fail to perform – it is usually your fault.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you fail to develop new strategies – only you are to blame.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you make mistakes in automating your algos, perform futures contract rollovers
+    incorrectly, miss deadlines – it falls on you.
+  prefs: []
+  type: TYPE_NORMAL
+- en: No matter what the decision, or what the action, for better or worse, you are
+    the Big Cheese, the Head Honcho, the Top Dog ([https://www.youtube.com/watch?v=0yC4gm_vN3s](https://www.youtube.com/watch?v=0yC4gm_vN3s)).
+  prefs: []
+  type: TYPE_NORMAL
+- en: While this might seem to be the ultimate freedom for people stuck in jobs they
+    do not like, working for bosses they hate, the truth is that it can be a major
+    disadvantage, too.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In algo trading, when things falls apart – and they will, at least temporarily,
+    to some extent and to some degree – there is no one to blame but yourself.  Many
+    traders cannot handle that kind of pressure and accountability.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Being the boss can be great, especially with algo trading.  But, just remember
+    that it can also be a big disadvantage.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Disadvantage #6 – Doing Things The Wrong Way'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Algo trading, when done the right way, can work out very well.  The problem
+    is that it is exceedingly easy to algo trade incorrectly.  And guess what, the
+    wrong way usually leads to losses.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is a major disadvantage for algo trading because there are many, many ways
+    to develop a trading strategy incorrectly.  The list is so long, in fact, that
+    I could probably write a whole book on how NOT to develop trading algo – and maybe
+    one day I will!  Many biases, shown below, can really mess up your algo trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig17a.jpg](../images/00017.jpeg)![C:\Users\Trader\Documents\Book
+    - Intro Algo\IntroAlgoBookFigs\fig17b.jpg](../images/00018.jpeg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 17- Each One Of These Biases Can Lead To Improper Algo Development
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, with all these algo development pitfalls, how can a trader turn this from
+    a disadvantage to an advantage?  Surely, if most traders make mistakes during
+    algo creation, then the benefit of correct development becomes even more apparent.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Here are a couple of tips to negate this disadvantage.  First, only use trusted
+    sources for your trading advice.  The internet is chock full of advice givers,
+    but many of these people do not even trade!  Take your advice from someone you
+    know trades.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Second, be willing to take information from many different traders and combine
+    it into something that feels right to you.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Third, prove it via real money trading.  Theory is nice, ideas are nicer, but
+    the only thing that matters in the end is the bottom line result.  Does your method
+    of algo development produce profits?  If it does, congratulations!  If it doesn’t,
+    you might consider a deep review of your process, and incorporating new concepts
+    or improvements.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Building and trading algos is tough, and there is no one “correct” way to do
+    it.  Plus, there are a ton of incorrect ways to do it.  That makes this a disadvantage
+    to algo trading.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Disadvantage #7 – Algo Trading Is Not “Set And Forget”'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: You might recall a number of years ago a portable cooker that was sold on late
+    night television infomercials.  Its slogan was “set it and forget it.”  It was
+    so easy to use, you could just throw food in it, hit a few buttons, and come back
+    a few hours later to a delicious home cooked meal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig18.jpg](../images/00019.jpeg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 18- Definitely Not The Way To Algo Trade!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Many traders think the same slogan applies to algo trading, especially when
+    automating systems.  They are wrong!
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Technical support people at Tradestation, a leading trading software platform
+    (and my primary software for trading) have a different slogan: “automated trading
+    does not mean unattended trading.”'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Whenever you have an automated algo, a million things could go wrong.  Internet
+    connections go out, disconnections to trading servers occur, exchanges experience
+    intermittent hiccups, price data corrections come out (but not before the bad
+    data hits your algo) – the list of potential issues is practically infinite.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Multiply all those issues by the dozens of algorithms you might be trading,
+    and the potential for problems becomes very apparent.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can’t turn on an algo, walk away, and come back a week later to count your
+    profits.  It just does not work that way.  You don’t have to be staring at a screen
+    all day and night, making sure your algos are running correctly, but you do have
+    to monitor your algos, at a minimum of a few times per day.  You have to be ready
+    to take action when something goes awry.  I guarantee you that some intervention
+    will be required more often than you think.
+  prefs: []
+  type: TYPE_NORMAL
+- en: That is the final misconception and disadvantage of algo trading – you have
+    to stay on top of your algos, and keep a watchful eye over them.  Definitely do
+    not “set it and forget it!”
+  prefs: []
+  type: TYPE_NORMAL

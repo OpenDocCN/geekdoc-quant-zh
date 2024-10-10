@@ -1,0 +1,158 @@
+- en: Chapter 10 - Let’s Get Started – A Simple Sample Algo
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this chapter, I am going to walk through a simple algo trading example. 
+    Note that my focus here is on using the trading software – regardless of the platform
+    you use, you really must be able to do these basic tasks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This example is NOT an example of the proper, or only, steps to develop a solid
+    algorithm.  That is beyond the scope of this short book.  But this example will
+    at least get you started with the concepts laid out in this book.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Treat this chapter as an interactive guide.  For each step I take, try to duplicate
+    it with your trading software.  Go to the next step only when you have mastered
+    the first step.
+  prefs: []
+  type: TYPE_NORMAL
+- en: NOTE:  This strategy, as presented, is NOT a tradable strategy – it has weak
+    out-of-sample performance.  It is merely an illustrative example.  The steps shown
+    do not represent the strategy development process I use for my own trading (my
+    trademarked Strategy Factory® process).  The key here is if you feel comfortable
+    performing each of the steps I have detailed in this chapter, you have graduated
+    from beginner algo level, and you can now be a serious algo strategy developer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Call Up A Chart
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Let’s start out with a simple task.  Open a daily continuous chart of Soybeans
+    from 2007 to today.  Have the start date of January 1, 2007 and end date of December
+    31, 2016.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig25.jpg](../images/00026.jpeg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 25- Can You Create A Chart Like This In Your Platform?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Get A Trading Idea
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: A simple trading idea is usually the best.  In this case, I’ll create a basic
+    breakout system.  The idea is that higher prices can only occur by exceeding previous
+    high prices – pretty simple!
+  prefs: []
+  type: TYPE_NORMAL
+- en: At the close of every bar, if the highest price is the highest closing price
+    of the last “xbars,” and the 15 bar ADX (a technical indicator measure of trendiness)
+    is above 20, then go long.  Do the opposite for short trades.  I’ll also include
+    a simple stop loss, with no profit target (let winning trades run!).  This type
+    a system is good for trends, but will likely experience a lot of whipsaw during
+    non-trending markets.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Program It
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Program this simple strategy in your own platform.  Code for Tradestation Easy
+    Language is below.  Include $5 round turn trade for commissions, and $25 round
+    turn for slippage (VERY important!).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig26.jpg](../images/00027.jpeg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 26- Code This Strategy In Your Platform
+  prefs: []
+  type: TYPE_NORMAL
+- en: Apply It To The Chart
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Now, use your software to attach/apply that strategy to the previously built
+    chart.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig27.jpg](../images/00028.jpeg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 27- Can You See Trades On Your Chart?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Optimize A Bit
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Optimization is a dirty word, but when used in moderation it can be useful. 
+    Try to optimize the variable “xbar.”  Use a minimum value of 5 (short term) up
+    to 30 (medium term) in steps of 5.  Also, optimize the stop loss, from 500 to
+    1500 in steps of 500 dollars.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig28.jpg](../images/00029.jpeg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 28- Optimization Results
+  prefs: []
+  type: TYPE_NORMAL
+- en: Look At Results
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Take a look at the optimization results.  There are 18 iterations (runs), and
+    all of them are profitable.  This is generally a good sign.  The dilemma becomes,
+    which parameter set to choose?  Highest Net Profit?  Average Return on Account? 
+    Minimum Winning Percentage?  Just ask that question in a trading forum, and be
+    prepared for a slew of answers, with pointed and sharp opinions.  The truth is
+    there is no “perfect” criteria to use – it is a matter of personal preference
+    and experience.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The choices for what to pick are pretty much endless, which is one reason I
+    follow a set criteria when I do my development, which includes walkfoward testing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For now, let’s assume that we will pick a “median” Net Profit – not the best,
+    not the worst.  That is iteration #9, with value of xbar=30, stop=500.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Run Out-Of-Sample
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Once we have our parameters chosen, it is time to run the strategy in 2017 and
+    2018.  To do that, we simply change the chart end date, then review the updated
+    Performance Report (not shown).  The results, while not horrible (if 2017-8 results
+    were really poor it would suggest we overoptimized or curve fit too much), are
+    not really good enough for trading.  At this point, the strategy should probably
+    just be abandoned, since if we test again and again, our out-of-sample results
+    are no longer truly out-of-sample.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig29.jpg](../images/00030.jpeg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 29- Sample Strategy, Out-Of-Sample Results
+  prefs: []
+  type: TYPE_NORMAL
+- en: Automate it
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'For this strategy, based on the out-of-sample performance, I would not trade
+    it.  But assume you wanted to trade it.  What steps would you take to turn it
+    on and automate it?  Here is the step by step process for Tradestation:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig30.jpg](../images/00031.jpeg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 30- Steps To Automate A Strategy, Tradestation
+  prefs: []
+  type: TYPE_NORMAL
