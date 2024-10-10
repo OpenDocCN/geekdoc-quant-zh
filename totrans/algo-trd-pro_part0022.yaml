@@ -1,86 +1,123 @@
 - en: 4.5\. Data Analysis and Feature Engineering
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 4.5\. 数据分析与特征工程
 - en: In the orchestration of a opus that is data analysis, feature engineering plays
     the first violin. The process involves extracting, sculpting, and transforming
     raw data into informative features, which can significantly enhance the performance
     of our algorithmic models. This section delves into the meticulous craft of feature
     engineering within the domain of options trading, where each subtle nuance can
     be the difference between a profitable trade and an unprofitable one.
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在数据分析的交响乐中，特征工程扮演着第一小号的角色。该过程涉及提取、雕塑和转换原始数据为信息丰富的特征，这可以显著提高我们算法模型的性能。本节深入探讨期权交易领域内特征工程的细致工艺，每一个微妙的细节都可能是盈利交易与亏损交易之间的区别。
 - en: To begin, we must immerse ourselves in the data, understanding its characteristics
     and idiosyncrasies. For options, this means examining elements such as historical
     price fluctuations, trading volumes, and open interest trends. Python’s pandas
     library offers the functionality to dissect and aggregate this information efficiently,
     allowing us to glean insights and inform our feature selection.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，我们必须沉浸在数据中，理解其特征和独特性。对于期权，这意味着需要检查历史价格波动、交易量和未平仓合约趋势等要素。Python的pandas库提供了高效拆解和聚合这些信息的功能，使我们能够提取洞见并指导特征选择。
 - en: 'Consider this illustrative Python code that computes rolling historical volatility,
     a common feature in options trading:'
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 考虑这段说明性的Python代码，它计算滚动历史波动率，这是期权交易中的常见特征：
 - en: '[PRE0]'
+  id: totrans-4
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: The historical volatility calculated here can be a predictor of future price
     movements and is a valuable input to our models.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 此处计算的历史波动率可以预测未来价格变动，并且是我们模型的宝贵输入。
 - en: 'Creating Technical Indicators as Features:'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建技术指标作为特征：
 - en: Technical indicators are the alchemists' tools in finance, transforming historical
     price data into golden nuggets of predictive power. For instance, moving averages,
     Bollinger Bands, and the Relative Strength Index (RSI) can signal momentum changes
     and potential reversals in the options market. These indicators can be programmatically
     generated using Python, with libraries such as TA-Lib streamlining the process.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 技术指标是金融领域的炼金术士工具，将历史价格数据转化为具有预测能力的金块。例如，移动平均线、布林带和相对强弱指数（RSI）可以指示期权市场中的动量变化和潜在反转。这些指标可以通过Python编程生成，使用TA-Lib等库可以简化该过程。
 - en: 'Here’s an example of calculating the RSI for an options dataset:'
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是计算期权数据集RSI的示例：
 - en: '[PRE1]'
+  id: totrans-9
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: 'Options-Specific Features:'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权特定特征：
 - en: In options trading, specific features such as Implied Volatility Rank (IVR)
     can offer an edge. IVR compares the current implied volatility to its historical
     range, providing context on whether an option is cheap or expensive relative to
     its past. Such features require bespoke calculations, often involving a combination
     of historical and real-time data, which can be handled adeptly with Python.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 在期权交易中，特定特征如隐含波动率等级（IVR）可以提供优势。IVR将当前隐含波动率与其历史范围进行比较，为判断期权相对于过去是便宜还是昂贵提供背景。这类特征需要定制计算，通常涉及历史和实时数据的组合，这可以通过Python灵活处理。
 - en: 'Dimensionality Reduction Techniques:'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 降维技术：
 - en: Not all features contribute equally to model performance. Techniques like Principal
     Component Analysis (PCA) can distill the essence of our feature set, reducing
     dimensionality while retaining critical information. This is particularly useful
     in options trading, where multicollinearity between features can obscure the true
     drivers of an option’s price movement.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 并非所有特征对模型性能的贡献都是相等的。主成分分析（PCA）等技术可以提炼特征集的本质，降低维度，同时保留关键信息。这在期权交易中特别有用，因为特征之间的多重共线性可能会掩盖期权价格变动的真正驱动因素。
 - en: 'Time Series Feature Extraction for Algorithmic Models:'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 时间序列特征提取用于算法模型：
 - en: Options trading is inherently a time series problem. Features that capture temporal
     dependencies, such as lagged returns or moving average crossovers, can be pivotal
     in predicting future movements. Python's pandas library, with its robust time
     series functionality, enables the creation of such features with ease.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权交易本质上是一个时间序列问题。捕捉时间依赖性的特征，如滞后收益或移动平均交叉，对于预测未来变动至关重要。Python的pandas库凭借其强大的时间序列功能，使得创建此类特征变得轻而易举。
 - en: 'For example, to calculate a simple moving average crossover feature, we could
     use:'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，要计算简单移动平均交叉特征，我们可以使用：
 - en: '[PRE2]'
+  id: totrans-17
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: The `mavg_crossover` feature becomes a signal that could trigger buy or sell
     decisions in our trading algorithms.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
 - en: Feature engineering is the crucible in which raw data is transmuted into a refined
@@ -90,18 +127,22 @@
     ensuring that our strategies are buttressed by the most insightful and predictive
     features available. This foundational work paves the way for the advanced analytical
     techniques that will be the subject of subsequent sections.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
 - en: Exploration of Options Data Characteristics
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
 - en: A meticulous examination of options data characteristics is paramount to unearthing
     patterns and insights that drive successful trading strategies. In this section,
     we dissect the kaleidoscope of metrics and attributes that define options data,
     leveraging the analytical prowess of Python to sift through the complexity.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
 - en: 'Volume and Open Interest Analysis:'
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
 - en: Volume and open interest serve as the pulse and rhythm of the options market,
@@ -110,32 +151,42 @@
     and market sentiment towards a particular strike price or expiration date. Open
     interest, the total number of outstanding contracts, provides insight into the
     flow and sustainability of market trends.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
 - en: 'Utilizing Python''s pandas library, we can aggregate and visualize these metrics
     to discern patterns:'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE3]'
+  id: totrans-25
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: 'Historical Pricing Trends:'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
 - en: The historical price movements of options, encompassing bid, ask, and settlement
     prices, are rich with information. Analyzing these trends can reveal the options'
     sensitivity to market changes, identify support and resistance levels, and inform
     the selection of strike prices.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
 - en: 'With the power of matplotlib, we can chart these price movements for visual
     analysis:'
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE4]'
+  id: totrans-29
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: 'Implied Volatility Surface Mapping:'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
 - en: Implied volatility is an indispensable metric in options trading. It reflects
@@ -143,352 +194,548 @@
     constructing an implied volatility surface—mapping implied volatility across different
     strikes and maturities—we gain insights into how volatility is perceived across
     the options landscape.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
 - en: 'Let''s use Python to create a basic implied volatility surface plot:'
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE5]'
+  id: totrans-33
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: 'Greeks Analysis:'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
 - en: The Greeks—Delta, Gamma, Theta, Vega, and Rho—quantify the sensitivity of an
     option's price to various factors. They are critical for managing risk and constructing
     hedged positions. A thorough analysis of the Greeks can reveal the risk profile
     of an options portfolio and guide strategic adjustments.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
 - en: 'In Python, we can calculate and analyze the Greeks using financial libraries
     like mibian or py_vollib for various options positions:'
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE6]'
+  id: totrans-37
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: The characteristics of options data are multifaceted and rich in detail. By
     harnessing Python's computational and visualization capabilities, we can transform
     this raw data into actionable intelligence, paving the way for strategic decision-making
     in options trading. The subsequent sections will build upon this foundation, presenting
     sophisticated models and strategies that synthesize these characteristics into
     a coherent and profitable trading methodology.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 期权数据的特征多样且细节丰富。通过利用Python的计算和可视化能力，我们可以将这些原始数据转化为可行的信息，为期权交易中的战略决策铺平道路。后续部分将在此基础上构建，呈现合成这些特征为连贯且盈利的交易方法的复杂模型和策略。
 - en: Creating Technical Indicators as Features
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 将技术指标创建为特征
 - en: Technical indicators are mathematical computations based on historical trading
     activity—price, volume, and open interest—which can signal potential market moves
     or confirm trends. From moving averages that smooth out price action to oscillators
     that identify overbought or oversold conditions, these indicators serve as the
     building blocks for feature engineering in algorithmic trading models.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 技术指标是基于历史交易活动的数学计算——价格、成交量和未平仓合约——可以发出潜在市场走势的信号或确认趋势。从平滑价格动作的移动平均线到识别超买或超卖状况的振荡器，这些指标是算法交易模型中特征工程的基础。
 - en: 'Implementing in Python:'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Python中实现：
 - en: 'Python, our analytical maestro, wields libraries such as TA-Lib and pandas_ta
     to craft these indicators with ease. Here’s how we can deploy a selection of technical
     indicators as features:'
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: Python，我们的分析大师，使用像TA-Lib和pandas_ta这样的库轻松创建这些指标。以下是我们如何将一系列技术指标作为特征进行部署：
 - en: '[PRE7]'
+  id: totrans-43
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE7]'
 - en: 'Features for Machine Learning:'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 机器学习的特征：
 - en: Technical indicators, once computed, can then be repurposed as features (predictor
     variables) in machine learning models. By encoding market psychology and historical
     patterns within these features, we enable models to discern subtleties in data
     that may be imperceptible to the human eye.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦计算出技术指标，就可以将其重新用作机器学习模型中的特征（预测变量）。通过在这些特征中编码市场心理和历史模式，我们使模型能够识别数据中人眼可能无法察觉的细微差别。
 - en: 'In the following Python example, we prepare a feature matrix for model training:'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 在以下Python示例中，我们为模型训练准备特征矩阵：
 - en: '[PRE8]python'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: '[PRE8]python'
 - en: import numpy as np
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: import numpy as np
 - en: Assume 'iv_data' is a pandas Series containing 1 year of IV data
+  id: totrans-49
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 假设'iv_data'是一个包含1年IV数据的pandas Series
 - en: 'iv_data = pd.Series(...)  # Replace with actual IV data source'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 'iv_data = pd.Series(...)  # 替换为实际IV数据源'
 - en: Current IV for the option
+  id: totrans-51
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 当前期权的IV
 - en: current_iv = iv_data.iloc[-1]
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: current_iv = iv_data.iloc[-1]
 - en: Calculate IVR
+  id: totrans-53
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 计算IVR
 - en: ivr = (current_iv - iv_data.min()) / (iv_data.max() - iv_data.min())
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: ivr = (current_iv - iv_data.min()) / (iv_data.max() - iv_data.min())
 - en: 'print(f''Implied Volatility Rank is: {ivr * 100:.2f}%'')'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: print(f'隐含波动率排名为：{ivr * 100:.2f}%')
 - en: '[PRE9]python'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: '[PRE9]python'
 - en: 'def determine_trading_signal(ivr, ivr_threshold=0.8):'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 'def determine_trading_signal(ivr, ivr_threshold=0.8):'
 - en: 'if ivr > ivr_threshold:'
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 'if ivr > ivr_threshold:'
 - en: return 'sell_strategy'
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: return 'sell_strategy'
 - en: 'elif ivr < (1 - ivr_threshold):'
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 'elif ivr < (1 - ivr_threshold):'
 - en: return 'buy_strategy'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: return 'buy_strategy'
 - en: 'else:'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 'else:'
 - en: return 'no_action'
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: return 'no_action'
 - en: Example usage
+  id: totrans-64
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 示例用法
 - en: trading_signal = determine_trading_signal(ivr)
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: trading_signal = determine_trading_signal(ivr)
 - en: 'print(f''Trading signal based on IVR: {trading_signal}'')'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: print(f'基于IVR的交易信号：{trading_signal}')
 - en: '[PRE10]python'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: '[PRE10]python'
 - en: from sklearn.decomposition import PCA
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: from sklearn.decomposition import PCA
 - en: from sklearn.preprocessing import StandardScaler
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: from sklearn.preprocessing import StandardScaler
 - en: Assume 'options_data' is a DataFrame containing our options features
+  id: totrans-70
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 假设'options_data'是一个包含我们期权特征的DataFrame
 - en: 'options_data = pd.DataFrame(...)  # Replace with actual data source'
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 'options_data = pd.DataFrame(...)  # 替换为实际数据源'
 - en: Standardize the data
+  id: totrans-72
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 标准化数据
 - en: scaler = StandardScaler()
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: scaler = StandardScaler()
 - en: scaled_data = scaler.fit_transform(options_data)
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: scaled_data = scaler.fit_transform(options_data)
 - en: Apply PCA
+  id: totrans-75
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 应用PCA
 - en: 'pca = PCA(n_components=5)  # We choose 5 components for this example'
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 'pca = PCA(n_components=5)  # 我们选择5个成分作为示例'
 - en: principal_components = pca.fit_transform(scaled_data)
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: principal_components = pca.fit_transform(scaled_data)
 - en: The resulting 'principal_components' are now the reduced feature set
+  id: totrans-78
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 结果'principal_components'现在是减少后的特征集
 - en: '[PRE11]python'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: '[PRE11]python'
 - en: from sklearn.manifold import TSNE
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: from sklearn.manifold import TSNE
 - en: Apply t-SNE to the standardized options data
+  id: totrans-81
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 将t-SNE应用于标准化的期权数据
 - en: tsne = TSNE(n_components=2, perplexity=30, n_iter=1000)
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: tsne = TSNE(n_components=2, perplexity=30, n_iter=1000)
 - en: tsne_results = tsne.fit_transform(scaled_data)
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: tsne_results = tsne.fit_transform(scaled_data)
 - en: The 'tsne_results' can now be plotted for visual inspection
+  id: totrans-84
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 现在可以绘制'tsne_results'以进行可视化检查
 - en: '[PRE12]python'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: '[PRE12]python'
 - en: from sklearn.feature_selection import RFE
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: from sklearn.feature_selection import RFE。
 - en: from sklearn.linear_model import LogisticRegression
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: from sklearn.linear_model import LogisticRegression。
 - en: Assume a logistic regression model for feature selection
+  id: totrans-88
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 假设使用逻辑回归模型进行特征选择。
 - en: model = LogisticRegression()
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: model = LogisticRegression()。
 - en: RFE for feature selection
+  id: totrans-90
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 进行特征选择的RFE。
 - en: selector = RFE(model, n_features_to_select=10)
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: selector = RFE(model, n_features_to_select=10)。
 - en: 'selector = selector.fit(options_data, target_variable)  # ''target_variable''
     is our dependent variable'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 'selector = selector.fit(options_data, target_variable)  # ''target_variable''是我们的因变量。'
 - en: The 'selector.support_' attribute now holds a boolean array indicating which
     features are selected
+  id: totrans-93
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '''selector.support_''属性现在包含一个布尔数组，指示哪些特征被选中。'
 - en: '[PRE13]python'
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: '[PRE13]python。'
 - en: import pandas as pd
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: import pandas as pd。
 - en: import numpy as np
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: import numpy as np。
 - en: from statsmodels.tsa.seasonal import seasonal_decompose
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: from statsmodels.tsa.seasonal import seasonal_decompose。
 - en: Assume 'options_prices' is a DataFrame with 'DateTime' as the index and 'Price'
     as the column
+  id: totrans-98
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 假设'options_prices'是一个以'DateTime'为索引，'Price'为列的数据框。
 - en: 'options_prices = pd.DataFrame(...)  # Replace with actual data source'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 'options_prices = pd.DataFrame(...)  # 替换为实际数据源。'
 - en: Decompose the time series to extract features
+  id: totrans-100
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 对时间序列进行分解以提取特征。
 - en: 'decomposition = seasonal_decompose(options_prices[''Price''], model=''additive'',
     freq=252)  # Assume daily data with ''freq'' as trading days in a year'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 'decomposition = seasonal_decompose(options_prices[''Price''], model=''additive'',
+    freq=252)  # 假设每日数据，''freq''为每年的交易天数。'
 - en: Extract the trend, seasonal, and residual components
+  id: totrans-102
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 提取趋势、季节性和残差成分。
 - en: trend_component = decomposition.trend
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: trend_component = decomposition.trend。
 - en: seasonal_component = decomposition.seasonal
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: seasonal_component = decomposition.seasonal。
 - en: residual_component = decomposition.resid
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: residual_component = decomposition.resid。
 - en: Add these components as features in the DataFrame
+  id: totrans-106
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 将这些组件作为特征添加到数据框中。
 - en: options_prices['Trend'] = trend_component
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: options_prices['Trend'] = trend_component。
 - en: options_prices['Seasonality'] = seasonal_component
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: options_prices['Seasonality'] = seasonal_component。
 - en: options_prices['Irregularity'] = residual_component
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: options_prices['Irregularity'] = residual_component。
 - en: '[PRE14]python'
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: '[PRE14]python。'
 - en: Calculate a 20-day rolling window moving average
+  id: totrans-111
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 计算20天滚动窗口的移动平均。
 - en: options_prices['20d_MA'] = options_prices['Price'].rolling(window=20).mean()
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: options_prices['20d_MA'] = options_prices['Price'].rolling(window=20).mean()。
 - en: Calculate a 20-day exponentially weighted moving average
+  id: totrans-113
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 计算20天指数加权移动平均。
 - en: options_prices['20d_EWMA'] = options_prices['Price'].ewm(span=20, adjust=False).mean()
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: options_prices['20d_EWMA'] = options_prices['Price'].ewm(span=20, adjust=False).mean()。
 - en: '[PRE15]python'
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: '[PRE15]python。'
 - en: Create lagged features for 1 day, 5 days, and 10 days
+  id: totrans-116
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 创建滞后特征，分别为1天、5天和10天。
 - en: options_prices['Lag_1'] = options_prices['Price'].shift(1)
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: options_prices['Lag_1'] = options_prices['Price'].shift(1)。
 - en: options_prices['Lag_5'] = options_prices['Price'].shift(5)
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: options_prices['Lag_5'] = options_prices['Price'].shift(5)。
 - en: options_prices['Lag_10'] = options_prices['Price'].shift(10)
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: options_prices['Lag_10'] = options_prices['Price'].shift(10)。
 - en: '[PRE16]python'
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: '[PRE16]python。'
 - en: from numpy.fft import rfft, rfftfreq
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: from numpy.fft import rfft, rfftfreq。
 - en: Apply the real FFT to the 'Price' column
+  id: totrans-122
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 对'Price'列应用真实FFT。
 - en: fft_values = rfft(options_prices['Price'].dropna())
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: fft_values = rfft(options_prices['Price'].dropna())。
 - en: 'fft_frequencies = rfftfreq(len(fft_values), d=1/252)  # ''d'' is the sample
     spacing in terms of trading days'
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 'fft_frequencies = rfftfreq(len(fft_values), d=1/252)  # ''d''为按交易天数计算的样本间距。'
 - en: Identify dominant frequencies and construct features accordingly
+  id: totrans-125
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 确定主导频率并相应构建特征。
 - en: 'dominant_frequencies = np.argsort(-np.abs(fft_values))[:5]  # Extract the indices
     of the 5 largest components'
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 'dominant_frequencies = np.argsort(-np.abs(fft_values))[:5]  # 提取最大的5个成分的索引。'
 - en: Create features based on the dominant frequencies
+  id: totrans-127
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 基于主导频率创建特征。
 - en: 'for i, freq in enumerate(dominant_frequencies, start=1):'
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 'for i, freq in enumerate(dominant_frequencies, start=1):'
 - en: options_prices[f'FFT_Component_{i}'] = np.cos(2 * np.pi * freq * np.arange(len(options_prices)))
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: options_prices[f'FFT_Component_{i}'] = np.cos(2 * np.pi * freq * np.arange(len(options_prices)))。
 - en: '```'
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: '```'
 - en: Feature extraction is the alchemy that refines raw time series into a potent
     brew of predictive variables. In Algorithmic Models, these features become the
     bedrock upon which our strategies are built and tested. They are the DNA of our
@@ -499,5 +746,7 @@
     backtesting and forward-testing, we'll ensure these extracted features not only
     capture the essence of the market's past but also shine a guiding light on its
     future trajectory.
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 特征提取是将原始时间序列精炼成强大预测变量的炼金术。在算法模型中，这些特征成为我们策略构建和测试的基石。它们是我们交易系统的DNA，体现了能够预测市场走势的模式和信号。随着我们的推进，我们将利用这些特征构建复杂的机器学习模型，验证它们的预测能力，并将其整合进一个统一的算法交易框架。通过细致的回测和前测，我们将确保这些提取的特征不仅捕捉市场过去的本质，还为其未来的发展方向指明道路。
