@@ -219,11 +219,13 @@
   id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了展示pandas的强大，考虑这样一个场景：一位期权交易员需要分析历史期权数据，以发现可能影响未来交易的模式。他们手头有一个包含期权行使价格、到期日期、交易量和收盘价的数据集。交易员特别关注那些接近到期且交易量高的期权，因为这些往往呈现出有趣的机会。
 - en: 'The trader initiates their analysis by importing the pandas library with the
     conventional alias ''pd'':'
   id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 交易员通过导入常用别名为'pd'的pandas库来开始他们的分析：
 - en: '[PRE7]'
   id: totrans-32
   prefs: []
@@ -235,6 +237,7 @@
   id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入库后，交易员继续将数据集加载到pandas DataFrame中。DataFrame是pandas中的核心数据结构，适合表示带有行和列的表格数据：
 - en: '[PRE8]'
   id: totrans-34
   prefs: []
@@ -247,6 +250,7 @@
   id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据加载后，交易员利用pandas强大的索引功能过滤出相关的期权。他们使用`.query()`方法来精准定位那些在接下来一周到期且交易量超过某个阈值的期权：
 - en: '[PRE9]'
   id: totrans-36
   prefs: []
@@ -258,6 +262,7 @@
   id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了进一步精炼他们的分析，交易员使用`.groupby()`方法按行使价格聚合数据，使他们能够评估交易活动的主要集中区域：
 - en: '[PRE10]'
   id: totrans-38
   prefs: []
@@ -268,12 +273,14 @@
   id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 这一聚合揭示了交易量最大的行使价格及其平均收盘价，为市场情绪提供了宝贵的洞察。
 - en: 'Finally, with the insights gleaned, the trader might wish to visualize the
     data to share with team members or include in a report. Pandas seamlessly integrates
     with matplotlib, a plotting library, to create compelling visualizations:'
   id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，借助获得的洞察，交易员可能希望可视化数据，以便与团队成员分享或纳入报告。Pandas与可视化库matplotlib无缝集成，创建引人注目的可视化效果：
 - en: '[PRE11]'
   id: totrans-41
   prefs: []
@@ -285,6 +292,7 @@
   id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成的柱状图清晰地展示了期权交易活动的视觉表现，突出显示了以一种瞬时可理解的格式呈现的最活跃的行使价格。
 - en: Through this example, we see how pandas serves as a cornerstone in the analytical
     process, transforming raw data into actionable intelligence. The library’s intuitive
     syntax and extensive functionality empower traders and quants to conduct sophisticated
@@ -293,10 +301,12 @@
   id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过这个例子，我们看到pandas在分析过程中是一个基石，将原始数据转化为可操作的情报。该库直观的语法和丰富的功能使交易员和量化分析师能够以最少的代码进行复杂的数据处理和分析，从而在快节奏的金融世界中最大限度地提高效率。
 - en: Matplotlib for Data Visualization
   id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: Matplotlib用于数据可视化
 - en: In the arsenal of a Python-savvy financial analyst, matplotlib is the quintessential
     instrument for crafting visuals that distill complex data into digestible, informative
     graphics. This library is not just about aesthetics; it is a bridge between numerical
@@ -304,6 +314,7 @@
   id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 在一个精通Python的金融分析师的工具箱中，matplotlib是构建视觉效果的典范工具，它将复杂数据转化为易于理解的信息图形。这个库不仅关乎美学；它是数值数据与战略洞察之间的桥梁，是将电子表格转换为故事的工具。
 - en: Let's consider a scenario where our options trader is now keen on understanding
     the behavior of implied volatility over time for a particular set of options.
     They're aware that changes in implied volatility can have significant implications
@@ -311,11 +322,13 @@
   id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们考虑一个场景，在这个场景中，我们的期权交易员现在希望了解特定期权集的隐含波动率随时间的变化。他们知道隐含波动率的变化对期权定价和策略选择有重大影响。
 - en: 'Firstly, our trader imports matplotlib alongside pandas, to ensure they have
     the full suite of data manipulation and visualization tools at their disposal:'
   id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，我们的交易员导入matplotlib和pandas，以确保他们拥有全面的数据处理和可视化工具：
 - en: '[PRE12]'
   id: totrans-48
   prefs: []
