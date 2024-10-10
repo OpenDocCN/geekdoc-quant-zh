@@ -1,235 +1,332 @@
 - en: Chapter 6 – How To Begin Algo Trading On Your Own
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第六章 – 如何独立开始算法交易
 - en: Since you have read this far, I offer you my congratulations.  You already know
     more about algo trading than probably 90% of people out there.  You have learned
     what it is, what it looks like and what kind of personalities are best suited
     for it.
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 既然你已经读到这里，我祝贺你。你对算法交易的了解已经超过了大约90%的人。你已经了解了它是什么，是什么样子，以及哪种性格最适合它。
 - en: You have also been exposed to the advantages and disadvantages of this style
     of trading, and hopefully the downside has not scared you away.  Algo trading
     can be a fun and rewarding experience, but it is not easy.  But as I always say,
     sometimes the best things in life are the hardest things to do.  If algo trading
     was easy, everyone would do it, and there would be no longer be any financial
     incentive.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 你也了解了这种交易风格的优缺点，希望劣势没有让你退缩。算法交易可以是一种有趣且有回报的体验，但并不容易。但正如我常说的，有时生活中最好的事情是最难做到的。如果算法交易容易，人人都会去做，那么就不会有经济激励了。
 - en: Algo trading can definitely help you compete with the “big boys,” but it is
     not automatically a “supertrader” creator.  There is no easy way to trade, and
     algo trading is no exception.  Rest assured there are retail algo traders out
     there surviving against the hedge funds, commodity trading advisors, etc.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 算法交易确实可以帮助你与“大佬”们竞争，但它并不自动创造“超级交易员”。没有简单的交易方式，算法交易也不例外。请放心，市场上有零售算法交易员在对抗对冲基金、商品交易顾问等。
 - en: 'At this point, it is time to set aside theory and words, and get down to business:
     the business of actually starting to algo trade.  The next 3 chapters in this
     book will get you started:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 此时，是时候抛开理论和文字，开始实际操作：真正开始算法交易的业务。本书接下来的三章将帮助你入门：
 - en: Beginning Algo Trading On Your Own
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 独立开始算法交易
 - en: Selecting A Trading Platform
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择一个交易平台
 - en: Info On Popular Platforms
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 关于流行平台的信息
 - en: Following that, I’ll give you a simple algo example, followed by tips for successful
     trading, and finishing up with recommended steps to take after reading this book. 
     When you put it all together, you’ll be in a good position to seriously implement
     algo trading for yourself.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我将给你一个简单的算法示例，然后提供成功交易的技巧，最后介绍阅读本书后应采取的推荐步骤。当你把这些结合起来时，你就会处于一个很好的位置，认真地实施算法交易。
 - en: So, let’s get started!
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么，让我们开始吧！
 - en: What Is The Best Way To Test?
+  id: totrans-10
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 测试的最佳方式是什么？
 - en: Last year, I met a trader from Atlanta, Georgia in the US.  Based on our discussions,
     I knew he was a knowledgeable trader. Of course, I did not know for sure if he
     was a profitable trader (who ever knows for sure, unless you see verified trading
     records?), but it seemed like he was. In any event, I wanted to pick his brain
     a bit, as I do with many traders I talk to.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 去年，我在美国乔治亚州亚特兰大遇到了一位交易员。根据我们的讨论，我知道他是一位知识渊博的交易员。当然，我无法确切知道他是否盈利（谁能百分之百确定呢，除非你看到经过验证的交易记录？），但他似乎是。无论如何，我想和他聊聊，就像我与许多交易员交流时一样。
 - en: I asked this trader “how do you historically backtest?”  His reply shocked me. 
     “I don’t believe in backtesting,” he explained, “since there are so many ways
     to cheat.  I find historical backtesting useless.  So, I do not do it, ever.” 
     I was flabbergasted.  How can someone trade a strategy without at least testing
     it first, to see if it even produces a profit?
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我问这位交易员：“你如何进行历史回测？”他的回答让我震惊。“我不相信回测，”他说，“因为有很多作弊的方法。我觉得历史回测毫无用处。所以，我从来不做。”我感到难以置信。怎么可能有人在没有至少先测试策略的情况下交易，看看它是否产生盈利？
 - en: Apparently, this trader saw no need for historical testing, and as crazy as
     I personally think it is, to each his own, I suppose.  I’ll assume, though, that
     you want to historically test your trading algorithms, which is the exact approach
     I use.  How do you do it?
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 显然，这位交易员认为不需要进行历史测试，虽然我个人觉得这很疯狂，但每个人有自己的选择。我假设你想要对交易算法进行历史测试，这正是我使用的方式。你是如何做到的？
 - en: There are four major ways to test a strategy.  I’ll highlight the pros and cons
     of each method, before settling on what I think it the best long term solution
     for a new algo trader.  Any of the methods I discuss, though, could work well.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 测试策略有四种主要方法。我将强调每种方法的优缺点，然后确定我认为对新算法交易员来说是最佳的长期解决方案。不过，我讨论的任何方法都可能效果良好。
 - en: Perform Manual Testing
+  id: totrans-15
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 进行手动测试
 - en: Even in this digital age of computers, many people are scared of computers. 
     While increased knowledge of computers usually makes them less intimidating, let’s
     assume that some people just do not want to test their trading algorithm with
     a computer.  How can they do it?
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 即使在这个数字化的电脑时代，许多人仍然害怕电脑。虽然对电脑知识的增加通常会让它们不再那么令人生畏，但假设有些人就是不想用电脑测试他们的交易算法，他们该如何做呢？
 - en: The answer brings me back to my early days of trading, where I wrote closing
     prices on a piece of paper, and calculated moving average with a simple handheld
     calculator.  So I know it can be done.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 答案让我想起我早期的交易经历，那时我在纸上写下收盘价，并用简单的手持计算器计算移动平均线。所以我知道这是可以做到的。
 - en: Manual testing involves the trader looking at each bar, making calculations
     by hand, and manually recording trades as the algorithm he or she is testing gives
     signals.  If that sounds like a slow and painful process, then I have described
     it well.  Manual testing is slow, cumbersome and very prone to errors.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 手动测试涉及交易者查看每个柱，手动计算，并手动记录交易，因为他或她正在测试的算法发出信号。如果这听起来像是一个缓慢而痛苦的过程，那我描述得非常到位。手动测试缓慢、繁琐，并且非常容易出错。
 - en: Do you remember earlier when we saw the trendline trader with his “phantom”
     trades?  Someone manually testing might very well count that as a profitable trade. 
     “Close enough” is employed by many a manual tester, especially when profits are
     involved.  It is just human nature – to always look for the optimistic outcome
     for a trade.  The issue is that those optimistic backtest trades usually do not
     pan out in real time trading.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 你还记得我们之前看到的那位趋势线交易者和他的“幽灵”交易吗？有人手动测试可能会把它算作一笔盈利交易。“差不多可以”常常被许多手动测试者采用，尤其是在涉及利润时。这就是人性——总是寻求交易的乐观结果。问题在于，这些乐观的回测交易通常在实时交易中并不会如愿以偿。
 - en: Manual Testing – Pros
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 手动测试 – 优点。
 - en: Trader gets an intimate feel for their algo strategy
+  id: totrans-21
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交易者对他们的算法策略有了深入的了解。
 - en: Trader feels confident in results, since he meticulously created them
+  id: totrans-22
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交易者对结果感到自信，因为他是仔细创建这些结果的。
 - en: Manual Testing – Cons
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 手动测试 – 缺点。
 - en: Very time consuming
+  id: totrans-24
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 非常耗时。
 - en: Prone to errors
+  id: totrans-25
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 易出错。
 - en: Extremely easy to cheat, miss bad trades, accept “close enough” trades
+  id: totrans-26
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 非常容易作弊，错过糟糕交易，接受“差不多可以”的交易。
 - en: Easy to jump from strategy to strategy after a short test period, instead of
     testing each strategy the same (no consistency)
+  id: totrans-27
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在短暂的测试期后，很容易从一种策略跳到另一种策略，而不是以相同的标准测试每种策略（缺乏一致性）。
 - en: 'Verdict: Not Recommended, unless you only have one strategy to test – ever!'
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 判决：不推荐，除非你只有一个策略需要测试——永远如此！
 - en: Hire a Programmer/Tester
+  id: totrans-29
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 雇佣程序员/测试员。
 - en: Probably once a week, I get an e-mail from an aspiring trader.  Full of excitement,
     they want me to program and test their “Holy Grail” trading strategy.  Unfortunately,
     though, they lack the programming skills to do themselves, but they’d be willing
     to let me trade their creation for free if I just program and test it, again for
     free.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 我每周大概会收到一封来自有抱负的交易者的电子邮件。他们兴奋不已，想让我编程和测试他们的“圣杯”交易策略。不幸的是，他们缺乏自行完成的编程技能，但如果我能为他们免费编程和测试，他们愿意让我免费交易他们的创作。
 - en: I always decline, since I know the probable outcome.  The strategy probably
     will not backtest well, and then endless tweaks (remember how bad they are?) and
     modifications are attempted in a desperate attempt to salvage the alleged Holy
     Grail.  When that fails, new strategies are proposed for programming, and the
     cycle repeats.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 我总是拒绝，因为我知道可能的结果。该策略可能无法良好回测，然后无休止的调整（记得它们有多糟吗？）和修改在试图挽救所谓的圣杯时被尝试。当这失败后，新策略被提出以进行编程，循环再次开始。
 - en: This is why hiring a programmer or tester is usually bad.  Programmers are expensive,
     and if you are serious about algo trading, you will have dozens, if not hundreds,
     of strategies to program and test.  The bill for this effort will be substantial.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是为什么雇佣程序员或测试员通常是不好的原因。程序员很贵，如果你认真对待算法交易，你将有数十种，甚至数百种策略需要编程和测试。这项工作的账单将是相当可观的。
 - en: The benefit to going this route is that if your strategy is complicated, and
     your programming skills are weak, a good programmer can finish the job a lot more
     quickly and efficiently than you ever could.  And chances are, with an experienced
     tester, the results will be believable.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 走这条路的好处是，如果你的策略复杂，而你的编程技能较弱，一个优秀的程序员可以比你更快、更高效地完成工作。而且，机会是，有经验的测试者会让结果看起来可信。
 - en: Hiring Programmer/Tester – Pros
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 雇佣程序员/测试员 – 优点。
 - en: Quality work
+  id: totrans-35
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 优质的工作。
 - en: Likely faster than doing it yourself
+  id: totrans-36
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 可能比自己做得更快。
 - en: Hiring Programmer/Tester – Cons
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 聘请程序员/测试员 – 缺点。
 - en: Large budget needed to program lots of strategies
+  id: totrans-38
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 编程大量策略需要较大的预算。
 - en: Your time required to provide detail work requirements to programmer and tester
+  id: totrans-39
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 你需要花时间向程序员和测试员提供详细的工作需求。
 - en: Tendency for simple changes to workscope usually leads to drastically increased
     costs
+  id: totrans-40
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 对于简单变更的工作范围，通常会导致成本大幅增加的倾向。
 - en: No guarantee what is produced will be useful
+  id: totrans-41
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 没有保证生产出的东西会有用。
 - en: Most programmers and testers are not traders, so the end product may look good,
     but might also be untradeable
+  id: totrans-42
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 大多数程序员和测试员不是交易者，因此最终产品可能看起来不错，但也可能无法交易。
 - en: 'Verdict: Recommended only if you do not have time to program and test on your
     own, and if you have plenty of money to spend on a programmer'
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 结论：仅在你没有时间自己编程和测试，并且有足够资金聘请程序员时推荐。
 - en: Create Your Own Backtester
+  id: totrans-44
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 创建自己的回测工具。
 - en: Back in the early home computer days, I bought a laptop that I used for work
     during the day, and trading system evaluation at night.  Being on a shoestring
     budget, I could not afford the premier testing software from Omega Research (later
     renamed Tradestation).  So, since I had some programming knowledge in Fortran
     and Visual Basic, and advanced knowledge of spreadsheets (Microsoft Excel, Lotus
     1-2-3 and Borland Quattro Pro), I decided to create my own backtesting program.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 在早期的家用计算机时代，我买了一台笔记本电脑，白天用于工作，晚上进行交易系统评估。由于预算紧张，我无法负担Omega Research（后更名为Tradestation）的高级测试软件。因此，鉴于我在Fortran和Visual
+    Basic方面有一定的编程知识，以及对电子表格（Microsoft Excel、Lotus 1-2-3和Borland Quattro Pro）的高级知识，我决定创建自己的回测程序。
 - en: As the months went by, I found that I had a pretty neat little backtest test
     package.  I kept adding on features to make testing go faster, to automate testing,
     to simulate real conditions, etc.  But as the software kept growing, I realized
     I did not have any finished algos I could trade!
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着时间的推移，我发现自己有一个相当不错的回测包。我不断添加功能，以加快测试速度，自动化测试，模拟真实条件等等。但随着软件的不断发展，我意识到自己并没有任何可以交易的成品算法！
 - en: That was a problem, obviously.  Somewhere along the line my goal became developing
     a great backtesting program, instead of developing some trading algorithms.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 这显然是个问题。在某个时刻，我的目标变成了开发一个优秀的回测程序，而不是开发一些交易算法。
 - en: That is the trap you’ll run into if you try to develop your own backtester. 
     Sure, it will be customized to your requirements, but you’ll also spend a ton
     of time working on the software itself, rather than developing strategies.  That
@@ -237,126 +334,184 @@
     modules are available in these software languages, giving you a big head start,
     but you will still spend a lot of time integrating, testing and modifying the
     pieces.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你尝试开发自己的回测工具，这将是你遇到的陷阱。虽然它会根据你的需求进行定制，但你也会花费大量时间在软件本身上，而不是开发策略。即使是像Python或R这样的高级编程语言也是如此。这些软件语言中有许多开源模块可用，给你提供了很大的起步优势，但你仍然会花费很多时间在集成、测试和修改这些模块上。
 - en: For a person who is more interested in writing test software, and less so in
     developing algos, this is a good route to take.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于一个更感兴趣于编写测试软件而不是开发算法的人来说，这是一条不错的路径。
 - en: Develop Your Own Backtester – Pros
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 开发自己的回测工具 – 优点。
 - en: You control the look, feel and functionality
+  id: totrans-51
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 你可以控制外观、感觉和功能。
 - en: You can trust the results, since you know the programming code intimately (assuming
     you programmed things correctly, of course!)
+  id: totrans-52
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 你可以信任结果，因为你对编程代码非常熟悉（当然，前提是你正确编写了代码！）。
 - en: You may be able to test ideas that many retail platforms struggle with (spread
     trading, options)
+  id: totrans-53
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 你可能能够测试许多零售平台难以处理的想法（差价交易、期权）。
 - en: Develop Your Own Backtester – Cons
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 开发自己的回测工具 – 缺点。
 - en: You need to have programming expertise
+  id: totrans-55
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 你需要具备编程专业知识。
 - en: You need trading expertise, so your test engine replicates the real world
+  id: totrans-56
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 你需要具备交易专业知识，以便你的测试引擎能够复制真实世界。
 - en: Easy for the software development itself, not trading, to become focus
+  id: totrans-57
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 软件开发本身很容易，但不涉及交易，容易成为焦点。
 - en: Time consuming
+  id: totrans-58
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 消耗时间。
 - en: 'Verdict: Recommended for hardcore programmers who want a custom trading solution'
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 结论：推荐给希望拥有定制交易解决方案的硬核程序员。
 - en: Use Retail Trading Software
+  id: totrans-60
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用零售交易软件。
 - en: The final alternative is probably the best one for most retail traders.  In
     today’s market, there are literally dozens of trading software packages designed
     for the retail trader.  All have pros and cons, obviously, but the best of them
     allow traders with little programming knowledge to successfully develop their
     own trading algorithms.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 最终的替代方案可能是大多数零售交易者的最佳选择。在今天的市场上，确实有数十种为零售交易者设计的交易软件包。显然，所有软件都有优缺点，但最好的软件允许那些编程知识不多的交易者成功开发自己的交易算法。
 - en: The great thing about the retail software option is that once you know how to
     operate the software, and do some simple strategy programming, your focus can
     be on developing algorithms – exactly where it should be.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 零售软件选项的好处在于，一旦你知道如何操作软件，并进行一些简单的策略编程，你的重点就可以放在开发算法上——这正是它应该关注的地方。
 - en: Retail Trading Software – Pros
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 零售交易软件 – 优点
 - en: Most platforms are easy to use and learn
+  id: totrans-64
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 大多数平台都易于使用和学习
 - en: Used and debugged by other traders, so you can trust results
+  id: totrans-65
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 被其他交易者使用和调试，因此你可以信任结果
 - en: Relatively inexpensive, some platforms are even free
+  id: totrans-66
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 相对便宜，有些平台甚至是免费的
 - en: Easy to share strategies with other traders using same software
+  id: totrans-67
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 容易与使用相同软件的其他交易者分享策略
 - en: Retail Trading Software – Cons
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 零售交易软件 – 缺点
 - en: Easy to trick most packages into giving false results
+  id: totrans-69
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 很容易让大多数软件包给出错误的结果
 - en: With so many choices, hard to pick “right” platform
+  id: totrans-70
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择这么多，很难挑选出“正确”的平台
 - en: If software company goes out of business, algos might be useless
+  id: totrans-71
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果软件公司倒闭，算法可能变得无用
 - en: 'Verdict: Recommended for most retail traders.  The available software is just
     too powerful and convenient to disregard.'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 结论：推荐给大多数零售交易者。可用的软件实在太强大和方便，不容忽视。
 - en: In case you are wondering, I started out my trading career with the first option,
     manual backtesting.  What a pain!  As soon as I had access to a personal computer
     at night, outside of my regular career working hours, I switched to option 3 –
     building my own backtesting platform.  I did that for a number of years, and had
     more success in programming the platform than I did in building the algorithms.
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你在想，我的交易生涯开始于第一个选项，手动回测。真是太痛苦了！一旦我晚上在个人电脑上有了访问权限，超出我常规的工作时间，我就切换到了选项3——构建自己的回测平台。我这样做了好几年，在编程平台方面比在构建算法方面取得了更多成功。
 - en: I had a few decent algos – or so I thought – but after talking to some more
     experienced traders, I realized there were issues with my bespoke platform that
     I was not accounting for properly (for example, some of the intricacies of rollovers). 
     I realized I had to make a drastic change.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 我有几个不错的算法——我曾这样认为——但在与一些更有经验的交易者交谈后，我意识到我的定制平台存在我没有正确考虑的问题（例如，一些滚动的复杂性）。我意识到我必须进行彻底的改变。
 - en: Eventually, I decided to go the retail platform route, and I got a copy of Tradestation. 
     I was very scared and intimidated at first by the package (for example, for years
     I trusted only “buy/sell next bar at market” orders), but eventually I came to
     understand and felt comfortable with strategy development.  And guess what?  The
     algo strategies I started to build became a lot better!
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 最终，我决定选择零售平台的路线，并购买了一份Tradestation的副本。一开始我对这个软件感到非常害怕和畏惧（例如，多年来我只信任“在市场上以市价买卖下一根柱”的订单），但最终我开始理解，并对策略开发感到舒适。你猜怎么着？我开始构建的算法策略变得好多了！
 - en: Today, I have been using Tradestation for over 10 years.  And baring some unforeseen
     circumstances, I see myself using it for years to come.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 今天，我已经使用Tradestation超过10年了。如果没有一些不可预见的情况，我认为我会继续使用它多年。

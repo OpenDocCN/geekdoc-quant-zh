@@ -1,26 +1,34 @@
 - en: Chapter 7 - Selecting a Trading Software Platform
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第七章 - 选择交易软件平台
 - en: Back when I started using a retail trading platform (Tradestation), there really
     weren’t too many choices out there.  And Tradestation was far and away the best;
     it had the most features, its backtesting was the most accurate, support was superb
     and its user group was active and helpful.
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我开始使用零售交易平台（Tradestation）时，实际上没有太多选择。而Tradestation无疑是最好的；它功能最全，回测最准确，支持服务出色，用户组活跃且乐于助人。
 - en: Fast forward to today, and the retail software platform landscape is a bit different. 
     Now, there are dozens of trading platforms, and most are pretty good.  Each one
     has some specific “niche” areas it tries to address, usually areas that Tradestation
     was traditionally not as good at.  Of course, Tradestation has responded, and
     is continually building a better platform.  The competition is raising the standard
     for all platforms, which is tremendous.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 快进到今天，零售软件平台的格局略有不同。现在有数十个交易平台，大多数都相当不错。每个平台都有一些特定的“细分”领域，试图解决Tradestation传统上不太擅长的地方。当然，Tradestation也在不断改进，并持续构建更好的平台。竞争正在提高所有平台的标准，这非常重要。
 - en: This is all great for the retail trader – more competition, better features,
     lower costs – but it can be overwhelming!  Which platform is the best?  Which
     platform has the features you are looking for?  Which platform is the easiest
     to build with?  The list of questions goes on and on.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 这对零售交易者来说非常好——竞争增加、功能更强大、成本更低——但可能会让人感到不知所措！哪个平台是最好的？哪个平台具备你所寻找的功能？哪个平台最容易构建？问题清单还在不断增加。
 - en: So, I’m not going to try to tell you which platform to use in this chapter,
     but I will identify some “must haves” that you want for algo trading.  In the
     next chapter, I’ll also tell you the most popular platforms, based on trader surveys
@@ -28,203 +36,282 @@
     to use, but I think it is important.  You want a trading platform that will be
     around for years and years, since transferring your algos from a defunct platform
     will be cumbersome.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，我不会在这一章告诉你该使用哪个平台，但我会指出一些你在算法交易中所需的“必备”条件。在下一章中，我还会告诉你根据我在过去几年进行的交易者调查得出的最受欢迎的平台。你可能认为受欢迎程度是一个不好的标准，但我认为这很重要。你希望选择一个能存在多年的交易平台，因为将你的算法转移到一个停用的平台将是繁琐的。
 - en: Finally, I’ll give you contact information for some of the major platforms,
     so you can begin to investigate them yourself.  It is a personal choice, and you
     want to feel comfortable with the software you choose, because you will be spending
     a lot of time with your software choice, building algos!
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，我将提供一些主要平台的联系方式，以便你可以开始自己调查。这是个人选择，你希望对所选择的软件感到舒适，因为你会花很多时间在你的软件选择上，构建算法！
 - en: Charting Capabilities
+  id: totrans-6
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 图表功能
 - en: Theoretically, a pure algo trader and developer does not need price charts of
     any type.  After all, why would that be necessary?  Algo rules are what counts,
     not how things look on a chart.  While this is true, a platform with a good charting
     platform is really good to have.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 理论上，一个纯粹的算法交易者和开发者不需要任何类型的价格图表。毕竟，这有什么必要呢？算法规则才是关键，而不是图表上的视觉效果。尽管如此，拥有一个良好的图表平台确实是非常重要的。
 - en: Many times, during the idea creation phase, an algo trader will want to see
     his or her idea – an indicator, histogram, bar patterns, whatever – in action. 
     A good charting module in the software will help with that.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 在创意生成阶段，算法交易者通常想要看到他或她的创意——无论是指标、直方图、条形模式，还是其他——如何运作。软件中的良好图表模块将有助于实现这一点。
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig19.jpg](../images/00020.jpeg)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig19.jpg](../images/00020.jpeg)'
 - en: Figure 19- Charts Can Help You Visualize Aspects Of Your Algorithms
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 图19 - 图表可以帮助你可视化算法的各个方面
 - en: The key with properly using charting is NOT to make any judgments or decisions
     based on what you see in the chart.  Chances are, you are only seeing a small
     snippet of time on the chart, and the small piece of time can be highly misleading. 
     So concluding that a new indicator or chart pattern is bad, based on a visual
     examination, is really a terrible thing to do.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 正确使用图表的关键是不要根据你在图表中看到的内容做出任何判断或决策。你看到的可能只是图表上短短的一段时间，而这段时间可能会极具误导性。因此，基于视觉检查得出新的指标或图表模式是不好的，这真是一个糟糕的做法。
 - en: On the other hand, using a chart to visually check for correct coding is a great
     thing to do.  A complicated chart pattern might be easy to see, but hard to program
     algorithmically, so verifying the code by inspecting a chart can be really helpful.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一方面，使用图表来直观检查编码的正确性是非常好的做法。复杂的图表模式可能容易看出，但算法编程可能很困难，因此通过检查图表来验证代码可能非常有帮助。
 - en: I would recommend good charting capabilities as a definite “must have” for any
     trading platform.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 我建议优秀的图表功能是任何交易平台必不可少的“必须拥有”。
 - en: Broker Integration
+  id: totrans-14
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 经纪人整合
 - en: Some retail platforms, such as Tradestation, are tied directly to one brokerage
     (in this case, Tradestation Brokerage).  Other platforms, such as NinjaTrader,
     have a few limited choices in brokers.  Finally, some platforms (like Multicharts)
     have a huge selection of brokers to choose from.   There are pros and cons to
     each approach.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些零售平台，如Tradestation，直接与一家经纪公司相关联（在这种情况下是Tradestation Brokerage）。其他平台，如NinjaTrader，只有少量有限的经纪人选择。最后，一些平台（如Multicharts）则有大量的经纪人可供选择。每种方法都有其优缺点。
 - en: So, searching for a trading platform might also be a search for the proper broker. 
     Personally, I have used many brokers over the years, and two times I’ve had solid,
     reputable brokers try to steal my money (Refco, PFG).  This means you should be
     careful with whatever broker you choose, because many can, and do, go out of business.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，寻找交易平台可能也是在寻找合适的经纪人。就我个人而言，多年来我使用了许多经纪人，有两次我遇到过可靠的经纪人试图盗取我的钱（Refco，PFG）。这意味着你在选择经纪人时要谨慎，因为很多经纪人会倒闭。
 - en: In all cases, have a backup plan and backup brokers in place, ready to go.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 在所有情况下，要有备份计划和备用经纪人，以备不时之需。
 - en: Ease of Programming
+  id: totrans-18
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 编程的便利性
 - en: Most good platforms offer you the ability to create your own indicators, strategies,
     etc. – in addition to providing standard indicators with parameters you can change
     and optimize.  If you cannot create your own indicators, I suggest you look elsewhere
     for a package, since you will definitely be programming your own creations at
     some point.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 大多数优秀的平台提供你创建自己的指标、策略等的能力——除了提供可更改和优化的标准指标。如果你无法创建自己的指标，我建议你寻找其他包，因为你一定会在某个时刻编程自己的创作。
 - en: Assuming your software allows custom work, there are three main ways to produce
     custom code.  The first way is take existing code, and just modify it to meet
     your specifications.  Once you understand the basics of the programming language,
     this is pretty easy.  I have trader friends who do nothing but this – they have
     never programmed an original strategy in their career, but they have taken thousands
     of strategies from others and modified the code to suit their needs.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设你的软件允许自定义工作，主要有三种生成自定义代码的方法。第一种是采用现有代码，简单地修改以满足你的规格。一旦你了解编程语言的基础，这相对容易。我有一些交易朋友只做这件事——他们在职业生涯中从未编程过原创策略，但他们从其他人那里获取了成千上万的策略，并修改代码以适应自己的需求。
 - en: The second way to produce custom algo code is to start from scratch.  This involves
     a bit more work, but once you get the hang of programming, it is fairly easy to
     do.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 产生自定义算法代码的第二种方法是从头开始。这需要更多的工作，但一旦你掌握了编程，操作起来相对简单。
 - en: A final way to program code is offered by some platforms, and that is a visual
     drag and drop code creation approach.  You basically move blocks for indicators,
     patterns, if…then logic, stop losses and more and connect the blocks.  Once you
     are done, the software then turns your visual depiction into code.  This is a
     way around the line by line programming of strategies, but even so, it still involves
     quite a bit of learning to get up to speed.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些平台提供的最后一种编程代码方式是可视化拖放代码创建方法。你基本上是移动指标、模式、if...then逻辑、止损等的块，并连接这些块。一旦完成，软件就会将你的可视化表示转化为代码。这是一种绕过逐行编程策略的方法，但即便如此，仍需要花费不少时间学习以跟上进度。
 - en: It is up to you to decide which approach appeals the most to you. Of course,
     to make your decision even tougher, each programming language has its own style
     and format.  Some are built off of “professional” heavy duty programming languages
     like C#, and some of them are built off of “old time” languages like Basic.  So
     programming even a simple strategy can be very easy, or very complicated, depending
     on the language used.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 由你来决定哪种方法最吸引你。当然，为了让你的决定更加困难，每种编程语言都有自己的风格和格式。有些是基于“专业”的重型编程语言，如C#，而有些则是基于“老式”语言，如Basic。因此，编程一个简单策略可能非常简单，也可能非常复杂，具体取决于使用的语言。
 - en: One way to investigate some different platforms and see different programming
     languages is to pick up a recent copy of the magazine “Technical Analysis of Stocks
     and Commodities.”  Almost every month, the editors pick one article (with a new
     indicator, algo strategy, etc) and have experts from major software platforms
     create code in their language.  This can be found in the “Trader’s Tips” section
     in the back of the magazine.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 研究不同平台并了解不同编程语言的一种方式是拿到最新一期的《股票与商品技术分析》杂志。几乎每个月，编辑们都会挑选一篇文章（带有新指标、算法策略等），并请主要软件平台的专家用他们的语言创建代码。这可以在杂志后面的“交易者提示”部分找到。
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig20.jpg](../images/00021.jpeg)'
+  id: totrans-25
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig20.jpg](../images/00021.jpeg)'
 - en: Figure 20- "Technical Analysis Of Stocks and Commodities" Magazine "Trader'
     Tips" Section - A Great Way To Compare Various Programming Languages
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 图20 - 《股票与商品技术分析》杂志“交易者提示”部分 - 比较各种编程语言的好方法
 - en: In a recent issue, 11 different trading platforms provided code for a new RSI
     indicator produced by John Ehlers, a well-respected developer.  By taking a look
     at each unique code, a new algo trader can get an idea of the structure and complexity
     of each of the programming languages.  This might help you make a decision on
     which language to pursue.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 在最近一期中，11个不同的交易平台提供了由受人尊敬的开发者约翰·埃勒斯制作的新RSI指标的代码。通过查看每个独特的代码，新手算法交易者可以了解每种编程语言的结构和复杂性。这可能会帮助你决定追求哪种语言。
 - en: 'As an example, here is how simple Tradestation’s Easy Language is.  Suppose
     I want to buy the next bar if today’s close is the highest close of the past 2
     weeks (10 bars).  In Easy Language, that becomes:'
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 举个例子，这就是Tradestation的Easy Language是多么简单。假设我想在今天的收盘价是过去两周（10根K线）的最高收盘价时买入下一根K线。在Easy
+    Language中，这变成了：
 - en: If close=highest(close,10) then buy next bar at market;
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果close=highest(close,10)那么以市价在下一根K线买入；
 - en: Not all languages are that simple!
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 不是所有语言都这么简单！
 - en: Regardless of the method of programming, and the programming language you decide
     on, at some point you’ll want to pick one method, and one platform, and get good
     at developing algos with it.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 无论你选择什么编程方法和编程语言，在某个时刻你都会想选择一种方法和一个平台，并在这个平台上熟练开发算法。
 - en: Of all the topics discussed in this section, I think this is the most important. 
     Having a programming language you can easily learn, and feel comfortable with,
     is a big deal.  Spend a lot of time upfront investigating what is best for you,
     and it will pay dividends down the road.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本节讨论的所有主题中，我认为这是最重要的。拥有一种你可以轻松学习并感到舒适的编程语言是件大事。花很多时间提前调查什么对你最好，这将会在将来带来回报。
 - en: Integrating With Market Data
+  id: totrans-33
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 与市场数据整合
 - en: Most of the premier trading platforms these days integrate well with market
     data.  Most require you to have a subscription with a 3rd party data provider,
     although others, such as Tradestation, have their own data.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 目前大多数顶级交易平台与市场数据的整合都很好。大多数需要你与第三方数据提供商订阅，虽然像Tradestation这样的平台则有自己的数据。
 - en: Two important points to watch out for.  First, make sure your data is delivered
     automatically and includes intraday data.  Nothing is worse than having to schedule
     data downloads every evening.  That used to be the norm back in the days of dial
     up modems, but in today’s instant world, you should have immediate access to data.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 有两个重要点需要注意。首先，确保你的数据是自动传送的，并包含日内数据。没有什么比每晚都要安排数据下载更糟糕的了。过去在拨号调制解调器的时代，这曾是常态，但在今天这个瞬时的世界中，你应该能立即访问数据。
 - en: Another important point is to make sure you trust both the data source and the
     platform.  Not all data providers supply data to all platforms, so if you have
     a preferred data vendor in mind, your choice of platforms may be somewhat limited.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个重要点是确保你信任数据源和平台。并非所有数据提供商都向所有平台提供数据，所以如果你心中有一个首选数据供应商，你的选择可能会受到一定限制。
 - en: Market data integration is not a major point, but it is one that can trip you
     up if you ignore it.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 市场数据的整合并不是一个主要点，但如果你忽视它，可能会让你跌倒。
 - en: Standard Indicators and Studies
+  id: totrans-38
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 标准指标和研究
 - en: Starting out with a new platform, the last thing you want to do is recreate
     standard technical studies like moving averages, RSI, ADX, stochastics, etc. 
     You want to just reference them in your code, without programming them first.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 在一个新平台上开始时，你最不想做的就是重新创建标准的技术研究，比如移动平均线、RSI、ADX、随机指标等。你只想在代码中引用它们，而不是先编程实现它们。
 - en: Before selecting a platform, make sure it has a long list of indicators and
     functions already programmed in.  Most platforms do, but it is always good to
     check first.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 在选择平台之前，确保它已经编程了大量的指标和功能。大多数平台都有，但最好先检查一下。
 - en: Programming Capabilities
+  id: totrans-41
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 编程能力
 - en: Earlier I discussed the ease of programming, which I think is critical.  But
     many times, programming might be easy because the language itself is limited in
     scope.  Some of the simple languages cannot do some of the complicated tasks you
     might require.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 之前我讨论了编程的简易性，我认为这是关键。但很多时候，编程可能很简单，因为语言本身的范围有限。一些简单的语言无法完成你可能需要的一些复杂任务。
 - en: 'Tradestation, for example, is a good example of this.  It uses a language called
     Easy Language, which is indeed easy.  But since it was develop decades ago, primarily
     for backtesting, there are certain limitations with the language in today’s computerized
@@ -232,104 +319,145 @@
     Easy Language (OOEL), to provide a ton of additional capabilities.  Of course,
     OOEL is a more complicated language as a result (FYI: I don’t even use OOEL in
     my algo work).'
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: Tradestation就是一个很好的例子。它使用一种称为Easy Language的语言，确实很简单。但由于它是在几十年前开发的，主要用于回测，因此在今天的计算机交易世界中，这种语言存在某些局限性。因此，Tradestation现在包含了一种额外的语言，即面向对象的Easy
+    Language（OOEL），以提供大量额外功能。当然，OOEL因此是一种更复杂的语言（仅供参考：我在我的算法工作中甚至不使用OOEL）。
 - en: MultiCharts platform has done the same thing as Tradestation, adding a new language
     in the .NET version of the platform.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: MultiCharts平台与Tradestation做了同样的事情，在该平台的.NET版本中添加了一种新语言。
 - en: If you have a complicated algo idea, and you are unsure if you can program it,
     I recommend you talk to experts at each vendor or in the software’s user group,
     to see if what you need can be coded in the software.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你有一个复杂的算法想法，但不确定是否能编程实现，我建议你与每个供应商的专家或软件用户组的成员交谈，以查看你所需的功能是否可以在软件中编码。
 - en: Optimization
+  id: totrans-46
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 优化
 - en: If your code has any parameters or numbers in it, for example the number of
     bars in a moving average, or the buy threshold in a RSI calculation, chances are
     at some point you will want to optimize that number.  While too much optimization
     is definitely a bad thing, you at least will want the capability to do it in the
     software.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你的代码中有任何参数或数字，例如移动平均中的条数，或相对强弱指数（RSI）计算中的买入阈值，最终你很可能会想要优化那个数字。虽然过度优化绝对是个坏事，但至少你会希望软件具备优化的能力。
 - en: I consider this a must have, and most platforms provide this.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 我认为这是必须具备的，大多数平台都提供这一点。
 - en: Walkforward Analysis
+  id: totrans-49
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 向前分析
 - en: In my algo development work, I use a technique called walkforward testing to
     create “out-of-sample” results.  These results tend to mimic live trading better
     than traditional “plug and chug” backtest optimizations.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我的算法开发工作中，我使用一种称为向前测试的技术来创建“样本外”结果。这些结果往往比传统的“直接插入和计算”回测优化更好地模拟实时交易。
 - en: Walkforward testing is an advanced topic, one that a new algo trader might not
     need right away.  But it is a good feature for trading software to have.  Otherwise,
     you may have to purchase a third party tool to conduct the analysis, or (gasp!)
     do the analysis manually.  Having spent years doing it manually in the old days,
     I can safely say that manual walkforward testing is not a good long term solution!
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 向前测试是一个高级主题，新算法交易员可能不会立刻需要。但这对于交易软件来说是一个很好的功能。否则，你可能需要购买第三方工具来进行分析，或者（哎呀！）手动进行分析。多年来我在老式方法中手动进行此操作，我可以肯定地说，手动向前测试不是一个好的长期解决方案！
 - en: Trader Community
+  id: totrans-52
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 交易者社区
 - en: Having a large and active trading community is critical for any software platform
     you choose.  The technical support people at most software vendors are overworked,
     understaffed and most importantly usually not even traders.  So, when you have
     questions, many times you will be talking to someone with less knowledge than
     you have!
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 拥有一个活跃且庞大的交易社区对于你选择的任何软件平台至关重要。大多数软件供应商的技术支持人员工作负担沉重，人员不足，最重要的是，通常他们并不是交易员。因此，当你有问题时，很多时候你会和一个知识水平低于你的人交谈！
 - en: If there is a strong community, there will be plenty of regular users willing
     and able to help you with questions.  For example, I volunteer some of my time
     on the Tradestation user forum, and have contributed an average of 5 posts per
     week for the past 14 years to the community (over 3500 posts!).  And there are
     a lot of others who help out even more than I do.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果社区强大，将会有很多常规用户愿意并能够帮助你解决问题。例如，我在Tradestation用户论坛上自愿贡献一些时间，在过去14年中平均每周发布5个帖子（总共超过3500个帖子！）。还有许多其他人比我帮助得还要多。
 - en: The other nice thing about a big user community is that there will also be a
     lot of code available for you to borrow.  I have gotten some of my best ideas
     and algos from free code I have found on the internet.  With a popular platform,
     chances are whatever you want to code has already been done for you, and you just
     might only need to modify it to suit your needs.
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 拥有庞大用户社区的另一个好处是，你可以借用很多可用的代码。我从互联网上找到的免费代码中得到了许多最佳创意和算法。对于一个受欢迎的平台，你想要编写的代码很可能已经为你完成，你只需要进行一些修改以满足你的需求。
 - en: A vibrant community is a definite plus, and should be a very important part
     of your search criteria.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个活跃的社区绝对是个加分项，应当是你搜索标准中非常重要的一部分。
 - en: Live Trading & Automation
+  id: totrans-57
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 实时交易与自动化
 - en: Once you create and test your algo, the last thing you want to do is convert
     it or move it to a different platform in order to trade it live or automate it. 
     That, unfortunately, is still the case with some trading packages.  These packages
     have not fully integrated the testing and actual trading pieces of their software.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦你创建并测试了你的算法，最后想要做的事情就是将其转换或迁移到不同的平台上，以便进行实时交易或自动化。不幸的是，这在一些交易软件中仍然是个问题。这些软件没有完全整合测试和实际交易的部分。
 - en: 'You want a package that does it all: development, test and automated trading. 
     If you settle for less than this, you will find yourself doing a lot of extra
     work eventually.'
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 你想要一个能做到所有事情的软件包：开发、测试和自动化交易。如果你满足于低于这个标准，最终你会发现自己做了很多额外的工作。
 - en: Picking a Platform – Conclusion
+  id: totrans-60
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 选择平台 – 结论
 - en: Hopefully in this chapter I have given you some things to think about as you
     pick a platform.  There are obviously other important factors to consider (cost,
     availability in your country) that I have not mentioned, but I tried to highlight
     some of the big areas of concern.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 希望在这一章中，我给你提供了一些思考方向，以帮助你选择平台。显然还有其他重要因素需要考虑（成本、在你国家的可用性），虽然我没有提到，但我尝试强调了一些主要关注领域。
 - en: There is no “one size fits all” solution, and while having many platforms to
     choose from is nice, it can be overwhelming.  Don’t let this dissuade you.  Do
     some research, pick what you feel is the best choice, and then jump into it. 
     The sooner you do that, the sooner you’ll be creating trading algos!
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 没有“统一适用”的解决方案，虽然有很多平台可供选择是好事，但也可能令人不知所措。不要因此而气馁。做一些研究，选择你认为最合适的选项，然后大胆尝试。你越早行动，就能越早开始创建交易算法！

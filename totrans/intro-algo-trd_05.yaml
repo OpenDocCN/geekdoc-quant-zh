@@ -1,27 +1,37 @@
 - en: Chapter 5 – The Disadvantages and Misconceptions of Algo Trading
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第五章 – 算法交易的缺点和误解
 - en: After reading the previous chapter, the world of algo trading might seem to
     be a nirvana, compared to your current method of trading.  Unfortunately, it is
     anything but.  Algo trading, like any type of trading, is extremely tough and
     full of pitfalls.  It is important that you realize some of the major disadvantages
     before you embark on your algorithmic trading career.  These disadvantages might
     just change your mind about wanting to algo trade.
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 在阅读了上一章后，算法交易的世界可能看起来像是一个理想国，与您当前的交易方式相比。不幸的是，事实并非如此。算法交易像任何类型的交易一样，极其困难且充满陷阱。在你开始算法交易生涯之前，了解一些主要缺点是重要的。这些缺点可能会改变你想要进行算法交易的想法。
 - en: 'Disadvantage #1 – Emotions Are Still A Part Of Trading'
+  id: totrans-2
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 缺点#1 – 情绪仍然是交易的一部分
 - en: I still vividly remember my first “algo” trade, the same one I talk about in
     the introduction.  No one called it algorithmic trading back then, but that is
     what it was.  I had rules, I followed the rules, and I should have been emotionless,
     like a robot.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 我仍然清晰地记得我的第一次“算法”交易，就是我在介绍中提到的那一次。那时没人称之为算法交易，但那就是它。我有规则，我遵循规则，我本该像机器人一样没有情感。
 - en: Instead, I was scared to death!
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，我却害怕得要命！
 - en: I called the broker every 15 minutes and asked “can I get the last price for
     June Live Hogs?”  Then I’d calculate my open position profit or loss based on
     the latest number.  For the next 15 minutes, I’d either be euphoric because I
@@ -29,269 +39,380 @@
     getting annoyed with my constant calls.  There was no online way to check prices
     then, if you recall those olden days.  If there would have been online quotes,
     I’m sure I would have refreshed that quote page every minute.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我每15分钟就打电话给经纪人，问“我能知道六月生猪的最后价格吗？”然后根据最新的数字计算我的未平仓利润或亏损。在接下来的15分钟里，我要么因为赚钱而欣喜若狂，要么因为亏钱而沮丧。经纪人开始对我不断的电话感到厌烦。那时没有在线查询价格的方式，如果你还记得那段旧时光的话。如果有在线报价，我肯定会每分钟刷新那个报价页面。
 - en: So why was I scared to death, acting like a crazy person?  After all, so many
     people say that when you trade with rules, it takes the emotion out of trading. 
     I should have been a calm, cool, collected robot.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么我为什么害怕得要命，像个疯子一样呢？毕竟，许多人说当你遵循规则交易时，就不会有情绪干扰。我本该是一个冷静、沉着、冷酷的机器人。
 - en: Except I wasn’t – I was a bundle of stomach wrenching nerves!
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 可我并不是——我是一团令人恶心的紧张情绪！
 - en: The truth is that ANY time you are trading with money, emotions enter into the
     equation.  The rapid gain or loss of capital is what brings on the emotion, not
     the style of trading.  Algo trading, discretionary trading, random guessing trading
     – it does not matter which approach you take- is emotional once money is involved.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 事实是，无论何时你在用钱交易，情感都会介入。资本的快速盈亏才是带来情绪的原因，而不是交易风格。算法交易、主观交易、随机猜测交易——只要涉及钱，哪种方式都是情绪化的。
 - en: So, how come so many “gurus” out there recommend algo trading because it is
     supposedly emotionless?  I believe it is all a sales ploy by these crooks.  The
     charlatans know that emotions ruin a lot of traders, and that traders are looking
     to avoid emotion, so they claim that algo trading solves the emotion problem.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么，为什么那么多“专家”推荐算法交易，声称它没有情绪呢？我相信这都是这些骗子的销售把戏。那些江湖骗子知道情绪会毁掉很多交易者，而交易者正想避免情绪，因此他们声称算法交易解决了情绪问题。
 - en: Except it doesn’t.  As I said, emotions are because of the money involved, not
     the type of trading.  My personal guess is that people who say algo trading is
     emotionless either 1) trade only on a simulator, or 2) do not trade at all, in
     any fashion.  They clearly do not trade with real money.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 但事实并非如此。正如我所说，情绪是由于涉及的钱，而不是交易的类型。我个人猜测，声称算法交易没有情绪的人，要么是1）仅在模拟器上交易，或者2）根本不以任何形式进行交易。他们显然并没有用真钱交易。
 - en: That being said, the emotions experienced by algo trading are a bit different
     than the emotions of discretionary trading.  Gone is the panic feeling of wondering
     if you should enter or exit a trade.  But, that is replaced with the panic feeling
     of wondering if you should turn an algo on or off.  Basically, for every event
     in discretionary trading that causes emotion, there is likely a similar, but different,
     parallel emotion in algo trading.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过，算法交易所经历的情绪与自主交易的情绪有所不同。消除了是否该进出交易的恐慌感，但取而代之的是是否该开启或关闭算法的恐慌感。基本上，自主交易中导致情绪的每一个事件，在算法交易中可能都有类似但不同的情绪。
 - en: So the first misconception in algo trading – that there is no emotion - is also
     the first disadvantage.  Trading with real money involves emotion.  You must learn
     to accept that.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，在算法交易中第一个误解——没有情绪——也是第一个劣势。用真钱交易涉及情绪。你必须学会接受这一点。
 - en: 'Disadvantage #2 – Computer Programming'
+  id: totrans-13
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '劣势 #2 – 计算机编程'
 - en: If the thought of having to program a computer scares you, then maybe algo trading
     is not for you.  Although there are visual programming tools out there to assist,
     to really be a good algo trader, you need to be able to program your trading rules. 
     True, you could just hire someone to do that for you, but since most algos fail
     testing, paying someone to program will get expensive very quickly.  Programming
     thousands of algos is a big task.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果编程的想法让你感到害怕，也许算法交易就不适合你。虽然有可视化编程工具可以协助，但要成为一个好的算法交易者，你需要能够编程你的交易规则。确实，你可以雇人来帮你，但由于大多数算法在测试中失败，支付给某人的费用会很快变得昂贵。编程数千个算法是一项庞大的任务。
 - en: So, if you decide to algo, just convince yourself right now that you will learn
     to program.  Once you start doing it, knowing how to program will move this from
     a disadvantage to an advantage.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，如果你决定进行算法交易，现在就要说服自己，你会学会编程。一旦你开始这样做，知道如何编程将使这从劣势转变为优势。
 - en: 'Disadvantage #3 – The Past Is Not The Future'
+  id: totrans-16
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '劣势 #3 – 过去并不代表未来'
 - en: If you have seen ads for trading education, trading systems, brokers, etc. you
     have undoubtedly seen the U.S. government required disclaimer “past performance
     is not necessarily indicative of future results.”
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你见过关于交易教育、交易系统、经纪商等的广告，你无疑看到过美国政府要求的免责声明：“过去的表现并不一定能预测未来的结果。”
 - en: This is a great warning for all traders.  It simply means that no matter what
     historical testing shows, it does not mean the performance will continue in the
     future.  In fact, many times the opposite happens, sort of a reversion to the
     mean situation.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是对所有交易者的一个重要警告。这意味着，无论历史测试显示什么，都不意味着未来的表现会持续。事实上，很多时候正好相反，情况会回归到均值。
 - en: This presents a conundrum for algo traders, who almost always historically backtest
     their approaches before commencing with live trading.  Why even backtest if the
     past performance doesn’t correlate with future performance?
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 这对算法交易者提出了一个难题，他们几乎总是在进行实时交易之前对他们的方法进行历史回测。如果过去的表现与未来的表现没有相关性，为什么还要回测呢？
 - en: Obviously, backtesting an algo presents a sticky situation.  A trader wants
     the reassurance that an algo did work historically, and yet at the same time must
     realize that everything could fall apart from day one of live trading.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 显然，回测算法会面临棘手的局面。交易者希望得到算法在历史上有效的保证，但同时又必须意识到，从第一天的实时交易开始，一切都有可能崩溃。
 - en: The trick, it turns out, is to have a development method that has been proven
     to work in historical testing and real time testing.  It is not as simple as just
     optimizing parameters, as most trading platforms would make you believe.  This
     will be discussed in more detail later.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 事实证明，诀窍是拥有一种在历史测试和实时测试中证明有效的开发方法。它并不像大多数交易平台让你相信的那样简单，仅仅是优化参数。这将在后面更详细地讨论。
 - en: Historical testing, then, is like walking a tightrope over a pit of molten lava. 
     Once false move, and death awaits.  But when done correctly, the crowd cheers
     in awe.  Our goal will obviously be the latter result!
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，历史测试就像在熔岩坑上走钢丝。一旦出现失误，死亡就会降临。但如果做得正确，观众会惊叹地欢呼。我们的目标显然是后者的结果！
 - en: 'Disadvantage #4 – Tweaking Is Fun'
+  id: totrans-23
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '劣势 #4 – 调整是乐趣'
 - en: When I first drafted the book, one female proof reader asked me “why is twerking
     a disadvantage?  Twerking is fun, and I love to do it, but I don’t get what it
     has to do with trading.”
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我第一次起草这本书时，一位女性校对员问我：“为什么调整是个劣势？调整是有趣的，我喜欢这样做，但我不明白这与交易有什么关系。”
 - en: Well, that might be true, although I am a little too old to be twerking (trust
     me!).  And besides, the word is TWEAKING.  Changing one letter makes a big difference!
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯，这可能是对的，尽管我有点太老了，不适合跳扭腰舞（相信我！）。而且，这个词是调整（TWEAKING）。改变一个字母会带来很大差别！
 - en: Tweaking is the natural tendency to want to change and improve things.  As I
     showed earlier, making improvements is an important part of trading.  But, it
     is not a desired part of algo development.  Tweaking can really cause problems.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 调整是想要改变和改进事物的自然倾向。正如我之前所示，改进是交易的重要部分。但这并不是算法开发所期望的部分。调整真的会引发问题。
 - en: 'Here is an example: I have a trader friend who has been developing and tweaking
     his strategy for over 5 years.  Every time he has a losing trade, he examines
     it closely, and finds a reason why that trade was invalid.  He then creates a
     rule – a tweak – to eliminate that trade.  His backtest looks better, since that
     pesky trade will never occur again, and he is happy.'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有一个例子：我有一个交易朋友，他已经开发和调整他的策略超过五年。每次他有一个亏损交易时，他都会仔细检查，并找到这个交易无效的原因。然后，他制定一个规则——一个调整——来消除这个交易。他的回测看起来更好，因为那个讨厌的交易再也不会出现，他很开心。
 - en: Happy, of course, until the next tweak is needed.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然很开心，直到下一个调整需要进行。
 - en: So, for over five years, his strategy has been tweaked to death.  In fact, I’d
     wager that his algo has much more tweaking code than original strategy code. 
     And, unfortunately, his real time results never get better.  There is always one
     more tweak to be done.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，超过五年，他的策略被调整得过头。事实上，我敢打赌，他的算法中调整代码比原始策略代码多得多。不幸的是，他的实时结果从未改善。总有一个调整待完成。
 - en: Tweaking your code is easy.  But it is wrong to do, and that makes it a big
     disadvantage for algo trading.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 调整你的代码很简单。但这样做是错误的，这对算法交易来说是一个大缺陷。
 - en: 'Disadvantage #5 – I’m The Boss Here!'
+  id: totrans-31
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '缺点 #5 – 我在这里是老板！'
 - en: Earlier, I wrote about having a business with employees.  With trading, the
     only employee is typically yourself.  This can be a major advantage – no employees
     to coddle or stress over – but it can also be a major disadvantage.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 之前我写过拥有员工的生意。对于交易而言，唯一的员工通常是你自己。这可以是一个重大优势——没有员工需要溺爱或担心——但也可能是一个重大缺点。
 - en: If your algo strategies fail to perform – it is usually your fault.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你的算法策略表现不佳——通常是你的错。
 - en: If you fail to develop new strategies – only you are to blame.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你无法开发新策略——那只能怪你自己。
 - en: If you make mistakes in automating your algos, perform futures contract rollovers
     incorrectly, miss deadlines – it falls on you.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你在自动化你的算法时犯错，错误地进行期货合约展期，错过截止日期——这都要你负责。
 - en: No matter what the decision, or what the action, for better or worse, you are
     the Big Cheese, the Head Honcho, the Top Dog ([https://www.youtube.com/watch?v=0yC4gm_vN3s](https://www.youtube.com/watch?v=0yC4gm_vN3s)).
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 无论决策是什么，或者行动是什么，好的坏的，你都是大老板，首席执行官，头号人物 ([https://www.youtube.com/watch?v=0yC4gm_vN3s](https://www.youtube.com/watch?v=0yC4gm_vN3s))。
 - en: While this might seem to be the ultimate freedom for people stuck in jobs they
     do not like, working for bosses they hate, the truth is that it can be a major
     disadvantage, too.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然这看起来对那些陷在不喜欢的工作和讨厌的老板下的人来说是终极自由，但事实是，这也可能是一个重大缺点。
 - en: In algo trading, when things falls apart – and they will, at least temporarily,
     to some extent and to some degree – there is no one to blame but yourself.  Many
     traders cannot handle that kind of pressure and accountability.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 在算法交易中，当事情崩溃时——而且确实会崩溃，至少在某种程度上和某种程度上——除了你自己，没有人可以怪。许多交易者无法承受这种压力和责任。
 - en: Being the boss can be great, especially with algo trading.  But, just remember
     that it can also be a big disadvantage.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 当老板可以很棒，特别是在算法交易中。但请记住，这也可能是一个大缺点。
 - en: 'Disadvantage #6 – Doing Things The Wrong Way'
+  id: totrans-40
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '缺点 #6 – 做事的错误方式'
 - en: Algo trading, when done the right way, can work out very well.  The problem
     is that it is exceedingly easy to algo trade incorrectly.  And guess what, the
     wrong way usually leads to losses.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 正确进行算法交易时，可以取得很好的效果。问题是错误地进行算法交易是极其简单的。而且，猜猜怎么着，错误的方式通常会导致亏损。
 - en: This is a major disadvantage for algo trading because there are many, many ways
     to develop a trading strategy incorrectly.  The list is so long, in fact, that
     I could probably write a whole book on how NOT to develop trading algo – and maybe
     one day I will!  Many biases, shown below, can really mess up your algo trading.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是算法交易的一个主要劣势，因为有许多方法可能会错误地开发交易策略。事实上，这个清单长到我可能可以写一本关于如何不开发交易算法的书——也许有一天我会写！下面列出许多偏见，确实会严重干扰你的算法交易。
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig17a.jpg](../images/00017.jpeg)![C:\Users\Trader\Documents\Book
     - Intro Algo\IntroAlgoBookFigs\fig17b.jpg](../images/00018.jpeg)'
+  id: totrans-43
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig17a.jpg](../images/00017.jpeg)![C:\Users\Trader\Documents\Book
+    - Intro Algo\IntroAlgoBookFigs\fig17b.jpg](../images/00018.jpeg)'
 - en: Figure 17- Each One Of These Biases Can Lead To Improper Algo Development
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 图17- 这些偏见中的每一个都可能导致不当的算法开发
 - en: So, with all these algo development pitfalls, how can a trader turn this from
     a disadvantage to an advantage?  Surely, if most traders make mistakes during
     algo creation, then the benefit of correct development becomes even more apparent.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么，面对这些算法开发的陷阱，交易者如何将这一劣势转变为优势呢？显然，如果大多数交易者在算法创建过程中犯错，那么正确开发的好处就变得更加明显。
 - en: Here are a couple of tips to negate this disadvantage.  First, only use trusted
     sources for your trading advice.  The internet is chock full of advice givers,
     but many of these people do not even trade!  Take your advice from someone you
     know trades.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有一些建议来抵消这个劣势。首先，仅使用可信赖的来源来获取交易建议。互联网充满了提供建议的人，但其中许多人甚至不进行交易！向你知道进行交易的人寻求建议。
 - en: Second, be willing to take information from many different traders and combine
     it into something that feels right to you.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二，愿意从许多不同的交易者那里获取信息，并将其结合成对你感觉正确的东西。
 - en: Third, prove it via real money trading.  Theory is nice, ideas are nicer, but
     the only thing that matters in the end is the bottom line result.  Does your method
     of algo development produce profits?  If it does, congratulations!  If it doesn’t,
     you might consider a deep review of your process, and incorporating new concepts
     or improvements.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 第三，通过真实货币交易来证明。理论不错，想法更好，但最终唯一重要的是底线结果。你的算法开发方法是否产生利润？如果是，恭喜你！如果不是，你可能需要深入审查你的流程，并整合新概念或改进。
 - en: Building and trading algos is tough, and there is no one “correct” way to do
     it.  Plus, there are a ton of incorrect ways to do it.  That makes this a disadvantage
     to algo trading.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 构建和交易算法是艰难的，并且没有一种“正确”的方法来做到这一点。此外，还有许多不正确的方法。这使得算法交易面临劣势。
 - en: 'Disadvantage #7 – Algo Trading Is Not “Set And Forget”'
+  id: totrans-50
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '劣势 #7 – 算法交易不是“设定后就忘”'
 - en: You might recall a number of years ago a portable cooker that was sold on late
     night television infomercials.  Its slogan was “set it and forget it.”  It was
     so easy to use, you could just throw food in it, hit a few buttons, and come back
     a few hours later to a delicious home cooked meal.
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能还记得几年前在深夜电视广告中出售的一种便携式烹饪器具。它的口号是“设定后就忘”。它的使用非常简单，你只需放入食物，按几个按钮，几个小时后就能享受到美味的家常饭。
 - en: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig18.jpg](../images/00019.jpeg)'
+  id: totrans-52
   prefs: []
   type: TYPE_IMG
+  zh: '![C:\Users\Trader\Documents\Book - Intro Algo\IntroAlgoBookFigs\fig18.jpg](../images/00019.jpeg)'
 - en: Figure 18- Definitely Not The Way To Algo Trade!
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 图18- 绝对不是算法交易的方法！
 - en: Many traders think the same slogan applies to algo trading, especially when
     automating systems.  They are wrong!
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 许多交易者认为同样的口号适用于算法交易，特别是在自动化系统时。他们错了！
 - en: 'Technical support people at Tradestation, a leading trading software platform
     (and my primary software for trading) have a different slogan: “automated trading
     does not mean unattended trading.”'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: Tradestation的技术支持人员（一个领先的交易软件平台，也是我主要的交易软件）有不同的口号：“自动交易并不意味着无人值守的交易。”
 - en: Whenever you have an automated algo, a million things could go wrong.  Internet
     connections go out, disconnections to trading servers occur, exchanges experience
     intermittent hiccups, price data corrections come out (but not before the bad
     data hits your algo) – the list of potential issues is practically infinite.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 每当你有一个自动化算法时，可能出现的错误有一百万种。互联网连接可能中断，与交易服务器的断开连接可能发生，交易所可能会经历间歇性的故障，价格数据的修正会出现（但坏数据在算法中处理之前就已经出现）——潜在问题的清单几乎是无穷无尽的。
 - en: Multiply all those issues by the dozens of algorithms you might be trading,
     and the potential for problems becomes very apparent.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 将所有这些问题乘以你可能交易的几十种算法，潜在问题变得非常明显。
 - en: You can’t turn on an algo, walk away, and come back a week later to count your
     profits.  It just does not work that way.  You don’t have to be staring at a screen
     all day and night, making sure your algos are running correctly, but you do have
     to monitor your algos, at a minimum of a few times per day.  You have to be ready
     to take action when something goes awry.  I guarantee you that some intervention
     will be required more often than you think.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 你不能随便启动一个算法，离开，然后一周后回来数你的利润。这并不是那样运作的。你不需要整天整夜盯着屏幕，确保你的算法正常运行，但至少每天要监控几次你的算法。你必须准备好在出现问题时采取行动。我保证你会发现，某些干预比你想象的要频繁得多。
 - en: That is the final misconception and disadvantage of algo trading – you have
     to stay on top of your algos, and keep a watchful eye over them.  Definitely do
     not “set it and forget it!”
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是算法交易的最终误解和缺陷——你必须时刻关注你的算法，保持警惕。绝对不要“设定后就忘”！
