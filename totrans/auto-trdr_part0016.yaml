@@ -1,98 +1,132 @@
 - en: Chapter 13\. Machine Learning and AI in Algorithmic Trading
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第13章：算法交易中的机器学习与人工智能
 - en: An Introduction to Machine Learning for Trading
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 机器学习在交易中的介绍
 - en: 'As we venture deeper into the heart of algorithmic trading, we should pause
     to appreciate a new frontier that offers a daring yet promising journey to the
     land of financial success: Machine Learning (ML). This innovative technology is
     not just a sideline spectator. Instead, it is disrupting and redefining the way
     investors and traders navigate the financial markets. Let''s take a closer look
     at this fascinating world.'
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着我们深入算法交易的核心，我们应该停下来欣赏一个新的前沿，它为通往金融成功的大胆而有前景的旅程提供了机会：机器学习（ML）。这一创新技术不仅仅是旁观者，反而正在颠覆和重新定义投资者和交易者在金融市场中的导航方式。让我们更深入地探讨这个迷人的世界。
 - en: In simple terms, Machine Learning (ML) is an application of Artificial Intelligence
     (AI) that provides systems with the ability to automatically learn and improve
     from their experiences without being explicitly programmed to do so. It resembles
     the human mind's aptitude to learn from its surroundings and experiences.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 简而言之，机器学习（ML）是人工智能（AI）的一个应用，赋予系统自动学习和从经验中改进的能力，而无需被明确编程。这类似于人类大脑从周围环境和经历中学习的能力。
 - en: In trading, Machine Learning has increasingly become an indispensable tool,
     both for its predictive capabilities and its potential to uncover relationships
     within traditionally non-related factors influencing market shifts. Whether used
     in long-term investment strategies or in high-frequency trading where transactions
     are executed in milliseconds, ML is transforming the way traders strategize, execute,
     and manage trades.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在交易中，机器学习逐渐成为一项不可或缺的工具，既因其预测能力，也因其能够揭示影响市场波动的传统上不相关因素之间的关系。无论是在长期投资策略中，还是在高频交易中，机器学习正在改变交易者的战略制定、执行和管理交易的方式。
 - en: The continued proliferation of data has created new opportunities for applying
     ML to trading. This mass of data includes everything from historical prices, trading
     volumes to even news articles, and social media posts. Machine Learning algorithms
     can analyze this vast amount of information, find patterns, and then predict future
     price movements with a higher degree of accuracy than traditional statistical
     methods.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据的持续增长为机器学习在交易中的应用创造了新机会。这些海量数据包括历史价格、交易量，甚至新闻文章和社交媒体帖子。机器学习算法能够分析这些庞大的信息，发现模式，并以比传统统计方法更高的准确度预测未来的价格变动。
 - en: Imagine an algorithm that can glean insights from social media sentiment, economic
     indicators, and company financials to accurately predict a company's stock price
     movement. Or a bot that can scour through millions of financial news stories and
     accurately judge their impact on a specific sector.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 想象一个算法，可以从社交媒体情绪、经济指标和公司财务中获取洞察，以准确预测公司股票价格的变动。或者一个机器人，可以快速浏览数百万篇财经新闻，并准确判断其对特定行业的影响。
 - en: Here is where Python shines. Its vast, open-source libraries, such as Scikit-learn,
     TensorFlow, and Keras, are frequented by traders and machine learning enthusiasts
     alike. These libraries offer numerous tools and models dedicated to machine learning.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是Python的强大之处。它庞大的开源库，如Scikit-learn、TensorFlow和Keras，受到交易者和机器学习爱好者的广泛使用。这些库提供了众多专注于机器学习的工具和模型。
 - en: Take the following Python code utilizing Scikit-learn, a popular library used
     for machine learning. This code snippet is a basic example of how a trader might
     use Linear Regression to create a predictive model for stock prices.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面是利用Scikit-learn的Python代码示例，这是一个用于机器学习的流行库。这段代码是一个基本示例，展示了交易者如何使用线性回归来创建股票价格的预测模型。
 - en: '[PRE0]'
+  id: totrans-9
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: In this basic example, the model takes in four variables, 'High', 'Low', 'Open',
     and 'Volume', to predict the 'Close' price of a stock.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个基本示例中，模型输入四个变量：'High'、'Low'、'Open'和'Volume'，以预测股票的'Close'价格。
 - en: Applications of Machine Learning in trading are widespread, ranging from prediction
     and forecasting, to anomaly detection, and even portfolio management. However,
     it's crucial to remember that while ML has tremendous potential, it doesn't guarantee
     success. Like any tool, its effectiveness is determined by how well it is used.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 机器学习在交易中的应用非常广泛，从预测和预报到异常检测，甚至是投资组合管理。然而，重要的是要记住，尽管机器学习具有巨大的潜力，但它并不保证成功。像任何工具一样，其有效性取决于使用得多好。
 - en: Venturing into this world requires an understanding of the intricacies of financial
     markets, the mathematical foundations of machine learning algorithms, and the
     ability to write effective algorithms in Python or similar languages. The rewards
     of mastering these skills are compelling, but the journey is challenging and demands
     continuous learning.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 踏入这个领域需要理解金融市场的复杂性、机器学习算法的数学基础，以及用Python或类似语言编写有效算法的能力。掌握这些技能的回报是诱人的，但这一旅程充满挑战，需要持续学习。
 - en: Supervised Learning Strategies
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 监督学习策略
 - en: Welcome to the world of Supervised Learning, a key avenue in the realm of machine
     learning that carries significant implications for trading. As we delve into the
     realm of Supervised Learning strategies, we will encounter a dynamic interplay
     between robust algorithms and the financial cosmos, which, if harnessed correctly,
     can lead to extraordinary insights and gains.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 欢迎来到监督学习的世界，这是机器学习领域中的一个关键途径，对交易具有重要影响。当我们深入探讨监督学习策略时，将会遇到强大算法与金融宇宙之间的动态互动，若能正确利用，能够带来非凡的洞察与收益。
 - en: Supervised Learning, in its essence, can be viewed as a teacher-student relationship
     in the realm of algorithms. The 'student' here is the algorithm we are training,
     and the 'teacher' represents the labeled data that guides the algorithm. Our aim
     is to allow the algorithm, or the machine, to learn a mapping function from inputs
     (features) to outputs (labels). The more accurately the machine can map this function,
     the more faithfully it can predict future outcomes based on given inputs.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 从本质上讲，监督学习可以视为算法领域中的师生关系。“学生”是我们正在训练的算法，而“老师”代表引导算法的标记数据。我们的目标是使算法或机器学习到从输入（特征）到输出（标签）的映射函数。机器越准确地映射此函数，就越能根据给定输入准确预测未来结果。
 - en: In the arena of trading, Supervised Learning algorithms can implement a variety
     of strategies, predict future stock prices, classify potential investment opportunities,
     and even assess risks. Let's highlight some prominent strategies.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 在交易领域，监督学习算法可以实施多种策略，预测未来股价，分类潜在投资机会，甚至评估风险。让我们重点介绍一些显著的策略。
 - en: '1\. Regression Techniques: These strategies predict a continuous output. For
     instance, predicting the closing stock price of a company the next day. Linear
     regression is a simple yet effective technique that tries to find the best linear
@@ -100,35 +134,47 @@
     twist, one can use techniques such as Ridge Regression, Lasso Regression, or Elastic
     Net that introduce regularization parameters to reduce overfitting in the model.
     A popular library that implements these methods in Python is Scikit-learn.'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 回归技术：这些策略预测连续输出。例如，预测公司下一天的收盘股价。线性回归是一种简单而有效的技术，试图找到自变量和因变量之间最佳的线性关系。为了更高级的变化，可以使用诸如岭回归、套索回归或弹性网等技术，引入正则化参数以减少模型的过拟合。一个实现这些方法的流行库是Scikit-learn。
 - en: '2\. Classification Techniques: Unlike regression, classification strategies
     aim to predict discrete labels, such as whether a stock price will go up (1) or
     down (0) the next day. Methods vary from Logistic Regression, Decision Trees,
     and Random Forest to sophisticated ones like Support Vector Machines and Neural
     Networks. An example of Python libraries suitable for such tasks could be Scikit-learn
     and TensorFlow.'
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 分类技术：与回归不同，分类策略旨在预测离散标签，例如，预测股价明天是上涨（1）还是下跌（0）。方法包括逻辑回归、决策树和随机森林，直到支持向量机和神经网络等复杂方法。适合这类任务的Python库示例包括Scikit-learn和TensorFlow。
 - en: '3\. Ensemble Techniques: These strategies combine several base models to produce
     one optimal predictive model. Methods like Bagging, Boosting, and Stacking come
     under this curriculum. They can substantially increase the prediction power by
     reducing variance (Bagging), bias (Boosting), or improving predictions (Stacking).
     Libraries like XGBoost and LightGBM enable the use of these strategies in Python.'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 集成技术：这些策略结合多个基础模型，产生一个最终的预测模型。像袋装、提升和堆叠等方法都属于此类。它们可以通过减少方差（袋装）、偏差（提升）或改善预测（堆叠）来显著增强预测能力。像XGBoost和LightGBM这样的库使得在Python中使用这些策略成为可能。
 - en: Let's look at an example of a Python code snippet showing how a trader might
     use the Random Forest Classifier, an ensemble learning method for classification,
     to predict whether a stock price will rise or fall.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看一个Python代码片段的示例，展示交易者如何使用随机森林分类器（一种用于分类的集成学习方法）来预测股票价格是上涨还是下跌。
 - en: '[PRE1]'
+  id: totrans-21
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: In this example, the model is trained to predict whether the stock's price will
     rise or fall based on 'Open', 'High', 'Low', and 'Volume' attributes.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，模型被训练以预测股票价格是上涨还是下跌，依据“开盘”、“最高”、“最低”和“成交量”属性。
 - en: Remember, however, the world of Supervised Learning strategies is not all rainbows
     and sunshine. Overfitting, where a model learns the training data too well and
     performs poorly on unseen data, can pose a significant challenge. Techniques such
@@ -136,91 +182,123 @@
     building a successful trading strategy requires not just robust ML models, but
     also a comprehensive understanding of financial markets and an analytical approach
     to model evaluation.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，请记住，监督学习策略的世界并非都是美好与阳光。过拟合，即模型过于完美地学习训练数据而在未见数据上表现不佳，可能带来重大挑战。交叉验证或正则化等技术能在一定程度上缓解过拟合。然而，构建成功的交易策略不仅需要强大的机器学习模型，还需要对金融市场的全面理解和对模型评估的分析性方法。
 - en: Unsupervised Learning in Market Analysis
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 市场分析中的无监督学习
 - en: In the expansive universe of machine learning, the mysterious and potent forces
     of Unsupervised Learning are waiting to be discovered. This branch is less like
     a structured classroom, as in Supervised Learning, and more like a curious child
     exploring and making sense of the world independently. In the grand chess game
     of algorithmic trading, Unsupervised Learning brings the creativity and unpredictability
     that can make you a grandmaster.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 在机器学习的广袤宇宙中，无监督学习的神秘而强大的力量正等待着被发现。这个分支与监督学习中的结构化课堂截然不同，更像是一个好奇的孩子独立探索并理解世界。在算法交易的棋局中，无监督学习带来了创造力和不可预测性，可以让你成为大师。
 - en: So, what makes Unsupervised Learning unique? In stark contrast to Supervised
     Learning techniques, in Unsupervised Learning we don't provide labeled data to
     the model. Instead, we unleash the algorithm on raw, unprocessed data and let
     it find patterns, clusters, and structures on its own.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么，是什么让无监督学习独特？与监督学习技术形成鲜明对比的是，在无监督学习中，我们不向模型提供标记数据。相反，我们将算法释放到原始、未经处理的数据中，让它自行寻找模式、聚类和结构。
 - en: The fascination with Unsupervised Learning strategies for market analysis comes
     from their potency in unearthing hidden structures and relationships in financial
     data. Analyzing market behavior, evaluating investment strategies, discovering
     unknown patterns— such exciting possibilities arise when you deploy these techniques.
     Let's shed light on some of the Unsupervised Learning strategies that have set
     algorithmic trading ablaze.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 对无监督学习策略在市场分析中的迷恋源于它们在揭示金融数据中隐藏结构和关系方面的强大能力。分析市场行为、评估投资策略、发现未知模式——当你运用这些技术时，这些令人兴奋的可能性便会浮现。让我们来探讨一些点燃算法交易热情的无监督学习策略。
 - en: '1\. Clustering Techniques: Such as K-means and Hierarchical clustering, these
     techniques classify data into different groups, or clusters, based on their similarities.
     For instance, clustering stocks to create portfolios based on similar trading
     patterns or risk characteristics, known as portfolio optimization.'
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 1\. 聚类技术：如K均值和层次聚类，这些技术根据数据的相似性将其分类为不同的组或簇。例如，通过类似的交易模式或风险特征对股票进行聚类，从而创建投资组合，这称为投资组合优化。
 - en: '2\. Dimensionality Reduction Techniques: Principal Component Analysis (PCA)
     or Singular Value Decomposition (SVD) are examples of techniques that reduce the
     dimensions of your data while keeping its structure and usefulness intact. These
     can help when working with high-dimensional financial data, reducing noise and
     aiding visualization.'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 2\. 降维技术：主成分分析（PCA）或奇异值分解（SVD）是减少数据维度的技术示例，同时保持其结构和实用性。这些技术在处理高维金融数据时可以减少噪声并帮助可视化。
 - en: '3\. Association Rules Learning: This involves uncovering interesting relationships,
     or associations, between variables in large datasets - a popular method known
     as Apriori algorithm falls under this category.'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 3\. 关联规则学习：这涉及到在大型数据集中发现变量之间有趣的关系或关联——一种流行的方法称为Apriori算法，属于这一类别。
 - en: 'To illustrate how these strategies come to life, consider a Python code snippet
     showing a K-means clustering approach to portfolio optimization:'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了说明这些策略如何实现，请考虑一个显示K-means聚类方法用于投资组合优化的Python代码片段：
 - en: '[PRE2]'
+  id: totrans-32
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: In this example, the K-means algorithm groups similar stocks based on historical
     returns data. The trader can then use this information to diversify their portfolio
     with stocks belonging to different clusters.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，K-means算法根据历史回报数据将相似的股票分组。交易者可以利用这些信息将其投资组合多样化，包含来自不同簇的股票。
 - en: As you chart your course through the vast dimensions of Unsupervised Learning,
     carefully navigating its intricacies, enduring its challenges, remember, the insight
     it offers can be breathtaking, the knowledge it delivers surprisingly profound.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 当你在无监督学习的广阔维度中规划航程，仔细应对其复杂性和挑战时，请记住，它提供的洞察力令人叹为观止，所传递的知识令人意外深刻。
 - en: However, similar to Supervised Learning, challenges persist here too, such as
     how many clusters to decide on in clustering or how to interpret the resultant
     clusters. Also, like a mysterious labyrinth, deciphering the hidden patterns can
     be complex without any target variable to guide you.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，与监督学习类似，这里也存在挑战，例如在聚类中决定多少个簇，或如何解读生成的簇。此外，像神秘的迷宫一样，没有目标变量的指导，解读隐藏模式可能是复杂的。
 - en: Neural Networks and Deep Learning
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 神经网络和深度学习
 - en: Prepare to embark on an intellectual voyage into the world of Neural Networks
     and Deep Learning, fiery crucibles where the raw ore of data is transmuted into
     valuable analytical gold. These technoscientific wizards weave their magic to
     discern patterns, decipher anomalies, and deliver competitive advantage by guiding
     trading decisions with speed, accuracy, and precision.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 准备踏上探索神经网络和深度学习的智慧之旅，这里是将数据的原矿转化为有价值的分析黄金的火热熔炉。这些科技巫师施展魔法，以快速、准确和精确的方式识别模式、解读异常，并通过指导交易决策提供竞争优势。
 - en: Neural Networks and Deep Learning represent fields in machine learning that
     are inspired by the intricate workings of the human brain. Constructed with layers
     of interconnected nodes known as 'neurons', neural networks learn to transform
     input into meaningful output, travelling deeper down the layers to reveal complex
     and significant patterns.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 神经网络和深度学习代表了受人脑复杂运作启发的机器学习领域。由称为“神经元”的互联节点层构建，神经网络学习将输入转化为有意义的输出，深入层级以揭示复杂而重要的模式。
 - en: Let's consider the majestic layers of a neural network. The initial layer, often
     referred to as the 'input layer', receives raw, unprocessed data. Here, each neuron
     represents a different data feature or input. Following this is a series of 'hidden
@@ -229,115 +307,157 @@
     process of generating and propagating scores. Arising from this operation, we
     arrive at the 'output layer', which provides the consequential predictions or
     classifications.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们考虑神经网络的宏伟层次。初始层，通常称为“输入层”，接收原始的未处理数据。在这里，每个神经元代表不同的数据特征或输入。接下来是一系列“隐藏层”，实际计算在此进行。原始数据被加权、偏置、压缩进激活函数，然后移动到下一个层级——一个生成和传播分数的细致过程。从这个操作中，我们来到“输出层”，提供后续的预测或分类。
 - en: Neural Networks, however, aren't content with being solitary scholars. Instead,
     they band together, layer after layer, in a deeper configuration, hence earning
     the title 'Deep Learning'. This stacked arrangement allows them to decode more
     nuanced, murky, and intricate relationships—a formidable game-changer in algorithmic
     trading.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，神经网络并不满足于成为孤独的学者。相反，它们层层相叠，形成更深的结构，因此获得了“深度学习”的称号。这种堆叠的安排使它们能够解码更细微、模糊且复杂的关系——在算法交易中是一个强大的变革者。
 - en: Undoubtedly, applying Neural Networks and Deep Learning to algorithmic trading
     heralds a future teeming with possibilities. From predicting market movements
     and sentiment analysis to high frequency trading, their applications in finance
     are as diverse as they are prolific.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 毫无疑问，将神经网络和深度学习应用于算法交易预示着一个充满可能性的未来。从预测市场走势和情感分析到高频交易，它们在金融领域的应用既多样又丰富。
 - en: 'Consider, for instance, a stock price prediction model built using a type of
     neural network known as Long Short-Term Memory (LSTM). Here is a simplified Python
     code snippet of such a model:'
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，考虑一个使用长短期记忆网络（LSTM）构建的股票价格预测模型。以下是该模型的一个简化的Python代码片段：
 - en: '[PRE3]'
+  id: totrans-43
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: In this instance, our model is trained on a sequence of random numbers, and
     we use it to predict the next number in the sequence. It's essentially teaching
     the LSTM model to understand the trend in data and forecast the future value.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，我们的模型是在一系列随机数上训练的，我们用它来预测序列中的下一个数字。这本质上是在教LSTM模型理解数据中的趋势并预测未来的值。
 - en: As we navigate across the labyrinthine architecture of neural networks and the
     complexity of deep learning models, let's not forget that their potential is momentous,
     yet ensnared by substantial computational cost, the requirement of copious amounts
     of data, and the inherent risk of overfitting. However, with prudent use and constant
     refinement, these models could prove to be the powerful oracles of algorithmic
     trading.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们穿越神经网络的复杂架构和深度学习模型的复杂性时，别忘了它们的潜力是巨大的，但却被高昂的计算成本、大量数据的需求以及过拟合的固有风险所束缚。然而，通过谨慎使用和不断改进，这些模型有可能成为算法交易的强大预言者。
 - en: Now, get ready as we leap onto another roller-coaster zone—Reinforcement Learning!
     An intriguing area where the machine learns by interacting with its environment
     and enhancing its strategies based on the rewards and penalties it collects. Excited?
     Let's go.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，准备好迎接另一个过山车般的区域——强化学习！这是一个机器通过与环境互动并根据所收集的奖励和惩罚提升其策略的有趣领域。兴奋吗？让我们出发吧。
 - en: Reinforcement Learning for Optimal Trading
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 强化学习在最优交易中的应用
 - en: Buckle up as we delve into the dynamic world of Reinforcement Learning, an astounding
     sphere within the realm of Machine Learning that reframes the grand epoch of optimization
     problems in the context of action-centric decision and reward systems. Popularized
     heavily in recent years through breakthroughs like AlphaGo, Reinforcement Learning
     has cruised its way into the heart of algorithmic trading, aggressively tackling
     problems that otherwise seemed arduous.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 系好安全带，我们将深入探索强化学习这一动态领域，这在机器学习的范畴内，是一个令人惊叹的领域，重新构架了在以行动为中心的决策和奖励系统中优化问题的宏大时代。近年来，强化学习因像AlphaGo这样的突破而受到广泛关注，迅速进入算法交易的核心，积极应对那些原本看似艰巨的问题。
 - en: Reinforcement Learning (RL) emulates a feedback loop system of 'action-reward'
     where an 'agent' learns to behave in an 'environment' by performing 'actions'
     and receiving 'rewards'. The agent is tasked with discovering the best tactics,
     often referred to as 'policy', to accrue as many rewards as possible.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 强化学习（RL）模拟了一个“行动-奖励”的反馈循环系统，在这个系统中，“代理”通过执行“行动”并获得“奖励”来学习如何在“环境”中表现。代理的任务是发现最佳策略，通常称为“政策”，以尽可能多地获取奖励。
 - en: 'Take for instance a trading scenario: an algorithm (the agent) needs to decide
     whether to buy, sell, or hold (the actions) a stock in the market (the environment)
     based on the current market data (the state). It receives profits or incurs losses
     (the rewards), which signal the effectiveness of the taken action. The algorithm
     trains itself over time to maximize profits and minimize losses by learning the
     best sequence of actions based on the given state data.'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在一个交易场景中：一个算法（代理）需要根据当前市场数据（状态）决定是在市场上买入、卖出还是持有（行动）一只股票（环境）。它获得利润或遭受损失（奖励），这些奖励信号指示所采取行动的有效性。算法随着时间的推移，通过学习基于给定状态数据的最佳行动序列，训练自己以最大化利润并最小化损失。
 - en: The thrilling concept of Reinforcement Learning and its amalgamation with algorithmic
     trading manifests primarily through two strategies—Value Iteration and Policy
     Iteration.
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 强化学习这一激动人心的概念及其与算法交易的结合主要通过两种策略体现——值迭代和策略迭代。
 - en: The Value Iteration approach improves the Value Function (the total amount of
     reward the agent expects to accumulate over the future, starting at a given state)
     until it becomes optimal. The optimal value function then yields the optimal policy.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 值迭代方法改进值函数（代理预期在给定状态下未来累计的总奖励）直到其变得最优。最优值函数随后生成最优策略。
 - en: On the other hand, the Policy Iteration approach continuously tweaks the policy
     based on the learned value function until it arrives at the optimal policy.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一方面，策略迭代方法不断根据学习到的值函数调整策略，直到达到最优策略。
 - en: Let's look at a simplified Q-learning (a type of reinforcement learning) Python
     code snippet for building a trading bot.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看一下一个简化的Q学习（强化学习的一种）Python代码片段，用于构建交易机器人。
 - en: '[PRE4]'
+  id: totrans-55
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: In this instance, our bot is trained to respond to different market conditions
     (bull, bear, and neutral) by iterating and learning the best sequences of actions
     that yield maximum profits.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个实例中，我们的机器人被训练来响应不同的市场状况（牛市、熊市和中性），通过迭代和学习最佳的行动序列，以获得最大利润。
 - en: However, just as every rose has its thorns, Reinforcement Learning implementations
     in algorithmic trading come tagged with challenges such as defining a comprehensive
     set of states, handling continuous state spaces, dealing with delayed rewards,
     and managing uncertain financial markets. Mitigating these obscurities requires
     robust error handling, risk management strategies, and diligent validation of
     trading algorithms.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，正如每朵玫瑰都有刺，算法交易中的强化学习实现也面临着挑战，例如定义全面的状态集合、处理连续状态空间、应对延迟奖励以及管理不确定的金融市场。减轻这些不确定性需要强大的错误处理、风险管理策略和对交易算法的仔细验证。
 - en: Brace yourself as we plunge further into the expansive frontiers of Machine
     Learning, where the exciting concept of Natural Language Processing awaits to
     revolutionize algorithmic trading in ways never fathomed before!
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 请做好准备，随着我们深入机器学习的广阔前沿，激动人心的自然语言处理概念将彻底改变算法交易，以前所未有的方式进行革命！
 - en: Natural Language Processing for Sentiment Analysis
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 用于情感分析的自然语言处理
 - en: Hold onto your hats, dear readers, as we charge into the exhilarating domain
     of Natural Language Processing (NLP), a spectacular multidisciplinary inter of
     linguistics, computer science, artificial intelligence, and information engineering
@@ -345,8 +465,10 @@
     'intelligent' manner. In the complex racket of today's financial markets, where
     information is the lifeblood of trading decisions, NLP emerges as a game-changing
     ally for traders worldwide.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 各位读者，请紧握你的帽子，随着我们冲入自然语言处理（NLP）的激动人心的领域，这是一门壮观的多学科交叉学科，涵盖语言学、计算机科学、人工智能和信息工程，旨在以一种影响深远、真正“智能”的方式理解、解读和利用人类语言。在当今金融市场的复杂喧嚣中，信息是交易决策的生命线，NLP成为全球交易者的变革性盟友。
 - en: Sentiment Analysis, a vibrant subfield of NLP, further augments the process
     by strategically assessing and determining the underlying sentiment or 'emotional
     tone' behind enormous corpus of text such as news articles, social media posts,
@@ -354,49 +476,65 @@
     The allure of sentiment analysis in algorithmic trading lies in its powerful ability
     to decode and translate subjective information into objective data that can feed
     your trading algorithms.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 情感分析，作为自然语言处理（NLP）的一个生动子领域，通过战略性地评估和确定新闻文章、社交媒体帖子、财务报告或甚至首席执行官在财报电话会议中的讲话细微之处等大量文本背后的潜在情感或“情感基调”，进一步增强了这个过程。情感分析在算法交易中的吸引力在于它强大的能力，可以将主观信息解码并转化为可以供交易算法使用的客观数据。
 - en: Imagine being able to analyze thousands of financial news articles, blog posts,
     or tweets in a matter of seconds and determining whether the overall market sentiment
     is positive, negative, or neutral. This is particularly significant as market
     sentiments can drastically sway investor decisions, influencing the market's movement.
     A trading algorithm armed with such cognitive prowess could initiate trades based
     on the analyzed sentiments, opening the gateway to potentially profitable trades.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 想象一下，能够在几秒钟内分析成千上万的财经新闻文章、博客帖子或推文，并确定整体市场情感是积极的、消极的还是中性的。这尤其重要，因为市场情感可以极大地影响投资者的决策，进而影响市场的走势。拥有这种认知能力的交易算法可以根据分析的情感发起交易，为潜在的盈利交易打开大门。
 - en: To illustrate this thought process, let's consider a simplistic Python code
     example using the TextBlob library that showcases sentiment analysis.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了说明这个思维过程，让我们考虑一个使用TextBlob库展示情感分析的简单Python代码示例。
 - en: '[PRE5]'
+  id: totrans-64
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: In this example, the algorithm analyzes the given text and assesses its sentiment
     polarity (ranging from -1 to 1, depicting negative to positive sentiment) and
     subjectivity (ranging from 0 to 1, showing objective to subjective information).
     For an adept trading algorithm, information about sentiment can be crucial in
     deciding whether to buy, sell, or hold a security.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，算法分析给定的文本并评估其情感极性（范围从-1到1，代表负面到正面情感）和主观性（范围从0到1，显示客观到主观的信息）。对于一个熟练的交易算法，情感信息在决定是否购买、出售或持有证券时可能至关重要。
 - en: However, despite its immense promise, Sentiment Analysis in algorithmic trading
     is not immune to pitfalls. It requires elegant handling of language nuances, sarcasm,
     slang, cultural dynamics, ambiguous or multi-lingual text, and much more. Furthermore,
     as traders, the challenge extends beyond just implementing sentiment analysis—it
     involves seamlessly integrating this analysis with existing trading strategies
     and systems and verifying the resultant influence on trading outcomes.
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，尽管其前景广阔，算法交易中的情感分析并不免于陷阱。它需要优雅地处理语言的细微差别、讽刺、俚语、文化动态、模糊或多语言文本等诸多因素。此外，作为交易者，挑战不仅仅在于实施情感分析——还涉及将这种分析与现有交易策略和系统无缝集成，并验证其对交易结果的影响。
 - en: 'But fret not, for as we advance in technology, the tools and techniques to
     tackle these complexities also mature, pushing the limits of what''s possible
     daily. As we travel further into this enthralling journey through the terrains
     of Machine Learning in trading, fasten your seatbelts for the ride only gets more
     thrilling. Up next: the fascinating world of overfitting in machine learning strategies.
     So gear up, stay tuned, and let’s turbo-charge our algorithmic trading progress!'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 不用担心，随着科技的进步，处理这些复杂问题的工具和技术也在成熟，推动着每天可能实现的极限。随着我们在交易中的机器学习领域踏上这段引人入胜的旅程，请系好安全带，因为接下来的旅程只会变得更加刺激。接下来：机器学习策略中过拟合的迷人世界。因此，做好准备，保持关注，让我们为我们的算法交易进展加速！
 - en: Overfitting in Machine Learning Strategies
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 机器学习策略中的过拟合
 - en: Buckle up, dear reader! We're now set to navigate the treacherous road of 'overfitting',
     a pitfall that has stumbled even the most refined algorithmic traders in their
     pursuit of perfectly fine-tuned machine learning models. Overfitting, in layman
@@ -404,16 +542,20 @@
     to work when the lock's intricate internals change ever so slightly. In the realm
     of trading, where the market is akin to a lock changing continually, an overfitted
     model loses its edge, becoming more of a liability than an asset.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 请系好安全带，亲爱的读者！我们现在准备驶入“过拟合”的险路，这是一个即使是最精细的算法交易者在追求完美调优的机器学习模型时也会遭遇的陷阱。通俗来说，过拟合类似于一个钥匙被量身定制得如此具体，以至于当锁的内部结构稍有变化时，它就失去了作用。在交易领域，市场就像一个不断变化的锁，过拟合的模型失去优势，变得更像一个负担而不是资产。
 - en: Delving deeper, overfitting occurs when an algorithmic trading model is excessively
     complex or 'too clever'. It arises when our model learns the intricate noise in
     the training data to the extent that it negatively impacts the performance of
     the model on new, unseen data. In simple words, it memorizes the training data
     rather than learning to generalize from a pattern. The model performs very well
     on train data but fails miserably on unseen or test data.
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 深入探讨，过拟合发生在算法交易模型过于复杂或“过于聪明”的情况下。当我们的模型学习到训练数据中的复杂噪声，达到负面影响其在新、未见数据上的表现时，就会出现这种情况。简单来说，它是记住了训练数据，而不是从模式中学习以进行概括。模型在训练数据上表现良好，但在未见或测试数据上却惨遭失败。
 - en: To illustrate this concept, let's consider an example and imagine we're implementing
     a machine learning strategy for predicting market trends using a dataset of past
     stock prices. In the process of training our model to perfection, we computationally
@@ -421,159 +563,217 @@
     resulting in a model that is overfit to this specific data. When we then expose
     our model to new data, its performance drastically tumbles, leading to sub-optimal
     trading choices and potential losses.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了说明这个概念，我们考虑一个例子，想象一下我们正在实施一个机器学习策略，以预测市场趋势，使用过去股价的数据集。在训练我们的模型达到完美的过程中，我们在计算上“强迫”我们的模型适应训练数据中的每一个微小波动和噪声，导致模型过度拟合于这特定数据。当我们随后将模型暴露于新数据时，其表现急剧下降，导致次优的交易选择和潜在的损失。
 - en: '[PRE6]'
+  id: totrans-72
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: In this code, a complex RandomForestClassifier is fit on the training data.
     If it is overfit, it may show high accuracy on the train data, but surprisingly
     lower accuracy on the test data.
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这段代码中，一个复杂的随机森林分类器在训练数据上进行拟合。如果它过拟合，可能在训练数据上显示出高准确率，但在测试数据上却意外地显示出较低的准确率。
 - en: Navigating this issue involves embracing simplicity. Key strategies to mitigate
     overfitting include Model Validation techniques (like Cross-Validation), Simpler
     Models, Less Features, Regularization (like Ridge or Lasso), and Pruning.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 解决这一问题涉及接受简单性。减轻过拟合的关键策略包括模型验证技术（如交叉验证）、更简单的模型、较少的特征、正则化（如岭回归或套索回归）和剪枝。
 - en: Keep in mind, though, while simplicity does wield often an allure that's hard
     to resist, it's the balance between simplicity and complexity that often strikes
     gold in algorithmic trading.
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 但请记住，虽然简单确实有一种难以抗拒的吸引力，但在算法交易中，简单与复杂之间的平衡往往才是成功的关键。
 - en: In our ensuing discussion, we explore how AI can assist in intelligently managing
     portfolios—an exploration that is set to further embellish our understanding of
     AI in trading strategies. But before that, tighten your grip! This discussion
     promises to be a roller-coaster ride filled with illuminating insights. Brace
     yourselves as we venture deeper into this fascinating journey.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们接下来的讨论中，我们将探索人工智能如何智能地管理投资组合——这一探索将进一步丰富我们对交易策略中人工智能的理解。但在此之前，请稳住你的心态！这次讨论承诺将是一场充满启发性见解的过山车之旅。准备好深入这段迷人的旅程吧。
 - en: AI-Based Portfolio Management
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于人工智能的投资组合管理
 - en: Delighted to guide you further through this labyrinth of algorithmic trading,
     we're poised to dive into the riveting dynamics of AI-based Portfolio Management.
     Now, if you're picturing an AI robot meddling with papers, tapes, and portfolio
     folders, then I must ask you to step away from such archaic imagery. AI is becoming
     more ubiquitous, making its way from being merely a supporting role to the pinnacle
     of modern, optimized trading strategies.
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 我很高兴能进一步引导你穿越这个算法交易的迷宫，我们准备深入探讨基于人工智能的投资组合管理的迷人动态。如果你想象的是一个人工智能机器人在翻弄文件、胶带和投资组合文件夹，那我必须请你摒弃这种过时的形象。人工智能正变得越来越普遍，从仅仅作为辅助角色，走向现代优化交易策略的巅峰。
 - en: AI-based portfolio management is where the rubber meets the road in terms of
     applying machine learning and AI techniques to real-world trading scenarios. It's
     helpful to envision this as a potent collaboration where human expertise in financial
     markets is complemented and amplified by the power of machine learning to handle
     massive amounts of data and make predictions.
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于人工智能的投资组合管理是将机器学习和人工智能技术应用于真实交易场景的关键环节。可以将其视为一种强有力的协作，其中金融市场的人类专业知识与机器学习的强大能力相辅相成，从而处理大量数据并进行预测。
 - en: Let’s delve deeper. In essence, AI-based portfolio management systems utilize
     artificial intelligence and machine learning to optimize the allocation of assets
     in a portfolio based on the investor's specified risk tolerance, return objectives,
     and investment horizon.
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们深入探讨。本质上，基于人工智能的投资组合管理系统利用人工智能和机器学习，根据投资者的风险容忍度、回报目标和投资期限，优化投资组合中的资产配置。
 - en: '[PRE7]'
+  id: totrans-81
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE7]'
 - en: In this simplified example, we are computing the optimal asset allocation for
     a given portfolio using python's PyPortfolioOpt library. The weights are calculated
     in such a manner that the portfolio is expected to attain the maximum 'Sharpe
     Ratio' (A measure of risk-adjusted performance of an investment).
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个简化的例子中，我们使用python的PyPortfolioOpt库计算给定投资组合的最佳资产配置。权重的计算方式使得投资组合预期能够达到最高的“夏普比率”（衡量投资风险调整后表现的指标）。
 - en: From forecasting asset prices, optimizing portfolio allocations, managing risks
     to executing trades, AI technologies can manage assets, rebalance portfolios,
     and provide actionable investment insights. This essentially frees up investment
     teams to focus on more strategic aspects of the portfolio management process.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 从预测资产价格、优化投资组合配置、管理风险到执行交易，人工智能技术可以管理资产、重新平衡投资组合，并提供可操作的投资见解。这本质上使投资团队能够专注于投资组合管理过程中的更战略性方面。
 - en: However, AI isn't a magic potion that guarantees profits. While AI can process
     a vast amount of information quickly and identify patterns humans cannot, it is
     still contingent on the quality of data inputted and the parameters set by the
     human developers.
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，人工智能并不是一种保证盈利的灵丹妙药。虽然人工智能能够快速处理大量信息并识别出人类无法识别的模式，但它仍然依赖于输入数据的质量和人类开发者设定的参数。
 - en: In simplistic terms, it might be helpful to imagine AI-based portfolio management
     as a sophisticated GPS for your trading journey. It can guide you, analyze real-time
     information on traffic (or trade volume), and even predict the fastest route (or
     maximum returns). However, the car is still in your hands!
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 简单来说，可以把基于AI的投资组合管理想象成你交易旅程中的一个复杂GPS。它可以为你指引方向，分析实时信息（如交易量），甚至预测最快的路径（或最大回报）。不过，方向盘还是在你手中！
 - en: Next, we are going deeper into the world of algorithmic trading, specifically
     the new frontiers of explainability and ethics in AI trading. Rest up, because
     our exploration is only growing more fascinating with every stride!
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我们将深入算法交易的世界，特别是AI交易中可解释性和伦理的新前沿。请稍作休息，因为我们的探索随着每一步的推进只会变得更加迷人！
 - en: Future Directions of AI in Trading
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: AI在交易中的未来方向
 - en: In mapping out the future exploration of algorithmic trading, the role of Artificial
     Intelligence (AI) continues to unveil new horizons. AI in trading is not confined
     to what we currently know, understand or deploy. We stand on the precipice of
     a revolution, a trading landscape where AI expands its involvement, creating exciting
     prospects and challenging dilemmas.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 在勾画算法交易的未来探索时，人工智能（AI）的角色不断揭示新的视野。AI在交易中的应用并不限于我们当前所知、理解或使用的内容。我们正站在革命的边缘，一个AI扩展参与的交易景观，创造令人兴奋的前景和挑战性的困境。
 - en: But let's not get not too carried away. After all, a future is only as fascinating
     as the strides we make towards it today. And today, we dedicate our effort to
     anticipative contemplation on the 'Future Directions of AI in Trading.'
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 不过，让我们不要过于激动。毕竟，一个未来的迷人程度只与我们今天朝着它迈出的步伐有关。今天，我们将努力进行对“AI在交易中的未来方向”的前瞻性思考。
 - en: The dynamics of AI in trading continue to evolve, with advances in technology
     opening up new possibilities at a rapid pace. The integration of AI algorithms
     in trading indeeds promises robust, self-evolving systems capable of learning
     from market dynamics, adapting to new information, and, quite possibly, anticipating
     market behaviour.
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: AI在交易中的动态持续演变，技术的进步迅速开启了新的可能性。AI算法在交易中的整合确实承诺了强大、自我进化的系统，能够从市场动态中学习，适应新信息，并且，极有可能，预测市场行为。
 - en: 'Let''s explore this visage of an AI-centric trading future:'
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们深入探讨这个以AI为中心的交易未来：
 - en: '[PRE8]'
+  id: totrans-92
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE8]'
 - en: This piece of Python code offers a glimpse into the future prospects of algorithmic
     trading using AI. It shows a straightforward application of a deep learning model
     using Keras, signifying how in future modeling might be as simple as stacking
     multiple layers of a deep learning model.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 这段Python代码提供了使用AI进行算法交易未来前景的一个视角。它展示了一个使用Keras的深度学习模型的简单应用，意味着未来的建模可能就像堆叠多个深度学习模型一样简单。
 - en: Forecasting AI’s full potential in trading brings us face-to-face with a future
     where AI adapts to new financial data in real-time. This could mean immediate
     reaction to news updates or sudden changes in market conditions – significantly
     outpacing human traders.
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 预测AI在交易中的全部潜力，让我们直面一个未来，在这个未来中，AI能够实时适应新的金融数据。这可能意味着对新闻更新或市场条件突变的即时反应——显著超过人类交易者的速度。
 - en: Furthermore, we might expect a future where AI produces an invaluable "superforecasting"
     capability, making predictions about broad economic trends based on large-scale
     data mining. It won’t be much of a leap to imagine AI algorithms analyzing global
     and domestic developments, social trends, climate data, etc., to provide an edge
     in trading.
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，我们可能会期待一个未来，在这个未来中，AI产生无价的“超级预测”能力，基于大规模数据挖掘对广泛的经济趋势进行预测。想象AI算法分析全球和国内的发展、社会趋势、气候数据等，以提供交易优势，并不会太过跳跃。
 - en: However, concerns about the transparency and interpretability of complex machine
     learning models – the so-called "black-box problem" – may become more pronounced
     as AI assumes more prominent roles in trading. This will lead to a keen interest
     in fields such as Explainable AI (XAI) and Fairness, Accountability, Transparency,
     and Ethics (FATE) in AI.
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，关于复杂机器学习模型的透明性和可解释性的担忧——即所谓的“黑箱问题”——在AI在交易中承担更显著角色时可能会愈发明显。这将引发对可解释AI（XAI）以及AI中的公平性、问责制、透明性和伦理（FATE）等领域的浓厚兴趣。
 - en: Moreover, with more AI applications, there will likely be an increase in regulations
     focusing on algorithmic trading. This would include rules around fairness, risk
     and data security, creating new challenges and opportunities for AI-driven trading
     operations.
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，随着更多人工智能应用的出现，可能会增加针对算法交易的监管。这将包括关于公平性、风险和数据安全的规则，为基于人工智能的交易操作带来新的挑战和机遇。
 - en: In summary, the future of AI in trading is akin to standing in the pilot house
     of a ship, adjusting course as per the winds but also setting sails for a distant
     port. On this odyssey, we continue our pursuit of knowledge, our exploration of
     the uncharted territories where technology meets finance, with a keen eye on sustainability
     and fairness.
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，人工智能在交易中的未来就像站在船的驾驶室，根据风向调整航向，同时也为远方的港口扬帆。在这段旅程中，我们不断追求知识，探索科技与金融交汇的未知领域，始终关注可持续性和公平性。
 - en: Next, we begin a foray into the world of trading cryptocurrencies using algorithmic
     strategies. A new territory in trading, it holds immense opportunities and unique
     challenges. So buckle up, as our journey into the world of algorithmic trading
     continues unabated!
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我们将开始探索使用算法策略进行加密货币交易的世界。这是交易的新领域，蕴含着巨大的机遇和独特的挑战。所以，请系好安全带，因为我们对算法交易的旅程将持续不断！
