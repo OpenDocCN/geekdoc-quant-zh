@@ -1,4 +1,4 @@
-第四章：用 Python 理解市场行为
+# 第四章：用 Python 理解市场行为
 
 理解市场结构的复杂性
 
@@ -14,7 +14,7 @@
 
 1\. 限价订单市场，参与者在特定价格或更好价格下下单买入或卖出资产。价格波动和市场规模对该模型的运作具有重要影响。
 
-```pypython
+```py
 
 # An example of how a limit order might be placed in python
 
@@ -50,7 +50,7 @@ order = {
 
 **波动性**是市场结构中交易者无法忽视的一个关键方面。波动性受多种因素的驱动，包括经济指标、技术变革、政治事件和市场情绪，衡量了资产在特定时间段内的价格波动。高波动性可能意味着更高的利润或损失。
 
-```pypython
+```py
 
 import numpy as np
 
@@ -90,7 +90,7 @@ volatility = returns.std() * np.sqrt(252)
 
 3\. **深度**：市场在不影响证券价格的情况下维持更大订单量的能力。
 
-```pypython
+```py
 
 # A potential measure of depth in python might look like this
 
@@ -128,7 +128,7 @@ depth = order_book['bids']['quantity'] + order_book['asks']['quantity']
 
 Python 提供多种分析这些挑战的方法，例如：
 
-```pypython
+```py
 
 # Measuring impact cost in Python
 
@@ -166,7 +166,7 @@ impact_cost = (executed_price - initial_price) / initial_price
 
 热情的 Python 爱好者可以利用他们的 Python 技能来测量历史和隐含波动性。以下是一个简要概述：
 
-```pypython
+```py
 
 # Measuring historical volatility in Python
 
@@ -246,7 +246,7 @@ Python 强大的库展示了其在情绪分析方面的实力。Python 的网络
 
 下面是一个简单的例子，说明如何在 Twitter 动态上使用 Python 进行市场情绪分析：
 
-```pypython
+```py
 
 import tweepy
 
@@ -324,7 +324,7 @@ MSI 在算法交易中扮演着多重角色，例如：
 
 Python，凭借其强大的数据分析库如 NumPy 和 pandas，以及数据可视化库如 Matplotlib 和 Seaborn，是进行趋势分析的优秀平台。例如，要执行简单的移动平均趋势分析，Python 代码片段可能如下所示：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -392,7 +392,7 @@ Python：你在季节性世界中的年鉴
 
 再次，强大的 Python 编程语言作为算法交易者不可或缺的盟友。它的强大库，如 pandas、matplotlib 和 statsmodels，特别适合分析和可视化市场中的季节性模式。以下是一个如何在 Python 中进行简单季节性分析的示例：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -452,7 +452,7 @@ Python 与高频数据处理
 
 Python，作为我们算法系列的英雄，成为处理这类数据的首选工具。它强大的稳健性、灵活性和可扩展性，使 Python 成为处理、分析和可视化高频数据的理想伙伴。下面是一个如何利用 Python 强大的库，如 pandas 和 NumPy，来处理高频数据的示例：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -508,7 +508,7 @@ resampled_data.dropna(inplace=True)
 
 在这场混乱的挑战中心，蕴藏着前所未有的机会，最大化利润，谨慎评估风险，并创建强大的交易策略。Python，作为我们在算法交易中的可靠编码伙伴，成为我们编写事件驱动分析的首选工具。
 
-```pypython
+```py
 
 import yfinance as yf
 
@@ -566,7 +566,7 @@ print(f"Average change on event days: {avg_change_on_event_days}")
 
 现在，让我们用 Python 来描述这种分析方法。
 
-```pypython
+```py
 
 import yfinance as yf
 
@@ -630,7 +630,7 @@ Python 提供了一个库和工具的目录，涵盖从数据获取到复杂数�
 
 在深入统计分析或构建预测模型之前，首要的当然是数据。从雅虎财经到谷歌趋势，从 Quandl 到 Intrinio——多个 Python 库允许一键访问金融和非传统数据源。像`yfinance`、`pandas_datareader`和`quandl`等库，让获取历史和近实时市场数据变得简单。
 
-```pypython
+```py
 
 import yfinance as yf
 
@@ -648,7 +648,7 @@ google_trends = pdr.get_data_yahoo('GOOGL', start='2021-01-01', end='2022-12-31'
 
 一旦数据被检索，分析就开始了。Python 中的`pandas`库被证明是数据处理和分析的优秀工具。从创建数据框和管理时间序列数据到执行复杂操作如合并、重塑和聚合——pandas 是数据整理和清理的首选库。
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -668,7 +668,7 @@ combined_data['Daily Returns GOOGL'] = combined_data['GOOGL']['Close'].pct_chang
 
 另一个相当方便的工具是 matplotlib——一个专为数据可视化设计的库。Matplotlib 与 seaborn 结合，可以在 Python 中创建静态、动画和交互式图表。无论是折线图、散点图还是热图，数据可视化有助于解读模式、检测异常并呈现发现。
 
-```pypython
+```py
 
 import matplotlib.pyplot as plt
 
@@ -692,7 +692,7 @@ plt.show()
 
 对于进行高级统计分析，我们有`SciPy`和`StatsModels`。这些库提供了优化、回归和统计检验等功能。无论是检验假设还是构建稳健的线性回归模型，这些库都是完美的选择。
 
-```pypython
+```py
 
 from scipy import stats
 

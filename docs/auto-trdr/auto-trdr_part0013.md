@@ -1,4 +1,4 @@
-第十章：跨资产类别的算法交易
+# 第十章：跨资产类别的算法交易
 
 股票
 
@@ -8,7 +8,7 @@
 
 前几章中讨论的交易者盟友**Python**在股票交易领域同样派上用场。它使你能够部署能够根据实时信息做出智能决策的交易机器人。例如，一个简单的股票交易机器人可能会使用移动平均交叉，这是一种在技术交易中广受欢迎的技巧：
 
-```pypython
+```py
 
 import yfinance as yf
 
@@ -74,7 +74,7 @@ start_bot()
 
 假设在外汇市场上采用一种基本的均值回归算法交易策略。在外汇交易中，均值回归是指汇率倾向于随时间向其平均值移动的概念。以下是使用 Python 的示例：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -138,7 +138,7 @@ print(df.tail())
 
 以量化模型为例，它们依赖于数据分析。它们利用历史数据并运用统计技术来预测商品价格趋势。以下是一个针对均值回归的简化商品算法交易策略在 Python 中的示例：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -198,7 +198,7 @@ print(df.tail())
 
 为了说明这一点，让我们构建一个简单的 Python 示例。这里，我们将使用固定收益 ETF 'TLT'，代表 20 年以上的国债。
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -260,7 +260,7 @@ ETF 是一种在股票交易所交易的投资基金，类似于股票。它们�
 
 让我们考虑一个简化的 Python 示例，以说明在交易 ETF 时如何引入算法：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -332,7 +332,7 @@ print(df.tail())
 
 让我们设想我们已经为 AAPL 期权实现了这一点，如以下 Python 代码所示：
 
-```pypython
+```py
 
 import yfinance as yf
 
@@ -390,7 +390,7 @@ options_strategy("AAPL")
 
 考虑到某人渴望为 REITs 设计基于动量的交易策略。我们可以开发一个 Python 算法来实现这一目标，如下所示：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -444,7 +444,7 @@ reit_strategy("VNQ") # Vanguard Real Estate ETF
 
 首先，我们考虑对一种加密货币（比如比特币）应用一个简单的基于动量的交易策略。我们可以使用一个 Python 脚本，类似于我们为 REITs 设计的那个，来实现这一目标：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -500,7 +500,7 @@ crypto_strategy("BTC-USD") # Bitcoin
 
 这里有一个 Python 示例，获取由 SPY ETF（跟踪标准普尔 500 指数的交易所交易基金）代表的美国股票和黄金价格的数据，计算它们的 60 天相关性，并在相关性突破某些阈值时发出信号：
 
-```pypython
+```py
 
 import yfinance as yf
 
@@ -566,7 +566,7 @@ print(f"Sell {sell_date}")
 
 这里有一个基本的 Python 示例，以说明税务考虑如何改变算法策略的决策过程：
 
-```pypython
+```py
 
 def after_tax_return(profit, holding_period, tax_rates):
 

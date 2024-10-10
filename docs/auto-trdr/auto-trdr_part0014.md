@@ -1,4 +1,4 @@
-第十一章. 构建强大的交易基础设施
+# 第十一章. 构建强大的交易基础设施
 
 硬件考虑
 
@@ -18,7 +18,7 @@
 
 这里有一个示例 Python 脚本，说明了你的硬件考虑如何转化为交易设置：
 
-```pypython
+```py
 
 import os
 
@@ -74,7 +74,7 @@ check_hardware_requirements()
 
 下面是一个使用 Python 建立与 Alpaca 交易 API 连接的示例：
 
-```pypython
+```py
 
 import alpaca_trade_api as tradeapi
 
@@ -90,7 +90,7 @@ print(account.status)
 
 在处理交易数据和实施交易策略时，交易者通常使用回测和执行引擎。这些组件允许交易者使用历史数据（回测）或实时数据（实盘交易）来测试他们的策略。Python 凭借其丰富的库，如用于数据处理的 Pandas、用于数值计算的 NumPy 和用于回测的 Zipline，成为这些努力中的无名英雄。
 
-```pypython
+```py
 
 from zipline import run_algorithm
 
@@ -130,7 +130,7 @@ run_algorithm(start=start, end=end, initialize=initialize, handle_data=handle_da
 
 例如，以下是使用 Python 将股票数据插入 PostgreSQL 的示例：
 
-```pypython
+```py
 
 import psycopg2
 
@@ -182,7 +182,7 @@ conn.commit()
 
 考虑这段用于 AES 加密数据的 Python 代码：
 
-```pypython
+```py
 
 from Crypto.Cipher import AES
 
@@ -230,7 +230,7 @@ encoded = EncodeAES(cipher, 'password')
 
 在 Python 中，有一些令人惊叹的工具可以实现高效的系统监控。例如，`psutil`是一个跨平台的库，用于访问系统详细信息和进程实用程序。以下 Python 代码片段演示如何获取 CPU 使用率数据：
 
-```pypython
+```py
 
 import psutil
 
@@ -246,7 +246,7 @@ print(f'CPU Usage: {cpu_usage} %')
 
 一个强大系统的第二个组成部分是警报管理。为了在最佳效率下运行，你需要立即了解任何故障或崩溃，以便立即采取行动。警报还可以通过检测异常交易行为来防止欺诈。
 
-```pypython
+```py
 
 import smtplib, ssl
 
@@ -288,7 +288,7 @@ server.sendmail(sender_email, receiver_email, message)
 
 Python 作为一种极具多样性的语言，提供了实施此类故障安全机制的优秀工具。核心是异常处理。Python 的 try-except 块可以捕获并处理运行时错误，防止程序的突然停止。以下是异常处理在 Python 中工作的基本示例：
 
-```pypython
+```py
 
 try:
 
@@ -310,7 +310,7 @@ finally:
 
 例如，在 Python 中开发一个简单的熔断器可能涉及定义一个条件语句，以检查投资组合回撤是否达到不可接受的水平。如果回撤超过预设的限制，“熔断器”就会触发，停止算法进行进一步交易。
 
-```pypython
+```py
 
 if portfolio_drawdown > max_accepted_drawdown:
 
@@ -334,7 +334,7 @@ Python 因其简单性和强大而闻名，是监督订单路由和执行过程�
 
 让我们考虑以下 Python 代码块作为一个示例，以说明如何路由订单：
 
-```pypython
+```py
 
 from ib.opt import ibConnection, message
 
@@ -458,7 +458,7 @@ print(result)
 
 例如，使用 Python 进行算法交易的交易员可以利用基于云的资源来创建冗余。让我们来看一个使用亚马逊网络服务（AWS）创建多个交易服务器实例的例子：
 
-```pypython
+```py
 
 import boto3
 
@@ -494,7 +494,7 @@ print(instance.id, instance.instance_type)
 
 让我们探讨另一种冗余类型：网络冗余。以算法交易员为例，他们可以设置一个次要的互联网服务提供商（ISP），以便在主要 ISP 发生故障时自动接管。用于管理和切换不同网络接口的 Python 代码可能如下所示：
 
-```pypython
+```py
 
 import netifaces
 
@@ -530,7 +530,7 @@ subprocess.run(['ifup', 'eth1'])  # Activate the backup interface
 
 让我们从定期维护开始这次探索。这通常涉及对交易系统进行定期检查和更新。你可能会测试服务器速度，检查算法的稳定性，仔细审查每一行代码以查找错误和瓶颈，或者添加更新以提高系统性能。让我们看看如何在 Python 中使用名为 schedule 的库来安排任务：
 
-```pypython
+```py
 
 import schedule
 
@@ -556,7 +556,7 @@ time.sleep(1)
 
 定期数据清理是另一项重要的维护活动。随着时间的推移，会积累大量的数据——过时的、冗余的，或不再对交易决策有价值的数据。定期删除或归档这些数据不仅能清理系统，还能帮助算法更高效地运行。一个用 Python 脚本删除过时文件的例子可能如下所示：
 
-```pypython
+```py
 
 import os
 

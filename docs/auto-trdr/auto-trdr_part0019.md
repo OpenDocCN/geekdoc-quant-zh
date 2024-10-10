@@ -1,4 +1,4 @@
-第十六章：构建交易社区与生态系统
+# 第十六章：构建交易社区与生态系统
 
 交易社区的重要性
 
@@ -24,7 +24,7 @@ Python 程序员可能会讨论简化数据分析的新库，而期权交易者�
 
 当我们步入这个社区驱动的交易成功的迷人世界时，重要的是要记住，社区依赖于互惠。参与、分享和相互尊重是使交易社区对其成员真正有益的基石。
 
-```pypython
+```py
 
 #An example of community-driven innovation could be enhancing a Python function for risk management by incorporating group feedback.
 
@@ -58,7 +58,7 @@ return risk
 
 人们可以轻松找到阐明复杂算法概念的帖子，讲解 NumPy 和 pandas 等 Python 库，或展示最新的高频交易内容。贡献的成员通常在开源许可证下分享他们的 Python 代码，用于策略和指标，使社区成员能够使用、修改和增强这些代码。
 
-```pypython
+```py
 
 #An example of open-source Python code shared on online forums.
 
@@ -94,7 +94,7 @@ print(sma)
 
 LinkedIn 形成了一个强大的网络工具，促进与交易专家、首席执行官以及领先的金融科技公司的联系。Facebook 小组凭借其广泛的覆盖面，连接全球交易者，并经常举办与市场专家的直播活动。YouTube 是一个教育内容的宝库，常常提供关于复杂主题的视频教程，例如算法交易的 Python 编码、宏观经济研究和衍生品建模。
 
-```pypython
+```py
 
 #Python coding tutorials can be found aplenty on the internet and forums.
 
@@ -122,7 +122,7 @@ print(ema)
 
 此外，当你将复杂概念澄清为更简单的解释时，你的理解会加深。曾经看似模糊的概念开始变得清晰。例如，在你的博客中解释 Python 的 Pandas 库进行数据处理，可能会带来“恍然大悟”的时刻，让一切无缝连接。
 
-```pypython
+```py
 
 #Explaining the 'groupby()' function of Pandas could be a blog post topic.
 
@@ -162,7 +162,7 @@ print(average_price)
 
 无论是分享准确的算法回测方法，还是指导他人克服设置 Python 交易环境的障碍，你分享的知识都可以产生深远的影响。
 
-```pypython
+```py
 
 #A common issue when setting up Python for finance could be a misunderstanding of different libraries.
 
@@ -218,7 +218,7 @@ print(df.head())
 
 这里是一个可能在网络交流会上引发讨论的 Pandas DataFrame 操作示例：
 
-```pypython
+```py
 
 #df is a DataFrame containing dates (date), stocks (stock), and their respective closing prices (close).
 
@@ -260,7 +260,7 @@ print(pivoted_df.head())
 
 考虑以下 Python 代码片段，它展示了一个简单的移动平均交易策略，这可以在交易比赛中应用：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -304,7 +304,7 @@ Python 凭借其强大的库生态系统和易学性，是制定和优化交易�
 
 考虑这样一个场景，一个社区可能会聚合他们的算法策略。个体交易者可以通过共享平台或库提交他们基于 Python 的算法。每个算法都以 Python 函数的形式表示，预计在给定一组市场数据时，能够回应“买入”、“卖出”或“持有”的信号。
 
-```pypython
+```py
 
 def trader_johns_algo(market_data):
 
@@ -324,7 +324,7 @@ return signal
 
 一个协调器函数可以规范并结合这些信号，从而得出集体交易决策。
 
-```pypython
+```py
 
 def crowd_decision(market_data):
 
@@ -368,7 +368,7 @@ return 'hold'
 
 考虑一门 Python 课程，通过互动编码练习介绍学习者使用 Pandas 这一算法交易中的关键库：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -422,7 +422,7 @@ Python 金融分析课程是一个主流课程，其中你可以使用 Python �
 
 作为一个例子，考虑一个在外汇市场采用动量交易策略的有限责任公司。在执行其交易活动时，有限责任公司的代码可能看起来像这样：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -496,7 +496,7 @@ print(df)
 
 一家有限责任公司（LLC）如何计划和执行筹款的例子如下：
 
-```pypython
+```py
 
 # Preliminary preparations
 
@@ -570,7 +570,7 @@ execute_trading_strategy_with_new_capital()
 
 就像音符与旋律之间这段美丽的旅程至关重要，理解人类心理在这段旅程中的角色也同样重要。与我们一起过渡到下一阶段，深入探讨交易心理学和行为经济学的领域。
 
-```pypython
+```py
 
 # Python code snippet to illustrate Community Guidelines
 

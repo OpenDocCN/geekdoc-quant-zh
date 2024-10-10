@@ -1,4 +1,4 @@
-第九章：高级 Python 交易技术
+# 第九章：高级 Python 交易技术
 
 使用 NumPy 进行数值运算
 
@@ -10,7 +10,7 @@ NumPy 最显著的特点是其 N 维数组对象或 ndarray。ndarray 在存储�
 
 为了理解 NumPy 在数值计算中的高效性，让我们以交易中的一个实际场景为例，计算移动平均，这是一种在算法交易中常用的金融指标：
 
-```pypython
+```py
 
 import numpy as np
 
@@ -52,7 +52,7 @@ Pandas 用于数据处理
 
 假设我们有某个资产的收盘价，并想要计算价格随时间的百分比变化，这是金融中一个关键的时间序列操作：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -92,7 +92,7 @@ Asyncio 用于异步编程
 
 下面是 Asyncio 如何工作的一个快照：
 
-```pypython
+```py
 
 import asyncio
 
@@ -140,7 +140,7 @@ asyncio.run(asyncio.wait(tasks))
 
 这是一个使用 Python 的 BeautifulSoup 和 requests 库进行网络爬虫的基本示例：
 
-```pypython
+```py
 
 from bs4 import BeautifulSoup
 
@@ -180,7 +180,7 @@ Python 是交易者的圣杯，提供了众多库，通过 API 简化整个交�
 
 考虑以下示例，Python 如何与 Alpha Vantage API 集成以获取实时股票数据：
 
-```pypython
+```py
 
 from alpha_vantage.timeseries import TimeSeries
 
@@ -218,7 +218,7 @@ Python 以多线程和并行化的方式解决这个难题，以克服这些限�
 
 这里是一个 Python 中多线程的简单示例：
 
-```pypython
+```py
 
 import threading
 
@@ -282,7 +282,7 @@ Python 作为行业标准，在云环境中表现出色。Python 代码的简单
 
 让我们考虑一个使用 Google Cloud 的 Dataflow 进行回测的场景。过程如下：
 
-```pypython
+```py
 
 from backtester import BackTester
 
@@ -322,7 +322,7 @@ Matplotlib 作为 Python 数据可视化领域的中坚力量，是一个全面�
 
 在深入之前，让我们用传统的导入行初始化 Matplotlib：
 
-```pypython
+```py
 
 import matplotlib.pyplot as plt
 
@@ -330,7 +330,7 @@ import matplotlib.pyplot as plt
 
 假设我们想要可视化苹果股票的移动平均交叉交易策略。假设我们的数据存储在一个名为'df'的 Pandas DataFrame 中，其中包含'Close'价格和用于短期和长期移动平均的两列'SMA'和'LMA'。使用 Matplotlib 可视化这一点涉及到：
 
-```pypython
+```py
 
 plt.figure(figsize=(14, 7))
 
@@ -352,7 +352,7 @@ plt.show()
 
 与此同时，Seaborn 是一个基于 Matplotlib 的 Python 库，提供了更高级的接口和额外的功能。针对统计学家，它与 Pandas 数据结构的集成更加顺畅，提供了令人难以置信的绘图类型——无论是小提琴图、箱形图，还是热图。它还嵌入了吸引人的默认主题，使数据科学家能够轻松地生成美观的图形表现。
 
-```pypython
+```py
 
 import seaborn as sns
 
@@ -382,7 +382,7 @@ plt.show()
 
 让我们探索一个简单的 Python 实现 WebSocket 连接的示例：
 
-```pypython
+```py
 
 import websocket
 
@@ -434,7 +434,7 @@ ws.run_forever()
 
 Python 是设计这些交易机器人的理想编程语言，因其语法简单和众多强大的数据分析与处理库。一个简单的基于价格策略的自动交易机器人的版本可能在 Python 中看起来如下：
 
-```pypython
+```py
 
 import ccxt
 

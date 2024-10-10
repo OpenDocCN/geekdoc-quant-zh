@@ -1,4 +1,4 @@
-第十七章：交易心理学与行为经济学
+# 第十七章：交易心理学与行为经济学
 
 理解交易心理学
 
@@ -24,7 +24,7 @@
 
 总之，交易心理学是算法交易中的一个重要环节。理解这一方面使交易者能够更好地塑造他们的策略、管理风险，最终更加优雅和成功地驾驭市场的波涛。当我们过渡到下一个主题时，让我们深入探讨认知偏误的景观，看看行为经济学如何在交易领域中交织在一起。
 
-```pypython
+```py
 
 # Python code snippet to illustrate the impact of cognitive bias on trading
 
@@ -86,7 +86,7 @@ plt.show()
 
 例如，在一系列盈利之后，交易者可能会对算法的表现过于自信，从而导致他们在当前策略上过度投资，而不考虑市场波动或其他潜在损失。一个恶性循环开始了，过度自信促使更高风险的行为，可能导致未来的重大损失。
 
-```pypython
+```py
 
 # Python code snippet to visualize overconfidence bias leading to overfitting
 
@@ -134,7 +134,7 @@ plt.show()  
 
 确认偏误是心智偏好一致性的方式，即使这会使我们远离真相。作为交易者，当我们过滤或忽视挑战现有信念或策略的信息，而更青睐支持当前观点的信息时，我们表现出确认偏误。在算法交易的背景下，这可能表现为对某些数据来源、指标的过度依赖，或者基于选择性支持的回测结果对算法表现的过度乐观。
 
-```pypython
+```py
 
 # Python code snippet to demonstrate implementation without confirmation bias
 
@@ -196,7 +196,7 @@ print("Accuracy: %0.2f (+/- %0.2f) [%s]" % (scores.mean(), scores.std(), label))
 
 对于交易者而言，这意味着我们在心理上更容易受到投机性收益和损失的影响，而不是实际的最终利润或损失。这种现象可能导致交易者在市场波动期间表现出非理性行为，基于瞬时价格波动做出草率的买入或卖出决策，而不是基于长期投资价值。
 
-```pypython
+```py
 
 # Python code snippet to illustrate the effect of Prospect Theory
 
@@ -270,7 +270,7 @@ plt.show()
 
 此外，情商在处理交易算法的输出时也能发挥作用。如果算法触发了看似风险高或违反直觉的交易，情商高的交易者能够有效管理自己的情绪反应，仔细审视决策背后的逻辑，而不是冲动反应。
 
-```pypython
+```py
 
 # Python code snippet to simulate the emotional response of a trader
 

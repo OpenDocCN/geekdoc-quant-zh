@@ -1,4 +1,4 @@
-第十二章：算法交易中的实时数据处理
+# 第十二章：算法交易中的实时数据处理
 
 实时数据的重要性
 
@@ -14,7 +14,7 @@
 
 让我们举一个实时数据在基于 Python 的交易算法中如何被利用的例子：
 
-```pypython
+```py
 
 import yfinance as yf
 
@@ -52,7 +52,7 @@ latest_volume = real_time_data['Volume'][-1]
 
 Python 作为一种机器友好的语言，配备了高效处理数据流的框架和库。像 Pandas 和 Numpy 这样的库不仅简化了数据获取和清洗的过程，还使算法能够相对轻松地处理和分析大量数据。例如，以下是一个使用 yfinance 库获取市场数据的简单脚本：
 
-```pypython
+```py
 
 import yfinance as yf
 
@@ -82,7 +82,7 @@ print(hist)
 
 数据清洗或数据清理是从数据集中查找和纠正（或删除）损坏或不准确记录的过程。这可能涉及处理缺失值、删除重复项、纠正不一致值，以及根据已知实体列表验证和修正值。Python 的 Pandas 库提供了一套强大的数据清洗函数。以下是一个简单的 Python 代码片段，展示了在 Pandas 中使用 'fillna' 方法处理缺失数据的用法：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -110,7 +110,7 @@ df.fillna(df.mean(), inplace=True)
 
 在这些步骤的实际实施中，Python 的 scikit-learn 包提供了强大而高效的数据预处理工具。Pandas 也是如此，我们之前提到过。还有其他一些库，比如 Numpy 和 SciPy，提供了有用的数据预处理功能。
 
-```pypython
+```py
 
 from sklearn import preprocessing
 
@@ -142,7 +142,7 @@ print(x_scaled)
 
 “缺失数据”本质上指的是观察中某些变量缺少数据值。这在数据分析中构成了一个重大问题，因为如果处理不当，可能导致偏差或不正确的结果。那么，如何处理这个难题呢？Python 凭借众多库和函数提供了强大的解决方案。例如，Pandas 提供了“dropna”方法来删除缺失值的观察。
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -174,7 +174,7 @@ print(df)
 
 Python 库如 Numpy、Scipy 和 Pandas 提供了识别异常值的方法。例如，Z-score 是一个有效的数学工具来识别异常值。以下是如何在 Scipy 中使用它：
 
-```pypython
+```py
 
 import numpy as np
 
@@ -210,7 +210,7 @@ print(outliers)
 
 考虑下面的例子，我们使用 Alpaca（一个受欢迎的免佣金交易平台）的 websocket API 进行实时价格更新：
 
-```pypython
+```py
 
 import websocket
 
@@ -242,7 +242,7 @@ ws.run_forever()
 
 让我们向前迈进一步，尝试使用 pandas 进行实时简单移动平均计算。你可以使用 collections 包中的 deque 来实现：
 
-```pypython
+```py
 
 from collections import deque
 
@@ -282,7 +282,7 @@ print('SMA@', time_stamp, ':', sma)
 
 Python 非常适合事件驱动编程设置。它允许构建一个事件处理程序，持续监控市场事件的变化。借助像 asyncio 这样的异步编程库以及复杂的事件驱动包，Python 开发者在处理实时交易数据的洪流时就像经验丰富的水手在风暴中一样，从容不迫。Python 中事件驱动实现的简单示例如下：
 
-```pypython
+```py
 
 import asyncio
 
@@ -334,7 +334,7 @@ trade_event.trigger('BTC/USD traded at 50000')
 
 理解自动止损系统有助于创建在交易损失达到预定阈值时自动关闭的头寸。该系统作为一种万无一失的武器，确保即使在严峻的市场条件下，您的交易生态系统也不会崩溃。
 
-```pypython
+```py
 
 def calculate_stop_loss(price, percent=1.0):
 
@@ -344,7 +344,7 @@ return price - (price * percent / 100)
 
 头寸大小是风险管理的另一个重要方面。它涉及确定交易头寸的大小或在交易中买入或卖出的股票数量。有效地利用头寸大小可以保护你的投资组合免受重大波动的影响。
 
-```pypython
+```py
 
 def calculate_position_size(portfolio_value, risk_per_trade, entry_price, stop_loss_price):
 
@@ -378,7 +378,7 @@ return position_size
 
 Python 凭借其先进的工具和库，帮助我们应对数据延迟。像`ZeroMQ`这样的库可以迅速地在不同网络上运输消息或数据，延迟极小。其他解决延迟问题的方法可能包括基础设施改善，如更快的互联网连接、直接市场接入或甚至是服务器与交易所服务器的物理靠近，以实现最快的数据交换。
 
-```pypython
+```py
 
 import zmq
 
@@ -414,7 +414,7 @@ Websockets 是建立实时双向通信通道的协议，基于单一的 TCP 连�
 
 Python 以其多功能性，提供了对 Websockets 的卓越支持。像`websocket`这样的库提供了 Websocket 交互的低级 API，而`websockets`（注意结尾的's'）则提供了易于使用的高级 API。让我们看看一个基本的 Python 代码，说明如何使用`websocket`库。
 
-```pypython
+```py
 
 import websocket
 
@@ -450,7 +450,7 @@ ws.run_forever()
 
 Python，我们在算法交易中不可或缺的盟友，提供了多种库与时间序列数据库进行交互。一个显著的库叫做'InfluxDB-Python'，它与流行的开源时间序列数据库 InfluxDB 进行接口。以下 Python 代码展示了如何使用该库与 InfluxDB 进行交互。
 
-```pypython
+```py
 
 from influxdb import InfluxDBClient
 

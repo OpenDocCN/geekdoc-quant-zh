@@ -1,4 +1,4 @@
-第八章：算法交易中的风险管理
+# 第八章：算法交易中的风险管理
 
 无风险无回报：解读交易风险的多面性
 
@@ -80,7 +80,7 @@ Sortino 比率
 
 最简单的形式是固定止损，在买入价格下方设定一个坚定的退出点。如果市场价格跌至该值，算法会触发卖单。然而，缺乏灵活性可能会因正常市场波动而使持仓失位。
 
-```pypython
+```py
 
 def set_fixed_stop_loss(price, percentage):
 
@@ -94,7 +94,7 @@ return stop_price
 
 跟踪止损提供了一种更灵活的方法。它将止损价格设定在市场价格下方，但如果市场价格上涨，则向上调整。然而，如果市场价格下跌，止损价格则保持不变。这允许交易者在限制损失的同时保护收益。
 
-```pypython
+```py
 
 def set_trailing_stop_loss(price, percentage):
 
@@ -128,7 +128,7 @@ return max(stop_price, trailing_stop)
 
 在这里，每次交易操作中都会冒一定比例的可用资本风险，为每笔交易提供一致的基准。Python 实现可能看起来像这样：
 
-```pypython
+```py
 
 def fixed_fractional_position_sizing(account_balance, risk_per_trade, price_per_share):
 
@@ -144,7 +144,7 @@ return shares_to_buy
 
 对于那些追求激进利润的交易者，固定比例方法会随着账户余额的增加而增加每笔交易的赌注金额。此方法采用增量值来加速赌注规模相对于账户余额增长的上升。
 
-```pypython
+```py
 
 def fixed_ratio_position_sizing(account_balance, delta, price_per_share):
 
@@ -178,7 +178,7 @@ Python 再次将一系列多样化技术呈现于前，确保交易组合向优�
 
 这里有一个简单的 Python 函数，用于计算多样化的投资组合：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -200,7 +200,7 @@ return portfolio
 
 优秀的多样化不仅仅在于拥有多种股票，而在于确保这些股票跨越多个行业或领域。将投资分散到技术、医疗保健、能源或金融服务等领域，为多样化提供了另一层保障。
 
-```pypython
+```py
 
 def sector_diversification(portfolio, sectors):
 
@@ -218,7 +218,7 @@ return sector_weights
 
 地理多样化采取广泛的方法，将投资分散到国内、国际和新兴市场，从而减少与特定国家或地区独特经济因素相关的风险。
 
-```pypython
+```py
 
 def geographic_diversification(portfolio, regions):
 
@@ -250,7 +250,7 @@ Python，这位在我们算法旅程中聪明的船员，提供了令人信服�
 
 EVT 使我们能够理解极端异常值的行为。通常，金融灾难正是由这些罕见且意想不到的市场事件引起的。利用 Python 进行 EVT 可以帮助我们建模并预测这些情况。
 
-```pypython
+```py
 
 from scipy.stats import genpareto
 
@@ -272,7 +272,7 @@ plt.show()
 
 蒙特卡罗模拟为任何给定投资组合生成广泛的情景。它考虑了投资组合各个组成部分的风险和回报，以创建众多可能的结果。
 
-```pypython
+```py
 
 import numpy as np
 
@@ -328,7 +328,7 @@ VaR 作为标准风险度量，定义了投资组合在特定期间和特定置�
 
 下面的例子演示了使用 Python 计算参数 VaR：
 
-```pypython
+```py
 
 import numpy as np
 
@@ -348,7 +348,7 @@ print('Single Day Parametric VaR at 95 confidence level', var_95)
 
 ES 估计超过 VaR 的所有损失的预期值或平均值。该指标在评估极端市场困境中的风险时特别有用。
 
-```pypython
+```py
 
 from scipy.stats import norm
 
@@ -366,7 +366,7 @@ print('Single Day Expected Shortfall at 95 confidence level', ES)
 
 在评估算法交易策略的表现时，某些风险调整的指标可以提供对所涉及风险的更深刻理解。一个例子是夏普比率，它衡量投资的表现与无风险资产的比较，经过风险调整后进行评估。
 
-```pypython
+```py
 
 # Calculate Sharpe Ratio
 
@@ -398,7 +398,7 @@ Python，水手忠实的图表和指南针，提供强大的工具，将杠杆�
 
 让我们考虑一个杠杆交易策略回测的 Python 代码示例：
 
-```pypython
+```py
 
 import pyfolio as pf
 
@@ -436,7 +436,7 @@ pf.create_returns_tear_sheet(lev_returns, live_start_date='2015-12-31')
 
 现在让我们深入 Python 代码，展示一个情境分析的简单示例：
 
-```pypython
+```py
 
 import numpy as np
 
@@ -490,7 +490,7 @@ plt.show()
 
 在这里，重要的是要注意 Python 在风险管理任务中发挥的重要作用。从数据获取、准备、风险建模到风险管理策略的执行，Python 提供了丰富的工具和库来简化这个过程。以下是一个使用 Python 计算风险价值（VaR）的示例：
 
-```pypython
+```py
 
 import numpy as np
 

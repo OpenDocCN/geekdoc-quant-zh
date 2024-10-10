@@ -1,4 +1,4 @@
-第十五章：算法期权与衍生品交易
+# 第十五章：算法期权与衍生品交易
 
 期权与衍生品基础知识
 
@@ -14,7 +14,7 @@
 
 1\. 认购期权：它赋予持有者在到期日前以行权价购买基础资产的权利。
 
-```pypython
+```py
 
 # Python code illustrating a simple Call Option payoff
 
@@ -100,7 +100,7 @@ Black-Scholes 公式用于看涨期权和看跌期权为：
 
 现在，让我们看看用于计算 Black-Scholes 看涨期权和看跌期权价格的 python 代码。
 
-```pypython
+```py
 
 import math
 
@@ -142,7 +142,7 @@ return price
 
 尽管该模型背后的数学略显复杂，但其在 python 中的实现相当简单。让我们来看看。
 
-```pypython
+```py
 
 import numpy as np
 
@@ -208,7 +208,7 @@ return option_tree[0,0]
 
 在 Python 中，覆盖看涨期权的策略可以如下实现：
 
-```pypython
+```py
 
 class Covered_Call:
 
@@ -236,7 +236,7 @@ return self.stock_price - self.premium
 
 这是如何在 Python 中实现的一个示例：
 
-```pypython
+```py
 
 class Protective_Put:
 
@@ -262,7 +262,7 @@ return self.stock_price + self.premium - self.strike_price
 
 当交易者预期基础资产价格有高波动但不确定方向时，会采用跨式或宽跨式策略。这两种策略都涉及购买或出售具有相同到期日但不同执行价格的看跌和看涨期权组合。跨式的两个期权具有相同的执行价格，成本较高但潜在利润无限。而宽跨式则有较低的看涨执行价格和较高的看跌执行价格，因此更具成本效益，但提供有限的利润潜力。
 
-```pypython
+```py
 
 class Straddle_Strangle:
 
@@ -302,7 +302,7 @@ return -self.call_premium - self.put_premium
 
 制定风险管理计划 - 风险管理计划是交易者工具箱中不可或缺的一部分，详尽的文档规定了交易进出场的标准、每笔交易风险的资金金额（通常是总交易资本的固定百分比）以及允许的最大回撤。此外，完善的计划考虑了交易的不同可能结果，并为每种情境做好准备。
 
-```pypython
+```py
 
 class RiskManagementPlan:
 
@@ -334,7 +334,7 @@ return 'Risk Status: Normal'
 
 对冲 - 这种策略类似于购买保险；通过持有抵消头寸来保护免受基础资产不利价格波动的影响。在期权交易中，可以采用一系列对冲策略，例如领口、备兑开仓、保护性认沽等。有效的对冲限制潜在损失，但也可能削弱潜在收益。
 
-```pypython
+```py
 
 class Hedging:
 
@@ -360,7 +360,7 @@ return 'Incomplete Collar Strategy'
 
 多样化 - 这种经典的风险管理技巧涉及将投资分散到不同的金融工具或资产类别中，以减少对特定资产或风险的暴露。在期权交易的背景下，多样化可以发生在行使价格、到期日和基础资产之间。
 
-```pypython
+```py
 
 class Diversification:
 
@@ -390,7 +390,7 @@ return len(set(underlyings)) > 1
 
 头寸规模 - 这涉及决定分配给特定交易的资本量。每笔交易的规模应与交易者的风险承受能力和总交易资本成比例。目的是避免任何单笔交易对交易资本造成重大损失。
 
-```pypython
+```py
 
 class PositionSizing:
 
@@ -420,7 +420,7 @@ return risk_amount / abs(self.price - self.stop_loss)
 
 有担保看涨策略 - 该策略通过在投资组合中持有的证券上书写或出售看涨期权来实现。出售看涨期权所获得的收入为股票价格的适度下跌提供了缓冲，但权衡之下，最大可能利润受到限制。以下是执行有担保看涨策略的 Python 示例。
 
-```pypython
+```py
 
 class CoveredCall:
 
@@ -444,7 +444,7 @@ return 'Setup Incomplete, Cannot Execute Covered Call Strategy'
 
 保护性认沽策略 - 该策略通过购买与所持股票数量相等的认沽期权来运作。认沽期权的持有人有权以执行价格出售资产，从而在股票价格下跌时充当保险。下面的 Python 伪代码描述了这一策略：
 
-```pypython
+```py
 
 class ProtectivePut:
 
@@ -468,7 +468,7 @@ return 'Setup Incomplete, Cannot Execute Protective Put Strategy'
 
 跨式策略 - 跨式是一种中性策略，涉及购买具有相同执行价格和到期日期的看涨和认沽期权。此策略允许交易者在高波动性中获利，无论市场朝哪个方向移动。以下是跨式的 Python 伪代码：
 
-```pypython
+```py
 
 class Straddle:
 
@@ -492,7 +492,7 @@ return 'Setup Incomplete, Cannot Execute Straddle Strategy'
 
 垂直价差策略 - 垂直价差策略类似于跨式策略，但有一个关键区别；看涨和认沽期权的执行价格不同。当投资者预计市场会极度波动，但对运动方向不确定时，就会使用此策略。
 
-```pypython
+```py
 
 class Strangle:
 
@@ -524,7 +524,7 @@ return 'Setup Incomplete, Cannot Execute Strangle Strategy'
 
 隐含波动率的动态 - 当期权交易者谈论隐含波动率时，他们指的是市场参与者对资产或证券价格波动程度的预期。基本上，隐含波动率是从期权价格推导出的股票价格的预期波动性。本质上，它是一个前瞻性指标，帮助投资者在市场混乱中评估证券可能的波动。以下是一个计算隐含波动率的 Python 脚本：
 
-```pypython
+```py
 
 from scipy.stats import norm
 
@@ -572,7 +572,7 @@ Delta 中性策略涉及创建一个总 Delta 等于零的投资组合。这可�
 
 这是一个计算期权 delta 的 Python 脚本：
 
-```pypython
+```py
 
 from scipy.stats import norm
 
@@ -622,7 +622,7 @@ return delta
 
 以下是一个 Python 代码，用于使用 Black-Scholes 模型计算各种“希腊字母”：
 
-```pypython
+```py
 
 from scipy.stats import norm
 
@@ -684,7 +684,7 @@ return delta, gamma, theta, vega, rho
 
 为了说明这一点，假设我们创建了一个 Python 脚本来定价欧洲式二元看涨期权：
 
-```pypython
+```py
 
 from scipy.stats import norm
 
@@ -736,7 +736,7 @@ return binary_call_price
 
 监管规则涵盖了许多其他方面，包括保证金要求、破产保护、争议解决和合规框架。违反规定可能导致高额罚款、暂停或甚至被排除在市场参与之外。
 
-```pypython
+```py
 
 #An example of adhering to trading position limits in Python involves tracking existing option positions.
 

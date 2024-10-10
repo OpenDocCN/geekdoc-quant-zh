@@ -1,4 +1,4 @@
-第三章：交易者的 Python 简介
+# 第三章：交易者的 Python 简介
 
 为什么选择 Python？
 
@@ -248,7 +248,7 @@ Python 中的函数是高效的包装专家；它们将代码块巧妙地整合�
 
 Python 函数的开始以关键字‘def’为起点，随后是函数名称。这就像为新生儿命名——函数等待被命名，然后开始在代码的世界中履行其角色。一个执行外汇交易策略的示例循环函数大致如下：
 
-```pypython
+```py
 
 def forex_trading_strategy(data, threshold):
 
@@ -302,7 +302,7 @@ Pandas，Python 数据处理与分析的旗舰库，是一种在量化金融中�
 
 这里有一种简单的方法来使用 Pandas 计算简单移动平均：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -322,7 +322,7 @@ NumPy：数值处理的核心
 
 在算法交易的领域中，NumPy 充当了后台英雄。它承担着繁重的计算任务，无论是统计计算、相关性还是其他数值操作。例如，计算股票价格序列历史波动率的函数简单明了：
 
-```pypython
+```py
 
 import numpy as np
 
@@ -360,7 +360,7 @@ Python 中的文件操作
 
 在 Python 中，文件读取操作是获取数据的主要手段。文件可以以各种格式存在，如 CSV、Excel、JSON，甚至在数据库中。Python 丰富的库，如 Pandas、openpyxl、json 和 sqlite3，使交易者能够无缝地读取这些多样的数据格式。例如，你可以使用 Pandas 的'read_csv'函数将 CSV 文件中的数据导入到 DataFrame 中，这是一种准备进行分析的二维表格数据结构。
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -374,7 +374,7 @@ data = pd.read_csv('stock_data.csv')
 
 虽然算法交易涉及消化市场数据，但也涉及保存处理后的输出、记录交易和记录分析模型结果。Python 的文件写入操作使交易者能够高效地存储和检索这些输出，形成强大交易框架的基础。将数据写入文件和读取数据一样直观。例如，如果交易者希望将 DataFrame 保存为 CSV 文件，他们可以使用 Pandas 的'to_csv'方法。
 
-```pypython
+```py
 
 # Writing data to a CSV file
 
@@ -388,7 +388,7 @@ Python 的多功能性并不止于此。如果有人希望以 Excel、JSON 或 S
 
 通常，算法交易员并不是从零开始。他们需要将数据附加到现有文件中，例如，将新市场数据合并到历史数据序列中。Python 的文件操作函数允许轻松附加到现有文件，从而创建连续的数据输入和处理流。
 
-```pypython
+```py
 
 # Appending data to a CSV file
 
@@ -400,7 +400,7 @@ data.to_csv('historical_data.csv', mode='a', header=False)
 
 在 Python 中管理数据文件还涉及导航文件路径和目录。Python 的 os 模块就像一个精心制作的指南针，引导交易员穿越数据文件的迷宫，帮助他们定位、重命名或删除文件和目录。它确保文件和目录操作的顺利进行，使 Python 成为算法交易工具的丰盈宝库。
 
-```pypython
+```py
 
 import os
 
@@ -422,7 +422,7 @@ Python 还支持读取和写入二进制文件，这是一种紧凑的存储解�
 
 复杂的交易操作有时可能会被一块松石绊倒——缺少文件、权限错误或错误的路径。Python 的异常处理机制充当了一个强大的安全网，保护交易操作不因文件操作错误而崩溃。Python 的 try-except 块可以帮助优雅地捕获和处理这些异常。
 
-```pypython
+```py
 
 try:
 
@@ -448,7 +448,7 @@ NumPy：数值计算的心跳
 
 NumPy 或数值 Python 是进一步数学和科学计算的基础包。它的核心提供了一个强大的`ndarray`对象，用于处理大型多维数组和矩阵，使其非常适合广泛的金融计算。此外，NumPy 还提供了一系列数学函数，用于执行统计分析、线性代数和随机性等操作，成为稳健交易策略的可靠伙伴。
 
-```pypython
+```py
 
 import numpy as np
 
@@ -470,7 +470,7 @@ Pandas：切片和切块金融数据
 
 Pandas 是 Python 交易生态系统中的关键组成部分。基于 NumPy 构建，它采用`DataFrame`和`Series`数据结构，以有序、可探索和可操作的方式汇集异构数据。从多个来源导入数据、重塑数据框，到执行复杂的切片和切块操作，Pandas 充当交易世界中数据的控制中心。
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -498,7 +498,7 @@ Matplotlib 和 Seaborn：Python 中的视觉叙述者
 
 在交易中，数据可视化是帮助导航广阔金融市场世界的指南针。Matplotlib 是一个广泛的库，提供一系列静态、动画和交互式图形，成为 Python 生态系统的调色板。Seaborn 是 Matplotlib 的高级接口，配备了美观的统计图形，并能与 Pandas 数据结构无缝集成。
 
-```pypython
+```py
 
 import matplotlib.pyplot as plt
 
@@ -524,7 +524,7 @@ Scikit-learn 和 TensorFlow：机器学习强者
 
 机器学习算法和人工智能正在改变算法交易。Scikit-learn 是一个免费的软件机器学习库，提供了许多机器学习算法的简单而一致的接口。TensorFlow 由 Google Brain 开发，提供了一个灵活的平台来设计、构建和训练深度学习模型，使复杂的预测分析和高频交易对 Python 交易者而言变得轻而易举。
 
-```pypython
+```py
 
 from sklearn import datasets, svm
 

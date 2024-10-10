@@ -1,4 +1,4 @@
-第十四章：使用算法策略交易加密货币
+# 第十四章：使用算法策略交易加密货币
 
 加密市场简介
 
@@ -10,7 +10,7 @@
 
 加密市场的一个独特特点是其去中心化的性质。这些市场独立于中央监管机构运作，而是由去中心化技术如区块链驱动。这吸引了偏好匿名的交易者和渴望摆脱传统银行监管的人士。
 
-```pypython
+```py
 
 # Basic crypto trading using python
 
@@ -50,7 +50,7 @@ print(ticker_info)
 
 在快速价格变动的表象之下，隐藏着市场波动性的基石——风险。加密交易中潜在的财务损失与收益同样显著。与有监管保护的传统金融市场不同，加密市场的去中心化特性确保没有安全保障。这种去中心化的特性还为市场操控活动提供了可能性，比如拉高出货和前置交易，进一步提高了风险水平。
 
-```pypython
+```py
 
 # Basic crypto trading Risk Analysis using python
 
@@ -92,7 +92,7 @@ print(f"The risk (volatility) for Bitcoin is {btc_risk*100}%")
 
 交易算法在加密货币领域相较于人工交易提供了几项优势。首先，它们能够以远超人类能力的速度和精确度运作。一个调试良好的算法可以在几分之一秒内执行交易，立即对市场变化做出反应，并保持计算的准确性，消除手动错误的可能性。
 
-```pypython
+```py
 
 # Basic Algorithm for Crypto Trading using python
 
@@ -154,7 +154,7 @@ print(df)
 
 加密数据的主要来源之一是加密货币交易所。这些是数字平台，个人可以在此购买、出售或交换加密货币以换取其他数字资产或传统法定货币。从交易所动态获得的数据涵盖实时汇率、交易量、买卖价格和历史数据。通过大多数交易所（如 Binance、Coinbase、Kraken 和 Bitfinex）提供的 API，用户可以自动化数据提取过程。以下是一个示例：
 
-```pypython
+```py
 
 from binance.client import Client
 
@@ -202,7 +202,7 @@ print(ticker_history)
 
 下面是一个简单的 Python 函数来执行此操作的示例：
 
-```pypython
+```py
 
 def execute_spatial_arbitrage(trade_quantity, exchange_A, exchange_B):
 
@@ -238,7 +238,7 @@ return usd
 
 下面是一个用 Python 实现的简单动量策略算法的示例：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -278,7 +278,7 @@ Python 作为开发交易机器人的强大工具，为在加密交易所执行�
 
 下面是如何在 Python 中实现做市算法的基本示例：
 
-```pypython
+```py
 
 import ccxt
 
@@ -316,7 +316,7 @@ market_maker_bot(exchange, 'BTC/USDT', 0.01, 0.1)
 
 这些技术中最主要的是回归模型，包括线性回归和逻辑回归。这些是基本模型，根据一个或多个输入预测变量预测一个连续的结果变量（例如加密货币的价格）。虽然简单，但它们为价格预测提供了良好的起点，并且在某些加密货币数据集中表现得相当不错。
 
-```pypython
+```py
 
 # Example: Simple Linear Regression with Python
 
@@ -358,7 +358,7 @@ print('Actual Price:', y)
 
 神经网络和深度学习模型也被应用于预测加密货币价格。这些模型能够捕捉复杂的非线性关系，在处理高维数据时尤其有效。例如，递归神经网络（RNN）作为一种深度学习模型，擅长处理顺序数据，使其适合用于加密货币价格等时间序列数据。
 
-```pypython
+```py
 
 # Example: LSTM for Crypto Price Prediction
 
@@ -422,7 +422,7 @@ print('Actual Price:', crypto_data)
 
 例如，在美国，证券交易委员会（SEC）已表示某些加密货币（特别是首次代币发行或 ICO）可能被视为证券，从而纳入 SEC 的监管范围。另一方面，商品期货交易委员会（CFTC）将比特币归类为商品，受其监管权力的约束。
 
-```pypython
+```py
 
 # No Coding Example. This  deals with regulatory and tax implications, not technical coding aspects.
 
@@ -432,7 +432,7 @@ print('Actual Price:', crypto_data)
 
 加密货币税收是另一个关键但复杂的方面。全球的税法各不相同，对于挖矿、购买、出售或单纯拥有加密货币有不同的规定。在美国，国税局（IRS）将加密货币视为财产，这意味着涉及比特币、以太坊或其他数字货币的每一笔交易都可能被视为应税事件。交易者可能需要认真记录他们的加密货币交易，并准确报告资本收益或损失。鉴于加密货币的波动性和机器人在一定时间内可以执行的高交易量，这可能特别具有挑战性。
 
-```pypython
+```py
 
 # No Coding Example. This  deals with regulatory and tax implications, not technical coding aspects.
 
@@ -454,7 +454,7 @@ Bitsgap 是一个流行的加密货币算法交易平台，允许交易者在多
 
 一位使用 Bitsgap 平台的交易者据称在一个月的时间里通过网格机器人策略获得了令人印象深刻的 24%的投资回报。这个成就是由于机器人能够全天候进行高频交易，并利用最小的价格波动。
 
-```pypython
+```py
 
 # A simple illustration of a grid bot algorithm
 
@@ -482,7 +482,7 @@ CryptoTrader 是另一个为加密交易者提供各种算法交易策略的平�
 
 一位交易爱好者决定使用这个机器人进行套利交易。在多个交易所之间发现莱特币（LTC）的瞬时价格差异后，这个机器人成功地通过在一个交易所低买，在另一个交易所高卖来获利。在六个月的时间里，交易者报告其投资资本的平均每日回报率为 2%。
 
-```pypython
+```py
 
 # A simple illustration of an arbitrage bot algorithm
 

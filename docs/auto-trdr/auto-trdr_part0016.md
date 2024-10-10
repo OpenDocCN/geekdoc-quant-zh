@@ -1,4 +1,4 @@
-第十三章：算法交易中的机器学习与人工智能
+# 第十三章：算法交易中的机器学习与人工智能
 
 机器学习在交易中的介绍
 
@@ -16,7 +16,7 @@
 
 下面是利用 Scikit-learn 的 Python 代码示例，这是一个用于机器学习的流行库。这段代码是一个基本示例，展示了交易者如何使用线性回归来创建股票价格的预测模型。
 
-```pypython
+```py
 
 from sklearn.model_selection import train_test_split
 
@@ -78,7 +78,7 @@ print(predictions[:5])
 
 让我们看一个 Python 代码片段的示例，展示交易者如何使用随机森林分类器（一种用于分类的集成学习方法）来预测股票价格是上涨还是下跌。
 
-```pypython
+```py
 
 from sklearn.ensemble import RandomForestClassifier
 
@@ -138,7 +138,7 @@ print("Accuracy:", metrics.accuracy_score(y_test, predictions))
 
 为了说明这些策略如何实现，请考虑一个显示 K-means 聚类方法用于投资组合优化的 Python 代码片段：
 
-```pypython
+```py
 
 from sklearn.cluster import KMeans
 
@@ -188,7 +188,7 @@ print(data)
 
 例如，考虑一个使用长短期记忆网络（LSTM）构建的股票价格预测模型。以下是该模型的一个简化的 Python 代码片段：
 
-```pypython
+```py
 
 from keras.models import Sequential
 
@@ -254,7 +254,7 @@ print(yhat)
 
 让我们看一下一个简化的 Q 学习（强化学习的一种）Python 代码片段，用于构建交易机器人。
 
-```pypython
+```py
 
 import numpy as np
 
@@ -314,7 +314,7 @@ print(q_table)
 
 为了说明这个思维过程，让我们考虑一个使用 TextBlob 库展示情感分析的简单 Python 代码示例。
 
-```pypython
+```py
 
 from textblob import TextBlob
 
@@ -344,7 +344,7 @@ print(f'Polarity: {testimonial.sentiment.polarity}, Subjectivity: {testimonial.s
 
 为了说明这个概念，我们考虑一个例子，想象一下我们正在实施一个机器学习策略，以预测市场趋势，使用过去股价的数据集。在训练我们的模型达到完美的过程中，我们在计算上“强迫”我们的模型适应训练数据中的每一个微小波动和噪声，导致模型过度拟合于这特定数据。当我们随后将模型暴露于新数据时，其表现急剧下降，导致次优的交易选择和潜在的损失。
 
-```pypython
+```py
 
 from sklearn.model_selection import train_test_split
 
@@ -384,7 +384,7 @@ print(f"Test Accuracy: {accuracy_score(y_test, clf.predict(X_test))}")
 
 让我们深入探讨。本质上，基于人工智能的投资组合管理系统利用人工智能和机器学习，根据投资者的风险容忍度、回报目标和投资期限，优化投资组合中的资产配置。
 
-```pypython
+```py
 
 # A Simple example with AI-Portfolio Management
 
@@ -436,7 +436,7 @@ AI 在交易中的动态持续演变，技术的进步迅速开启了新的可�
 
 让我们深入探讨这个以 AI 为中心的交易未来：
 
-```pypython
+```py
 
 # A glimpse of AI in the future of trading
 

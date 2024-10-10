@@ -1,4 +1,4 @@
-第六章\. 用 Python 回测您的交易策略
+# 第六章\. 用 Python 回测您的交易策略
 
 什么是回测？
 
@@ -26,7 +26,7 @@ Python 的操控者：Pythonic 回测的行为
 
 由于 Python 的数据友好特性和强大的金融库，它是回测的理想选择。借助`pandas`、`numpy`、`matplotlib`和`pyfolio`等库，您不仅可以进行回测，还能可视化结果和进行性能分析。以下是一个简化的伪代码，说明如何在 Python 中设置一个基本的回测系统：
 
-```pypython
+```py
 
 # Simplified Python code for setting up a backtesting system
 
@@ -70,7 +70,7 @@ return performance
 
 以下是一个用 Python 构建的简化版回测引擎示例。这些代码利用了 Python 友好的数据处理库，如'pandas'和'numpy'，将理论算法转化为可执行命令。
 
-```pypython
+```py
 
 import numpy as np
 
@@ -140,7 +140,7 @@ Backtrader 被誉为最用户友好而又强大的回测库之一。它迷人的
 
 下面是一个使用 Backtrader 进行的简单移动平均交叉策略回测示例：
 
-```pypython
+```py
 
 import backtrader as bt
 

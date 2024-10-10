@@ -1,4 +1,4 @@
-第五章\. 开发高级交易算法
+# 第五章\. 开发高级交易算法
 
 交易算法类型
 
@@ -30,7 +30,7 @@
 
 让我们使用 Python 演示一个基本的均值回归算法：
 
-```pypython
+```py
 
 import pandas as pd
 
@@ -96,7 +96,7 @@ data['cumulative_returns'] = (1 + data['strategy_returns']).cumprod()
 
 最简单的移动平均策略利用简单移动平均（SMA）。SMA 计算指定期间内的平均价格，例如 50 天、100 天或 200 天，通常是收盘价。当价格高于 SMA 时，这一策略做多；当价格低于 SMA 时，做空，假设价格会随着时间回归均值。
 
-```pypython
+```py
 
 # Implementing an SMA crossover strategy
 
@@ -144,7 +144,7 @@ plt.show()
 
 EMA（指数移动平均）对近期价格给予更多权重，从而使其对当前价格走势更为敏感。交易者常在快速变化的市场中使用它，以便及早捕捉趋势。
 
-```pypython
+```py
 
 # Implementing an EMA strategy
 
@@ -178,7 +178,7 @@ data['signal'] = np.where(data['ema_short'] > data['ema_long'], 1, -1)
 
 空间套利涉及利用同一资产在不同市场或交易所之间的价格差异。这是最简单的套利形式，并在外汇和股票市场中广泛使用。
 
-```pypython
+```py
 
 # Example: Profit from price difference between 2 exchanges
 
@@ -212,7 +212,7 @@ print("No arbitrage opportunity")
 
 _ 配对交易策略 _
 
-```pypython
+```py
 
 # Python code implementing a simple pairs trading strategy
 
@@ -242,7 +242,7 @@ data['short_signal'] = np.where(spread > threshold_short, -1, 0)
 
 _ 执行三角套利 _
 
-```pypython
+```py
 
 # Assume following exchange rates for USD/EUR, EUR/GBP, and GBP/USD pairs
 
@@ -300,7 +300,7 @@ print("No arbitrage opportunity")
 
 以下 Python 代码展示了配对交易算法的简单表示：
 
-```pypython
+```py
 
 # Python code implementing a basic statistical arbitrage strategy
 
@@ -366,7 +366,7 @@ signals['positions'] = signals['signal'].diff()
 
 现在，让我们构思一个简单的做市算法在 Python 中的运行方式。
 
-```pypython
+```py
 
 # Python code implementing a simple market-making strategy.
 
@@ -432,7 +432,7 @@ self.ask += execution_quantity
 
 让我们考虑一个简化的基于情感的交易算法的 Python 脚本。
 
-```pyPython
+```py
 
 # Python code implementing a basic sentiment-based trading strategy.
 
@@ -500,7 +500,7 @@ SentimentTrader 类首先初始化数据源和来自 nltk 库的情感强度分�
 
 让我们考虑一个简单的 Python 脚本，以理解多因子模型如何在算法交易策略中实施。
 
-```pyPython
+```py
 
 # Implementation of a basic multi-factor model using Python
 
@@ -588,7 +588,7 @@ Python 示例：简单的强化学习交易策略
 
 在这里，我们用 Python 展示一个简单的交易策略，基于 Q-Learning 技术：
 
-```pypython
+```py
 
 # Simplified Python code for a Q-Learning Reinforcement trading model
 
@@ -698,7 +698,7 @@ Python 中进化算法在交易中的示例
 
 以下 Python 伪代码展示了一个简单的 EA 可能的样子。对于代码的“西兰花”，我们实现了一个简单的遗传算法作为算法交易策略的优化工具。
 
-```pypython
+```py
 
 # Simplified Python code for an Evolutionary Algorithm-based trading model
 
@@ -788,7 +788,7 @@ algorithms.eaSimple(population, toolbox, cxpb=0.5, mutpb=0.2, ngen=40)
 
 Python 凭借其丰富的金融和统计库，使得进行性能指标分析变得轻而易举。以下是一个 Python 伪代码片段，包含计算关键绩效指标的函数。它使用`pandas`库进行数据处理和管理，以及`numpy`库进行数值计算。
 
-```pypython
+```py
 
 # Simplified Python code for calculating trading performance metrics
 
