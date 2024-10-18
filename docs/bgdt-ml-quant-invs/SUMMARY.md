@@ -8,4 +8,7 @@
 +   [第七章：应用于量化股票：梯度提升在多因子框架中的集成学习](bgdt-ml-quant-invs_06.md)
 +   [第八章：企业文化的社交媒体分析](bgdt-ml-quant-invs_07.md)
 +   [第九章：机器学习与交易能源期货的事件检测](bgdt-ml-quant-invs_08.md)
-+   [第十章：金融新闻的自然语言处理](bgdt-ml-quant-invs_09.md)
++   [第十章：金融新闻的自然语言处理](bgdt-ml-quant-invs_09_0.md)
++   [第十一章：基于支持向量机的全球战术资产配置](bgdt-ml-quant-invs_09_1.md)
++   [第十二章：金融中的强化学习](bgdt-ml-quant-invs_09_2.md)
++   [第十三章：金融中的深度学习：使用长短期记忆网络预测股票收益](bgdt-ml-quant-invs_09_3.md)
