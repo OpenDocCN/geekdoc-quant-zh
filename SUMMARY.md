@@ -11,3 +11,4 @@
 +   [量化投资与机器学习 2020](docs/quantml-2020/README.md)
 +   [量化投资与机器学习 2021](docs/quantml-2021/README.md)
 +   [技术指标和振荡器大全](docs/tech-ind-ovly/README.md)
++   [从数据到交易：量化交易的机器学习方法](docs/从数据到交易：量化交易的机器学习方法/README.md)
